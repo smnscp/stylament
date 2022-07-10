@@ -1,0 +1,25 @@
+{
+  "name": "stylament",
+  "version": "0.0.1",
+  "description": "A fundament for your document styling.",
+  "keywords": [
+    "document structure",
+    "styling",
+    "HTML",
+    "CSS",
+    "design system"
+  ],
+  "license": "",
+  "author": "Simon Schrape",
+  "scripts": {
+    "build": "parcel build index.html",
+    "dev": "parcel index.html --open",
+    "start": "npm run build && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "parcel": "latest"
+  },
+  "dependencies": {
+  }
+}
