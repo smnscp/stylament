@@ -1,0 +1,30 @@
+/**
+ * ## Unique Document Elements
+ */
+
+/** Document root */
+
+:root {}
+
+/** Sectioning root */
+
+body {}
+
+/**
+ * The document’s main content
+ * There can be only one (https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element:attr-hidden)
+ */
+
+main:not([hidden]) {}
+
+/** The document’s main header */
+
+:where(body, body > div) > header:first-of-type {}
+
+/** The document’s main footer */
+
+:where(body, body > div) > footer:last-of-type {}
+
+/** The current target element */
+
+:target {}

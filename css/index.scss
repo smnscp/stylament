@@ -5,3 +5,18 @@
 
 @import "3-generic/normalize";
 @import "3-generic/n’ize";
+
+@import "4-elements/document.scss";
+@import "4-elements/sectioning/sections.scss";
+@import "4-elements/sectioning/heading.scss";
+@import "4-elements/sectioning/scope.scss";
+@import "4-elements/text/block.scss";
+@import "4-elements/text/inline.scss";
+@import "4-elements/embedding/media.scss";
+@import "4-elements/embedding/containers.scss";
+@import "4-elements/embedding/other-ml.scss";
+@import "4-elements/scripting.scss";
+@import "4-elements/edits.scss";
+@import "4-elements/tables.scss";
+@import "4-elements/forms.scss";
+@import "4-elements/interactive.scss";
