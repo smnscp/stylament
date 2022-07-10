@@ -18,8 +18,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.2",
     "parcel": "latest"
   },
   "dependencies": {
+    "@csstools/normalize.css": "latest",
+    "n-ize.css": "latest"
   }
 }
