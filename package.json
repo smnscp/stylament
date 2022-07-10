@@ -23,6 +23,9 @@
   },
   "dependencies": {
     "@csstools/normalize.css": "latest",
+    "@fontsource/source-code-pro": "latest",
+    "@fontsource/source-sans-pro": "latest",
+    "@fontsource/source-serif-pro": "latest",
     "n-ize.css": "latest"
   }
 }
