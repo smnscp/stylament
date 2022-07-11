@@ -1,0 +1,43 @@
+/**
+ * ### Main Navigation Bar
+ * Rather opinonated styling for the first `nav.menu`.
+ */
+
+body > nav.menu:first-of-type {
+  $size: var(--size-8);
+  --toggle-face-size: #{$size};
+  --toggle-face-padding: var(--size-1);
+  --toggle-face-folded-background: white;
+  --toggle-face-folded-radius: 0 0 var(--radius-lg);
+  --toggle-face-folded-shadow: var(--elevation-5);
+
+  & > label > .--toggle-face {
+    background: white;
+    box-shadow: var(--elevation-3);
+  }
+
+  & > menu {
+    --item-height: #{$size};
+    --item-line-height: var(--size-3);
+    --item-padding: var(--size-3);
+
+    box-shadow: var(--elevation-3);
+
+    & > li {
+      color: var(--color-body-inverted);
+      background-color: var(--color-grey-700);
+      transition: all 0.3s var(--easing-standard);
+      &:hover {
+        color: var(--color-grey-700);
+        background-color: var(--color-body-inverted);
+      }
+
+      & > a {
+        color: inherit;
+        background-color: transparent;
+        font-weight: var(--weight-bold);
+        text-decoration: none;
+      }
+    }
+  }
+}
