@@ -7,8 +7,13 @@
 
 /* Links */
 
-a:any-link {}
-a:any-link:hover {}
+a:any-link {
+  color: var(--color-links);
+  text-decoration: none;
+}
+a:any-link:hover {
+  text-decoration: underline;
+}
 
 abbr {}
 
