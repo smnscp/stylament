@@ -1,0 +1,136 @@
+/**
+ * ### Navigation Menu
+ */
+
+nav.menu {
+  $nav-wide: $width-sm;
+  $size: 2em;
+
+  position: relative;
+
+  & .--toggle-state,
+  & .--toggle-face {
+    display: none;
+  }
+
+  /**
+   * #### Levelable Nav
+   * Places itemes on a horizontal level if enough space is available.
+   */
+  &.levelable {
+    & > menu {
+      display: block;
+
+      & > li {
+        display: block;
+        text-align: start;
+      }
+    }
+  }
+
+  // Horizontal nav on wider screen.
+  @media (min-width: $nav-wide) {
+    &.levelable {
+      & > menu {
+        display: flex;
+
+        & > li {
+          flex: 1;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  /**
+   * #### Foldable Nav
+   * Allows to toggle the display of the menu.
+   */
+  &.foldable {
+    --toggle-face-size: #{$size};
+    --inset-start: var(--toggle-face-size);
+    --inset-end: 0;
+
+    & > label {
+      & > .--toggle-face {
+        display: inline-block;
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        width: var(--toggle-face-size);
+        height: var(--toggle-face-size);
+        padding: var(--toggle-face-padding);
+        transition: all 0.3s var(--easing-standard);
+
+        & > img {
+          height: 100%;
+        }
+      }
+    }
+
+    & > menu {
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: var(--inset-start);
+      inset-inline-end: var(--inset-end);
+      overflow: hidden;
+      transition: inset-inline-end 0.3s var(--easing-standard);
+    }
+  }
+
+  // Backdrop when unfolded on small screen.
+  @media (max-width: calc($nav-wide - 1px)) {
+    &.foldable input.--toggle-state:checked ~ label {
+      position: absolute;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  // Nav folded.
+  @mixin toggle-face-folded {
+    background: var(--toggle-face-folded-background);
+    border-radius: var(--toggle-face-folded-radius);
+    box-shadow: var(--toggle-face-folded-shadow);
+  }
+
+  @media (max-width: calc($nav-wide - 1px)) {
+    &.foldable input.--toggle-state:not(:checked) {
+      & ~ menu {
+        inset-inline-end: 100%;
+      }
+
+      & ~ label > .--toggle-face {
+        @include toggle-face-folded;
+      }
+    }
+  }
+
+  @media (min-width: $nav-wide) {
+    &.foldable input.--toggle-state:checked {
+      & ~ menu {
+        inset-inline-end: 100%;
+      }
+
+      & ~ label > .--toggle-face {
+        @include toggle-face-folded;
+      }
+    }
+  }
+
+  /**
+   * #### Sticky Nav
+   * Makes navbar stick to the top of the viewport.
+   */
+  &.sticky {
+    position: sticky;
+    top: 0;
+    height: $size;
+
+    menu {
+      --item-height: #{$size};
+    }
+  }
+}
