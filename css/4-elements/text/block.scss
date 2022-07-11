@@ -9,7 +9,9 @@
 p {}
 
 /* Thematic break */
-hr {}
+hr {
+  color: var(--color-hr);
+}
 
 /* List */
 ol {}
