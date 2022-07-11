@@ -15,8 +15,33 @@ hr {
 
 /* List */
 ol {}
+
 ul {}
-menu {}
+
+menu {
+  --item-height: 2em;
+  --item-line-height: 1em;
+  --item-padding: 1em;
+
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  & > li {
+    height: var(--item-height);
+    line-height: var(--item-line-height);
+    padding: 0;
+    margin: 0;
+
+    & > a {
+      display: grid;
+      align-content: center;
+      height: 100%;
+      padding-inline: var(--item-padding);
+    }
+  }
+}
+
 li {}
 
 /* Definition list */
