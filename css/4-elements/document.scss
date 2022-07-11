@@ -33,6 +33,15 @@ main:not([hidden]) {}
   // Clever sticky footer (https://css-tricks.com/a-clever-sticky-footer-technique/)
   position: sticky;
   top: 100vh;
+
+  // Spacing and color.
+  padding-block: var(--size-8);
+  color: var(--color-body-inverted);
+  background: var(--color-grey-700);
+
+  a:any-link {
+    color: var(--color-links-inverted);
+  }
 }
 
 /** The current target element */
