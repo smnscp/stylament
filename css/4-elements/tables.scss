@@ -2,7 +2,12 @@
  * ## Tabular Content
  */
 
-table {}
+table {
+  --table-border-width: 0;
+  border-collapse: collapse;
+  padding: 0;
+  border-spacing: 0;
+}
 
 caption {}
 
@@ -14,9 +19,10 @@ tfoot {}
 
 tr {}
 
-td {}
-
-th {}
+td,
+th {
+  padding: calc(0.5 * (var(--line-root-abs) - var(--table-border-width)));
+}
 
 col {}
 
