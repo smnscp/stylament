@@ -2,6 +2,10 @@
  * ## Demarcating Edits
  */
 
-del {}
+del {
+  background: var(--color-red-300);
+}
 
-ins {}
+ins {
+  background: var(--color-green-300);
+}
