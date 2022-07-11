@@ -2,9 +2,19 @@
  * ### Sections
  */
 
-article {}
+/* Let sections control the block spacing. */
 
-section {}
+:is(article, section) {
+  margin-block: var(--size-4);
+
+  &> :is(h1, h2, h3, h4, h5, h6, p, ol, ul, dl):first-child {
+    margin-block-start: 0;
+  }
+
+  &> :is(h1, h2, h3, h4, h5, h6, p, ol, ul, dl):last-child {
+    margin-block-end: 0;
+  }
+}
 
 aside {}
 
