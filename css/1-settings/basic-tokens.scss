@@ -1,0 +1,303 @@
+@use "sass:math";
+
+/**
+ * ## Basic design tokens
+ *
+ * This token list is inspired by Pollen CSS.
+ * https://www.pollen.style/
+ */
+
+/**
+ * ### Typography
+ * https://www.pollen.style/modules/typography
+ */
+
+/**
+ * #### Modular Scale
+ * Major third, equal-tempered: ∛2 ≅ 1.26
+ * https://www.pollen.style/modules/typography#modular-scale
+ * https://www.modularscale.com/?1&em&2@3
+ *
+ * #### Line Height
+ * https://www.pollen.style/modules/typography#line-height
+ * https://drewish.com/tools/vertical-rhythm/
+ */
+:root {
+  $scale-base: 1rem;
+  $scale-factor: math.pow(2, math.div(1, 3));
+  $line-min: 1.1;
+  $line-root: 1.5;
+  $line-root-abs: $line-root * $scale-base;
+
+  --scale-factor: #{$scale-factor};
+  --line-root: #{$line-root};
+  --line-root-abs: #{$line-root-abs};
+
+  @for $i from -2 through 5 {
+    $scale: math.pow($scale-factor, $i);
+    --scale-#{$i}: #{$scale-base * $scale};
+    $root-lines: calc($scale * $line-min / $line-root);
+    --line-#{$i}: #{math.ceil($root-lines) * $line-root-abs};
+  }
+
+  --scale-smaller: #{math.div(100%, $scale-factor)};
+  --scale-larger: #{100% * $scale-factor};
+}
+
+/**
+ * #### Font Families
+ * https://www.pollen.style/modules/typography#font-families
+ */
+:root {
+  --font-sans: "Source Sans Pro", sans-serif;
+  --font-serif: "Source Serif Pro", serif;
+  --font-mono: "Source Code Pro", monospace;
+}
+
+/**
+ * #### Font Weights
+ * https://www.pollen.style/modules/typography#font-weights
+ */
+:root {
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-black: 900;
+}
+
+/**
+ * #### Letter Spacing
+ * https://www.pollen.style/modules/typography#letter-spacing
+ */
+:root {
+  --letter-xs: -0.05em;
+  --letter-sm: -0.025em;
+  --letter-none: 0em;
+  --letter-lg: 0.025em;
+  --letter-xl: 0.05em;
+}
+
+/**
+ * #### Prose Width
+ * https://www.pollen.style/modules/typography#prose-width
+ */
+:root {
+  --prose-xs: 45ch;
+  --prose-sm: 55ch;
+  --prose-md: 65ch;
+  --prose-lg: 75ch;
+  --prose-xl: 85ch;
+}
+
+/**
+ * ### Layout
+ * https://www.pollen.style/modules/layout
+ */
+
+/**
+ * #### Sizes Scale
+ * https://www.pollen.style/modules/layout#size-scale
+ */
+:root {
+  @for $i from 1 through 16 {
+    --size-#{$i}: calc(#{0.25 * $i} * var(--line-root-abs));
+  }
+
+  --size-full: 100%;
+  --size-screen: 100vw;
+  --size-min: min-content;
+  --size-max: max-content;
+}
+
+/**
+ * #### Container Widths
+ * https://www.pollen.style/modules/layout#container-widths
+ * https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
+ */
+$width-xs: 30rem;
+$width-sm: 40rem;
+$width-md: 48rem;
+$width-lg: 64rem;
+$width-xl: 80rem;
+:root {
+  --width-xs: #{$width-xs};
+  --width-sm: #{$width-sm};
+  --width-md: #{$width-md};
+  --width-lg: #{$width-lg};
+  --width-xl: #{$width-xl};
+}
+
+/**
+ * ### UI
+ * https://www.pollen.style/modules/ui
+ */
+
+/**
+ * #### Strokes Scale
+ */
+:root {
+  @for $i from 1 through 8 {
+    --stroke-#{$i}: #{0.0625 * $i}rem;
+  }
+}
+
+/**
+ * #### Radius
+ * https://www.pollen.style/modules/ui#radius
+ */
+:root {
+  --radius-100: 100%;
+  --radius-xs: 0.2rem;
+  --radius-sm: 0.4rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 0.8rem;
+  --radius-xl: 1rem;
+  --radius-full: 999rem;
+}
+
+/**
+ * #### Blur (Backdrop Filters)
+ * https://www.pollen.style/modules/ui#blur
+ */
+:root {
+  --blur-xs: blur(0.333rem);
+  --blur-sm: blur(0.577rem);
+  --blur-md: blur(1rem);
+  --blur-lg: blur(1.732rem);
+  --blur-xl: blur(3rem);
+}
+
+/**
+ * #### Layers
+ * https://www.pollen.style/modules/ui#layers
+ */
+:root {
+  --layer-1: 10;
+  --layer-2: 20;
+  --layer-3: 30;
+  --layer-4: 40;
+  --layer-5: 50;
+  --layer-below: -1;
+  --layer-top: 2147483647;
+}
+
+/**
+ * #### Elevation (Drop Shadows)
+ * https://www.pollen.style/modules/ui#elevation
+ */
+:root {
+  --elevation-1: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05);
+  --elevation-2: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1),
+    0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06);
+  --elevation-3: 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.1),
+    0 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.06);
+  --elevation-4: 0 0.75rem 1rem -0.25rem rgba(0, 0, 0, 0.1),
+    0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
+  --elevation-5: 0 1.25rem 1.5rem -0.25rem rgba(0, 0, 0, 0.1),
+    0 0.5rem 0.5rem -0.25rem rgba(0, 0, 0, 0.04);
+  --elevation-6: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
+  --elevation-7: 0 2rem 4rem -0.75rem rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * #### Easing (Transition Curves)
+ * https://www.pollen.style/modules/ui#easing
+ */
+:root {
+  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+}
+
+/**
+ * ### Color Palette
+ * https://www.pollen.style/modules/colors
+ */
+:root {
+  --color-grey-50: #f9fafb;
+  --color-grey-100: #f2f4f5;
+  --color-grey-200: #e8eaed;
+  --color-grey-300: #d4d7dd;
+  --color-grey-400: #a5aab4;
+  --color-grey-500: #767c89;
+  --color-grey-600: #555d6e;
+  --color-grey-700: #3f4754;
+  --color-grey-800: #2c343f;
+  --color-grey-900: #10181c;
+  --color-black: #14141b;
+  --color-grey: var(--color-grey-500);
+  --color-red-300: #fc8181;
+  --color-red-500: #e53e3e;
+  --color-red-700: #c53030;
+  --color-red: var(--color-red-500);
+  --color-green-300: #9ae6b4;
+  --color-green-500: #48bb78;
+  --color-green-700: #2f855a;
+  --color-green: var(--color-green-500);
+  --color-blue-300: #63b3ed;
+  --color-blue-500: #4299e1;
+  --color-blue-700: #3182ce;
+  --color-blue: var(--color-blue-500);
+  --color-pink-300: #fbb6ce;
+  --color-pink-500: #ed64a6;
+  --color-pink-700: #d53f8c;
+  --color-pink: var(--color-pink-500);
+  --color-purple-300: #b794f4;
+  --color-purple-500: #805ad5;
+  --color-purple-700: #6b46c1;
+  --color-purple: var(--color-purple-500);
+  --color-teal-300: #81e6d9;
+  --color-teal-500: #38b2ac;
+  --color-teal-700: #2c7a7b;
+  --color-teal: var(--color-teal-500);
+  --color-yellow-300: #faf089;
+  --color-yellow-500: #ecc94b;
+  --color-yellow-700: #d69e2e;
+  --color-yellow: var(--color-yellow-500);
+  --color-orange-300: #fbd38d;
+  --color-orange-500: #ed8936;
+  --color-orange-700: #dd6b20;
+  --color-orange: var(--color-orange-500);
+  --color-brown-300: #a1887f;
+  --color-brown-500: #795548;
+  --color-brown-700: #5d4037;
+  --color-brown: var(--color-brown-500);
+}
+
+/**
+ * ### Grid
+ * https://www.pollen.style/modules/grid
+ */
+
+/**
+ * #### Grid Template
+ * https://www.pollen.style/modules/grid#grid-template
+ */
+:root {
+  --grid-2: repeat(2, minmax(0, 1fr));
+  --grid-3: repeat(3, minmax(0, 1fr));
+  --grid-4: repeat(4, minmax(0, 1fr));
+  --grid-5: repeat(5, minmax(0, 1fr));
+  --grid-6: repeat(6, minmax(0, 1fr));
+  --grid-7: repeat(7, minmax(0, 1fr));
+  --grid-8: repeat(8, minmax(0, 1fr));
+  --grid-9: repeat(9, minmax(0, 1fr));
+  --grid-10: repeat(10, minmax(0, 1fr));
+  --grid-11: repeat(11, minmax(0, 1fr));
+  --grid-12: repeat(12, minmax(0, 1fr));
+}
+
+/**
+ * ##### Page Grid
+ * https://www.pollen.style/modules/grid#page-grid
+ */
+:root {
+  --grid-page-width: var(--width-xl);
+  --grid-page-gutter: 5vw;
+  --grid-page-main: 2 / 3;
+  --grid-page: minmax(var(--grid-page-gutter), 1fr)
+    minmax(0, var(--grid-page-width)) minmax(var(--grid-page-gutter), 1fr);
+}

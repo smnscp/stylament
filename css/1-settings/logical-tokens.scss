@@ -1,15 +1,7 @@
 /**
- * Font Families
+ * ## Logical Tokens
  */
-:root {
-  --font-sans: "Source Sans Pro", sans-serif;
-  --font-serif: "Source Serif Pro", serif;
-  --font-mono: "Source Code Pro", monospace;
-}
 
-/**
- * Logical Tokens
- */
 :root {
   --font-body: var(--font-serif);
   --font-titling: var(--font-sans);
