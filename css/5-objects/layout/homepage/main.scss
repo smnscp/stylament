@@ -1,0 +1,49 @@
+/**
+ * #### Homepage Main Article Layout
+ * Example layout used in `example/layout.html`.
+ */
+
+body.homepage > main > article:first-of-type {
+  @media (min-width: $width-xs) {
+    & {
+      display: grid;
+      grid-template-columns: var(--grid-2);
+      gap: var(--size-4);
+    }
+    & section {
+      margin: 0;
+    }
+    & > section:last-child {
+      grid-column: 1 / -1;
+      gap: inherit;
+    }
+    & > section:last-child > div {
+      display: grid;
+      grid-template-columns: var(--grid-2);
+      gap: inherit;
+    }
+  }
+  @media (min-width: $width-md) {
+    & > section:last-child > div {
+      grid-template-columns: var(--grid-3);
+    }
+    & > section:last-child > div > section:last-child {
+      grid-column: 1 / -1;
+    }
+    & > section:last-child > div > section:last-child > ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+    & > section:last-child > div > section:last-child > ul > li {
+      flex: 1;
+    }
+  }
+  @media (min-width: $width-lg) {
+    & {
+      gap: var(--size-8);
+      margin-block: var(--size-8);
+    }
+  }
+}
