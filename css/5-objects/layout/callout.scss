@@ -1,0 +1,25 @@
+.callout {
+  color: var(--color-grey-500);
+  background-color: var(--color-grey-50);
+
+  figure blockquote {
+    font-size: var(--scale-4);
+    line-height: var(--line-4);
+  }
+}
+
+@media (min-width: $width-xs) {
+  // Indent callout by smaller golden ratio part.
+  .callout figure {
+    padding-inline: 0;
+    margin-inline-start: 38.2%;
+  }
+}
+
+@media (min-width: $width-lg) {
+  // Indent callout by bigger golden ratio part.
+  .callout figure {
+    padding-inline-start: 0;
+    margin-inline-start: 61.8%;
+  }
+}
