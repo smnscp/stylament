@@ -25,7 +25,13 @@ dt {}
 dd {}
 
 /* Extended quotation */
-blockquote {}
+blockquote {
+  margin-inline: 0;
+  padding: 0;
+  border: none;
+  border-inline-start: solid var(--size-1);
+  padding-inline-start: var(--size-5);
+}
 
 /* Self-contained figure */
 figure {}
