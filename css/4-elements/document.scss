@@ -4,11 +4,17 @@
 
 /** Document root */
 
-:root {}
+:root {
+  font-size: var(--scale-root, 100%);
+}
 
 /** Sectioning root */
 
-body {}
+body {
+  color: var(--color-body);
+  // Push down the footer.
+  min-height: 100vh;
+}
 
 /**
  * The document’s main content
@@ -23,8 +29,15 @@ main:not([hidden]) {}
 
 /** The document’s main footer */
 
-:where(body, body > div) > footer:last-of-type {}
+:where(body, body > div) > footer:last-of-type {
+  // Clever sticky footer (https://css-tricks.com/a-clever-sticky-footer-technique/)
+  position: sticky;
+  top: 100vh;
+}
 
 /** The current target element */
 
-:target {}
+:target {
+  // Give URL fragment target enough air.
+  scroll-margin-top: var(--size-12);
+}
