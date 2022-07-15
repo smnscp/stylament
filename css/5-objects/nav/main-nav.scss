@@ -10,6 +10,7 @@ body > nav.menu:first-of-type {
   --toggle-face-folded-background: white;
   --toggle-face-folded-radius: 0 0 var(--radius-lg);
   --toggle-face-folded-shadow: var(--elevation-5);
+  height: $size;
 
   & > label > .--toggle-face {
     background: white;
