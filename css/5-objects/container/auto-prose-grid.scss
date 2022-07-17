@@ -1,0 +1,16 @@
+.auto-prose-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, var(--prose-min)), 1fr)
+  );
+
+  & > * {
+    min-width: min(100%, var(--prose-min));
+    max-width: var(--prose-max);
+  }
+
+  section {
+    margin: 0;
+  }
+}

@@ -22,14 +22,17 @@
 @import "4-elements/forms.scss";
 @import "4-elements/interactive.scss";
 
-@import "5-objects/layout/page.scss";
-@import "5-objects/layout/callout.scss";
+@import "5-objects/container/page.scss";
+@import "5-objects/container/callout.scss";
+@import "5-objects/container/auto-prose-grid.scss";
+@import "5-objects/list/list.scss";
 @import "5-objects/table/standard-table.scss";
 @import "5-objects/nav/menu.scss";
 @import "5-objects/nav/main-nav.scss";
 // More specific objects
-@import "5-objects/layout/homepage/header.scss";
-@import "5-objects/layout/homepage/main.scss";
+@import "5-objects/special/homepage/header.scss";
 
 @import "7-utilities/placeholder.scss";
 @import "7-utilities/debug.scss";
+@import "7-utilities/prose.scss";
+@import "7-utilities/grid.scss";

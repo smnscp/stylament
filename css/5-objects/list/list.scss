@@ -1,0 +1,14 @@
+:is(ol, ul, menu) {
+  &.neutral-list {
+    padding: 0;
+    list-style: none;
+  }
+
+  &.flexible-inline-list {
+    display: flex;
+    flex-wrap: wrap;
+    & > li {
+      flex-grow: 1;
+    }
+  }
+}

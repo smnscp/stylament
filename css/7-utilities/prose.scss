@@ -1,0 +1,24 @@
+.prose-xs {
+  --prose-min: var(--prose-xs);
+  --prose-max: var(--prose-sm);
+}
+
+.prose-sm {
+  --prose-min: var(--prose-sm);
+  --prose-max: var(--prose-md);
+}
+
+.prose-md {
+  --prose-min: var(--prose-md);
+  --prose-max: var(--prose-lg);
+}
+
+.prose-lg {
+  --prose-min: var(--prose-lg);
+  --prose-max: var(--prose-xl);
+}
+
+.prose-xl {
+  --prose-min: var(--prose-xl);
+  --prose-max: unset;
+}
