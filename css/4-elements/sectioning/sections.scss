@@ -5,7 +5,8 @@
 /* Let sections control the block spacing. */
 
 :is(article, section) {
-  margin-block: var(--size-4);
+  gap: var(--spacing-sectioning);
+  margin-block: var(--spacing-sectioning);
 
   &> :is(h1, h2, h3, h4, h5, h6, p, ol, ul, dl):first-child {
     margin-block-start: 0;
@@ -13,6 +14,10 @@
 
   &> :is(h1, h2, h3, h4, h5, h6, p, ol, ul, dl):last-child {
     margin-block-end: 0;
+  }
+
+  * {
+    gap: inherit;
   }
 }
 

@@ -19,7 +19,14 @@
   --color-hr: var(--color-primary);
   --spacing-block: var(--line-root-abs);
   --spacing-block-titling: var(--spacing-block);
+  --spacing-sectioning: var(--spacing-block);
   --spacing-inline: calc(1.5 * var(--line-root-abs));
   --stroke-table: var(--stroke-2);
   --stroke-hr: var(--stroke-2);
+}
+
+@media (min-width: $width-lg) {
+  :root {
+    --spacing-sectioning: calc(2 * var(--spacing-block));
+  }
 }
