@@ -1,0 +1,8 @@
+/**
+ * #### Strokes Scale
+ */
+:root {
+  @for $i from 1 through 8 {
+    --stroke-#{$i}: #{0.0625 * $i}rem;
+  }
+}

@@ -1,5 +1,5 @@
-@import "1-settings/basic-tokens.scss";
-@import "1-settings/logical-tokens.scss";
+@import "1-settings/1-basic-tokens/";
+@import "1-settings/2-logical-tokens.scss";
 
 @import "2-tools/functions.scss";
 @import "2-tools/mixins.scss";

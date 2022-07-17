@@ -1,0 +1,11 @@
+/**
+ * #### Blur (Backdrop Filters)
+ * https://www.pollen.style/modules/ui#blur
+ */
+:root {
+  --blur-xs: blur(0.333rem);
+  --blur-sm: blur(0.577rem);
+  --blur-md: blur(1rem);
+  --blur-lg: blur(1.732rem);
+  --blur-xl: blur(3rem);
+}

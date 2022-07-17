@@ -1,0 +1,17 @@
+/**
+ * #### Container Widths
+ * https://www.pollen.style/modules/layout#container-widths
+ * https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
+ */
+$width-xs: 30rem;
+$width-sm: 40rem;
+$width-md: 48rem;
+$width-lg: 64rem;
+$width-xl: 80rem;
+:root {
+  --width-xs: #{$width-xs};
+  --width-sm: #{$width-sm};
+  --width-md: #{$width-md};
+  --width-lg: #{$width-lg};
+  --width-xl: #{$width-xl};
+}
