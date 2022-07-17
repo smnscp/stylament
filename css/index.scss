@@ -7,20 +7,20 @@
 @import "3-generic/normalize";
 @import "3-generic/n’ize";
 
-@import "4-elements/document.scss";
-@import "4-elements/sectioning/sections.scss";
-@import "4-elements/sectioning/heading.scss";
-@import "4-elements/sectioning/scope.scss";
-@import "4-elements/text/block.scss";
-@import "4-elements/text/inline.scss";
-@import "4-elements/embedding/media.scss";
-@import "4-elements/embedding/containers.scss";
-@import "4-elements/embedding/other-ml.scss";
-@import "4-elements/scripting.scss";
-@import "4-elements/edits.scss";
-@import "4-elements/tables.scss";
-@import "4-elements/forms.scss";
-@import "4-elements/interactive.scss";
+@import "4-elements/1-document.scss";
+@import "4-elements/2-sectioning/1-sections.scss";
+@import "4-elements/2-sectioning/2-heading.scss";
+@import "4-elements/2-sectioning/3-scope.scss";
+@import "4-elements/3-text/1-block.scss";
+@import "4-elements/3-text/2-inline.scss";
+@import "4-elements/4-embedding/1-media.scss";
+@import "4-elements/4-embedding/2-containers.scss";
+@import "4-elements/4-embedding/3-other-ml.scss";
+@import "4-elements/5-scripting.scss";
+@import "4-elements/6-edits.scss";
+@import "4-elements/7-tables.scss";
+@import "4-elements/8-forms.scss";
+@import "4-elements/9-interactive.scss";
 
 @import "5-objects/container/page.scss";
 @import "5-objects/container/callout.scss";
