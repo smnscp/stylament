@@ -15,7 +15,7 @@ Here is, **in my own words**, what each of these layers is about:
    - Also [called design tokens](https://medium.com/salesforce-ux/living-design-system-3ab1f2280ef7#90cf).
    - Platform-agnostically defined in a Style Dictionary, they are imported as
      [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
-     (a. k. a CSS variables) and, if needed, as preprocessor variables.
+     (a. k. a. CSS variables) and, if needed, as preprocessor variables.
    - For a reasonable implementation example of this layer see [Pollen](https://www.pollen.style/).
 2. Tools
    - Globally used mix-ins and functions for CSS preprocessors.
