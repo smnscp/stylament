@@ -11,4 +11,18 @@ h6 {
   color: var(--color-heading);
 }
 
-// hgroup { Deprecated. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hgroup#usage_notes }
+hgroup {
+  p {
+    font-family: var(--font-heading);
+    font-weight: var(--weight-bold);
+    color: var(--color-heading);
+  }
+  h1 ~ p {
+    font-size: var(--scale-2);
+    line-height: var(--line-2);
+  }
+  h2 ~ p {
+    font-size: var(--scale-1);
+    line-height: var(--line-1);
+  }
+}
