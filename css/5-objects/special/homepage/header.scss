@@ -7,15 +7,17 @@ body.homepage > header {
   color: var(--color-grey-900);
   background: var(--color-grey-50);
   text-align: center;
-}
 
-body.homepage > header > * {
-  background: white;
-  border-radius: var(--radius-md);
-  box-shadow: var(--elevation-6);
-}
+  & > * {
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: var(--elevation-6);
+  }
 
-body.homepage > header .logo img {
-  width: 66vmin;
-  margin: 0 auto;
+  // Any image alone in an hgroup row is considered a logo.
+  hgroup > * > img:only-child {
+    // Size it so that it nicely fits the viewport.
+    max-inline-size: 66vmin;
+    max-block-size: 66vmin;
+  }
 }
