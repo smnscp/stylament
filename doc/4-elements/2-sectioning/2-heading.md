@@ -5,3 +5,4 @@
 (implicit sectoning content)
 
 - [`h1–h6`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)
+- [`hgroup`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hgroup)
