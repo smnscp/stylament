@@ -6,8 +6,8 @@
   );
 
   & > * {
-    min-width: min(100%, var(--prose-min));
-    max-width: var(--prose-max);
+    min-inline-size: min(100%, var(--prose-min));
+    max-inline-size: var(--prose-max);
   }
 
   section {

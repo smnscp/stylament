@@ -13,7 +13,7 @@
 body {
   color: var(--color-body);
   // Push down the footer.
-  min-height: 100vh;
+  min-block-size: 100vh;
 }
 
 /**
@@ -32,7 +32,7 @@ main:not([hidden]) {}
 :where(body, body > div) > footer:last-of-type {
   // Clever sticky footer (https://css-tricks.com/a-clever-sticky-footer-technique/)
   position: sticky;
-  top: 100vh;
+  inset-block-start: 100vh;
 
   // Spacing and color.
   padding-block: var(--size-8);
@@ -48,5 +48,5 @@ main:not([hidden]) {}
 
 :target {
   // Give URL fragment target enough air.
-  scroll-margin-top: var(--size-12);
+  scroll-margin-block-start: var(--size-12);
 }

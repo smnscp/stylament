@@ -57,13 +57,13 @@ nav.menu {
         position: absolute;
         inset-block-start: 0;
         inset-inline-start: 0;
-        width: var(--toggle-face-size);
-        height: var(--toggle-face-size);
+        inline-size: var(--toggle-face-size);
+        block-size: var(--toggle-face-size);
         padding: var(--toggle-face-padding);
         transition: all 0.3s var(--easing-standard);
 
         & > img {
-          height: 100%;
+          block-size: 100%;
         }
       }
     }
@@ -83,8 +83,8 @@ nav.menu {
     &.foldable input.--toggle-state:checked ~ label {
       position: absolute;
       inset: 0;
-      width: 100vw;
-      height: 100vh;
+      inline-size: 100vw;
+      block-size: 100vh;
       background: rgba(0, 0, 0, 0.5);
     }
   }
@@ -126,8 +126,8 @@ nav.menu {
    */
   &.sticky {
     position: sticky;
-    top: 0;
-    height: $size;
+    inset-block-start: 0;
+    block-size: $size;
 
     menu {
       --item-height: #{$size};

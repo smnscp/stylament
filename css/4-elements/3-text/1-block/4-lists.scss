@@ -13,7 +13,7 @@ menu {
   list-style: none;
 
   & > li {
-    height: var(--item-height);
+    block-size: var(--item-height);
     line-height: var(--item-line-height);
     padding: 0;
     margin: 0;
@@ -21,11 +21,10 @@ menu {
     & > a {
       display: grid;
       align-content: center;
-      height: 100%;
+      block-size: 100%;
       padding-inline: var(--item-padding);
     }
   }
 }
 
 li {}
-
