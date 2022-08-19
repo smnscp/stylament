@@ -1,38 +1,7 @@
-@import "1-settings/1-basic-tokens/";
-@import "1-settings/2-logical-tokens.scss";
-
-@import "2-tools/functions.scss";
-@import "2-tools/mixins.scss";
-
-@import "3-generic/normalize";
-@import "3-generic/n’ize";
-
-@import "4-elements/1-document.scss";
-@import "4-elements/2-sectioning/1-sections.scss";
-@import "4-elements/2-sectioning/2-heading.scss";
-@import "4-elements/2-sectioning/3-scope.scss";
-@import "4-elements/3-text/1-block/";
-@import "4-elements/3-text/2-inline/";
-@import "4-elements/4-embedding/1-media.scss";
-@import "4-elements/4-embedding/2-containers.scss";
-@import "4-elements/4-embedding/3-other-ml.scss";
-@import "4-elements/5-scripting.scss";
-@import "4-elements/6-edits.scss";
-@import "4-elements/7-tables.scss";
-@import "4-elements/8-forms.scss";
-@import "4-elements/9-interactive.scss";
-
-@import "5-objects/container/page.scss";
-@import "5-objects/container/callout.scss";
-@import "5-objects/container/auto-prose-grid.scss";
-@import "5-objects/list/list.scss";
-@import "5-objects/table/standard-table.scss";
-@import "5-objects/nav/menu.scss";
-@import "5-objects/nav/main-nav.scss";
-// More specific objects
-@import "5-objects/special/homepage/header.scss";
-
-@import "7-utilities/placeholder.scss";
-@import "7-utilities/debug.scss";
-@import "7-utilities/prose.scss";
-@import "7-utilities/grid.scss";
+@import "1-settings/";
+@import "2-tools/";
+@import "3-generic/";
+@import "4-elements/";
+@import "5-objects/";
+@import "6-components/";
+@import "7-utilities/";
