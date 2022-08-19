@@ -1,103 +1,101 @@
-/**
- * ### Navigation Menu
- */
+////
+/// @group ob-navigation
+////
 
+/// # Navigation Menu
+///
+/// Common patterns for navigation menus. Separated into several aspects.
+
+/// Breakpoint for switching to wide layout.
+$nav-wide: $width-sm;
+
+/// Size factor of the menu.
+$size: 2em;
+
+/// General navigation menu. This is the basic selector with the basic rules applied.
 nav.menu {
-  $nav-wide: $width-sm;
-  $size: 2em;
-
   position: relative;
 
   & .--toggle-state,
   & .--toggle-face {
     display: none;
   }
+}
 
-  /**
-   * #### Levelable Nav
-   * Places items on a horizontal level if enough space is available.
-   */
-  &.levelable {
-    & > menu {
+/// Levelable Nav.
+/// Places items on a horizontal level if enough space is available.
+nav.menu.levelable {
+  & > menu {
+    display: block;
+
+    & > li {
       display: block;
+      text-align: start;
+    }
+
+    // Horizontal nav on wider screen.
+    @media (min-width: $nav-wide) {
+      display: flex;
 
       & > li {
-        display: block;
-        text-align: start;
+        flex: 1;
+        text-align: center;
       }
     }
   }
+}
 
-  // Horizontal nav on wider screen.
-  @media (min-width: $nav-wide) {
-    &.levelable {
-      & > menu {
-        display: flex;
+// Nav folded.
+@mixin toggle-face-folded {
+  background: var(--toggle-face-folded-background);
+  border-radius: var(--toggle-face-folded-radius);
+  box-shadow: var(--toggle-face-folded-shadow);
+}
 
-        & > li {
-          flex: 1;
-          text-align: center;
-        }
-      }
-    }
-  }
+/// Foldable Nav.
+/// Allows to toggle the display of the menu.
+nav.menu.foldable {
+  --toggle-face-size: #{$size};
+  --inset-start: var(--toggle-face-size);
+  --inset-end: 0;
 
-  /**
-   * #### Foldable Nav
-   * Allows to toggle the display of the menu.
-   */
-  &.foldable {
-    --toggle-face-size: #{$size};
-    --inset-start: var(--toggle-face-size);
-    --inset-end: 0;
-
-    & > label {
-      & > .--toggle-face {
-        display: inline-block;
-        position: absolute;
-        inset-block-start: 0;
-        inset-inline-start: 0;
-        inline-size: var(--toggle-face-size);
-        block-size: var(--toggle-face-size);
-        padding: var(--toggle-face-padding);
-        transition: all 0.3s var(--easing-standard);
-
-        & > img {
-          block-size: 100%;
-        }
-      }
-    }
-
-    & > menu {
+  & > label {
+    & > .--toggle-face {
+      display: inline-block;
       position: absolute;
       inset-block-start: 0;
-      inset-inline-start: var(--inset-start);
-      inset-inline-end: var(--inset-end);
-      overflow: hidden;
-      transition: inset-inline-end 0.3s var(--easing-standard);
+      inset-inline-start: 0;
+      inline-size: var(--toggle-face-size);
+      block-size: var(--toggle-face-size);
+      padding: var(--toggle-face-padding);
+      transition: all 0.3s var(--easing-standard);
+
+      & > img {
+        block-size: 100%;
+      }
     }
   }
 
-  // Backdrop when unfolded on small screen.
+  & > menu {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: var(--inset-start);
+    inset-inline-end: var(--inset-end);
+    overflow: hidden;
+    transition: inset-inline-end 0.3s var(--easing-standard);
+  }
+
   @media (max-width: calc($nav-wide - 1px)) {
-    &.foldable input.--toggle-state:checked ~ label {
+    // Backdrop when unfolded on small screen.
+    & input.--toggle-state:checked ~ label {
       position: absolute;
       inset: 0;
       inline-size: 100vw;
       block-size: 100vh;
       background: rgba(0, 0, 0, 0.5);
     }
-  }
 
-  // Nav folded.
-  @mixin toggle-face-folded {
-    background: var(--toggle-face-folded-background);
-    border-radius: var(--toggle-face-folded-radius);
-    box-shadow: var(--toggle-face-folded-shadow);
-  }
-
-  @media (max-width: calc($nav-wide - 1px)) {
-    &.foldable input.--toggle-state:not(:checked) {
+    & input.--toggle-state:not(:checked) {
       & ~ menu {
         inset-inline-end: 100%;
       }
@@ -109,7 +107,7 @@ nav.menu {
   }
 
   @media (min-width: $nav-wide) {
-    &.foldable input.--toggle-state:checked {
+    & input.--toggle-state:checked {
       & ~ menu {
         inset-inline-end: 100%;
       }
@@ -119,18 +117,16 @@ nav.menu {
       }
     }
   }
+}
 
-  /**
-   * #### Sticky Nav
-   * Makes navbar stick to the top of the viewport.
-   */
-  &.sticky {
-    position: sticky;
-    inset-block-start: 0;
-    block-size: $size;
+/// Sticky Nav.
+/// Makes navbar stick to the top of the viewport.
+nav.menu.sticky {
+  position: sticky;
+  inset-block-start: 0;
+  block-size: $size;
 
-    menu {
-      --item-height: #{$size};
-    }
+  menu {
+    --item-height: #{$size};
   }
 }
