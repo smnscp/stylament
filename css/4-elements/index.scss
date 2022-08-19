@@ -1,12 +1,7 @@
 @import "1-document.scss";
-@import "2-sectioning/1-sections.scss";
-@import "2-sectioning/2-heading.scss";
-@import "2-sectioning/3-scope.scss";
-@import "3-text/1-block/";
-@import "3-text/2-inline/";
-@import "4-embedding/1-media.scss";
-@import "4-embedding/2-containers.scss";
-@import "4-embedding/3-other-ml.scss";
+@import "2-sectioning/";
+@import "3-text/";
+@import "4-embedding/";
 @import "5-scripting.scss";
 @import "6-edits.scss";
 @import "7-tables.scss";
