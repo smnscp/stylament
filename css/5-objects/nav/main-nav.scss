@@ -1,8 +1,12 @@
-/**
- * ### Main Navigation Bar
- * Rather opinonated styling for the first `nav.menu`.
- */
+////
+/// @group ob-navigation
+////
 
+/// ## Main Navigation Bar
+///
+/// Rather opinonated styling for the first `nav.menu`.
+
+/// The  first `nav.menu` is implicitly considered the main menu.
 body > nav.menu:first-of-type {
   $size: var(--size-8);
   --toggle-face-size: #{$size};

@@ -1,9 +1,10 @@
-/**
- * ### Sections
- */
+////
+/// @group el-sectioning
+////
 
-/* Let sections control the block spacing. */
+/// ## Sections
 
+/// Let sections control the block spacing.
 :is(article, section) {
   gap: var(--spacing-sectioning);
   margin-block: var(--spacing-sectioning);

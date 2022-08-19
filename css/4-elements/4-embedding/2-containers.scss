@@ -1,15 +1,17 @@
-/**
- * ### Embedding Containers
- */
+////
+/// @group el-embedding
+////
 
-// embed {}
-
-// iframe {}
-
-// object {}
-
-// picture {}
-
-// portal {}
-
-// source {}
+/// ## Embedding Containers
+///
+/// No default styles needed.
+///
+/// ```scss
+/// embed {}
+/// iframe {}
+/// object {}
+/// portal {}
+/// ```
+///
+/// @link https://html.spec.whatwg.org/multipage/iframe-embed-object.html Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element#embedded_content MDN

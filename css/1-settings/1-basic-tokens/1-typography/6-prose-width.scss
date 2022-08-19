@@ -1,7 +1,10 @@
-/**
- * #### Prose Width
- * https://www.pollen.style/modules/typography#prose-width
- */
+////
+/// @group ax-basic-tokens
+////
+
+/// ### Prose Width
+/// @link https://www.pollen.style/modules/typography#prose-width Pollen
+///
 :root {
   --prose-xs: 24ch;
   --prose-sm: 30ch;

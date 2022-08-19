@@ -1,7 +1,11 @@
-/**
- * #### Sizes Scale
- * https://www.pollen.style/modules/layout#size-scale
- */
+////
+/// @group ax-basic-tokens
+////
+
+
+/// ### Sizes Scale
+/// @link https://www.pollen.style/modules/layout#size-scale Pollen
+///
 :root {
   @for $i from 1 through 16 {
     --size-#{$i}: calc(#{0.25 * $i} * var(--line-root-abs));

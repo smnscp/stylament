@@ -1,7 +1,10 @@
-/**
- * ## Logical Tokens
- */
+////
+/// @group ax-logical-tokens
+////
 
+/// # Logical Design Tokens
+
+/// Globally available tokens.
 :root {
   --font-body: var(--font-serif);
   --font-heading: var(--font-sans);
@@ -25,6 +28,7 @@
   --stroke-hr: var(--stroke-2);
 }
 
+/// More space on large screens.
 @media (min-width: $width-lg) {
   :root {
     --spacing-sectioning: calc(2 * var(--spacing-block));

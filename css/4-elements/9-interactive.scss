@@ -1,9 +1,24 @@
-/**
- * ## Interactive Elements
- */
+////
+/// @group el-interactive
+////
 
+/// # Interactive Elements
+///
+/// These elements help to create interactive user interface objects.
+///
+/// @link https://html.spec.whatwg.org/multipage/interactive-elements.html Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element#interactive_elements MDN
+
+/// Details.
+/// The `details` element represents a disclosure widget from which the user can obtain additional information or controls.
 details {}
 
+/// Summary.
+/// The `summary` element represents a summary, caption, or legend for the rest of the contents of the `summary` element’s parent `details` element, if any.
 summary {}
 
+// TODO: Move commands here (https://html.spec.whatwg.org/multipage/interactive-elements.html#commands)
+
+/// Dialog.
+/// The `dialog` element represents a part of an application that a user interacts with to perform a task, for example a dialog box, inspector, or window.
 dialog {}

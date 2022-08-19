@@ -1,15 +1,26 @@
-/**
- * ### Multimedia Content
- */
+////
+/// @group el-embedding
+////
 
-// img {}
-
-// map {}
-
-// area {}
-
-// audio {}
-
-// video {}
-
-// track {}
+/// ## Multimedia Content
+///
+/// No default styles needed.
+///
+/// ```scss
+/// picture {}
+/// source {}
+/// img {}
+///
+/// video {}
+/// audio {}
+/// track {}
+///
+/// map {}
+/// area {}
+/// ```
+///
+/// @link https://html.spec.whatwg.org/multipage/images.html Spec (images)
+/// @link https://html.spec.whatwg.org/multipage/embedded-content.html Spec (embedded content)
+/// @link https://html.spec.whatwg.org/multipage/media.html Spec (media)
+/// @link https://html.spec.whatwg.org/multipage/image-maps.html Spec (image maps)
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element#embedded_content MDN

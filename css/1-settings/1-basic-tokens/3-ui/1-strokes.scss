@@ -1,6 +1,9 @@
-/**
- * #### Strokes Scale
- */
+////
+/// @group ax-basic-tokens
+////
+
+/// ### Strokes Scale
+/// A scale of stroke widths in steps of 1/16 rem.
 :root {
   @for $i from 1 through 8 {
     --stroke-#{$i}: #{0.0625 * $i}rem;

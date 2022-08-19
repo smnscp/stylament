@@ -1,7 +1,10 @@
-/**
- * #### Blur (Backdrop Filters)
- * https://www.pollen.style/modules/ui#blur
- */
+////
+/// @group ax-basic-tokens
+////
+
+/// ### Blur (Backdrop Filters)
+/// @link https://www.pollen.style/modules/ui#blur Pollen
+///
 :root {
   --blur-xs: blur(0.333rem);
   --blur-sm: blur(0.577rem);

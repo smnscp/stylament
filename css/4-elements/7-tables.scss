@@ -1,7 +1,15 @@
-/**
- * ## Tabular Content
- */
+////
+/// @group el-tables
+////
 
+/// # Tabular Content
+///
+/// The elements here are used to create and handle tabular data (data with more than one dimension).
+///
+/// @link https://html.spec.whatwg.org/multipage/tables.html Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element#table_content MDN
+
+/// The table itself.
 table {
   --table-border-width: 0;
   border-collapse: collapse;
@@ -9,16 +17,22 @@ table {
   border-spacing: 0;
 }
 
+/// Table caption.
 caption {}
 
+/// Table header.
 thead {}
 
+/// Table body.
 tbody {}
 
+/// Table footer.
 tfoot {}
 
+/// Table row.
 tr {}
 
+/// Table cells.
 td,
 th {
   padding: calc(0.5 * (var(--line-root-abs) - var(--table-border-width)));

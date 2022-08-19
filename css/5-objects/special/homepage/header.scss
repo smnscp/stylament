@@ -1,7 +1,10 @@
-/**
- * #### Homepage Header
- */
+////
+/// @group ob-special
+////
 
+/// ## Homepage Header
+
+/// Special homepage header styles.
 body.homepage > header {
   padding: var(--size-8) 0;
   color: var(--color-grey-900);

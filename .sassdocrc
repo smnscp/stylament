@@ -1,0 +1,29 @@
+dest: ./dist/sassdoc
+theme: herman
+groups:
+  undefined: '<un-grouped>'
+  Axioms:
+    ax-basic-tokens: Basic Design Tokens
+    ax-logical-tokens: Logical Design Tokens
+  Tools:
+    to-functions: Functions
+    to-mixins: Mix-ins
+  Generics:
+    ge-normalize: Normalizing
+    ge-slots: Preparing Slots
+  Elements:
+    el-document: Unique Document Elements
+    el-sectioning: Sectioning
+    el-text: Text Content
+    el-embedding: Embedding
+    el-scripting: Scripting
+    el-edits: Demarcating Edits
+    el-tables: Tabular Content
+    el-forms: Form-associated Content
+    el-interactive: Interactive Elements
+  Objects:
+    ob-navigation: Navigation
+    ob-special: More Specific Styling
+# herman:
+#   extraDocs:
+#     - './CONTRIBUTING.md'

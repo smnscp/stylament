@@ -1,4 +1,9 @@
-/* Extended quotation */
+////
+/// @group el-text
+////
+
+/// ### Extended quotation
+
 blockquote {
   margin-inline: 0;
   padding: 0;
@@ -6,4 +11,3 @@ blockquote {
   border-inline-start: solid var(--size-1);
   padding-inline-start: var(--size-5);
 }
-

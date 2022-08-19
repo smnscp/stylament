@@ -1,13 +1,17 @@
-/**
- * #### Modular Scale
- * Major third, equal-tempered: ∛2 ≅ 1.26
- * https://www.pollen.style/modules/typography#modular-scale
- * https://www.modularscale.com/?1&em&2@3
- *
- * #### Line Height
- * https://www.pollen.style/modules/typography#line-height
- * https://drewish.com/tools/vertical-rhythm/
- */
+////
+/// @group ax-basic-tokens
+////
+
+/// ### Modular Scale
+/// Major third, equal-tempered: ∛2 ≅ 1.26
+/// @link https://www.pollen.style/modules/typography#modular-scale Pollen
+/// @link https://www.modularscale.com/?1&em&2@3
+
+/// ### Line Height
+/// Line heights supporting the vertical rhythm at every step of the scale.
+/// @link https://www.pollen.style/modules/typography#line-height Pollen
+/// @link https://drewish.com/tools/vertical-rhythm/
+
 :root {
   $scale-base: 1rem;
   $scale-factor: math.pow(2, math.div(1, 3));

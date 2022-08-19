@@ -1,7 +1,10 @@
-/**
- * #### Elevation (Drop Shadows)
- * https://www.pollen.style/modules/ui#elevation
- */
+////
+/// @group ax-basic-tokens
+////
+
+/// ### Elevation (Drop Shadows)
+/// @link https://www.pollen.style/modules/ui#elevation Pollen
+///
 :root {
   --elevation-1: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05);
   --elevation-2: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1),

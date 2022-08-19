@@ -1,7 +1,10 @@
-/**
- * #### Page Grid
- * https://www.pollen.style/modules/grid#page-grid
- */
+////
+/// @group ax-basic-tokens
+////
+
+/// ### Page Grid
+/// @link https://www.pollen.style/modules/grid#page-grid Pollen
+///
 :root {
   --grid-page-width: var(--width-xl);
   --grid-page-gutter: 5vw;

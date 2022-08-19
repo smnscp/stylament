@@ -1,6 +1,8 @@
 node_modules
 dist
+sassdoc
 package-lock.json
+TODO.md
 .cache
 .parcel-cache
 .DS_Store
