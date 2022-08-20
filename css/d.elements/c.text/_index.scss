@@ -4,5 +4,5 @@
 
 /// # Text Content
 
-@import "a.block/";
-@import "b.inline/";
+@use "a.block";
+@use "b.inline";

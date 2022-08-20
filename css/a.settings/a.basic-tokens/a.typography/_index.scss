@@ -7,9 +7,9 @@
 /// @link https://www.pollen.style/modules/typography Pollen
 ///
 
-@import "a.modular-scale.scss";
-@import "b.line-height.scss";
-@import "c.font-families.scss";
-@import "d.font-weights.scss";
-@import "e.letter-spacing.scss";
-@import "f.prose-width.scss";
+@use "a.modular-scale.scss";
+@use "b.line-height.scss";
+@use "c.font-families.scss";
+@use "d.font-weights.scss";
+@use "e.letter-spacing.scss";
+@use "f.prose-width.scss";

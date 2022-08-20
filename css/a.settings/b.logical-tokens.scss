@@ -2,6 +2,8 @@
 /// @group ax-logical-tokens
 ////
 
+@use "../a.settings/a.basic-tokens/b.layout/b.container-widths.scss" as widths;
+
 /// # Logical Design Tokens
 
 /// Globally available tokens.
@@ -29,7 +31,7 @@
 }
 
 /// More space on large screens.
-@media (min-width: $width-lg) {
+@media (min-width: widths.$width-lg) {
   :root {
     --spacing-sectioning: calc(2 * var(--spacing-block));
   }

@@ -2,10 +2,10 @@
 /// *Stylament* uses `normalize.css` for normalizing browser styling.
 /// @group ge-normalize
 /// @link https://github.com/csstools/normalize.css Repo
-@import "normalize";
+@use "normalize";
 
 /// ## n’ize.css
 /// *Stylament* uses `n’ize.css` to extend basic styling with slots for CSS custom properties.
 /// @group ge-slots
 /// @link https://github.com/smnscp/n-ize.css Repo
-@import "n’ize";
+@use "n’ize";

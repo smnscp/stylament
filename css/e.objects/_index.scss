@@ -1,9 +1,9 @@
-@import "a.container/page.scss";
-@import "a.container/callout.scss";
-@import "a.container/auto-prose-grid.scss";
-@import "b.list/list.scss";
-@import "c.table/standard-table.scss";
-@import "d.nav/a.menu.scss";
-@import "d.nav/b.main-nav.scss";
+@use "a.container/page.scss";
+@use "a.container/callout.scss";
+@use "a.container/auto-prose-grid.scss";
+@use "b.list/list.scss";
+@use "c.table/standard-table.scss";
+@use "d.nav/a.menu.scss";
+@use "d.nav/b.main-nav.scss";
 // More specific objects
-@import "x.special/homepage/header.scss";
+@use "x.special/homepage/header.scss";

@@ -1,7 +1,7 @@
-@import "a.settings/";
-@import "b.tools/";
-@import "c.generic/";
-@import "d.elements/";
-@import "e.objects/";
-@import "f.components/";
-@import "g.utilities/";
+@use "a.settings";
+@use "b.tools";
+@use "c.generic";
+@use "d.elements";
+@use "e.objects";
+@use "f.components";
+@use "g.utilities";

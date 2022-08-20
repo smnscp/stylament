@@ -6,9 +6,9 @@
 /// @link https://www.pollen.style/modules/ui Pollen
 ///
 
-@import "a.strokes.scss";
-@import "b.radius.scss";
-@import "c.blur.scss";
-@import "d.layers.scss";
-@import "e.elevation.scss";
-@import "f.easing.scss";
+@use "a.strokes.scss";
+@use "b.radius.scss";
+@use "c.blur.scss";
+@use "d.layers.scss";
+@use "e.elevation.scss";
+@use "f.easing.scss";

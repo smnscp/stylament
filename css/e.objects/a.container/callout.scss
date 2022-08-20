@@ -1,3 +1,5 @@
+@use "../../a.settings/a.basic-tokens/b.layout/b.container-widths.scss" as widths;
+
 .callout {
   color: var(--color-grey-500);
   background-color: var(--color-grey-50);
@@ -8,7 +10,7 @@
   }
 }
 
-@media (min-width: $width-xs) {
+@media (min-width: widths.$width-xs) {
   // Indent callout by smaller golden ratio part.
   .callout figure {
     padding-inline: 0;
@@ -16,7 +18,7 @@
   }
 }
 
-@media (min-width: $width-lg) {
+@media (min-width: widths.$width-lg) {
   // Indent callout by bigger golden ratio part.
   .callout figure {
     padding-inline-start: 0;

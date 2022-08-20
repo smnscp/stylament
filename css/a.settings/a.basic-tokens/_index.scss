@@ -9,10 +9,8 @@
 /// [pollen]: https://www.pollen.style/
 ///
 
-@use "sass:math";
-
-@import "a.typography/";
-@import "b.layout/";
-@import "c.ui/";
-@import "d.colors/";
-@import "e.grid/";
+@use "a.typography";
+@use "b.layout";
+@use "c.ui";
+@use "d.colors";
+@use "e.grid";

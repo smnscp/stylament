@@ -4,6 +4,6 @@
 
 /// # Sectioning
 
-@import "a.sections.scss";
-@import "b.heading.scss";
-@import "c.scope.scss";
+@use "a.sections.scss";
+@use "b.heading.scss";
+@use "c.scope.scss";

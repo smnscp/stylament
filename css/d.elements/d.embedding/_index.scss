@@ -4,6 +4,6 @@
 
 /// # Embedding
 
-@import "a.media.scss";
-@import "b.containers.scss";
-@import "c.other-ml.scss";
+@use "a.media.scss";
+@use "b.containers.scss";
+@use "c.other-ml.scss";

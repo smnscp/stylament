@@ -1,2 +1,2 @@
-@import "a.basic-tokens/";
-@import "b.logical-tokens.scss";
+@use "a.basic-tokens";
+@use "b.logical-tokens.scss";
