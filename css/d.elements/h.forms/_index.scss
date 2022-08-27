@@ -9,46 +9,8 @@
 /// @link https://html.spec.whatwg.org/multipage/forms.html Spec
 /// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element#forms MDN
 
-/// Form.
-form {}
-
-/// ## Submission
-
-/// Button.
-button {}
-
-/// ## Labeling & Grouping
-
-/// Label.
-label {}
-/// Fieldset.
-fieldset {}
-/// Legend.
-legend {}
-
-/// ## Value Lists
-
-/// Datalist.
-datalist {}
-/// Option.
-option {}
-/// Optgroup.
-optgroup {}
-
-/// ## Inputs
-
-/// Input.
-input {}
-/// Textarea.
-textarea {}
-/// Select.
-select {}
-
-/// ## Outputs
-
-/// Meter.
-meter {}
-/// Output.
-output {}
-/// Progress.
-progress {}
+@use "a.general";
+@use "b.grouping";
+@use "c.lists";
+@use "d.inputs";
+@use "e.outputs";
