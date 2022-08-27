@@ -1,9 +1,9 @@
-@use "a.container/page.scss";
-@use "a.container/callout.scss";
-@use "a.container/auto-prose-grid.scss";
-@use "b.list/list.scss";
-@use "c.table/standard-table.scss";
-@use "d.nav/a.menu.scss";
-@use "d.nav/b.main-nav.scss";
+@use "a.container/page";
+@use "a.container/callout";
+@use "a.container/auto-prose-grid";
+@use "b.list/list";
+@use "c.table/standard-table";
+@use "d.nav/a.menu";
+@use "d.nav/b.main-nav";
 // More specific objects
-@use "x.special/homepage/header.scss";
+@use "x.special/homepage/header";

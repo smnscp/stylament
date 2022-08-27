@@ -4,17 +4,17 @@
 
 /// ## Inline Text Semantics
 
-@use "a.generic.scss";
-@use "b.line-breaks.scss";
-@use "c.links.scss";
-@use "d.emphasis.scss";
-@use "e.terminology.scss";
-@use "f.quotations.scss";
-@use "g.citation.scss";
-@use "h.altered-baseline.scss";
-@use "i.io.scss";
-@use "j.code.scss";
-@use "k.data.scss";
-@use "l.enhanced-semantics.scss";
-@use "m.directionality.scss";
-@use "n.ruby.scss";
+@use "a.generic";
+@use "b.line-breaks";
+@use "c.links";
+@use "d.emphasis";
+@use "e.terminology";
+@use "f.quotations";
+@use "g.citation";
+@use "h.altered-baseline";
+@use "i.io";
+@use "j.code";
+@use "k.data";
+@use "l.enhanced-semantics";
+@use "m.directionality";
+@use "n.ruby";

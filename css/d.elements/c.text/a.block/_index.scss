@@ -4,11 +4,11 @@
 
 /// ## Block-level Text Content
 
-@use "a.generic.scss";
-@use "b.paragraphs.scss";
-@use "c.thematic-breaks.scss";
-@use "d.lists.scss";
-@use "e.definition-lists.scss";
-@use "f.quotations.scss";
-@use "g.figures.scss";
-@use "h.preformatted.scss";
+@use "a.generic";
+@use "b.paragraphs";
+@use "c.thematic-breaks";
+@use "d.lists";
+@use "e.definition-lists";
+@use "f.quotations";
+@use "g.figures";
+@use "h.preformatted";

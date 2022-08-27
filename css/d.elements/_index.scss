@@ -1,9 +1,9 @@
-@use "a.document.scss";
+@use "a.document";
 @use "b.sectioning";
 @use "c.text";
 @use "d.embedding";
-@use "e.scripting.scss";
-@use "f.edits.scss";
-@use "g.tables.scss";
-@use "h.forms.scss";
-@use "i.interactive.scss";
+@use "e.scripting";
+@use "f.edits";
+@use "g.tables";
+@use "h.forms";
+@use "i.interactive";
