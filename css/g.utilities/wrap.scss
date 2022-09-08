@@ -1,4 +1,5 @@
-.grid-reset {
+.wrap-reset {
   grid-column: 1 / -1;
   max-inline-size: unset!important;
+  flex: 100%!important;
 }
