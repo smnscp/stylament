@@ -1,24 +1,7 @@
-.measure-xs {
-  --measure-min: var(--measure-xs);
-  --measure-max: var(--measure-sm);
-}
+$sizes: ("xxs", "xs", "sm", "md", "lg", "xl", "xxl", "full", "inf");
 
-.measure-sm {
-  --measure-min: var(--measure-sm);
-  --measure-max: var(--measure-md);
-}
-
-.measure-md {
-  --measure-min: var(--measure-md);
-  --measure-max: var(--measure-lg);
-}
-
-.measure-lg {
-  --measure-min: var(--measure-lg);
-  --measure-max: var(--measure-xl);
-}
-
-.measure-xl {
-  --measure-min: var(--measure-xl);
-  --measure-max: unset;
+@each $size in $sizes {
+  .measure-#{$size} {
+    --measure: var(--measure-#{$size});
+  }
 }

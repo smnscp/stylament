@@ -8,9 +8,17 @@
 /// @link http://webtypography.net/2.1.2 Web Typography
 ///
 :root {
-  --measure-xs: 24ch;
-  --measure-sm: 30ch;
-  --measure-md: 42ch;
-  --measure-lg: 60ch;
-  --measure-xl: 84ch;
+  $sizes: ("xxs", "xs", "sm", "md", "lg", "xl", "xxl");
+  $step: 5;
+
+  // Use square numbers from 25ch to 121ch.
+  @each $size in $sizes {
+    --measure-#{$size}: #{$step * $step * 1ch};
+    $step: $step + 1;
+  }
+
+  --measure-full: 100%;
+  --measure-inf: 65535ch;
+
+  --measure: var(--measure-md);
 }
