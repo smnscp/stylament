@@ -1,0 +1,16 @@
+////
+/// @group ax-basic-tokens
+////
+
+/// ### Measure
+/// @link https://www.pollen.style/modules/typography#prose-width Pollen (prose width)
+/// @link https://en.wikipedia.org/wiki/Measure_(typography) Wikipedia
+/// @link http://webtypography.net/2.1.2 Web Typography
+///
+:root {
+  --measure-xs: 24ch;
+  --measure-sm: 30ch;
+  --measure-md: 42ch;
+  --measure-lg: 60ch;
+  --measure-xl: 84ch;
+}
