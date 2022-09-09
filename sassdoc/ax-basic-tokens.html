@@ -1247,11 +1247,19 @@
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  --prose-xs: 24ch;
-  --prose-sm: 30ch;
-  --prose-md: 42ch;
-  --prose-lg: 60ch;
-  --prose-xl: 84ch;
+  $sizes: (&quot;xxs&quot;, &quot;xs&quot;, &quot;sm&quot;, &quot;md&quot;, &quot;lg&quot;, &quot;xl&quot;, &quot;xxl&quot;);
+  $step: 5;
+
+  // Use square numbers from 25ch to 121ch.
+  @each $size in $sizes {
+    --measure-#{$size}: #{$step * $step * 1ch};
+    $step: $step + 1;
+  }
+
+  --measure-full: 100%;
+  --measure-inf: 65535ch;
+
+  --measure: var(--measure-md);
 }</code></pre>
     </div>
   
@@ -1264,7 +1272,7 @@
 
   
     <div class="text-block">
-      <h3 id="prose-width">Prose Width</h3>
+      <h3 id="measure">Measure</h3>
 
       
   
@@ -1317,7 +1325,47 @@
     <h4 class="param-title">
       
       
-        <a href="https://www.pollen.style/modules/typography#prose-width" class="item-name">Pollen</a>
+        <a href="https://www.pollen.style/modules/typography#prose-width" class="item-name">Pollen (prose width)</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://en.wikipedia.org/wiki/Measure_(typography)" class="item-name">Wikipedia</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="http://webtypography.net/2.1.2" class="item-name">Web Typography</a>
       
       
       

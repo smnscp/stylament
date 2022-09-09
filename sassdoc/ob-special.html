@@ -358,12 +358,16 @@
   padding: var(--size-8) 0;
   color: var(--color-grey-900);
   background: var(--color-grey-50);
-  text-align: center;
 
   &amp; &gt; * {
     background: white;
     border-radius: var(--radius-md);
     box-shadow: var(--elevation-6);
+
+    * {
+      text-align: center;
+      margin-inline: auto;
+    }
   }
 
   // Any image alone in an hgroup row is considered a logo.
