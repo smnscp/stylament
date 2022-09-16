@@ -11,10 +11,11 @@
 
 /// The table itself.
 table {
-  --table-border-width: 0;
+  --table-border-width: 0rem;
   border-collapse: collapse;
   padding: 0;
   border-spacing: 0;
+  margin-block: calc(-0.5 * var(--table-border-width));
 }
 
 /// Table caption.
@@ -35,6 +36,7 @@ tr {}
 /// Table cells.
 td,
 th {
+  border: var(--table-border-width) var(--table-border-color) solid;
   padding: calc(0.5 * (var(--line-root-abs) - var(--table-border-width)));
 }
 

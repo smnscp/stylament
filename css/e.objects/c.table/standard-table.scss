@@ -1,19 +1,6 @@
-.callout {
-  color: var(--color-grey-500);
-  background-color: var(--color-grey-50);
-}
-
-.callout figure blockquote {
-  font-size: var(--scale-4);
-  line-height: var(--line-4);
-}
-
 table.standard-table {
-  --table-border-width: 0.125rem;
-  border-collapse: collapse;
-  padding: 0;
-  border-spacing: 0;
-  margin-block: calc(-0.5 * var(--table-border-width));
+  --table-border-width: var(--stroke-table);
+  --table-border-color: var(--color-grey-500);
 
   thead {
     background-color: var(--color-grey-400);
@@ -21,10 +8,5 @@ table.standard-table {
 
   tr:nth-child(2n) {
     background-color: var(--color-grey-100);
-  }
-
-  :is(td, th) {
-    border: var(--table-border-width) solid var(--color-grey-500);
-    padding: calc(0.5 * (var(--line-root-abs) - var(--table-border-width)));
   }
 }
