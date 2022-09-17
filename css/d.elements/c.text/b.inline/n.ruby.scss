@@ -5,7 +5,9 @@
 /// ### Ruby
 
 // ruby annotation
-ruby {}
+ruby {
+  line-height: calc(2 * var(--line-root-abs));
+}
 
 // ruby text
 rt {}
