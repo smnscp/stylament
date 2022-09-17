@@ -872,11 +872,29 @@
       <dl>
         <dt>Selector</dt>
         <dd><code>blockquote</code></dd>
-        <dt>Example</dt>
+        <dt>Examples</dt>
         <dd>
           <figure>
             <figcaption><code>blockquote</code> element stand-alone</figcaption>
             <blockquote>I am a <code>blockquote</code> element.</blockquote>
+          </figure>
+          <figure>
+            <figcaption><code>blockquote</code> with <code>cite</code> in an adjacent <code>p</code></figcaption>
+            <blockquote>
+              <p>I am a <code>blockquote</code> element.</p>
+              <p class="lorem-ipsum"></p>
+            </blockquote>
+            <p><cite>— I am a <code>cite</code> element inside a <code>p</code> element.</cite></p>
+          </figure>
+          <figure>
+            <figcaption><code>blockquote</code> inside <code>figure</code>, followed by <code>figcaption</code>
+            </figcaption>
+            <figure>
+              <blockquote>
+                <p>Always build on solid ground!</p>
+              </blockquote>
+              <figcaption><cite>— Old wisdom</cite></figcaption>
+            </figure>
           </figure>
         </dd>
       </dl>
