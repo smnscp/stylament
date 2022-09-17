@@ -956,8 +956,8 @@
         <dt>Example</dt>
         <dd>
           <figure>
-            <figcaption><code>br</code> element stand-alone</figcaption>
-            <br>I am a <code>br</code> element.</br>
+            <figcaption>Text broken by <code>br</code> element</figcaption>
+            I am<br>broken by a <code>br</code> element.</br>
           </figure>
         </dd>
         <dt>Selector</dt>
@@ -965,8 +965,12 @@
         <dt>Example</dt>
         <dd>
           <figure>
-            <figcaption><code>wbr</code> element stand-alone</figcaption>
-            <wbr>I am a <code>wbr</code> element.</wbr>
+            <figcaption>Text broken by <code>wbr</code> element</figcaption>
+            <p>
+              Here’s a very long German word:
+              <b>Donau<wbr>dampfschifffahrts<wbr>gesellschafts<wbr>kapitänsmützen</b>.
+              It may wrap at certain places indicated by <code>wbr</code> elements.</wbr>
+            </p>
           </figure>
         </dd>
       </dl>
