@@ -1778,31 +1778,30 @@
     <section>
       <h2 id="sec:i.interactive">Interactive Elements</h2>
       <dl>
-        <dt>Selector</dt>
+        <dt>Selectors</dt>
         <dd><code>details</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <figcaption><code>details</code> element stand-alone</figcaption>
-            <details>I am a <code>details</code> element.</details>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
         <dd><code>summary</code></dd>
         <dt>Example</dt>
         <dd>
           <figure>
-            <figcaption><code>summary</code> element stand-alone</figcaption>
-            <summary>I am a <code>summary</code> element.</summary>
+            <figcaption><code>details</code> element with <code>summary</code> element</figcaption>
+            <details>
+              <summary>I am a <code>summary</code> element.</summary>
+              I am a <code>details</code> element.
+            </details>
           </figure>
         </dd>
         <dt>Selector</dt>
         <dd><code>dialog</code></dd>
         <dt>Example</dt>
-        <dd>
+        <dd style="margin-block-end: 6rem;">
           <figure>
-            <figcaption><code>dialog</code> element stand-alone</figcaption>
-            <dialog>I am a <code>dialog</code> element.</dialog>
+            <figcaption>a simple <code>dialog</code></figcaption>
+            <button onclick="document.getElementById('simple-dialog').show()">Open dialog</button>
+            <dialog id="simple-dialog">
+              <p>I am a <code>dialog</code> element.</p>
+              <button onclick="document.getElementById('simple-dialog').close()">Close dialog</button>
+            </dialog>
           </figure>
         </dd>
       </dl>
