@@ -1462,85 +1462,156 @@
     <section>
       <h2 id="sec:g.tables">Tabular Content</h2>
       <dl>
-        <dt>Selector</dt>
+        <dt>Selectors</dt>
         <dd><code>table</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <figcaption><code>table</code> element stand-alone</figcaption>
-            <table>I am a <code>table</code> element.</table>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
         <dd><code>caption</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <figcaption><code>caption</code> element stand-alone</figcaption>
-            <caption>I am a <code>caption</code> element.</caption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
         <dd><code>thead</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <figcaption><code>thead</code> element stand-alone</figcaption>
-            <thead>I am a <code>thead</code> element.</thead>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
         <dd><code>tbody</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <figcaption><code>tbody</code> element stand-alone</figcaption>
-            <tbody>I am a <code>tbody</code> element.</tbody>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
         <dd><code>tfoot</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <figcaption><code>tfoot</code> element stand-alone</figcaption>
-            <tfoot>I am a <code>tfoot</code> element.</tfoot>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
         <dd><code>tr</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <figcaption><code>tr</code> element stand-alone</figcaption>
-            <tr>I am a <code>tr</code> element.</tr>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
+        <dd><code>td</code></dd>
         <dd><code>th</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <figcaption><code>th</code> element stand-alone</figcaption>
-            <th>I am a <code>th</code> element.</th>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
         <dd><code>col</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <figcaption><code>col</code> element stand-alone</figcaption>
-            <col>I am a <code>col</code> element.</col>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
         <dd><code>colgroup</code></dd>
-        <dt>Example</dt>
+        <dt>Examples</dt>
         <dd>
           <figure>
-            <figcaption><code>colgroup</code> element stand-alone</figcaption>
-            <colgroup>I am a <code>colgroup</code> element.</colgroup>
+            <figcaption>a simple <code>table</code></figcaption>
+            <table>
+              <thead>
+                <tr>
+                  <th>A</th>
+                  <th>B</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>aaa</td>
+                  <td>bbb</td>
+                </tr>
+                <tr>
+                  <td>123</td>
+                  <td>456</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Y</td>
+                  <td>Z</td>
+                </tr>
+              </tfoot>
+            </table>
+          </figure>
+          <figure>
+            <figcaption>a <code>table</code> about table mark-up</figcaption>
+            <table class="standard-table">
+              <caption>What MDN says about table mark-up</caption>
+              <thead>
+                <tr>
+                  <th>Element</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption"><code>&lt;caption&gt;</code></a>
+                  </td>
+                  <td>The <strong><code>&lt;caption&gt;</code></strong> <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element
+                    specifies the caption (or title) of a table.</td>
+                </tr>
+
+                <tr>
+                  <td><a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col"><code>&lt;col&gt;</code></a>
+                  </td>
+                  <td>The <strong><code>&lt;col&gt;</code></strong> <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element
+                    defines a column within a table and is used for defining common semantics on all common cells. It is
+                    generally found within a <code>colgroup</code> element.</td>
+                </tr>
+
+                <tr>
+                  <td><a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup"><code>&lt;colgroup&gt;</code></a>
+                  </td>
+                  <td>The <strong><code>&lt;colgroup&gt;</code></strong> <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element
+                    defines a group of columns within a table.</td>
+                </tr>
+
+                <tr>
+                  <td><a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table"><code>&lt;table&gt;</code></a>
+                  </td>
+                  <td>The <strong><code>&lt;table&gt;</code></strong> <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element
+                    represents tabular data — that is, information presented in a two-dimensional table comprised of
+                    rows and columns of cells containing data.</td>
+                </tr>
+
+                <tr>
+                  <td><a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody"><code>&lt;tbody&gt;</code></a>
+                  </td>
+                  <td>The <strong><code>&lt;tbody&gt;</code></strong> <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element
+                    encapsulates a set of table rows (<code>tr</code> elements), indicating that they comprise the body
+                    of the table (<code>table</code>).</td>
+                </tr>
+
+                <tr>
+                  <td><a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td"><code>&lt;td&gt;</code></a>
+                  </td>
+                  <td>The <strong><code>&lt;td&gt;</code></strong> <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element
+                    defines a cell of a table that contains data. It participates in the <em>table model</em>.</td>
+                </tr>
+
+                <tr>
+                  <td><a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot"><code>&lt;tfoot&gt;</code></a>
+                  </td>
+                  <td>The <strong><code>&lt;tfoot&gt;</code></strong> <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element
+                    defines a set of rows summarizing the columns of the table.</td>
+                </tr>
+
+                <tr>
+                  <td><a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th"><code>&lt;th&gt;</code></a>
+                  </td>
+                  <td>The <strong><code>&lt;th&gt;</code></strong> <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element
+                    defines a cell as header of a group of table cells. The exact nature of this group is defined by the
+                    <code>scope</code> and <code>headers</code> attributes.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead"><code>&lt;thead&gt;</code></a>
+                  </td>
+                  <td>The <strong><code>&lt;thead&gt;</code></strong> <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element
+                    defines a set of rows defining the head of the columns of the table.</td>
+                </tr>
+
+                <tr>
+                  <td><a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr"><code>&lt;tr&gt;</code></a>
+                  </td>
+                  <td>The <strong><code>&lt;tr&gt;</code></strong> <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element
+                    defines a row of cells in a table. The row's cells can then be established using a mix of
+                    <code>td</code> (data cell) and <code>th</code> (header cell) elements.
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
           </figure>
         </dd>
       </dl>
