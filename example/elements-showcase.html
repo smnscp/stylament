@@ -10,31 +10,38 @@
   <link rel="stylesheet" href="/fonts/fonts.css">
   <style>
     body {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--line-root-abs);
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
+    }
+
+    body>header,
+    body>footer {
+      flex-basis: 100%;
     }
 
     body>aside:first-of-type {
-      grid-column: 4;
-      grid-row: 1 / 5;
+      /* act as responsive sidebar, fill when single column */
+      flex-grow: 1;
+      /* act as sticky nav */
       position: sticky;
       inset-block-start: 0;
-      height: 100vh;
-      overflow: auto;
-    }
-
-    body>header {
-      grid-column: 1 / 4;
+      block-size: 100vh;
+      margin-block-end: -100vh;
+      z-index: 2;
+      /* act as flex container to give children a certain height */
+      display: flex;
+      flex-direction: column;
+      /* act nice-looking */
+      background: var(--color-grey-50);
+      box-shadow: var(--elevation-5);
+      padding: var(--line-root-abs) 1ch;
     }
 
     body>main {
-      grid-column: 1 / 4;
-      grid-row: 2 / 4;
-    }
-
-    body>footer {
-      grid-column: 1 / 4;
+      flex-basis: 0;
+      flex-grow: 999;
+      min-inline-size: 66.667%;
     }
 
     :target {
@@ -73,6 +80,22 @@
     dt {
       font-weight: var(--weight-bold);
     }
+
+    .document-toc {
+      block-size: 100%;
+      overflow-y: auto;
+    }
+
+    .document-toc>summary:first-of-type {
+      position: absolute;
+      inset-inline-end: 1ch;
+      inset-block-start: 0.5rem;
+    }
+
+    aside h2 {
+      font-size: var(--scale-1);
+      margin: initial;
+    }
   </style>
 </head>
 
@@ -81,10 +104,12 @@
     <h1>All Elements Showcase</h1>
   </header>
   <aside class="document-toc-container">
+    <details class="document-toc">
+      <summary>TOC</summary>
       <header>
         <h2 class="document-toc-heading">Table of Contents</h2>
       </header>
-      <ol type="a">
+      <ol type="a" class="document-toc-body">
         <li>
           <details>
             <summary><a href="#sec:a.document">Unique Document Elements</a></summary>
@@ -506,7 +531,7 @@
           </details>
         </li>
       </ol>
-    </section>
+    </details>
   </aside>
   <main class="page" id="main-content">
     <section>
