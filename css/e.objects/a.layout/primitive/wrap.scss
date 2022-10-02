@@ -1,4 +1,4 @@
-.grid-wrap {
+.l-wrap-grid {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
@@ -6,8 +6,8 @@
   );
 }
 
-.flex-wrap,
-.cluster-wrap {
+.l-wrap-flex,
+.l-wrap-cluster {
   display: flex;
   flex-wrap: wrap;
 
@@ -16,13 +16,13 @@
   }
 }
 
-.flex-wrap {
+.l-wrap-flex {
   & > * {
     flex-basis: calc(2 / 3 * var(--measure));
   }
 }
 
-:is(.grid-wrap, .flex-wrap, .cluster-wrap) {
+[class^='l-wrap-'], [class*=' l-wrap-'] {
   &:is(ol, ul, menu) {
     gap: var(--spacing-block);
   }
