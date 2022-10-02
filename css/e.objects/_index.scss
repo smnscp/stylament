@@ -2,8 +2,8 @@
 @use "a.container/wrap";
 @use "b.list/list";
 @use "c.table/standard-table";
-@use "d.nav/a.menu";
-@use "d.nav/b.main-nav";
+@use "d.nav/menu";
+@use "d.nav/main-nav";
 // More specific objects
 @use "x.special/homepage/header";
 @use "x.special/homepage/callout";
