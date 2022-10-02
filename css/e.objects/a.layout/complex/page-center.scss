@@ -1,0 +1,16 @@
+@use "../primitive/center";
+
+:where(body.l-page-center) > {
+  :where(header, main, footer) {
+    --container-size: var(--width-xl);
+    --container-gutter: 5vw;
+
+    > * {
+      @extend .l-center;
+    }
+
+    > .callout {
+      --container-size: 100%;
+    }
+  }
+}

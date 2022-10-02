@@ -6,11 +6,13 @@
 
 /// Special homepage header styles.
 body.homepage > header {
-  padding: var(--size-8) 0;
+  padding: var(--size-8) var(--container-gutter);
   color: var(--color-grey-900);
   background: var(--color-grey-50);
 
   & > * {
+    box-sizing: border-box;
+    padding: var(--spacing-block);
     background: white;
     border-radius: var(--radius-md);
     box-shadow: var(--elevation-6);
