@@ -1,5 +1,6 @@
 table.standard-table {
-  --table-border-width: var(--stroke-table);
+  --table-border-width: var(--stroke-width-default);
+  --table-border-style: var(--stroke-style-default);
   --table-border-color: var(--color-grey-500);
 
   thead {

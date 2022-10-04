@@ -5,5 +5,9 @@
 /// ### Thematic break
 
 hr {
+  --w: var(--stroke-width-hr, var(--stroke-width-default, 0.125rem));
+  border-style: var(--stroke-style-hr, var(--stroke-style-default, solid) none none);
+  border-width: var(--w);
+  margin-block: calc(-0.5 * var(--w));
   color: var(--color-hr);
 }

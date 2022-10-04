@@ -26,8 +26,8 @@
   --spacing-block-heading: var(--spacing-block);
   --spacing-sectioning: var(--spacing-block);
   --spacing-inline: calc(1.5 * var(--line-root-abs));
-  --stroke-table: var(--stroke-2);
-  --stroke-hr: var(--stroke-2);
+  --stroke-width-default: var(--stroke-width-2);
+  --stroke-style-default: solid;
 }
 
 /// More space on large screens.

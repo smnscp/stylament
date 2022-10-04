@@ -55,7 +55,7 @@
     }
 
     figure {
-      --figure-border-width: var(--stroke-2);
+      --figure-border-width: var(--stroke-width-2);
       --figure-border-color: var(--color-grey-500);
       padding: calc(1.5 * (var(--line-root-abs) - var(--figure-border-width)));
       border: var(--figure-border-width) var(--figure-border-color) solid;
@@ -69,8 +69,8 @@
 
     figcaption {
       font-size: var(--scale--1);
-      border: solid var(--stroke-1);
-      margin: calc(-1 * var(--stroke-1));
+      border: solid var(--stroke-width-1);
+      margin: calc(-1 * var(--stroke-width-1));
       position: absolute;
       inset-block-end: 0rem;
       inset-inline-end: 0rem;
