@@ -1,0 +1,14 @@
+@use "center";
+@use "box";
+
+.l-center-box {
+  @extend .l-center;
+  @extend .l-box;
+  box-sizing: border-box;
+  @supports (margin: max(1ch, 1%)) {
+    margin-inline: max(
+      var(--container-gutter),
+      calc(0.5 * (100% - var(--container-size)))
+    );
+  }
+}

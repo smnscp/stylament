@@ -1,7 +1,15 @@
 .l-center {
   display: block;
   box-sizing: content-box;
-  margin-inline: auto;
   max-inline-size: var(--container-size);
   padding-inline: var(--container-gutter);
+  margin-inline: auto;
+}
+
+.l-center.--intrinsic,
+%l-center--intrinsic {
+  > * {
+    text-align: center;
+    margin-inline: auto;
+  }
 }

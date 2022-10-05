@@ -4,23 +4,20 @@
 
 /// ## Homepage Header
 
+@use "../../a.layout/primitive/center";
+@use "../../a.layout/primitive/center-box";
+
 /// Special homepage header styles.
 body.homepage > header {
-  padding: var(--size-8) var(--container-gutter);
-  color: var(--color-grey-900);
+  padding-block: var(--size-8);
+  color: var(--color-grey-700);
   background: var(--color-grey-50);
+  --radius-box: var(--radius-md);
+  --stroke-width-box: var(--stroke-width-8);
 
   & > * {
-    box-sizing: border-box;
-    padding: var(--spacing-block);
-    background: white;
-    border-radius: var(--radius-md);
-    box-shadow: var(--elevation-6);
-
-    * {
-      text-align: center;
-      margin-inline: auto;
-    }
+    @extend .l-center-box;
+    @extend %l-center--intrinsic;
   }
 
   // Any image alone in an hgroup row is considered a logo.
