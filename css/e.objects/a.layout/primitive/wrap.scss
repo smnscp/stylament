@@ -22,12 +22,17 @@
   }
 }
 
-[class^='l-wrap-'], [class*=' l-wrap-'] {
+[class^="l-wrap-"],
+[class*=" l-wrap-"] {
+  &:is(article, section) {
+    gap: var(--spacing-sectioning);
+  }
+
   &:is(ol, ul, menu) {
     gap: var(--spacing-block);
   }
 
-  section {
-    margin: 0;
+  > * {
+    margin-block: 0;
   }
 }
