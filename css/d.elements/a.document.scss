@@ -32,10 +32,14 @@ body {
 ///
 /// @link https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element Spec
 /// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main MDN
-main:not([hidden]) {}
+main:not([hidden]) {
+  padding-block: var(--spacing-sectioning);
+}
 
 /// The document’s main header.
-:where(body, body > div) > header:first-of-type {}
+:where(body, body > div) > header:first-of-type {
+  padding-block: var(--spacing-sectioning);
+}
 
 /// The document’s main footer.
 :where(body, body > div) > footer:last-of-type {
@@ -44,7 +48,7 @@ main:not([hidden]) {}
   inset-block-start: 100vh;
 
   // Spacing and color.
-  padding-block: var(--size-8);
+  padding-block: var(--spacing-sectioning);
   color: var(--color-body-inverted);
   background: var(--color-grey-700);
 

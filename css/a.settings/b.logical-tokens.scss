@@ -24,15 +24,15 @@
   --color-hr: var(--color-primary);
   --spacing-block: var(--line-root-abs);
   --spacing-block-heading: var(--spacing-block);
-  --spacing-sectioning: var(--spacing-block);
+  --spacing-sectioning: calc(2 * var(--spacing-block));
   --spacing-inline: calc(1.5 * var(--line-root-abs));
   --stroke-width-default: var(--stroke-width-2);
   --stroke-style-default: solid;
 }
 
-/// More space on large screens.
-@media (min-width: widths.$width-lg) {
+/// Save space on smaller screens.
+@media (max-width: widths.$width-sm) {
   :root {
-    --spacing-sectioning: calc(2 * var(--spacing-block));
+    --spacing-sectioning: var(--spacing-block);
   }
 }

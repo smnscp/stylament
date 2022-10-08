@@ -92,6 +92,7 @@ nav.menu.foldable {
     & input.--toggle-state:checked ~ label {
       position: absolute;
       inset: 0;
+      margin: 0;
       inline-size: 100vw;
       block-size: 100vh;
       background: rgba(0, 0, 0, 0.5);
@@ -126,7 +127,6 @@ nav.menu.foldable {
 nav.menu.sticky {
   position: sticky;
   inset-block-start: 0;
-  block-size: $size;
 
   menu {
     --item-height: #{$size};
