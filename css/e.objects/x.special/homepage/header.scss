@@ -24,5 +24,10 @@ body.homepage > header {
     // Size it so that it nicely fits the viewport.
     max-inline-size: 66vmin;
     max-block-size: 66vmin;
+
+    // Don’t measure-limit width of logo container.
+    :has(&) {
+      max-inline-size: none;
+    }
   }
 }
