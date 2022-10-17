@@ -1,7 +1,7 @@
 {
   "name": "stylament",
   "title": "Stylament",
-  "version": "0.0.1",
+  "version": "0.5.1",
   "description": "A fundament for your document styling.",
   "keywords": [
     "document structure",
@@ -13,14 +13,13 @@
   "license": "",
   "author": "Simon Schrape",
   "scripts": {
-    "build": "parcel build index.html",
-    "dev": "parcel index.html --open",
-    "start": "npm run build && npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.7.0",
-    "parcel": "latest"
+    "sass": "^1.55.0",
+    "vite": "latest"
   },
   "dependencies": {
     "@csstools/normalize.css": "latest",
