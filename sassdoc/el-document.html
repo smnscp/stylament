@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.0.1</span>
+          <span class="project-version">0.5.1</span>
         
       </div>
     </header>
@@ -732,7 +732,7 @@ Equivalent to <code>html</code>.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">main:not([hidden]) {
-  
+  padding-block: var(--spacing-sectioning);
 }</code></pre>
     </div>
   
@@ -918,7 +918,7 @@ Equivalent to <code>html</code>.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:where(body, body &gt; div) &gt; header:first-of-type {
-  
+  padding-block: var(--spacing-sectioning);
 }</code></pre>
     </div>
   
@@ -1051,7 +1051,7 @@ Equivalent to <code>html</code>.</p>
   inset-block-start: 100vh;
 
   // Spacing and color.
-  padding-block: var(--size-8);
+  padding-block: var(--spacing-sectioning);
   color: var(--color-body-inverted);
   background: var(--color-grey-700);
 

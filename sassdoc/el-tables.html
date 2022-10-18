@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.0.1</span>
+          <span class="project-version">0.5.1</span>
         
       </div>
     </header>
@@ -414,11 +414,11 @@
       
       
       <pre class="hljs-pre"><code class="lang-scss">table {
-  --table-border-width: 0rem;
+  --border-width: var(--table-border-width, 0rem);
   border-collapse: collapse;
   padding: 0;
   border-spacing: 0;
-  margin-block: calc(-0.5 * var(--table-border-width));
+  margin-block: calc(-0.5 * var(--border-width));
 }</code></pre>
     </div>
   
@@ -546,7 +546,7 @@
       
       
       <pre class="hljs-pre"><code class="lang-scss">caption {
-  
+  margin-inline: auto;
 }</code></pre>
     </div>
   
@@ -1188,8 +1188,9 @@ th</a>
       
       <pre class="hljs-pre"><code class="lang-scss">td,
 th {
-  border: var(--table-border-width) var(--table-border-color) solid;
-  padding: calc(0.5 * (var(--line-root-abs) - var(--table-border-width)));
+  border: var(--border-width) var(--table-border-color)
+    var(--table-border-style);
+  padding: calc(0.5 * (var(--line-root-abs) - var(--border-width)));
 }</code></pre>
     </div>
   

@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.0.1</span>
+          <span class="project-version">0.5.1</span>
         
       </div>
     </header>
@@ -219,6 +219,245 @@
 
         <div data-page="ob-navigation">
           
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="main-navigation-bar">Main Navigation Bar</h2>
+<p>Rather opinonated styling for the first <code>nav.menu</code>.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--body%20%3E%20nav.menu%3Afirst-of-type">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--body%20%3E%20nav.menu%3Afirst-of-type" class="item-name">body &gt;<span class="widont">&nbsp;</span>nav.menu:first-of-type</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">body &gt; nav.menu:first-of-type {
+  $size: var(--size-8);
+  --toggle-face-size: #{$size};
+  --toggle-face-padding: var(--size-1);
+  --toggle-face-folded-background: white;
+  --toggle-face-folded-radius: 0 0 var(--radius-lg);
+  --toggle-face-folded-shadow: var(--elevation-5);
+
+  &amp; &gt; label &gt; .--toggle-face {
+    background: white;
+    box-shadow: var(--elevation-3);
+  }
+
+  &amp; &gt; menu {
+    --item-height: #{$size};
+    --item-line-height: var(--size-3);
+    --item-padding: var(--size-3);
+
+    box-shadow: var(--elevation-3);
+
+    &amp; &gt; li {
+      color: var(--color-body-inverted);
+      background-color: var(--color-grey-700);
+      transition: all 0.3s var(--easing-standard);
+      &amp;:hover {
+        color: var(--color-grey-700);
+        background-color: var(--color-body-inverted);
+      }
+
+      &amp; &gt; a {
+        color: inherit;
+        background-color: transparent;
+        font-weight: var(--weight-bold);
+        text-decoration: none;
+      }
+    }
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>The  first <code>nav.menu</code> is implicitly considered the main<span class="widont">&nbsp;</span>menu.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
   
     
     
@@ -922,6 +1161,7 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
     &amp; input.--toggle-state:checked ~ label {
       position: absolute;
       inset: 0;
+      margin: 0;
       inline-size: 100vw;
       block-size: 100vh;
       background: rgba(0, 0, 0, 0.5);
@@ -1079,7 +1319,6 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
       <pre class="hljs-pre"><code class="lang-scss">nav.menu.sticky {
   position: sticky;
   inset-block-start: 0;
-  block-size: $size;
 
   menu {
     --item-height: #{$size};
@@ -1098,246 +1337,6 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
     <div class="text-block">
       <p>Sticky Nav.
 Makes navbar stick to the top of the<span class="widont">&nbsp;</span>viewport.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h2 id="main-navigation-bar">Main Navigation Bar</h2>
-<p>Rather opinonated styling for the first <code>nav.menu</code>.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--body%20%3E%20nav.menu%3Afirst-of-type">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--body%20%3E%20nav.menu%3Afirst-of-type" class="item-name">body &gt;<span class="widont">&nbsp;</span>nav.menu:first-of-type</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">body &gt; nav.menu:first-of-type {
-  $size: var(--size-8);
-  --toggle-face-size: #{$size};
-  --toggle-face-padding: var(--size-1);
-  --toggle-face-folded-background: white;
-  --toggle-face-folded-radius: 0 0 var(--radius-lg);
-  --toggle-face-folded-shadow: var(--elevation-5);
-  height: $size;
-
-  &amp; &gt; label &gt; .--toggle-face {
-    background: white;
-    box-shadow: var(--elevation-3);
-  }
-
-  &amp; &gt; menu {
-    --item-height: #{$size};
-    --item-line-height: var(--size-3);
-    --item-padding: var(--size-3);
-
-    box-shadow: var(--elevation-3);
-
-    &amp; &gt; li {
-      color: var(--color-body-inverted);
-      background-color: var(--color-grey-700);
-      transition: all 0.3s var(--easing-standard);
-      &amp;:hover {
-        color: var(--color-grey-700);
-        background-color: var(--color-body-inverted);
-      }
-
-      &amp; &gt; a {
-        color: inherit;
-        background-color: transparent;
-        font-weight: var(--weight-bold);
-        text-decoration: none;
-      }
-    }
-  }
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>The  first <code>nav.menu</code> is implicitly considered the main<span class="widont">&nbsp;</span>menu.</p>
 
       
   

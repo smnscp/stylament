@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.0.1</span>
+          <span class="project-version">0.5.1</span>
         
       </div>
     </header>
@@ -355,19 +355,14 @@
       
       
       <pre class="hljs-pre"><code class="lang-scss">body.homepage &gt; header {
-  padding: var(--size-8) 0;
-  color: var(--color-grey-900);
+  color: var(--color-grey-700);
   background: var(--color-grey-50);
+  --radius-box: var(--radius-md);
+  --stroke-width-box: var(--stroke-width-8);
 
   &amp; &gt; * {
-    background: white;
-    border-radius: var(--radius-md);
-    box-shadow: var(--elevation-6);
-
-    * {
-      text-align: center;
-      margin-inline: auto;
-    }
+    @extend .l-center-box;
+    @extend %l-center--intrinsic;
   }
 
   // Any image alone in an hgroup row is considered a logo.
@@ -375,6 +370,11 @@
     // Size it so that it nicely fits the viewport.
     max-inline-size: 66vmin;
     max-block-size: 66vmin;
+
+    // Don’t measure-limit width of logo container.
+    :has(&amp;) {
+      max-inline-size: none;
+    }
   }
 }</code></pre>
     </div>

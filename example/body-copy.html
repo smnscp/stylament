@@ -1,1 +1,159 @@
-<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8"><title>Stylament</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/index.8e03487b.css"><link rel="stylesheet" href="/index.b56cfc70.css"><style>body{gap:var(--line-root-abs);grid-template-columns:repeat(4,1fr);display:grid}body>aside:first-of-type{grid-area:1/4;position:sticky;inset-block-start:var(--line-root-abs)}body>main{grid-area:1/1/3/4}body>footer{grid-column:1/5}</style></head><body class="debug-baseline-grid"> <aside class="debug-baseline-grid document-toc-container"> <section class="document-toc"> <header> <h2 class="document-toc-heading">Table of Contents</h2> </header> <ul class="document-toc-list" id="toc-entries"> <li><a href="#headings_paragraphs">Headings &amp; paragraphs</a></li> <li><a href="#multiline_headings">Multiline headings</a></li> <li><a href="#thematic_break">Thematic breaks (<code>&lt;hr&gt;</code>)</a></li> <li><a href="#text_level_semantics">Text level semantics</a></li> </ul> </section> </aside> <main class="page"> <h1>Body Copy Sample</h1> <section id="headings_paragraphs" class="lorem-ipsum"> <h1>Headline 1</h1> <h2>Headline 2</h2> <h3>Headline 3</h3> <h4>Headline 4</h4> <h5>Headline 5</h5> <h6>Headline 6</h6> <hr> <h1>Headline 1</h1> <p></p> <h2>Headline 2</h2> <p></p> <h3>Headline 3</h3> <p></p> <h4>Headline 4</h4> <p></p> <h5>Headline 5</h5> <p></p> <h6>Headline 6</h6> <p></p> <p></p> <p></p> </section> <section id="multiline_headings" class="lorem-ipsum"> <h1>Headline 1 <br>with line break</h1> <p></p> <h2>Headline 2 <br>with line break</h2> <p></p> <h3>Headline 3 <br>with line break</h3> <p></p> <h4>Headline 4 <br>with line break</h4> <p></p> <h5>Headline 5 <br>with line break</h5> <p></p> <h6>Headline 6 <br>with line break</h6> <p></p> </section> <section id="multiline_headings_2" class="lorem-ipsum"> <h1>Headline 1 <br>with two <br>line breaks</h1> <p></p> <h2>Headline 2 <br>with two <br>line breaks</h2> <p></p> <h3>Headline 3 <br>with two <br>line breaks</h3> <p></p> <h4>Headline 4 <br>with two <br>line breaks</h4> <p></p> <h5>Headline 5 <br>with two <br>line breaks</h5> <p></p> <h6>Headline 6 <br>with two <br>line breaks</h6> <p></p> </section> <section id="long_text_headings" class="lorem-ipsum"> <h1>Long Headline 1 <span class="lorem-ipsum"></span></h1> <p></p> <h2>Long Headline 2 <span class="lorem-ipsum"></span></h2> <p></p> <h3>Long Headline 3 <span class="lorem-ipsum"></span></h3> <p></p> <h4>Long Headline 4 <span class="lorem-ipsum"></span></h4> <p></p> <h5>Long Headline 5 <span class="lorem-ipsum"></span></h5> <p></p> <h6>Long Headline 6 <span class="lorem-ipsum"></span></h6> <p></p> </section> <section id="thematic_break" class="lorem-ipsum"> <h2>Thematic Break</h2> <p></p> <hr> <p></p> </section> <section id="text_level_semantics" class="lorem-ipsum"> <h2>Text Level Semantics</h2> <p>Normal text <small>small text</small> more normal text.<br> Normal text <sup>superscript</sup> more normal text.<br> Normal text <sub>subscript</sub> more normal text.<br> Normal text <sub>subscript<sub>subsubscript<sub>subsubsubscript</sub></sub>subscript</sub> more normal text.<br> Normal text <sup>superscript<sup>supersuperscript<sup>supersupersuperscript</sup></sup>superscript</sup> more normal text.<br> Normal text <sup>superscript<sup>supersuperscript<sub>subsupersuperscript</sub></sup><sub>subsuperscript<sub>subsubsuperscript</sub></sub>superscript</sup> more normal text.<br> </p> <p><strong>Some small print:</strong> <small class="lorem-ipsum"></small></p> <p><strong>Some code:</strong> <code>if (!true) return false;</code> <span class="lorem-ipsum"></span></p> <p><strong>Some kbd:</strong> <kbd>⇧</kbd> + <kbd>esc</kbd> <span class="lorem-ipsum"></span></p> <p><strong>Some samp:</strong> <samp>“Lorem ipsum” is placeholder text.</samp> <span class="lorem-ipsum"></span> </p> </section> </main> <footer class="page"> <section> <p class="footer-copyright">© 2022 Simon Schrape</p> <ul> <li><a href="/">Home</a></li> <li><a href="/example/layout.html">Layout example</a></li> <li><a href="/example/body-copy.html">Body copy example</a></li> <li><a href="/example/elements-showcase.html">All elements showcase</a></li> <li><a href="https://stylament.sim.ilitu.de/sassdoc/index.html">Documentation</a></li> </ul> </section> </footer> </body></html>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Stylament</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <style>
+    body {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--line-root-abs);
+    }
+
+    body>aside:first-of-type {
+      grid-column: 4;
+      grid-row: 1;
+      position: sticky;
+      inset-block-start: var(--line-root-abs);
+    }
+
+    body>main {
+      grid-column: 1 / 4;
+      grid-row: 1 / 3;
+    }
+
+    body>footer {
+      grid-column: 1 / 5;
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/index.72592079.css">
+</head>
+
+<body class="l-page-center debug-baseline-grid">
+  <aside class="document-toc-container debug-baseline-grid">
+    <section class="document-toc">
+      <header>
+        <h2 class="document-toc-heading">Table of Contents</h2>
+      </header>
+      <ul class="document-toc-list" id="toc-entries">
+        <li><a href="#headings_paragraphs">Headings &amp; paragraphs</a></li>
+        <li><a href="#multiline_headings">Multiline headings</a></li>
+        <li><a href="#thematic_break">Thematic breaks (<code>&lt;hr&gt;</code>)</a></li>
+        <li><a href="#text_level_semantics">Text level semantics</a></li>
+      </ul>
+    </section>
+  </aside>
+  <main>
+    <h1>Body Copy Sample</h1>
+    <section id="headings_paragraphs" class="lorem-ipsum">
+      <h1>Headline 1</h1>
+      <h2>Headline 2</h2>
+      <h3>Headline 3</h3>
+      <h4>Headline 4</h4>
+      <h5>Headline 5</h5>
+      <h6>Headline 6</h6>
+      <hr>
+      <h1>Headline 1</h1>
+      <p></p>
+      <h2>Headline 2</h2>
+      <p></p>
+      <h3>Headline 3</h3>
+      <p></p>
+      <h4>Headline 4</h4>
+      <p></p>
+      <h5>Headline 5</h5>
+      <p></p>
+      <h6>Headline 6</h6>
+      <p></p>
+      <p></p>
+      <p></p>
+    </section>
+    <section id="multiline_headings" class="lorem-ipsum">
+      <h1>Headline 1 <br>with line break</h1>
+      <p></p>
+      <h2>Headline 2 <br>with line break</h2>
+      <p></p>
+      <h3>Headline 3 <br>with line break</h3>
+      <p></p>
+      <h4>Headline 4 <br>with line break</h4>
+      <p></p>
+      <h5>Headline 5 <br>with line break</h5>
+      <p></p>
+      <h6>Headline 6 <br>with line break</h6>
+      <p></p>
+    </section>
+    <section id="multiline_headings_2" class="lorem-ipsum">
+      <h1>Headline 1 <br>with two <br>line breaks</h1>
+      <p></p>
+      <h2>Headline 2 <br>with two <br>line breaks</h2>
+      <p></p>
+      <h3>Headline 3 <br>with two <br>line breaks</h3>
+      <p></p>
+      <h4>Headline 4 <br>with two <br>line breaks</h4>
+      <p></p>
+      <h5>Headline 5 <br>with two <br>line breaks</h5>
+      <p></p>
+      <h6>Headline 6 <br>with two <br>line breaks</h6>
+      <p></p>
+    </section>
+    <section id="long_text_headings" class="lorem-ipsum">
+      <h1>Long Headline 1 <span class="lorem-ipsum"></span></h1>
+      <p></p>
+      <h2>Long Headline 2 <span class="lorem-ipsum"></span></h2>
+      <p></p>
+      <h3>Long Headline 3 <span class="lorem-ipsum"></span></h3>
+      <p></p>
+      <h4>Long Headline 4 <span class="lorem-ipsum"></span></h4>
+      <p></p>
+      <h5>Long Headline 5 <span class="lorem-ipsum"></span></h5>
+      <p></p>
+      <h6>Long Headline 6 <span class="lorem-ipsum"></span></h6>
+      <p></p>
+    </section>
+    <section id="thematic_break" class="lorem-ipsum">
+      <h2>Thematic Break</h2>
+      <p></p>
+      <hr>
+      <p></p>
+    </section>
+    <section id="text_level_semantics" class="lorem-ipsum">
+      <h2>Text Level Semantics</h2>
+      <p>Normal text <small>small text</small> more normal text.<br>
+        Normal text <sup>superscript</sup> more normal text.<br>
+        Normal text <sub>subscript</sub> more normal text.<br>
+        Normal text <sub>subscript<sub>subsubscript<sub>subsubsubscript</sub></sub>subscript</sub> more normal text.<br>
+        Normal text <sup>superscript<sup>supersuperscript<sup>supersupersuperscript</sup></sup>superscript</sup> more
+        normal text.<br>
+        Normal text
+        <sup>superscript<sup>supersuperscript<sub>subsupersuperscript</sub></sup><sub>subsuperscript<sub>subsubsuperscript</sub></sub>superscript</sup>
+        more normal text.<br>
+      </p>
+      <p><strong>Some small print:</strong> <small class="lorem-ipsum"></small></p>
+      <p><strong>Some code:</strong> <code>if (!true) return false;</code> <span class="lorem-ipsum"></span></p>
+      <p><strong>Some kbd:</strong> <kbd>⇧</kbd> + <kbd>esc</kbd> <span class="lorem-ipsum"></span></p>
+      <p><strong>Some samp:</strong>
+        <samp>“Lorem ipsum” is placeholder text.</samp>
+        <span class="lorem-ipsum"></span>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <section>
+      <p class="footer-copyright">© 2022 Simon Schrape</p>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/example/layout.html">Layout example</a></li>
+        <li><a href="/example/body-copy.html">Body copy example</a></li>
+        <li><a href="/example/elements-showcase.html">All elements showcase</a></li>
+        <li><a href="https://stylament.sim.ilitu.de/sassdoc/index.html">Documentation</a></li>
+      </ul>
+    </section>
+  </footer>
+</body>
+
+</html>
