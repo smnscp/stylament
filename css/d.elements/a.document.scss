@@ -22,6 +22,7 @@
 /// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element#sectioning_root MDN
 body {
   color: var(--color-body);
+  background-color: var(--color-body-negative);
   // Push down the footer.
   min-block-size: 100vh;
 }
