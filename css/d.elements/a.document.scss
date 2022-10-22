@@ -49,11 +49,11 @@ main:not([hidden]) {
 
   // Spacing and color.
   padding-block: var(--spacing-sectioning);
-  color: var(--color-body-inverted);
+  color: var(--color-body-negative);
   background: var(--color-grey-700);
 
   a:any-link {
-    color: var(--color-links-inverted);
+    color: var(--color-links-negative);
   }
 }
 

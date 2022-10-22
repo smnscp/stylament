@@ -28,12 +28,12 @@ body > nav.menu:first-of-type {
     box-shadow: var(--elevation-3);
 
     & > li {
-      color: var(--color-body-inverted);
+      color: var(--color-body-negative);
       background-color: var(--color-grey-700);
       transition: all 0.3s var(--easing-standard);
       &:hover {
         color: var(--color-grey-700);
-        background-color: var(--color-body-inverted);
+        background-color: var(--color-body-negative);
       }
 
       & > a {
