@@ -32,7 +32,8 @@
       display: flex;
       flex-direction: column;
       /* act nice-looking */
-      background: var(--color-grey-50);
+      color: var(--color-accent);
+      background-color: var(--color-accent-negative);
       box-shadow: var(--elevation-5);
       padding: var(--line-root-abs) 1ch;
     }
@@ -55,7 +56,7 @@
 
     figure {
       --figure-border-width: var(--stroke-width-2);
-      --figure-border-color: var(--color-grey-500);
+      --figure-border-color: var(--stroke-color-default);
       padding: calc(1.5 * (var(--line-root-abs) - var(--figure-border-width)));
       border: var(--figure-border-width) var(--figure-border-color) solid;
       margin-block: calc(-0.5 * var(--figure-border-width));

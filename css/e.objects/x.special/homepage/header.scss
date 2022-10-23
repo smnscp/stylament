@@ -9,8 +9,8 @@
 
 /// Special homepage header styles.
 body.homepage > header {
-  color: var(--color-grey-700);
-  background: var(--color-grey-50);
+  color: var(--color-accent);
+  background: var(--color-accent-negative);
   --radius-box: var(--radius-md);
   --stroke-width-box: var(--stroke-width-8);
 

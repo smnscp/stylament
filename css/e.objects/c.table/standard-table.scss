@@ -1,13 +1,13 @@
 table.standard-table {
   --table-border-width: var(--stroke-width-default);
   --table-border-style: var(--stroke-style-default);
-  --table-border-color: var(--color-grey-500);
+  --table-border-color: var(--stroke-color-default);
 
   thead {
-    background-color: var(--color-grey-400);
+    background-color: var(--color-mark-negative);
   }
 
   tr:nth-child(2n) {
-    background-color: var(--color-grey-100);
+    background-color: var(--color-accent-negative);
   }
 }

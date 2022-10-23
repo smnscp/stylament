@@ -11,12 +11,12 @@ body > nav.menu:first-of-type {
   $size: var(--size-8);
   --toggle-face-size: #{$size};
   --toggle-face-padding: var(--size-1);
-  --toggle-face-folded-background: white;
+  --toggle-face-folded-background: var(--color-accent-negative);
   --toggle-face-folded-radius: 0 0 var(--radius-lg);
   --toggle-face-folded-shadow: var(--elevation-5);
 
   & > label > .--toggle-face {
-    background: white;
+    background: var(--color-accent-negative);
     box-shadow: var(--elevation-3);
   }
 
@@ -28,12 +28,12 @@ body > nav.menu:first-of-type {
     box-shadow: var(--elevation-3);
 
     & > li {
-      color: var(--color-body-negative);
-      background-color: var(--color-grey-700);
+      color: var(--color-accent-negative);
+      background-color: var(--color-accent);
       transition: all 0.3s var(--easing-standard);
       &:hover {
-        color: var(--color-grey-700);
-        background-color: var(--color-body-negative);
+        color: var(--color-accent);
+        background-color: var(--color-accent-negative);
       }
 
       & > a {

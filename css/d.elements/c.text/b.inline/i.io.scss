@@ -6,11 +6,11 @@
 
 // keyboard input
 kbd {
-  color: var(--color-grey-700);
-  background: var(--color-grey-300);
-  border: 0.0625rem solid var(--color-grey-500);
+  color: var(--color-mark);
+  background: var(--color-mark-negative);
+  border: var(--stroke-width-1) solid var(--stroke-color-default);
   border-radius: var(--radius-xs);
-  padding-inline: 0.2em;
+  padding-inline: 0.5ch;
 }
 
 // sample output

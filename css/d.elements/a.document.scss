@@ -50,8 +50,8 @@ main:not([hidden]) {
 
   // Spacing and color.
   padding-block: var(--spacing-sectioning);
-  color: var(--color-body-negative);
-  background: var(--color-grey-700);
+  color: var(--color-accent-negative);
+  background: var(--color-accent);
 
   a:any-link {
     color: var(--color-links-negative);
