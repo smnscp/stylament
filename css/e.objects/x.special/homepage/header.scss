@@ -6,11 +6,11 @@
 
 @use "../../a.layout/primitive/center";
 @use "../../a.layout/primitive/center-box";
+@use "../../b.coloring/accented";
 
 /// Special homepage header styles.
 body.homepage > header {
-  color: var(--color-accent);
-  background: var(--color-accent-negative);
+  @extend .clr-accented;
   --radius-box: var(--radius-md);
   --stroke-width-box: var(--stroke-width-8);
 

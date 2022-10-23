@@ -7,6 +7,8 @@
 /// These elements are unique to each document. Some of the selectors are not pure element selectors.
 /// But due to their uniqueness it makes sense to address them without any added class specificity.
 
+@use "../e.objects/b.coloring/accented";
+
 /// Document root.
 /// Equivalent to `html`.
 ///
@@ -39,6 +41,7 @@ main:not([hidden]) {
 
 /// The document’s main header.
 :where(body, body > div) > header:first-of-type {
+  @extend %clr-accented--inverted;
   padding-block: var(--spacing-sectioning);
 }
 
@@ -49,13 +52,8 @@ main:not([hidden]) {
   inset-block-start: 100vh;
 
   // Spacing and color.
+  @extend %clr-accented--inverted;
   padding-block: var(--spacing-sectioning);
-  color: var(--color-accent-negative);
-  background: var(--color-accent);
-
-  a:any-link {
-    color: var(--color-links-negative);
-  }
 }
 
 /// The current target element.

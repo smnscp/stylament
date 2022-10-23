@@ -1,0 +1,14 @@
+.clr-accented {
+  color: var(--color-accent);
+  background-color: var(--color-accent-negative);
+}
+
+.clr-accented.--inverted,
+%clr-accented--inverted {
+  color: var(--color-accent-negative);
+  background-color: var(--color-accent);
+
+  :where(a:any-link) {
+    color: var(--color-links-negative);
+  }
+}

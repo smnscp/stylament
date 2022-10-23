@@ -6,6 +6,8 @@
 ///
 /// Rather opinonated styling for the first `nav.menu`.
 
+@use "../../b.coloring/accented";
+
 /// The  first `nav.menu` is implicitly considered the main menu.
 body > nav.menu:first-of-type {
   $size: var(--size-8);
@@ -28,12 +30,10 @@ body > nav.menu:first-of-type {
     box-shadow: var(--elevation-3);
 
     & > li {
-      color: var(--color-accent-negative);
-      background-color: var(--color-accent);
+      @extend %clr-accented--inverted;
       transition: all 0.3s var(--easing-standard);
       &:hover {
-        color: var(--color-accent);
-        background-color: var(--color-accent-negative);
+        @extend .clr-accented;
       }
 
       & > a {
