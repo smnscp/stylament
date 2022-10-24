@@ -8,6 +8,7 @@ blockquote {
   margin-inline: 0;
   padding: 0;
   border: none;
-  border-inline-start: solid var(--size-1);
-  padding-inline-start: var(--size-5);
+  border-color: var(--stroke-color-blockquote, var(--stroke-color-default, currentcolor));
+  border-inline-start: solid var(--stroke-width-4);
+  padding-inline-start: calc(var(--spacing-inline) - var(--stroke-width-4));
 }
