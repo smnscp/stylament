@@ -40,13 +40,15 @@ main:not([hidden]) {
 }
 
 /// The document’s main header.
-:where(body, body > div) > header:first-of-type {
+/// (There could be more than one. But that would not make much sense.)
+:where(body, body > div) > header {
   @extend %clr-accented--inverted;
   padding-block: var(--spacing-sectioning);
 }
 
 /// The document’s main footer.
-:where(body, body > div) > footer:last-of-type {
+/// (There could be more than one. But that would not make much sense.)
+:where(body, body > div) > footer {
   // Clever sticky footer (https://css-tricks.com/a-clever-sticky-footer-technique/)
   position: sticky;
   inset-block-start: 100vh;
