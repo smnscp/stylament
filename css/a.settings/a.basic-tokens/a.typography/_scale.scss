@@ -1,0 +1,19 @@
+@use "sass:math";
+
+$base: 1rem !default;
+/// Major third, equal-tempered: ∛2 ≅ 1.26
+/// @link https://www.modularscale.com/?1&em&2@3
+$factor: math.pow(2, math.div(1, 3)) !default;
+
+$line-height-min: 1.1 !default;
+$line-height-root: 1.5 !default;
+
+$rlh: $line-height-root * $base;
+
+@function modular($level) {
+  @return math.pow($factor, $level) * $base;
+}
+
+@function grid-line($level) {
+  @return math.ceil(math.div(modular($level), $rlh) * $line-height-min) * $rlh;
+}

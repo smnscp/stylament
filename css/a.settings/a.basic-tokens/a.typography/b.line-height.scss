@@ -1,0 +1,22 @@
+////
+/// @group ax-basic-tokens
+////
+
+@use "scale";
+
+$min: -2 !default;
+$max: 5 !default;
+
+/// ### Line Height
+/// Line heights supporting the vertical rhythm at every step of the scale.
+/// @link https://www.pollen.style/modules/typography#line-height Pollen
+/// @link https://drewish.com/tools/vertical-rhythm/
+
+:root {
+  --line-root: #{scale.$line-height-root};
+  --line-root-abs: #{scale.$rlh};
+
+  @for $i from $min through $max {
+    --line-#{$i}: #{scale.grid-line($i)};
+  }
+}

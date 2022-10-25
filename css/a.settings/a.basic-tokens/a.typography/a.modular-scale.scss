@@ -3,35 +3,21 @@
 ////
 
 @use "sass:math";
+@use "scale";
+
+$min: -2 !default;
+$max: 5 !default;
 
 /// ### Modular Scale
-/// Major third, equal-tempered: ∛2 ≅ 1.26
 /// @link https://www.pollen.style/modules/typography#modular-scale Pollen
-/// @link https://www.modularscale.com/?1&em&2@3
-
-/// ### Line Height
-/// Line heights supporting the vertical rhythm at every step of the scale.
-/// @link https://www.pollen.style/modules/typography#line-height Pollen
-/// @link https://drewish.com/tools/vertical-rhythm/
 
 :root {
-  $scale-base: 1rem;
-  $scale-factor: math.pow(2, math.div(1, 3));
-  $line-min: 1.1;
-  $line-root: 1.5;
-  $line-root-abs: $line-root * $scale-base;
+  --scale-factor: #{scale.$factor};
 
-  --scale-factor: #{$scale-factor};
-  --line-root: #{$line-root};
-  --line-root-abs: #{$line-root-abs};
-
-  @for $i from -2 through 5 {
-    $scale: math.pow($scale-factor, $i);
-    --scale-#{$i}: #{$scale-base * $scale};
-    $root-lines: calc($scale * $line-min / $line-root);
-    --line-#{$i}: #{math.ceil($root-lines) * $line-root-abs};
+  @for $i from $min through $max {
+    --scale-#{$i}: #{scale.modular($i)};
   }
 
-  --scale-smaller: #{math.div(100%, $scale-factor)};
-  --scale-larger: #{100% * $scale-factor};
+  --scale-smaller: #{math.div(100%, scale.$factor)};
+  --scale-larger: #{100% * scale.$factor};
 }
