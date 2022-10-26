@@ -5,12 +5,16 @@
 /// ### Font Weights
 /// @link https://www.pollen.style/modules/typography#font-weights Pollen
 ///
+
+@use "sass:map";
+@use "../../config" as cfg;
+
+$weights: map.get(cfg.$merged, font-weights);
+
 :root {
-  --weight-light: 300;
-  --weight-regular: 400;
-  --weight-medium: 500;
-  --weight-semibold: 600;
-  --weight-bold: 700;
-  --weight-extrabold: 800;
-  --weight-black: 900;
+  @each $name, $value in $weights {
+    @if $value {
+      --weight-#{$name}: #{$value};
+    }
+  }
 }

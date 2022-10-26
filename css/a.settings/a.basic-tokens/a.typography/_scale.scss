@@ -1,12 +1,12 @@
+@use "sass:map";
 @use "sass:math";
+@use "../../config" as cfg;
 
-$base: 1rem !default;
-/// Major third, equal-tempered: ∛2 ≅ 1.26
-/// @link https://www.modularscale.com/?1&em&2@3
-$factor: math.pow(2, math.div(1, 3)) !default;
+$base: map.get(cfg.$merged, modular-scale, base);
+$factor: map.get(cfg.$merged, modular-scale, factor);
 
-$line-height-min: 1.1 !default;
-$line-height-root: 1.5 !default;
+$line-height-min: map.get(cfg.$merged, line-heights, min);
+$line-height-root: map.get(cfg.$merged, line-heights, root);
 
 $rlh: $line-height-root * $base;
 

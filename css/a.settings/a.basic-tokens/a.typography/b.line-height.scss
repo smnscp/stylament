@@ -2,10 +2,13 @@
 /// @group ax-basic-tokens
 ////
 
+@use "sass:map";
+@use "../../config" as cfg;
+
 @use "scale";
 
-$min: -2 !default;
-$max: 5 !default;
+$min: map.get(cfg.$merged, modular-scale, min);
+$max: map.get(cfg.$merged, modular-scale, max);
 
 /// ### Line Height
 /// Line heights supporting the vertical rhythm at every step of the scale.

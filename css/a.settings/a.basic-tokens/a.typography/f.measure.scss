@@ -7,8 +7,13 @@
 /// @link https://en.wikipedia.org/wiki/Measure_(typography) Wikipedia
 /// @link http://webtypography.net/2.1.2 Web Typography
 ///
+
+@use "sass:map";
+@use "../../config" as cfg;
+
+$sizes: map.get(cfg.$merged, sizes);
+
 :root {
-  $sizes: ("xxs", "xs", "sm", "md", "lg", "xl", "xxl");
   $step: 5;
 
   // Use square numbers from 25ch to 121ch.

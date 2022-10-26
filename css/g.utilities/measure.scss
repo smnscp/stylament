@@ -1,4 +1,10 @@
-$sizes: ("xxs", "xs", "sm", "md", "lg", "xl", "xxl", "full", "inf");
+@use "sass:list";
+@use "sass:map";
+@use "../a.settings/config" as cfg;
+
+$sizes: map.get(cfg.$merged, sizes);
+$sizes: list.append($sizes, "full");
+$sizes: list.append($sizes, "inf");
 
 @each $size in $sizes {
   .measure-#{$size} {

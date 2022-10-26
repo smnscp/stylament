@@ -1,2 +1,4 @@
+@forward "config" as config-*;
+
 @use "a.basic-tokens";
 @use "b.logical-tokens";

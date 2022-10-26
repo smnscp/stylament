@@ -39,4 +39,36 @@ me. Maybe people can learn from it, just as I have learned from others.
 
 ## How?
 
-…
+🚧 N. B.: The _how_ is subject to change. **A lot.**
+
+### Configure
+
+```sass
+@use "stylament/css/a.settings" with (
+  $config-custom: (
+    sizes: (xs, sm, md, lg, xl),
+    font-weights: (
+      light: 300,
+      regular: null,
+      medium: null,
+      semibold: null,
+      bold: null,
+      extrabold: 800,
+    ),
+    modular-scale: (
+      min: -3,
+      max: 9,
+      factor: 1.5,
+    ),
+    line-heights: (
+      root: 1.2,
+    ),
+  ),
+);
+@use "stylament/css/b.tools";
+@use "stylament/css/c.generic";
+@use "stylament/css/d.elements";
+@use "stylament/css/e.objects";
+@use "stylament/css/f.components";
+@use "stylament/css/g.utilities";
+```

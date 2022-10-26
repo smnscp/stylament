@@ -2,11 +2,14 @@
 /// @group ax-basic-tokens
 ////
 
+@use "sass:map";
 @use "sass:math";
+@use "../../config" as cfg;
+
 @use "scale";
 
-$min: -2 !default;
-$max: 5 !default;
+$min: map.get(cfg.$merged, modular-scale, min);
+$max: map.get(cfg.$merged, modular-scale, max);
 
 /// ### Modular Scale
 /// @link https://www.pollen.style/modules/typography#modular-scale Pollen
