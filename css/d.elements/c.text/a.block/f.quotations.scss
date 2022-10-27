@@ -10,5 +10,5 @@ blockquote {
   border: none;
   border-color: var(--stroke-color-blockquote, var(--stroke-color-default, currentcolor));
   border-inline-start: solid var(--stroke-width-4);
-  padding-inline-start: calc(var(--spacing-inline) - var(--stroke-width-4));
+  padding-inline-start: calc(0.5 * var(--spacing-inline) - var(--stroke-width-4));
 }
