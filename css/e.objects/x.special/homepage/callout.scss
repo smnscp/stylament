@@ -8,6 +8,7 @@
   figure blockquote {
     font-size: var(--scale-4);
     line-height: var(--line-4);
+    font-family: var(--font-display, var(--font-body));
   }
 }
 
