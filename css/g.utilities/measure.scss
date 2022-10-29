@@ -8,6 +8,6 @@ $sizes: list.append($sizes, "inf");
 
 @each $name, $value in $sizes {
   .measure-#{$name} {
-    --measure: var(--measure-#{$name});
+    --measure: var(--measure-#{$name}) !important;
   }
 }
