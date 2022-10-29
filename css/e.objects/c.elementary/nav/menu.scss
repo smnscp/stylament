@@ -62,6 +62,17 @@ nav.menu.foldable {
   --toggle-size: #{$size};
   --inset-start: var(--toggle-size);
   --inset-end: 0;
+  --folded-inset: var(--inset-start) 100%;
+  --toggle-inset: 0 auto;
+
+  /// Places toggle to the inline end (rhs in Latin).
+  &.end {
+    --inset-start: 0;
+    --inset-end: var(--toggle-size);
+    --folded-inset: 100% var(--inset-end);
+    --toggle-inset: auto 0;
+    --toggle-folded-radius: 0;
+  }
 
   & > label[for^="-toggle-state"] {
     cursor: context-menu;
@@ -72,7 +83,7 @@ nav.menu.foldable {
       display: block;
       position: absolute;
       inset-block-start: 0;
-      inset-inline-start: 0;
+      inset-inline: var(--toggle-inset);
       inline-size: var(--toggle-size);
       block-size: var(--toggle-size);
       padding: var(--toggle-padding);
@@ -89,10 +100,9 @@ nav.menu.foldable {
   & > menu {
     position: absolute;
     inset-block-start: 0;
-    inset-inline-start: var(--inset-start);
-    inset-inline-end: var(--inset-end);
+    inset-inline: var(--inset-start) var(--inset-end);
     overflow: hidden;
-    transition: inset-inline-end 0.3s var(--easing-standard);
+    transition: inset-inline 0.3s var(--easing-standard);
   }
 
   @media (max-width: calc($nav-wide - 1px)) {
@@ -108,7 +118,7 @@ nav.menu.foldable {
 
     & input[id^="-toggle-state"]:not(:checked) {
       & ~ menu {
-        inset-inline-end: 100%;
+        inset-inline: var(--folded-inset);
       }
 
       & ~ label[for^="-toggle-state"] > :first-child,
@@ -121,7 +131,7 @@ nav.menu.foldable {
   @media (min-width: $nav-wide) {
     & input[id^="-toggle-state"]:checked {
       & ~ menu {
-        inset-inline-end: 100%;
+        inset-inline: var(--folded-inset);
       }
 
       & ~ label[for^="-toggle-state"] > :first-child,
