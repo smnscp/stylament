@@ -43,7 +43,7 @@ me. Maybe people can learn from it, just as I have learned from others.
 
 ### Configure
 
-```sass
+```scss
 @use "stylament/css/a.settings" with (
   $config-custom: (
     sizes: (xs, sm, md, lg, xl),
