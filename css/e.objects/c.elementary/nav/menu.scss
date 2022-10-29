@@ -52,6 +52,7 @@ nav.menu.levelable {
   background: var(--toggle-folded-background);
   border-radius: var(--toggle-folded-radius);
   box-shadow: var(--toggle-folded-shadow);
+  content: "⋯";
 }
 
 /// Foldable Nav.
@@ -80,6 +81,7 @@ nav.menu.foldable {
       text-align: center;
       font-weight: var(--weight-emphasis);
       transition: all 0.3s var(--easing-standard);
+      content: "⋮";
     }
   }
 
