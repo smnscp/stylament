@@ -11,13 +11,14 @@
 /// The  first `nav.menu` is implicitly considered the main menu.
 body > nav.menu:first-of-type {
   $size: var(--size-8);
-  --toggle-face-size: #{$size};
-  --toggle-face-padding: var(--size-1);
-  --toggle-face-folded-background: var(--color-accent-negative);
-  --toggle-face-folded-radius: 0 0 var(--radius-lg);
-  --toggle-face-folded-shadow: var(--elevation-5);
+  --toggle-size: #{$size};
+  --toggle-padding: var(--size-1);
+  --toggle-folded-background: var(--color-accent-negative);
+  --toggle-folded-radius: 0 0 var(--radius-lg);
+  --toggle-folded-shadow: var(--elevation-5);
 
-  & > label > .--toggle-face {
+  & > label[for^="-toggle-state"] > :first-child,
+  & > label[for^="-toggle-state"]:empty::before {
     background: var(--color-accent-negative);
     box-shadow: var(--elevation-3);
   }

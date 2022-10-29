@@ -18,8 +18,8 @@ $size: 2em;
 nav.menu {
   position: relative;
 
-  & .--toggle-state,
-  & .--toggle-face {
+  & input[id^="-toggle-state"],
+  & label[for^="-toggle-state"] {
     display: none;
   }
 }
@@ -48,33 +48,38 @@ nav.menu.levelable {
 }
 
 // Nav folded.
-@mixin toggle-face-folded {
-  background: var(--toggle-face-folded-background);
-  border-radius: var(--toggle-face-folded-radius);
-  box-shadow: var(--toggle-face-folded-shadow);
+@mixin toggle-folded {
+  background: var(--toggle-folded-background);
+  border-radius: var(--toggle-folded-radius);
+  box-shadow: var(--toggle-folded-shadow);
 }
 
 /// Foldable Nav.
 /// Allows to toggle the display of the menu.
 nav.menu.foldable {
-  --toggle-face-size: #{$size};
-  --inset-start: var(--toggle-face-size);
+  --toggle-size: #{$size};
+  --inset-start: var(--toggle-size);
   --inset-end: 0;
 
-  & > label {
-    & > .--toggle-face {
-      display: inline-block;
+  & > label[for^="-toggle-state"] {
+    cursor: context-menu;
+    display: block;
+
+    & > :first-child,
+    &:empty::before {
+      display: block;
       position: absolute;
       inset-block-start: 0;
       inset-inline-start: 0;
-      inline-size: var(--toggle-face-size);
-      block-size: var(--toggle-face-size);
-      padding: var(--toggle-face-padding);
+      inline-size: var(--toggle-size);
+      block-size: var(--toggle-size);
+      padding: var(--toggle-padding);
+      margin: 0;
+      font-size: calc(var(--toggle-size) - 2 * var(--toggle-padding));
+      line-height: 1;
+      text-align: center;
+      font-weight: var(--weight-emphasis);
       transition: all 0.3s var(--easing-standard);
-
-      & > img {
-        block-size: 100%;
-      }
     }
   }
 
@@ -89,7 +94,7 @@ nav.menu.foldable {
 
   @media (max-width: calc($nav-wide - 1px)) {
     // Backdrop when unfolded on small screen.
-    & input.--toggle-state:checked ~ label {
+    & input[id^="-toggle-state"]:checked ~ label[for^="-toggle-state"] {
       position: absolute;
       inset: 0;
       margin: 0;
@@ -98,25 +103,27 @@ nav.menu.foldable {
       background: rgba(0, 0, 0, 0.5);
     }
 
-    & input.--toggle-state:not(:checked) {
+    & input[id^="-toggle-state"]:not(:checked) {
       & ~ menu {
         inset-inline-end: 100%;
       }
 
-      & ~ label > .--toggle-face {
-        @include toggle-face-folded;
+      & ~ label[for^="-toggle-state"] > :first-child,
+      & ~ label[for^="-toggle-state"]:empty::before {
+        @include toggle-folded;
       }
     }
   }
 
   @media (min-width: $nav-wide) {
-    & input.--toggle-state:checked {
+    & input[id^="-toggle-state"]:checked {
       & ~ menu {
         inset-inline-end: 100%;
       }
 
-      & ~ label > .--toggle-face {
-        @include toggle-face-folded;
+      & ~ label[for^="-toggle-state"] > :first-child,
+      & ~ label[for^="-toggle-state"]:empty::before {
+        @include toggle-folded;
       }
     }
   }
