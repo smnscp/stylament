@@ -10,4 +10,11 @@ table.standard-table {
   tr:nth-child(2n) {
     background-color: var(--color-accent-negative);
   }
+
+  /// Do not center `th` in vertical tables.
+  thead + tbody {
+    th:first-child {
+      text-align: start;
+    }
+  }
 }
