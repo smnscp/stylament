@@ -9,21 +9,19 @@
 ///
 
 @use "sass:map";
+@use "sass:meta";
 @use "../../config" as cfg;
 
 $sizes: map.get(cfg.$merged, sizes);
+$func: map.get(cfg.$merged, measure-function);
 
 :root {
-  $step: 5;
-
-  // Use square numbers from 25ch to 121ch.
-  @each $size in $sizes {
-    --measure-#{$size}: #{$step * $step * 1ch};
-    $step: $step + 1;
+  @each $name, $value in $sizes {
+    --measure-#{$name}: #{meta.call($func, $value)};
   }
 
   --measure-full: 100%;
-  --measure-inf: 65535ch;
+  --measure-inf: unset;
 
   --measure: var(--measure-md);
 }

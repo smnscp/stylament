@@ -1,4 +1,5 @@
-@use "../../../a.settings/a.basic-tokens/b.layout/b.container-widths" as widths;
+@use "sass:map";
+@use "../../../a.settings/a.basic-tokens/b.layout/b.container-widths" as cw;
 
 .callout {
   color: var(--color-neutral);
@@ -12,7 +13,7 @@
   }
 }
 
-@media (min-width: widths.$width-xs) {
+@media (min-width: map.get(cw.$widths, "sm")) {
   // Indent callout by smaller golden ratio part.
   .callout figure {
     padding-inline: 0;
@@ -20,7 +21,7 @@
   }
 }
 
-@media (min-width: widths.$width-lg) {
+@media (min-width: map.get(cw.$widths, "lg")) {
   // Indent callout by bigger golden ratio part.
   .callout figure {
     padding-inline-start: 0;

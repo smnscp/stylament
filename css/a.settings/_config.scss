@@ -1,17 +1,30 @@
 @use "sass:map";
 @use "sass:math";
+@use "sass:meta";
+
+@function measure($size) {
+  // Use square numbers centered around 64ch.
+  @return math.pow($size + 8, 2) * 1ch;
+}
+
+@function width($size) {
+  // Use multiples of 16rem centered around 48rem.
+  @return ($size + 3) * 16rem;
+}
 
 $custom: () !default;
 $default: (
   sizes: (
-    // xxs,
-    xs,
-    sm,
-    md,
-    lg,
-    xl,
-    // xxl,
+    // xxs: -3,
+    xs: -2,
+    sm: -1,
+    md: 0,
+    lg: 1,
+    xl: 2,
+    // xxl: 3,
   ),
+  measure-function: meta.get-function("measure"),
+  width-function: meta.get-function("width"),
   font-weights: (
     // thin: 100,
     // extralight: 200,

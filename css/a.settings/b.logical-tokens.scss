@@ -2,7 +2,8 @@
 /// @group ax-logical-tokens
 ////
 
-@use "../a.settings/a.basic-tokens/b.layout/b.container-widths" as widths;
+@use "sass:map";
+@use "../a.settings/a.basic-tokens/b.layout/b.container-widths" as cw;
 
 /// # Logical Design Tokens
 
@@ -39,7 +40,7 @@
 }
 
 /// Save space on smaller screens.
-@media (max-width: widths.$width-sm) {
+@media (max-width: map.get(cw.$widths, "sm")) {
   :root {
     --spacing-sectioning: var(--spacing-block);
   }

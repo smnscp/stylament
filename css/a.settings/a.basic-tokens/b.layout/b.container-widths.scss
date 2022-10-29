@@ -6,15 +6,18 @@
 /// @link https://www.pollen.style/modules/layout#container-widths Pollen
 /// @link https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
 ///
-$width-xs: 30rem;
-$width-sm: 40rem;
-$width-md: 48rem;
-$width-lg: 64rem;
-$width-xl: 80rem;
+
+@use "sass:map";
+@use "sass:meta";
+@use "../../config" as cfg;
+
+$sizes: map.get(cfg.$merged, sizes);
+$func: map.get(cfg.$merged, width-function);
+$widths: ();
+
 :root {
-  --width-xs: #{$width-xs};
-  --width-sm: #{$width-sm};
-  --width-md: #{$width-md};
-  --width-lg: #{$width-lg};
-  --width-xl: #{$width-xl};
+  @each $name, $value in $sizes {
+    $widths: map.set($widths, $name, meta.call($func, $value)) !global;
+    --width-#{$name}: #{map.get($widths, $name)};
+  }
 }

@@ -2,14 +2,15 @@
 /// @group ob-navigation
 ////
 
-@use "../../../a.settings/a.basic-tokens/b.layout/b.container-widths" as widths;
+@use "sass:map";
+@use "../../../a.settings/a.basic-tokens/b.layout/b.container-widths" as cw;
 
 /// # Navigation Menu
 ///
 /// Common patterns for navigation menus. Separated into several aspects.
 
 /// Breakpoint for switching to wide layout.
-$nav-wide: widths.$width-sm;
+$nav-wide: map.get(cw.$widths, "sm");
 
 /// Size factor of the menu.
 $size: 2em;
