@@ -12,16 +12,10 @@
 body > nav.menu:first-of-type {
   $size: var(--size-8);
   --toggle-size: #{$size};
-  --toggle-padding: var(--size-1);
-  --toggle-folded-background: var(--color-accent-negative);
-  --toggle-folded-radius: 0 0 var(--radius-lg);
+  --toggle-padding: var(--size-2);
+  --toggle-background: var(--color-accent-negative);
+  --toggle-shadow: var(--elevation-3);
   --toggle-folded-shadow: var(--elevation-5);
-
-  & > label[for^="-toggle-state"] > :first-child,
-  & > label[for^="-toggle-state"]:empty::before {
-    background: var(--color-accent-negative);
-    box-shadow: var(--elevation-3);
-  }
 
   & > menu {
     --item-height: #{$size};

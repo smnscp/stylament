@@ -50,10 +50,11 @@ nav.menu.levelable {
 
 // Nav folded.
 @mixin toggle-folded {
-  background: var(--toggle-folded-background);
-  border-radius: var(--toggle-folded-radius);
-  box-shadow: var(--toggle-folded-shadow);
-  content: "⋯";
+  background: var(--toggle-folded-background, var(--toggle-background));
+  border: var(--toggle-folded-border, var(--toggle-border));
+  border-radius: var(--toggle-folded-radius, var(--toggle-radius));
+  box-shadow: var(--toggle-folded-shadow, var(--toggle-shadow));
+  content: var(--toggle-folded-content, var(--toggle-content, "⋯"));
 }
 
 /// Foldable Nav.
@@ -71,7 +72,6 @@ nav.menu.foldable {
     --inset-end: var(--toggle-size);
     --folded-inset: 100% var(--inset-end);
     --toggle-inset: auto 0;
-    --toggle-folded-radius: 0;
   }
 
   & > label[for^="-toggle-state"] {
@@ -87,13 +87,17 @@ nav.menu.foldable {
       inline-size: var(--toggle-size);
       block-size: var(--toggle-size);
       padding: var(--toggle-padding);
+      border: var(--toggle-border);
       margin: 0;
       font-size: calc(var(--toggle-size) - 2 * var(--toggle-padding));
       line-height: 1;
       text-align: center;
       font-weight: var(--weight-emphasis);
       transition: all 0.3s var(--easing-standard);
-      content: "⋮";
+      background: var(--toggle-background);
+      border-radius: var(--toggle-radius);
+      box-shadow: var(--toggle-shadow);
+      content: var(--toggle-content, "⋮");
     }
   }
 
