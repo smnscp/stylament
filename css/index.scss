@@ -7,5 +7,7 @@
 @use "e.objects/x.special/homepage";
 @use "f.components";
 @use "g.utilities";
+@use "g.utilities/placeholder";
+@use "g.utilities/debug";
 
 @use "fonts.scss";
