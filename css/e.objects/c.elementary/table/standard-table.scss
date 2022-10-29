@@ -1,7 +1,7 @@
 table.standard-table {
-  --table-border-width: var(--stroke-width-default);
-  --table-border-style: var(--stroke-style-default);
-  --table-border-color: var(--stroke-color-default);
+  --table-border-width: var(--stroke-width-table, var(--stroke-width-default));
+  --table-border-style: var(--stroke-style-table, var(--stroke-style-default));
+  --table-border-color: var(--stroke-color-table, var(--stroke-color-default));
 
   thead {
     background-color: var(--color-mark-negative);
