@@ -4,12 +4,12 @@
 
 /// ## Main Navigation Bar
 ///
-/// Rather opinonated styling for the first `nav.menu`.
+/// Rather opinonated styling for the first `nav.e-menu`.
 
 @use "../../b.coloring/accented";
 
-/// The  first `nav.menu` is implicitly considered the main menu.
-body > nav.menu:first-of-type {
+/// The  first `nav.e-menu` is implicitly considered the main menu.
+body > nav.e-menu:first-of-type {
   $size: var(--size-8);
   --toggle-size: #{$size};
   --toggle-padding: var(--size-2);

@@ -7,7 +7,7 @@ $sizes: list.append($sizes, "full");
 $sizes: list.append($sizes, "inf");
 
 @each $name, $value in $sizes {
-  .measure-#{$name} {
+  .u-measure-#{$name} {
     --measure: var(--measure-#{$name}) !important;
   }
 }

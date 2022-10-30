@@ -16,7 +16,7 @@ $nav-wide: map.get(cw.$widths, "sm");
 $size: 2em;
 
 /// General navigation menu. This is the basic selector with the basic rules applied.
-nav.menu {
+nav.e-menu {
   position: relative;
   z-index: 1;
 
@@ -28,7 +28,7 @@ nav.menu {
 
 /// Levelable Nav.
 /// Places items on a horizontal level if enough space is available.
-nav.menu.levelable {
+nav.e-menu.\+levelable {
   & > menu {
     display: block;
 
@@ -60,7 +60,7 @@ nav.menu.levelable {
 
 /// Foldable Nav.
 /// Allows to toggle the display of the menu.
-nav.menu.foldable {
+nav.e-menu.\+foldable {
   --toggle-size: #{$size};
   --inset-start: var(--toggle-size);
   --inset-end: 0;
@@ -68,7 +68,7 @@ nav.menu.foldable {
   --toggle-inset: 0 auto;
 
   /// Places toggle to the inline end (rhs in Latin).
-  &.end {
+  &.\+end {
     --inset-start: 0;
     --inset-end: var(--toggle-size);
     --folded-inset: 100% var(--inset-end);
@@ -149,7 +149,7 @@ nav.menu.foldable {
 
 /// Sticky Nav.
 /// Makes navbar stick to the top of the viewport.
-nav.menu.sticky {
+nav.e-menu.\+sticky {
   position: sticky;
   inset-block-start: 0;
 
