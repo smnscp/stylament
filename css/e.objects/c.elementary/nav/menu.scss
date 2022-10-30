@@ -18,6 +18,7 @@ $size: 2em;
 /// General navigation menu. This is the basic selector with the basic rules applied.
 nav.menu {
   position: relative;
+  z-index: 1;
 
   & input[id^="-toggle-state"],
   & label[for^="-toggle-state"] {
