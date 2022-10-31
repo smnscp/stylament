@@ -17,6 +17,7 @@ $size: 2em;
 
 /// General navigation menu. This is the basic selector with the basic rules applied.
 nav.e-menu {
+  --item-block-size: #{$size};
   position: relative;
   z-index: 1;
 
@@ -152,8 +153,5 @@ nav.e-menu.\+foldable {
 nav.e-menu.\+sticky {
   position: sticky;
   inset-block-start: 0;
-
-  menu {
-    --item-height: #{$size};
-  }
+  z-index: 1;
 }

@@ -9,17 +9,13 @@ ol {}
 ul {}
 
 menu {
-  --item-height: 2em;
-  --item-line-height: 1em;
-  --item-padding: 1em;
-
   padding: 0;
   margin: 0;
   list-style: none;
 
   & > li {
-    block-size: var(--item-height);
-    line-height: var(--item-line-height);
+    block-size: var(--item-block-size, 2em);
+    line-height: var(--item-line-height, 1em);
     padding: 0;
     margin: 0;
 
@@ -27,7 +23,7 @@ menu {
       display: grid;
       align-content: center;
       block-size: 100%;
-      padding-inline: var(--item-padding);
+      padding-inline: var(--item-padding, 1em);
     }
   }
 }
