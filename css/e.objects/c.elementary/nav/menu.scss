@@ -21,8 +21,8 @@ nav.e-menu {
   position: relative;
   z-index: 1;
 
-  & input[id^="-toggle-state"],
-  & label[for^="-toggle-state"] {
+  & > input[id^="-toggle-state"],
+  & > label[for^="-toggle-state"] {
     display: none;
   }
 }
