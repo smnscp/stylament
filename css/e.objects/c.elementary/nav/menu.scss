@@ -20,6 +20,7 @@ nav.e-menu {
   --item-block-size: #{$size};
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 
   & > input[id^="-toggle-state"],
   & > label[for^="-toggle-state"] {
@@ -40,7 +41,6 @@ nav.e-menu.\+levelable {
 
     & > li {
       display: block;
-      text-align: start;
       text-align: center;
       // Horizontal nav as long as items have enough space.
       // https://heydonworks.com/article/the-flexbox-holy-albatross/
@@ -51,6 +51,15 @@ nav.e-menu.\+levelable {
 }
 
 // Nav folded.
+@mixin menu-folded {
+  margin-inline: -100%;
+
+  // Only hide overflow when needed. Don’t clip backdrop.
+  nav:has(&) {
+    overflow: hidden;
+  }
+}
+
 @mixin toggle-folded {
   background: var(--toggle-folded-background, var(--toggle-background));
   border: var(--toggle-folded-border, var(--toggle-border));
@@ -77,6 +86,7 @@ nav.e-menu.\+foldable {
     &:empty::after {
       display: block;
       position: relative; // Place over backdrop.
+      z-index: 2; // … even over menu.
       inline-size: var(--toggle-size);
       block-size: var(--toggle-size);
       padding: var(--toggle-padding);
@@ -96,9 +106,8 @@ nav.e-menu.\+foldable {
 
   & > menu {
     position: relative; // Place over backdrop.
-    max-inline-size: 100%;
-    overflow: hidden;
-    transition: max-inline-size 0.3s var(--easing-standard);
+    max-inline-size: calc(100% - var(--toggle-size));
+    transition: margin-inline 0.3s var(--easing-standard);
   }
 
   @media (max-width: calc($nav-wide - 1px)) {
@@ -113,7 +122,7 @@ nav.e-menu.\+foldable {
 
     & input[id^="-toggle-state"]:not(:checked) {
       & ~ menu {
-        max-inline-size: 0;
+        @include menu-folded;
       }
 
       & ~ label[for^="-toggle-state"] > :first-child,
@@ -126,7 +135,7 @@ nav.e-menu.\+foldable {
   @media (min-width: $nav-wide) {
     & input[id^="-toggle-state"]:checked {
       & ~ menu {
-        max-inline-size: 0;
+        @include menu-folded;
       }
 
       & ~ label[for^="-toggle-state"] > :first-child,
