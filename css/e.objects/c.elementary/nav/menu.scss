@@ -134,6 +134,7 @@ nav.e-menu.\+foldable {
 
     & > menu {
       position: relative; // Place over backdrop.
+      block-size: var(--toggle-size); // Occupy only one line in flow.
     }
   }
 
