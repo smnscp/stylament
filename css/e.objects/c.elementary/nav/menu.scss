@@ -53,11 +53,6 @@ nav.e-menu.\+levelable {
 // Nav folded.
 @mixin menu-folded {
   margin-inline: -100%;
-
-  // Only hide overflow when needed. Don’t clip backdrop.
-  nav:has(&) {
-    overflow: hidden;
-  }
 }
 
 @mixin toggle-folded {

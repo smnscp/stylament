@@ -16,6 +16,7 @@
 /// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element#main_root MDN
 :root {
   font-size: var(--scale-root, 100%);
+  overflow-x: hidden; // Clip everything that is moved out of the viewport horizontally.
 }
 
 /// Content root.
