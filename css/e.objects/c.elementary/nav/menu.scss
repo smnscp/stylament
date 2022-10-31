@@ -100,35 +100,46 @@ nav.e-menu.\+foldable {
   }
 
   & > menu {
-    position: relative; // Place over backdrop.
     max-inline-size: calc(100% - var(--toggle-size));
     transition: margin-inline 0.3s var(--easing-standard);
   }
 
-  @media (max-width: calc($nav-wide - 1px)) {
-    // Backdrop when unfolded on small screen.
-    & input[id^="-toggle-state"]:checked ~ label[for^="-toggle-state"]::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      block-size: 100vh;
-      background: rgba(0, 0, 0, 0.5);
+  // Special behavior on narrow screen: Act as overlay with backdrop.
+  @media (max-width: $nav-wide) {
+    & > input[id^="-toggle-state"] {
+      // Unfolded state on narrow screen.
+      &:checked {
+        // Use `label` as backdrop. Clicking on it toggles the state.
+        & ~ label[for^="-toggle-state"]::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          block-size: 100vh;
+          background: rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      // Folded state on narrow screen. (This is the default, as in not checked.)
+      &:not(:checked) {
+        & ~ menu {
+          @include menu-folded;
+        }
+
+        & ~ label[for^="-toggle-state"] > :first-child,
+        & ~ label[for^="-toggle-state"]:empty::after {
+          @include toggle-folded;
+        }
+      }
     }
 
-    & input[id^="-toggle-state"]:not(:checked) {
-      & ~ menu {
-        @include menu-folded;
-      }
-
-      & ~ label[for^="-toggle-state"] > :first-child,
-      & ~ label[for^="-toggle-state"]:empty::after {
-        @include toggle-folded;
-      }
+    & > menu {
+      position: relative; // Place over backdrop.
     }
   }
 
+  // Folded state on wide screen. (Only when explicitly toggled.)
   @media (min-width: $nav-wide) {
-    & input[id^="-toggle-state"]:checked {
+    & > input[id^="-toggle-state"]:checked {
       & ~ menu {
         @include menu-folded;
       }
