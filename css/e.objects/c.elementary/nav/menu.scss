@@ -18,12 +18,17 @@ $size: 2em;
 /// General navigation menu. This is the basic selector with the basic rules applied.
 nav.e-menu {
   --item-block-size: #{$size};
-  position: relative;
-  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 
   & > input[id^="-toggle-state"],
   & > label[for^="-toggle-state"] {
     display: none;
+  }
+
+  & > menu {
+    flex-grow: 1;
   }
 }
 
@@ -31,21 +36,16 @@ nav.e-menu {
 /// Places items on a horizontal level if enough space is available.
 nav.e-menu.\+levelable {
   & > menu {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
 
     & > li {
       display: block;
-      text-align: start;
-    }
-
-    // Horizontal nav on wider screen.
-    @media (min-width: $nav-wide) {
-      display: flex;
-
-      & > li {
-        flex: 1;
-        text-align: center;
-      }
+      text-align: center;
+      // Horizontal nav as long as items have enough space.
+      // https://heydonworks.com/article/the-flexbox-holy-albatross/
+      flex-basis: calc(($nav-wide - 100%) * 999);
+      flex-grow: 1;
     }
   }
 }
@@ -63,17 +63,10 @@ nav.e-menu.\+levelable {
 /// Allows to toggle the display of the menu.
 nav.e-menu.\+foldable {
   --toggle-size: #{$size};
-  --inset-start: var(--toggle-size);
-  --inset-end: 0;
-  --folded-inset: var(--inset-start) 100%;
-  --toggle-inset: 0 auto;
 
   /// Places toggle to the inline end (rhs in Latin).
   &.\+end {
-    --inset-start: 0;
-    --inset-end: var(--toggle-size);
-    --folded-inset: 100% var(--inset-end);
-    --toggle-inset: auto 0;
+    flex-direction: row-reverse;
   }
 
   & > label[for^="-toggle-state"] {
@@ -81,11 +74,9 @@ nav.e-menu.\+foldable {
     display: block;
 
     & > :first-child,
-    &:empty::before {
+    &:empty::after {
       display: block;
-      position: absolute;
-      inset-block-start: 0;
-      inset-inline: var(--toggle-inset);
+      position: relative; // Place over backdrop.
       inline-size: var(--toggle-size);
       block-size: var(--toggle-size);
       padding: var(--toggle-padding);
@@ -104,31 +95,29 @@ nav.e-menu.\+foldable {
   }
 
   & > menu {
-    position: absolute;
-    inset-block-start: 0;
-    inset-inline: var(--inset-start) var(--inset-end);
+    position: relative; // Place over backdrop.
+    max-inline-size: 100%;
     overflow: hidden;
-    transition: inset-inline 0.3s var(--easing-standard);
+    transition: max-inline-size 0.3s var(--easing-standard);
   }
 
   @media (max-width: calc($nav-wide - 1px)) {
     // Backdrop when unfolded on small screen.
-    & input[id^="-toggle-state"]:checked ~ label[for^="-toggle-state"] {
+    & input[id^="-toggle-state"]:checked ~ label[for^="-toggle-state"]::before {
+      content: "";
       position: absolute;
       inset: 0;
-      margin: 0;
-      inline-size: 100vw;
       block-size: 100vh;
       background: rgba(0, 0, 0, 0.5);
     }
 
     & input[id^="-toggle-state"]:not(:checked) {
       & ~ menu {
-        inset-inline: var(--folded-inset);
+        max-inline-size: 0;
       }
 
       & ~ label[for^="-toggle-state"] > :first-child,
-      & ~ label[for^="-toggle-state"]:empty::before {
+      & ~ label[for^="-toggle-state"]:empty::after {
         @include toggle-folded;
       }
     }
@@ -137,11 +126,11 @@ nav.e-menu.\+foldable {
   @media (min-width: $nav-wide) {
     & input[id^="-toggle-state"]:checked {
       & ~ menu {
-        inset-inline: var(--folded-inset);
+        max-inline-size: 0;
       }
 
       & ~ label[for^="-toggle-state"] > :first-child,
-      & ~ label[for^="-toggle-state"]:empty::before {
+      & ~ label[for^="-toggle-state"]:empty::after {
         @include toggle-folded;
       }
     }
