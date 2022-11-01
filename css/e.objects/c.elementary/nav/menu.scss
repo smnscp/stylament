@@ -134,6 +134,7 @@ nav.e-menu.\+foldable {
 
     & > menu {
       position: relative; // Place over backdrop.
+      margin-bottom: -100%; // Do not occupy flow space in backdrop mode.
     }
   }
 
