@@ -99,6 +99,7 @@ nav.e-menu.\+foldable {
   }
 
   & > menu {
+    margin-bottom: -100%; // Do not occupy flow space when foldable.
     max-inline-size: 100%;
     overflow: hidden;
     transition: max-inline-size 0.3s var(--easing-standard);
@@ -134,7 +135,6 @@ nav.e-menu.\+foldable {
 
     & > menu {
       position: relative; // Place over backdrop.
-      margin-bottom: -100%; // Do not occupy flow space in backdrop mode.
     }
   }
 
