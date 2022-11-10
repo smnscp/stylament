@@ -57,9 +57,3 @@ main:not([hidden]) {
   @extend %clr-accented--inverted;
   padding-block: var(--spacing-sectioning);
 }
-
-/// The current target element.
-:target {
-  // Give URL fragment target enough air.
-  scroll-margin-block-start: var(--size-12);
-}

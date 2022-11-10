@@ -2,6 +2,12 @@
 /// @group ax-generic
 ////
 
+/// The current target element.
+:target {
+  // Give URL fragment target enough air.
+  scroll-margin-block-start: var(--size-12);
+}
+
 /// Establish a generic measure.
 :not(html, body, div, section, article, nav, main, header, footer, hgroup, ul, ol, menu, dl, dd, dt, li, table, figure, caption, label) {
   max-inline-size: var(--measure);
