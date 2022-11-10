@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.5.1</span>
+          <span class="project-version">0.6.0</span>
         
       </div>
     </header>
@@ -68,48 +68,28 @@
     <div class="nav-subsection">
       <ul>
   
+    <li class="nav-item">
+      <a href="undefined.html" data-nav="is-not-active">&lt;un-grouped&gt;</a>
+    </li>
+  
             <li class="nav-subsection">
               <h3 class="nav-title">Axioms</h3>
               <ul>
                 
   
     <li class="nav-item">
-      <a href="ax-basic-tokens.html" data-nav="is-not-active">Basic Design<span class="widont">&nbsp;</span>Tokens</a>
+      <a href="ax-config.html" data-nav="is-not-active">Global Configuration</a>
+    </li>
+  
+  
+  
+    <li class="nav-item">
+      <a href="ax-properties.html" data-nav="is-not-active">Custom Properties</a>
     </li>
   
   
     <li class="nav-item">
-      <a href="ax-logical-tokens.html" data-nav="is-not-active">Logical Design<span class="widont">&nbsp;</span>Tokens</a>
-    </li>
-  </ul>
-            </li>
-            <li class="nav-subsection">
-              <h3 class="nav-title">Tools</h3>
-              <ul>
-                
-  
-    <li class="nav-item">
-      <a href="to-functions.html" data-nav="is-not-active">Functions</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="to-mixins.html" data-nav="is-not-active">Mix-ins</a>
-    </li>
-  </ul>
-            </li>
-            <li class="nav-subsection">
-              <h3 class="nav-title">Generics</h3>
-              <ul>
-                
-  
-    <li class="nav-item">
-      <a href="ge-normalize.html" data-nav="is-not-active">Normalizing</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="ge-slots.html" data-nav="is-not-active">Preparing Slots</a>
+      <a href="ax-generic.html" data-nav="is-not-active">Generic Rules</a>
     </li>
   </ul>
             </li>
@@ -119,7 +99,7 @@
                 
   
     <li class="nav-item">
-      <a href="el-document.html" data-nav="is-not-active">Unique Document<span class="widont">&nbsp;</span>Elements</a>
+      <a href="el-document.html" data-nav="is-not-active">General Document<span class="widont">&nbsp;</span>Structure</a>
     </li>
   
   
@@ -129,22 +109,27 @@
   
   
     <li class="nav-item">
-      <a href="el-text.html" data-nav="is-not-active">Text Content</a>
+      <a href="el-grouping.html" data-nav="is-not-active">Grouping Content</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-text.html" data-nav="is-not-active">Text-level Semantics</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-edits.html" data-nav="is-not-active">Edits</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-links.html" data-nav="is-not-active">Links</a>
     </li>
   
   
     <li class="nav-item">
       <a href="el-embedding.html" data-nav="is-not-active">Embedding</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="el-scripting.html" data-nav="is-not-active">Scripting</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="el-edits.html" data-nav="is-not-active">Demarcating Edits</a>
     </li>
   
   
@@ -161,6 +146,11 @@
     <li class="nav-item">
       <a href="el-interactive.html" data-nav="is-not-active">Interactive Elements</a>
     </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-scripting.html" data-nav="is-not-active">Scripting</a>
+    </li>
   </ul>
             </li>
             <li class="nav-subsection">
@@ -176,6 +166,13 @@
     <li class="nav-item">
       <a href="ob-special.html" data-nav="is-not-active">More Specific<span class="widont">&nbsp;</span>Styling</a>
     </li>
+  </ul>
+            </li>
+            <li class="nav-subsection">
+              <h3 class="nav-title">Utilities</h3>
+              <ul>
+                
+  
   </ul>
             </li></ul>
     </div>
@@ -1166,465 +1163,6 @@
 
   
     <div data-item-section="prose" class="text-block">
-      <h2 id="value-lists">Value Lists</h2>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--datalist">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--datalist" class="item-name">datalist</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">datalist {
-  
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Datalist.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--option">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--option" class="item-name">option</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">option {
-  
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Option.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--optgroup">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--optgroup" class="item-name">optgroup</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">optgroup {
-  
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Optgroup.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
       <h2 id="inputs">Inputs</h2>
 
       
@@ -2008,6 +1546,465 @@
   
     <div class="text-block">
       <p>Select.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="value-lists">Value Lists</h2>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--datalist">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--datalist" class="item-name">datalist</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">datalist {
+  
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Datalist.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--option">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--option" class="item-name">option</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">option {
+  
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Option.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--optgroup">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--optgroup" class="item-name">optgroup</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">optgroup {
+  
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Optgroup.</p>
 
       
   

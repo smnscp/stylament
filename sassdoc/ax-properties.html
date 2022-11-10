@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Basic Design Tokens | Stylament Documentation</title>
+  <title>Custom Properties | Stylament Documentation</title>
 
   <link href="assets/img/favicon.ico" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.5.1</span>
+          <span class="project-version">0.6.0</span>
         
       </div>
     </header>
@@ -68,48 +68,28 @@
     <div class="nav-subsection">
       <ul>
   
+    <li class="nav-item">
+      <a href="undefined.html" data-nav="is-not-active">&lt;un-grouped&gt;</a>
+    </li>
+  
             <li class="nav-subsection">
               <h3 class="nav-title">Axioms</h3>
               <ul>
                 
   
     <li class="nav-item">
-      <a href="ax-basic-tokens.html" data-nav="is-active">Basic Design<span class="widont">&nbsp;</span>Tokens</a>
+      <a href="ax-config.html" data-nav="is-not-active">Global Configuration</a>
+    </li>
+  
+  
+  
+    <li class="nav-item">
+      <a href="ax-properties.html" data-nav="is-active">Custom Properties</a>
     </li>
   
   
     <li class="nav-item">
-      <a href="ax-logical-tokens.html" data-nav="is-not-active">Logical Design<span class="widont">&nbsp;</span>Tokens</a>
-    </li>
-  </ul>
-            </li>
-            <li class="nav-subsection">
-              <h3 class="nav-title">Tools</h3>
-              <ul>
-                
-  
-    <li class="nav-item">
-      <a href="to-functions.html" data-nav="is-not-active">Functions</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="to-mixins.html" data-nav="is-not-active">Mix-ins</a>
-    </li>
-  </ul>
-            </li>
-            <li class="nav-subsection">
-              <h3 class="nav-title">Generics</h3>
-              <ul>
-                
-  
-    <li class="nav-item">
-      <a href="ge-normalize.html" data-nav="is-not-active">Normalizing</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="ge-slots.html" data-nav="is-not-active">Preparing Slots</a>
+      <a href="ax-generic.html" data-nav="is-not-active">Generic Rules</a>
     </li>
   </ul>
             </li>
@@ -119,7 +99,7 @@
                 
   
     <li class="nav-item">
-      <a href="el-document.html" data-nav="is-not-active">Unique Document<span class="widont">&nbsp;</span>Elements</a>
+      <a href="el-document.html" data-nav="is-not-active">General Document<span class="widont">&nbsp;</span>Structure</a>
     </li>
   
   
@@ -129,22 +109,27 @@
   
   
     <li class="nav-item">
-      <a href="el-text.html" data-nav="is-not-active">Text Content</a>
+      <a href="el-grouping.html" data-nav="is-not-active">Grouping Content</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-text.html" data-nav="is-not-active">Text-level Semantics</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-edits.html" data-nav="is-not-active">Edits</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-links.html" data-nav="is-not-active">Links</a>
     </li>
   
   
     <li class="nav-item">
       <a href="el-embedding.html" data-nav="is-not-active">Embedding</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="el-scripting.html" data-nav="is-not-active">Scripting</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="el-edits.html" data-nav="is-not-active">Demarcating Edits</a>
     </li>
   
   
@@ -161,6 +146,11 @@
     <li class="nav-item">
       <a href="el-interactive.html" data-nav="is-not-active">Interactive Elements</a>
     </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-scripting.html" data-nav="is-not-active">Scripting</a>
+    </li>
   </ul>
             </li>
             <li class="nav-subsection">
@@ -176,6 +166,13 @@
     <li class="nav-item">
       <a href="ob-special.html" data-nav="is-not-active">More Specific<span class="widont">&nbsp;</span>Styling</a>
     </li>
+  </ul>
+            </li>
+            <li class="nav-subsection">
+              <h3 class="nav-title">Utilities</h3>
+              <ul>
+                
+  
   </ul>
             </li></ul>
     </div>
@@ -213,11 +210,11 @@
   <nav class="breadcrumb">
     
     <a href="index.html" >Stylament</a> »
-    <strong>Basic Design Tokens</strong>
+    <strong>Custom Properties</strong>
   </nav>
 
 
-        <div data-page="ax-basic-tokens">
+        <div data-page="ax-properties">
           
   
     
@@ -308,387 +305,6 @@
 
 
 
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h2 id="typography">Typography</h2>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/typography" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h3 id="modular-scale">Modular Scale</h3>
-<p>Major third, equal-tempered: ∛2 ≅<span class="widont">&nbsp;</span>1.26</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/typography#modular-scale" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.modularscale.com/?1&amp;em&amp;2@3" class="item-name">https://www.modularscale.com/?1&amp;em&amp;2@3</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h3 id="line-height">Line Height</h3>
-<p>Line heights supporting the vertical rhythm at every step of the<span class="widont">&nbsp;</span>scale.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/typography#line-height" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://drewish.com/tools/vertical-rhythm/" class="item-name">https://drewish.com/tools/vertical-rhythm/</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
 <section class="item" id="css--%3Aroot">
   
     
@@ -737,2307 +353,7 @@
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  --font-sans: &quot;Source Sans Pro&quot;, sans-serif;
-  --font-serif: &quot;Source Serif Pro&quot;, serif;
-  --font-mono: &quot;Source Code Pro&quot;, monospace;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="font-families">Font Families</h3>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/typography#font-families" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%3Aroot">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%3Aroot" class="item-name">:root</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  --weight-light: 300;
-  --weight-regular: 400;
-  --weight-medium: 500;
-  --weight-semibold: 600;
-  --weight-bold: 700;
-  --weight-extrabold: 800;
-  --weight-black: 900;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="font-weights">Font Weights</h3>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/typography#font-weights" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%3Aroot">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%3Aroot" class="item-name">:root</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  --letter-xs: -0.05em;
-  --letter-sm: -0.025em;
-  --letter-none: 0em;
-  --letter-lg: 0.025em;
-  --letter-xl: 0.05em;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="letter-spacing">Letter Spacing</h3>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/typography#letter-spacing" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%3Aroot">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%3Aroot" class="item-name">:root</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  $sizes: (&quot;xxs&quot;, &quot;xs&quot;, &quot;sm&quot;, &quot;md&quot;, &quot;lg&quot;, &quot;xl&quot;, &quot;xxl&quot;);
-  $step: 5;
-
-  // Use square numbers from 25ch to 121ch.
-  @each $size in $sizes {
-    --measure-#{$size}: #{$step * $step * 1ch};
-    $step: $step + 1;
-  }
-
-  --measure-full: 100%;
-  --measure-inf: 65535ch;
-
-  --measure: var(--measure-md);
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="measure">Measure</h3>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/typography#prose-width" class="item-name">Pollen (prose width)</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://en.wikipedia.org/wiki/Measure_(typography)" class="item-name">Wikipedia</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="http://webtypography.net/2.1.2" class="item-name">Web Typography</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h2 id="layout">Layout</h2>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/layout" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%3Aroot">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%3Aroot" class="item-name">:root</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  @for $i from 1 through 16 {
-    --size-#{$i}: calc(#{0.25 * $i} * var(--line-root-abs));
-  }
-
-  --size-full: 100%;
-  --size-screen: 100vw;
-  --size-min: min-content;
-  --size-max: max-content;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="sizes-scale">Sizes Scale</h3>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/layout#size-scale" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="variable--width-xs">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#variable--width-xs" class="item-name">$width-xs</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">$width-xs: 30rem;</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="container-widths">Container Widths</h3>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/layout#container-widths" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://bholmes.dev/blog/alternative-to-css-variable-media-queries/" class="item-name">https://bholmes.dev/blog/alternative-to-css-variable-media-queries/</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h2 id="ui">UI</h2>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/ui" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%3Aroot">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%3Aroot" class="item-name">:root</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  @for $i from 1 through 8 {
-    --stroke-width-#{$i}: #{0.0625 * $i}rem;
-  }
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="stroke-width-scale">Stroke Width Scale</h3>
-<p>A scale of stroke widths in steps of 1/16<span class="widont">&nbsp;</span>rem.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%3Aroot">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%3Aroot" class="item-name">:root</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  --radius-100: 100%;
-  --radius-xs: 0.2rem;
-  --radius-sm: 0.4rem;
-  --radius-md: 0.6rem;
-  --radius-lg: 0.8rem;
-  --radius-xl: 1rem;
-  --radius-full: 999rem;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="radius">Radius</h3>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/ui#radius" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%3Aroot">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%3Aroot" class="item-name">:root</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  --blur-xs: blur(0.333rem);
-  --blur-sm: blur(0.577rem);
-  --blur-md: blur(1rem);
-  --blur-lg: blur(1.732rem);
-  --blur-xl: blur(3rem);
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="blur-backdrop-filters-">Blur (Backdrop Filters)</h3>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/ui#blur" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%3Aroot">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%3Aroot" class="item-name">:root</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  --layer-1: 10;
-  --layer-2: 20;
-  --layer-3: 30;
-  --layer-4: 40;
-  --layer-5: 50;
-  --layer-below: -1;
-  --layer-top: 2147483647;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="layers">Layers</h3>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/ui#layers" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%3Aroot">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%3Aroot" class="item-name">:root</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  --elevation-1: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05);
-  --elevation-2: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1),
-    0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06);
-  --elevation-3: 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.1),
-    0 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.06);
-  --elevation-4: 0 0.75rem 1rem -0.25rem rgba(0, 0, 0, 0.1),
-    0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
-  --elevation-5: 0 1.25rem 1.5rem -0.25rem rgba(0, 0, 0, 0.1),
-    0 0.5rem 0.5rem -0.25rem rgba(0, 0, 0, 0.04);
-  --elevation-6: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
-  --elevation-7: 0 2rem 4rem -0.75rem rgba(0, 0, 0, 0.2);
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="elevation-drop-shadows-">Elevation (Drop Shadows)</h3>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/ui#elevation" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%3Aroot">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%3Aroot" class="item-name">:root</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
-  --easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="easing-transition-curves-">Easing (Transition Curves)</h3>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/ui#easing" class="item-name">Pollen</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%3Aroot">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%3Aroot" class="item-name">:root</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  --color-grey-50: #f9fafb;
+  --color-white: #f9fafb;
   --color-grey-100: #f2f4f5;
   --color-grey-200: #e8eaed;
   --color-grey-300: #d4d7dd;
@@ -3047,7 +363,7 @@
   --color-grey-700: #3f4754;
   --color-grey-800: #2c343f;
   --color-grey-900: #10181c;
-  --color-black: #14141b;
+  --color-black: #070f12;
   --color-grey: var(--color-grey-500);
   --color-red-300: #fc8181;
   --color-red-500: #e53e3e;
@@ -3625,6 +941,2796 @@
       
     
   </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="layout">Layout</h2>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/layout" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h3 id="container-widths">Container Widths</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/layout#container-widths" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://bholmes.dev/blog/alternative-to-css-variable-media-queries/" class="item-name">https://bholmes.dev/blog/alternative-to-css-variable-media-queries/</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--%3Aroot">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%3Aroot" class="item-name">:root</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  @for $i from 1 through 16 {
+    --size-#{$i}: calc(#{0.25 * $i} * var(--line-root-abs));
+  }
+
+  --size-full: 100%;
+  --size-screen: 100vw;
+  --size-min: min-content;
+  --size-max: max-content;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <h3 id="sizes-scale">Sizes Scale</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/layout#size-scale" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="typography">Typography</h2>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/typography" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--%3Aroot">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%3Aroot" class="item-name">:root</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  --font-sans: &quot;Source Sans Pro&quot;, sans-serif;
+  --font-serif: &quot;Source Serif Pro&quot;, serif;
+  --font-mono: &quot;Source Code Pro&quot;, monospace;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <h3 id="font-families">Font Families</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/typography#font-families" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h3 id="font-weights">Font Weights</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/typography#font-weights" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--%3Aroot">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%3Aroot" class="item-name">:root</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  --letter-xs: -0.05em;
+  --letter-sm: -0.025em;
+  --letter-none: 0em;
+  --letter-lg: 0.025em;
+  --letter-xl: 0.05em;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <h3 id="letter-spacing">Letter Spacing</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/typography#letter-spacing" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h3 id="line-height">Line Height</h3>
+<p>Line heights supporting the vertical rhythm at every step of the<span class="widont">&nbsp;</span>scale.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/typography#line-height" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://drewish.com/tools/vertical-rhythm/" class="item-name">https://drewish.com/tools/vertical-rhythm/</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h3 id="measure">Measure</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/typography#prose-width" class="item-name">Pollen (prose width)</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://en.wikipedia.org/wiki/Measure_(typography)" class="item-name">Wikipedia</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="http://webtypography.net/2.1.2" class="item-name">Web Typography</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h3 id="modular-scale">Modular Scale</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/typography#modular-scale" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="ui">UI</h2>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/ui" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--%3Aroot">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%3Aroot" class="item-name">:root</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  --blur-xs: blur(0.333rem);
+  --blur-sm: blur(0.577rem);
+  --blur-md: blur(1rem);
+  --blur-lg: blur(1.732rem);
+  --blur-xl: blur(3rem);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <h3 id="blur-backdrop-filters-">Blur (Backdrop Filters)</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/ui#blur" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--%3Aroot">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%3Aroot" class="item-name">:root</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <h3 id="easing-transition-curves-">Easing (Transition Curves)</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/ui#easing" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--%3Aroot">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%3Aroot" class="item-name">:root</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  --elevation-1: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05);
+  --elevation-2: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1),
+    0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06);
+  --elevation-3: 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.1),
+    0 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.06);
+  --elevation-4: 0 0.75rem 1rem -0.25rem rgba(0, 0, 0, 0.1),
+    0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
+  --elevation-5: 0 1.25rem 1.5rem -0.25rem rgba(0, 0, 0, 0.1),
+    0 0.5rem 0.5rem -0.25rem rgba(0, 0, 0, 0.04);
+  --elevation-6: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
+  --elevation-7: 0 2rem 4rem -0.75rem rgba(0, 0, 0, 0.2);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <h3 id="elevation-drop-shadows-">Elevation (Drop Shadows)</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/ui#elevation" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--%3Aroot">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%3Aroot" class="item-name">:root</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  --layer-1: 10;
+  --layer-2: 20;
+  --layer-3: 30;
+  --layer-4: 40;
+  --layer-5: 50;
+  --layer-below: -1;
+  --layer-top: 2147483647;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <h3 id="layers">Layers</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/ui#layers" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--%3Aroot">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%3Aroot" class="item-name">:root</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  --radius-100: 100%;
+  --radius-xs: 0.2rem;
+  --radius-sm: 0.4rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 0.8rem;
+  --radius-xl: 1rem;
+  --radius-full: 999rem;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <h3 id="radius">Radius</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://www.pollen.style/modules/ui#radius" class="item-name">Pollen</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--%3Aroot">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%3Aroot" class="item-name">:root</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  @for $i from 1 through 8 {
+    --stroke-width-#{$i}: #{0.0625 * $i}rem;
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <h3 id="stroke-width-scale">Stroke Width Scale</h3>
+<p>A scale of stroke widths in steps of 1/16<span class="widont">&nbsp;</span>rem.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h1 id="logical-design-tokens">Logical Design Tokens</h1>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--%3Aroot">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%3Aroot" class="item-name">:root</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  --font-body: var(--font-serif);
+  --font-heading: var(--font-sans);
+  --font-display: var(--font-body);
+  --weight-body: var(--weight-regular);
+  --weight-emphasis: var(--weight-bold);
+  --weight-heading: var(--weight-bold);
+  --color-body: var(--color-black);
+  --color-body-negative: var(--color-white);
+  --color-neutral: var(--color-grey);
+  --color-accent: var(--color-grey-700);
+  --color-accent-negative: var(--color-grey-100);
+  --color-mark: var(--color-grey-900);
+  --color-mark-negative: var(--color-grey-300);
+  --color-primary: var(--color-purple);
+  --color-primary-light: var(--color-purple-300);
+  --color-primary-dark: var(--color-purple-700);
+  --color-heading: var(--color-accent);
+  --color-links: var(--color-primary-dark);
+  --color-links-negative: var(--color-primary-light);
+  --color-hr: var(--color-primary);
+  --spacing-block: var(--line-root-abs);
+  --spacing-heading: var(--spacing-block);
+  --spacing-sectioning: calc(2 * var(--spacing-block));
+  --spacing-inline: 4ch;
+  --inline-padding-default: 0.5ch;
+  --stroke-width-default: var(--stroke-width-2);
+  --stroke-style-default: solid;
+  --stroke-color-default: var(--color-neutral);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Globally available tokens.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <p>Save space on smaller<span class="widont">&nbsp;</span>screens.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
 
   
   

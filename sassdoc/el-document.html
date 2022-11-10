@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Unique Document Elements | Stylament Documentation</title>
+  <title>General Document Structure | Stylament Documentation</title>
 
   <link href="assets/img/favicon.ico" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.5.1</span>
+          <span class="project-version">0.6.0</span>
         
       </div>
     </header>
@@ -68,48 +68,28 @@
     <div class="nav-subsection">
       <ul>
   
+    <li class="nav-item">
+      <a href="undefined.html" data-nav="is-not-active">&lt;un-grouped&gt;</a>
+    </li>
+  
             <li class="nav-subsection">
               <h3 class="nav-title">Axioms</h3>
               <ul>
                 
   
     <li class="nav-item">
-      <a href="ax-basic-tokens.html" data-nav="is-not-active">Basic Design<span class="widont">&nbsp;</span>Tokens</a>
+      <a href="ax-config.html" data-nav="is-not-active">Global Configuration</a>
+    </li>
+  
+  
+  
+    <li class="nav-item">
+      <a href="ax-properties.html" data-nav="is-not-active">Custom Properties</a>
     </li>
   
   
     <li class="nav-item">
-      <a href="ax-logical-tokens.html" data-nav="is-not-active">Logical Design<span class="widont">&nbsp;</span>Tokens</a>
-    </li>
-  </ul>
-            </li>
-            <li class="nav-subsection">
-              <h3 class="nav-title">Tools</h3>
-              <ul>
-                
-  
-    <li class="nav-item">
-      <a href="to-functions.html" data-nav="is-not-active">Functions</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="to-mixins.html" data-nav="is-not-active">Mix-ins</a>
-    </li>
-  </ul>
-            </li>
-            <li class="nav-subsection">
-              <h3 class="nav-title">Generics</h3>
-              <ul>
-                
-  
-    <li class="nav-item">
-      <a href="ge-normalize.html" data-nav="is-not-active">Normalizing</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="ge-slots.html" data-nav="is-not-active">Preparing Slots</a>
+      <a href="ax-generic.html" data-nav="is-not-active">Generic Rules</a>
     </li>
   </ul>
             </li>
@@ -119,7 +99,7 @@
                 
   
     <li class="nav-item">
-      <a href="el-document.html" data-nav="is-active">Unique Document<span class="widont">&nbsp;</span>Elements</a>
+      <a href="el-document.html" data-nav="is-active">General Document<span class="widont">&nbsp;</span>Structure</a>
     </li>
   
   
@@ -129,22 +109,27 @@
   
   
     <li class="nav-item">
-      <a href="el-text.html" data-nav="is-not-active">Text Content</a>
+      <a href="el-grouping.html" data-nav="is-not-active">Grouping Content</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-text.html" data-nav="is-not-active">Text-level Semantics</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-edits.html" data-nav="is-not-active">Edits</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-links.html" data-nav="is-not-active">Links</a>
     </li>
   
   
     <li class="nav-item">
       <a href="el-embedding.html" data-nav="is-not-active">Embedding</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="el-scripting.html" data-nav="is-not-active">Scripting</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="el-edits.html" data-nav="is-not-active">Demarcating Edits</a>
     </li>
   
   
@@ -161,6 +146,11 @@
     <li class="nav-item">
       <a href="el-interactive.html" data-nav="is-not-active">Interactive Elements</a>
     </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-scripting.html" data-nav="is-not-active">Scripting</a>
+    </li>
   </ul>
             </li>
             <li class="nav-subsection">
@@ -176,6 +166,13 @@
     <li class="nav-item">
       <a href="ob-special.html" data-nav="is-not-active">More Specific<span class="widont">&nbsp;</span>Styling</a>
     </li>
+  </ul>
+            </li>
+            <li class="nav-subsection">
+              <h3 class="nav-title">Utilities</h3>
+              <ul>
+                
+  
   </ul>
             </li></ul>
     </div>
@@ -213,7 +210,7 @@
   <nav class="breadcrumb">
     
     <a href="index.html" >Stylament</a> »
-    <strong>Unique Document Elements</strong>
+    <strong>General Document Structure</strong>
   </nav>
 
 
@@ -242,9 +239,10 @@
 
   
     <div data-item-section="prose" class="text-block">
-      <h1 id="unique-document-elements">Unique Document Elements</h1>
-<p>These elements are unique to each document. Some of the selectors are not pure element selectors.
-But due to their uniqueness it makes sense to address them without any added class<span class="widont">&nbsp;</span>specificity.</p>
+      <h1 id="general-document-structure">General Document Structure</h1>
+<p>The following rules target elements that are (or should be) unique to each document. In some cases
+compound selectors are required in order to only select the specific element. Nevertheless, we can
+address them without any added class<span class="widont">&nbsp;</span>specificity.</p>
 
       
   
@@ -309,7 +307,7 @@ But due to their uniqueness it makes sense to address them without any added cla
 
 
 
-<section class="item" id="css--%3Aroot">
+<section class="item" id="css--html">
   
     
   
@@ -327,7 +325,7 @@ But due to their uniqueness it makes sense to address them without any added cla
       
 
       
-        <a href="#css--%3Aroot" class="item-name">:root</a>
+        <a href="#css--html" class="item-name">html</a>
       
 
       
@@ -356,7 +354,7 @@ But due to their uniqueness it makes sense to address them without any added cla
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">:root {
+      <pre class="hljs-pre"><code class="lang-scss">html {
   font-size: var(--scale-root, 100%);
 }</code></pre>
     </div>
@@ -371,7 +369,7 @@ But due to their uniqueness it makes sense to address them without any added cla
   
     <div class="text-block">
       <p>Document root.
-Equivalent to <code>html</code>.</p>
+Also selectable as <code>:root</code> (which has a higher<span class="widont">&nbsp;</span>specificity).</p>
 
       
   
@@ -545,6 +543,7 @@ Equivalent to <code>html</code>.</p>
       
       <pre class="hljs-pre"><code class="lang-scss">body {
   color: var(--color-body);
+  background-color: var(--color-body-negative);
   // Push down the footer.
   min-block-size: 100vh;
 }</code></pre>
@@ -684,7 +683,7 @@ Equivalent to <code>html</code>.</p>
 
 
 
-<section class="item" id="css--main%3Anot(%5Bhidden%5D)">
+<section class="item" id="css--main">
   
     
   
@@ -702,7 +701,7 @@ Equivalent to <code>html</code>.</p>
       
 
       
-        <a href="#css--main%3Anot(%5Bhidden%5D)" class="item-name">main:not([hidden])</a>
+        <a href="#css--main" class="item-name">main</a>
       
 
       
@@ -731,7 +730,7 @@ Equivalent to <code>html</code>.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">main:not([hidden]) {
+      <pre class="hljs-pre"><code class="lang-scss">main {
   padding-block: var(--spacing-sectioning);
 }</code></pre>
     </div>
@@ -745,7 +744,7 @@ Equivalent to <code>html</code>.</p>
 
   
     <div class="text-block">
-      <p>The document’s main content. <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element:attr-hidden">There can be only<span class="widont">&nbsp;</span>one.</a></p>
+      <p>The document’s main content. <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element:attr-hidden">There can be only one<span class="widont">&nbsp;</span>(visible).</a></p>
 
       
   
@@ -870,7 +869,7 @@ Equivalent to <code>html</code>.</p>
 
 
 
-<section class="item" id="css--%3Awhere(body%2C%20body%20%3E%20div)%20%3E%20header%3Afirst-of-type">
+<section class="item" id="css--%3Awhere(body%2C%20body%20%3E%20div)%20%3E%20header">
   
     
   
@@ -888,7 +887,7 @@ Equivalent to <code>html</code>.</p>
       
 
       
-        <a href="#css--%3Awhere(body%2C%20body%20%3E%20div)%20%3E%20header%3Afirst-of-type" class="item-name">:where(body, body &gt; div) &gt;<span class="widont">&nbsp;</span>header:first-of-type</a>
+        <a href="#css--%3Awhere(body%2C%20body%20%3E%20div)%20%3E%20header" class="item-name">:where(body, body &gt; div) &gt;<span class="widont">&nbsp;</span>header</a>
       
 
       
@@ -917,7 +916,8 @@ Equivalent to <code>html</code>.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">:where(body, body &gt; div) &gt; header:first-of-type {
+      <pre class="hljs-pre"><code class="lang-scss">:where(body, body &gt; div) &gt; header {
+  @extend %clr-accented--inverted;
   padding-block: var(--spacing-sectioning);
 }</code></pre>
     </div>
@@ -931,7 +931,8 @@ Equivalent to <code>html</code>.</p>
 
   
     <div class="text-block">
-      <p>The document’s main<span class="widont">&nbsp;</span>header.</p>
+      <p>The document’s main header.
+(There could be more than one. But that would not make much<span class="widont">&nbsp;</span>sense.)</p>
 
       
   
@@ -998,7 +999,7 @@ Equivalent to <code>html</code>.</p>
 
 
 
-<section class="item" id="css--%3Awhere(body%2C%20body%20%3E%20div)%20%3E%20footer%3Alast-of-type">
+<section class="item" id="css--%3Awhere(body%2C%20body%20%3E%20div)%20%3E%20footer">
   
     
   
@@ -1016,7 +1017,7 @@ Equivalent to <code>html</code>.</p>
       
 
       
-        <a href="#css--%3Awhere(body%2C%20body%20%3E%20div)%20%3E%20footer%3Alast-of-type" class="item-name">:where(body, body &gt; div) &gt;<span class="widont">&nbsp;</span>footer:last-of-type</a>
+        <a href="#css--%3Awhere(body%2C%20body%20%3E%20div)%20%3E%20footer" class="item-name">:where(body, body &gt; div) &gt;<span class="widont">&nbsp;</span>footer</a>
       
 
       
@@ -1045,19 +1046,14 @@ Equivalent to <code>html</code>.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">:where(body, body &gt; div) &gt; footer:last-of-type {
+      <pre class="hljs-pre"><code class="lang-scss">:where(body, body &gt; div) &gt; footer {
   // Clever sticky footer (https://css-tricks.com/a-clever-sticky-footer-technique/)
   position: sticky;
   inset-block-start: 100vh;
 
   // Spacing and color.
+  @extend %clr-accented--inverted;
   padding-block: var(--spacing-sectioning);
-  color: var(--color-body-inverted);
-  background: var(--color-grey-700);
-
-  a:any-link {
-    color: var(--color-links-inverted);
-  }
 }</code></pre>
     </div>
   
@@ -1070,136 +1066,8 @@ Equivalent to <code>html</code>.</p>
 
   
     <div class="text-block">
-      <p>The document’s main<span class="widont">&nbsp;</span>footer.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%3Atarget">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%3Atarget" class="item-name">:target</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:target {
-  // Give URL fragment target enough air.
-  scroll-margin-block-start: var(--size-12);
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>The current target<span class="widont">&nbsp;</span>element.</p>
+      <p>The document’s main footer.
+(There could be more than one. But that would not make much<span class="widont">&nbsp;</span>sense.)</p>
 
       
   

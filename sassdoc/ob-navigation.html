@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.5.1</span>
+          <span class="project-version">0.6.0</span>
         
       </div>
     </header>
@@ -68,48 +68,28 @@
     <div class="nav-subsection">
       <ul>
   
+    <li class="nav-item">
+      <a href="undefined.html" data-nav="is-not-active">&lt;un-grouped&gt;</a>
+    </li>
+  
             <li class="nav-subsection">
               <h3 class="nav-title">Axioms</h3>
               <ul>
                 
   
     <li class="nav-item">
-      <a href="ax-basic-tokens.html" data-nav="is-not-active">Basic Design<span class="widont">&nbsp;</span>Tokens</a>
+      <a href="ax-config.html" data-nav="is-not-active">Global Configuration</a>
+    </li>
+  
+  
+  
+    <li class="nav-item">
+      <a href="ax-properties.html" data-nav="is-not-active">Custom Properties</a>
     </li>
   
   
     <li class="nav-item">
-      <a href="ax-logical-tokens.html" data-nav="is-not-active">Logical Design<span class="widont">&nbsp;</span>Tokens</a>
-    </li>
-  </ul>
-            </li>
-            <li class="nav-subsection">
-              <h3 class="nav-title">Tools</h3>
-              <ul>
-                
-  
-    <li class="nav-item">
-      <a href="to-functions.html" data-nav="is-not-active">Functions</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="to-mixins.html" data-nav="is-not-active">Mix-ins</a>
-    </li>
-  </ul>
-            </li>
-            <li class="nav-subsection">
-              <h3 class="nav-title">Generics</h3>
-              <ul>
-                
-  
-    <li class="nav-item">
-      <a href="ge-normalize.html" data-nav="is-not-active">Normalizing</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="ge-slots.html" data-nav="is-not-active">Preparing Slots</a>
+      <a href="ax-generic.html" data-nav="is-not-active">Generic Rules</a>
     </li>
   </ul>
             </li>
@@ -119,7 +99,7 @@
                 
   
     <li class="nav-item">
-      <a href="el-document.html" data-nav="is-not-active">Unique Document<span class="widont">&nbsp;</span>Elements</a>
+      <a href="el-document.html" data-nav="is-not-active">General Document<span class="widont">&nbsp;</span>Structure</a>
     </li>
   
   
@@ -129,22 +109,27 @@
   
   
     <li class="nav-item">
-      <a href="el-text.html" data-nav="is-not-active">Text Content</a>
+      <a href="el-grouping.html" data-nav="is-not-active">Grouping Content</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-text.html" data-nav="is-not-active">Text-level Semantics</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-edits.html" data-nav="is-not-active">Edits</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-links.html" data-nav="is-not-active">Links</a>
     </li>
   
   
     <li class="nav-item">
       <a href="el-embedding.html" data-nav="is-not-active">Embedding</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="el-scripting.html" data-nav="is-not-active">Scripting</a>
-    </li>
-  
-  
-    <li class="nav-item">
-      <a href="el-edits.html" data-nav="is-not-active">Demarcating Edits</a>
     </li>
   
   
@@ -161,6 +146,11 @@
     <li class="nav-item">
       <a href="el-interactive.html" data-nav="is-not-active">Interactive Elements</a>
     </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-scripting.html" data-nav="is-not-active">Scripting</a>
+    </li>
   </ul>
             </li>
             <li class="nav-subsection">
@@ -176,6 +166,13 @@
     <li class="nav-item">
       <a href="ob-special.html" data-nav="is-not-active">More Specific<span class="widont">&nbsp;</span>Styling</a>
     </li>
+  </ul>
+            </li>
+            <li class="nav-subsection">
+              <h3 class="nav-title">Utilities</h3>
+              <ul>
+                
+  
   </ul>
             </li></ul>
     </div>
@@ -243,7 +240,7 @@
   
     <div data-item-section="prose" class="text-block">
       <h2 id="main-navigation-bar">Main Navigation Bar</h2>
-<p>Rather opinonated styling for the first <code>nav.menu</code>.</p>
+<p>Rather opinonated styling for the first <code>nav.e-menu</code>.</p>
 
       
   
@@ -308,7 +305,7 @@
 
 
 
-<section class="item" id="css--body%20%3E%20nav.menu%3Afirst-of-type">
+<section class="item" id="css--body%20%3E%20nav.e-menu%3Afirst-of-type">
   
     
   
@@ -326,7 +323,7 @@
       
 
       
-        <a href="#css--body%20%3E%20nav.menu%3Afirst-of-type" class="item-name">body &gt;<span class="widont">&nbsp;</span>nav.menu:first-of-type</a>
+        <a href="#css--body%20%3E%20nav.e-menu%3Afirst-of-type" class="item-name">body &gt;<span class="widont">&nbsp;</span>nav.e-menu:first-of-type</a>
       
 
       
@@ -355,39 +352,31 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">body &gt; nav.menu:first-of-type {
+      <pre class="hljs-pre"><code class="lang-scss">body &gt; nav.e-menu:first-of-type {
   $size: var(--size-8);
-  --toggle-face-size: #{$size};
-  --toggle-face-padding: var(--size-1);
-  --toggle-face-folded-background: white;
-  --toggle-face-folded-radius: 0 0 var(--radius-lg);
-  --toggle-face-folded-shadow: var(--elevation-5);
-
-  &amp; &gt; label &gt; .--toggle-face {
-    background: white;
-    box-shadow: var(--elevation-3);
-  }
+  --item-block-size: #{$size};
+  --item-line-height: var(--size-3);
+  --item-padding: var(--size-3);
+  --toggle-size: #{$size};
+  --toggle-padding: var(--size-2);
+  --toggle-background: var(--color-accent-negative);
+  --toggle-shadow: var(--elevation-3);
+  --toggle-folded-shadow: var(--elevation-5);
 
   &amp; &gt; menu {
-    --item-height: #{$size};
-    --item-line-height: var(--size-3);
-    --item-padding: var(--size-3);
-
     box-shadow: var(--elevation-3);
 
     &amp; &gt; li {
-      color: var(--color-body-inverted);
-      background-color: var(--color-grey-700);
+      @extend %clr-accented--inverted;
       transition: all 0.3s var(--easing-standard);
       &amp;:hover {
-        color: var(--color-grey-700);
-        background-color: var(--color-body-inverted);
+        @extend .clr-accented;
       }
 
       &amp; &gt; a {
         color: inherit;
         background-color: transparent;
-        font-weight: var(--weight-bold);
+        font-weight: var(--weight-emphasis);
         text-decoration: none;
       }
     }
@@ -404,7 +393,7 @@
 
   
     <div class="text-block">
-      <p>The  first <code>nav.menu</code> is implicitly considered the main<span class="widont">&nbsp;</span>menu.</p>
+      <p>The  first <code>nav.e-menu</code> is implicitly considered the main<span class="widont">&nbsp;</span>menu.</p>
 
       
   
@@ -594,7 +583,7 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">$nav-wide: widths.$width-sm;</code></pre>
+      <pre class="hljs-pre"><code class="lang-scss">$nav-wide: map.get(cw.$widths, &quot;sm&quot;);</code></pre>
     </div>
   
 
@@ -799,7 +788,7 @@
 
 
 
-<section class="item" id="css--nav.menu">
+<section class="item" id="css--nav.e-menu">
   
     
   
@@ -817,7 +806,7 @@
       
 
       
-        <a href="#css--nav.menu" class="item-name">nav.menu</a>
+        <a href="#css--nav.e-menu" class="item-name">nav.e-menu</a>
       
 
       
@@ -846,12 +835,19 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.menu {
-  position: relative;
+      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu {
+  --item-block-size: #{$size};
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 
-  &amp; .--toggle-state,
-  &amp; .--toggle-face {
+  &amp; &gt; input[id^=&quot;-toggle-state&quot;],
+  &amp; &gt; label[for^=&quot;-toggle-state&quot;] {
     display: none;
+  }
+
+  &amp; &gt; menu {
+    flex-grow: 1;
   }
 }</code></pre>
     </div>
@@ -932,7 +928,7 @@
 
 
 
-<section class="item" id="css--nav.menu.levelable">
+<section class="item" id="css--nav.e-menu.%5C%2Blevelable">
   
     
   
@@ -950,7 +946,7 @@
       
 
       
-        <a href="#css--nav.menu.levelable" class="item-name">nav.menu.levelable</a>
+        <a href="#css--nav.e-menu.%5C%2Blevelable" class="item-name">nav.e-menu.\+levelable</a>
       
 
       
@@ -979,23 +975,18 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.menu.levelable {
+      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu.\+levelable {
   &amp; &gt; menu {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
 
     &amp; &gt; li {
       display: block;
-      text-align: start;
-    }
-
-    // Horizontal nav on wider screen.
-    @media (min-width: $nav-wide) {
-      display: flex;
-
-      &amp; &gt; li {
-        flex: 1;
-        text-align: center;
-      }
+      text-align: center;
+      // Horizontal nav as long as items have enough space.
+      // https://heydonworks.com/article/the-flexbox-holy-albatross/
+      flex-basis: calc(($nav-wide - 100%) * 999);
+      flex-grow: 1;
     }
   }
 }</code></pre>
@@ -1078,7 +1069,7 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
 
 
 
-<section class="item" id="css--nav.menu.foldable">
+<section class="item" id="css--nav.e-menu.%5C%2Bfoldable">
   
     
   
@@ -1096,7 +1087,7 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
       
 
       
-        <a href="#css--nav.menu.foldable" class="item-name">nav.menu.foldable</a>
+        <a href="#css--nav.e-menu.%5C%2Bfoldable" class="item-name">nav.e-menu.\+foldable</a>
       
 
       
@@ -1125,67 +1116,89 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.menu.foldable {
-  --toggle-face-size: #{$size};
-  --inset-start: var(--toggle-face-size);
-  --inset-end: 0;
+      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu.\+foldable {
+  --toggle-size: #{$size};
 
-  &amp; &gt; label {
-    &amp; &gt; .--toggle-face {
-      display: inline-block;
-      position: absolute;
-      inset-block-start: 0;
-      inset-inline-start: 0;
-      inline-size: var(--toggle-face-size);
-      block-size: var(--toggle-face-size);
-      padding: var(--toggle-face-padding);
+  /// Places toggle to the inline end (rhs in Latin).
+  &amp;.\+end {
+    flex-direction: row-reverse;
+  }
+
+  &amp; &gt; label[for^=&quot;-toggle-state&quot;] {
+    cursor: context-menu;
+    display: block;
+
+    &amp; &gt; :first-child,
+    &amp;:empty::after {
+      display: block;
+      position: relative; // Place over backdrop.
+      inline-size: var(--toggle-size);
+      block-size: var(--toggle-size);
+      padding: var(--toggle-padding);
+      border: var(--toggle-border);
+      margin: 0;
+      font-size: calc(var(--toggle-size) - 2 * var(--toggle-padding));
+      line-height: 1;
+      text-align: center;
+      font-weight: var(--weight-emphasis);
       transition: all 0.3s var(--easing-standard);
-
-      &amp; &gt; img {
-        block-size: 100%;
-      }
+      background: var(--toggle-background);
+      border-radius: var(--toggle-radius);
+      box-shadow: var(--toggle-shadow);
+      content: var(--toggle-content, &quot;⋮&quot;);
     }
   }
 
   &amp; &gt; menu {
-    position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: var(--inset-start);
-    inset-inline-end: var(--inset-end);
+    margin-bottom: -100%; // Do not occupy flow space when foldable.
+    max-inline-size: 100%;
     overflow: hidden;
-    transition: inset-inline-end 0.3s var(--easing-standard);
+    transition: max-inline-size 0.3s var(--easing-standard);
   }
 
-  @media (max-width: calc($nav-wide - 1px)) {
-    // Backdrop when unfolded on small screen.
-    &amp; input.--toggle-state:checked ~ label {
-      position: absolute;
-      inset: 0;
-      margin: 0;
-      inline-size: 100vw;
-      block-size: 100vh;
-      background: rgba(0, 0, 0, 0.5);
+  // Special behavior on narrow screen: Act as overlay with backdrop.
+  @media (max-width: $nav-wide) {
+    &amp; &gt; input[id^=&quot;-toggle-state&quot;] {
+      // Unfolded state on narrow screen.
+      &amp;:checked {
+        // Use `label` as backdrop. Clicking on it toggles the state.
+        &amp; ~ label[for^=&quot;-toggle-state&quot;]::before {
+          content: &quot;&quot;;
+          position: absolute;
+          inset: 0;
+          block-size: 100vh;
+          background: rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      // Folded state on narrow screen. (This is the default, as in not checked.)
+      &amp;:not(:checked) {
+        &amp; ~ menu {
+          @include menu-folded;
+        }
+
+        &amp; ~ label[for^=&quot;-toggle-state&quot;] &gt; :first-child,
+        &amp; ~ label[for^=&quot;-toggle-state&quot;]:empty::after {
+          @include toggle-folded;
+        }
+      }
     }
 
-    &amp; input.--toggle-state:not(:checked) {
-      &amp; ~ menu {
-        inset-inline-end: 100%;
-      }
-
-      &amp; ~ label &gt; .--toggle-face {
-        @include toggle-face-folded;
-      }
+    &amp; &gt; menu {
+      position: relative; // Place over backdrop.
     }
   }
 
+  // Folded state on wide screen. (Only when explicitly toggled.)
   @media (min-width: $nav-wide) {
-    &amp; input.--toggle-state:checked {
+    &amp; &gt; input[id^=&quot;-toggle-state&quot;]:checked {
       &amp; ~ menu {
-        inset-inline-end: 100%;
+        @include menu-folded;
       }
 
-      &amp; ~ label &gt; .--toggle-face {
-        @include toggle-face-folded;
+      &amp; ~ label[for^=&quot;-toggle-state&quot;] &gt; :first-child,
+      &amp; ~ label[for^=&quot;-toggle-state&quot;]:empty::after {
+        @include toggle-folded;
       }
     }
   }
@@ -1269,7 +1282,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
 
 
-<section class="item" id="css--nav.menu.sticky">
+<section class="item" id="css--%26.%5C%2Bend">
   
     
   
@@ -1287,7 +1300,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
       
 
       
-        <a href="#css--nav.menu.sticky" class="item-name">nav.menu.sticky</a>
+        <a href="#css--%26.%5C%2Bend" class="item-name">&amp;.\+end</a>
       
 
       
@@ -1316,13 +1329,138 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.menu.sticky {
+      <pre class="hljs-pre"><code class="lang-scss">&amp;.\+end {
+  flex-direction: row-reverse;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Places toggle to the inline end (rhs in<span class="widont">&nbsp;</span>Latin).</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--nav.e-menu.%5C%2Bsticky">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--nav.e-menu.%5C%2Bsticky" class="item-name">nav.e-menu.\+sticky</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu.\+sticky {
   position: sticky;
   inset-block-start: 0;
-
-  menu {
-    --item-height: #{$size};
-  }
+  z-index: 1;
 }</code></pre>
     </div>
   
