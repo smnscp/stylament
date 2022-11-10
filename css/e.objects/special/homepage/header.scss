@@ -1,0 +1,33 @@
+////
+/// @group ob-special
+////
+
+/// ## Homepage Header
+
+@use "../../layout/primitive/center";
+@use "../../layout/primitive/center-box";
+@use "../../coloring/accented";
+
+/// Special homepage header styles.
+body.s-homepage > header {
+  @extend .clr-accented;
+  --radius-box: var(--radius-md);
+  --stroke-width-box: var(--stroke-width-8);
+
+  & > * {
+    @extend .l-center-box;
+    @extend %l-center--intrinsic;
+  }
+
+  // Any image alone in an hgroup row is considered a logo.
+  hgroup > * > img:only-child {
+    // Size it so that it nicely fits the viewport.
+    max-inline-size: 66vmin;
+    max-block-size: 66vmin;
+
+    // Don’t measure-limit width of logo container.
+    :has(&) {
+      max-inline-size: none;
+    }
+  }
+}
