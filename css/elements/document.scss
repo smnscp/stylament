@@ -2,19 +2,20 @@
 /// @group el-document
 ////
 
-/// # Unique Document Elements
+/// # General Document Structure
 ///
-/// These elements are unique to each document. Some of the selectors are not pure element selectors.
-/// But due to their uniqueness it makes sense to address them without any added class specificity.
+/// The following rules target elements that are (or should be) unique to each document. In some cases
+/// compound selectors are required in order to only select the specific element. Nevertheless, we can
+/// address them without any added class specificity.
 
 @use "../objects/coloring/accented";
 
 /// Document root.
-/// Equivalent to `html`.
+/// Also selectable as `:root` (which has a higher specificity).
 ///
 /// @link https://html.spec.whatwg.org/multipage/semantics.html#the-root-element Spec
 /// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element#main_root MDN
-:root {
+html {
   font-size: var(--scale-root, 100%);
 }
 
@@ -29,13 +30,13 @@ body {
   min-block-size: 100vh;
 }
 
-/// The document’s main content. [There can be only one.][highlander]
+/// The document’s main content. [There can be only one (visible).][highlander]
 ///
 /// [highlander]: https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element:attr-hidden
 ///
 /// @link https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element Spec
 /// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main MDN
-main:not([hidden]) {
+main {
   padding-block: var(--spacing-sectioning);
 }
 

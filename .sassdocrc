@@ -8,7 +8,7 @@ groups:
     ax-properties: Custom Properties
     ax-generic: Generic Rules
   Elements:
-    el-document: Unique Document Elements
+    el-document: General Document Structure
     el-sectioning: Sectioning
     el-text: Text Content
     el-embedding: Embedding
