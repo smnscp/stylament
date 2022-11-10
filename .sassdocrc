@@ -10,13 +10,15 @@ groups:
   Elements:
     el-document: General Document Structure
     el-sectioning: Sectioning
-    el-text: Text Content
+    el-grouping: Grouping Content
+    el-text: Text-level Semantics
+    el-edits: Edits
+    el-links: Links
     el-embedding: Embedding
-    el-scripting: Scripting
-    el-edits: Demarcating Edits
     el-tables: Tabular Content
     el-forms: Form-associated Content
     el-interactive: Interactive Elements
+    el-scripting: Scripting
   Objects:
     ob-navigation: Navigation
     ob-special: More Specific Styling

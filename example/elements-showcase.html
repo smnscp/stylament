@@ -109,24 +109,23 @@
       <ol type="a" class="document-toc-body">
         <li>
           <details>
-            <summary><a href="#sec:a.document">General Document Structure</a></summary>
+            <summary><a href="#sec:document">General Document Structure</a></summary>
             <ol type="a">
-              <li><a href="#sec:a.root">Document root</a></li>
-              <li><a href="#sec:b.body">Content root</a></li>
-              <li><a href="#sec:c.main">The document’s main content</a></li>
-              <li><a href="#sec:d.header">The document’s main header</a></li>
-              <li><a href="#sec:e.footer">The document’s main footer</a></li>
-              <li><a href="#sec:f.target">The current target element</a></li>
+              <li><a href="#sec:root">Document root</a></li>
+              <li><a href="#sec:body">Content root</a></li>
+              <li><a href="#sec:main">The document’s main content</a></li>
+              <li><a href="#sec:header">The document’s main header</a></li>
+              <li><a href="#sec:footer">The document’s main footer</a></li>
             </ol>
           </details>
         </li>
         <li>
           <details>
-            <summary><a href="#sec:b.sectioning">Sectioning</a></summary>
+            <summary><a href="#sec:sectioning">Sectioning</a></summary>
             <ol type="a">
               <li>
                 <details>
-                  <summary><a href="#sec:a.sections">Sections</a></summary>
+                  <summary><a href="#sec:sections">Sections</a></summary>
                   <ul>
                     <li><code>section</code></li>
                     <li><code>article</code></li>
@@ -137,7 +136,7 @@
               </li>
               <li>
                 <details>
-                  <summary><a href="#sec:b.heading">Heading Content</a></summary>
+                  <summary><a href="#sec:heading">Heading Content</a></summary>
                   <ul>
                     <li><code>h1 – h6</code></li>
                     <li><code>hgroup</code></li>
@@ -146,7 +145,7 @@
               </li>
               <li>
                 <details>
-                  <summary><a href="#sec:c.scope">Sectioning Scope Specific Elements</a></summary>
+                  <summary><a href="#sec:scope">Sectioning Scope Specific Elements</a></summary>
                   <ul>
                     <li><code>header</code></li>
                     <li><code>footer</code></li>
@@ -159,219 +158,76 @@
         </li>
         <li>
           <details>
-            <summary><a href="#sec:c.text">Text Content</a></summary>
+            <summary><a href="#sec:grouping">Grouping Content</a></summary>
             <ol type="a">
               <li>
                 <details>
-                  <summary><a href="#sec:a.block">Block-level Text Content</a></summary>
-                  <ol type="a">
-                    <li>
-                      <details>
-                        <summary><a href="#sec:a.generic">Generic block</a></summary>
-                        <ul>
-                          <li><code>div</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:b.paragraphs">Paragraph</a></summary>
-                        <ul>
-                          <li><code>p</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:c.thematic-breaks">Thematic break</a></summary>
-                        <ul>
-                          <li><code>hr</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:d.lists">List</a></summary>
-                        <ul>
-                          <li><code>ol</code></li>
-                          <li><code>ul</code></li>
-                          <li><code>menu</code></li>
-                          <li><code>li</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:e.definition-lists">Definition list</a></summary>
-                        <ul>
-                          <li><code>dl</code></li>
-                          <li><code>dt</code></li>
-                          <li><code>dd</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:f.quotations">Extended quotation</a></summary>
-                        <ul>
-                          <li><code>blockquote</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:g.figures">Self-contained figure</a></summary>
-                        <ul>
-                          <li><code>figure</code></li>
-                          <li><code>figcaption</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:h.preformatted">Preformatted text</a></summary>
-                        <ul>
-                          <li><code>pre</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                  </ol>
+                  <summary><a href="#sec:generic-block">Generic block</a></summary>
+                  <ul>
+                    <li><code>div</code></li>
+                  </ul>
                 </details>
               </li>
               <li>
                 <details>
-                  <summary><a href="#sec:b.inline">Inline Text Semantics</a></summary>
-                  <ol type="a">
-                    <li>
-                      <details>
-                        <summary><a href="#sec:a.generic">Generic range</a></summary>
-                        <ul>
-                          <li><code>span</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:b.line-breaks">Line Breaks</a></summary>
-                        <ul>
-                          <li><code>br</code></li>
-                          <li><code>wbr</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:c.links">Links</a></summary>
-                        <ul>
-                          <li><code>a:any-link</code></li>
-                          <li><code>a:any-link:hover</code></li>
-                          <li><code>a[id]</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:d.emphasis">Emphasis</a></summary>
-                        <ul>
-                          <li><code>em</code></li>
-                          <li><code>strong</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:e.terminology">Terminology</a></summary>
-                        <ul>
-                          <li><code>abbr</code></li>
-                          <li><code>dfn</code></li>
-                          <li><code>var</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:f.quotations">Inline Quotation</a></summary>
-                        <ul>
-                          <li><code>q</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:g.citation">Citation</a></summary>
-                        <ul>
-                          <li><code>cite</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:h.altered-baseline">Altered Baseline</a></summary>
-                        <ul>
-                          <li><code>sub</code></li>
-                          <li><code>sup</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:i.io">Input/Output</a></summary>
-                        <ul>
-                          <li><code>kbd</code></li>
-                          <li><code>samp</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:j.code">Inline Code</a></summary>
-                        <ul>
-                          <li><code>code</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:k.data">Data</a></summary>
-                        <ul>
-                          <li><code>data</code></li>
-                          <li><code>time</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:l.enhanced-semantics">Enhanced Semantics</a></summary>
-                        <ul>
-                          <li><code>b</code></li>
-                          <li><code>i</code></li>
-                          <li><code>u</code></li>
-                          <li><code>s</code></li>
-                          <li><code>small</code></li>
-                          <li><code>mark</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:m.directionality">Directionality</a></summary>
-                        <ul>
-                          <li><code>bdi</code></li>
-                          <li><code>bdo</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li>
-                      <details>
-                        <summary><a href="#sec:n.ruby">Ruby</a></summary>
-                        <ul>
-                          <li><code>ruby</code></li>
-                          <li><code>rt</code></li>
-                          <li><code>rp</code></li>
-                        </ul>
-                      </details>
-                    </li>
-                  </ol>
+                  <summary><a href="#sec:paragraphs">Paragraph</a></summary>
+                  <ul>
+                    <li><code>p</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:thematic-breaks">Thematic break</a></summary>
+                  <ul>
+                    <li><code>hr</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:lists">List</a></summary>
+                  <ul>
+                    <li><code>ol</code></li>
+                    <li><code>ul</code></li>
+                    <li><code>menu</code></li>
+                    <li><code>li</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:definition-lists">Definition list</a></summary>
+                  <ul>
+                    <li><code>dl</code></li>
+                    <li><code>dt</code></li>
+                    <li><code>dd</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:extended-quotation">Extended quotation</a></summary>
+                  <ul>
+                    <li><code>blockquote</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:figures">Self-contained figure</a></summary>
+                  <ul>
+                    <li><code>figure</code></li>
+                    <li><code>figcaption</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:preformatted">Preformatted text</a></summary>
+                  <ul>
+                    <li><code>pre</code></li>
+                  </ul>
                 </details>
               </li>
             </ol>
@@ -379,11 +235,156 @@
         </li>
         <li>
           <details>
-            <summary><a href="#sec:d.embedding">Embedding</a></summary>
+            <summary><a href="#sec:text">Text-level Semantics</a></summary>
             <ol type="a">
               <li>
                 <details>
-                  <summary><a href="#sec:a.media">Multimedia Content</a></summary>
+                  <summary><a href="#sec:generic-range">Generic range</a></summary>
+                  <ul>
+                    <li><code>span</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:line-breaks">Line Breaks</a></summary>
+                  <ul>
+                    <li><code>br</code></li>
+                    <li><code>wbr</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:emphasis">Emphasis</a></summary>
+                  <ul>
+                    <li><code>em</code></li>
+                    <li><code>strong</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:terminology">Terminology</a></summary>
+                  <ul>
+                    <li><code>abbr</code></li>
+                    <li><code>dfn</code></li>
+                    <li><code>var</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:inline-quotation">Inline Quotation</a></summary>
+                  <ul>
+                    <li><code>q</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:citation">Citation</a></summary>
+                  <ul>
+                    <li><code>cite</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:altered-baseline">Altered Baseline</a></summary>
+                  <ul>
+                    <li><code>sub</code></li>
+                    <li><code>sup</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:io">Input/Output</a></summary>
+                  <ul>
+                    <li><code>kbd</code></li>
+                    <li><code>samp</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:code">Inline Code</a></summary>
+                  <ul>
+                    <li><code>code</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:data">Data</a></summary>
+                  <ul>
+                    <li><code>data</code></li>
+                    <li><code>time</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:enhanced-semantics">Enhanced Semantics</a></summary>
+                  <ul>
+                    <li><code>b</code></li>
+                    <li><code>i</code></li>
+                    <li><code>u</code></li>
+                    <li><code>s</code></li>
+                    <li><code>small</code></li>
+                    <li><code>mark</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:directionality">Directionality</a></summary>
+                  <ul>
+                    <li><code>bdi</code></li>
+                    <li><code>bdo</code></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary><a href="#sec:ruby">Ruby</a></summary>
+                  <ul>
+                    <li><code>ruby</code></li>
+                    <li><code>rt</code></li>
+                    <li><code>rp</code></li>
+                  </ul>
+                </details>
+              </li>
+            </ol>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><a href="#sec:edits">Edits</a></summary>
+            <ul>
+              <li><code>del</code></li>
+              <li><code>ins</code></li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><a href="#sec:links">Links</a></summary>
+            <ul>
+              <li><code>a:any-link</code></li>
+              <li><code>a:any-link:hover</code></li>
+              <li><code>a[id]</code></li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><a href="#sec:embedding">Embedding</a></summary>
+            <ol type="a">
+              <li>
+                <details>
+                  <summary><a href="#sec:media">Multimedia Content</a></summary>
                   <ul>
                     <li><code>picture</code></li>
                     <li><code>source</code></li>
@@ -398,7 +399,7 @@
               </li>
               <li>
                 <details>
-                  <summary><a href="#sec:b.containers">Embedding Containers</a></summary>
+                  <summary><a href="#sec:containers">Embedding Containers</a></summary>
                   <ul>
                     <li><code>embed</code></li>
                     <li><code>iframe</code></li>
@@ -409,7 +410,7 @@
               </li>
               <li>
                 <details>
-                  <summary><a href="#sec:c.other-ml">Embedded Fragments of Other Markup Languages</a></summary>
+                  <summary><a href="#sec:other-ml">Embedded Fragments of Other Markup Languages</a></summary>
                   <ul>
                     <li><code>svg</code></li>
                     <li><code>math</code></li>
@@ -421,26 +422,7 @@
         </li>
         <li>
           <details>
-            <summary><a href="#sec:e.scripting">Scripting</a></summary>
-            <ul>
-              <li><code>script</code></li>
-              <li><code>noscript</code></li>
-              <li><code>canvas</code></li>
-            </ul>
-          </details>
-        </li>
-        <li>
-          <details>
-            <summary><a href="#sec:f.edits">Demarcating Edits</a></summary>
-            <ul>
-              <li><code>del</code></li>
-              <li><code>ins</code></li>
-            </ul>
-          </details>
-        </li>
-        <li>
-          <details>
-            <summary><a href="#sec:g.tables">Tabular Content</a></summary>
+            <summary><a href="#sec:tables">Tabular Content</a></summary>
             <ul>
               <li><code>table</code></li>
               <li><code>caption</code></li>
@@ -456,11 +438,11 @@
         </li>
         <li>
           <details>
-            <summary><a href="#sec:h.forms">Form-associated Content</a></summary>
+            <summary><a href="#sec:forms">Form-associated Content</a></summary>
             <ol type="a">
               <li>
                 <details>
-                  <summary><a href="#sec:a.general">General</a></summary>
+                  <summary><a href="#sec:general">General</a></summary>
                   <ul>
                     <li><code>form</code></li>
                     <li><code>button</code></li>
@@ -469,7 +451,7 @@
               </li>
               <li>
                 <details>
-                  <summary><a href="#sec:b.grouping">Labeling &amp; Grouping</a></summary>
+                  <summary><a href="#sec:grouping">Labeling &amp; Grouping</a></summary>
                   <ul>
                     <li><code>label</code></li>
                     <li><code>fieldset</code></li>
@@ -479,7 +461,7 @@
               </li>
               <li>
                 <details>
-                  <summary><a href="#sec:c.lists">Value Lists</a></summary>
+                  <summary><a href="#sec:lists">Value Lists</a></summary>
                   <ul>
                     <li><code>datalist</code></li>
                     <li><code>option</code></li>
@@ -489,7 +471,7 @@
               </li>
               <li>
                 <details>
-                  <summary><a href="#sec:d.inputs">Inputs</a></summary>
+                  <summary><a href="#sec:inputs">Inputs</a></summary>
                   <ul>
                     <li><code>input</code></li>
                     <li><code>textarea</code></li>
@@ -499,7 +481,7 @@
               </li>
               <li>
                 <details>
-                  <summary><a href="#sec:e.outputs">Outputs</a></summary>
+                  <summary><a href="#sec:outputs">Outputs</a></summary>
                   <ul>
                     <li><code>meter</code></li>
                     <li><code>output</code></li>
@@ -512,11 +494,21 @@
         </li>
         <li>
           <details>
-            <summary><a href="#sec:i.interactive">Interactive Elements</a></summary>
+            <summary><a href="#sec:interactive">Interactive Elements</a></summary>
             <ul>
               <li><code>details</code></li>
               <li><code>summary</code></li>
               <li><code>dialog</code></li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><a href="#sec:scripting">Scripting</a></summary>
+            <ul>
+              <li><code>script</code></li>
+              <li><code>noscript</code></li>
+              <li><code>canvas</code></li>
             </ul>
           </details>
         </li>
@@ -525,51 +517,51 @@
   </aside>
   <main id="main-content">
     <section>
-      <h2 id="sec:a.document">General Document Structure</h2>
+      <h2 id="sec:document">General Document Structure</h2>
       <p>These are elements unique to the document. Instead of showing inline examples we highlight the respective
         element in this document.</p>
-      <h3 id="sec:a.root">Document root</h3>
+      <h3 id="sec:root">Document root</h3>
       <dl>
         <dt>Selectors</dt>
         <dd><code>html</code> / <code>:root</code></dd>
         <dt>Example</dt>
         <dd><a href="#document-root">Highlight document root.</a></dd>
       </dl>
-      <h3 id="sec:b.body">Content root</h3>
+      <h3 id="sec:body">Content root</h3>
       <dl>
         <dt>Selector</dt>
         <dd><code>body</code></dd>
         <dt>Example</dt>
         <dd><a href="#content-root">Highlight content root.</a></dd>
       </dl>
-      <h3 id="sec:c.main">The document’s main content</h3>
+      <h3 id="sec:main">The document’s main content</h3>
       <dl>
         <dt>Selector</dt>
-        <dd><code>main:not([hidden])</code></dd>
+        <dd><code>main</code></dd>
         <dt>Example</dt>
         <dd><a href="#main-content">Highlight main content.</a></dd>
       </dl>
-      <h3 id="sec:d.header">The document’s main header</h3>
+      <h3 id="sec:header">The document’s main header</h3>
       <dl>
         <dt>Selector</dt>
-        <dd><code>:where(body, body &gt; div) &gt; header:first-of-type</code></dd>
+        <dd><code>:where(body, body &gt; div) &gt; header</code></dd>
         <dt>Example</dt>
         <dd><a href="#main-header">Highlight main header.</a></dd>
         <dt>See also</dt>
-        <dd>For the <code>header</code> element in general see <a href="#sec:c.scope">Sectioning Scope Specific
+        <dd>For the <code>header</code> element in general see <a href="#sec:scope">Sectioning Scope Specific
             Elements</a>.</dd>
       </dl>
-      <h3 id="sec:e.footer">The document’s main footer</h3>
+      <h3 id="sec:footer">The document’s main footer</h3>
       <dl>
         <dt>Selector</dt>
-        <dd><code>:where(body, body &gt; div) &gt; footer:last-of-type</code></dd>
+        <dd><code>:where(body, body &gt; div) &gt; footer</code></dd>
         <dt>Example</dt>
         <dd><a href="#main-footer">Highlight main footer.</a></dd>
         <dt>See also</dt>
-        <dd>For the <code>footer</code> element in general see <a href="#sec:c.scope">Sectioning Scope Specific
+        <dd>For the <code>footer</code> element in general see <a href="#sec:scope">Sectioning Scope Specific
             Elements</a>.</dd>
       </dl>
-      <h3 id="sec:f.target">The current target element</h3>
+      <h3 id="sec:target">The current target element</h3>
       <dl id="sample-target">
         <dt>Selector</dt>
         <dd><code>:target</code></dd>
@@ -578,8 +570,8 @@
       </dl>
     </section>
     <section>
-      <h2 id="sec:b.sectioning">Sectioning</h2>
-      <h3 id="sec:a.sections">Sections</h3>
+      <h2 id="sec:sectioning">Sectioning</h2>
+      <h3 id="sec:sections">Sections</h3>
       <dl>
         <dt>Selector</dt>
         <dd><code>section</code></dd>
@@ -618,7 +610,7 @@
           </figure>
         </dd>
       </dl>
-      <h3 id="sec:b.heading">Heading Content</h3>
+      <h3 id="sec:heading">Heading Content</h3>
       <dl>
         <dt>Selectors</dt>
         <dd><code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code></dd>
@@ -707,7 +699,7 @@
           </figure>
         </dd>
       </dl>
-      <h3 id="sec:c.scope">Sectioning Scope Specific Elements</h3>
+      <h3 id="sec:scope">Sectioning Scope Specific Elements</h3>
       <dl>
         <dt>Selector</dt>
         <dd><code>header</code></dd>
@@ -739,243 +731,514 @@
       </dl>
     </section>
     <section>
-      <h2 id="sec:c.text">Text Content</h2>
-      <h3 id="sec:a.block">Block-level Text Content</h3>
-      <h4 id="sec:a.generic">Generic block</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>div</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <div>I am a <code>div</code> element.</div>
-            <figcaption><code>div</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:b.paragraphs">Paragraph</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>p</code></dd>
-        <dt>Examples</dt>
-        <dd>
-          <figure>
-            <p>I am a <code>p</code> element.</p>
-            <figcaption><code>p</code> element stand-alone</figcaption>
-          </figure>
-          <figure>
-            <p class="u-lorem-ipsum"></p>
-            <p class="u-lorem-ipsum"></p>
-            <p class="u-lorem-ipsum"></p>
-            <p class="u-lorem-ipsum"></p>
-            <figcaption>Several <code>p</code> elements</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:c.thematic-breaks">Thematic break</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>hr</code></dd>
-        <dt>Examples</dt>
-        <dd>
-          <figure>
-            <hr>
-            <figcaption><code>hr</code> element stand-alone</figcaption>
-          </figure>
-          <figure>
-            <p class="u-lorem-ipsum"></p>
-            <hr>
-            <p class="u-lorem-ipsum"></p>
-            <figcaption><code>hr</code> element with surounding content</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:d.lists">Lists</h4>
-      <dl>
-        <dt>Selectors</dt>
-        <dd><code>ol</code></dd>
-        <dd><code>ol &gt; li</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <ol>
-              <li>I am a list item.</li>
-              <li>I am a list item, too.</li>
-              <li>I am a third list .</a>
-                <ol>
-                  <li>I am a nested list item.</li>
-                  <li>I am a nested list item, too.</li>
-                  <li>I am a third nested list item.</li>
-                </ol>
-              </li>
-              <li>I am yet another list item.</li>
-            </ol>
-            <figcaption><code>ol</code> element with <code>li</code> and <code>a</code></figcaption>
-          </figure>
-        </dd>
-        <dt>Selectors</dt>
-        <dd><code>ul</code></dd>
-        <dd><code>ul &gt; li</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <ul>
-              <li>I am a list item.</li>
-              <li>I am a list item, too.</li>
-              <li>I am a third list .</a>
-                <ul>
-                  <li>I am a nested list item.</li>
-                  <li>I am a nested list item, too.</li>
-                  <li>I am a third nested list item.</li>
-                </ul>
-              </li>
-              <li>I am yet another list item.</li>
-            </ul>
-            <figcaption><code>ul</code> element with <code>li</code> and <code>a</code></figcaption>
-          </figure>
-        </dd>
-        <dt>Selectors</dt>
-        <dd><code>menu</code></dd>
-        <dd><code>menu &gt; li</code></dd>
-        <dd><code>menu &gt; li &gt; a</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <menu>
-              <li><a href="#">I am a menu item.</a></li>
-              <li><a href="#">I am a menu item, too.</a></li>
-              <li><a href="#">I am a third menu item.</a></li>
-            </menu>
-            <figcaption><code>menu</code> element with <code>li</code> and <code>a</code></figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:e.definition-lists">Definition list</h4>
-      <dl>
-        <dt>Selectors</dt>
-        <dd><code>dl</code></dd>
-        <dd><code>dl &gt; dt</code></dd>
-        <dd><code>dl &gt; dd</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <dl>
-              <dt>I am a <code>dt</code> element.</dt>
-              <dd>I am a <code>dd</code> element.</dd>
-              <dt>I am another <code>dt</code> element.</dt>
-              <dd>I am another <code>dd</code> element.</dd>
-            </dl>
-            <figcaption><code>dl</code> element with <code>dt</code>s and <code>dd</code>s</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:f.quotations">Extended quotation</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>blockquote</code></dd>
-        <dt>Examples</dt>
-        <dd>
-          <figure>
-            <blockquote>I am a <code>blockquote</code> element.</blockquote>
-            <figcaption><code>blockquote</code> element stand-alone</figcaption>
-          </figure>
-          <figure>
-            <blockquote>
-              <p>I am a <code>blockquote</code> element.</p>
+      <h2 id="sec:grouping">Grouping Content</h3>
+        <h3 id="sec:generic-block">Generic block</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>div</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <div>I am a <code>div</code> element.</div>
+              <figcaption><code>div</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:paragraphs">Paragraph</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>p</code></dd>
+          <dt>Examples</dt>
+          <dd>
+            <figure>
+              <p>I am a <code>p</code> element.</p>
+              <figcaption><code>p</code> element stand-alone</figcaption>
+            </figure>
+            <figure>
               <p class="u-lorem-ipsum"></p>
-            </blockquote>
-            <p><cite>— I am a <code>cite</code> element inside a <code>p</code> element.</cite></p>
-            <figcaption><code>blockquote</code> with <code>cite</code> in an adjacent <code>p</code></figcaption>
-          </figure>
-          <figure>
-            </figcaption>
+              <p class="u-lorem-ipsum"></p>
+              <p class="u-lorem-ipsum"></p>
+              <p class="u-lorem-ipsum"></p>
+              <figcaption>Several <code>p</code> elements</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:thematic-breaks">Thematic break</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>hr</code></dd>
+          <dt>Examples</dt>
+          <dd>
+            <figure>
+              <hr>
+              <figcaption><code>hr</code> element stand-alone</figcaption>
+            </figure>
+            <figure>
+              <p class="u-lorem-ipsum"></p>
+              <hr>
+              <p class="u-lorem-ipsum"></p>
+              <figcaption><code>hr</code> element with surounding content</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:lists">Lists</h3>
+        <dl>
+          <dt>Selectors</dt>
+          <dd><code>ol</code></dd>
+          <dd><code>ol &gt; li</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <ol>
+                <li>I am a list item.</li>
+                <li>I am a list item, too.</li>
+                <li>I am a third list .</a>
+                  <ol>
+                    <li>I am a nested list item.</li>
+                    <li>I am a nested list item, too.</li>
+                    <li>I am a third nested list item.</li>
+                  </ol>
+                </li>
+                <li>I am yet another list item.</li>
+              </ol>
+              <figcaption><code>ol</code> element with <code>li</code> and <code>a</code></figcaption>
+            </figure>
+          </dd>
+          <dt>Selectors</dt>
+          <dd><code>ul</code></dd>
+          <dd><code>ul &gt; li</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <ul>
+                <li>I am a list item.</li>
+                <li>I am a list item, too.</li>
+                <li>I am a third list .</a>
+                  <ul>
+                    <li>I am a nested list item.</li>
+                    <li>I am a nested list item, too.</li>
+                    <li>I am a third nested list item.</li>
+                  </ul>
+                </li>
+                <li>I am yet another list item.</li>
+              </ul>
+              <figcaption><code>ul</code> element with <code>li</code> and <code>a</code></figcaption>
+            </figure>
+          </dd>
+          <dt>Selectors</dt>
+          <dd><code>menu</code></dd>
+          <dd><code>menu &gt; li</code></dd>
+          <dd><code>menu &gt; li &gt; a</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <menu>
+                <li><a href="#">I am a menu item.</a></li>
+                <li><a href="#">I am a menu item, too.</a></li>
+                <li><a href="#">I am a third menu item.</a></li>
+              </menu>
+              <figcaption><code>menu</code> element with <code>li</code> and <code>a</code></figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:definition-lists">Definition list</h3>
+        <dl>
+          <dt>Selectors</dt>
+          <dd><code>dl</code></dd>
+          <dd><code>dl &gt; dt</code></dd>
+          <dd><code>dl &gt; dd</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <dl>
+                <dt>I am a <code>dt</code> element.</dt>
+                <dd>I am a <code>dd</code> element.</dd>
+                <dt>I am another <code>dt</code> element.</dt>
+                <dd>I am another <code>dd</code> element.</dd>
+              </dl>
+              <figcaption><code>dl</code> element with <code>dt</code>s and <code>dd</code>s</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:extended-quotation">Extended quotation</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>blockquote</code></dd>
+          <dt>Examples</dt>
+          <dd>
+            <figure>
+              <blockquote>I am a <code>blockquote</code> element.</blockquote>
+              <figcaption><code>blockquote</code> element stand-alone</figcaption>
+            </figure>
             <figure>
               <blockquote>
-                <p>Always build on solid ground!</p>
+                <p>I am a <code>blockquote</code> element.</p>
+                <p class="u-lorem-ipsum"></p>
               </blockquote>
-              <figcaption><cite>— Old wisdom</cite></figcaption>
+              <p><cite>— I am a <code>cite</code> element inside a <code>p</code> element.</cite></p>
+              <figcaption><code>blockquote</code> with <code>cite</code> in an adjacent <code>p</code></figcaption>
             </figure>
-            <figcaption><code>blockquote</code> inside <code>figure</code>, followed by <code>figcaption</code>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:g.figures">Self-contained figure</h4>
-      <dl>
-        <dt>Selectors</dt>
-        <dd><code>figure</code></dd>
-        <dd><code>figure &gt; figcaption</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
             <figure>
-              I am a <code>figure</code> element.
-              <figcaption>I am a <code>figcaption</code> element.</figcaption>
+              </figcaption>
+              <figure>
+                <blockquote>
+                  <p>Always build on solid ground!</p>
+                </blockquote>
+                <figcaption><cite>— Old wisdom</cite></figcaption>
+              </figure>
+              <figcaption><code>blockquote</code> inside <code>figure</code>, followed by <code>figcaption</code>
             </figure>
-            <figcaption><code>figure</code> element with <code>figcaption</code></figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:h.preformatted">Preformatted text</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>pre</code></dd>
-        <dt>Examples</dt>
-        <dd>
-          <figure>
-            <pre>I am a <code>pre</code> element.</pre>
-            <figcaption><code>pre</code> element stand-alone</figcaption>
-          </figure>
-          <figure>
-            <pre>
+          </dd>
+        </dl>
+        <h3 id="sec:figures">Self-contained figure</h3>
+        <dl>
+          <dt>Selectors</dt>
+          <dd><code>figure</code></dd>
+          <dd><code>figure &gt; figcaption</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <figure>
+                I am a <code>figure</code> element.
+                <figcaption>I am a <code>figcaption</code> element.</figcaption>
+              </figure>
+              <figcaption><code>figure</code> element with <code>figcaption</code></figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:preformatted">Preformatted text</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>pre</code></dd>
+          <dt>Examples</dt>
+          <dd>
+            <figure>
+              <pre>I am a <code>pre</code> element.</pre>
+              <figcaption><code>pre</code> element stand-alone</figcaption>
+            </figure>
+            <figure>
+              <pre>
         PPP   RRR   EEEE
         P  P  R  R  E
         PPP   RRR   EEE
         P     R R   E
         P     R  R  EEEE
             </pre>
-            <figcaption><code>pre</code> element with preformatted content</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h3 id="sec:b.inline">Inline Text Semantics</h3>
-      <h4 id="sec:a.generic">Generic range</h4>
+              <figcaption><code>pre</code> element with preformatted content</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h2 id="sec:text">Text-level Semantics</h2>
+        <h3 id="sec:generic-range">Generic range</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>span</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <span>I am a <code>span</code> element.</span>
+              <figcaption><code>span</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:line-breaks">Line Breaks</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>br</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              I am<br>broken by a <code>br</code> element.</br>
+              <figcaption>Text broken by <code>br</code> element</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>wbr</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <p>
+                Here’s a very long German word:
+                <b>Donau<wbr>dampfschifffahrts<wbr>gesellschafts<wbr>kapitänsmützen</b>.
+                It may wrap at certain places indicated by <code>wbr</code> elements.</wbr>
+              </p>
+              <figcaption>Text broken by <code>wbr</code> element</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:emphasis">Emphasis</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>em</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <em>I am an <code>em</code> element.</em>
+              <figcaption><code>em</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>strong</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <strong>I am a <code>strong</code> element.</strong>
+              <figcaption><code>strong</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:terminology">Terminology</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>abbr</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <abbr>I am an <code>abbr</code> element.</abbr>
+              <figcaption><code>abbr</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>dfn</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <dfn>I am a <code>dfn</code> element.</dfn>
+              <figcaption><code>dfn</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>var</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <var>I am a <code>var</code> element.</var>
+              <figcaption><code>var</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:inline-quotation">Inline Quotation</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>q</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <q>I am a <code>q</code> element.</q>
+              <figcaption><code>q</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:citation">Citation</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>cite</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <cite>I am a <code>cite</code> element.</cite>
+              <figcaption><code>cite</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:altered-baseline">Altered Baseline</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>sub</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <sub>I am a <code>sub</code> element.</sub>
+              <figcaption><code>sub</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>sup</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <sup>I am a <code>sup</code> element.</sup>
+              <figcaption><code>sup</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:io</a>">Input/Output</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>kbd</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <kbd>I am a <code>kbd</code> element.</kbd>
+              <figcaption><code>kbd</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>samp</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <samp>I am a <code>samp</code> element.</samp>
+              <figcaption><code>samp</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:code">Inline Code</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>code</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <code>I am a <code>code</code> element.</code>
+              <figcaption><code>code</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:data">Data</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>data</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <data>I am a <code>data</code> element.</data>
+              <figcaption><code>data</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>time</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <time>I am a <code>time</code> element.</time>
+              <figcaption><code>time</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:enhanced-semantics">Enhanced Semantics</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>b</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <b>I am a <code>b</code> element.</b>
+              <figcaption><code>b</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>i</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <i>I am an <code>i</code> element.</i>
+              <figcaption><code>i</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>u</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <u>I am a <code>u</code> element.</u>
+              <figcaption><code>u</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>s</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <s>I am a <code>s</code> element.</s>
+              <figcaption><code>s</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>small</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <small>I am a <code>small</code> element.</small>
+              <figcaption><code>small</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>mark</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <mark>I am a <code>mark</code> element.</mark>
+              <figcaption><code>mark</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:directionality">Directionality</h3>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>bdi</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <bdi>אני אלמנט <code>bdi</code>.</bdi>
+              <figcaption><code>bdi</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+          <dt>Selector</dt>
+          <dd><code>bdo</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <bdo dir="rtl">I am a <code>bdo</code> element.</bdo>
+              <figcaption><code>bdo</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+        <h3 id="sec:ruby">Ruby</h3>
+        <dl>
+          <dt>Selectors</dt>
+          <dd><code>ruby</code></dd>
+          <dd><code>ruby &gt; rt</code></dd>
+          <dd><code>ruby &gt; rp</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <ruby>漢<rp>（</rp>
+                <rt>かん</rt>
+                <rp>）</rp>字<rp>（</rp>
+                <rt>じ</rt>
+                <rp>）</rp>
+              </ruby>
+              <figcaption><code>ruby</code> element with <code>rt</code> wrapped in <code>rp</code></figcaption>
+            </figure>
+          </dd>
+        </dl>
+    </section>
+    <section>
+      <h2 id="sec:edits">Edits</h2>
       <dl>
         <dt>Selector</dt>
-        <dd><code>span</code></dd>
+        <dd><code>del</code></dd>
         <dt>Example</dt>
         <dd>
           <figure>
-            <span>I am a <code>span</code> element.</span>
-            <figcaption><code>span</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:b.line-breaks">Line Breaks</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>br</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            I am<br>broken by a <code>br</code> element.</br>
-            <figcaption>Text broken by <code>br</code> element</figcaption>
+            <del>I am a <code>del</code> element.</del>
+            <figcaption><code>del</code> element stand-alone</figcaption>
           </figure>
         </dd>
         <dt>Selector</dt>
-        <dd><code>wbr</code></dd>
+        <dd><code>ins</code></dd>
         <dt>Example</dt>
         <dd>
           <figure>
-            <p>
-              Here’s a very long German word:
-              <b>Donau<wbr>dampfschifffahrts<wbr>gesellschafts<wbr>kapitänsmützen</b>.
-              It may wrap at certain places indicated by <code>wbr</code> elements.</wbr>
-            </p>
-            <figcaption>Text broken by <code>wbr</code> element</figcaption>
+            <ins>I am an <code>ins</code> element.</ins>
+            <figcaption><code>ins</code> element stand-alone</figcaption>
           </figure>
         </dd>
       </dl>
-      <h4 id="sec:c.links">Links</h4>
+    </section>
+    <section>
+      <h2 id="sec:links">Links</h2>
       <dl>
         <dt>Selectors</dt>
         <dd><code>a:any-link</code></dd>
@@ -997,257 +1260,10 @@
           </figure>
         </dd>
       </dl>
-      <h4 id="sec:d.emphasis">Emphasis</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>em</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <em>I am an <code>em</code> element.</em>
-            <figcaption><code>em</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>strong</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <strong>I am a <code>strong</code> element.</strong>
-            <figcaption><code>strong</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:e.terminology">Terminology</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>abbr</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <abbr>I am an <code>abbr</code> element.</abbr>
-            <figcaption><code>abbr</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>dfn</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <dfn>I am a <code>dfn</code> element.</dfn>
-            <figcaption><code>dfn</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>var</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <var>I am a <code>var</code> element.</var>
-            <figcaption><code>var</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:f.quotations">Inline Quotation</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>q</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <q>I am a <code>q</code> element.</q>
-            <figcaption><code>q</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:g.citation">Citation</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>cite</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <cite>I am a <code>cite</code> element.</cite>
-            <figcaption><code>cite</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:h.altered-baseline">Altered Baseline</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>sub</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <sub>I am a <code>sub</code> element.</sub>
-            <figcaption><code>sub</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>sup</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <sup>I am a <code>sup</code> element.</sup>
-            <figcaption><code>sup</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:i.io</a>">Input/Output</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>kbd</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <kbd>I am a <code>kbd</code> element.</kbd>
-            <figcaption><code>kbd</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>samp</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <samp>I am a <code>samp</code> element.</samp>
-            <figcaption><code>samp</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:j.code">Inline Code</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>code</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <code>I am a <code>code</code> element.</code>
-            <figcaption><code>code</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:k.data">Data</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>data</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <data>I am a <code>data</code> element.</data>
-            <figcaption><code>data</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>time</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <time>I am a <code>time</code> element.</time>
-            <figcaption><code>time</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:l.enhanced-semantics">Enhanced Semantics</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>b</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <b>I am a <code>b</code> element.</b>
-            <figcaption><code>b</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>i</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <i>I am an <code>i</code> element.</i>
-            <figcaption><code>i</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>u</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <u>I am a <code>u</code> element.</u>
-            <figcaption><code>u</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>s</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <s>I am a <code>s</code> element.</s>
-            <figcaption><code>s</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>small</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <small>I am a <code>small</code> element.</small>
-            <figcaption><code>small</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>mark</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <mark>I am a <code>mark</code> element.</mark>
-            <figcaption><code>mark</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:m.directionality">Directionality</h4>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>bdi</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <bdi>אני אלמנט <code>bdi</code>.</bdi>
-            <figcaption><code>bdi</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>bdo</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <bdo dir="rtl">I am a <code>bdo</code> element.</bdo>
-            <figcaption><code>bdo</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-      <h4 id="sec:n.ruby">Ruby</h4>
-      <dl>
-        <dt>Selectors</dt>
-        <dd><code>ruby</code></dd>
-        <dd><code>ruby &gt; rt</code></dd>
-        <dd><code>ruby &gt; rp</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <ruby>漢<rp>（</rp>
-              <rt>かん</rt>
-              <rp>）</rp>字<rp>（</rp>
-              <rt>じ</rt>
-              <rp>）</rp>
-            </ruby>
-            <figcaption><code>ruby</code> element with <code>rt</code> wrapped in <code>rp</code></figcaption>
-          </figure>
-        </dd>
-      </dl>
     </section>
     <section>
-      <h2 id="sec:d.embedding">Embedding</h2>
-      <h3 id="sec:a.media">Multimedia Content</h3>
+      <h2 id="sec:embedding">Embedding</h2>
+      <h3 id="sec:media">Multimedia Content</h3>
       <details>
         <summary>View incomplete examples for
           <code>picture</code>,
@@ -1334,7 +1350,7 @@
           </dd>
         </dl>
       </details>
-      <h3 id="sec:b.containers">Embedding Containers</h3>
+      <h3 id="sec:containers">Embedding Containers</h3>
       <details>
         <summary>View incomplete examples for
           <code>embed</code>,
@@ -1381,7 +1397,7 @@
           </dd>
         </dl>
       </details>
-      <h3 id="sec:c.other-ml">Embedded Fragments of Other Markup Languages</h3>
+      <h3 id="sec:other-ml">Embedded Fragments of Other Markup Languages</h3>
       <details>
         <summary>View incomplete examples for
           <code>svg</code> and <code>math</code>.
@@ -1409,69 +1425,7 @@
       </details>
     </section>
     <section>
-      <h2 id="sec:e.scripting">Scripting</h2>
-      <details>
-        <summary>View incomplete examples for
-          <code>script</code>,
-          <code>noscript</code>, and
-          <code>canvas</code>.
-        </summary>
-        <dl>
-          <dt>Selector</dt>
-          <dd><code>script</code></dd>
-          <dt>Example</dt>
-          <dd>Nothing to see.</dd>
-          <dt>Selector</dt>
-          <dd><code>noscript</code></dd>
-          <dt>Example</dt>
-          <script>
-            document.write('<dd>Nothing to see unless you turn off JavaScript.</dd>');
-          </script>
-          <noscript>
-            <dd>
-              <figure>
-                <noscript>I am a <code>noscript</code> element.</noscript>
-                <figcaption><code>noscript</code> element stand-alone</figcaption>
-              </figure>
-            </dd>
-          </noscript>
-          <dt>Selector</dt>
-          <dd><code>canvas</code></dd>
-          <dt>Example</dt>
-          <dd>
-            <figure>
-              <canvas>I am a <code>canvas</code> element.</canvas>
-              <figcaption><code>canvas</code> element stand-alone</figcaption>
-            </figure>
-          </dd>
-        </dl>
-      </details>
-    </section>
-    <section>
-      <h2 id="sec:f.edits">Demarcating Edits</h2>
-      <dl>
-        <dt>Selector</dt>
-        <dd><code>del</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <del>I am a <code>del</code> element.</del>
-            <figcaption><code>del</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-        <dt>Selector</dt>
-        <dd><code>ins</code></dd>
-        <dt>Example</dt>
-        <dd>
-          <figure>
-            <ins>I am an <code>ins</code> element.</ins>
-            <figcaption><code>ins</code> element stand-alone</figcaption>
-          </figure>
-        </dd>
-      </dl>
-    </section>
-    <section>
-      <h2 id="sec:g.tables">Tabular Content</h2>
+      <h2 id="sec:tables">Tabular Content</h2>
       <dl>
         <dt>Selectors</dt>
         <dd><code>table</code></dd>
@@ -1625,7 +1579,7 @@
       </dl>
     </section>
     <section>
-      <h2 id="sec:h.forms">Form-associated Content</h2>
+      <h2 id="sec:forms">Form-associated Content</h2>
       <details>
         <summary>View incomplete examples for
           <code>form</code>,
@@ -1643,7 +1597,7 @@
           <code>output</code>, and
           <code>progress</code>.
         </summary>
-        <h3 id="sec:a.general">General</h3>
+        <h3 id="sec:general">General</h3>
         <dl>
           <dt>Selector</dt>
           <dd><code>form</code></dd>
@@ -1664,7 +1618,7 @@
             </figure>
           </dd>
         </dl>
-        <h3 id="sec:b.grouping">Labeling &amp; Grouping</h3>
+        <h3 id="sec:grouping">Labeling &amp; Grouping</h3>
         <dl>
           <dt>Selector</dt>
           <dd><code>label</code></dd>
@@ -1694,7 +1648,7 @@
             </figure>
           </dd>
         </dl>
-        <h3 id="sec:c.lists">Value Lists</h3>
+        <h3 id="sec:lists">Value Lists</h3>
         <dl>
           <dt>Selector</dt>
           <dd><code>datalist</code></dd>
@@ -1724,7 +1678,7 @@
             </figure>
           </dd>
         </dl>
-        <h3 id="sec:d.inputs">Inputs</h3>
+        <h3 id="sec:inputs">Inputs</h3>
         <dl>
           <dt>Selector</dt>
           <dd><code>input</code></dd>
@@ -1754,7 +1708,7 @@
             </figure>
           </dd>
         </dl>
-        <h3 id="sec:e.outputs">Outputs</h3>
+        <h3 id="sec:outputs">Outputs</h3>
         <dl>
           <dt>Selector</dt>
           <dd><code>meter</code></dd>
@@ -1787,7 +1741,7 @@
       </details>
     </section>
     <section>
-      <h2 id="sec:i.interactive">Interactive Elements</h2>
+      <h2 id="sec:interactive">Interactive Elements</h2>
       <dl>
         <dt>Selectors</dt>
         <dd><code>details</code></dd>
@@ -1816,6 +1770,45 @@
           </figure>
         </dd>
       </dl>
+    </section>
+    <section>
+      <h2 id="sec:scripting">Scripting</h2>
+      <details>
+        <summary>View incomplete examples for
+          <code>script</code>,
+          <code>noscript</code>, and
+          <code>canvas</code>.
+        </summary>
+        <dl>
+          <dt>Selector</dt>
+          <dd><code>script</code></dd>
+          <dt>Example</dt>
+          <dd>Nothing to see.</dd>
+          <dt>Selector</dt>
+          <dd><code>noscript</code></dd>
+          <dt>Example</dt>
+          <script>
+            document.write('<dd>Nothing to see unless you turn off JavaScript.</dd>');
+          </script>
+          <noscript>
+            <dd>
+              <figure>
+                <noscript>I am a <code>noscript</code> element.</noscript>
+                <figcaption><code>noscript</code> element stand-alone</figcaption>
+              </figure>
+            </dd>
+          </noscript>
+          <dt>Selector</dt>
+          <dd><code>canvas</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <canvas>I am a <code>canvas</code> element.</canvas>
+              <figcaption><code>canvas</code> element stand-alone</figcaption>
+            </figure>
+          </dd>
+        </dl>
+      </details>
     </section>
   </main>
 

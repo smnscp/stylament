@@ -2,7 +2,18 @@
 /// @group el-text
 ////
 
-/// # Text Content
+/// ## Inline Text Semantics
 
-@use "block";
-@use "inline";
+@use "generic";
+@use "line-breaks";
+@use "emphasis";
+@use "terminology";
+@use "quotations";
+@use "citation";
+@use "altered-baseline";
+@use "io";
+@use "code";
+@use "data";
+@use "enhanced-semantics";
+@use "directionality";
+@use "ruby";

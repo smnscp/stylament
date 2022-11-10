@@ -1,9 +1,11 @@
 @use "document";
 @use "sectioning";
+@use "grouping";
 @use "text";
-@use "embedding";
-@use "scripting";
+@use "links";
 @use "edits";
+@use "embedding";
 @use "tables";
 @use "forms";
 @use "interactive";
+@use "scripting";

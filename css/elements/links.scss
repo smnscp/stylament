@@ -1,8 +1,10 @@
 ////
-/// @group el-text
+/// @group el-links
 ////
 
-/// ### Links
+/// # Links
+///
+/// @link https://html.spec.whatwg.org/multipage/links.html Spec
 
 :where(a:any-link) {
   color: var(--color-links);
