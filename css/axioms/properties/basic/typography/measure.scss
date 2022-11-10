@@ -1,0 +1,27 @@
+////
+/// @group ax-properties
+////
+
+/// ### Measure
+/// @link https://www.pollen.style/modules/typography#prose-width Pollen (prose width)
+/// @link https://en.wikipedia.org/wiki/Measure_(typography) Wikipedia
+/// @link http://webtypography.net/2.1.2 Web Typography
+///
+
+@use "sass:map";
+@use "sass:meta";
+@use "../../../config" as cfg;
+
+$sizes: map.get(cfg.$merged, sizes);
+$func: map.get(cfg.$merged, measure-function);
+
+:root {
+  @each $name, $value in $sizes {
+    --measure-#{$name}: #{meta.call($func, $value)};
+  }
+
+  --measure-full: 100%;
+  --measure-inf: unset;
+
+  --measure: var(--measure-md);
+}

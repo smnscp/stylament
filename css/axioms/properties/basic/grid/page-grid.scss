@@ -1,0 +1,14 @@
+////
+/// @group ax-properties
+////
+
+/// ### Page Grid
+/// @link https://www.pollen.style/modules/grid#page-grid Pollen
+///
+:root {
+  --grid-page-width: var(--width-xl);
+  --grid-page-gutter: 5vw;
+  --grid-page-main: 2 / 3;
+  --grid-page: minmax(var(--grid-page-gutter), 1fr)
+    minmax(0, var(--grid-page-width)) minmax(var(--grid-page-gutter), 1fr);
+}

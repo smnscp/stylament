@@ -44,7 +44,7 @@ me. Maybe people can learn from it, just as I have learned from others.
 ### Configure
 
 ```scss
-@use "stylament/css/a.settings" with (
+@use "stylament/css/axioms" with (
   $config-custom: (
     sizes: (xs, sm, md, lg, xl),
     font-weights: (
@@ -65,10 +65,7 @@ me. Maybe people can learn from it, just as I have learned from others.
     ),
   ),
 );
-@use "stylament/css/b.tools";
-@use "stylament/css/c.generic";
-@use "stylament/css/d.elements";
-@use "stylament/css/e.objects";
-@use "stylament/css/f.components";
-@use "stylament/css/g.utilities";
+@use "stylament/css/elements";
+@use "stylament/css/objects";
+@use "stylament/css/utilities";
 ```

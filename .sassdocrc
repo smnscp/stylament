@@ -3,14 +3,10 @@ theme: herman
 groups:
   undefined: '<un-grouped>'
   Axioms:
-    ax-basic-tokens: Basic Design Tokens
-    ax-logical-tokens: Logical Design Tokens
-  Tools:
-    to-functions: Functions
-    to-mixins: Mix-ins
-  Generics:
-    ge-normalize: Normalizing
-    ge-slots: Preparing Slots
+    ax-config: Global Configuration
+    ax-tools: Preprocessing Tools
+    ax-properties: Custom Properties
+    ax-generic: Generic Rules
   Elements:
     el-document: Unique Document Elements
     el-sectioning: Sectioning
@@ -24,6 +20,9 @@ groups:
   Objects:
     ob-navigation: Navigation
     ob-special: More Specific Styling
+  Utilities:
+    ut-layout: Layout
+    ut-dev: Development
 # herman:
 #   extraDocs:
 #     - './CONTRIBUTING.md'

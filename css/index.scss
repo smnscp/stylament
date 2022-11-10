@@ -1,13 +1,10 @@
-@use "a.settings";
-@use "b.tools";
-@use "c.generic";
-@use "d.elements";
-@use "e.objects";
+@use "axioms";
+@use "elements";
+@use "objects";
 // More specific objects
-@use "e.objects/special/homepage";
-@use "f.components";
-@use "g.utilities";
-@use "g.utilities/placeholder";
-@use "g.utilities/debug";
+@use "objects/special/homepage";
+@use "utilities";
+@use "utilities/placeholder";
+@use "utilities/debug";
 
-@use "fonts.scss";
+@use "fonts";

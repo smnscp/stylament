@@ -1,0 +1,18 @@
+////
+/// @group ax-properties
+////
+
+
+/// ### Sizes Scale
+/// @link https://www.pollen.style/modules/layout#size-scale Pollen
+///
+:root {
+  @for $i from 1 through 16 {
+    --size-#{$i}: calc(#{0.25 * $i} * var(--line-root-abs));
+  }
+
+  --size-full: 100%;
+  --size-screen: 100vw;
+  --size-min: min-content;
+  --size-max: max-content;
+}

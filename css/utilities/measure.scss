@@ -1,0 +1,17 @@
+////
+/// @group ut-layout
+////
+
+@use "sass:list";
+@use "sass:map";
+@use "../axioms/config" as cfg;
+
+$sizes: map.get(cfg.$merged, sizes);
+$sizes: list.append($sizes, "full");
+$sizes: list.append($sizes, "inf");
+
+@each $name, $value in $sizes {
+  .u-measure-#{$name} {
+    --measure: var(--measure-#{$name}) !important;
+  }
+}
