@@ -16,11 +16,11 @@ figure.e-feature {
     max-inline-size: 85.7%;
     margin-inline-start: auto;
 
-    @media (min-width: map.get(container.$widths, "sm")) {
+    @media (min-width: map.get(container.$sizes, "sm")) {
       // Occupy bigger golden ratio part.
       max-inline-size: 61.8%;
     }
-    @media (min-width: map.get(container.$widths, "lg")) {
+    @media (min-width: map.get(container.$sizes, "lg")) {
       // Occupy smaller golden ratio part.
       max-inline-size: 38.2%;
     }

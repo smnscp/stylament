@@ -10,7 +10,7 @@
 /// Common patterns for navigation menus. Separated into several aspects.
 
 /// Breakpoint for switching to wide layout.
-$nav-wide: map.get(container.$widths, "sm");
+$nav-wide: map.get(container.$sizes, "sm");
 
 /// Size factor of the menu.
 $size: 2em;

@@ -11,7 +11,7 @@
   @return math.pow($size + 8, 2) * 1ch;
 }
 
-@function width($size) {
+@function container($size) {
   // Use multiples of 16rem centered around 48rem.
   @return ($size + 3) * 16rem;
 }
@@ -35,7 +35,7 @@ $default: (
       max: 12,
       line: 4,
     ),
-    width-function: meta.get-function("width"),
+    container-function: meta.get-function("container"),
   ),
   typography: (
     font-weights: (

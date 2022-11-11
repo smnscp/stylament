@@ -40,7 +40,7 @@
 }
 
 /// Save space on smaller screens.
-@media (max-width: map.get(container.$widths, "sm")) {
+@media (max-width: map.get(container.$sizes, "sm")) {
   :root {
     --spacing-sectioning: var(--spacing-block);
   }

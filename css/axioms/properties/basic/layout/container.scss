@@ -2,7 +2,7 @@
 /// @group ax-properties
 ////
 
-/// ### Container Widths
+/// ### Container Sizes
 /// @link https://www.pollen.style/modules/layout#container-widths Pollen
 /// @link https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
 ///
@@ -11,13 +11,13 @@
 @use "sass:meta";
 @use "../../../config" as cfg;
 
-$sizes: map.get(cfg.$merged, common, sizes);
-$func: map.get(cfg.$merged, layout, width-function);
-$widths: ();
+$names: map.get(cfg.$merged, common, sizes);
+$func: map.get(cfg.$merged, layout, container-function);
+$sizes: ();
 
 :root {
-  @each $name, $value in $sizes {
-    $widths: map.set($widths, $name, meta.call($func, $value)) !global;
-    --width-#{$name}: #{map.get($widths, $name)};
+  @each $name, $value in $names {
+    $sizes: map.set($sizes, $name, meta.call($func, $value)) !global;
+    --container-#{$name}: #{map.get($sizes, $name)};
   }
 }
