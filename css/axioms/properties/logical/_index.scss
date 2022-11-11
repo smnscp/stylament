@@ -3,7 +3,7 @@
 ////
 
 @use "sass:map";
-@use "../basic/layout/container-widths" as cw;
+@use "../basic/layout/container";
 
 /// # Logical Design Tokens
 
@@ -40,7 +40,7 @@
 }
 
 /// Save space on smaller screens.
-@media (max-width: map.get(cw.$widths, "sm")) {
+@media (max-width: map.get(container.$widths, "sm")) {
   :root {
     --spacing-sectioning: var(--spacing-block);
   }

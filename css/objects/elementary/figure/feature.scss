@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../../../axioms/properties/basic/layout/container-widths" as cw;
+@use "../../../axioms/properties/basic/layout/container";
 
 figure.e-feature {
   color: var(--color-accent);
@@ -16,11 +16,11 @@ figure.e-feature {
     max-inline-size: 85.7%;
     margin-inline-start: auto;
 
-    @media (min-width: map.get(cw.$widths, "sm")) {
+    @media (min-width: map.get(container.$widths, "sm")) {
       // Occupy bigger golden ratio part.
       max-inline-size: 61.8%;
     }
-    @media (min-width: map.get(cw.$widths, "lg")) {
+    @media (min-width: map.get(container.$widths, "lg")) {
       // Occupy smaller golden ratio part.
       max-inline-size: 38.2%;
     }

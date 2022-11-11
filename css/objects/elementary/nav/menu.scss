@@ -3,14 +3,14 @@
 ////
 
 @use "sass:map";
-@use "../../../axioms/properties/basic/layout/container-widths" as cw;
+@use "../../../axioms/properties/basic/layout/container";
 
 /// # Navigation Menu
 ///
 /// Common patterns for navigation menus. Separated into several aspects.
 
 /// Breakpoint for switching to wide layout.
-$nav-wide: map.get(cw.$widths, "sm");
+$nav-wide: map.get(container.$widths, "sm");
 
 /// Size factor of the menu.
 $size: 2em;
