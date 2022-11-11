@@ -7,8 +7,8 @@
 
 @use "scale";
 
-$min: map.get(cfg.$merged, modular-scale, min);
-$max: map.get(cfg.$merged, modular-scale, max);
+$min: map.get(cfg.$merged, typography, scale, min);
+$max: map.get(cfg.$merged, typography, scale, max);
 
 /// ### Line Height
 /// Line heights supporting the vertical rhythm at every step of the scale.

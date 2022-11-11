@@ -8,8 +8,8 @@
 
 @use "scale";
 
-$min: map.get(cfg.$merged, modular-scale, min);
-$max: map.get(cfg.$merged, modular-scale, max);
+$min: map.get(cfg.$merged, typography, scale, min);
+$max: map.get(cfg.$merged, typography, scale, max);
 
 /// ### Modular Scale
 /// @link https://www.pollen.style/modules/typography#modular-scale Pollen

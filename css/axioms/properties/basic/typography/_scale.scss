@@ -2,11 +2,11 @@
 @use "sass:math";
 @use "../../../config" as cfg;
 
-$base: map.get(cfg.$merged, modular-scale, base);
-$factor: map.get(cfg.$merged, modular-scale, factor);
+$base: map.get(cfg.$merged, typography, scale, base);
+$factor: map.get(cfg.$merged, typography, scale, factor);
 
-$line-height-min: map.get(cfg.$merged, line-heights, min);
-$line-height-root: map.get(cfg.$merged, line-heights, root);
+$line-height-min: map.get(cfg.$merged, typography, line-heights, min);
+$line-height-root: map.get(cfg.$merged, typography, line-heights, root);
 
 $rlh: $line-height-root * $base;
 

@@ -9,7 +9,7 @@
 @use "sass:map";
 @use "../../../config" as cfg;
 
-$weights: map.get(cfg.$merged, font-weights);
+$weights: map.get(cfg.$merged, typography, font-weights);
 
 :root {
   @each $name, $value in $weights {
