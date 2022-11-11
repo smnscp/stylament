@@ -8,14 +8,14 @@ This is gonna be solid. And flexible. At the same time. 😲 Awesome!
 
 **⚠️ Spoiler ⚠️:** Yes, this is **yet another HTML & CSS framework**.
 
-*Stylament* is a framework or a blueprint for building well-structured and
+_Stylament_ is a framework or a blueprint for building well-structured and
 prettily-styled web pages.
 
 ## Why?
 
 After decades of using HTML & CSS frameworks like _Foundation_ and _Bootstrap_,
 giving fresh candidates like _Bulma_ a try, even fighting popular misconceptions
-like *“utility first”* 🙄, I finally wanted to build my own thing. 💪
+like _“utility first”_ 🙄, I finally wanted to build my own thing. 💪
 
 I am well-aware of the existence of a bazillion of CSS frameworks out there.
 And I know about the notion that CSS frameworks in general suck.
@@ -46,24 +46,25 @@ me. Maybe people can learn from it, just as I have learned from others.
 ```scss
 @use "stylament/css/axioms" with (
   $config-custom: (
-    sizes: (xs, sm, md, lg, xl),
-    font-weights: (
-      light: 300,
-      regular: null,
-      medium: null,
-      semibold: null,
-      bold: null,
-      extrabold: 800,
+    typography: (
+      font-weights: (
+        light: 300,
+        regular: null,
+        medium: null,
+        semibold: null,
+        bold: null,
+        extrabold: 800,
+      ),
+      scale: (
+        min: -3,
+        max: 9,
+        factor: 1.5,
+      ),
+      line: (
+        root: 1.2,
+      ),
     ),
-    modular-scale: (
-      min: -3,
-      max: 9,
-      factor: 1.5,
-    ),
-    line-heights: (
-      root: 1.2,
-    ),
-  ),
+  )
 );
 @use "stylament/css/elements";
 @use "stylament/css/objects";
