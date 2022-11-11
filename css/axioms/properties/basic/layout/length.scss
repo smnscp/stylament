@@ -15,6 +15,27 @@ $line: map.get(cfg.$merged, layout, length, line);
 ///
 :root {
   @for $i from $min through $max {
-    --length-#{$i}: #{rhythm.$rlh * math.div($i, $line)};
+    $ratio: math.div($i, $line);
+    $value: rhythm.$rlh * $ratio;
+    --length-#{$i}: #{$value};
+
+    // --length-l* properties for line-related sizes.
+    $full-line: math.floor($ratio);
+    @if $ratio == $full-line {
+      --length-l#{$full-line}: #{$value};
+    } @else {
+      $closest-to-half: math.round(math.div($line, 2));
+      $closest-to-quarter: math.round(math.div($line, 4));
+      $diff: math.round($line * math.abs($ratio - $full-line));
+      @if $diff == $closest-to-half {
+        --length-l#{$full-line}to#{$full-line + 1}: #{$value};
+      }
+      @if $diff == $closest-to-quarter {
+        --length-l#{$full-line}aug: #{$value};
+      }
+      @if $diff == $line - $closest-to-quarter {
+        --length-l#{$full-line + 1}dim: #{$value};
+      }
+    }
   }
 }
