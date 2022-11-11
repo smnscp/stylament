@@ -30,6 +30,11 @@ $default: (
     ),
   ),
   layout: (
+    length: (
+      min: 2,
+      max: 12,
+      line: 4,
+    ),
     width-function: meta.get-function("width"),
   ),
   typography: (

@@ -2,11 +2,19 @@
 /// @group ax-properties
 ////
 
+@use "sass:map";
+@use "sass:math";
+@use "../../../config" as cfg;
+@use "../typography/shared" as rhythm;
+
+$min: map.get(cfg.$merged, layout, length, min);
+$max: map.get(cfg.$merged, layout, length, max);
+$line: map.get(cfg.$merged, layout, length, line);
 
 /// ### Length Scale
 ///
 :root {
-  @for $i from 1 through 16 {
-    --length-#{$i}: calc(#{0.25 * $i} * var(--line-root-abs));
+  @for $i from $min through $max {
+    --length-#{$i}: #{rhythm.$rlh * math.div($i, $line)};
   }
 }
