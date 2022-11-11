@@ -6,7 +6,7 @@
 @use "sass:math";
 @use "../../../config" as cfg;
 
-@use "scale";
+@use "shared" as scale;
 
 $min: map.get(cfg.$merged, typography, scale, min);
 $max: map.get(cfg.$merged, typography, scale, max);

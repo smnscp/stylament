@@ -5,8 +5,8 @@
 $base: map.get(cfg.$merged, typography, scale, base);
 $factor: map.get(cfg.$merged, typography, scale, factor);
 
-$line-height-min: map.get(cfg.$merged, typography, line-heights, min);
-$line-height-root: map.get(cfg.$merged, typography, line-heights, root);
+$line-height-min: map.get(cfg.$merged, typography, line, min);
+$line-height-root: map.get(cfg.$merged, typography, line, root);
 
 $rlh: $line-height-root * $base;
 

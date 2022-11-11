@@ -5,7 +5,7 @@
 @use "sass:map";
 @use "../../../config" as cfg;
 
-@use "scale";
+@use "shared" as rhythm;
 
 $min: map.get(cfg.$merged, typography, scale, min);
 $max: map.get(cfg.$merged, typography, scale, max);
@@ -16,10 +16,10 @@ $max: map.get(cfg.$merged, typography, scale, max);
 /// @link https://drewish.com/tools/vertical-rhythm/
 
 :root {
-  --line-root: #{scale.$line-height-root};
-  --line-root-abs: #{scale.$rlh};
+  --line-root: #{rhythm.$line-height-root};
+  --line-root-abs: #{rhythm.$rlh};
 
   @for $i from $min through $max {
-    --line-#{$i}: #{scale.grid-line($i)};
+    --line-#{$i}: #{rhythm.grid-line($i)};
   }
 }
