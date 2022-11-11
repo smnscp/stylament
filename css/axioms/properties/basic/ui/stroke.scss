@@ -2,10 +2,19 @@
 /// @group ax-properties
 ////
 
+@use "sass:map";
+@use "sass:math";
+@use "../../../config" as cfg;
+@use "../typography/shared" as rhythm;
+
+$min: map.get(cfg.$merged, ui, stroke, min);
+$max: map.get(cfg.$merged, ui, stroke, max);
+$line: map.get(cfg.$merged, ui, stroke, line);
+
 /// ### Stroke Width Scale
-/// A scale of stroke widths in steps of 1/16 rem.
+/// A scale of stroke widths with $line units per root line.
 :root {
-  @for $i from 1 through 8 {
-    --stroke-width-#{$i}: #{0.0625 * $i}rem;
+  @for $i from $min through $max {
+    --stroke-width-#{$i}: #{rhythm.$rlh * math.div($i, $line)};
   }
 }

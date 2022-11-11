@@ -67,6 +67,11 @@ $default: (
     color: (
       //
     ),
+    stroke: (
+      min: 1,
+      max: 8,
+      line: 24,
+    ),
   ),
 );
 
