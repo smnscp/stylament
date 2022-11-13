@@ -4,7 +4,7 @@
 
 @use "sass:map";
 @use "../../../config" as cfg;
-@use "../typography/shared" as rhythm;
+@use "../../../tools/rhythm";
 @use "../../../tools/scale";
 
 /// @name Length Scale

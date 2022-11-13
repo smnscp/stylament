@@ -5,7 +5,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "../../../config" as cfg;
-@use "../typography/shared" as rhythm;
+@use "../../../tools/rhythm";
 
 $min: map.get(cfg.$merged, ui, stroke, min);
 $max: map.get(cfg.$merged, ui, stroke, max);
