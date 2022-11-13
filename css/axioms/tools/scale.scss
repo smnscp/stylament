@@ -1,0 +1,49 @@
+////
+/// @group ax-tools
+////
+
+@use "sass:math";
+
+/// ### Numeric Length Scale
+///
+/// This generates a scale of `--length-<i>` properties.
+/// The `<i>` indicates the number of sub-units the length is made up of.
+///
+/// ### Logical Length Scale
+///
+/// Additionally, there are aliases refer to use the main:
+/// - `--length-l<j>`: exactly `j` lines
+/// - `--length-l<j>aug`: a bit more than `j` lines
+/// - `--length-l<j>to<j+1>`: right between `j` and `j+1` lines
+/// - `--length-l<j+1>dim`: a bit less than `j+1` lines
+///
+/// @param $start Start of the scale.
+/// @param $end End of the scale.
+/// @param $basis Scale basis (unit), e. g. the root line height.
+/// @param $sub Sub-division of the scale basis, i. e. how many sub-units per main unit.
+@mixin length($start, $end, $basis, $sub) {
+  @for $i from $start through $end {
+    $ratio: math.div($i, $sub);
+    $value: $basis * $ratio;
+    --length-#{$i}: #{$value};
+
+    // --length-l* properties for logical (e. g. line-related) sizes.
+    $full-basis: math.floor($ratio);
+    @if $ratio == $full-basis {
+      --length-l#{$full-basis}: #{$value};
+    } @else {
+      $closest-to-half: math.round(math.div($sub, 2));
+      $closest-to-quarter: math.round(math.div($sub, 4));
+      $diff: math.round($sub * math.abs($ratio - $full-basis));
+      @if $diff == $closest-to-half {
+        --length-l#{$full-basis}to#{$full-basis + 1}: #{$value};
+      }
+      @if $diff == $closest-to-quarter {
+        --length-l#{$full-basis}aug: #{$value};
+      }
+      @if $diff == $sub - $closest-to-quarter {
+        --length-l#{$full-basis + 1}dim: #{$value};
+      }
+    }
+  }
+}
