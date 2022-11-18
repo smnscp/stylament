@@ -4,8 +4,8 @@
 
 @use "sass:map";
 @use "../../../config" as cfg;
-@use "../../../tools/rhythm";
-@use "../../../tools/scale";
+@use "../../../tools/functions/rhythm";
+@use "../../../tools/mixins/scale";
 
 /// @name Length Scale
 :root {

@@ -4,7 +4,7 @@
 
 @use "sass:map";
 @use "sass:math";
-@use "../config" as cfg;
+@use "../../config" as cfg;
 
 $base: map.get(cfg.$merged, typography, scale, base);
 $factor: map.get(cfg.$merged, typography, scale, factor);
