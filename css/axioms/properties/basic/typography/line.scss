@@ -6,8 +6,15 @@
 @use "../../../config" as cfg;
 @use "../../../tools/functions/rhythm";
 
-$min: map.get(cfg.$merged, typography, scale, min);
-$max: map.get(cfg.$merged, typography, scale, max);
+$scale-base: map.get(cfg.$merged, typography, scale, base);
+$scale-factor: map.get(cfg.$merged, typography, scale, factor);
+$scale-min: map.get(cfg.$merged, typography, scale, min);
+$scale-max: map.get(cfg.$merged, typography, scale, max);
+
+$line-height-min: map.get(cfg.$merged, typography, line, min);
+$line-height-root: map.get(cfg.$merged, typography, line, root);
+
+$rlh: $line-height-root * $scale-base;
 
 /// ### Line Height
 /// Line heights supporting the vertical rhythm at every step of the scale.
@@ -15,10 +22,16 @@ $max: map.get(cfg.$merged, typography, scale, max);
 /// @link https://drewish.com/tools/vertical-rhythm/
 
 :root {
-  --line-root: #{rhythm.$line-height-root};
-  --line-root-abs: #{rhythm.$rlh};
+  --line-root: #{$line-height-root};
+  --line-root-abs: #{$rlh};
 
-  @for $i from $min through $max {
-    --line-#{$i}: #{rhythm.grid-line($i)};
+  @for $i from $scale-min through $scale-max {
+    --line-#{$i}: #{rhythm.grid-line(
+        $scale-base,
+        $scale-factor,
+        $line-height-root,
+        $line-height-min,
+        $i
+      )};
   }
 }

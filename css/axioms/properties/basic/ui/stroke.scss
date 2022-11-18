@@ -5,7 +5,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "../../../config" as cfg;
-@use "../../../tools/functions/rhythm";
+@use "../typography/line";
 
 $min: map.get(cfg.$merged, ui, stroke, min);
 $max: map.get(cfg.$merged, ui, stroke, max);
@@ -15,6 +15,6 @@ $line: map.get(cfg.$merged, ui, stroke, line);
 /// A scale of stroke widths with $line units per root line.
 :root {
   @for $i from $min through $max {
-    --stroke-width-#{$i}: #{rhythm.$rlh * math.div($i, $line)};
+    --stroke-width-#{$i}: #{line.$rlh * math.div($i, $line)};
   }
 }

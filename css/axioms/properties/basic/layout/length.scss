@@ -4,7 +4,7 @@
 
 @use "sass:map";
 @use "../../../config" as cfg;
-@use "../../../tools/functions/rhythm";
+@use "../typography/line";
 @use "../../../tools/mixins/scale";
 
 /// @name Length Scale
@@ -13,5 +13,5 @@
   $max: map.get(cfg.$merged, layout, length, max);
   $line: map.get(cfg.$merged, layout, length, line);
 
-  @include scale.length($min, $max, rhythm.$rlh, $line);
+  @include scale.length($min, $max, line.$rlh, $line);
 }

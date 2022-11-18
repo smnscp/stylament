@@ -4,11 +4,12 @@
 
 @use "sass:map";
 @use "sass:math";
-@use "../../config" as cfg;
 
-$base: map.get(cfg.$merged, typography, scale, base);
-$factor: map.get(cfg.$merged, typography, scale, factor);
-
-@function modular($level) {
+/// Modular scale at a given level.
+///
+/// @param $base Base font size of the scale.
+/// @param $factor Factor between adjacent steps of the modular scale.
+/// @param $level Level on the scale.
+@function modular($base, $factor, $level) {
   @return math.pow($factor, $level) * $base;
 }

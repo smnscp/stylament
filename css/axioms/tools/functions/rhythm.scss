@@ -4,14 +4,16 @@
 
 @use "sass:map";
 @use "sass:math";
-@use "../../config" as cfg;
 @use "scale";
 
-$line-height-min: map.get(cfg.$merged, typography, line, min);
-$line-height-root: map.get(cfg.$merged, typography, line, root);
-
-$rlh: $line-height-root * scale.$base;
-
-@function grid-line($level) {
-  @return math.ceil(math.div(scale.modular($level), $rlh) * $line-height-min) * $rlh;
+/// Base-line grid compatible line-height at a given scale level.
+///
+/// @param $base Base font size of the scale.
+/// @param $factor Factor between adjacent steps of the modular scale.
+/// @param $root Root line-height ratio.
+/// @param $min Minimum line-height ration.
+/// @param $level Level on the scale.
+@function grid-line($base, $factor, $root, $min, $level) {
+  $rlh-per-em: math.div(scale.modular(1, $factor, $level), $root);
+  @return $root * $base * math.ceil($min * $rlh-per-em);
 }
