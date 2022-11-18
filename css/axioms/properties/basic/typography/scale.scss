@@ -5,7 +5,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "../../../config" as cfg;
-@use "../../../tools/functions/rhythm";
+@use "../../../tools/functions/scale";
 
 $min: map.get(cfg.$merged, typography, scale, min);
 $max: map.get(cfg.$merged, typography, scale, max);
@@ -14,12 +14,12 @@ $max: map.get(cfg.$merged, typography, scale, max);
 /// @link https://www.pollen.style/modules/typography#modular-scale Pollen
 
 :root {
-  --scale-factor: #{rhythm.$factor};
+  --scale-factor: #{scale.$factor};
 
   @for $i from $min through $max {
-    --scale-#{$i}: #{rhythm.modular($i)};
+    --scale-#{$i}: #{scale.modular($i)};
   }
 
-  --scale-smaller: #{math.div(100%, rhythm.$factor)};
-  --scale-larger: #{100% * rhythm.$factor};
+  --scale-smaller: #{math.div(100%, scale.$factor)};
+  --scale-larger: #{100% * scale.$factor};
 }

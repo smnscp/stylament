@@ -5,19 +5,13 @@
 @use "sass:map";
 @use "sass:math";
 @use "../../config" as cfg;
-
-$base: map.get(cfg.$merged, typography, scale, base);
-$factor: map.get(cfg.$merged, typography, scale, factor);
+@use "scale";
 
 $line-height-min: map.get(cfg.$merged, typography, line, min);
 $line-height-root: map.get(cfg.$merged, typography, line, root);
 
-$rlh: $line-height-root * $base;
-
-@function modular($level) {
-  @return math.pow($factor, $level) * $base;
-}
+$rlh: $line-height-root * scale.$base;
 
 @function grid-line($level) {
-  @return math.ceil(math.div(modular($level), $rlh) * $line-height-min) * $rlh;
+  @return math.ceil(math.div(scale.modular($level), $rlh) * $line-height-min) * $rlh;
 }
