@@ -17,11 +17,11 @@ body > nav.e-menu:first-of-type {
   --toggle-size: #{$size};
   --toggle-padding: var(--length-l0to1);
   --toggle-background: var(--color-accent-negative);
-  --toggle-shadow: var(--elevation-3);
-  --toggle-folded-shadow: var(--elevation-5);
+  --toggle-shadow: var(--shadow-sm);
+  --toggle-folded-shadow: var(--shadow-lg);
 
   & > menu {
-    box-shadow: var(--elevation-3);
+    box-shadow: var(--shadow-sm);
 
     & > li {
       @extend %clr-accented--inverted;

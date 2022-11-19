@@ -3,21 +3,20 @@
 ////
 
 /// Box shadows for creating realistic elevation in 3d space.
-/// @name Elevation Scale
-/// @link https://www.pollen.style/modules/ui#elevation Pollen inheritance
+/// @name Shadow Scale
+/// @link https://www.pollen.style/modules/ui#shadow Pollen inheritance
 /// @todo Configure and calculate this.
-/// @todo Consider just naming it `--shadow-*`.
 /// @todo Consider using values that can also be used as `text-shadow`.
 :root {
-  --elevation-1: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05);
-  --elevation-2: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1),
+  --shadow-xxs: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05);
+  --shadow-xs: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1),
     0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06);
-  --elevation-3: 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.1),
+  --shadow-sm: 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.1),
     0 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.06);
-  --elevation-4: 0 0.75rem 1rem -0.25rem rgba(0, 0, 0, 0.1),
+  --shadow-md: 0 0.75rem 1rem -0.25rem rgba(0, 0, 0, 0.1),
     0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
-  --elevation-5: 0 1.25rem 1.5rem -0.25rem rgba(0, 0, 0, 0.1),
+  --shadow-lg: 0 1.25rem 1.5rem -0.25rem rgba(0, 0, 0, 0.1),
     0 0.5rem 0.5rem -0.25rem rgba(0, 0, 0, 0.04);
-  --elevation-6: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
-  --elevation-7: 0 2rem 4rem -0.75rem rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
+  --shadow-xxl: 0 2rem 4rem -0.75rem rgba(0, 0, 0, 0.2);
 }
