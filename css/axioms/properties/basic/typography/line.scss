@@ -7,27 +7,26 @@
 @use "../../../tools/functions/scale";
 @use "../../../tools/functions/rhythm";
 
-$scale-base: map.get(cfg.$merged, typography, scale, base);
-$scale-factor: map.get(cfg.$merged, typography, scale, factor);
-$scale-min: map.get(cfg.$merged, typography, scale, min);
-$scale-max: map.get(cfg.$merged, typography, scale, max);
-
-$line-height-min: map.get(cfg.$merged, typography, line, min);
-$line-height-root: map.get(cfg.$merged, typography, line, root);
-
-$rlh: $line-height-root * $scale-base;
-
 /// ### Line Height
 /// Line heights supporting the vertical rhythm at every step of the scale.
 /// @link https://www.pollen.style/modules/typography#line-height Pollen
 /// @link https://drewish.com/tools/vertical-rhythm/
-
 :root {
-  --line-root: #{$line-height-root};
+  $scale-base: map.get(cfg.$merged, typography, scale, base);
+  $scale-factor: map.get(cfg.$merged, typography, scale, factor);
+  $scale-min: map.get(cfg.$merged, typography, scale, min);
+  $scale-max: map.get(cfg.$merged, typography, scale, max);
+
+  $line-min: map.get(cfg.$merged, typography, line, min);
+  $line-root: map.get(cfg.$merged, typography, line, root);
+
+  $rlh: $line-root * $scale-base !global;
+
+  --line-root: #{$line-root};
   --line-root-abs: #{$rlh};
 
   @for $i from $scale-min through $scale-max {
     $font-size: scale.modular($scale-base, $scale-factor, $i);
-    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $line-height-min)};
+    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $line-min)};
   }
 }
