@@ -6,14 +6,11 @@
 @use "sass:math";
 @use "scale";
 
-/// Base-line grid compatible line-height at a given scale level.
+/// Base-line grid compatible line-height at a given font size.
 ///
-/// @param $base Base font size of the scale.
-/// @param $factor Factor between adjacent steps of the modular scale.
-/// @param $root Root line-height ratio.
-/// @param $min Minimum line-height ration.
-/// @param $level Level on the scale.
-@function grid-line($base, $factor, $root, $min, $level) {
-  $rlh-per-em: math.div(scale.modular(1, $factor, $level), $root);
-  @return $root * $base * math.ceil($min * $rlh-per-em);
+/// @param $em Font size to fit. In `rem`.
+/// @param $rlh Root line-height. In `rem`.
+/// @param $min Minimum line-height ratio.
+@function grid-line($em, $rlh, $min: 1) {
+  @return $rlh * math.ceil($min * math.div($em, $rlh));
 }

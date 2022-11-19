@@ -4,6 +4,7 @@
 
 @use "sass:map";
 @use "../../../config" as cfg;
+@use "../../../tools/functions/scale";
 @use "../../../tools/functions/rhythm";
 
 $scale-base: map.get(cfg.$merged, typography, scale, base);
@@ -26,12 +27,7 @@ $rlh: $line-height-root * $scale-base;
   --line-root-abs: #{$rlh};
 
   @for $i from $scale-min through $scale-max {
-    --line-#{$i}: #{rhythm.grid-line(
-        $scale-base,
-        $scale-factor,
-        $line-height-root,
-        $line-height-min,
-        $i
-      )};
+    $font-size: scale.modular($scale-base, $scale-factor, $i);
+    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $line-height-min)};
   }
 }
