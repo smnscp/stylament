@@ -2,20 +2,23 @@
 /// @group ax-properties
 ////
 
-/// ### Container Sizes
-/// @link https://www.pollen.style/modules/layout#container-widths Pollen
-/// @link https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
-///
-
 @use "sass:map";
 @use "sass:meta";
 @use "../../../config" as cfg;
 
-$names: map.get(cfg.$merged, common, sizes);
-$func: map.get(cfg.$merged, layout, container-function);
+/// Container sizes. Defined in [Container Size Scale](#css--Container%20Size%20Scale).
+/// @type Map
+/// @link https://bholmes.dev/blog/alternative-to-css-variable-media-queries/ Why SASS variables?
 $sizes: ();
 
+/// Defines [$sizes](#variable--sizes).
+/// @name Container Size Scale
+/// @requires $merged
+/// @link https://www.pollen.style/modules/layout#container-widths Pollen inheritance
 :root {
+  $names: map.get(cfg.$merged, common, sizes);
+  $func: map.get(cfg.$merged, layout, container-function);
+
   @each $name, $value in $names {
     $sizes: map.set($sizes, $name, meta.call($func, $value)) !global;
     --container-#{$name}: #{map.get($sizes, $name)};

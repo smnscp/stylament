@@ -16,7 +16,12 @@
   @return ($size + 3) * 16rem;
 }
 
+/// Configuration to be injected by consumers.
+/// @type Map
 $custom: () !default;
+
+/// Default configuration.
+/// @type Map
 $default: (
   common: (
     sizes: (
@@ -58,8 +63,8 @@ $default: (
       min: -2,
       max: 5,
       base: 1rem,
-      /// Major third, equal-tempered: ∛2 ≅ 1.26
-      /// @link https://www.modularscale.com/?1&em&2@3
+      // Major third, equal-tempered: ∛2 ≅ 1.26
+      // https://www.modularscale.com/?1&em&2@3
       factor: math.pow(2, math.div(1, 3)),
     ),
   ),
@@ -75,4 +80,8 @@ $default: (
   ),
 );
 
+/// Map of all configuration values merged together.
+/// @type Map
+/// @requires $default
+/// @requires $custom
 $merged: map.deep-merge($default, $custom);

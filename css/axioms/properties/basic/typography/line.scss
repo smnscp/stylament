@@ -14,9 +14,11 @@
 $rlh: null;
 
 /// Line heights supporting the vertical rhythm at every step of the scale.
-/// @link https://www.pollen.style/modules/typography#line-height Different from Pollen’s approach
-/// @link https://drewish.com/tools/vertical-rhythm/ Vertical rhythm calculation tool
+/// Defines [$rlh](#variable--rlh).
 /// @name Line Heights
+/// @requires $merged
+/// @link https://www.pollen.style/modules/typography#line-height Pollen inheritance
+/// @link https://drewish.com/tools/vertical-rhythm/ Vertical rhythm calculation tool
 :root {
   $scale-base: map.get(cfg.$merged, typography, scale, base);
   $scale-factor: map.get(cfg.$merged, typography, scale, factor);

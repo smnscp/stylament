@@ -23,8 +23,8 @@ groups:
     ob-navigation: Navigation
     ob-special: More Specific Styling
   Utilities:
-    ut-layout: Layout
-    ut-dev: Development
+    ut-layout: Layout Utilities
+    ut-dev: Development Utilities
 # herman:
 #   extraDocs:
 #     - './CONTRIBUTING.md'

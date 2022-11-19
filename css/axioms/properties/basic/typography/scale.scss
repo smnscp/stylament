@@ -7,15 +7,15 @@
 @use "../../../config" as cfg;
 @use "../../../tools/functions/scale";
 
-$base: map.get(cfg.$merged, typography, scale, base);
-$factor: map.get(cfg.$merged, typography, scale, factor);
-$min: map.get(cfg.$merged, typography, scale, min);
-$max: map.get(cfg.$merged, typography, scale, max);
-
-/// ### Modular Scale
-/// @link https://www.pollen.style/modules/typography#modular-scale Pollen
-
+/// @name Modular Font Size Scale
+/// @requires $merged
+/// @link https://www.pollen.style/modules/typography#modular-scale Pollen inheritance
 :root {
+  $base: map.get(cfg.$merged, typography, scale, base);
+  $factor: map.get(cfg.$merged, typography, scale, factor);
+  $min: map.get(cfg.$merged, typography, scale, min);
+  $max: map.get(cfg.$merged, typography, scale, max);
+
   --scale-factor: #{$factor};
 
   @for $i from $min through $max {

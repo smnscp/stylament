@@ -7,14 +7,15 @@
 @use "../../../config" as cfg;
 @use "../typography/line";
 
-$min: map.get(cfg.$merged, ui, stroke, min);
-$max: map.get(cfg.$merged, ui, stroke, max);
-$line: map.get(cfg.$merged, ui, stroke, line);
-
 /// A scale of stroke widths with $line units per root line.
 /// @name Stroke Width Scale
+/// @requires $merged
 /// @requires $rlh
 :root {
+  $min: map.get(cfg.$merged, ui, stroke, min);
+  $max: map.get(cfg.$merged, ui, stroke, max);
+  $line: map.get(cfg.$merged, ui, stroke, line);
+
   @for $i from $min through $max {
     --stroke-width-#{$i}: #{line.$rlh * math.div($i, $line)};
   }

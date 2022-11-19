@@ -2,9 +2,12 @@
 /// @group ax-properties
 ////
 
-/// ### Elevation (Drop Shadows)
-/// @link https://www.pollen.style/modules/ui#elevation Pollen
-///
+/// Box shadows for creating realistic elevation in 3d space.
+/// @name Elevation Scale
+/// @link https://www.pollen.style/modules/ui#elevation Pollen inheritance
+/// @todo Configure and calculate this.
+/// @todo Consider just naming it `--shadow-*`.
+/// @todo Consider using values that can also be used as `text-shadow`.
 :root {
   --elevation-1: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05);
   --elevation-2: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1),

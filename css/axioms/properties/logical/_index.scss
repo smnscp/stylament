@@ -5,9 +5,7 @@
 @use "sass:map";
 @use "../basic/layout/container";
 
-/// # Logical Design Tokens
-
-/// Globally available tokens.
+/// @name Logical Properties
 :root {
   --font-body: var(--font-serif);
   --font-heading: var(--font-sans);
@@ -40,8 +38,10 @@
 }
 
 /// Save space on smaller screens.
-@media (max-width: map.get(container.$sizes, "sm")) {
-  :root {
+/// @name Responsive Spacing
+/// @requires $sizes
+:root {
+  @media (max-width: map.get(container.$sizes, "sm")) {
     --spacing-sectioning: var(--spacing-block);
   }
 }

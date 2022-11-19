@@ -2,20 +2,19 @@
 /// @group ax-properties
 ////
 
-/// ### Measure
-/// @link https://www.pollen.style/modules/typography#prose-width Pollen (prose width)
-/// @link https://en.wikipedia.org/wiki/Measure_(typography) Wikipedia
-/// @link http://webtypography.net/2.1.2 Web Typography
-///
-
 @use "sass:map";
 @use "sass:meta";
 @use "../../../config" as cfg;
 
-$sizes: map.get(cfg.$merged, common, sizes);
-$func: map.get(cfg.$merged, typography, measure-function);
-
+/// @name Measure Scale
+/// @requires $merged
+/// @link https://www.pollen.style/modules/typography#prose-width Pollen inheritance
+/// @link https://en.wikipedia.org/wiki/Measure_(typography) Wikipedia
+/// @link http://webtypography.net/2.1.2 Web Typography
 :root {
+  $sizes: map.get(cfg.$merged, common, sizes);
+  $func: map.get(cfg.$merged, typography, measure-function);
+
   @each $name, $value in $sizes {
     --measure-#{$name}: #{meta.call($func, $value)};
   }
