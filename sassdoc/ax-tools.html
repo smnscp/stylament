@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Embedding | Stylament Documentation</title>
+  <title>Preprocessing Tools | Stylament Documentation</title>
 
   <link href="assets/img/favicon.ico" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -83,7 +83,7 @@
   
   
     <li class="nav-item">
-      <a href="ax-tools.html" data-nav="is-not-active">Preprocessing Tools</a>
+      <a href="ax-tools.html" data-nav="is-active">Preprocessing Tools</a>
     </li>
   
   
@@ -133,7 +133,7 @@
   
   
     <li class="nav-item">
-      <a href="el-embedding.html" data-nav="is-active">Embedding</a>
+      <a href="el-embedding.html" data-nav="is-not-active">Embedding</a>
     </li>
   
   
@@ -218,11 +218,11 @@
   <nav class="breadcrumb">
     
     <a href="index.html" >Stylament</a> »
-    <strong>Embedding</strong>
+    <strong>Preprocessing Tools</strong>
   </nav>
 
 
-        <div data-page="el-embedding">
+        <div data-page="ax-tools">
           
   
     
@@ -237,8 +237,37 @@
 
 
 
-<section class="item" >
+<section class="item" id="function--grid-line">
   
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@function</span>
+      
+
+      
+        <a href="#function--grid-line" class="item-name">grid-line()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
     
   
   
@@ -246,8 +275,8 @@
   
 
   
-    <div data-item-section="prose" class="text-block">
-      <h1 id="embedding">Embedding</h1>
+    <div class="text-block">
+      <p>Base-line grid compatible line-height at a given font<span class="widont">&nbsp;</span>size.</p>
 
       
   
@@ -261,6 +290,8 @@
     </div>
   
 
+  </div>
+
   
 
   
@@ -269,6 +300,387 @@
   
   
   
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$em:</span>
+      
+      
+      
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Font size to fit. In <code>rem</code>.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$rlh:</span>
+      
+      
+      
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Root line-height. In <code>rem</code>.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$min:</span>
+      
+      
+      
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Minimum line-height ratio.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+
+      
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#variable--rlh" class="item-name">$rlh</a>
+      
+      
+      <span class="value-type">(Number&lt;rem&gt;)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+      
+    
+  </div>
+
+  
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="function--modular">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@function</span>
+      
+
+      
+        <a href="#function--modular" class="item-name">modular()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Modular scale at a given<span class="widont">&nbsp;</span>level.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$base:</span>
+      
+      
+      
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Base font size of the<span class="widont">&nbsp;</span>scale.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$factor:</span>
+      
+      
+      
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Factor between adjacent steps of the modular<span class="widont">&nbsp;</span>scale.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$level:</span>
+      
+      
+      
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Level on the<span class="widont">&nbsp;</span>scale.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+
+      
+  
+
+      
+  
+
+    
+  </div>
 
   
 
@@ -312,8 +724,37 @@
 
 
 
-<section class="item" >
+<section class="item" id="mixin--length">
   
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--length" class="item-name">length()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
     
   
   
@@ -321,14 +762,18 @@
   
 
   
-    <div data-item-section="prose" class="text-block">
-      <h2 id="embedding-containers">Embedding Containers</h2>
-<p>No default styles<span class="widont">&nbsp;</span>needed.</p>
-<pre><code class="lang-scss">embed {}
-iframe {}
-object {}
-portal {}
-</code></pre>
+    <div class="text-block">
+      <h3 id="numeric-length-scale">Numeric Length Scale</h3>
+<p>This generates a scale of <code>--length-&lt;i&gt;</code> properties.
+The <code>&lt;i&gt;</code> indicates the number of sub-units the length is made up<span class="widont">&nbsp;</span>of.</p>
+<h3 id="logical-length-scale">Logical Length Scale</h3>
+<p>Additionally, there are aliases refer to use the<span class="widont">&nbsp;</span>main:</p>
+<ul>
+<li><code>--length-l&lt;j&gt;</code>: exactly <code>j</code> lines</li>
+<li><code>--length-l&lt;j&gt;aug</code>: a bit more than <code>j</code> lines</li>
+<li><code>--length-l&lt;j&gt;to&lt;j+1&gt;</code>: right between <code>j</code> and <code>j+1</code> lines</li>
+<li><code>--length-l&lt;j+1&gt;dim</code>: a bit less than <code>j+1</code> lines</li>
+</ul>
 
       
   
@@ -342,29 +787,23 @@ portal {}
     </div>
   
 
-  
-
-  
-  
-  
-  
-  
-  
+  </div>
 
   
 
-
+  
+  
+  
+  
   
   
 
-
   
-
     
-  <div data-item-section="related">
+  <div data-item-section="parameter">
     
       <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
+        <span class="item-subtitle-main">Parameters</span>
         
       </h3>
     
@@ -373,25 +812,6 @@ portal {}
       
         
   
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html" class="item-name">Spec</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-        
   
 
   
@@ -399,124 +819,26 @@ portal {}
     <h4 class="param-title">
       
       
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#embedded_content" class="item-name">MDN</a>
+        <span class="item-name">$start:</span>
       
       
       
-      <span class="item-note">[external]</span>
+      
     </h4>
 
     
+      
+      <div class="param-details text-block">
+        <p>Start of the<span class="widont">&nbsp;</span>scale.</p>
+
+      </div>
+    
   </div>
 
 
       
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h2 id="multimedia-content">Multimedia Content</h2>
-<p>No default styles<span class="widont">&nbsp;</span>needed.</p>
-<pre><code class="lang-scss">picture {}
-source {}
-img {}
-
-video {}
-audio {}
-track {}
-
-map {}
-area {}
-</code></pre>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
         
-      </h3>
-    
-
-    
-      
-        
+  
   
 
   
@@ -524,19 +846,26 @@ area {}
     <h4 class="param-title">
       
       
-        <a href="https://html.spec.whatwg.org/multipage/images.html" class="item-name">Spec (images)</a>
+        <span class="item-name">$end:</span>
       
       
       
-      <span class="item-note">[external]</span>
+      
     </h4>
 
+    
+      
+      <div class="param-details text-block">
+        <p>End of the<span class="widont">&nbsp;</span>scale.</p>
+
+      </div>
     
   </div>
 
 
       
         
+  
   
 
   
@@ -544,19 +873,26 @@ area {}
     <h4 class="param-title">
       
       
-        <a href="https://html.spec.whatwg.org/multipage/embedded-content.html" class="item-name">Spec (embedded content)</a>
+        <span class="item-name">$basis:</span>
       
       
       
-      <span class="item-note">[external]</span>
+      
     </h4>
 
+    
+      
+      <div class="param-details text-block">
+        <p>Scale basis (unit), e. g. the root line<span class="widont">&nbsp;</span>height.</p>
+
+      </div>
     
   </div>
 
 
       
         
+  
   
 
   
@@ -564,53 +900,19 @@ area {}
     <h4 class="param-title">
       
       
-        <a href="https://html.spec.whatwg.org/multipage/media.html" class="item-name">Spec (media)</a>
+        <span class="item-name">$sub:</span>
       
       
       
-      <span class="item-note">[external]</span>
+      
     </h4>
 
     
-  </div>
+      
+      <div class="param-details text-block">
+        <p>Sub-division of the scale basis, i. e. how many sub-units per main<span class="widont">&nbsp;</span>unit.</p>
 
-
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://html.spec.whatwg.org/multipage/image-maps.html" class="item-name">Spec (image maps)</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#embedded_content" class="item-name">MDN</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
+      </div>
     
   </div>
 
@@ -618,145 +920,26 @@ area {}
       
 
       
+  
+
+      
+  
+
+      
+  
+
+      
+  
+
     
   </div>
 
   
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
 
 
   
   
 
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h2 id="embedded-fragments-of-other-markup-languages">Embedded Fragments of Other Markup<span class="widont">&nbsp;</span>Languages</h2>
-<p>No default styles<span class="widont">&nbsp;</span>needed.</p>
-<pre><code class="lang-scss">svg {}
-math {}
-</code></pre>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://html.spec.whatwg.org/multipage/embedded-content-other.html" class="item-name">Spec</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#svg_and_mathml" class="item-name">MDN</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
 
   
   

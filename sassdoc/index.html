@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.6.0</span>
+          <span class="project-version">0.7.0</span>
         
       </div>
     </header>
@@ -81,6 +81,10 @@
       <a href="ax-config.html" data-nav="is-not-active">Global Configuration</a>
     </li>
   
+  
+    <li class="nav-item">
+      <a href="ax-tools.html" data-nav="is-not-active">Preprocessing Tools</a>
+    </li>
   
   
     <li class="nav-item">
@@ -173,6 +177,10 @@
               <ul>
                 
   
+    <li class="nav-item">
+      <a href="ut-layout.html" data-nav="is-not-active">Layout Utilities</a>
+    </li>
+  
   </ul>
             </li></ul>
     </div>
@@ -250,24 +258,25 @@ me. Maybe people can learn from it, just as I have learned from<span class="wido
 <h3 id="configure">Configure</h3>
 <pre><code class="lang-scss">@use &quot;stylament/css/axioms&quot; with (
   $config-custom: (
-    sizes: (xs, sm, md, lg, xl),
-    font-weights: (
-      light: 300,
-      regular: null,
-      medium: null,
-      semibold: null,
-      bold: null,
-      extrabold: 800,
+    typography: (
+      font-weights: (
+        light: 300,
+        regular: null,
+        medium: null,
+        semibold: null,
+        bold: null,
+        extrabold: 800,
+      ),
+      scale: (
+        min: -3,
+        max: 9,
+        factor: 1.5,
+      ),
+      line: (
+        root: 1.2,
+      ),
     ),
-    modular-scale: (
-      min: -3,
-      max: 9,
-      factor: 1.5,
-    ),
-    line-heights: (
-      root: 1.2,
-    ),
-  ),
+  )
 );
 @use &quot;stylament/css/elements&quot;;
 @use &quot;stylament/css/objects&quot;;

@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.6.0</span>
+          <span class="project-version">0.7.0</span>
         
       </div>
     </header>
@@ -81,6 +81,10 @@
       <a href="ax-config.html" data-nav="is-active">Global Configuration</a>
     </li>
   
+  
+    <li class="nav-item">
+      <a href="ax-tools.html" data-nav="is-not-active">Preprocessing Tools</a>
+    </li>
   
   
     <li class="nav-item">
@@ -173,6 +177,10 @@
               <ul>
                 
   
+    <li class="nav-item">
+      <a href="ut-layout.html" data-nav="is-not-active">Layout Utilities</a>
+    </li>
+  
   </ul>
             </li></ul>
     </div>
@@ -229,8 +237,59 @@
 
 
 
-<section class="item" >
+<section class="item" id="variable--custom">
   
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#variable--custom" class="item-name">$custom</a>
+      
+
+      
+        <span class="value-type">(Map)</span>
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">$custom: () !default;</code></pre>
+    </div>
+  
+
     
   
   
@@ -238,9 +297,8 @@
   
 
   
-    <div data-item-section="prose" class="text-block">
-      <p>Major third, equal-tempered: ∛2 ≅ 1.26
-@link <a href="https://www.modularscale.com/?1&amp;em&amp;2@3">https://www.modularscale.com/?1&amp;em&amp;2@3</a></p>
+    <div class="text-block">
+      <p>Configuration to be injected by<span class="widont">&nbsp;</span>consumers.</p>
 
       
   
@@ -254,6 +312,8 @@
     </div>
   
 
+  </div>
+
   
 
   
@@ -277,7 +337,734 @@
     
     
   
+    
+  <div data-item-section="used-by">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Used By</span>
+        
+      </h3>
+    
 
+    
+      
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="variable--default">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#variable--default" class="item-name">$default</a>
+      
+
+      
+        <span class="value-type">(Map)</span>
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">$default: (
+  common: (
+    sizes: (
+      // xxs: -3,
+      xs: -2,
+      sm: -1,
+      md: 0,
+      lg: 1,
+      xl: 2,
+      // xxl: 3,
+    ),
+  ),
+  layout: (
+    length: (
+      min: 2,
+      max: 12,
+      line: 4,
+    ),
+    container-function: meta.get-function(&quot;container&quot;),
+  ),
+  typography: (
+    font-weights: (
+      // thin: 100,
+      // extralight: 200,
+      // light: 300,
+      regular: 400,
+      // medium: 500,
+      // semibold: 600,
+      bold: 700,
+      // extrabold: 800,
+      // black: 900,,,,,,
+    ),
+    line: (
+      min: 1.1,
+      root: 1.5,
+    ),
+    measure-function: meta.get-function(&quot;measure&quot;),
+    scale: (
+      min: -2,
+      max: 5,
+      base: 1rem,
+      // Major third, equal-tempered: ∛2 ≅ 1.26
+      // https://www.modularscale.com/?1&amp;em&amp;2@3
+      factor: math.pow(2, math.div(1, 3)),
+    ),
+  ),
+  ui: (
+    color: (
+      //
+    ),
+    stroke: (
+      min: 1,
+      max: 8,
+      line: 24,
+    ),
+  ),
+);</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Default configuration.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+    
+  <div data-item-section="used-by">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Used By</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="variable--merged">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#variable--merged" class="item-name">$merged</a>
+      
+
+      
+        <span class="value-type">(Map)</span>
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">$merged: map.deep-merge($default, $custom);</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Map of all configuration values merged<span class="widont">&nbsp;</span>together.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    <div class="requires-wrapper">
+      
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-config.html#variable--default" class="item-name">$default</a>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-config.html#variable--custom" class="item-name">$custom</a>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+      
+  
+    
+  <div data-item-section="used-by">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Used By</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#css--Container%20Size%20Scale" class="item-name">Container Size<span class="widont">&nbsp;</span>Scale</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#css--Length%20Scale" class="item-name">Length Scale</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#css--Font%20Weights" class="item-name">Font Weights</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#css--Line%20Heights" class="item-name">Line Heights</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#css--Measure%20Scale" class="item-name">Measure Scale</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#css--Modular%20Font%20Size%20Scale" class="item-name">Modular Font Size<span class="widont">&nbsp;</span>Scale</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#css--Stroke%20Width%20Scale" class="item-name">Stroke Width<span class="widont">&nbsp;</span>Scale</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+
+    </div>
   
 
   
