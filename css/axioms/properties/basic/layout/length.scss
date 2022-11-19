@@ -8,6 +8,7 @@
 @use "../../../tools/mixins/scale";
 
 /// @name Length Scale
+/// @requires $rlh
 :root {
   $min: map.get(cfg.$merged, layout, length, min);
   $max: map.get(cfg.$merged, layout, length, max);

@@ -7,10 +7,16 @@
 @use "../../../tools/functions/scale";
 @use "../../../tools/functions/rhythm";
 
-/// ### Line Height
+/// Root line-height. Defined in [Line Heights](#css--Line%20Heights).
+/// @type Number<rem>
+/// @see Line Heights
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/length#rlh “rlh”: experimental CSS unit.
+$rlh: null;
+
 /// Line heights supporting the vertical rhythm at every step of the scale.
-/// @link https://www.pollen.style/modules/typography#line-height Pollen
-/// @link https://drewish.com/tools/vertical-rhythm/
+/// @link https://www.pollen.style/modules/typography#line-height Different from Pollen’s approach
+/// @link https://drewish.com/tools/vertical-rhythm/ Vertical rhythm calculation tool
+/// @name Line Heights
 :root {
   $scale-base: map.get(cfg.$merged, typography, scale, base);
   $scale-factor: map.get(cfg.$merged, typography, scale, factor);
