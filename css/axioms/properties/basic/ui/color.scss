@@ -6,7 +6,7 @@
 /// @link https://www.pollen.style/modules/colors Pollen inheritance
 /// @todo Configure and calculate this.
 :root {
-  --color-white: hsl(210, 20%, 98%);
+  --color-grey-0: hsl(210, 20%, 98%);
   --color-grey-100: hsl(200, 13%, 95%);
   --color-grey-200: hsl(216, 12%, 92%);
   --color-grey-300: hsl(220, 12%, 85%);
@@ -16,8 +16,10 @@
   --color-grey-700: hsl(217, 14%, 29%);
   --color-grey-800: hsl(215, 18%, 21%);
   --color-grey-900: hsl(200, 27%, 9%);
-  --color-black: hsl(196, 44%, 5%);
+  --color-grey-1000: hsl(196, 44%, 5%);
+  --color-white: var(--color-grey-0);
   --color-grey: var(--color-grey-500);
+  --color-black: var(--color-grey-1000);
   --color-red-300: hsl(0, 95%, 75%);
   --color-red-500: hsl(0, 76%, 57%);
   --color-red-700: hsl(0, 61%, 48%);
