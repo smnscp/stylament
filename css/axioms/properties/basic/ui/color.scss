@@ -2,58 +2,210 @@
 /// @group ax-properties
 ////
 
+@use "sass:map";
+@use "sass:math";
+
+$palettes: (
+  "grey": (
+    hue: 215,
+    s-curve: (
+      0.2104,
+      -0.6858,
+      0.8695,
+    ),
+    l-curve: (
+      0.987,
+      0.1053,
+      -2.9242,
+      1.8939,
+    ),
+    range: (
+      step: 0.1,
+      start: 0,
+      end: 1,
+    ),
+  ),
+  "red": (
+    hue: 0,
+    s-curve: (
+      1.31,
+      -1.35,
+      0.5,
+    ),
+    l-curve: (
+      1,
+      -0.2151,
+      -3.2645,
+      3.5435,
+      2.6872,
+      -3.7511,
+    ),
+  ),
+  "green": (
+    hue: 145,
+    s-curve: (
+      1.11,
+      -2.3,
+      2,
+    ),
+    l-curve: (
+      1.0027,
+      -0.8562,
+      -0.1438,
+    ),
+  ),
+  "blue": (
+    hue: 207,
+    s-curve: (
+      0.7863,
+      0.2,
+      -0.625,
+    ),
+    l-curve: (
+      1.0014,
+      -2.0957,
+      3.9528,
+      -2.8571,
+    ),
+  ),
+  "pink": (
+    hue: 332,
+    s-curve: (
+      0.99,
+      -0.15,
+      -0.5,
+    ),
+    l-curve: (
+      1.004,
+      -0.7445,
+      0.8159,
+      -1.0714,
+    ),
+  ),
+  "purple": (
+    hue: 259,
+    s-curve: (
+      1.3838,
+      -2.4,
+      1.625,
+    ),
+    l-curve: (
+      1.0046,
+      -1.3597,
+      2.1454,
+      -1.7857,
+    ),
+  ),
+  "teal": (
+    hue: 176,
+    s-curve: (
+      1.0825,
+      -1.75,
+      1.25,
+    ),
+    l-curve: (
+      1.0032,
+      -1.2173,
+      0.5745,
+      -0.3571,
+    ),
+  ),
+  "yellow": (
+    hue: 46,
+    s-curve: (
+      1.0288,
+      -0.25,
+      -0.375,
+    ),
+    l-curve: (
+      1.0028,
+      -1.3466,
+      2.1323,
+      -1.7857,
+    ),
+  ),
+  "orange": (
+    hue: 28,
+    s-curve: (
+      1.065,
+      -0.45,
+    ),
+    l-curve: (
+      1.005,
+      -1.3037,
+      1.8513,
+      -1.5476,
+    ),
+  ),
+  "brown": (
+    hue: 15,
+    s-curve: (
+      -0.1688,
+      1.4,
+      -1.125,
+    ),
+    l-curve: (
+      1.0017,
+      -2.1894,
+      2.7371,
+      -1.5476,
+    ),
+  ),
+);
+
+/// @param $coefficients The coefficients of the polynomial.
+/// @param $x The argument to the function.
+/// @return {Number} The function value at $x.
+@function polynomial($coefficients, $x) {
+  $sum: 0;
+  $pow: 1;
+  @each $co in $coefficients {
+    $sum: $sum + $co * $pow;
+    $pow: $pow * $x;
+  }
+  @return $sum;
+}
+
+/// @param $name The color name.
+/// @param $hue The color hue (of HSL).
+/// @param $s-curve The polynomial coefficients defining the curve described by
+///                 cartesian coordinates of palette step and saturation (of HSL).
+/// @param $l-curve The polynomial coefficients defining the curve described by
+///                 cartesian coordinates of palette step and lightness (of HSL).
+/// @output A list of custom properties containing the color values of the palette.
+@mixin palette($name, $hue, $s-curve, $l-curve, $range) {
+  $range: if($range, $range, ());
+  $step: if(map.has-key($range, step), map.get($range, step), 0.2);
+  $start: if(map.has-key($range, start), map.get($range, start), 0.1);
+  $end: if(map.has-key($range, end), map.get($range, end), 0.9);
+  $s-curve: if($s-curve, $s-curve, (1.08, -1.25, 0.625));
+  $l-curve: if($l-curve, $l-curve, (1, -1));
+
+  $current: $start;
+  @while $current <= $end {
+    --color-#{$name}-#{math.round(1000 * $current)}: #{hsl(
+        $hue,
+        100% * polynomial($s-curve, $current),
+        100% * polynomial($l-curve, $current)
+      )};
+    $current: $current + $step;
+  }
+  --color-#{$name}: var(--color-#{$name}-500);
+}
+
 /// @name Color Palette
 /// @link https://www.pollen.style/modules/colors Pollen inheritance
 /// @todo Configure and calculate this.
 :root {
-  --color-grey-0: hsl(215, 20%, 98%);
-  --color-grey-100: hsl(215, 13%, 95%);
-  --color-grey-200: hsl(215, 12%, 92%);
-  --color-grey-300: hsl(215, 12%, 85%);
-  --color-grey-400: hsl(215, 9%, 68%);
-  --color-grey-500: hsl(215, 7%, 50%);
-  --color-grey-600: hsl(215, 13%, 38%);
-  --color-grey-700: hsl(215, 14%, 29%);
-  --color-grey-800: hsl(215, 18%, 21%);
-  --color-grey-900: hsl(215, 27%, 9%);
-  --color-grey-1000: hsl(215, 44%, 5%);
+  @each $name, $pal in $palettes {
+    @include palette(
+      $name,
+      map.get($pal, hue),
+      map.get($pal, s-curve),
+      map.get($pal, l-curve),
+      map.get($pal, range)
+    );
+  }
   --color-white: var(--color-grey-0);
-  --color-grey: var(--color-grey-500);
   --color-black: var(--color-grey-1000);
-  --color-red-300: hsl(0, 95%, 75%);
-  --color-red-500: hsl(0, 76%, 57%);
-  --color-red-700: hsl(0, 61%, 48%);
-  --color-red: var(--color-red-500);
-  --color-green-300: hsl(145, 60%, 75%);
-  --color-green-500: hsl(145, 46%, 51%);
-  --color-green-700: hsl(145, 48%, 35%);
-  --color-green: var(--color-green-500);
-  --color-blue-300: hsl(207, 79%, 66%);
-  --color-blue-500: hsl(207, 73%, 57%);
-  --color-blue-700: hsl(207, 62%, 50%);
-  --color-blue: var(--color-blue-500);
-  --color-pink-300: hsl(332, 90%, 85%);
-  --color-pink-500: hsl(332, 79%, 66%);
-  --color-pink-700: hsl(332, 64%, 54%);
-  --color-pink: var(--color-pink-500);
-  --color-purple-300: hsl(259, 81%, 77%);
-  --color-purple-500: hsl(259, 59%, 59%);
-  --color-purple-700: hsl(259, 50%, 52%);
-  --color-purple: var(--color-purple-500);
-  --color-teal-300: hsl(176, 67%, 70%);
-  --color-teal-500: hsl(176, 52%, 46%);
-  --color-teal-700: hsl(176, 47%, 33%);
-  --color-teal: var(--color-teal-500);
-  --color-yellow-300: hsl(46, 92%, 76%);
-  --color-yellow-500: hsl(46, 81%, 61%);
-  --color-yellow-700: hsl(46, 67%, 51%);
-  --color-yellow: var(--color-yellow-500);
-  --color-orange-300: hsl(28, 93%, 77%);
-  --color-orange-500: hsl(28, 84%, 57%);
-  --color-orange-700: hsl(28, 75%, 50%);
-  --color-orange: var(--color-orange-500);
-  --color-brown-300: hsl(15, 15%, 56%);
-  --color-brown-500: hsl(15, 25%, 38%);
-  --color-brown-700: hsl(15, 26%, 29%);
-  --color-brown: var(--color-brown-500);
 }
