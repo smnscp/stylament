@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.7.0</span>
+          <span class="project-version">0.8.0</span>
         
       </div>
     </header>
@@ -67,10 +67,6 @@
     
     <div class="nav-subsection">
       <ul>
-  
-    <li class="nav-item">
-      <a href="undefined.html" data-nav="is-not-active">&lt;un-grouped&gt;</a>
-    </li>
   
             <li class="nav-subsection">
               <h3 class="nav-title">Axioms</h3>
@@ -163,8 +159,10 @@
                 
   
     <li class="nav-item">
-      <a href="ob-navigation.html" data-nav="is-not-active">Navigation</a>
+      <a href="ob-elementary.html" data-nav="is-not-active">Elementary</a>
     </li>
+  
+  
   
   
     <li class="nav-item">
@@ -237,6 +235,267 @@
 
 
 
+<section class="item" id="function--polynomial">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@function</span>
+      
+
+      
+        <a href="#function--polynomial" class="item-name">polynomial()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Polynomial function.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Return</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$coefficients:</span>
+      
+      
+      <span class="value-type">(List)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The coefficients of the<span class="widont">&nbsp;</span>polynomial.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$x:</span>
+      
+      
+      <span class="value-type">(Number)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The argument to the<span class="widont">&nbsp;</span>function.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">@return</span>
+      
+      
+      <span class="value-type">(Number)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The function value at<span class="widont">&nbsp;</span>$x.</p>
+
+      </div>
+    
+  </div>
+
+  
+
+      
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+    
+  <div data-item-section="used-by">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Used By</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--palette" class="item-name">palette()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+      
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" id="function--grid-line">
   
     
@@ -276,7 +535,7 @@
 
   
     <div class="text-block">
-      <p>Base-line grid compatible line-height at a given font<span class="widont">&nbsp;</span>size.</p>
+      <p>Base-line grid compatible line height at a given font<span class="widont">&nbsp;</span>size.</p>
 
       
   
@@ -306,7 +565,7 @@
   <div data-item-section="parameter">
     
       <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Parameters</span>
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Return</span>
         
       </h3>
     
@@ -325,14 +584,14 @@
         <span class="item-name">$em:</span>
       
       
-      
+      <span class="value-type">(Number&lt;rem&gt;)</span>
       
     </h4>
 
     
       
       <div class="param-details text-block">
-        <p>Font size to fit. In <code>rem</code>.</p>
+        <p>Font size to<span class="widont">&nbsp;</span>fit.</p>
 
       </div>
     
@@ -352,14 +611,14 @@
         <span class="item-name">$rlh:</span>
       
       
-      
+      <span class="value-type">(Number&lt;rem&gt;)</span>
       
     </h4>
 
     
       
       <div class="param-details text-block">
-        <p>Root line-height. In <code>rem</code>.</p>
+        <p>Root line height.</p>
 
       </div>
     
@@ -379,14 +638,14 @@
         <span class="item-name">$min:</span>
       
       
-      
+      <span class="value-type">(Number)</span>
       
     </h4>
 
     
       
       <div class="param-details text-block">
-        <p>Minimum line-height ratio.</p>
+        <p>Minimum line height<span class="widont">&nbsp;</span>ratio.</p>
 
       </div>
     
@@ -399,6 +658,28 @@
   
 
       
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">@return</span>
+      
+      
+      <span class="value-type">(Number&lt;rem&gt;)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The minimum line height that fits the font<span class="widont">&nbsp;</span>size.</p>
+
+      </div>
+    
+  </div>
+
   
 
       
@@ -578,7 +859,7 @@
   <div data-item-section="parameter">
     
       <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Parameters</span>
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Return</span>
         
       </h3>
     
@@ -597,7 +878,7 @@
         <span class="item-name">$base:</span>
       
       
-      
+      <span class="value-type">(Number&lt;rem&gt;)</span>
       
     </h4>
 
@@ -624,7 +905,7 @@
         <span class="item-name">$factor:</span>
       
       
-      
+      <span class="value-type">(Number)</span>
       
     </h4>
 
@@ -651,7 +932,7 @@
         <span class="item-name">$level:</span>
       
       
-      
+      <span class="value-type">(Number)</span>
       
     </h4>
 
@@ -672,6 +953,28 @@
 
       
   
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">@return</span>
+      
+      
+      <span class="value-type">(Number&lt;rem&gt;)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Font size at the given scale<span class="widont">&nbsp;</span>level.</p>
+
+      </div>
+    
+  </div>
+
+  
 
       
   
@@ -694,6 +997,336 @@
   
   
     
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="mixin--palette">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--palette" class="item-name">palette()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Generate a color palette for a given<span class="widont">&nbsp;</span>hue.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Output</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$name:</span>
+      
+      
+      <span class="value-type">(String)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The color name.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$hue:</span>
+      
+      
+      <span class="value-type">(Number)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The color hue (of<span class="widont">&nbsp;</span>HSL).</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$s-curve:</span>
+      
+      
+      <span class="value-type">(List)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The polynomial coefficients defining the curve described by
+cartesian coordinates of palette step and saturation (of<span class="widont">&nbsp;</span>HSL).</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$l-curve:</span>
+      
+      
+      <span class="value-type">(List)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The polynomial coefficients defining the curve described by
+cartesian coordinates of palette step and lightness (of<span class="widont">&nbsp;</span>HSL).</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+
+      
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">{CSS output}</span>
+      
+      
+      <span class="value-type">(code<span class="widont">&nbsp;</span>block)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>A list of <code>--color-*</code> custom properties containing the color values of the<span class="widont">&nbsp;</span>palette:</p>
+<pre><code class="lang-css">--color-red-100: hsl(0deg, 100%, 95%);
+--color-red-300: hsl(0deg, 95%, 75%);
+--color-red-500: hsl(0deg, 76%, 57%);
+--color-red-700: hsl(0deg, 61%, 48%);
+--color-red-900: hsl(0deg, 50%, 29%);
+--color-red: var(--color-red-500);
+</code></pre>
+
+      </div>
+    
+  </div>
+
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@function</span>
+      
+        <a href="
+  ax-tools.html#function--polynomial" class="item-name">polynomial()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+      
+    
+  </div>
+
+  
     
   
 
@@ -803,7 +1436,7 @@ The <code>&lt;i&gt;</code> indicates the number of sub-units the length is made 
   <div data-item-section="parameter">
     
       <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Parameters</span>
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Output</span>
         
       </h3>
     
@@ -926,6 +1559,41 @@ The <code>&lt;i&gt;</code> indicates the number of sub-units the length is made 
   
 
       
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">{CSS output}</span>
+      
+      
+      <span class="value-type">(code<span class="widont">&nbsp;</span>block)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>A list of <code>--length-*</code> custom properties:</p>
+<pre><code class="lang-css">/* … */
+--length-4: 1.5rem;
+--length-l1: 1.5rem;
+--length-5: 1.875rem;
+--length-l1aug: 1.875rem;
+--length-6: 2.25rem;
+--length-l1to2: 2.25rem;
+--length-7: 2.625rem;
+--length-l2dim: 2.625rem;
+--length-8: 3rem;
+--length-l2: 3rem;
+/* … */
+</code></pre>
+
+      </div>
+    
+  </div>
+
   
 
       

@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.7.0</span>
+          <span class="project-version">0.8.0</span>
         
       </div>
     </header>
@@ -67,10 +67,6 @@
     
     <div class="nav-subsection">
       <ul>
-  
-    <li class="nav-item">
-      <a href="undefined.html" data-nav="is-not-active">&lt;un-grouped&gt;</a>
-    </li>
   
             <li class="nav-subsection">
               <h3 class="nav-title">Axioms</h3>
@@ -163,8 +159,10 @@
                 
   
     <li class="nav-item">
-      <a href="ob-navigation.html" data-nav="is-not-active">Navigation</a>
+      <a href="ob-elementary.html" data-nav="is-not-active">Elementary</a>
     </li>
+  
+  
   
   
     <li class="nav-item">
@@ -1706,7 +1704,7 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
 
   
     <div class="text-block">
-      <p>Root line-height. Defined in <a href="#css--Line%20Heights">Line<span class="widont">&nbsp;</span>Heights</a>.</p>
+      <p>Root line height. Defined in <a href="#css--Line%20Heights">Line<span class="widont">&nbsp;</span>Heights</a>.</p>
 
       
   
@@ -2794,54 +2792,17 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  --color-white: #f9fafb;
-  --color-grey-100: #f2f4f5;
-  --color-grey-200: #e8eaed;
-  --color-grey-300: #d4d7dd;
-  --color-grey-400: #a5aab4;
-  --color-grey-500: #767c89;
-  --color-grey-600: #555d6e;
-  --color-grey-700: #3f4754;
-  --color-grey-800: #2c343f;
-  --color-grey-900: #10181c;
-  --color-black: #070f12;
-  --color-grey: var(--color-grey-500);
-  --color-red-300: #fc8181;
-  --color-red-500: #e53e3e;
-  --color-red-700: #c53030;
-  --color-red: var(--color-red-500);
-  --color-green-300: #9ae6b4;
-  --color-green-500: #48bb78;
-  --color-green-700: #2f855a;
-  --color-green: var(--color-green-500);
-  --color-blue-300: #63b3ed;
-  --color-blue-500: #4299e1;
-  --color-blue-700: #3182ce;
-  --color-blue: var(--color-blue-500);
-  --color-pink-300: #fbb6ce;
-  --color-pink-500: #ed64a6;
-  --color-pink-700: #d53f8c;
-  --color-pink: var(--color-pink-500);
-  --color-purple-300: #b794f4;
-  --color-purple-500: #805ad5;
-  --color-purple-700: #6b46c1;
-  --color-purple: var(--color-purple-500);
-  --color-teal-300: #81e6d9;
-  --color-teal-500: #38b2ac;
-  --color-teal-700: #2c7a7b;
-  --color-teal: var(--color-teal-500);
-  --color-yellow-300: #faf089;
-  --color-yellow-500: #ecc94b;
-  --color-yellow-700: #d69e2e;
-  --color-yellow: var(--color-yellow-500);
-  --color-orange-300: #fbd38d;
-  --color-orange-500: #ed8936;
-  --color-orange-700: #dd6b20;
-  --color-orange: var(--color-orange-500);
-  --color-brown-300: #a1887f;
-  --color-brown-500: #795548;
-  --color-brown-700: #5d4037;
-  --color-brown: var(--color-brown-500);
+  $colors: map.get(cfg.$merged, ui, colors);
+
+  @each $name, $pal in $colors {
+    @include color.palette(
+      $name,
+      map.get($pal, hue),
+      map.get($pal, s-curve),
+      map.get($pal, l-curve),
+      map.get($pal, range)
+    );
+  }
 }</code></pre>
     </div>
   
@@ -3821,13 +3782,10 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
   --color-accent: var(--color-grey-700);
   --color-accent-negative: var(--color-grey-100);
   --color-mark: var(--color-grey-900);
-  --color-mark-negative: var(--color-grey-300);
-  --color-primary: var(--color-purple);
-  --color-primary-light: var(--color-purple-300);
-  --color-primary-dark: var(--color-purple-700);
-  --color-heading: var(--color-accent);
-  --color-links: var(--color-primary-dark);
-  --color-links-negative: var(--color-primary-light);
+  --color-mark-negative: var(--color-grey-200);
+  --color-heading: var(--color-primary-700);
+  --color-links: var(--color-secondary-700);
+  --color-links-negative: var(--color-secondary-300);
   --color-hr: var(--color-primary);
   --spacing-block: var(--line-root-abs);
   --spacing-heading: var(--spacing-block);
@@ -3836,7 +3794,7 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
   --inline-padding-default: 0.5ch;
   --stroke-width-default: var(--stroke-width-2);
   --stroke-style-default: solid;
-  --stroke-color-default: var(--color-neutral);
+  --stroke-color-default: var(--color-tertiary-700);
 }</code></pre>
     </div>
   

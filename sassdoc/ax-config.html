@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.7.0</span>
+          <span class="project-version">0.8.0</span>
         
       </div>
     </header>
@@ -67,10 +67,6 @@
     
     <div class="nav-subsection">
       <ul>
-  
-    <li class="nav-item">
-      <a href="undefined.html" data-nav="is-not-active">&lt;un-grouped&gt;</a>
-    </li>
   
             <li class="nav-subsection">
               <h3 class="nav-title">Axioms</h3>
@@ -163,8 +159,10 @@
                 
   
     <li class="nav-item">
-      <a href="ob-navigation.html" data-nav="is-not-active">Navigation</a>
+      <a href="ob-elementary.html" data-nav="is-not-active">Elementary</a>
     </li>
+  
+  
   
   
     <li class="nav-item">
@@ -508,9 +506,7 @@
     ),
   ),
   ui: (
-    color: (
-      //
-    ),
+    colors: brand.$palettes,
     stroke: (
       min: 1,
       max: 8,
@@ -1065,6 +1061,427 @@
   
 
     </div>
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="variable--palettes%40brand">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#variable--palettes%40brand" class="item-name">$palettes@brand</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">$palettes: (
+  &quot;grey&quot;: (
+    hue: $prim,
+    s-curve: (
+      0.142857,
+      -1,
+      1,
+    ),
+    range: (
+      step: 0.1,
+      start: 0,
+      end: 1,
+    ),
+  ),
+  &quot;primary&quot;: (
+    hue: $prim,
+  ),
+  &quot;secondary&quot;: (
+    hue: $prim + $dist,
+  ),
+  &quot;tertiary&quot;: (
+    hue: $prim - $dist,
+  ),
+);</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Colors.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="variable--palettes%40seed">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#variable--palettes%40seed" class="item-name">$palettes@seed</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">$palettes: (
+  &quot;grey&quot;: (
+    hue: 215,
+    s-curve: (
+      0.2104,
+      -0.6858,
+      0.8695,
+    ),
+    l-curve: (
+      0.987,
+      0.1053,
+      -2.9242,
+      1.8939,
+    ),
+    range: (
+      step: 0.1,
+      start: 0,
+      end: 1,
+    ),
+  ),
+  &quot;red&quot;: (
+    hue: 0,
+    s-curve: (
+      1.31,
+      -1.35,
+      0.5,
+    ),
+    l-curve: (
+      1,
+      -0.2151,
+      -3.2645,
+      3.5435,
+      2.6872,
+      -3.7511,
+    ),
+  ),
+  &quot;green&quot;: (
+    hue: 145,
+    s-curve: (
+      1.11,
+      -2.3,
+      2,
+    ),
+    l-curve: (
+      1.0027,
+      -0.8562,
+      -0.1438,
+    ),
+  ),
+  &quot;blue&quot;: (
+    hue: 207,
+    s-curve: (
+      0.7863,
+      0.2,
+      -0.625,
+    ),
+    l-curve: (
+      1.0014,
+      -2.0957,
+      3.9528,
+      -2.8571,
+    ),
+  ),
+  &quot;pink&quot;: (
+    hue: 332,
+    s-curve: (
+      0.99,
+      -0.15,
+      -0.5,
+    ),
+    l-curve: (
+      1.004,
+      -0.7445,
+      0.8159,
+      -1.0714,
+    ),
+  ),
+  &quot;purple&quot;: (
+    hue: 259,
+    s-curve: (
+      1.3838,
+      -2.4,
+      1.625,
+    ),
+    l-curve: (
+      1.0046,
+      -1.3597,
+      2.1454,
+      -1.7857,
+    ),
+  ),
+  &quot;teal&quot;: (
+    hue: 176,
+    s-curve: (
+      1.0825,
+      -1.75,
+      1.25,
+    ),
+    l-curve: (
+      1.0032,
+      -1.2173,
+      0.5745,
+      -0.3571,
+    ),
+  ),
+  &quot;yellow&quot;: (
+    hue: 46,
+    s-curve: (
+      1.0288,
+      -0.25,
+      -0.375,
+    ),
+    l-curve: (
+      1.0028,
+      -1.3466,
+      2.1323,
+      -1.7857,
+    ),
+  ),
+  &quot;orange&quot;: (
+    hue: 28,
+    s-curve: (
+      1.065,
+      -0.45,
+    ),
+    l-curve: (
+      1.005,
+      -1.3037,
+      1.8513,
+      -1.5476,
+    ),
+  ),
+  &quot;brown&quot;: (
+    hue: 15,
+    s-curve: (
+      -0.1688,
+      1.4,
+      -1.125,
+    ),
+    l-curve: (
+      1.0017,
+      -2.1894,
+      2.7371,
+      -1.5476,
+    ),
+  ),
+);</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Colors derived from <a href="https://www.pollen.style/modules/colors">Pollen’s color<span class="widont">&nbsp;</span>palette</a>.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
   
 
   
