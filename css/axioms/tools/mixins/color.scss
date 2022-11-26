@@ -27,7 +27,7 @@
   $step: if(map.has-key($range, step), map.get($range, step), 0.2);
   $start: if(map.has-key($range, start), map.get($range, start), 0.1);
   $end: if(map.has-key($range, end), map.get($range, end), 0.9);
-  $s-curve: if($s-curve, $s-curve, (1.08, -1.25, 0.625));
+  $s-curve: if($s-curve, $s-curve, (1, -1, 1));
   $l-curve: if($l-curve, $l-curve, (1, -1));
 
   $current: $start;
