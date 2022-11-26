@@ -11,9 +11,11 @@ $palettes: (
   "grey": (
     hue: $prim,
     s-curve: (
-      0.142857,
-      -1,
-      1,
+      0.1,
+    ),
+    l-curve: (
+      0.99,
+      -0.99,
     ),
     range: (
       step: 0.1,
