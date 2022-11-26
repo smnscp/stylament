@@ -1,0 +1,35 @@
+////
+/// @group ax-tools
+////
+
+@use "sass:map";
+@use "sass:math";
+@use "../functions/graph";
+
+/// Generate a color palette for a given hue.
+/// @param $name The color name.
+/// @param $hue The color hue (of HSL).
+/// @param $s-curve The polynomial coefficients defining the curve described by
+///                 cartesian coordinates of palette step and saturation (of HSL).
+/// @param $l-curve The polynomial coefficients defining the curve described by
+///                 cartesian coordinates of palette step and lightness (of HSL).
+/// @output A list of custom properties containing the color values of the palette.
+@mixin palette($name, $hue, $s-curve, $l-curve, $range) {
+  $range: if($range, $range, ());
+  $step: if(map.has-key($range, step), map.get($range, step), 0.2);
+  $start: if(map.has-key($range, start), map.get($range, start), 0.1);
+  $end: if(map.has-key($range, end), map.get($range, end), 0.9);
+  $s-curve: if($s-curve, $s-curve, (1.08, -1.25, 0.625));
+  $l-curve: if($l-curve, $l-curve, (1, -1));
+
+  $current: $start;
+  @while $current <= $end {
+    --color-#{$name}-#{math.round(1000 * $current)}: #{hsl(
+        $hue,
+        100% * graph.polynomial($s-curve, $current),
+        100% * graph.polynomial($l-curve, $current)
+      )};
+    $current: $current + $step;
+  }
+  --color-#{$name}: var(--color-#{$name}-500);
+}

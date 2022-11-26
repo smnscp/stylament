@@ -3,7 +3,7 @@
 ////
 
 @use "sass:map";
-@use "sass:math";
+@use "../../../tools/mixins/color";
 
 $palettes: (
   "grey": (
@@ -153,52 +153,12 @@ $palettes: (
   ),
 );
 
-/// @param $coefficients The coefficients of the polynomial.
-/// @param $x The argument to the function.
-/// @return {Number} The function value at $x.
-@function polynomial($coefficients, $x) {
-  $sum: 0;
-  $pow: 1;
-  @each $co in $coefficients {
-    $sum: $sum + $co * $pow;
-    $pow: $pow * $x;
-  }
-  @return $sum;
-}
-
-/// @param $name The color name.
-/// @param $hue The color hue (of HSL).
-/// @param $s-curve The polynomial coefficients defining the curve described by
-///                 cartesian coordinates of palette step and saturation (of HSL).
-/// @param $l-curve The polynomial coefficients defining the curve described by
-///                 cartesian coordinates of palette step and lightness (of HSL).
-/// @output A list of custom properties containing the color values of the palette.
-@mixin palette($name, $hue, $s-curve, $l-curve, $range) {
-  $range: if($range, $range, ());
-  $step: if(map.has-key($range, step), map.get($range, step), 0.2);
-  $start: if(map.has-key($range, start), map.get($range, start), 0.1);
-  $end: if(map.has-key($range, end), map.get($range, end), 0.9);
-  $s-curve: if($s-curve, $s-curve, (1.08, -1.25, 0.625));
-  $l-curve: if($l-curve, $l-curve, (1, -1));
-
-  $current: $start;
-  @while $current <= $end {
-    --color-#{$name}-#{math.round(1000 * $current)}: #{hsl(
-        $hue,
-        100% * polynomial($s-curve, $current),
-        100% * polynomial($l-curve, $current)
-      )};
-    $current: $current + $step;
-  }
-  --color-#{$name}: var(--color-#{$name}-500);
-}
-
 /// @name Color Palette
 /// @link https://www.pollen.style/modules/colors Pollen inheritance
 /// @todo Configure and calculate this.
 :root {
   @each $name, $pal in $palettes {
-    @include palette(
+    @include color.palette(
       $name,
       map.get($pal, hue),
       map.get($pal, s-curve),

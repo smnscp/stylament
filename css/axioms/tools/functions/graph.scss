@@ -1,0 +1,17 @@
+////
+/// @group ax-tools
+////
+
+/// Polynomial function.
+/// @param $coefficients The coefficients of the polynomial.
+/// @param $x The argument to the function.
+/// @return {Number} The function value at $x.
+@function polynomial($coefficients, $x) {
+  $sum: 0;
+  $pow: 1;
+  @each $co in $coefficients {
+    $sum: $sum + $co * $pow;
+    $pow: $pow * $x;
+  }
+  @return $sum;
+}
