@@ -19,13 +19,10 @@
   --color-accent: var(--color-grey-700);
   --color-accent-negative: var(--color-grey-100);
   --color-mark: var(--color-grey-900);
-  --color-mark-negative: var(--color-grey-300);
-  --color-primary: var(--color-purple);
-  --color-primary-light: var(--color-purple-300);
-  --color-primary-dark: var(--color-purple-700);
-  --color-heading: var(--color-accent);
-  --color-links: var(--color-primary-dark);
-  --color-links-negative: var(--color-primary-light);
+  --color-mark-negative: var(--color-grey-200);
+  --color-heading: var(--color-primary-700);
+  --color-links: var(--color-secondary-700);
+  --color-links-negative: var(--color-secondary-300);
   --color-hr: var(--color-primary);
   --spacing-block: var(--line-root-abs);
   --spacing-heading: var(--spacing-block);
@@ -34,7 +31,7 @@
   --inline-padding-default: 0.5ch;
   --stroke-width-default: var(--stroke-width-2);
   --stroke-style-default: solid;
-  --stroke-color-default: var(--color-neutral);
+  --stroke-color-default: var(--color-tertiary-700);
 }
 
 /// Save space on smaller screens.

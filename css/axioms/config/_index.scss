@@ -5,7 +5,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "sass:meta";
-@use "./color/seed";
+@use "./color/brand";
 
 @function measure($size) {
   // Use square numbers centered around 64ch.
@@ -70,7 +70,7 @@ $default: (
     ),
   ),
   ui: (
-    colors: seed.$palettes,
+    colors: brand.$palettes,
     stroke: (
       min: 1,
       max: 8,

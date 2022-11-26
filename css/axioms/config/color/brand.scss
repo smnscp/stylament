@@ -1,0 +1,33 @@
+////
+/// @group ax-config
+////
+
+$prim: 215deg;
+$dist: 140deg;
+
+/// Colors.
+/// @name palettes@brand
+$palettes: (
+  "grey": (
+    hue: $prim,
+    s-curve: (
+      0.142857,
+      -1,
+      1,
+    ),
+    range: (
+      step: 0.1,
+      start: 0,
+      end: 1,
+    ),
+  ),
+  "primary": (
+    hue: $prim,
+  ),
+  "secondary": (
+    hue: $prim + $dist,
+  ),
+  "tertiary": (
+    hue: $prim - $dist,
+  ),
+);
