@@ -1,3 +1,10 @@
+////
+/// @group ob-elementary
+////
+
+/// Standard table style.
+/// In contrast to the neutral styles applied to the bare `table` element
+/// this adds some borders and stripes.
 table.e-standard-table {
   --table-border-width: var(--stroke-width-table, var(--stroke-width-default));
   --table-border-style: var(--stroke-style-table, var(--stroke-style-default));
@@ -11,7 +18,7 @@ table.e-standard-table {
     background-color: var(--color-accent-negative);
   }
 
-  /// Do not center `th` in vertical tables.
+  // Do not center `th` in vertical tables.
   thead + tbody {
     th:first-child {
       text-align: start;

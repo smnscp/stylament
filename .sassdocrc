@@ -20,7 +20,9 @@ groups:
     el-interactive: Interactive Elements
     el-scripting: Scripting
   Objects:
-    ob-navigation: Navigation
+    ob-elementary: Elementary
+    ob-layout: Layout
+    ob-coloring: Coloring
     ob-special: More Specific Styling
   Utilities:
     ut-layout: Layout Utilities
