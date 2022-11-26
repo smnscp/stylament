@@ -32,4 +32,10 @@
     $current: $current + $step;
   }
   --color-#{$name}: var(--color-#{$name}-500);
+  // If the palette runs the full range the extrema get aliased “black” and “white”.
+  // There should be only palette like this. Otherwise, only the last of them will prevail.
+  @if $start == 0 and $end == 1 {
+    --color-white: var(--color-grey-0);
+    --color-black: var(--color-grey-1000);
+  }
 }
