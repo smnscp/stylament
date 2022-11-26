@@ -1,4 +1,11 @@
-@use "axioms";
+@use "axioms/config/color/brand";
+@use "axioms" with (
+  $config-custom: (
+    ui: (
+      colors: brand.$palettes,
+    )
+  )
+);
 @use "elements";
 @use "objects";
 // More specific objects
