@@ -3,161 +3,16 @@
 ////
 
 @use "sass:map";
+@use "../../../config" as cfg;
 @use "../../../tools/mixins/color";
-
-$palettes: (
-  "grey": (
-    hue: 215,
-    s-curve: (
-      0.2104,
-      -0.6858,
-      0.8695,
-    ),
-    l-curve: (
-      0.987,
-      0.1053,
-      -2.9242,
-      1.8939,
-    ),
-    range: (
-      step: 0.1,
-      start: 0,
-      end: 1,
-    ),
-  ),
-  "red": (
-    hue: 0,
-    s-curve: (
-      1.31,
-      -1.35,
-      0.5,
-    ),
-    l-curve: (
-      1,
-      -0.2151,
-      -3.2645,
-      3.5435,
-      2.6872,
-      -3.7511,
-    ),
-  ),
-  "green": (
-    hue: 145,
-    s-curve: (
-      1.11,
-      -2.3,
-      2,
-    ),
-    l-curve: (
-      1.0027,
-      -0.8562,
-      -0.1438,
-    ),
-  ),
-  "blue": (
-    hue: 207,
-    s-curve: (
-      0.7863,
-      0.2,
-      -0.625,
-    ),
-    l-curve: (
-      1.0014,
-      -2.0957,
-      3.9528,
-      -2.8571,
-    ),
-  ),
-  "pink": (
-    hue: 332,
-    s-curve: (
-      0.99,
-      -0.15,
-      -0.5,
-    ),
-    l-curve: (
-      1.004,
-      -0.7445,
-      0.8159,
-      -1.0714,
-    ),
-  ),
-  "purple": (
-    hue: 259,
-    s-curve: (
-      1.3838,
-      -2.4,
-      1.625,
-    ),
-    l-curve: (
-      1.0046,
-      -1.3597,
-      2.1454,
-      -1.7857,
-    ),
-  ),
-  "teal": (
-    hue: 176,
-    s-curve: (
-      1.0825,
-      -1.75,
-      1.25,
-    ),
-    l-curve: (
-      1.0032,
-      -1.2173,
-      0.5745,
-      -0.3571,
-    ),
-  ),
-  "yellow": (
-    hue: 46,
-    s-curve: (
-      1.0288,
-      -0.25,
-      -0.375,
-    ),
-    l-curve: (
-      1.0028,
-      -1.3466,
-      2.1323,
-      -1.7857,
-    ),
-  ),
-  "orange": (
-    hue: 28,
-    s-curve: (
-      1.065,
-      -0.45,
-    ),
-    l-curve: (
-      1.005,
-      -1.3037,
-      1.8513,
-      -1.5476,
-    ),
-  ),
-  "brown": (
-    hue: 15,
-    s-curve: (
-      -0.1688,
-      1.4,
-      -1.125,
-    ),
-    l-curve: (
-      1.0017,
-      -2.1894,
-      2.7371,
-      -1.5476,
-    ),
-  ),
-);
 
 /// @name Color Palette
 /// @link https://www.pollen.style/modules/colors Pollen inheritance
 /// @todo Configure and calculate this.
 :root {
-  @each $name, $pal in $palettes {
+  $colors: map.get(cfg.$merged, ui, colors);
+
+  @each $name, $pal in $colors {
     @include color.palette(
       $name,
       map.get($pal, hue),
