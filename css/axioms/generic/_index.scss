@@ -1,13 +1,17 @@
 /// ## normalize.css
-/// *Stylament* uses `normalize.css` for normalizing browser styling.
+/// *Stylament* uses [`normalize.css`][repo] for normalizing browser styling.
+///
+/// [repo]: https://github.com/csstools/normalize.css
+///
 /// @group ax-generic
-/// @link https://github.com/csstools/normalize.css Repo
 @use "normalize";
 
 /// ## n’ize.css
-/// *Stylament* uses `n’ize.css` to extend basic styling with slots for CSS custom properties.
+/// *Stylament* uses [`n’ize.css`][repo] to extend basic styling with slots for CSS custom properties.
+///
+/// [repo]: https://github.com/smnscp/n-ize.css
+///
 /// @group ax-generic
-/// @link https://github.com/smnscp/n-ize.css Repo
 @use "n’ize";
 
 @use "additional";

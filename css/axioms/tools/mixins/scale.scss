@@ -21,6 +21,21 @@
 /// @param $end End of the scale.
 /// @param $basis Scale basis (unit), e. g. the root line height.
 /// @param $sub Sub-division of the scale basis, i. e. how many sub-units per main unit.
+/// @output A list of `--length-*` custom properties:
+///   ```css
+///   /* … */
+///   --length-4: 1.5rem;
+///   --length-l1: 1.5rem;
+///   --length-5: 1.875rem;
+///   --length-l1aug: 1.875rem;
+///   --length-6: 2.25rem;
+///   --length-l1to2: 2.25rem;
+///   --length-7: 2.625rem;
+///   --length-l2dim: 2.625rem;
+///   --length-8: 3rem;
+///   --length-l2: 3rem;
+///   /* … */
+///   ```
 @mixin length($start, $end, $basis, $sub) {
   @for $i from $start through $end {
     $ratio: math.div($i, $sub);

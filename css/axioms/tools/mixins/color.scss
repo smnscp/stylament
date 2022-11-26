@@ -7,13 +7,21 @@
 @use "../functions/graph";
 
 /// Generate a color palette for a given hue.
-/// @param $name The color name.
-/// @param $hue The color hue (of HSL).
-/// @param $s-curve The polynomial coefficients defining the curve described by
+/// @param {String} $name The color name.
+/// @param {Number} $hue The color hue (of HSL).
+/// @param {List} $s-curve The polynomial coefficients defining the curve described by
 ///                 cartesian coordinates of palette step and saturation (of HSL).
-/// @param $l-curve The polynomial coefficients defining the curve described by
+/// @param {List} $l-curve The polynomial coefficients defining the curve described by
 ///                 cartesian coordinates of palette step and lightness (of HSL).
-/// @output A list of custom properties containing the color values of the palette.
+/// @output A list of `--color-*` custom properties containing the color values of the palette:
+///   ```css
+///   --color-red-100: hsl(0deg, 100%, 95%);
+///   --color-red-300: hsl(0deg, 95%, 75%);
+///   --color-red-500: hsl(0deg, 76%, 57%);
+///   --color-red-700: hsl(0deg, 61%, 48%);
+///   --color-red-900: hsl(0deg, 50%, 29%);
+///   --color-red: var(--color-red-500);
+///   ```
 @mixin palette($name, $hue, $s-curve, $l-curve, $range) {
   $range: if($range, $range, ());
   $step: if(map.has-key($range, step), map.get($range, step), 0.2);

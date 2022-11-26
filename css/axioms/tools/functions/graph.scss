@@ -3,8 +3,8 @@
 ////
 
 /// Polynomial function.
-/// @param $coefficients The coefficients of the polynomial.
-/// @param $x The argument to the function.
+/// @param {List} $coefficients The coefficients of the polynomial.
+/// @param {Number} $x The argument to the function.
 /// @return {Number} The function value at $x.
 @function polynomial($coefficients, $x) {
   $sum: 0;

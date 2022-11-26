@@ -3,12 +3,14 @@
 ////
 
 /// The current target element.
+/// @name Target Scroll Spacing
 :target {
   // Give URL fragment target enough air.
   scroll-margin-block-start: var(--length-l3);
 }
 
 /// Establish a generic measure.
+/// @name General Measure
 :not(html, body, div, section, article, nav, main, header, footer, hgroup, ul, ol, menu, dl, dd, dt, li, table, figure, caption, label) {
   max-inline-size: var(--measure);
 }
