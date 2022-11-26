@@ -2,6 +2,9 @@
 /// @group ut-dev
 ////
 
+@use "sass:map";
+@use "../axioms/config" as cfg;
+
 .u-debug-baseline-grid {
   background-image: linear-gradient(0deg, #f001 1px, #f000 1px);
   background-size: 30em var(--line-root-abs);
@@ -9,5 +12,39 @@
   h1, h2, h3, h4, h5, h6, p {
     background-image: linear-gradient(0deg, #0f04 1px, #0f00 1px);
     background-size: 30em var(--line-root-abs);
+  }
+}
+
+.u-debug-color-palette {
+  --stroke-width-table: var(--stroke-width-4);
+  --stroke-color-table: var(--color-body-negative);
+  --background-heavy: transparent;
+  --background-light: transparent;
+
+  thead tr {
+    @for $i from 1 through 9 {
+      th:nth-child(#{$i + 1})::before {
+        content: "#{$i * 100}";
+      }
+    }
+  }
+
+  tbody {
+    $colors: map.get(cfg.$merged, ui, colors);
+    $index: 0;
+    @each $name, $pal in $colors {
+      $index: $index + 1;
+      tr:nth-child(#{$index}) {
+        th:first-child::before {
+          content: "#{$name}";
+          text-transform: capitalize;
+        }
+        @for $i from 1 through 9 {
+          td:nth-of-type(#{$i}) {
+            background-color: var(--color-#{$name}-#{$i * 100});
+          }
+        }
+      }
+    }
   }
 }
