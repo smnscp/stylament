@@ -4,6 +4,7 @@
 
 /// ## Heading Content
 
+/// @name General heading styles
 h1,
 h2,
 h3,
@@ -13,6 +14,14 @@ h6 {
   color: var(--color-heading);
 }
 
+@for $level from 1 through 6 {
+  /// @name Level-specific heading styles
+  h#{$level} {
+    color: var(--color-heading-#{$level}, var(--color-heading));
+  }
+}
+
+/// @name New (2022) hgroup semantics
 hgroup {
   p {
     font-family: var(--font-heading);
