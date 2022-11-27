@@ -6,32 +6,13 @@
 @use "../basic/layout/container";
 
 /// @name Logical Properties
+/// @todo Configure.
 :root {
-  --font-body: var(--font-serif);
-  --font-heading: var(--font-sans);
-  --font-display: var(--font-body);
-  --weight-body: var(--weight-regular);
-  --weight-emphasis: var(--weight-bold);
-  --weight-heading: var(--weight-bold);
-  --color-body: var(--color-black);
-  --color-body-negative: var(--color-white);
-  --color-neutral: var(--color-grey);
-  --color-accent: var(--color-grey-700);
-  --color-accent-negative: var(--color-grey-100);
-  --color-mark: var(--color-grey-900);
-  --color-mark-negative: var(--color-grey-200);
-  --color-heading: var(--color-primary-700);
-  --color-links: var(--color-secondary-700);
-  --color-links-negative: var(--color-secondary-300);
-  --color-hr: var(--color-primary);
   --spacing-block: var(--line-root-abs);
   --spacing-heading: var(--spacing-block);
   --spacing-sectioning: calc(2 * var(--spacing-block));
   --spacing-inline: 4ch;
   --inline-padding-default: 0.5ch;
-  --stroke-width-default: var(--stroke-width-2);
-  --stroke-style-default: solid;
-  --stroke-color-default: var(--color-tertiary-700);
 }
 
 /// Save space on smaller screens.

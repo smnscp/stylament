@@ -43,6 +43,23 @@ $default: (
     container-function: meta.get-function("container"),
   ),
   typography: (
+    font-families: (
+      sans: (
+        "Source Sans Pro",
+        sans-serif,
+      ),
+      serif: (
+        "Source Serif Pro",
+        serif,
+      ),
+      mono: (
+        "Source Code Pro",
+        monospace,
+      ),
+      body: "var(--font-serif)",
+      heading: "var(--font-sans)",
+      display: "var(--font-body)",
+    ),
     font-weights: (
       // thin: 100,
       // extralight: 200,
@@ -53,6 +70,9 @@ $default: (
       bold: 700,
       // extrabold: 800,
       // black: 900,
+      body: "var(--weight-regular)",
+      emphasis: "var(--weight-bold)",
+      heading: "var(--weight-bold)",
     ),
     line: (
       min: 1.1,
@@ -69,11 +89,35 @@ $default: (
     ),
   ),
   ui: (
-    colors: (),
+    color: (
+      palettes: (),
+      individuals: (
+        body: "var(--color-black)",
+        body-negative: "var(--color-white)",
+        neutral: "var(--color-grey)",
+        accent: "var(--color-grey-700)",
+        accent-negative: "var(--color-grey-100)",
+        mark: "var(--color-grey-900)",
+        mark-negative: "var(--color-grey-200)",
+        heading: "var(--color-primary-700)",
+        links: "var(--color-secondary-700)",
+        links-negative: "var(--color-secondary-300)",
+        hr: "var(--color-primary)",
+      ),
+    ),
     stroke: (
       min: 1,
       max: 8,
       line: 24,
+      widths: (
+        default: "var(--stroke-width-2)",
+      ),
+      styles: (
+        default: "solid",
+      ),
+      colors: (
+        default: "var(--color-tertiary-700)",
+      ),
     ),
   ),
 );

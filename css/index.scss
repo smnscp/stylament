@@ -2,8 +2,10 @@
 @use "axioms" with (
   $config-custom: (
     ui: (
-      colors: brand.$palettes,
-    )
+      color: (
+        palettes: brand.$palettes,
+      ),
+    ),
   )
 );
 @use "elements";

@@ -10,9 +10,10 @@
 /// @link https://www.pollen.style/modules/colors Pollen inheritance
 /// @todo Configure and calculate this.
 :root {
-  $colors: map.get(cfg.$merged, ui, colors);
+  $palettes: map.get(cfg.$merged, ui, color, palettes);
+  $individuals: map.get(cfg.$merged, ui, color, individuals);
 
-  @each $name, $pal in $colors {
+  @each $name, $pal in $palettes {
     @include color.palette(
       $name,
       map.get($pal, hue),
@@ -20,5 +21,9 @@
       map.get($pal, l-curve),
       map.get($pal, range)
     );
+  }
+
+  @each $name, $value in $individuals {
+    --color-#{$name}: #{$value};
   }
 }

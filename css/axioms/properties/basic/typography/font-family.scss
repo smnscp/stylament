@@ -2,11 +2,16 @@
 /// @group ax-properties
 ////
 
+@use "sass:map";
+@use "sass:meta";
+@use "../../../config" as cfg;
 
 /// @name Font Families
 /// @link https://www.pollen.style/modules/typography#font-families Pollen inheritance
 :root {
-  --font-sans: "Source Sans Pro", sans-serif;
-  --font-serif: "Source Serif Pro", serif;
-  --font-mono: "Source Code Pro", monospace;
+  $fonts: map.get(cfg.$merged, typography, font-families);
+
+  @each $name, $value in $fonts {
+    --font-#{$name}: #{$value};
+  }
 }
