@@ -40,7 +40,13 @@ $default: (
       max: 12,
       line: 4,
     ),
-    container-function: meta.get-function("container"),
+    container: (
+      function: meta.get-function("container"),
+      individuals: (),
+      logicals: (
+        page: "xl",
+      ),
+    ),
   ),
   typography: (
     font-families: (

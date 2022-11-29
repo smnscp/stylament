@@ -2,7 +2,7 @@
 
 :where(body.l-page-center) > {
   :where(header, main, footer) {
-    --container-size: var(--container-xl);
+    --container-size: var(--container-page);
     --container-gutter: 5vw;
 
     > * {

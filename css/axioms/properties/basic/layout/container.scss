@@ -17,10 +17,25 @@ $sizes: ();
 /// @link https://www.pollen.style/modules/layout#container-widths Pollen inheritance
 :root {
   $names: map.get(cfg.$merged, common, sizes);
-  $func: map.get(cfg.$merged, layout, container-function);
+  $func: map.get(cfg.$merged, layout, container, function);
+  $individuals: map.get(cfg.$merged, layout, container, individuals);
+  $logicals: map.get(cfg.$merged, layout, container, logicals);
 
   @each $name, $value in $names {
     $sizes: map.set($sizes, $name, meta.call($func, $value)) !global;
     --container-#{$name}: #{map.get($sizes, $name)};
+  }
+
+  @each $name, $value in $individuals {
+    $sizes: map.set($sizes, $name, $value) !global;
+    --container-#{$name}: #{$value};
+    @debug $sizes;
+  }
+
+  @each $name, $alias in $logicals {
+    $sizes: map.set($sizes, $name, map.get($sizes, $alias)) !global;
+    --container-#{$name}: var(--container-#{$alias});
+    @debug $sizes;
+    @debug --container-#{$name} var(--container-#{$alias});
   }
 }
