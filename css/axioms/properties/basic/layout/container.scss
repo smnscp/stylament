@@ -29,13 +29,10 @@ $sizes: ();
   @each $name, $value in $individuals {
     $sizes: map.set($sizes, $name, $value) !global;
     --container-#{$name}: #{$value};
-    @debug $sizes;
   }
 
   @each $name, $alias in $logicals {
     $sizes: map.set($sizes, $name, map.get($sizes, $alias)) !global;
     --container-#{$name}: var(--container-#{$alias});
-    @debug $sizes;
-    @debug --container-#{$name} var(--container-#{$alias});
   }
 }
