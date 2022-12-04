@@ -28,7 +28,7 @@ $rlh: null;
   $line-min: map.get(cfg.$merged, typography, line, min);
   $line-root: map.get(cfg.$merged, typography, line, root);
 
-  $rlh: $line-root * $scale-base !global;
+  $rlh: $line-root * 1rem !global;
 
   --line-root: #{$line-root};
   --line-root-abs: #{$rlh};
