@@ -4,8 +4,8 @@
 
 @use "sass:map";
 @use "sass:math";
-@use "../../../config" as cfg;
-@use "../../../tools/functions/scale";
+@use "../../config" as cfg;
+@use "../../tools/functions/scale";
 
 /// @name Modular Font Size Scale
 /// @requires $merged

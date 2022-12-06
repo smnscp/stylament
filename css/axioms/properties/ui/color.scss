@@ -3,8 +3,8 @@
 ////
 
 @use "sass:map";
-@use "../../../config" as cfg;
-@use "../../../tools/mixins/color";
+@use "../../config" as cfg;
+@use "../../tools/mixins/color";
 
 /// @name Color Palette
 /// @link https://www.pollen.style/modules/colors Pollen inheritance

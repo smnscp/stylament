@@ -4,7 +4,7 @@
 
 @use "sass:map";
 @use "sass:meta";
-@use "../../../config" as cfg;
+@use "../../config" as cfg;
 
 /// Container sizes. Defined in [Container Size Scale](#css--Container%20Size%20Scale).
 /// @type Map

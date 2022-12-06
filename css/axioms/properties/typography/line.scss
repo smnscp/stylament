@@ -3,9 +3,9 @@
 ////
 
 @use "sass:map";
-@use "../../../config" as cfg;
-@use "../../../tools/functions/scale";
-@use "../../../tools/functions/rhythm";
+@use "../../config" as cfg;
+@use "../../tools/functions/scale";
+@use "../../tools/functions/rhythm";
 
 /// Root line height. Defined in [Line Heights](#css--Line%20Heights).
 /// @type Number<rem>

@@ -4,7 +4,7 @@
 
 @use "sass:map";
 @use "sass:meta";
-@use "../../../config" as cfg;
+@use "../../config" as cfg;
 
 /// @name Measure Scale
 /// @requires $merged

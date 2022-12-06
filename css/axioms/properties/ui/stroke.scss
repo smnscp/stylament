@@ -4,7 +4,7 @@
 
 @use "sass:map";
 @use "sass:math";
-@use "../../../config" as cfg;
+@use "../../config" as cfg;
 @use "../typography/line";
 
 /// A scale of stroke widths with $line units per root line.

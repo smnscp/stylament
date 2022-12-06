@@ -3,9 +3,9 @@
 ////
 
 @use "sass:map";
-@use "../../../config" as cfg;
+@use "../../config" as cfg;
 @use "../typography/line";
-@use "../../../tools/mixins/scale";
+@use "../../tools/mixins/scale";
 
 /// @name Length Scale
 /// @requires $merged
