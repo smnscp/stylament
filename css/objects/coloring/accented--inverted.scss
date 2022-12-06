@@ -1,0 +1,12 @@
+%clr-accented--inverted {
+  color: var(--color-accent-negative);
+  background-color: var(--color-accent);
+
+  :is(h1, h2, h3, h4, h5, h6, hgroup > p) {
+    color: var(--color-heading-accent-negative, var(--color-heading-negative, inherit));
+  }
+
+  :where(a:any-link) {
+    color: var(--color-links-accent-negative, var(--color-links-negative, inherit));
+  }
+}
