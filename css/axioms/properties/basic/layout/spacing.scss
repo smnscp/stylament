@@ -3,9 +3,9 @@
 ////
 
 @use "sass:map";
-@use "../basic/layout/container";
+@use "./container";
 
-/// @name Logical Properties
+/// @name Spacing
 /// @todo Configure.
 :root {
   --spacing-block: var(--line-root-abs);
