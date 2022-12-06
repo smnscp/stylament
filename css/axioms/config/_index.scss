@@ -47,6 +47,13 @@ $default: (
         page: "xl",
       ),
     ),
+    spacing: (
+      block: "var(--length-l1)",
+      heading: "var(--length-l1)",
+      sectioning: "clamp(var(--length-l1), (100vi - var(--container-sm)) / 4, var(--length-l2))",
+      inline: 4ch,
+      inline-small: 0.5ch,
+    )
   ),
   typography: (
     font-families: (

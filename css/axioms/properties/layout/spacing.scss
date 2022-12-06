@@ -3,23 +3,16 @@
 ////
 
 @use "sass:map";
+@use "sass:meta";
+@use "../../config" as cfg;
 @use "./container";
 
-/// @name Spacing
-/// @todo Configure.
+/// @name Spacing Values
+/// @requires $merged
 :root {
-  --spacing-block: var(--line-root-abs);
-  --spacing-heading: var(--spacing-block);
-  --spacing-sectioning: calc(2 * var(--spacing-block));
-  --spacing-inline: 4ch;
-  --spacing-inline-small: 0.5ch;
-}
+  $spacing: map.get(cfg.$merged, layout, spacing);
 
-/// Save space on smaller screens.
-/// @name Responsive Spacing
-/// @requires $sizes
-:root {
-  @media (max-width: map.get(container.$sizes, "sm")) {
-    --spacing-sectioning: var(--spacing-block);
+  @each $name, $value in $spacing {
+    --spacing-#{$name}: #{$value};
   }
 }
