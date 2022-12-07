@@ -5,6 +5,7 @@
 @use "sass:map";
 @use "sass:meta";
 @use "../../config" as cfg;
+@use "../../tools/mixins/prop-map";
 
 /// @name Measure Scale
 /// @requires $merged
@@ -12,15 +13,13 @@
 /// @link https://en.wikipedia.org/wiki/Measure_(typography) Wikipedia
 /// @link http://webtypography.net/2.1.2 Web Typography
 :root {
+  $prefix: "measure";
   $sizes: map.get(cfg.$merged, common, sizes);
-  $func: map.get(cfg.$merged, typography, measure, function);
+  $conf: map.get(cfg.$merged, typography, measure);
 
-  @each $name, $value in $sizes {
-    --measure-#{$name}: #{meta.call($func, $value)};
-  }
+  @include prop-map.mapped-properties($sizes, $prefix, map.get($conf, function));
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
 
-  --measure-full: 100%;
-  --measure-inf: unset;
-
-  --measure: var(--measure-md);
+  --measure: var(--measure-default);
 }

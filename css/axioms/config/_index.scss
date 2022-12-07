@@ -98,6 +98,13 @@ $default: (
     ),
     measure: (
       function: meta.get-function("measure"),
+      literal: (
+        full: 100%,
+        inf: unset,
+      ),
+      logical: (
+        default: md,
+      ),
     ),
     scale: (
       min: -2,
