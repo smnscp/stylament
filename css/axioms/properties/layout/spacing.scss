@@ -5,13 +5,14 @@
 @use "sass:map";
 @use "sass:meta";
 @use "../../config" as cfg;
+@use "../../tools/mixins/prop-map";
 
 /// @name Spacing Values
 /// @requires $merged
 :root {
-  $spacing: map.get(cfg.$merged, layout, spacing);
+  $conf: map.get(cfg.$merged, layout, spacing);
+  $prefix: "spacing";
 
-  @each $name, $value in $spacing {
-    --spacing-#{$name}: #{$value};
-  }
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
 }
