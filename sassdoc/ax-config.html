@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.8.0</span>
+          <span class="project-version">0.9.0</span>
         
       </div>
     </header>
@@ -477,25 +477,72 @@
       max: 12,
       line: 4,
     ),
-    container-function: meta.get-function(&quot;container&quot;),
+    container: (
+      function: meta.get-function(&quot;container&quot;),
+      literal: (),
+      logical: (
+        page: &quot;xl&quot;,
+      ),
+    ),
+    spacing: (
+      literal: (
+        block: &quot;var(--length-l1)&quot;,
+        heading: &quot;var(--length-l1)&quot;,
+        sectioning:
+          &quot;clamp(var(--length-l1), (100vi - var(--container-sm)) / 4, var(--length-l2))&quot;,
+        inline: 4ch,
+        inline-small: 0.5ch,
+      ),
+      logical: (),
+    ),
   ),
   typography: (
-    font-weights: (
-      // thin: 100,
-      // extralight: 200,
-      // light: 300,
-      regular: 400,
-      // medium: 500,
-      // semibold: 600,
-      bold: 700,
-      // extrabold: 800,
-      // black: 900,,,,,,
+    font-family: (
+      literal: (
+        sans: (
+          &quot;Source Sans Pro&quot;,
+          sans-serif,
+        ),
+        serif: (
+          &quot;Source Serif Pro&quot;,
+          serif,
+        ),
+        mono: (
+          &quot;Source Code Pro&quot;,
+          monospace,
+        ),
+      ),
+      logical: (
+        body: &quot;serif&quot;,
+        heading: &quot;sans&quot;,
+        display: &quot;body&quot;,
+      ),
+    ),
+    font-weight: (
+      literal: (
+        regular: 400,
+        bold: 700,
+      ),
+      logical: (
+        body: &quot;regular&quot;,
+        emphasis: &quot;bold&quot;,
+        heading: &quot;bold&quot;,
+      ),
     ),
     line: (
       min: 1.1,
       root: 1.5,
     ),
-    measure-function: meta.get-function(&quot;measure&quot;),
+    measure: (
+      function: meta.get-function(&quot;measure&quot;),
+      literal: (
+        full: 100%,
+        inf: unset,
+      ),
+      logical: (
+        default: md,
+      ),
+    ),
     scale: (
       min: -2,
       max: 5,
@@ -503,14 +550,52 @@
       // Major third, equal-tempered: ∛2 ≅ 1.26
       // https://www.modularscale.com/?1&amp;em&amp;2@3
       factor: math.pow(2, math.div(1, 3)),
+      literal: (),
+      logical: (),
     ),
   ),
   ui: (
-    colors: brand.$palettes,
     stroke: (
-      min: 1,
-      max: 8,
-      line: 24,
+      width: (
+        min: 1,
+        max: 8,
+        line: 24,
+        literal: (),
+        logical: (
+          default: 2,
+        ),
+      ),
+      style: (
+        literal: (
+          default: &quot;solid&quot;,
+        ),
+        logical: (),
+      ),
+      color: (
+        literal: (
+          default: &quot;var(--color-tertiary-700)&quot;,
+        ),
+        logical: (),
+      ),
+    ),
+  ),
+  color: (
+    palettes: (),
+    literal: (),
+    logical: (
+      body: &quot;black&quot;,
+      body-negative: &quot;white&quot;,
+      neutral: &quot;grey&quot;,
+      accent: &quot;grey-700&quot;,
+      accent-negative: &quot;grey-100&quot;,
+      mark: &quot;grey-900&quot;,
+      mark-negative: &quot;grey-200&quot;,
+      heading: &quot;primary-700&quot;,
+      // heading-negative: &quot;secondary-300&quot;,
+      links: &quot;secondary-700&quot;,
+      links-negative: &quot;secondary-300&quot;,
+      // links-accent-negative: &quot;tertiary-300&quot;,
+      hr: &quot;primary&quot;,
     ),
   ),
 );</code></pre>
@@ -918,6 +1003,37 @@
       
       
         <a href="
+  ax-properties.html#css--Spacing%20Values" class="item-name">Spacing Values</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
   ax-properties.html#css--Font%20Weights" class="item-name">Font Weights</a>
       
       
@@ -1012,6 +1128,68 @@
       
         <a href="
   ax-properties.html#css--Modular%20Font%20Size%20Scale" class="item-name">Modular Font Size<span class="widont">&nbsp;</span>Scale</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#css--Stroke%20Colors" class="item-name">Stroke Colors</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#css--Stroke%20Styles" class="item-name">Stroke Styles</a>
       
       
       
@@ -1139,9 +1317,11 @@
   &quot;grey&quot;: (
     hue: $prim,
     s-curve: (
-      0.142857,
-      -1,
-      1,
+      0.1,
+    ),
+    l-curve: (
+      0.99,
+      -0.99,
     ),
     range: (
       step: 0.1,

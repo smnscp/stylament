@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.8.0</span>
+          <span class="project-version">0.9.0</span>
         
       </div>
     </header>
@@ -322,6 +322,210 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
 
   
     <div data-item-section="prose" class="text-block">
+      <h2 id="color">Color</h2>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Color%20Palettes">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Color%20Palettes" class="item-name">Color Palettes</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  $conf: map.get(cfg.$merged, color);
+
+  @each $name, $pal in map.get($conf, palettes) {
+    @include color.palette(
+      $name,
+      map.get($pal, hue),
+      map.get($pal, s-curve),
+      map.get($pal, l-curve),
+      map.get($pal, range)
+    );
+  }
+
+  $prefix: &quot;color&quot;;
+
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
       <h2 id="layout">Layout</h2>
 
       
@@ -525,53 +729,6 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
     
     
   
-    
-  <div data-item-section="used-by">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Used By</span>
-        
-      </h3>
-    
-
-    
-      
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Responsive%20Spacing" class="item-name">Responsive Spacing</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-    
-  </div>
-
-  
 
   
 
@@ -648,13 +805,21 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
+  $prefix: &quot;container&quot;;
   $names: map.get(cfg.$merged, common, sizes);
-  $func: map.get(cfg.$merged, layout, container-function);
+  $conf: map.get(cfg.$merged, layout, container);
+  $func: map.get($conf, function);
+  $literal: map.get($conf, literal);
+  $logical: map.get($conf, logical);
 
-  @each $name, $value in $names {
-    $sizes: map.set($sizes, $name, meta.call($func, $value)) !global;
-    --container-#{$name}: #{map.get($sizes, $name)};
-  }
+  $sizes: map.merge($sizes, map2.map-function($names, $func)) !global;
+  @include prop-map.mapped-properties($names, $prefix, $func);
+
+  $sizes: map.merge($sizes, $literal) !global;
+  @include prop-map.literal-properties($literal, $prefix);
+
+  $sizes: map.merge($sizes, map2.map-aliases($logical, $sizes)) !global;
+  @include prop-map.logical-properties($logical, $prefix);
 }</code></pre>
     </div>
   
@@ -1027,6 +1192,175 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
 
 
 
+<section class="item" id="css--Spacing%20Values">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Spacing%20Values" class="item-name">Spacing Values</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  $conf: map.get(cfg.$merged, layout, spacing);
+  $prefix: &quot;spacing&quot;;
+
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" >
   
     
@@ -1150,9 +1484,11 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  --font-sans: &quot;Source Sans Pro&quot;, sans-serif;
-  --font-serif: &quot;Source Serif Pro&quot;, serif;
-  --font-mono: &quot;Source Code Pro&quot;, monospace;
+  $conf: map.get(cfg.$merged, typography, font-family);
+  $prefix: &quot;font&quot;;
+
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
 }</code></pre>
     </div>
   
@@ -1304,13 +1640,11 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $weights: map.get(cfg.$merged, typography, font-weights);
+  $conf: map.get(cfg.$merged, typography, font-weight);
+  $prefix: &quot;weight&quot;;
 
-  @each $name, $value in $weights {
-    @if $value {
-      --weight-#{$name}: #{$value};
-    }
-  }
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
 }</code></pre>
     </div>
   
@@ -2003,7 +2337,7 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
   $line-min: map.get(cfg.$merged, typography, line, min);
   $line-root: map.get(cfg.$merged, typography, line, root);
 
-  $rlh: $line-root * $scale-base !global;
+  $rlh: $line-root * 1rem !global;
 
   --line-root: #{$line-root};
   --line-root-abs: #{$rlh};
@@ -2249,17 +2583,15 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
+  $prefix: &quot;measure&quot;;
   $sizes: map.get(cfg.$merged, common, sizes);
-  $func: map.get(cfg.$merged, typography, measure-function);
+  $conf: map.get(cfg.$merged, typography, measure);
 
-  @each $name, $value in $sizes {
-    --measure-#{$name}: #{meta.call($func, $value)};
-  }
+  @include prop-map.mapped-properties($sizes, $prefix, map.get($conf, function));
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
 
-  --measure-full: 100%;
-  --measure-inf: unset;
-
-  --measure: var(--measure-md);
+  --measure: var(--measure-default);
 }</code></pre>
     </div>
   
@@ -2502,19 +2834,24 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $base: map.get(cfg.$merged, typography, scale, base);
-  $factor: map.get(cfg.$merged, typography, scale, factor);
-  $min: map.get(cfg.$merged, typography, scale, min);
-  $max: map.get(cfg.$merged, typography, scale, max);
+  $conf: map.get(cfg.$merged, typography, scale);
+  $base: map.get($conf, base);
+  $factor: map.get($conf, factor);
+  $min: map.get($conf, min);
+  $max: map.get($conf, max);
+  $prefix: &quot;scale&quot;;
 
-  --scale-factor: #{$factor};
+  --#{$prefix}-factor: #{$factor};
 
   @for $i from $min through $max {
-    --scale-#{$i}: #{scale.modular($base, $factor, $i)};
+    --#{$prefix}-#{$i}: #{scale.modular($base, $factor, $i)};
   }
 
-  --scale-smaller: #{math.div(100%, $factor)};
-  --scale-larger: #{100% * $factor};
+  --#{$prefix}-smaller: #{math.div(100%, $factor)};
+  --#{$prefix}-larger: #{100% * $factor};
+
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
 }</code></pre>
     </div>
   
@@ -2720,190 +3057,6 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
   
 
   
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--Color%20Palette">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--Color%20Palette" class="item-name">Color Palette</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  $colors: map.get(cfg.$merged, ui, colors);
-
-  @each $name, $pal in $colors {
-    @include color.palette(
-      $name,
-      map.get($pal, hue),
-      map.get($pal, s-curve),
-      map.get($pal, l-curve),
-      map.get($pal, range)
-    );
-  }
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/colors" class="item-name">Pollen inheritance</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-    
-  <div data-item-section="todo">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">To-do List</span>
-        
-      </h3>
-    
-
-    
-      <ul>
-        
-          <li data-sassdoc="todo-item">
-            <p>Configure and calculate<span class="widont">&nbsp;</span>this.</p>
-
-          </li>
-        
-      </ul>
-    
-  </div>
-
   
 
 
@@ -3502,6 +3655,372 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
 
 
 
+<section class="item" id="css--Stroke%20Colors">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Stroke%20Colors" class="item-name">Stroke Colors</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  $conf: map.get(cfg.$merged, ui, stroke, color);
+  $prefix: &quot;stroke-color&quot;;
+
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Stroke Colors.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Stroke%20Styles">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Stroke%20Styles" class="item-name">Stroke Styles</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  $conf: map.get(cfg.$merged, ui, stroke, style);
+  $prefix: &quot;stroke-style&quot;;
+
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Stroke Styles.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" id="css--Stroke%20Width%20Scale">
   
     
@@ -3550,13 +4069,18 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $min: map.get(cfg.$merged, ui, stroke, min);
-  $max: map.get(cfg.$merged, ui, stroke, max);
-  $line: map.get(cfg.$merged, ui, stroke, line);
+  $conf: map.get(cfg.$merged, ui, stroke, width);
+  $min: map.get($conf, min);
+  $max: map.get($conf, max);
+  $line: map.get($conf, line);
+  $prefix: &quot;stroke-width&quot;;
 
   @for $i from $min through $max {
-    --stroke-width-#{$i}: #{line.$rlh * math.div($i, $line)};
+    --#{$prefix}-#{$i}: #{line.$rlh * math.div($i, $line)};
   }
+
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
 }</code></pre>
     </div>
   
@@ -3679,325 +4203,6 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
       
       
       <span class="value-type">(Number&lt;rem&gt;)</span>
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-    
-  </div>
-
-  
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--Logical%20Properties">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--Logical%20Properties" class="item-name">Logical Properties</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  --font-body: var(--font-serif);
-  --font-heading: var(--font-sans);
-  --font-display: var(--font-body);
-  --weight-body: var(--weight-regular);
-  --weight-emphasis: var(--weight-bold);
-  --weight-heading: var(--weight-bold);
-  --color-body: var(--color-black);
-  --color-body-negative: var(--color-white);
-  --color-neutral: var(--color-grey);
-  --color-accent: var(--color-grey-700);
-  --color-accent-negative: var(--color-grey-100);
-  --color-mark: var(--color-grey-900);
-  --color-mark-negative: var(--color-grey-200);
-  --color-heading: var(--color-primary-700);
-  --color-links: var(--color-secondary-700);
-  --color-links-negative: var(--color-secondary-300);
-  --color-hr: var(--color-primary);
-  --spacing-block: var(--line-root-abs);
-  --spacing-heading: var(--spacing-block);
-  --spacing-sectioning: calc(2 * var(--spacing-block));
-  --spacing-inline: 4ch;
-  --inline-padding-default: 0.5ch;
-  --stroke-width-default: var(--stroke-width-2);
-  --stroke-style-default: solid;
-  --stroke-color-default: var(--color-tertiary-700);
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--Responsive%20Spacing">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--Responsive%20Spacing" class="item-name">Responsive Spacing</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  @media (max-width: map.get(container.$sizes, &quot;sm&quot;)) {
-    --spacing-sectioning: var(--spacing-block);
-  }
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Save space on smaller<span class="widont">&nbsp;</span>screens.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  <div data-item-section="requires">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Requires</span>
-        
-      </h3>
-    
-
-    
-      
-      
-        
-        
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#variable--sizes" class="item-name">$sizes</a>
-      
-      
-      <span class="value-type">(Map)</span>
       
     </h4>
 
