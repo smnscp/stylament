@@ -102,24 +102,6 @@ $default: (
     ),
   ),
   ui: (
-    color: (
-      palettes: (),
-      individuals: (
-        body: "var(--color-black)",
-        body-negative: "var(--color-white)",
-        neutral: "var(--color-grey)",
-        accent: "var(--color-grey-700)",
-        accent-negative: "var(--color-grey-100)",
-        mark: "var(--color-grey-900)",
-        mark-negative: "var(--color-grey-200)",
-        heading: "var(--color-primary-700)",
-        // heading-negative: "var(--color-secondary-300)",
-        links: "var(--color-secondary-700)",
-        links-negative: "var(--color-secondary-300)",
-        // links-accent-negative: "var(--color-tertiary-300)",
-        hr: "var(--color-primary)",
-      ),
-    ),
     stroke: (
       min: 1,
       max: 8,
@@ -133,6 +115,24 @@ $default: (
       colors: (
         default: "var(--color-tertiary-700)",
       ),
+    ),
+  ),
+  color: (
+    palettes: (),
+    individuals: (
+      body: "var(--color-black)",
+      body-negative: "var(--color-white)",
+      neutral: "var(--color-grey)",
+      accent: "var(--color-grey-700)",
+      accent-negative: "var(--color-grey-100)",
+      mark: "var(--color-grey-900)",
+      mark-negative: "var(--color-grey-200)",
+      heading: "var(--color-primary-700)",
+      // heading-negative: "var(--color-secondary-300)",
+      links: "var(--color-secondary-700)",
+      links-negative: "var(--color-secondary-300)",
+      // links-accent-negative: "var(--color-tertiary-300)",
+      hr: "var(--color-primary)",
     ),
   ),
 );

@@ -1,10 +1,8 @@
 @use "axioms/config/color/brand";
 @use "axioms" with (
   $config-custom: (
-    ui: (
-      color: (
-        palettes: brand.$palettes,
-      ),
+    color: (
+      palettes: brand.$palettes,
     ),
   )
 );

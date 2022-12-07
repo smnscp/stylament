@@ -30,7 +30,7 @@
   }
 
   tbody {
-    $colors: map.get(cfg.$merged, ui, color, palettes);
+    $colors: map.get(cfg.$merged, color, palettes);
     $index: 0;
     @each $name, $pal in $colors {
       $index: $index + 1;

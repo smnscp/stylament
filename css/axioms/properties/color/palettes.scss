@@ -6,12 +6,10 @@
 @use "../../config" as cfg;
 @use "../../tools/mixins/color";
 
-/// @name Color Palette
-/// @link https://www.pollen.style/modules/colors Pollen inheritance
-/// @todo Configure and calculate this.
+/// @name Color Palettes
 :root {
-  $palettes: map.get(cfg.$merged, ui, color, palettes);
-  $individuals: map.get(cfg.$merged, ui, color, individuals);
+  $palettes: map.get(cfg.$merged, color, palettes);
+  $individuals: map.get(cfg.$merged, color, individuals);
 
   @each $name, $pal in $palettes {
     @include color.palette(
