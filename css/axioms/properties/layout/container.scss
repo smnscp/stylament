@@ -21,14 +21,14 @@ $sizes: ();
   $prefix: "container";
   $names: map.get(cfg.$merged, common, sizes);
   $func: map.get(cfg.$merged, layout, container, function);
-  $individual: map.get(cfg.$merged, layout, container, individual);
+  $literal: map.get(cfg.$merged, layout, container, literal);
   $logical: map.get(cfg.$merged, layout, container, logical);
 
   $sizes: map.merge($sizes, map2.map-function($names, $func)) !global;
   @include prop-map.mapped-properties($names, $prefix, $func);
 
-  $sizes: map.merge($sizes, $individual) !global;
-  @include prop-map.properties($individual, $prefix);
+  $sizes: map.merge($sizes, $literal) !global;
+  @include prop-map.literal-properties($literal, $prefix);
 
   $sizes: map.merge($sizes, map2.map-aliases($logical, $sizes)) !global;
   @include prop-map.logical-properties($logical, $prefix);

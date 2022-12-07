@@ -42,7 +42,7 @@ $default: (
     ),
     container: (
       function: meta.get-function("container"),
-      individual: (),
+      literal: (),
       logical: (
         page: "xl",
       ),
@@ -119,7 +119,7 @@ $default: (
   ),
   color: (
     palettes: (),
-    individual: (),
+    literal: (),
     logical: (
       body: "black",
       body-negative: "white",

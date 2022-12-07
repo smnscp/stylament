@@ -6,10 +6,10 @@
 
 /// List CSS custom properties.
 ///
-/// @param {Map} $properties Map of properties.
+/// @param {Map} $properties Map of properties with simple literal values.
 /// @param {String} $prefix Property name prefix.
 /// @output A list of `--<prefix>-*` custom properties with their respective values.
-@mixin properties($properties, $prefix) {
+@mixin literal-properties($properties, $prefix) {
   @each $name, $value in $properties {
     --#{$prefix}-#{$name}: #{$value};
   }

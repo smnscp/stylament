@@ -21,6 +21,6 @@
 
   $prefix: "color";
 
-  @include prop-map.properties(map.get(cfg.$merged, color, individual), $prefix);
+  @include prop-map.literal-properties(map.get(cfg.$merged, color, literal), $prefix);
   @include prop-map.logical-properties(map.get(cfg.$merged, color, logical), $prefix);
 }
