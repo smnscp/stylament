@@ -42,8 +42,8 @@ $default: (
     ),
     container: (
       function: meta.get-function("container"),
-      individuals: (),
-      logicals: (
+      individual: (),
+      logical: (
         page: "xl",
       ),
     ),
@@ -119,7 +119,7 @@ $default: (
   ),
   color: (
     palettes: (),
-    individuals: (
+    individual: (
       body: "var(--color-black)",
       body-negative: "var(--color-white)",
       neutral: "var(--color-grey)",

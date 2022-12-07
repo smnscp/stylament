@@ -8,10 +8,7 @@
 
 /// @name Color Palettes
 :root {
-  $palettes: map.get(cfg.$merged, color, palettes);
-  $individuals: map.get(cfg.$merged, color, individuals);
-
-  @each $name, $pal in $palettes {
+  @each $name, $pal in map.get(cfg.$merged, color, palettes) {
     @include color.palette(
       $name,
       map.get($pal, hue),
@@ -21,7 +18,7 @@
     );
   }
 
-  @each $name, $value in $individuals {
+  @each $name, $value in map.get(cfg.$merged, color, individual) {
     --color-#{$name}: #{$value};
   }
 }

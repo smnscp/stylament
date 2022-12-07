@@ -18,20 +18,20 @@ $sizes: ();
 :root {
   $names: map.get(cfg.$merged, common, sizes);
   $func: map.get(cfg.$merged, layout, container, function);
-  $individuals: map.get(cfg.$merged, layout, container, individuals);
-  $logicals: map.get(cfg.$merged, layout, container, logicals);
+  $individual: map.get(cfg.$merged, layout, container, individual);
+  $logical: map.get(cfg.$merged, layout, container, logical);
 
   @each $name, $value in $names {
     $sizes: map.set($sizes, $name, meta.call($func, $value)) !global;
     --container-#{$name}: #{map.get($sizes, $name)};
   }
 
-  @each $name, $value in $individuals {
+  @each $name, $value in $individual {
     $sizes: map.set($sizes, $name, $value) !global;
     --container-#{$name}: #{$value};
   }
 
-  @each $name, $alias in $logicals {
+  @each $name, $alias in $logical {
     $sizes: map.set($sizes, $name, map.get($sizes, $alias)) !global;
     --container-#{$name}: var(--container-#{$alias});
   }
