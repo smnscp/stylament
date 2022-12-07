@@ -6,22 +6,28 @@
 @use "sass:math";
 @use "../../config" as cfg;
 @use "../../tools/functions/scale";
+@use "../../tools/mixins/prop-map";
 
 /// @name Modular Font Size Scale
 /// @requires $merged
 /// @link https://www.pollen.style/modules/typography#modular-scale Pollen inheritance
 :root {
-  $base: map.get(cfg.$merged, typography, scale, base);
-  $factor: map.get(cfg.$merged, typography, scale, factor);
-  $min: map.get(cfg.$merged, typography, scale, min);
-  $max: map.get(cfg.$merged, typography, scale, max);
+  $conf: map.get(cfg.$merged, typography, scale);
+  $base: map.get($conf, base);
+  $factor: map.get($conf, factor);
+  $min: map.get($conf, min);
+  $max: map.get($conf, max);
+  $prefix: "scale";
 
-  --scale-factor: #{$factor};
+  --#{$prefix}-factor: #{$factor};
 
   @for $i from $min through $max {
-    --scale-#{$i}: #{scale.modular($base, $factor, $i)};
+    --#{$prefix}-#{$i}: #{scale.modular($base, $factor, $i)};
   }
 
-  --scale-smaller: #{math.div(100%, $factor)};
-  --scale-larger: #{100% * $factor};
+  --#{$prefix}-smaller: #{math.div(100%, $factor)};
+  --#{$prefix}-larger: #{100% * $factor};
+
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
 }
