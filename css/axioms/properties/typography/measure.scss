@@ -13,7 +13,7 @@
 /// @link http://webtypography.net/2.1.2 Web Typography
 :root {
   $sizes: map.get(cfg.$merged, common, sizes);
-  $func: map.get(cfg.$merged, typography, measure-function);
+  $func: map.get(cfg.$merged, typography, measure, function);
 
   @each $name, $value in $sizes {
     --measure-#{$name}: #{meta.call($func, $value)};

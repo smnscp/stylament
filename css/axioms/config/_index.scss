@@ -91,7 +91,9 @@ $default: (
       min: 1.1,
       root: 1.5,
     ),
-    measure-function: meta.get-function("measure"),
+    measure: (
+      function: meta.get-function("measure"),
+    ),
     scale: (
       min: -2,
       max: 5,
