@@ -5,6 +5,7 @@
 @use "sass:map";
 @use "../../config" as cfg;
 @use "../../tools/mixins/color";
+@use "../../tools/mixins/prop-map";
 
 /// @name Color Palettes
 :root {
@@ -18,7 +19,8 @@
     );
   }
 
-  @each $name, $value in map.get(cfg.$merged, color, individual) {
-    --color-#{$name}: #{$value};
-  }
+  $prefix: "color";
+
+  @include prop-map.properties(map.get(cfg.$merged, color, individual), $prefix);
+  @include prop-map.logical-properties(map.get(cfg.$merged, color, logical), $prefix);
 }

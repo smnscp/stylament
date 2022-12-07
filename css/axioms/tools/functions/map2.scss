@@ -1,0 +1,33 @@
+////
+/// @group ax-tools
+////
+
+@use "sass:map";
+@use "sass:meta";
+
+/// Translate a map of aliases to values from a dictionary.
+/// Each alias is asigned the value of the aliased dictionary key.
+///
+/// @param {Map} $aliases Map of aliases.
+/// @param {Map} $dict Dictionary to look up values.
+/// @return {Map} Map with aliases pointing to looked up values.
+@function map-aliases($aliases, $dict) {
+  $result: ();
+  @each $name, $alias in $aliases {
+    $result: map.set($result, $name, map.get($dict, $alias));
+  }
+  @return $result;
+}
+
+/// Translate a map of domain arguments to their values of a given function.
+///
+/// @param {Map} $domain The domain on which to apply the function.
+/// @param {Function} $func Function to apply.
+/// @return {Map} Map with domain symbols pointing to their function values.
+@function map-function($domain, $func) {
+  $result: ();
+  @each $name, $arg in $domain {
+    $result: map.set($result, $name, meta.call($func, $arg));
+  }
+  @return $result;
+}

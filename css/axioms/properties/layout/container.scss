@@ -5,6 +5,8 @@
 @use "sass:map";
 @use "sass:meta";
 @use "../../config" as cfg;
+@use "../../tools/functions/map2";
+@use "../../tools/mixins/prop-map";
 
 /// Container sizes. Defined in [Container Size Scale](#css--Container%20Size%20Scale).
 /// @type Map
@@ -16,23 +18,18 @@ $sizes: ();
 /// @requires $merged
 /// @link https://www.pollen.style/modules/layout#container-widths Pollen inheritance
 :root {
+  $prefix: "container";
   $names: map.get(cfg.$merged, common, sizes);
   $func: map.get(cfg.$merged, layout, container, function);
   $individual: map.get(cfg.$merged, layout, container, individual);
   $logical: map.get(cfg.$merged, layout, container, logical);
 
-  @each $name, $value in $names {
-    $sizes: map.set($sizes, $name, meta.call($func, $value)) !global;
-    --container-#{$name}: #{map.get($sizes, $name)};
-  }
+  $sizes: map.merge($sizes, map2.map-function($names, $func)) !global;
+  @include prop-map.mapped-properties($names, $prefix, $func);
 
-  @each $name, $value in $individual {
-    $sizes: map.set($sizes, $name, $value) !global;
-    --container-#{$name}: #{$value};
-  }
+  $sizes: map.merge($sizes, $individual) !global;
+  @include prop-map.properties($individual, $prefix);
 
-  @each $name, $alias in $logical {
-    $sizes: map.set($sizes, $name, map.get($sizes, $alias)) !global;
-    --container-#{$name}: var(--container-#{$alias});
-  }
+  $sizes: map.merge($sizes, map2.map-aliases($logical, $sizes)) !global;
+  @include prop-map.logical-properties($logical, $prefix);
 }

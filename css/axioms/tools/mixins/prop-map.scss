@@ -1,0 +1,39 @@
+////
+/// @group ax-tools
+////
+
+@use "sass:meta";
+
+/// List CSS custom properties.
+///
+/// @param {Map} $properties Map of properties.
+/// @param {String} $prefix Property name prefix.
+/// @output A list of `--<prefix>-*` custom properties with their respective values.
+@mixin properties($properties, $prefix) {
+  @each $name, $value in $properties {
+    --#{$prefix}-#{$name}: #{$value};
+  }
+}
+
+/// Map CSS custom properties via a given function.
+///
+/// @param {Map} $properties Map of properties.
+/// @param {String} $prefix Property name prefix.
+/// @param {Function} $func Mapping function.
+/// @output A list of `--<prefix>-*` custom properties with their respective calculated values.
+@mixin mapped-properties($properties, $prefix, $func) {
+  @each $name, $arg in $properties {
+    --#{$prefix}-#{$name}: #{meta.call($func, $arg)};
+  }
+}
+
+/// Map logical to basic CSS custom properties.
+///
+/// @param {Map} $properties Map of logical properties.
+/// @param {String} $prefix Property name prefix.
+/// @output A list of `--<prefix>-*` custom properties referring to others.
+@mixin logical-properties($properties, $prefix) {
+  @each $name, $alias in $properties {
+    --#{$prefix}-#{$name}: var(--#{$prefix}-#{$alias});
+  }
+}
