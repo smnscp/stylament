@@ -20,9 +20,10 @@ $sizes: ();
 :root {
   $prefix: "container";
   $names: map.get(cfg.$merged, common, sizes);
-  $func: map.get(cfg.$merged, layout, container, function);
-  $literal: map.get(cfg.$merged, layout, container, literal);
-  $logical: map.get(cfg.$merged, layout, container, logical);
+  $conf: map.get(cfg.$merged, layout, container);
+  $func: map.get($conf, function);
+  $literal: map.get($conf, literal);
+  $logical: map.get($conf, logical);
 
   $sizes: map.merge($sizes, map2.map-function($names, $func)) !global;
   @include prop-map.mapped-properties($names, $prefix, $func);
