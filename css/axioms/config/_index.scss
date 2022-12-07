@@ -119,17 +119,26 @@ $default: (
   ),
   ui: (
     stroke: (
-      min: 1,
-      max: 8,
-      line: 24,
-      widths: (
-        default: "var(--stroke-width-2)",
+      width: (
+        min: 1,
+        max: 8,
+        line: 24,
+        literal: (),
+        logical: (
+          default: 2,
+        ),
       ),
-      styles: (
-        default: "solid",
+      style: (
+        literal: (
+          default: "solid",
+        ),
+        logical: (),
       ),
-      colors: (
-        default: "var(--color-tertiary-700)",
+      color: (
+        literal: (
+          default: "var(--color-tertiary-700)",
+        ),
+        logical: (),
       ),
     ),
   ),

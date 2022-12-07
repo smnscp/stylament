@@ -1,0 +1,20 @@
+////
+/// @group ax-properties
+////
+
+@use "sass:map";
+@use "sass:math";
+@use "../../../config" as cfg;
+@use "../../../tools/mixins/prop-map";
+@use "../../typography/line";
+
+/// Stroke Styles.
+/// @name Stroke Styles
+/// @requires $merged
+:root {
+  $conf: map.get(cfg.$merged, ui, stroke, style);
+  $prefix: "stroke-style";
+
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+}
