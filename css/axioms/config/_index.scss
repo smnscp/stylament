@@ -60,36 +60,37 @@ $default: (
     ),
   ),
   typography: (
-    font-families: (
-      sans: (
-        "Source Sans Pro",
-        sans-serif,
+    font-family: (
+      literal: (
+        sans: (
+          "Source Sans Pro",
+          sans-serif,
+        ),
+        serif: (
+          "Source Serif Pro",
+          serif,
+        ),
+        mono: (
+          "Source Code Pro",
+          monospace,
+        ),
       ),
-      serif: (
-        "Source Serif Pro",
-        serif,
+      logical: (
+        body: "serif",
+        heading: "sans",
+        display: "body",
       ),
-      mono: (
-        "Source Code Pro",
-        monospace,
-      ),
-      body: "var(--font-serif)",
-      heading: "var(--font-sans)",
-      display: "var(--font-body)",
     ),
-    font-weights: (
-      // thin: 100,
-      // extralight: 200,
-      // light: 300,
-      regular: 400,
-      // medium: 500,
-      // semibold: 600,
-      bold: 700,
-      // extrabold: 800,
-      // black: 900,
-      body: "var(--weight-regular)",
-      emphasis: "var(--weight-bold)",
-      heading: "var(--weight-bold)",
+    font-weight: (
+      literal: (
+        regular: 400,
+        bold: 700,
+      ),
+      logical: (
+        body: "regular",
+        emphasis: "bold",
+        heading: "bold",
+      ),
     ),
     line: (
       min: 1.1,

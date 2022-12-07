@@ -4,16 +4,15 @@
 
 @use "sass:map";
 @use "../../config" as cfg;
+@use "../../tools/mixins/prop-map";
 
 /// @name Font Weights
 /// @requires $merged
 /// @link https://www.pollen.style/modules/typography#font-weights Pollen inheritance
 :root {
-  $weights: map.get(cfg.$merged, typography, font-weights);
+  $conf: map.get(cfg.$merged, typography, font-weight);
+  $prefix: "weight";
 
-  @each $name, $value in $weights {
-    @if $value {
-      --weight-#{$name}: #{$value};
-    }
-  }
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
 }

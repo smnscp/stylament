@@ -5,13 +5,14 @@
 @use "sass:map";
 @use "sass:meta";
 @use "../../config" as cfg;
+@use "../../tools/mixins/prop-map";
 
 /// @name Font Families
 /// @link https://www.pollen.style/modules/typography#font-families Pollen inheritance
 :root {
-  $fonts: map.get(cfg.$merged, typography, font-families);
+  $conf: map.get(cfg.$merged, typography, font-family);
+  $prefix: "font";
 
-  @each $name, $value in $fonts {
-    --font-#{$name}: #{$value};
-  }
+  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
+  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
 }
