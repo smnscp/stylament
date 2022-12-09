@@ -3,6 +3,7 @@
 ////
 
 @use "sass:map";
+@use "sass:math";
 @use "../../config" as cfg;
 @use "../../tools/functions/scale";
 @use "../../tools/functions/rhythm";
@@ -28,7 +29,13 @@ $rlh: null;
   $line-min: map.get(cfg.$merged, typography, line, min);
   $line-root: map.get(cfg.$merged, typography, line, root);
 
-  $rlh: $line-root * 1rem !global;
+  $base-unit: math.unit($scale-base);
+  $scale-base-rem: if(
+    $base-unit == "em",
+    $scale-base * math.div(1rem, 1em),
+    if($base-unit == "%", $scale-base * math.div(1rem, 100%), $scale-base)
+  );
+  $rlh: $line-root * $scale-base-rem !global;
 
   --line-root: #{$line-root};
   --line-root-abs: #{$rlh};
