@@ -2,6 +2,9 @@
 /// @group el-sectioning
 ////
 
+@use "sass:map";
+@use "../../axioms/config" as cfg;
+
 /// ## Heading Content
 
 /// @name General heading styles
@@ -14,10 +17,13 @@ h6 {
   color: var(--color-heading);
 }
 
+$colors: map.get(cfg.$merged, color, logical);
 @for $level from 1 through 6 {
-  /// @name Level-specific heading styles
-  h#{$level} {
-    color: var(--color-heading-#{$level}, var(--color-heading));
+  @if map.get($colors, heading-#{$level}) {
+    /// @name Level-specific heading styles
+    h#{$level} {
+      --color-heading: var(--color-heading-#{$level});
+    }
   }
 }
 
