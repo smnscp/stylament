@@ -8,8 +8,6 @@
 /// compound selectors are required in order to only select the specific element. Nevertheless, we can
 /// address them without any added class specificity.
 
-@use "../objects/coloring/accented";
-
 /// Document root.
 /// Also selectable as `:root` (which has a higher specificity).
 ///
@@ -26,8 +24,6 @@ html {
 body {
   color: var(--color-body);
   background-color: var(--color-body-negative);
-  // Push down the footer.
-  min-block-size: 100vh;
 }
 
 /// The document’s main content. [There can be only one (visible).][highlander]
@@ -40,21 +36,23 @@ main {
   padding-block: var(--spacing-sectioning);
 }
 
-/// The document’s main header.
-/// (There could be more than one. But that would not make much sense.)
-:where(body, body > div) > header {
-  @extend %clr-accented--inverted;
+/// The body or an inevitable wrapper div.
+$body-or-wrapper: ":where(body, body > div:only-child)";
+
+/// The document’s main header and footer.
+/// (There could be more than one of each. But that would not make much sense.)
+#{$body-or-wrapper} > :is(header, footer) {
   padding-block: var(--spacing-sectioning);
 }
 
-/// The document’s main footer.
-/// (There could be more than one. But that would not make much sense.)
-:where(body, body > div) > footer {
-  // Clever sticky footer (https://css-tricks.com/a-clever-sticky-footer-technique/)
-  position: sticky;
-  inset-block-start: 100vh;
+/// Apply [“clever sticky footer”][css-tricks] technique.
+///
+/// [css-tricks]: https://css-tricks.com/a-clever-sticky-footer-technique/
+#{$body-or-wrapper} {
+  min-block-size: 100vh;
 
-  // Spacing and color.
-  @extend %clr-accented--inverted;
-  padding-block: var(--spacing-sectioning);
+  > footer {
+    position: sticky;
+    inset-block-start: 100vh;
+  }
 }

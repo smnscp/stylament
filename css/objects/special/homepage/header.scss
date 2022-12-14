@@ -6,11 +6,9 @@
 
 @use "../../layout/primitive/center";
 @use "../../layout/primitive/center-box";
-@use "../../coloring/accented";
 
 /// Special homepage header styles.
 body.s-homepage > header {
-  @extend .clr-accented;
   --radius-box: var(--radius-md);
   --stroke-width-box: var(--stroke-width-8);
 

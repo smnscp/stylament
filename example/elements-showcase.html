@@ -32,8 +32,6 @@
       display: flex;
       flex-direction: column;
       /* act nice-looking */
-      color: var(--color-accent);
-      background-color: var(--color-accent-negative);
       box-shadow: var(--shadow-lg);
       padding: var(--line-root-abs) 1ch;
     }
@@ -95,15 +93,15 @@
 </head>
 
 <body id="content-root" class="l-page-center">
-  <header id="main-header">
+  <header id="main-header" class="clr-accented">
     <hgroup>
       <h1>All Elements Showcase</h1>
     </hgroup>
   </header>
-  <aside class="document-toc-container">
+  <aside class="document-toc-container clr-accented">
     <details class="document-toc">
       <summary>TOC</summary>
-      <header>
+      <header class="clr-accented">
         <h2 class="document-toc-heading">Table of Contents</h2>
       </header>
       <ol type="a" class="document-toc-body">
@@ -1812,7 +1810,7 @@
     </section>
   </main>
 
-  <footer id="main-footer">
+  <footer id="main-footer" class="clr-accented clr-inverted">
     <section>
       <p class="footer-copyright">© 2022 Simon Schrape</p>
       <ul>
