@@ -7,6 +7,7 @@
 /// Rather opinonated styling for the first `nav.e-menu`.
 
 @use "../../coloring/accented";
+@use "../../coloring/inverted";
 
 /// The  first `nav.e-menu` is implicitly considered the main menu.
 body > nav.e-menu:first-of-type {
@@ -24,7 +25,8 @@ body > nav.e-menu:first-of-type {
     box-shadow: var(--shadow-sm);
 
     & > li {
-      @extend %clr-accented--inverted;
+      @extend .clr-accented;
+      @extend .clr-inverted;
       transition: all 0.3s var(--ease-default);
       &:hover {
         @extend .clr-accented;

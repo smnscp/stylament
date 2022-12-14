@@ -7,7 +7,9 @@
 /// @link https://html.spec.whatwg.org/multipage/links.html Spec
 
 :where(a:any-link) {
-  color: var(--color-links);
+  ---clr-pos: var(--color-links);
+  ---clr-neg: var(--color-links-negative);
+  color: var(---clr-fg);
   text-decoration: underline;
 }
 :where(a:any-link:hover) {

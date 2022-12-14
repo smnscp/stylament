@@ -14,3 +14,9 @@
 :not(html, body, div, section, article, nav, main, header, footer, hgroup, ul, ol, menu, dl, dd, dt, li, table, figure, caption, label) {
   max-inline-size: var(--measure);
 }
+
+/// Set abstract colors.
+* {
+  ---clr-fg: var(---clr-pos);
+  ---clr-bg: var(---clr-neg);
+}

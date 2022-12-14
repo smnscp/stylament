@@ -22,8 +22,10 @@ html {
 /// @link https://html.spec.whatwg.org/multipage/sections.html#the-body-element Spec
 /// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element#sectioning_root MDN
 body {
-  color: var(--color-body);
-  background-color: var(--color-body-negative);
+  ---clr-pos: var(--color-body);
+  ---clr-neg: var(--color-body-negative);
+  color: var(---clr-fg);
+  background-color: var(---clr-bg);
 }
 
 /// The document’s main content. [There can be only one (visible).][highlander]

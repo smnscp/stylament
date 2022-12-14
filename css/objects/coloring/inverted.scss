@@ -1,19 +1,21 @@
-@use "./accented--inverted";
-
+// .clr-inverted,
+// .clr-inverted .clr-inverted .clr-inverted,
+// .clr-inverted .clr-inverted .clr-inverted .clr-inverted
 .clr-inverted {
-  color: var(--color-body-negative);
-  background-color: var(--color-body);
+  color: var(---clr-fg);
+  background-color: var(---clr-bg);
 
-  :is(h1, h2, h3, h4, h5, h6, hgroup > p) {
-    color: var(--color-heading-negative, inherit);
+  &,
+  & * {
+    ---clr-fg: var(---clr-neg);
+    ---clr-bg: var(---clr-pos);
   }
 
-  :where(a:any-link) {
-    color: var(--color-links-negative, inherit);
-  }
-
-  .clr-accented,
-  &.clr-accented {
-    @extend %clr-accented--inverted;
+  .clr-inverted {
+    &,
+    & * {
+      ---clr-fg: var(---clr-pos);
+      ---clr-bg: var(---clr-neg);
+    }
   }
 }

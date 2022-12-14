@@ -14,7 +14,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-heading);
+  ---clr-pos: var(--color-heading);
+  ---clr-neg: var(--color-heading-negative);
+  color: var(---clr-fg);
 }
 
 $colors: map.get(cfg.$merged, color, logical);
@@ -22,7 +24,10 @@ $colors: map.get(cfg.$merged, color, logical);
   @if map.get($colors, heading-#{$level}) {
     /// @name Level-specific heading styles
     h#{$level} {
-      --color-heading: var(--color-heading-#{$level});
+      ---clr-pos: var(--color-heading-#{$level});
+      @if map.get($colors, heading-#{$level}-negative) {
+        ---clr-neg: var(--color-heading-#{$level}-negative);
+      }
     }
   }
 }
@@ -32,7 +37,7 @@ hgroup {
   p {
     font-family: var(--font-heading);
     font-weight: var(--weight-heading);
-    color: var(--color-heading);
+    color: var(---clr-fg);
   }
   h1 ~ p {
     font-size: var(--scale-2);
