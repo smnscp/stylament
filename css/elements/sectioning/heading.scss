@@ -4,6 +4,7 @@
 
 @use "sass:map";
 @use "../../axioms/config" as cfg;
+@use "../../axioms/tools/mixins/coloring";
 
 /// ## Heading Content
 
@@ -14,8 +15,7 @@ h3,
 h4,
 h5,
 h6 {
-  ---clr-pos: var(--color-heading);
-  ---clr-neg: var(--color-heading-negative);
+  @include coloring.set-colors("heading");
   color: var(---clr-fg);
 }
 

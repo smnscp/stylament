@@ -2,13 +2,14 @@
 /// @group el-links
 ////
 
+@use "../axioms/tools/mixins/coloring";
+
 /// # Links
 ///
 /// @link https://html.spec.whatwg.org/multipage/links.html Spec
 
 :where(a:any-link) {
-  ---clr-pos: var(--color-links);
-  ---clr-neg: var(--color-links-negative);
+  @include coloring.set-colors("links");
   color: var(---clr-fg);
   text-decoration: underline;
 }
