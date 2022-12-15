@@ -6,8 +6,7 @@
 ///
 /// Rather opinonated styling for the first `nav.e-menu`.
 
-@use "../../coloring/accented";
-@use "../../coloring/inverted";
+@use "../../../axioms/tools/mixins/coloring";
 
 /// The  first `nav.e-menu` is implicitly considered the main menu.
 body > nav.e-menu:first-of-type {
@@ -25,11 +24,12 @@ body > nav.e-menu:first-of-type {
     box-shadow: var(--shadow-sm);
 
     & > li {
-      @extend .clr-accented;
-      @extend .clr-inverted;
+      @include coloring.use-colors;
+      @include coloring.accent-base;
+      @include coloring.invert-base;
       transition: all 0.3s var(--ease-default);
       &:hover {
-        @extend .clr-accented;
+        @include coloring.revert-base;
       }
 
       & > a {
