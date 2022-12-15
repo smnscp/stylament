@@ -1,8 +1,10 @@
 @use "axioms/config/color/brand";
+@use "axioms/config/color/logical";
 @use "axioms" with (
   $config-custom: (
     color: (
       palettes: brand.$palettes,
+      logical: logical.$mapping,
     ),
   )
 );

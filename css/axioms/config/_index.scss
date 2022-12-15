@@ -145,24 +145,7 @@ $default: (
   color: (
     palettes: (),
     literal: (),
-    logical: (
-      body: "black",
-      body-negative: "white",
-      neutral: "grey",
-      accent: "grey-700",
-      accent-negative: "grey-100",
-      mark: "grey-900",
-      mark-negative: "grey-200",
-      heading: "primary-700",
-      heading-negative: "primary-300",
-      heading-accent: "tertiary-700",
-      heading-accent-negative: "tertiary-300",
-      links: "secondary-700",
-      links-negative: "secondary-300",
-      links-accent: "secondary-500",
-      links-accent-negative: "secondary-300",
-      hr: "primary",
-    ),
+    logical: (),
   ),
 );
 
