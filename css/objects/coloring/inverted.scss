@@ -1,18 +1,5 @@
+@use "../../axioms/tools/mixins/coloring";
+
 .clr-inverted {
-  color: var(---clr-fg);
-  background-color: var(---clr-bg);
-
-  &,
-  & *,
-  & & &,
-  & & & * {
-    ---clr-fg: var(---clr-neg);
-    ---clr-bg: var(---clr-pos);
-  }
-
-  & &,
-  & & * {
-    ---clr-fg: var(---clr-pos);
-    ---clr-bg: var(---clr-neg);
-  }
+  @include coloring.invert;
 }

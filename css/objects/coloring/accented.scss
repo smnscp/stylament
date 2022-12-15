@@ -1,16 +1,5 @@
+@use "../../axioms/tools/mixins/coloring";
+
 .clr-accented {
-  ---clr-pos: var(--color-accent, inherit);
-  ---clr-neg: var(--color-accent-negative, inherit);
-  color: var(---clr-fg);
-  background-color: var(---clr-bg);
-
-  :is(h1, h2, h3, h4, h5, h6, hgroup > p) {
-    ---clr-pos: var(--color-heading-accent, inherit);
-    ---clr-neg: var(--color-heading-accent-negative, inherit);
-  }
-
-  :where(a:any-link) {
-    ---clr-pos: var(--color-links-accent, inherit);
-    ---clr-neg: var(--color-links-accent-negative, inherit);
-  }
+  @include coloring.accent;
 }
