@@ -24,10 +24,7 @@ $colors: map.get(cfg.$merged, color, logical);
   @if map.get($colors, heading-#{$level}) {
     /// @name Level-specific heading styles
     h#{$level} {
-      ---clr-pos: var(--color-heading-#{$level});
-      @if map.get($colors, heading-#{$level}-negative) {
-        ---clr-neg: var(--color-heading-#{$level}-negative);
-      }
+      @include coloring.set-colors("heading-#{$level}", "heading");
     }
   }
 }

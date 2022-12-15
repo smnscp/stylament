@@ -2,14 +2,14 @@
 /// @group ax-tools
 ////
 
+@mixin set-colors($name, $default: null) {
+  ---clr-pos: var(--color-#{$name}, #{if($default, var(--color-#{$default}), inherit)});
+  ---clr-neg: var(--color-#{$name}-negative, #{if($default, var(--color-#{$default}-negative), inheri)});
+}
+
 @mixin use-colors {
   color: var(---clr-fg);
   background-color: var(---clr-bg);
-}
-
-@mixin set-colors($name) {
-  ---clr-pos: var(--color-#{$name}, inherit);
-  ---clr-neg: var(--color-#{$name}-negative, inherit);
 }
 
 @mixin accent-base {
