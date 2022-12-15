@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.9.0</span>
+          <span class="project-version">0.10.0</span>
         
       </div>
     </header>
@@ -438,7 +438,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-heading);
+  ---clr-pos: var(--color-heading);
+  ---clr-neg: var(--color-heading-negative);
+  color: var(---clr-fg);
 }</code></pre>
     </div>
   
@@ -552,7 +554,10 @@ h6 {
       
       
       <pre class="hljs-pre"><code class="lang-scss">h#{$level} {
-  color: var(--color-heading-#{$level}, var(--color-heading));
+  ---clr-pos: var(--color-heading-#{$level});
+      @if map.get($colors, heading-#{$level}-negative) {
+        ---clr-neg: var(--color-heading-#{$level}-negative);
+      }
 }</code></pre>
     </div>
   
@@ -669,7 +674,7 @@ h6 {
   p {
     font-family: var(--font-heading);
     font-weight: var(--weight-heading);
-    color: var(--color-heading);
+    color: var(---clr-fg);
   }
   h1 ~ p {
     font-size: var(--scale-2);

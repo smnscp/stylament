@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.9.0</span>
+          <span class="project-version">0.10.0</span>
         
       </div>
     </header>
@@ -2337,7 +2337,13 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
   $line-min: map.get(cfg.$merged, typography, line, min);
   $line-root: map.get(cfg.$merged, typography, line, root);
 
-  $rlh: $line-root * 1rem !global;
+  $base-unit: math.unit($scale-base);
+  $scale-base-rem: if(
+    $base-unit == &quot;em&quot;,
+    $scale-base * math.div(1rem, 1em),
+    if($base-unit == &quot;%&quot;, $scale-base * math.div(1rem, 100%), $scale-base)
+  );
+  $rlh: $line-root * $scale-base-rem !global;
 
   --line-root: #{$line-root};
   --line-root-abs: #{$rlh};

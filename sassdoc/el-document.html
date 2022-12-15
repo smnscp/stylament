@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.9.0</span>
+          <span class="project-version">0.10.0</span>
         
       </div>
     </header>
@@ -548,10 +548,10 @@ Also selectable as <code>:root</code> (which has a higher<span class="widont">&n
       
       
       <pre class="hljs-pre"><code class="lang-scss">body {
-  color: var(--color-body);
-  background-color: var(--color-body-negative);
-  // Push down the footer.
-  min-block-size: 100vh;
+  ---clr-pos: var(--color-body);
+  ---clr-neg: var(--color-body-negative);
+  color: var(---clr-fg);
+  background-color: var(---clr-bg);
 }</code></pre>
     </div>
   
@@ -875,7 +875,7 @@ Also selectable as <code>:root</code> (which has a higher<span class="widont">&n
 
 
 
-<section class="item" id="css--%3Awhere(body%2C%20body%20%3E%20div)%20%3E%20header">
+<section class="item" id="variable--body-or-wrapper">
   
     
   
@@ -893,7 +893,7 @@ Also selectable as <code>:root</code> (which has a higher<span class="widont">&n
       
 
       
-        <a href="#css--%3Awhere(body%2C%20body%20%3E%20div)%20%3E%20header" class="item-name">:where(body, body &gt; div) &gt;<span class="widont">&nbsp;</span>header</a>
+        <a href="#variable--body-or-wrapper" class="item-name">$body-or-wrapper</a>
       
 
       
@@ -922,10 +922,7 @@ Also selectable as <code>:root</code> (which has a higher<span class="widont">&n
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">:where(body, body &gt; div) &gt; header {
-  @extend %clr-accented--inverted;
-  padding-block: var(--spacing-sectioning);
-}</code></pre>
+      <pre class="hljs-pre"><code class="lang-scss">$body-or-wrapper: &quot;:where(body, body &gt; div:only-child)&quot;;</code></pre>
     </div>
   
 
@@ -937,8 +934,7 @@ Also selectable as <code>:root</code> (which has a higher<span class="widont">&n
 
   
     <div class="text-block">
-      <p>The document’s main header.
-(There could be more than one. But that would not make much<span class="widont">&nbsp;</span>sense.)</p>
+      <p>The body or an inevitable wrapper<span class="widont">&nbsp;</span>div.</p>
 
       
   
@@ -1005,7 +1001,7 @@ Also selectable as <code>:root</code> (which has a higher<span class="widont">&n
 
 
 
-<section class="item" id="css--%3Awhere(body%2C%20body%20%3E%20div)%20%3E%20footer">
+<section class="item" id="css--%23%7B%24body-or-wrapper%7D%20%3E%20%3Ais(header%2C%20footer)">
   
     
   
@@ -1023,7 +1019,7 @@ Also selectable as <code>:root</code> (which has a higher<span class="widont">&n
       
 
       
-        <a href="#css--%3Awhere(body%2C%20body%20%3E%20div)%20%3E%20footer" class="item-name">:where(body, body &gt; div) &gt;<span class="widont">&nbsp;</span>footer</a>
+        <a href="#css--%23%7B%24body-or-wrapper%7D%20%3E%20%3Ais(header%2C%20footer)" class="item-name">#{$body-or-wrapper} &gt; :is(header,<span class="widont">&nbsp;</span>footer)</a>
       
 
       
@@ -1052,13 +1048,7 @@ Also selectable as <code>:root</code> (which has a higher<span class="widont">&n
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">:where(body, body &gt; div) &gt; footer {
-  // Clever sticky footer (https://css-tricks.com/a-clever-sticky-footer-technique/)
-  position: sticky;
-  inset-block-start: 100vh;
-
-  // Spacing and color.
-  @extend %clr-accented--inverted;
+      <pre class="hljs-pre"><code class="lang-scss">#{$body-or-wrapper} &gt; :is(header, footer) {
   padding-block: var(--spacing-sectioning);
 }</code></pre>
     </div>
@@ -1072,8 +1062,141 @@ Also selectable as <code>:root</code> (which has a higher<span class="widont">&n
 
   
     <div class="text-block">
-      <p>The document’s main footer.
-(There could be more than one. But that would not make much<span class="widont">&nbsp;</span>sense.)</p>
+      <p>The document’s main header and footer.
+(There could be more than one of each. But that would not make much<span class="widont">&nbsp;</span>sense.)</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--%23%7B%24body-or-wrapper%7D">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%23%7B%24body-or-wrapper%7D" class="item-name">#{$body-or-wrapper}</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">#{$body-or-wrapper} {
+  min-block-size: 100vh;
+
+  &gt; footer {
+    position: sticky;
+    inset-block-start: 100vh;
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Apply <a href="https://css-tricks.com/a-clever-sticky-footer-technique/">“clever sticky footer”</a><span class="widont">&nbsp;</span>technique.</p>
 
       
   
