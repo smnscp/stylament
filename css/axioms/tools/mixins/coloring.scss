@@ -2,38 +2,55 @@
 /// @group ax-tools
 ////
 
-@mixin accent {
-  ---clr-pos: var(--color-accent, inherit);
-  ---clr-neg: var(--color-accent-negative, inherit);
+@mixin use-colors {
   color: var(---clr-fg);
   background-color: var(---clr-bg);
+}
+
+@mixin set-colors($name) {
+  ---clr-pos: var(--color-#{$name}, inherit);
+  ---clr-neg: var(--color-#{$name}-negative, inherit);
+}
+
+@mixin accent-base {
+  @include set-colors("accent");
+}
+
+@mixin invert-base {
+  ---clr-fg: var(---clr-neg);
+  ---clr-bg: var(---clr-pos);
+}
+
+@mixin revert-base {
+  ---clr-fg: var(---clr-pos);
+  ---clr-bg: var(---clr-neg);
+}
+
+@mixin accent {
+  @include accent-base;
+  @include use-colors;
 
   :is(h1, h2, h3, h4, h5, h6, hgroup > p) {
-    ---clr-pos: var(--color-heading-accent, inherit);
-    ---clr-neg: var(--color-heading-accent-negative, inherit);
+    @include set-colors("heading-accent");
   }
 
   :where(a:any-link) {
-    ---clr-pos: var(--color-links-accent, inherit);
-    ---clr-neg: var(--color-links-accent-negative, inherit);
+    @include set-colors("links-accent");
   }
 }
 
 @mixin invert {
-  color: var(---clr-fg);
-  background-color: var(---clr-bg);
+  @include use-colors;
 
   &,
   & *,
   & & &,
   & & & * {
-    ---clr-fg: var(---clr-neg);
-    ---clr-bg: var(---clr-pos);
+    @include invert-base;
   }
 
   & &,
   & & * {
-    ---clr-fg: var(---clr-pos);
-    ---clr-bg: var(---clr-neg);
+    @include revert-base;
   }
 }
