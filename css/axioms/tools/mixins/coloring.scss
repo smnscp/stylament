@@ -49,8 +49,16 @@
     @include invert-base;
   }
 
-  & &,
-  & & * {
+  & & {
+    @include revert;
+  }
+}
+
+@mixin revert {
+  @include use-colors;
+
+  &,
+  & * {
     @include revert-base;
   }
 }
