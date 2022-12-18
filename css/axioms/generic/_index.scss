@@ -4,7 +4,7 @@
 /// [repo]: https://github.com/csstools/normalize.css
 ///
 /// @group ax-generic
-@use "normalize";
+@use "@csstools/normalize.css/normalize.css";
 
 /// ## n’ize.css
 /// *Stylament* uses [`n’ize.css`][repo] to extend basic styling with slots for CSS custom properties.
@@ -12,6 +12,6 @@
 /// [repo]: https://github.com/smnscp/n-ize.css
 ///
 /// @group ax-generic
-@use "n’ize";
+@use "n-ize.css/n’ize.css";
 
 @use "additional";
