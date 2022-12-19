@@ -1,9 +1,10 @@
 @use "sass:map";
+@use "../../../axioms/tools/mixins/coloring";
 @use "../../../axioms/properties/layout/container";
 
 figure.e-feature {
-  color: var(--color-accent);
-  background-color: var(--color-accent-negative);
+  @include coloring.set-colors("feature", "accent");
+  @include coloring.use-colors;
   padding: var(--spacing-sectioning);
 
   blockquote {
