@@ -6,9 +6,8 @@
 @use "sass:map";
 @use "../axioms/config" as cfg;
 
-$sizes: map.get(cfg.$merged, common, sizes);
-$sizes: list.append($sizes, "full");
-$sizes: list.append($sizes, "inf");
+$conf: map.get(cfg.$merged, typography, measure);
+$sizes: map.merge(map.get($conf, mapped, domain), map.get($conf, literal));
 
 @each $name, $value in $sizes {
   /// Specify individual measure.

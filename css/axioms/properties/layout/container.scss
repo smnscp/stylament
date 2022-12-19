@@ -19,9 +19,9 @@ $sizes: ();
 /// @link https://www.pollen.style/modules/layout#container-widths Pollen inheritance
 :root {
   $prefix: "container";
-  $names: map.get(cfg.$merged, common, sizes);
   $conf: map.get(cfg.$merged, layout, container);
-  $func: map.get($conf, function);
+  $names: map.get($conf, mapped, domain);
+  $func: map.get($conf, mapped, function);
   $literal: map.get($conf, literal);
   $logical: map.get($conf, logical);
 

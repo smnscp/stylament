@@ -17,12 +17,12 @@
 
 /// Map CSS custom properties via a given function.
 ///
-/// @param {Map} $properties Map of properties.
+/// @param {Map} $domain Map of inouts to the mapping function.
 /// @param {String} $prefix Property name prefix.
 /// @param {Function} $func Mapping function.
 /// @output A list of `--<prefix>-*` custom properties with their respective calculated values.
-@mixin mapped-properties($properties, $prefix, $func) {
-  @each $name, $arg in $properties {
+@mixin mapped-properties($domain, $prefix, $func) {
+  @each $name, $arg in $domain {
     --#{$prefix}-#{$name}: #{meta.call($func, $arg)};
   }
 }

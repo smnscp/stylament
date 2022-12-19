@@ -6,6 +6,16 @@
 @use "sass:math";
 @use "sass:meta";
 
+$sizes: (
+  // xxs: -3,
+  xs: -2,
+  sm: -1,
+  md: 0,
+  lg: 1,
+  xl: 2,
+  // xxl: 3,
+);
+
 @function measure($size) {
   // Use square numbers centered around 64ch.
   @return math.pow($size + 8, 2) * 1ch;
@@ -23,17 +33,6 @@ $custom: () !default;
 /// Default configuration.
 /// @type Map
 $default: (
-  common: (
-    sizes: (
-      // xxs: -3,
-      xs: -2,
-      sm: -1,
-      md: 0,
-      lg: 1,
-      xl: 2,
-      // xxl: 3,
-    ),
-  ),
   layout: (
     length: (
       min: 2,
@@ -41,7 +40,10 @@ $default: (
       line: 4,
     ),
     container: (
-      function: meta.get-function("container"),
+      mapped: (
+        domain: $sizes,
+        function: meta.get-function("container"),
+      ),
       literal: (),
       logical: (
         page: "xl",
@@ -97,7 +99,10 @@ $default: (
       root: 1.5,
     ),
     measure: (
-      function: meta.get-function("measure"),
+      mapped: (
+        domain: $sizes,
+        function: meta.get-function("measure"),
+      ),
       literal: (
         full: 100%,
         inf: unset,

@@ -14,10 +14,13 @@
 /// @link http://webtypography.net/2.1.2 Web Typography
 :root {
   $prefix: "measure";
-  $sizes: map.get(cfg.$merged, common, sizes);
   $conf: map.get(cfg.$merged, typography, measure);
 
-  @include prop-map.mapped-properties($sizes, $prefix, map.get($conf, function));
+  @include prop-map.mapped-properties(
+    map.get($conf, mapped, domain),
+    $prefix,
+    map.get($conf, mapped, function)
+  );
   @include prop-map.literal-properties(map.get($conf, literal), $prefix);
   @include prop-map.logical-properties(map.get($conf, logical), $prefix);
 
