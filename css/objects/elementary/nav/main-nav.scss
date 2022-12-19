@@ -24,9 +24,8 @@ body > nav.e-menu:first-of-type {
     box-shadow: var(--shadow-sm);
 
     & > li {
+      @include coloring.set-colors("nav", "accent");
       @include coloring.use-colors;
-      @include coloring.accent-base;
-      @include coloring.invert-base;
       transition: all 0.3s var(--ease-default);
       &:hover {
         @include coloring.use-colors-invers;
