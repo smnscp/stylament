@@ -29,7 +29,7 @@ body > nav.e-menu:first-of-type {
       @include coloring.invert-base;
       transition: all 0.3s var(--ease-default);
       &:hover {
-        @include coloring.revert-base;
+        @include coloring.use-colors-invers;
       }
 
       & > a {

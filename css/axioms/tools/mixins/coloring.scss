@@ -12,6 +12,11 @@
   background-color: var(---clr-bg);
 }
 
+@mixin use-colors-invers {
+  color: var(---clr-bg);
+  background-color: var(---clr-fg);
+}
+
 @mixin accent-base {
   @include set-colors("accent");
 }
