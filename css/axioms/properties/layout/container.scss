@@ -18,19 +18,7 @@ $sizes: ();
 /// @requires $merged
 /// @link https://www.pollen.style/modules/layout#container-widths Pollen inheritance
 :root {
-  $prefix: "container";
   $conf: map.get(cfg.$merged, layout, container);
-  $names: map.get($conf, mapped, domain);
-  $func: map.get($conf, mapped, function);
-  $literal: map.get($conf, literal);
-  $logical: map.get($conf, logical);
-
-  $sizes: map.merge($sizes, map2.map-function($names, $func)) !global;
-  @include prop-map.mapped-properties($names, $prefix, $func);
-
-  $sizes: map.merge($sizes, $literal) !global;
-  @include prop-map.literal-properties($literal, $prefix);
-
-  $sizes: map.merge($sizes, map2.map-aliases($logical, $sizes)) !global;
-  @include prop-map.logical-properties($logical, $prefix);
+  $sizes: map2.map-config($conf) !global;
+  @include prop-map.configured-properties($conf, "container");
 }

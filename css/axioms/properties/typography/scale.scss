@@ -28,6 +28,5 @@
   --#{$prefix}-smaller: #{math.div(100%, $factor)};
   --#{$prefix}-larger: #{100% * $factor};
 
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties($conf, $prefix);
 }

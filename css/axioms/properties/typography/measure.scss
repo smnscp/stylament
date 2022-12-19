@@ -13,16 +13,7 @@
 /// @link https://en.wikipedia.org/wiki/Measure_(typography) Wikipedia
 /// @link http://webtypography.net/2.1.2 Web Typography
 :root {
-  $prefix: "measure";
-  $conf: map.get(cfg.$merged, typography, measure);
-
-  @include prop-map.mapped-properties(
-    map.get($conf, mapped, domain),
-    $prefix,
-    map.get($conf, mapped, function)
-  );
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties(map.get(cfg.$merged, typography, measure), "measure");
 
   --measure: var(--measure-default);
 }

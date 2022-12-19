@@ -2,6 +2,7 @@
 /// @group ax-tools
 ////
 
+@use "sass:map";
 @use "sass:meta";
 
 /// List CSS custom properties.
@@ -22,8 +23,10 @@
 /// @param {Function} $func Mapping function.
 /// @output A list of `--<prefix>-*` custom properties with their respective calculated values.
 @mixin mapped-properties($domain, $prefix, $func) {
-  @each $name, $arg in $domain {
-    --#{$prefix}-#{$name}: #{meta.call($func, $arg)};
+  @if $domain and $func {
+    @each $name, $arg in $domain {
+      --#{$prefix}-#{$name}: #{meta.call($func, $arg)};
+    }
   }
 }
 
@@ -36,4 +39,19 @@
   @each $name, $alias in $properties {
     --#{$prefix}-#{$name}: var(--#{$prefix}-#{$alias});
   }
+}
+
+/// Generate all configured CSS custom properties.
+///
+/// @param {Map} $conf Configuration map for this set of properties.
+/// @param {String} $prefix Property name prefix.
+/// @output A list of mapped, literal, and logical `--<prefix>-*` custom properties.
+@mixin configured-properties($conf, $prefix) {
+  @include mapped-properties(
+    map.get($conf, mapped, domain),
+    $prefix,
+    map.get($conf, mapped, function)
+  );
+  @include literal-properties(map.get($conf, literal), $prefix);
+  @include logical-properties(map.get($conf, logical), $prefix);
 }

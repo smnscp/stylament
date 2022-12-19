@@ -12,9 +12,8 @@
 /// @name Stroke Styles
 /// @requires $merged
 :root {
-  $conf: map.get(cfg.$merged, ui, stroke, style);
-  $prefix: "stroke-style";
-
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, ui, stroke, style),
+    "stroke-style"
+  );
 }

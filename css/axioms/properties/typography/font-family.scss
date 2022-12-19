@@ -10,9 +10,8 @@
 /// @name Font Families
 /// @link https://www.pollen.style/modules/typography#font-families Pollen inheritance
 :root {
-  $conf: map.get(cfg.$merged, typography, font-family);
-  $prefix: "font";
-
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, typography, font-family),
+    "font"
+  );
 }

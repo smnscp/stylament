@@ -23,6 +23,5 @@
     --#{$prefix}-#{$i}: #{line.$rlh * math.div($i, $line)};
   }
 
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties($conf, $prefix);
 }

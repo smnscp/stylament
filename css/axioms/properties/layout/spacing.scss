@@ -10,9 +10,5 @@
 /// @name Spacing Values
 /// @requires $merged
 :root {
-  $conf: map.get(cfg.$merged, layout, spacing);
-  $prefix: "spacing";
-
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties(map.get(cfg.$merged, layout, spacing), "spacing");
 }

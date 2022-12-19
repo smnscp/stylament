@@ -13,8 +13,10 @@
 /// @return {Map} Map with aliases pointing to looked up values.
 @function map-aliases($aliases, $dict) {
   $result: ();
-  @each $name, $alias in $aliases {
-    $result: map.set($result, $name, map.get($dict, $alias));
+  @if $aliases and $dict {
+    @each $name, $alias in $aliases {
+      $result: map.set($result, $name, map.get($dict, $alias));
+    }
   }
   @return $result;
 }
@@ -26,8 +28,25 @@
 /// @return {Map} Map with domain symbols pointing to their function values.
 @function map-function($domain, $func) {
   $result: ();
-  @each $name, $arg in $domain {
-    $result: map.set($result, $name, meta.call($func, $arg));
+  @if $domain and $func {
+    @each $name, $arg in $domain {
+      $result: map.set($result, $name, meta.call($func, $arg));
+    }
   }
   @return $result;
+}
+
+/// Translate a property configuration to a set of properties.
+///
+/// @param {Map} $conf Configuration map for this set of properties.
+/// @output A set of mapped, literal, and logical properties.
+@function map-config($conf) {
+  $map: map.merge(
+    map-function(
+      map.get($conf, mapped, domain),
+      map.get($conf, mapped, function)
+    ),
+    map.get($conf, literal)
+  );
+  @return map.merge($map, map-aliases(map.get($conf, logical), $map));
 }
