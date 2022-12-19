@@ -4,6 +4,7 @@
 
 @use "sass:map";
 @use "../../../axioms/properties/layout/container";
+@use "../../../axioms/tools/mixins/coloring";
 
 /// # Navigation Menu
 ///
@@ -56,7 +57,6 @@ nav.e-menu.\+levelable {
 }
 
 @mixin toggle-folded {
-  background: var(--toggle-folded-background, var(--toggle-background));
   border: var(--toggle-folded-border, var(--toggle-border));
   border-radius: var(--toggle-folded-radius, var(--toggle-radius));
   box-shadow: var(--toggle-folded-shadow, var(--toggle-shadow));
@@ -76,9 +76,12 @@ nav.e-menu.\+foldable {
   & > label[for^="-toggle-state"] {
     cursor: context-menu;
     display: block;
+    @include coloring.set-colors("nav-toggle", "accent");
 
+    /// Toggle
     & > :first-child,
     &:empty::after {
+      @include coloring.use-colors;
       display: block;
       position: relative; // Place over backdrop.
       inline-size: var(--toggle-size);
@@ -91,7 +94,6 @@ nav.e-menu.\+foldable {
       text-align: center;
       font-weight: var(--weight-emphasis);
       transition: all 0.3s var(--ease-default);
-      background: var(--toggle-background);
       border-radius: var(--toggle-radius);
       box-shadow: var(--toggle-shadow);
       content: var(--toggle-content, "⋮");
