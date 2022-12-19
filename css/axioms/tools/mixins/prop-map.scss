@@ -11,8 +11,10 @@
 /// @param {String} $prefix Property name prefix.
 /// @output A list of `--<prefix>-*` custom properties with their respective values.
 @mixin literal-properties($properties, $prefix) {
-  @each $name, $value in $properties {
-    --#{$prefix}-#{$name}: #{$value};
+  @if $properties {
+    @each $name, $value in $properties {
+      --#{$prefix}-#{$name}: #{$value};
+    }
   }
 }
 
@@ -36,8 +38,10 @@
 /// @param {String} $prefix Property name prefix.
 /// @output A list of `--<prefix>-*` custom properties referring to others.
 @mixin logical-properties($properties, $prefix) {
-  @each $name, $alias in $properties {
-    --#{$prefix}-#{$name}: var(--#{$prefix}-#{$alias});
+  @if $properties {
+    @each $name, $alias in $properties {
+      --#{$prefix}-#{$name}: var(--#{$prefix}-#{$alias});
+    }
   }
 }
 
@@ -47,11 +51,13 @@
 /// @param {String} $prefix Property name prefix.
 /// @output A list of mapped, literal, and logical `--<prefix>-*` custom properties.
 @mixin configured-properties($conf, $prefix) {
-  @include mapped-properties(
-    map.get($conf, mapped, domain),
-    $prefix,
-    map.get($conf, mapped, function)
-  );
-  @include literal-properties(map.get($conf, literal), $prefix);
-  @include logical-properties(map.get($conf, logical), $prefix);
+  @if $conf {
+    @include mapped-properties(
+      map.get($conf, mapped, domain),
+      $prefix,
+      map.get($conf, mapped, function)
+    );
+    @include literal-properties(map.get($conf, literal), $prefix);
+    @include logical-properties(map.get($conf, logical), $prefix);
+  }
 }
