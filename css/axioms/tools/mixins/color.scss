@@ -13,16 +13,17 @@
 ///                 cartesian coordinates of palette step and saturation (of HSL).
 /// @param {List} $l-curve The polynomial coefficients defining the curve described by
 ///                 cartesian coordinates of palette step and lightness (of HSL).
-/// @output A list of `--color-*` custom properties containing the color values of the palette:
+/// @param {String} $prefix Property name prefix.
+/// @output A list of `--<prefix>-*` custom properties containing the color values of the palette:
 ///   ```css
-///   --color-red-100: hsl(0deg, 100%, 95%);
-///   --color-red-300: hsl(0deg, 95%, 75%);
-///   --color-red-500: hsl(0deg, 76%, 57%);
-///   --color-red-700: hsl(0deg, 61%, 48%);
-///   --color-red-900: hsl(0deg, 50%, 29%);
-///   --color-red: var(--color-red-500);
+///   --<prefix>-red-100: hsl(0deg, 100%, 95%);
+///   --<prefix>-red-300: hsl(0deg, 95%, 75%);
+///   --<prefix>-red-500: hsl(0deg, 76%, 57%);
+///   --<prefix>-red-700: hsl(0deg, 61%, 48%);
+///   --<prefix>-red-900: hsl(0deg, 50%, 29%);
+///   --<prefix>-red: var(--<prefix>-red-500);
 ///   ```
-@mixin palette($name, $hue, $s-curve, $l-curve, $range) {
+@mixin palette($name, $hue, $s-curve, $l-curve, $range, $prefix: "color") {
   $range: if($range, $range, ());
   $step: if(map.has-key($range, step), map.get($range, step), 0.2);
   $start: if(map.has-key($range, start), map.get($range, start), 0.1);
@@ -32,18 +33,18 @@
 
   $current: $start;
   @while $current <= $end {
-    --color-#{$name}-#{math.round(1000 * $current)}: #{hsl(
+    --#{$prefix}-#{$name}-#{math.round(1000 * $current)}: #{hsl(
         $hue,
         100% * graph.polynomial($s-curve, $current),
         100% * graph.polynomial($l-curve, $current)
       )};
     $current: $current + $step;
   }
-  --color-#{$name}: var(--color-#{$name}-500);
+  --#{$prefix}-#{$name}: var(--#{$prefix}-#{$name}-500);
   // If the palette runs the full range the extrema get aliased “black” and “white”.
   // There should be only palette like this. Otherwise, only the last of them will prevail.
   @if $start == 0 and $end == 1 {
-    --color-white: var(--color-grey-0);
-    --color-black: var(--color-grey-1000);
+    --#{$prefix}-white: var(--#{$prefix}-grey-0);
+    --#{$prefix}-black: var(--#{$prefix}-grey-1000);
   }
 }

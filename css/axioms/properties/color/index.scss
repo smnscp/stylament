@@ -12,6 +12,7 @@
 /// @name Color Palettes
 :root {
   $conf: map.get(cfg.$merged, color);
+  $prefix: "color";
 
   @each $name, $pal in map.get($conf, palettes) {
     @include color.palette(
@@ -19,11 +20,10 @@
       map.get($pal, hue),
       map.get($pal, s-curve),
       map.get($pal, l-curve),
-      map.get($pal, range)
+      map.get($pal, range),
+      $prefix
     );
   }
-
-  $prefix: "color";
 
   @include prop-map.literal-properties(map.get($conf, literal), $prefix);
   @include prop-map.logical-properties(map.get($conf, logical), $prefix);
