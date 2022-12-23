@@ -23,7 +23,7 @@ body > nav.e-menu:first-of-type {
     box-shadow: var(--shadow-sm);
 
     & > li {
-      @include coloring.set-colors("nav", "accent");
+      @include coloring.set-colors("nav", "alternate");
       @include coloring.use-colors;
       transition: all 0.3s var(--ease-default);
       &:hover {

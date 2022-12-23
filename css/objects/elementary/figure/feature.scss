@@ -3,7 +3,7 @@
 @use "../../../axioms/properties/layout/container";
 
 figure.e-feature {
-  @include coloring.set-colors("feature", "accent");
+  @include coloring.set-colors("feature", "alternate");
   @include coloring.use-colors;
   padding: var(--spacing-sectioning);
 

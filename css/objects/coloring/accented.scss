@@ -1,5 +1,5 @@
 @use "../../axioms/tools/mixins/coloring";
 
-.clr-accented {
-  @include coloring.accent;
+.clr-alternate {
+  @include coloring.alternate;
 }

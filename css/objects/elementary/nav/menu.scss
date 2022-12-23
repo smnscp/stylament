@@ -76,7 +76,7 @@ nav.e-menu.\+foldable {
   & > label[for^="-toggle-state"] {
     cursor: context-menu;
     display: block;
-    @include coloring.set-colors("nav-toggle", "accent");
+    @include coloring.set-colors("nav-toggle", "alternate");
 
     /// Toggle
     & > :first-child,

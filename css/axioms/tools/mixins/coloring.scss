@@ -4,7 +4,7 @@
 
 @mixin set-colors($name, $default: null) {
   ---clr-pos: var(--color-#{$name}, #{if($default, var(--color-#{$default}), inherit)});
-  ---clr-neg: var(--color-#{$name}-negative, #{if($default, var(--color-#{$default}-negative), inheri)});
+  ---clr-neg: var(--color-#{$name}-contra, #{if($default, var(--color-#{$default}-contra), inheri)});
 }
 
 @mixin use-colors {
@@ -17,53 +17,53 @@
   background-color: var(---clr-fg);
 }
 
-@mixin accent-base {
-  @include set-colors("accent");
+@mixin alternate-base {
+  @include set-colors("alternate");
 }
 
-@mixin invert-base {
+@mixin inverse-base {
   ---clr-fg: var(---clr-neg);
   ---clr-bg: var(---clr-pos);
 }
 
-@mixin revert-base {
+@mixin reverse-base {
   ---clr-fg: var(---clr-pos);
   ---clr-bg: var(---clr-neg);
 }
 
-@mixin accent {
-  @include accent-base;
+@mixin alternate {
+  @include alternate-base;
   @include use-colors;
 
   :is(h1, h2, h3, h4, h5, h6, hgroup > p) {
-    @include set-colors("heading-accent");
+    @include set-colors("heading-alternate");
   }
 
   :where(a:any-link) {
-    @include set-colors("links-accent");
+    @include set-colors("links-alternate");
   }
 }
 
-@mixin invert {
+@mixin inverse {
   @include use-colors;
 
   &,
   & *,
   & & &,
   & & & * {
-    @include invert-base;
+    @include inverse-base;
   }
 
   & & {
-    @include revert;
+    @include reverse;
   }
 }
 
-@mixin revert {
+@mixin reverse {
   @include use-colors;
 
   &,
   & * {
-    @include revert-base;
+    @include reverse-base;
   }
 }

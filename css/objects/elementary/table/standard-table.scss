@@ -11,11 +11,11 @@ table.e-standard-table {
   --table-border-color: var(--stroke-color-table, var(--stroke-color-default));
 
   thead {
-    background-color: var(--background-heavy, var(--color-mark-negative));
+    background-color: var(--background-heavy, var(--color-mark-contra));
   }
 
   tr:nth-child(2n) {
-    background-color: var(--background-light, var(--color-accent-negative));
+    background-color: var(--background-light, var(--color-alternate-contra));
   }
 
   // Do not center `th` in vertical tables.
