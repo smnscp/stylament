@@ -27,7 +27,7 @@ body > nav.e-menu:first-of-type {
       @include coloring.use-colors;
       transition: all 0.3s var(--ease-default);
       &:hover {
-        @include coloring.use-colors-invers;
+        @include coloring.use-colors-inverse;
       }
 
       & > a {

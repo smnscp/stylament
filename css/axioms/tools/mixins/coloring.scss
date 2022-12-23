@@ -12,7 +12,7 @@
   background-color: var(---clr-bg);
 }
 
-@mixin use-colors-invers {
+@mixin use-colors-inverse {
   color: var(---clr-bg);
   background-color: var(---clr-fg);
 }
