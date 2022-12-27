@@ -36,11 +36,11 @@
   @include use-colors;
 
   :is(h1, h2, h3, h4, h5, h6, hgroup > p) {
-    @include set-colors("heading-alternate");
+    @include set-colors("heading-alternate", "heading");
   }
 
   :where(a:any-link) {
-    @include set-colors("links-alternate");
+    @include set-colors("links-alternate", "links");
   }
 }
 
