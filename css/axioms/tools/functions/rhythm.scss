@@ -11,10 +11,16 @@
 /// @param {Number<rem|em|%>} $em Font size to fit.
 /// @param {Number<rem>} $rlh Root line height.
 /// @param {Number} $min Minimum line height ratio.
+/// @param {Number} $sub The number of line sub-divisions the grid allows.
 /// @return {Number<rem|unitless>} The minimum line height that fits the font size.
 ///         For rem-based font sizes this is also in `rem`, otherwise a unit-less number.
-@function grid-line($em, $rlh, $min: 1) {
+@function grid-line($em, $rlh, $min: 1, $sub: 1) {
+  $min: if($min, $min, 1);
+  $sub: if($sub, $sub, 1);
   $unit-factor: if(math.unit($em) == "%", 100, 1);
-  $line: math.ceil($min * math.div($em, $rlh * $unit-factor)) * $rlh * $unit-factor;
+  $line: math.div(
+    math.ceil(math.div($em * $min * $sub, $rlh * $unit-factor)) * $rlh * $unit-factor,
+    $sub
+  );
   @return if(math.unit($line) == "rem", $line, math.div($line, $em));
 }

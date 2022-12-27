@@ -28,6 +28,7 @@ $rlh: null;
 
   $line-min: map.get(cfg.$merged, typography, line, min);
   $line-root: map.get(cfg.$merged, typography, line, root);
+  $line-sub: map.get(cfg.$merged, typography, line, sub);
 
   $base-unit: math.unit($scale-base);
   $scale-base-rem: if(
@@ -42,6 +43,6 @@ $rlh: null;
 
   @for $i from $scale-min through $scale-max {
     $font-size: scale.modular($scale-base, $scale-factor, $i);
-    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $line-min)};
+    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $line-min, $line-sub)};
   }
 }
