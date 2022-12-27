@@ -4,7 +4,7 @@
 
 @mixin set-colors($name, $default: null) {
   ---clr-pos: var(--color-#{$name}, #{if($default, var(--color-#{$default}), inherit)});
-  ---clr-neg: var(--color-#{$name}-contra, #{if($default, var(--color-#{$default}-contra), inheri)});
+  ---clr-neg: var(--color-#{$name}-contra, #{if($default, var(--color-#{$default}-contra), inherit)});
 }
 
 @mixin use-colors {
