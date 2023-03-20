@@ -11,7 +11,7 @@
 
 /// Establish a generic measure.
 /// @name General Measure
-:not(html, body, div, section, article, nav, main, header, footer, hgroup, ul, ol, menu, dl, dd, dt, li, table, figure, caption, form, label) {
+:where(h1, h2, h3, h4, h5, h6, p, address, summary, figcaption, caption) {
   max-inline-size: var(--measure);
 }
 
