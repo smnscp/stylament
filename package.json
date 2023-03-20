@@ -1,7 +1,7 @@
 {
   "name": "stylament",
   "title": "Stylament",
-  "version": "0.11.3",
+  "version": "0.11.4",
   "description": "A fundament for your document styling.",
   "keywords": [
     "document structure",
@@ -13,7 +13,7 @@
   "license": "",
   "author": "Simon Schrape",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
