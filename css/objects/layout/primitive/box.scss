@@ -2,6 +2,7 @@
   display: block;
   padding: var(--spacing-block);
   border: var(--stroke-width-box, var(--stroke-width-default))
-    var(--stroke-style-box, var(--stroke-style-default));
+    var(--stroke-style-box, var(--stroke-style-default))
+    var(--stroke-color-box, var(--stroke-color-default));
   border-radius: var(--radius-box, var(--radius-default));
 }
