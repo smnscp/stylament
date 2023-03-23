@@ -5,15 +5,13 @@
 /// ## Homepage Header
 
 @use "../../layout/primitive/center";
-@use "../../layout/primitive/center-box";
+@use "../../layout/primitive/cover";
 
 /// Special homepage header styles.
 body.s-homepage > header {
-  --radius-box: var(--radius-md);
-  --stroke-width-box: var(--stroke-width-8);
+  @extend .l-cover;
 
   & > * {
-    @extend .l-center-box;
     @extend %l-center--intrinsic;
   }
 
