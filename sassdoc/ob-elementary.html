@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.10.0</span>
+          <span class="project-version">0.11.4</span>
         
       </div>
     </header>
@@ -365,7 +365,6 @@
   --item-padding: var(--length-l1dim);
   --toggle-size: #{$size};
   --toggle-padding: var(--length-l0to1);
-  --toggle-background: var(--color-accent-negative);
   --toggle-shadow: var(--shadow-sm);
   --toggle-folded-shadow: var(--shadow-lg);
 
@@ -373,12 +372,11 @@
     box-shadow: var(--shadow-sm);
 
     &amp; &gt; li {
+      @include coloring.set-colors(&quot;nav&quot;, &quot;alternate&quot;);
       @include coloring.use-colors;
-      @include coloring.accent-base;
-      @include coloring.invert-base;
       transition: all 0.3s var(--ease-default);
       &amp;:hover {
-        @include coloring.revert-base;
+        @include coloring.use-colors-inverse;
       }
 
       &amp; &gt; a {
@@ -1135,9 +1133,12 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
   &amp; &gt; label[for^=&quot;-toggle-state&quot;] {
     cursor: context-menu;
     display: block;
+    @include coloring.set-colors(&quot;nav-toggle&quot;, &quot;alternate&quot;);
 
+    /// Toggle
     &amp; &gt; :first-child,
     &amp;:empty::after {
+      @include coloring.use-colors;
       display: block;
       position: relative; // Place over backdrop.
       inline-size: var(--toggle-size);
@@ -1150,7 +1151,6 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
       text-align: center;
       font-weight: var(--weight-emphasis);
       transition: all 0.3s var(--ease-default);
-      background: var(--toggle-background);
       border-radius: var(--toggle-radius);
       box-shadow: var(--toggle-shadow);
       content: var(--toggle-content, &quot;⋮&quot;);
@@ -1418,6 +1418,150 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
 
 
+<section class="item" id="css--%26%20%3E%20%3Afirst-child%2C%0A%20%20%20%20%26%3Aempty%3A%3Aafter">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%26%20%3E%20%3Afirst-child%2C%0A%20%20%20%20%26%3Aempty%3A%3Aafter" class="item-name">&amp; &gt; :first-child,<span class="widont">&nbsp;</span>&amp;:empty::after</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">&amp; &gt; :first-child,
+    &amp;:empty::after {
+  @include coloring.use-colors;
+      display: block;
+      position: relative; // Place over backdrop.
+      inline-size: var(--toggle-size);
+      block-size: var(--toggle-size);
+      padding: var(--toggle-padding);
+      border: var(--toggle-border);
+      margin: 0;
+      font-size: calc(var(--toggle-size) - 2 * var(--toggle-padding));
+      line-height: 1;
+      text-align: center;
+      font-weight: var(--weight-emphasis);
+      transition: all 0.3s var(--ease-default);
+      border-radius: var(--toggle-radius);
+      box-shadow: var(--toggle-shadow);
+      content: var(--toggle-content, &quot;⋮&quot;);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Toggle</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" id="css--nav.e-menu.%5C%2Bsticky">
   
     
@@ -1602,11 +1746,11 @@ Makes navbar stick to the top of the<span class="widont">&nbsp;</span>viewport.<
   --table-border-color: var(--stroke-color-table, var(--stroke-color-default));
 
   thead {
-    background-color: var(--background-heavy, var(--color-mark-negative));
+    background-color: var(--background-heavy, var(--color-mark-contra));
   }
 
   tr:nth-child(2n) {
-    background-color: var(--background-light, var(--color-accent-negative));
+    background-color: var(--background-light, var(--color-alternate-contra));
   }
 
   // Do not center `th` in vertical tables.

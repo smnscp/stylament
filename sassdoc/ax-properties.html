@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.10.0</span>
+          <span class="project-version">0.11.4</span>
         
       </div>
     </header>
@@ -436,6 +436,7 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
   $conf: map.get(cfg.$merged, color);
+  $prefix: &quot;color&quot;;
 
   @each $name, $pal in map.get($conf, palettes) {
     @include color.palette(
@@ -443,14 +444,12 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       map.get($pal, hue),
       map.get($pal, s-curve),
       map.get($pal, l-curve),
-      map.get($pal, range)
+      map.get($pal, range),
+      $prefix
     );
   }
 
-  $prefix: &quot;color&quot;;
-
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties($conf, $prefix);
 }</code></pre>
     </div>
   
@@ -805,21 +804,9 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $prefix: &quot;container&quot;;
-  $names: map.get(cfg.$merged, common, sizes);
   $conf: map.get(cfg.$merged, layout, container);
-  $func: map.get($conf, function);
-  $literal: map.get($conf, literal);
-  $logical: map.get($conf, logical);
-
-  $sizes: map.merge($sizes, map2.map-function($names, $func)) !global;
-  @include prop-map.mapped-properties($names, $prefix, $func);
-
-  $sizes: map.merge($sizes, $literal) !global;
-  @include prop-map.literal-properties($literal, $prefix);
-
-  $sizes: map.merge($sizes, map2.map-aliases($logical, $sizes)) !global;
-  @include prop-map.logical-properties($logical, $prefix);
+  $sizes: map2.map-config($conf) !global;
+  @include prop-map.configured-properties($conf, &quot;container&quot;);
 }</code></pre>
     </div>
   
@@ -1240,11 +1227,7 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $conf: map.get(cfg.$merged, layout, spacing);
-  $prefix: &quot;spacing&quot;;
-
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties(map.get(cfg.$merged, layout, spacing), &quot;spacing&quot;);
 }</code></pre>
     </div>
   
@@ -1484,11 +1467,10 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $conf: map.get(cfg.$merged, typography, font-family);
-  $prefix: &quot;font&quot;;
-
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, typography, font-family),
+    &quot;font&quot;
+  );
 }</code></pre>
     </div>
   
@@ -1640,11 +1622,10 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $conf: map.get(cfg.$merged, typography, font-weight);
-  $prefix: &quot;weight&quot;;
-
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, typography, font-weight),
+    &quot;weight&quot;
+  );
 }</code></pre>
     </div>
   
@@ -2336,6 +2317,7 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
 
   $line-min: map.get(cfg.$merged, typography, line, min);
   $line-root: map.get(cfg.$merged, typography, line, root);
+  $line-sub: map.get(cfg.$merged, typography, line, sub);
 
   $base-unit: math.unit($scale-base);
   $scale-base-rem: if(
@@ -2350,7 +2332,7 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
 
   @for $i from $scale-min through $scale-max {
     $font-size: scale.modular($scale-base, $scale-factor, $i);
-    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $line-min)};
+    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $line-min, $line-sub)};
   }
 }</code></pre>
     </div>
@@ -2589,13 +2571,7 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $prefix: &quot;measure&quot;;
-  $sizes: map.get(cfg.$merged, common, sizes);
-  $conf: map.get(cfg.$merged, typography, measure);
-
-  @include prop-map.mapped-properties($sizes, $prefix, map.get($conf, function));
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties(map.get(cfg.$merged, typography, measure), &quot;measure&quot;);
 
   --measure: var(--measure-default);
 }</code></pre>
@@ -2856,8 +2832,7 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
   --#{$prefix}-smaller: #{math.div(100%, $factor)};
   --#{$prefix}-larger: #{100% * $factor};
 
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties($conf, $prefix);
 }</code></pre>
     </div>
   
@@ -3506,17 +3481,10 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  --shadow-xxs: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05);
-  --shadow-xs: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1),
-    0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06);
-  --shadow-sm: 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.1),
-    0 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 0.75rem 1rem -0.25rem rgba(0, 0, 0, 0.1),
-    0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 1.25rem 1.5rem -0.25rem rgba(0, 0, 0, 0.1),
-    0 0.5rem 0.5rem -0.25rem rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
-  --shadow-xxl: 0 2rem 4rem -0.75rem rgba(0, 0, 0, 0.2);
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, ui, shadow),
+    &quot;shadow&quot;
+  );
 }</code></pre>
     </div>
   
@@ -3624,7 +3592,7 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
       <ul>
         
           <li data-sassdoc="todo-item">
-            <p>Configure and calculate<span class="widont">&nbsp;</span>this.</p>
+            <p>Calculate this.</p>
 
           </li>
         
@@ -3709,11 +3677,10 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $conf: map.get(cfg.$merged, ui, stroke, color);
-  $prefix: &quot;stroke-color&quot;;
-
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, ui, stroke, color),
+    &quot;stroke-color&quot;
+  );
 }</code></pre>
     </div>
   
@@ -3892,11 +3859,10 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $conf: map.get(cfg.$merged, ui, stroke, style);
-  $prefix: &quot;stroke-style&quot;;
-
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, ui, stroke, style),
+    &quot;stroke-style&quot;
+  );
 }</code></pre>
     </div>
   
@@ -4085,8 +4051,7 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
     --#{$prefix}-#{$i}: #{line.$rlh * math.div($i, $line)};
   }
 
-  @include prop-map.literal-properties(map.get($conf, literal), $prefix);
-  @include prop-map.logical-properties(map.get($conf, logical), $prefix);
+  @include prop-map.configured-properties($conf, $prefix);
 }</code></pre>
     </div>
   

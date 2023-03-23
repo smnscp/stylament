@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.10.0</span>
+          <span class="project-version">0.11.4</span>
         
       </div>
     </header>
@@ -245,6 +245,218 @@
 
   
     <div data-item-section="prose" class="text-block">
+      <h2 id="homepage-header-alternative">Homepage Header, alternative</h2>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--body.s-homepage%20%3E%20header.%5C%2Balt">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--body.s-homepage%20%3E%20header.%5C%2Balt" class="item-name">body.s-homepage &gt;<span class="widont">&nbsp;</span>header.\+alt</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">body.s-homepage &gt; header.\+alt {
+  --radius-box: var(--radius-xl);
+  --stroke-width-box: var(--stroke-width-8);
+  --stroke-style-box: dashed;
+  --stroke-color-box: var(--color-grey-200);
+  --spacing-block: var(--length-l2);
+
+  &amp; &gt; * {
+    @extend .l-center-box;
+    @extend %l-center--intrinsic;
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Special homepage header<span class="widont">&nbsp;</span>styles.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
       <h2 id="homepage-header">Homepage Header</h2>
 
       
@@ -358,11 +570,13 @@
       
       
       <pre class="hljs-pre"><code class="lang-scss">body.s-homepage &gt; header {
-  --radius-box: var(--radius-md);
-  --stroke-width-box: var(--stroke-width-8);
+  @extend .l-cover;
+
+  h1 {
+    font-size: clamp(var(--scale-3), 8vmin, var(--scale-9));
+  }
 
   &amp; &gt; * {
-    @extend .l-center-box;
     @extend %l-center--intrinsic;
   }
 
