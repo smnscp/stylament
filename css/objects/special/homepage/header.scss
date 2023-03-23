@@ -11,6 +11,10 @@
 body.s-homepage > header {
   @extend .l-cover;
 
+  h1 {
+    font-size: clamp(var(--scale-3), 8vmin, var(--scale-9));
+  }
+
   & > * {
     @extend %l-center--intrinsic;
   }
