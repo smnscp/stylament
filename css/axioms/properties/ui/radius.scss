@@ -2,15 +2,15 @@
 /// @group ax-properties
 ////
 
+@use "sass:map";
+@use "../../config" as cfg;
+@use "../../tools/mixins/prop-map";
+
 /// @name Radius Scale
 /// @link https://www.pollen.style/modules/ui#radius Pollen inheritance
-/// @todo Configure and calculate this.
 :root {
-  --radius-100: 100%;
-  --radius-xs: 0.2rem;
-  --radius-sm: 0.4rem;
-  --radius-md: 0.6rem;
-  --radius-lg: 0.8rem;
-  --radius-xl: 1rem;
-  --radius-full: 999rem;
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, ui, radius),
+    "radius"
+  );
 }

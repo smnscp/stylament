@@ -26,6 +26,10 @@ $sizes: (
   @return ($size + 3) * 16rem;
 }
 
+@function radius($size) {
+  @return ($size + 3) * 0.2rem;
+}
+
 @function shadow($size) {
   $offset: 0.25em * math.pow(2, $size);
   $blur: 0.5em * math.pow(2, $size);
@@ -131,6 +135,16 @@ $default: (
     ),
   ),
   ui: (
+    radius: (
+      mapped: (
+        domain: $sizes,
+        function: meta.get-function("radius"),
+      ),
+      literal: (
+        100: 100%,
+        full: 999rem,
+      ),
+    ),
     shadow: (
       mapped: (
         domain: $sizes,
