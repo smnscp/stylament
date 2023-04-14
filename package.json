@@ -18,14 +18,14 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@fontsource/source-code-pro": "latest",
+    "@fontsource/source-sans-pro": "latest",
+    "@fontsource/source-serif-pro": "latest",
     "sass": "^1.55.0",
     "vite": "latest"
   },
   "dependencies": {
     "@csstools/normalize.css": "latest",
-    "@fontsource/source-code-pro": "latest",
-    "@fontsource/source-sans-pro": "latest",
-    "@fontsource/source-serif-pro": "latest",
     "n-ize.css": "latest"
   }
 }
