@@ -9,8 +9,6 @@
 /// Box shadows for creating realistic elevation in 3d space.
 /// @name Shadow Scale
 /// @link https://www.pollen.style/modules/ui#shadow Pollen inheritance
-/// @todo Calculate this.
-/// @todo Consider using values that can also be used as `text-shadow`.
 :root {
   @include prop-map.configured-properties(
     map.get(cfg.$merged, ui, shadow),
