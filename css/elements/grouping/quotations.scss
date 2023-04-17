@@ -14,5 +14,6 @@ blockquote {
     position: absolute;
     inset-inline-start: -.5em;
     font-size: 2em;
+    line-height: calc(0.5 * var(--line-root));
   }
 }
