@@ -39,7 +39,7 @@
 /// Translate a property configuration to a set of properties.
 ///
 /// @param {Map} $conf Configuration map for this set of properties.
-/// @output A set of mapped, literal, and logical properties.
+/// @return {Map} A set of mapped, literal, and logical properties.
 @function map-config($conf) {
   $map: map.merge(
     map-function(
