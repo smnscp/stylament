@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.11.4</span>
+          <span class="project-version">0.13.0</span>
         
       </div>
     </header>
@@ -245,7 +245,7 @@
 
   
     <div data-item-section="prose" class="text-block">
-      <h2 id="main-navigation-bar">Main Navigation Bar</h2>
+      <h2 id="main-navigation-bar" tabindex="-1">Main Navigation Bar</h2>
 <p>Rather opinonated styling for the first <code>nav.e-menu</code>.</p>
 
       
@@ -476,7 +476,7 @@
 
   
     <div data-item-section="prose" class="text-block">
-      <h1 id="navigation-menu">Navigation Menu</h1>
+      <h1 id="navigation-menu" tabindex="-1">Navigation Menu</h1>
 <p>Common patterns for navigation menus. Separated into several<span class="widont">&nbsp;</span>aspects.</p>
 
       
@@ -952,7 +952,7 @@
       
 
       
-        <a href="#css--nav.e-menu.%5C%2Blevelable" class="item-name">nav.e-menu.\+levelable</a>
+        <a href="#css--nav.e-menu.%5C%2Blevelable" class="item-name">nav.e-menu.&#92;+levelable</a>
       
 
       
@@ -981,7 +981,7 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu.\+levelable {
+      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu.&#92;+levelable {
   &amp; &gt; menu {
     display: flex;
     flex-wrap: wrap;
@@ -1093,7 +1093,7 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
       
 
       
-        <a href="#css--nav.e-menu.%5C%2Bfoldable" class="item-name">nav.e-menu.\+foldable</a>
+        <a href="#css--nav.e-menu.%5C%2Bfoldable" class="item-name">nav.e-menu.&#92;+foldable</a>
       
 
       
@@ -1122,11 +1122,11 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu.\+foldable {
+      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu.&#92;+foldable {
   --toggle-size: #{$size};
 
   /// Places toggle to the inline end (rhs in Latin).
-  &amp;.\+end {
+  &amp;.&#92;+end {
     flex-direction: row-reverse;
   }
 
@@ -1308,7 +1308,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
       
 
       
-        <a href="#css--%26.%5C%2Bend" class="item-name">&amp;.\+end</a>
+        <a href="#css--%26.%5C%2Bend" class="item-name">&amp;.&#92;+end</a>
       
 
       
@@ -1337,7 +1337,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">&amp;.\+end {
+      <pre class="hljs-pre"><code class="lang-scss">&amp;.&#92;+end {
   flex-direction: row-reverse;
 }</code></pre>
     </div>
@@ -1580,7 +1580,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
       
 
       
-        <a href="#css--nav.e-menu.%5C%2Bsticky" class="item-name">nav.e-menu.\+sticky</a>
+        <a href="#css--nav.e-menu.%5C%2Bsticky" class="item-name">nav.e-menu.&#92;+sticky</a>
       
 
       
@@ -1609,7 +1609,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu.\+sticky {
+      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu.&#92;+sticky {
   position: sticky;
   inset-block-start: 0;
   z-index: 1;
