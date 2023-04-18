@@ -4,19 +4,14 @@
 
 $prim: 215deg;
 $dist: 140deg;
+$sl-curve: .1 .9 .8 .9 .8 .1 .1 .1;
 
 /// Colors.
 /// @name palettes@brand
 $palettes: (
   "grey": (
     hue: $prim,
-    s-curve: (
-      0.1,
-    ),
-    l-curve: (
-      0.99,
-      -0.99,
-    ),
+    sl-curve: .1 .9 .2 .9 .2 .1 .1 .1,
     range: (
       step: 0.1,
       start: 0,
@@ -25,11 +20,14 @@ $palettes: (
   ),
   "primary": (
     hue: $prim,
+    sl-curve: $sl-curve,
   ),
   "secondary": (
     hue: $prim + $dist,
+    sl-curve: $sl-curve,
   ),
   "tertiary": (
     hue: $prim - $dist,
+    sl-curve: $sl-curve,
   ),
 );

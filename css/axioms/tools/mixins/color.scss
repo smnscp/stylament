@@ -2,6 +2,7 @@
 /// @group ax-tools
 ////
 
+@use "sass:list";
 @use "sass:map";
 @use "sass:math";
 @use "../functions/graph";
@@ -13,6 +14,10 @@
 ///                 cartesian coordinates of palette step and saturation (of HSL).
 /// @param {List} $l-curve The polynomial coefficients defining the curve described by
 ///                 cartesian coordinates of palette step and lightness (of HSL).
+/// @param {List} $sl-curve The control points defining a cubic Bézier in a cartesian
+///                 coordinate system of saturation and lightness (of HSL).
+///                 If this is definded the other two curves are ignored.
+/// @param {Map} $range Start, end, and step-size of the palette.
 /// @param {String} $prefix Property name prefix.
 /// @output A list of `--<prefix>-*` custom properties containing the color values of the palette:
 ///   ```css
@@ -23,7 +28,15 @@
 ///   --<prefix>-red-900: hsl(0deg, 50%, 29%);
 ///   --<prefix>-red: var(--<prefix>-red-500);
 ///   ```
-@mixin palette($name, $hue, $s-curve, $l-curve, $range, $prefix: "color") {
+@mixin palette(
+  $name,
+  $hue,
+  $s-curve,
+  $l-curve,
+  $sl-curve,
+  $range,
+  $prefix: "color"
+) {
   $range: if($range, $range, ());
   $step: if(map.has-key($range, step), map.get($range, step), 0.2);
   $start: if(map.has-key($range, start), map.get($range, start), 0.1);
@@ -33,10 +46,20 @@
 
   $current: $start;
   @while $current <= $end {
+    $saturation: 0;
+    $lightness: 0;
+    @if $sl-curve {
+      $sl: graph.cubic-bezier-2d($current, $sl-curve...);
+      $saturation: 100% * list.nth($sl, 1);
+      $lightness: 100% * list.nth($sl, 2);
+    } @else {
+      $saturation: 100% * graph.polynomial($current, $s-curve...);
+      $lightness: 100% * graph.polynomial($current, $l-curve...);
+    }
     --#{$prefix}-#{$name}-#{math.round(1000 * $current)}: #{hsl(
         $hue,
-        100% * graph.polynomial($s-curve, $current),
-        100% * graph.polynomial($l-curve, $current)
+        $saturation,
+        $lightness
       )};
     $current: $current + $step;
   }

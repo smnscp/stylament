@@ -20,6 +20,7 @@
       map.get($pal, hue),
       map.get($pal, s-curve),
       map.get($pal, l-curve),
+      map.get($pal, sl-curve),
       map.get($pal, range),
       $prefix
     );
