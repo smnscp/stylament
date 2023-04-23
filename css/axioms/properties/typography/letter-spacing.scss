@@ -2,13 +2,15 @@
 /// @group ax-properties
 ////
 
+@use "sass:map";
+@use "../../config" as cfg;
+@use "../../tools/mixins/prop-map";
+
 /// @name Letter Spacing
-/// @link https://www.pollen.style/modules/typography#letter-spacing Pollen inheritance
-/// @todo Configure and calculate this.
+/// @requires $merged
 :root {
-  --letter-xs: -0.05em;
-  --letter-sm: -0.025em;
-  --letter-none: 0em;
-  --letter-lg: 0.025em;
-  --letter-xl: 0.05em;
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, typography, letter-spacing),
+    "letter"
+  );
 }
