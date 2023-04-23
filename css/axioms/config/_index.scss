@@ -2,53 +2,27 @@
 /// @group ax-config
 ////
 
+/// # Global Configuration
+///
+
 @use "sass:map";
 @use "sass:math";
 @use "sass:meta";
-
-$sizes: (
-  xxs: -3,
-  xs: -2,
-  sm: -1,
-  md: 0,
-  lg: 1,
-  xl: 2,
-  xxl: 3,
-);
-
-@function measure($size) {
-  // Use square numbers centered around 64ch.
-  @return math.pow($size + 8, 2) * 1ch;
-}
-
-/// Mapping function to generate [Letter Spacing Scale](./ax-properties.html#css--Letter%20Spacing).
-/// @param {Number} $size The numerical size index.
-/// @return {Number} The mapped value.
-@function letter($size) {
-  @return $size * 0.025em;
-}
-
-@function container($size) {
-  // Use multiples of 16rem centered around 48rem.
-  @return ($size + 3) * 16rem;
-}
-
-@function radius($size) {
-  @return ($size + 3) * 0.2rem;
-}
-
-@function shadow($size) {
-  $offset: 0.25em * math.pow(2, $size);
-  $blur: 0.5em * math.pow(2, $size);
-  $alpha: math.div(4 + $size, 16);
-  @return "0 #{$offset} #{$blur} rgb(0 0 0 / #{$alpha})";
-}
+@use "mapping";
 
 /// Configuration to be injected by consumers.
+/// This map is defined by passing `$config-custom` to Stylament.
+/// For the structure of this custom configuration see [$default](#variable--default).
+///
+/// @example scss - Using Stylament with custom configuration
+///   @use "your-own/config";
+///   @use "stylament/css/axioms" with ($config-custom: config.$config);
+///
 /// @type Map
 $custom: () !default;
 
 /// Default configuration.
+/// This also serves as a reference for your [custom configuration](#variable--custom).
 /// @type Map
 $default: (
   layout: (
@@ -59,8 +33,8 @@ $default: (
     ),
     container: (
       mapped: (
-        domain: $sizes,
-        function: meta.get-function("container"),
+        domain: mapping.$domain-sizes,
+        function: meta.get-function("container", $module: "mapping"),
       ),
       literal: (),
       logical: (
@@ -114,8 +88,8 @@ $default: (
     ),
     letter-spacing: (
       mapped: (
-        domain: $sizes,
-        function: meta.get-function("letter"),
+        domain: mapping.$domain-sizes,
+        function: meta.get-function("letter", $module: "mapping"),
       ),
       logical: (
         none: md,
@@ -128,8 +102,8 @@ $default: (
     ),
     measure: (
       mapped: (
-        domain: $sizes,
-        function: meta.get-function("measure"),
+        domain: mapping.$domain-sizes,
+        function: meta.get-function("measure", $module: "mapping"),
       ),
       literal: (
         full: 100%,
@@ -153,8 +127,8 @@ $default: (
   ui: (
     radius: (
       mapped: (
-        domain: $sizes,
-        function: meta.get-function("radius"),
+        domain: mapping.$domain-sizes,
+        function: meta.get-function("radius", $module: "mapping"),
       ),
       literal: (
         100: 100%,
@@ -163,8 +137,8 @@ $default: (
     ),
     shadow: (
       mapped: (
-        domain: $sizes,
-        function: meta.get-function("shadow"),
+        domain: mapping.$domain-sizes,
+        function: meta.get-function("shadow", $module: "mapping"),
       ),
     ),
     stroke: (
