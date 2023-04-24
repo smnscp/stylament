@@ -15,7 +15,6 @@ $sizes: ();
 /// Defines [$sizes](#variable--sizes).
 /// @name Container Size Scale
 /// @requires $merged
-/// @link https://www.pollen.style/modules/layout#container-widths Pollen inheritance
 :root {
   $conf: map.get(cfg.$merged, layout, container);
   $sizes: map2.map-config($conf) !global;

@@ -6,7 +6,8 @@ $prim: 215deg;
 $dist: 140deg;
 $sl-curve: .1 .9 .8 .9 .8 .1 .1 .1;
 
-/// Colors.
+/// Brand colors.
+/// Kept separate from the default configuration to make it optional to import.
 /// @name palettes@brand
 $palettes: (
   "grey": (

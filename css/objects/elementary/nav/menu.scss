@@ -14,6 +14,7 @@
 $nav-wide: map.get(container.$sizes, "sm");
 
 /// Size factor of the menu.
+/// @name size (menu)
 $size: 2em;
 
 /// General navigation menu. This is the basic selector with the basic rules applied.

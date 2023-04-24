@@ -2,13 +2,13 @@
 /// @group ax-properties
 ////
 
-/// Curves for transition easing.
-/// @name Easing Curves
 /// Easing functions [introduced by Robert Penner][penner]
 /// and approximated as cubic Bézier curves [by Matthew Lein][ceaser].
 ///
 /// [penner]: http://robertpenner.com/easing/
 /// [ceaser]: https://matthewlein.com/tools/ceaser
+///
+/// @name Easing Curves
 :root {
   --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
   --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);

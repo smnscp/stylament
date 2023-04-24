@@ -8,11 +8,13 @@
 
 /// @name Measure Scale
 /// @requires $merged
-/// @link https://www.pollen.style/modules/typography#prose-width Pollen inheritance
 /// @link https://en.wikipedia.org/wiki/Measure_(typography) Wikipedia
 /// @link http://webtypography.net/2.1.2 Web Typography
 :root {
-  @include prop-map.configured-properties(map.get(cfg.$merged, typography, measure), "measure");
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, typography, measure),
+    "measure"
+  );
 
   --measure: var(--measure-default);
 }

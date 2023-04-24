@@ -2,7 +2,8 @@
 /// @group ax-config
 ////
 
-/// Colors.
+/// Logical color map.
+/// Kept separate from the default configuration to make it optional to import.
 /// @name mapping@logical
 $mapping: (
   body: "black",

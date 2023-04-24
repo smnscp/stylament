@@ -7,7 +7,7 @@
 @use "../../tools/mixins/prop-map";
 
 /// @name Font Families
-/// @link https://www.pollen.style/modules/typography#font-families Pollen inheritance
+/// @requires $merged
 :root {
   @include prop-map.configured-properties(
     map.get(cfg.$merged, typography, font-family),

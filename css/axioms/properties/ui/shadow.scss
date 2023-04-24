@@ -6,9 +6,8 @@
 @use "../../config" as cfg;
 @use "../../tools/mixins/prop-map";
 
-/// Box shadows for creating realistic elevation in 3d space.
 /// @name Shadow Scale
-/// @link https://www.pollen.style/modules/ui#shadow Pollen inheritance
+/// @requires $merged
 :root {
   @include prop-map.configured-properties(
     map.get(cfg.$merged, ui, shadow),

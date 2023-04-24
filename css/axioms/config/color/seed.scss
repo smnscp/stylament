@@ -4,7 +4,22 @@
 
 /// Colors derived from [Pollen’s color palette][ref].
 ///
+/// These colors are not merged into Stylament’s configuration by default.
+/// They are only here as an example for defining palettes via polynomial
+/// saturation and lightness curves. And for nostalgic reasons, I guess.
+/// However, you can use this map in your custom configuration.
+///
 /// [ref]: https://www.pollen.style/modules/colors
+///
+/// @example scss - Using seed colors with custom configuration
+///   @use "stylament/css/axioms/config/color/seed";
+///   @use "stylament/css/axioms" with (
+///       $config-custom: (
+///         color: (
+///           palettes: seed.$palettes,
+///         ),
+///       )
+///     );
 ///
 /// @name palettes@seed
 $palettes: (

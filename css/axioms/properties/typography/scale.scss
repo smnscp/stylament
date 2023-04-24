@@ -10,7 +10,6 @@
 
 /// @name Modular Font Size Scale
 /// @requires $merged
-/// @link https://www.pollen.style/modules/typography#modular-scale Pollen inheritance
 :root {
   $conf: map.get(cfg.$merged, typography, scale);
   $base: map.get($conf, base);

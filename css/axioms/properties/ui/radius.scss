@@ -7,7 +7,7 @@
 @use "../../tools/mixins/prop-map";
 
 /// @name Radius Scale
-/// @link https://www.pollen.style/modules/ui#radius Pollen inheritance
+/// @requires $merged
 :root {
   @include prop-map.configured-properties(
     map.get(cfg.$merged, ui, radius),

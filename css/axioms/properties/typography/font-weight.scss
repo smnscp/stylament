@@ -8,7 +8,6 @@
 
 /// @name Font Weights
 /// @requires $merged
-/// @link https://www.pollen.style/modules/typography#font-weights Pollen inheritance
 :root {
   @include prop-map.configured-properties(
     map.get(cfg.$merged, typography, font-weight),
