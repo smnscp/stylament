@@ -4,6 +4,14 @@
 
 /// # Global Configuration
 ///
+/// The lowest layer of Stylament is a global configuration object. From this,
+/// [a set of CSS custom properties](./ax-properties.html) will be generated.
+/// In contrast to that flat list of variables, this configuration object is a
+/// hierachical map. By using [mapping functions](#mapping) and [aliases](#config-examples)
+/// it reflects the relationships between properties.
+///
+/// There is a [default configuration](#variable--default) tree that
+/// will be merged with your [custom configuration](#variable--custom).
 
 @use "sass:map";
 @use "sass:math";
@@ -23,6 +31,54 @@ $custom: () !default;
 
 /// Default configuration.
 /// This also serves as a reference for your [custom configuration](#variable--custom).
+///
+/// <a name="config-examples"></a>
+///
+/// @example scss - Defining literal properties
+///   spacing: (
+///     literal: (
+///       block: "var(--length-l1)",
+///       inline: 4ch,
+///     ),
+///   ),
+///
+/// @example css - Result
+///   :root {
+///     --spacing-block: var(--length-l1);
+///     --spacing-inline: 4ch;
+///   }
+///
+/// @example scss - Defining logical properties (aliases)
+///   measure: (
+///     logical: (
+///       default: md,
+///     ),
+///   ),
+///
+/// @example css - Result
+///   :root {
+///     --measure-default: var(--measure-md);
+///   }
+///
+/// @example scss - Defining mapped properties (calculated series)
+///   radius: (
+///     mapped: (
+///       domain: mapping.$domain-sizes,
+///       function: meta.get-function("radius", $module: "mapping"),
+///     ),
+///   ),
+///
+/// @example css - Result
+///   :root {
+///     --radius-xxs: 0rem;
+///     --radius-xs: .2rem;
+///     --radius-sm: .4rem;
+///     --radius-md: .6rem;
+///     --radius-lg: .8rem;
+///     --radius-xl: 1rem;
+///     --radius-xxl: 1.2rem;
+///   }
+///
 /// @type Map
 $default: (
   layout: (
@@ -173,6 +229,7 @@ $default: (
 );
 
 /// Map of all configuration values merged together.
+/// This is used to look up configuration keys.
 /// @type Map
 /// @requires $default
 /// @requires $custom

@@ -4,6 +4,9 @@
 
 /// ## Mapping
 ///
+/// Since most sequences of CSS custom properties are based on certain
+/// calculation rules, Stylament uses simple [functions](#mapping-functions)
+/// to map the values of a given [domain](#mapping-domains) to property values.
 
 @forward "functions";
 @forward "domains" as domain-*;

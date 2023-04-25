@@ -4,9 +4,20 @@
 
 /// ### Mapping Domains
 ///
+/// These simple maps represent the domains of property sequences.
 
 /// Map of size labels.
 /// Used as domain for mapped properties.
+///
+/// @example css - For generating properties like this
+///   --shadow-xxs: …;
+///   --shadow-xs: …;
+///   --shadow-sm: …;
+///   --shadow-md: …;
+///   --shadow-lg: …;
+///   --shadow-xl: …;
+///   --shadow-xxl: …;
+///
 $sizes: (
   xxs: -3,
   xs: -2,
