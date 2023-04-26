@@ -1,10 +1,14 @@
 <svg width="128" height="128" version="1.1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
- <path d="m63.971 24-40.512 12.66 40.32 6.541 40.529-6.5957z" fill="#667d99" fill-opacity=".5"/>
- <path d="m63.971 0v24l40.338 12.605v-16.436z" fill="#2073df"/>
- <path d="m63.971 0-40.512 20.256v16.404l40.512-12.66z" fill="#104389"/>
- <path d="m23.96 91.497 40.01 12.503 40.644-12.701-39.94-6.4652z" fill="#8c9966" fill-opacity=".5"/>
- <path d="m63.97 104v24l40.644-20.322v-16.379z" fill="#b3df20"/>
- <path d="m23.96 91.497 40.01 12.503v24l-40.01-20.005z" fill="#6b8910"/>
- <path d="m67.712 52.567-7.1272 22.953 39.631 8.3363 4.8789-15.713z" fill="#df202d"/>
- <path d="m27.801 44.16 39.911 8.4063-7.1272 22.953-37.653-15.678z" fill="#89101a"/>
+ <link rel="stylesheet" href="https://stylament.sim.ilitu.de/assets/index-3052e033.css" type="text/css" />
+ <style>@import url(https://stylament.sim.ilitu.de/assets/index-3052e033.css);</style>
+ <link rel="stylesheet" href="/css/index.scss" type="text/css" />
+ <style>@import url(/css/index.scss);</style>
+ <path d="m64 24-40 12.5 40 6.5 40-6.5z" style="fill: var(--color-primary); fill-opacity: .3;" />
+ <path d="m64 0v24l40 12.5v-16.5z" style="fill: var(--color-primary);" />
+ <path d="m64 0-40 20v16.5l40-12.5z" style="fill: var(--color-primary-700);" />
+ <path d="m24 91.5 40 12.5 40-12.5-40-6.5z" style="fill: var(--color-secondary); fill-opacity: .3;" />
+ <path d="m64 104v24l40-20v-16.5z" style="fill: var(--color-secondary);" />
+ <path d="m24 91.5 40 12.5v24l-40-20z" style="fill: var(--color-secondary-700);" />
+ <path d="m67.712 52.567-7.1272 22.953 39.631 8.3363 4.8789-15.713z" style="fill: var(--color-tertiary);" />
+ <path d="m27.801 44.16 39.911 8.4063-7.1272 22.953-37.653-15.678z" style="fill: var(--color-tertiary-700);" />
 </svg>

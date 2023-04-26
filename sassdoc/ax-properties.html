@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.13.0</span>
+          <span class="project-version">0.13.1</span>
         
       </div>
     </header>
@@ -245,9 +245,10 @@
 
   
     <div data-item-section="prose" class="text-block">
-      <h1 id="basic-custom-properties" tabindex="-1">Basic Custom Properties</h1>
-<p>This is a set of global custom CSS properties constituting the DNA of the design system.
-It was originally inspired by the well thought-through taxonomy of <a href="https://www.pollen.style/">Pollen</a>.</p>
+      <h1 id="custom-properties" tabindex="-1">Custom Properties</h1>
+<p>This is a set of global CSS custom properties constituting the DNA of the design system.
+They are generated from the <a href="./ax-config.html">global configuration</a> and are used in the
+higher layers of the<span class="widont">&nbsp;</span>system.</p>
 
       
   
@@ -640,7 +641,7 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">$sizes: ();</code></pre>
+      <pre class="hljs-pre"><code class="lang-scss">$sizes: map2.map-config($-conf);</code></pre>
     </div>
   
 
@@ -652,7 +653,10 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
 
   
     <div class="text-block">
-      <p>Container sizes. Defined in <a href="#css--Container%20Size%20Scale">Container Size<span class="widont">&nbsp;</span>Scale</a>.</p>
+      <p>Container sizes for<span class="widont">&nbsp;</span>preprocessing.</p>
+<p>We need this preprocessor variable map because
+<a href="#css--Container%20Size%20Scale">the corresponding CSS variables</a>
+<a href="https://bholmes.dev/blog/alternative-to-css-variable-media-queries/">cannot be used in media query<span class="widont">&nbsp;</span>declarations</a>.</p>
 
       
   
@@ -683,44 +687,6 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
   
   
 
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://bholmes.dev/blog/alternative-to-css-variable-media-queries/" class="item-name">Why SASS variables?</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
 
   
   
@@ -805,9 +771,7 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $conf: map.get(cfg.$merged, layout, container);
-  $sizes: map2.map-config($conf) !global;
-  @include prop-map.configured-properties($conf, &quot;container&quot;);
+  @include prop-map.configured-properties($-conf, &quot;container&quot;);
 }</code></pre>
     </div>
   
@@ -819,20 +783,6 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
   
 
   
-    <div class="text-block">
-      <p>Defines <a href="#variable--sizes">$sizes</a>.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
 
   </div>
 
@@ -851,44 +801,6 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
   
   
 
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/layout#container-widths" class="item-name">Pollen inheritance</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
 
   
   
@@ -1228,7 +1140,10 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include prop-map.configured-properties(map.get(cfg.$merged, layout, spacing), &quot;spacing&quot;);
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, layout, spacing),
+    &quot;spacing&quot;
+  );
 }</code></pre>
     </div>
   
@@ -1503,19 +1418,36 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
 
 
   
-
+  
+  
+  
     
-  <div data-item-section="related">
+    
+  <div data-item-section="requires">
     
       <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
+        <span class="item-subtitle-main">Requires</span>
         
       </h3>
     
 
     
       
+      
         
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
   
 
   
@@ -1523,28 +1455,24 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
     <h4 class="param-title">
       
       
-        <a href="https://www.pollen.style/modules/typography#font-families" class="item-name">Pollen inheritance</a>
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
       
       
+      <span class="value-type">(Map)</span>
       
-      <span class="item-note">[external]</span>
     </h4>
 
     
   </div>
 
 
-      
-
+        
       
     
   </div>
 
   
-  
-  
-  
-    
     
   
 
@@ -1656,44 +1584,6 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
   
   
 
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/typography#font-weights" class="item-name">Pollen inheritance</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
 
   
   
@@ -1829,11 +1719,10 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  --letter-xs: -0.05em;
-  --letter-sm: -0.025em;
-  --letter-none: 0em;
-  --letter-lg: 0.025em;
-  --letter-xl: 0.05em;
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, typography, letter-spacing),
+    &quot;letter&quot;
+  );
 }</code></pre>
     </div>
   
@@ -1865,19 +1754,36 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
 
 
   
-
+  
+  
+  
     
-  <div data-item-section="related">
+    
+  <div data-item-section="requires">
     
       <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
+        <span class="item-subtitle-main">Requires</span>
         
       </h3>
     
 
     
       
+      
         
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
   
 
   
@@ -1885,56 +1791,30 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
     <h4 class="param-title">
       
       
-        <a href="https://www.pollen.style/modules/typography#letter-spacing" class="item-name">Pollen inheritance</a>
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
       
       
+      <span class="value-type">(Map)</span>
       
-      <span class="item-note">[external]</span>
     </h4>
 
     
   </div>
 
 
-      
-
+        
       
     
   </div>
 
   
-  
-  
-  
-    
     
   
 
   
 
   
-  
-    
-  <div data-item-section="todo">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">To-do List</span>
-        
-      </h3>
-    
-
-    
-      <ul>
-        
-          <li data-sassdoc="todo-item">
-            <p>Configure and calculate<span class="widont">&nbsp;</span>this.</p>
-
-          </li>
-        
-      </ul>
-    
-  </div>
-
   
 
 
@@ -2008,7 +1888,7 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">$rlh: null;</code></pre>
+      <pre class="hljs-pre"><code class="lang-scss">$rlh: $-line-root * $-scale-base-rem !global;</code></pre>
     </div>
   
 
@@ -2020,7 +1900,7 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
 
   
     <div class="text-block">
-      <p>Root line height. Defined in <a href="#css--Line%20Heights">Line<span class="widont">&nbsp;</span>Heights</a>.</p>
+      <p>Root line height.</p>
 
       
   
@@ -2311,29 +2191,12 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $scale-base: map.get(cfg.$merged, typography, scale, base);
-  $scale-factor: map.get(cfg.$merged, typography, scale, factor);
-  $scale-min: map.get(cfg.$merged, typography, scale, min);
-  $scale-max: map.get(cfg.$merged, typography, scale, max);
-
-  $line-min: map.get(cfg.$merged, typography, line, min);
-  $line-root: map.get(cfg.$merged, typography, line, root);
-  $line-sub: map.get(cfg.$merged, typography, line, sub);
-
-  $base-unit: math.unit($scale-base);
-  $scale-base-rem: if(
-    $base-unit == &quot;em&quot;,
-    $scale-base * math.div(1rem, 1em),
-    if($base-unit == &quot;%&quot;, $scale-base * math.div(1rem, 100%), $scale-base)
-  );
-  $rlh: $line-root * $scale-base-rem !global;
-
-  --line-root: #{$line-root};
+  --line-root: #{$-line-root};
   --line-root-abs: #{$rlh};
 
-  @for $i from $scale-min through $scale-max {
-    $font-size: scale.modular($scale-base, $scale-factor, $i);
-    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $line-min, $line-sub)};
+  @for $i from $-scale-min through $-scale-max {
+    $font-size: scale.modular($-scale-base, $-scale-factor, $i);
+    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $-line-min, $-line-sub)};
   }
 }</code></pre>
     </div>
@@ -2347,8 +2210,7 @@ It was originally inspired by the well thought-through taxonomy of <a href="http
 
   
     <div class="text-block">
-      <p>Line heights supporting the vertical rhythm at every step of the scale.
-Defines <a href="#variable--rlh">$rlh</a>.</p>
+      <p>Line heights supporting the vertical rhythm at every step of the<span class="widont">&nbsp;</span>scale.</p>
 
       
   
@@ -2392,26 +2254,6 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
     
 
     
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/typography#line-height" class="item-name">Pollen inheritance</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
       
         
   
@@ -2572,7 +2414,10 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include prop-map.configured-properties(map.get(cfg.$merged, typography, measure), &quot;measure&quot;);
+  @include prop-map.configured-properties(
+    map.get(cfg.$merged, typography, measure),
+    &quot;measure&quot;
+  );
 
   --measure: var(--measure-default);
 }</code></pre>
@@ -2617,26 +2462,6 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
     
 
     
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/typography#prose-width" class="item-name">Pollen inheritance</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
       
         
   
@@ -2865,44 +2690,6 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
 
 
   
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://www.pollen.style/modules/typography#modular-scale" class="item-name">Pollen inheritance</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-    
-  </div>
-
-  
   
   
   
@@ -3063,7 +2850,7 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
 
 
 
-<section class="item" id="css--Easing%20Curves%0AEasing%20functions%20%5Bintroduced%20by%20Robert%20Penner%5D%5Bpenner%5D%0Aand%20approximated%20as%20cubic%20B%C3%A9zier%20curves%20%5Bby%20Matthew%20Lein%5D%5Bceaser%5D.%0A%0A%5Bpenner%5D%3A%20http%3A%2F%2Frobertpenner.com%2Feasing%2F%0A%5Bceaser%5D%3A%20https%3A%2F%2Fmatthewlein.com%2Ftools%2Fceaser">
+<section class="item" id="css--Easing%20Curves">
   
     
   
@@ -3081,12 +2868,7 @@ Defines <a href="#variable--rlh">$rlh</a>.</p>
       
 
       
-        <a href="#css--Easing%20Curves%0AEasing%20functions%20%5Bintroduced%20by%20Robert%20Penner%5D%5Bpenner%5D%0Aand%20approximated%20as%20cubic%20B%C3%A9zier%20curves%20%5Bby%20Matthew%20Lein%5D%5Bceaser%5D.%0A%0A%5Bpenner%5D%3A%20http%3A%2F%2Frobertpenner.com%2Feasing%2F%0A%5Bceaser%5D%3A%20https%3A%2F%2Fmatthewlein.com%2Ftools%2Fceaser" class="item-name">Easing Curves
-Easing functions [introduced by Robert Penner][penner]
-and approximated as cubic Bézier curves [by Matthew Lein][ceaser].
-
-[penner]: http://robertpenner.com/easing/
-[ceaser]:<span class="widont">&nbsp;</span>https://matthewlein.com/tools/ceaser</a>
+        <a href="#css--Easing%20Curves" class="item-name">Easing Curves</a>
       
 
       
@@ -3156,7 +2938,8 @@ and approximated as cubic Bézier curves [by Matthew Lein][ceaser].
 
   
     <div class="text-block">
-      <p>Curves for transition<span class="widont">&nbsp;</span>easing.</p>
+      <p>Easing functions <a href="http://robertpenner.com/easing/">introduced by Robert Penner</a>
+and approximated as cubic Bézier curves <a href="https://matthewlein.com/tools/ceaser">by Matthew<span class="widont">&nbsp;</span>Lein</a>.</p>
 
       
   
@@ -3306,19 +3089,36 @@ and approximated as cubic Bézier curves [by Matthew Lein][ceaser].
 
 
   
-
+  
+  
+  
     
-  <div data-item-section="related">
+    
+  <div data-item-section="requires">
     
       <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
+        <span class="item-subtitle-main">Requires</span>
         
       </h3>
     
 
     
       
+      
         
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
   
 
   
@@ -3326,28 +3126,24 @@ and approximated as cubic Bézier curves [by Matthew Lein][ceaser].
     <h4 class="param-title">
       
       
-        <a href="https://www.pollen.style/modules/ui#radius" class="item-name">Pollen inheritance</a>
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
       
       
+      <span class="value-type">(Map)</span>
       
-      <span class="item-note">[external]</span>
     </h4>
 
     
   </div>
 
 
-      
-
+        
       
     
   </div>
 
   
-  
-  
-  
-    
     
   
 
@@ -3441,20 +3237,6 @@ and approximated as cubic Bézier curves [by Matthew Lein][ceaser].
   
 
   
-    <div class="text-block">
-      <p>Box shadows for creating realistic elevation in 3d<span class="widont">&nbsp;</span>space.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
 
   </div>
 
@@ -3475,19 +3257,36 @@ and approximated as cubic Bézier curves [by Matthew Lein][ceaser].
 
 
   
-
+  
+  
+  
     
-  <div data-item-section="related">
+    
+  <div data-item-section="requires">
     
       <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
+        <span class="item-subtitle-main">Requires</span>
         
       </h3>
     
 
     
       
+      
         
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
   
 
   
@@ -3495,28 +3294,24 @@ and approximated as cubic Bézier curves [by Matthew Lein][ceaser].
     <h4 class="param-title">
       
       
-        <a href="https://www.pollen.style/modules/ui#shadow" class="item-name">Pollen inheritance</a>
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
       
       
+      <span class="value-type">(Map)</span>
       
-      <span class="item-note">[external]</span>
     </h4>
 
     
   </div>
 
 
-      
-
+        
       
     
   </div>
 
   
-  
-  
-  
-    
     
   
 
