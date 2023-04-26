@@ -1,5 +1,6 @@
 dest: ./dist/sassdoc
 theme: herman
+shortcutIcon: public/img/logo.svg
 groups:
   undefined: '<un-grouped>'
   Axioms:
