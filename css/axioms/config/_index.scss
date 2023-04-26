@@ -23,8 +23,8 @@
 /// For the structure of this custom configuration see [$default](#variable--default).
 ///
 /// @example scss - Using Stylament with custom configuration
-///   @use "your-own/config";
-///   @use "stylament/css/axioms" with ($config-custom: config.$config);
+///   @use "custom-config" as custom;
+///   @use "stylament/css/axioms" with ($config-custom: custom.$config);
 ///
 /// @type Map
 $custom: () !default;
@@ -35,12 +35,16 @@ $custom: () !default;
 /// <a name="config-examples"></a>
 ///
 /// @example scss - Defining literal properties
-///   spacing: (
-///     literal: (
-///       block: "var(--length-l1)",
-///       inline: 4ch,
+///   $cfg: (
+///     layout: (
+///       spacing: (
+///         literal: (
+///           block: "var(--length-l1)",
+///           inline: 4ch,
+///         ),
+///       ),
 ///     ),
-///   ),
+///   );
 ///
 /// @example css - Result
 ///   :root {
@@ -49,11 +53,15 @@ $custom: () !default;
 ///   }
 ///
 /// @example scss - Defining logical properties (aliases)
-///   measure: (
-///     logical: (
-///       default: md,
+///   $cfg: (
+///     typography: (
+///       measure: (
+///         logical: (
+///           default: md,
+///         ),
+///       ),
 ///     ),
-///   ),
+///   );
 ///
 /// @example css - Result
 ///   :root {
@@ -61,22 +69,24 @@ $custom: () !default;
 ///   }
 ///
 /// @example scss - Defining mapped properties (calculated series)
-///   radius: (
-///     mapped: (
-///       domain: mapping.$domain-sizes,
-///       function: meta.get-function("radius", $module: "mapping"),
+///   @function radius($i) { @return (2 + $i) * 0.5rem; }
+///
+///   $cfg: (
+///     ui: (
+///       radius: (
+///         mapped: (
+///           domain: (sm: -1, md: 0, lg: 1),
+///           function: get-function("radius"),
+///         ),
+///       ),
 ///     ),
-///   ),
+///   );
 ///
 /// @example css - Result
 ///   :root {
-///     --radius-xxs: 0rem;
-///     --radius-xs: .2rem;
-///     --radius-sm: .4rem;
-///     --radius-md: .6rem;
-///     --radius-lg: .8rem;
-///     --radius-xl: 1rem;
-///     --radius-xxl: 1.2rem;
+///     --radius-sm: 0.5rem;
+///     --radius-md: 1rem;
+///     --radius-lg: 1.5rem;
 ///   }
 ///
 /// @type Map

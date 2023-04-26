@@ -1,0 +1,56 @@
+@use "sass:math";
+
+$config: (
+  layout: (
+    length: (
+      min: 1,
+      max: 16,
+      line: 2,
+    ),
+    container: (
+      logical: (
+        page: "sm",
+      ),
+    ),
+    spacing: (
+      logical: (
+        sectioning: "block",
+      ),
+    ),
+  ),
+  typography: (
+    font-family: (
+      literal: (
+        serif: (
+          "Times",
+        ),
+        sans: (
+          "Helvetica",
+        ),
+        mono: (
+          "Courier",
+        ),
+      ),
+      logical: (
+        body: "serif",
+        heading: "sans",
+      ),
+    ),
+    font-weight: (),
+    scale: (
+      base: 1em,
+      factor: 1.5,
+    ),
+    line: (
+      min: 1,
+      sub: 2,
+    ),
+  ),
+  color: (
+    literal: (
+      body: PapayaWhip,
+      body-contra: MidnightBlue,
+      neutral: LightSlateGray,
+    ),
+  ),
+);

@@ -28,6 +28,10 @@ groups:
   Utilities:
     ut-layout: Layout Utilities
     ut-dev: Development Utilities
-# herman:
-#   extraDocs:
-#     - './CONTRIBUTING.md'
+herman:
+  sass:
+    sassOptions:
+      loadPaths:
+        - 'example'
+        - '..'
+        - 'node_modules'
