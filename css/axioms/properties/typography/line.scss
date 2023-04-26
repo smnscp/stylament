@@ -28,7 +28,7 @@ $-scale-base-rem: if(
 /// @type Number<rem>
 /// @see Line Heights
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/length#rlh “rlh”: experimental CSS unit.
-$rlh: $-line-root * $-scale-base-rem !global;
+$rlh: $-line-root * $-scale-base-rem;
 
 /// Line heights supporting the vertical rhythm at every step of the scale.
 /// @name Line Heights
