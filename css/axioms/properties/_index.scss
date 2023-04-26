@@ -2,13 +2,11 @@
 /// @group ax-properties
 ////
 
-/// # Basic Custom Properties
+/// # Custom Properties
 ///
-/// This is a set of global custom CSS properties constituting the DNA of the design system.
-/// It was originally inspired by the well thought-through taxonomy of [Pollen][pollen].
-///
-/// [pollen]: https://www.pollen.style/
-///
+/// This is a set of global CSS custom properties constituting the DNA of the design system.
+/// They are generated from the [global configuration](./ax-config.html) and are used in the
+/// higher layers of the system.
 
 @use "typography";
 @use "layout";
