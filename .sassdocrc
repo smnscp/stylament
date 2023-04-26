@@ -4,12 +4,14 @@ shortcutIcon: public/img/logo.svg
 groups:
   undefined: '<un-grouped>'
   Axioms:
+    ax-intro: … Introduction
     ax-config: Global Configuration
     ax-tools: Preprocessing Tools
     ax-properties: Custom Properties
     ax-generic: Generic Rules
   Elements:
-    el-document: General Document Structure
+    el-intro: … Introduction
+    el-document: Document-level Elements
     el-sectioning: Sectioning
     el-grouping: Grouping Content
     el-text: Text-level Semantics
@@ -20,12 +22,26 @@ groups:
     el-forms: Form-associated Content
     el-interactive: Interactive Elements
     el-scripting: Scripting
+  Idioms:
+    id-intro: … Introduction
+    id-document: Document Structure
+    id-sectioning: Sectioning
+    id-grouping: Grouping Content
+    id-text: Text-level Semantics
+    id-edits: Edits
+    id-links: Links
+    id-embedding: Embedding
+    id-tables: Tabular Content
+    id-forms: Form-associated Content
+    id-interactive: Interactive Elements
   Objects:
+    ob-intro: … Introduction
     ob-elementary: Elementary
     ob-layout: Layout
     ob-coloring: Coloring
     ob-special: More Specific Styling
   Utilities:
+    ut-intro: … Introduction
     ut-layout: Layout Utilities
     ut-dev: Development Utilities
 herman:

@@ -4,11 +4,9 @@
 
 @use "../axioms/tools/mixins/coloring.scss";
 
-/// # General Document Structure
+/// # Document-level Elements
 ///
-/// The following rules target elements that are (or should be) unique to each document. In some cases
-/// compound selectors are required in order to only select the specific element. Nevertheless, we can
-/// address them without any added class specificity.
+/// These are elements unique to each document.
 
 /// Document root.
 /// Also selectable as `:root` (which has a higher specificity).
@@ -36,25 +34,4 @@ body {
 /// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main MDN
 main {
   padding-block: var(--spacing-sectioning);
-}
-
-/// The body or an inevitable wrapper div.
-$body-or-wrapper: ":where(body, body > div:only-child)";
-
-/// The document’s main header and footer.
-/// (There could be more than one of each. But that would not make much sense.)
-#{$body-or-wrapper} > :is(header, footer) {
-  padding-block: var(--spacing-sectioning);
-}
-
-/// Apply [“clever sticky footer”][css-tricks] technique.
-///
-/// [css-tricks]: https://css-tricks.com/a-clever-sticky-footer-technique/
-#{$body-or-wrapper} {
-  min-block-size: 100vh;
-
-  > footer {
-    position: sticky;
-    inset-block-start: 100vh;
-  }
 }

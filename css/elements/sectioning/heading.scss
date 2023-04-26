@@ -28,20 +28,3 @@ $colors: map.get(cfg.$merged, color, logical);
     }
   }
 }
-
-/// @name New (2022) hgroup semantics
-hgroup {
-  p {
-    font-family: var(--font-heading);
-    font-weight: var(--weight-heading);
-    color: var(---clr-fg);
-  }
-  h1 ~ p {
-    font-size: var(--scale-2);
-    line-height: var(--line-2);
-  }
-  h2 ~ p {
-    font-size: var(--scale-1);
-    line-height: var(--line-1);
-  }
-}
