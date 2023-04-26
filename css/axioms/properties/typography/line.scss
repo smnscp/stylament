@@ -8,40 +8,38 @@
 @use "../../tools/functions/scale";
 @use "../../tools/functions/rhythm";
 
-/// Root line height. Defined in [Line Heights](#css--Line%20Heights).
+$-scale-base: map.get(cfg.$merged, typography, scale, base);
+$-scale-factor: map.get(cfg.$merged, typography, scale, factor);
+$-scale-min: map.get(cfg.$merged, typography, scale, min);
+$-scale-max: map.get(cfg.$merged, typography, scale, max);
+
+$-line-min: map.get(cfg.$merged, typography, line, min);
+$-line-root: map.get(cfg.$merged, typography, line, root);
+$-line-sub: map.get(cfg.$merged, typography, line, sub);
+
+$-base-unit: math.unit($-scale-base);
+$-scale-base-rem: if(
+  $-base-unit == "em",
+  $-scale-base * math.div(1rem, 1em),
+  if($-base-unit == "%", $-scale-base * math.div(1rem, 100%), $-scale-base)
+);
+
+/// Root line height.
 /// @type Number<rem>
 /// @see Line Heights
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/length#rlh “rlh”: experimental CSS unit.
-$rlh: null;
+$rlh: $-line-root * $-scale-base-rem !global;
 
 /// Line heights supporting the vertical rhythm at every step of the scale.
-/// Defines [$rlh](#variable--rlh).
 /// @name Line Heights
 /// @requires $merged
 /// @link https://drewish.com/tools/vertical-rhythm/ Vertical rhythm calculation tool
 :root {
-  $scale-base: map.get(cfg.$merged, typography, scale, base);
-  $scale-factor: map.get(cfg.$merged, typography, scale, factor);
-  $scale-min: map.get(cfg.$merged, typography, scale, min);
-  $scale-max: map.get(cfg.$merged, typography, scale, max);
-
-  $line-min: map.get(cfg.$merged, typography, line, min);
-  $line-root: map.get(cfg.$merged, typography, line, root);
-  $line-sub: map.get(cfg.$merged, typography, line, sub);
-
-  $base-unit: math.unit($scale-base);
-  $scale-base-rem: if(
-    $base-unit == "em",
-    $scale-base * math.div(1rem, 1em),
-    if($base-unit == "%", $scale-base * math.div(1rem, 100%), $scale-base)
-  );
-  $rlh: $line-root * $scale-base-rem !global;
-
-  --line-root: #{$line-root};
+  --line-root: #{$-line-root};
   --line-root-abs: #{$rlh};
 
-  @for $i from $scale-min through $scale-max {
-    $font-size: scale.modular($scale-base, $scale-factor, $i);
-    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $line-min, $line-sub)};
+  @for $i from $-scale-min through $-scale-max {
+    $font-size: scale.modular($-scale-base, $-scale-factor, $i);
+    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $-line-min, $-line-sub)};
   }
 }

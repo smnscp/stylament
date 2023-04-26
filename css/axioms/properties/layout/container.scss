@@ -7,16 +7,21 @@
 @use "../../tools/functions/map2";
 @use "../../tools/mixins/prop-map";
 
-/// Container sizes. Defined in [Container Size Scale](#css--Container%20Size%20Scale).
-/// @type Map
-/// @link https://bholmes.dev/blog/alternative-to-css-variable-media-queries/ Why SASS variables?
-$sizes: ();
+$-conf: map.get(cfg.$merged, layout, container);
 
-/// Defines [$sizes](#variable--sizes).
+/// Container sizes for preprocessing.
+///
+/// We need this preprocessor variable map because
+/// [the corresponding CSS variables](#css--Container%20Size%20Scale)
+/// [cannot be used in media query declarations][bholmes].
+///
+/// [bholmes]: https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
+///
+/// @type Map
+$sizes: map2.map-config($-conf);
+
 /// @name Container Size Scale
 /// @requires $merged
 :root {
-  $conf: map.get(cfg.$merged, layout, container);
-  $sizes: map2.map-config($conf) !global;
-  @include prop-map.configured-properties($conf, "container");
+  @include prop-map.configured-properties($-conf, "container");
 }
