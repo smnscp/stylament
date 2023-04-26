@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>General Document Structure | Stylament Documentation</title>
+  <title>Document-level Elements | Stylament Documentation</title>
 
-  <link href="assets/img/favicon.ico" rel="shortcut icon">
+  <link href="assets/img/logo.svg" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/webpack/app_styles.min.css" />
@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.13.1</span>
+          <span class="project-version">0.14.0</span>
         
       </div>
     </header>
@@ -74,6 +74,11 @@
                 
   
     <li class="nav-item">
+      <a href="ax-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
       <a href="ax-config.html" data-nav="is-not-active">Global Configuration</a>
     </li>
   
@@ -99,7 +104,12 @@
                 
   
     <li class="nav-item">
-      <a href="el-document.html" data-nav="is-active">General Document<span class="widont">&nbsp;</span>Structure</a>
+      <a href="el-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-document.html" data-nav="is-active">Document-level Elements</a>
     </li>
   
   
@@ -154,9 +164,42 @@
   </ul>
             </li>
             <li class="nav-subsection">
+              <h3 class="nav-title">Idioms</h3>
+              <ul>
+                
+  
+    <li class="nav-item">
+      <a href="id-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="id-document.html" data-nav="is-not-active">Document Structure</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="id-sectioning.html" data-nav="is-not-active">Sectioning</a>
+    </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  </ul>
+            </li>
+            <li class="nav-subsection">
               <h3 class="nav-title">Objects</h3>
               <ul>
                 
+  
+    <li class="nav-item">
+      <a href="ob-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
   
     <li class="nav-item">
       <a href="ob-elementary.html" data-nav="is-not-active">Elementary</a>
@@ -174,6 +217,11 @@
               <h3 class="nav-title">Utilities</h3>
               <ul>
                 
+  
+    <li class="nav-item">
+      <a href="ut-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
   
     <li class="nav-item">
       <a href="ut-layout.html" data-nav="is-not-active">Layout Utilities</a>
@@ -216,7 +264,7 @@
   <nav class="breadcrumb">
     
     <a href="index.html" >Stylament</a> »
-    <strong>General Document Structure</strong>
+    <strong>Document-level Elements</strong>
   </nav>
 
 
@@ -245,10 +293,8 @@
 
   
     <div data-item-section="prose" class="text-block">
-      <h1 id="general-document-structure" tabindex="-1">General Document Structure</h1>
-<p>The following rules target elements that are (or should be) unique to each document. In some cases
-compound selectors are required in order to only select the specific element. Nevertheless, we can
-address them without any added class<span class="widont">&nbsp;</span>specificity.</p>
+      <h1 id="document-level-elements" tabindex="-1">Document-level Elements</h1>
+<p>These are elements unique to each<span class="widont">&nbsp;</span>document.</p>
 
       
   
@@ -837,394 +883,6 @@ Also selectable as <code>:root</code> (which has a higher<span class="widont">&n
       
     
   </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="variable--body-or-wrapper">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#variable--body-or-wrapper" class="item-name">$body-or-wrapper</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">$body-or-wrapper: &quot;:where(body, body &gt; div:only-child)&quot;;</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>The body or an inevitable wrapper<span class="widont">&nbsp;</span>div.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%23%7B%24body-or-wrapper%7D%20%3E%20%3Ais(header%2C%20footer)">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%23%7B%24body-or-wrapper%7D%20%3E%20%3Ais(header%2C%20footer)" class="item-name">#{$body-or-wrapper} &gt; :is(header,<span class="widont">&nbsp;</span>footer)</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">#{$body-or-wrapper} &gt; :is(header, footer) {
-  padding-block: var(--spacing-sectioning);
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>The document’s main header and footer.
-(There could be more than one of each. But that would not make much<span class="widont">&nbsp;</span>sense.)</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--%23%7B%24body-or-wrapper%7D">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--%23%7B%24body-or-wrapper%7D" class="item-name">#{$body-or-wrapper}</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">#{$body-or-wrapper} {
-  min-block-size: 100vh;
-
-  &gt; footer {
-    position: sticky;
-    inset-block-start: 100vh;
-  }
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Apply <a href="https://css-tricks.com/a-clever-sticky-footer-technique/">“clever sticky footer”</a><span class="widont">&nbsp;</span>technique.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
 
   
   

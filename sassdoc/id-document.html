@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Layout Utilities | Stylament Documentation</title>
+  <title>Document Structure | Stylament Documentation</title>
 
   <link href="assets/img/logo.svg" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -174,7 +174,7 @@
   
   
     <li class="nav-item">
-      <a href="id-document.html" data-nav="is-not-active">Document Structure</a>
+      <a href="id-document.html" data-nav="is-active">Document Structure</a>
     </li>
   
   
@@ -224,7 +224,7 @@
   
   
     <li class="nav-item">
-      <a href="ut-layout.html" data-nav="is-active">Layout Utilities</a>
+      <a href="ut-layout.html" data-nav="is-not-active">Layout Utilities</a>
     </li>
   
   </ul>
@@ -264,11 +264,11 @@
   <nav class="breadcrumb">
     
     <a href="index.html" >Stylament</a> »
-    <strong>Layout Utilities</strong>
+    <strong>Document Structure</strong>
   </nav>
 
 
-        <div data-page="ut-layout">
+        <div data-page="id-document">
           
   
     
@@ -283,7 +283,83 @@
 
 
 
-<section class="item" id="css--.u-measure-%23%7B%24name%7D">
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h1 id="document-structure" tabindex="-1">Document Structure</h1>
+<p>These are typical patterns of the top-level document<span class="widont">&nbsp;</span>structure.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="variable--body-or-wrapper">
   
     
   
@@ -301,7 +377,7 @@
       
 
       
-        <a href="#css--.u-measure-%23%7B%24name%7D" class="item-name">.u-measure-#{$name}</a>
+        <a href="#variable--body-or-wrapper" class="item-name">$body-or-wrapper</a>
       
 
       
@@ -330,9 +406,7 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">.u-measure-#{$name} {
-  --measure: var(--measure-#{$name}) !important;
-}</code></pre>
+      <pre class="hljs-pre"><code class="lang-scss">$body-or-wrapper: &quot;:where(body, body &gt; div:only-child)&quot;;</code></pre>
     </div>
   
 
@@ -344,7 +418,7 @@
 
   
     <div class="text-block">
-      <p>Specify individual measure.</p>
+      <p>The body or an inevitable wrapper<span class="widont">&nbsp;</span>div.</p>
 
       
   
@@ -411,7 +485,7 @@
 
 
 
-<section class="item" id="css--.u-wrap-reset">
+<section class="item" id="css--%23%7B%24body-or-wrapper%7D%20%3E%20%3Ais(header%2C%20footer)">
   
     
   
@@ -429,7 +503,7 @@
       
 
       
-        <a href="#css--.u-wrap-reset" class="item-name">.u-wrap-reset</a>
+        <a href="#css--%23%7B%24body-or-wrapper%7D%20%3E%20%3Ais(header%2C%20footer)" class="item-name">#{$body-or-wrapper} &gt; :is(header,<span class="widont">&nbsp;</span>footer)</a>
       
 
       
@@ -458,10 +532,8 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">.u-wrap-reset {
-  grid-column: 1 / -1 !important;
-  max-inline-size: unset !important;
-  flex: 100% !important;
+      <pre class="hljs-pre"><code class="lang-scss">#{$body-or-wrapper} &gt; :is(header, footer) {
+  padding-block: var(--spacing-sectioning);
 }</code></pre>
     </div>
   
@@ -474,7 +546,141 @@
 
   
     <div class="text-block">
-      <p>Reset wrapping.</p>
+      <p>The document’s main header and footer.
+(There could be more than one of each. But that would not make much<span class="widont">&nbsp;</span>sense.)</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--%23%7B%24body-or-wrapper%7D">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--%23%7B%24body-or-wrapper%7D" class="item-name">#{$body-or-wrapper}</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">#{$body-or-wrapper} {
+  min-block-size: 100vh;
+
+  &gt; footer {
+    position: sticky;
+    inset-block-start: 100vh;
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Apply <a href="https://css-tricks.com/a-clever-sticky-footer-technique/">“clever sticky footer”</a><span class="widont">&nbsp;</span>technique.</p>
 
       
   

@@ -9,7 +9,7 @@
   
   <title>Stylament Documentation</title>
 
-  <link href="assets/img/favicon.ico" rel="shortcut icon">
+  <link href="assets/img/logo.svg" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/webpack/app_styles.min.css" />
@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.13.1</span>
+          <span class="project-version">0.14.0</span>
         
       </div>
     </header>
@@ -74,6 +74,11 @@
                 
   
     <li class="nav-item">
+      <a href="ax-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
       <a href="ax-config.html" data-nav="is-not-active">Global Configuration</a>
     </li>
   
@@ -99,7 +104,12 @@
                 
   
     <li class="nav-item">
-      <a href="el-document.html" data-nav="is-not-active">General Document<span class="widont">&nbsp;</span>Structure</a>
+      <a href="el-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-document.html" data-nav="is-not-active">Document-level Elements</a>
     </li>
   
   
@@ -154,9 +164,42 @@
   </ul>
             </li>
             <li class="nav-subsection">
+              <h3 class="nav-title">Idioms</h3>
+              <ul>
+                
+  
+    <li class="nav-item">
+      <a href="id-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="id-document.html" data-nav="is-not-active">Document Structure</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="id-sectioning.html" data-nav="is-not-active">Sectioning</a>
+    </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  </ul>
+            </li>
+            <li class="nav-subsection">
               <h3 class="nav-title">Objects</h3>
               <ul>
                 
+  
+    <li class="nav-item">
+      <a href="ob-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
   
     <li class="nav-item">
       <a href="ob-elementary.html" data-nav="is-not-active">Elementary</a>
@@ -174,6 +217,11 @@
               <h3 class="nav-title">Utilities</h3>
               <ul>
                 
+  
+    <li class="nav-item">
+      <a href="ut-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
   
     <li class="nav-item">
       <a href="ut-layout.html" data-nav="is-not-active">Layout Utilities</a>
@@ -228,55 +276,93 @@
 <p>This is gonna be solid. And flexible. At the same time. 😲<span class="widont">&nbsp;</span>Awesome!</p>
 <h2 id="what-" tabindex="-1">What?</h2>
 <p><strong>⚠️ Spoiler ⚠️:</strong> Yes, this is <strong>yet another HTML &amp; CSS<span class="widont">&nbsp;</span>framework</strong>.</p>
-<p><em>Stylament</em> is a framework or a blueprint for building well-structured and
-prettily-styled web<span class="widont">&nbsp;</span>pages.</p>
+<p><em>Stylament</em> is a framework or a blueprint for building well-structured and prettily-styled web<span class="widont">&nbsp;</span>pages.</p>
 <h2 id="why-" tabindex="-1">Why?</h2>
-<p>After decades of using HTML &amp; CSS frameworks like <em>Foundation</em> and <em>Bootstrap</em>,
-giving fresh candidates like <em>Bulma</em> a try, even fighting popular misconceptions
-like <em>“utility first”</em> 🙄, I finally wanted to build my own thing.<span class="widont">&nbsp;</span>💪</p>
-<p>I am well-aware of the existence of a bazillion of CSS frameworks out there.
-And I know about the notion that CSS frameworks in general suck.
-So, who needs another one? – Well, I do. Why? Because it’s probably true:
-CSS frameworks suck. At least, they tend to be less helpful the more confident
-you are writing CSS from scratch. In other words: Having your website depend on
-a CSS framework can quickly become a pain in the ass. Bloated stylesheets,
-littered mark-up, opinionated solutions you don’t agree<span class="widont">&nbsp;</span>with.</p>
-<p>How does that make sense? Building a CSS framework because CSS frameworks are
-bad? It’s not that they are intrinsically bad. It’s just that expecting such a
-framework to fit every use-case is futile. If you want an API (as in, a set of
-building blocks and means to customize them) that fits (almost) any kind of web
-document just rely on vanilla HTML and vanilla CSS. It’s as easy as that. But
-it’s also easy to mess up. Of course, you need to establish reasonable structures
-for your HTML and CSS. Potentially reusable structures. That’s where your own
-personal HTML &amp; CSS framework comes into play. Now it makes sense.<span class="widont">&nbsp;</span>😌</p>
-<p>That being said, I can’t tell if this project will ever be useful for anyone but
-me. Maybe people can learn from it, just as I have learned from<span class="widont">&nbsp;</span>others.</p>
+<p>After decades of using HTML &amp; CSS frameworks like <em>Foundation</em> and <em>Bootstrap</em>, giving fresh candidates like <em>Bulma</em> a try, even fighting popular misconceptions like <em>“utility first”</em> 🙄, I finally wanted to build my own thing.<span class="widont">&nbsp;</span>💪</p>
+<p>I am well-aware of the existence of a bazillion of CSS frameworks out there. And I know about the notion that CSS frameworks in general suck. So, who needs another one? – Well, I do. Why? Because it’s probably true: CSS frameworks suck. At least, they tend to be less helpful the more confident you are writing CSS from scratch. In other words: Having your website depend on a CSS framework can quickly become a pain in the ass. Bloated stylesheets, littered mark-up, opinionated solutions you don’t agree<span class="widont">&nbsp;</span>with.</p>
+<p>How does that make sense? Building a CSS framework because CSS frameworks are bad? It’s not that they are intrinsically bad. It’s just that expecting such a framework to fit every use-case is futile. If you want an API (as in, a set of building blocks and means to customize them) that fits (almost) any kind of web document just rely on vanilla HTML and vanilla CSS. It’s as easy as that. But it’s also easy to mess up. Of course, you need to establish reasonable structures for your HTML and CSS. Potentially reusable structures. That’s where your own personal HTML &amp; CSS framework comes into play. Now it makes sense.<span class="widont">&nbsp;</span>😌</p>
+<p>That being said, I can’t tell if this project will ever be useful for anyone but me. Maybe people can learn from it, just as I have learned from<span class="widont">&nbsp;</span>others.</p>
 <h2 id="how-" tabindex="-1">How?</h2>
-<p>🚧 N. B.: The <em>how</em> is subject to change. <strong>A<span class="widont">&nbsp;</span>lot.</strong></p>
+<p>🚧 N. B.: The <em>how</em> is still subject to change quite a<span class="widont">&nbsp;</span>bit.</p>
+<p><em>Stylament</em> is a system of layers, similar to <a href="https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528">ITCSS</a>, but also incorporating ideas from <a href="https://every-layout.dev/">Every Layout</a>, <a href="https://cube.fyi/">CUBE CSS</a>, and a lot of my own<span class="widont">&nbsp;</span>🧪📐🧮🔍✏️</p>
+<h3 id="layers-of-stylament" tabindex="-1">Layers of Stylament</h3>
+<ul>
+<li><a href="ax-intro.html">Axioms</a>
+<ul>
+<li>Config</li>
+<li>Preprocessing Tools</li>
+<li>CSS Custom Properties</li>
+<li>Generic Rules</li>
+</ul>
+</li>
+<li><a href="el-intro.html">Elements</a></li>
+<li><a href="id-intro.html">Idioms</a></li>
+<li><a href="ob-intro.html">Objects</a></li>
+<li><a href="ut-intro.html">Utilities</a></li>
+</ul>
+<h3 id="install" tabindex="-1">Install</h3>
+<pre><code class="lang-sh">npm install stylament
+</code></pre>
 <h3 id="configure" tabindex="-1">Configure</h3>
-<pre><code class="lang-scss">@use &quot;stylament/css/axioms&quot; with (
-  $config-custom: (
-    typography: (
-      font-weights: (
-        light: 300,
-        regular: null,
-        medium: null,
-        semibold: null,
-        bold: null,
-        extrabold: 800,
-      ),
-      scale: (
-        min: -3,
-        max: 9,
-        factor: 1.5,
-      ),
-      line: (
-        root: 1.2,
-      ),
+<p>Create a configuration file, e. g. <code>custom/config.scss</code>:</p>
+<pre><code class="lang-scss">$config: (
+  layout: (
+    length: (
+      // …
     ),
-  )
+    container: (
+      // …
+    ),
+    spacing: (
+      // …
+    ),
+  ),
+  typography: (
+    font-family: (
+      // …
+    ),
+    font-weight: (
+      // …
+    ),
+    letter-spacing: (
+      // …
+    ),
+    line: (
+      // …
+    ),
+    measure: (
+      // …
+    ),
+    scale: (
+      // …
+    ),
+  ),
+  ui: (
+    radius: (
+      // …
+    ),
+    shadow: (
+      // …
+    ),
+    stroke: (
+      // …
+    ),
+  ),
+  color: (
+    palettes: (
+      // …
+    ),
+  ),
 );
+</code></pre>
+<p>See <a href="ax-config.html">the documentation</a> for<span class="widont">&nbsp;</span>details.</p>
+<h3 id="use" tabindex="-1">Use</h3>
+<p>In your stylesheet entry point (e. g. index.scss) load your custom configuration and all the Stylament layers, injecting your config into the <em>axioms</em><span class="widont">&nbsp;</span>layer.</p>
+<pre><code class="lang-scss">@use &quot;custom/config&quot; as custom;
+
+@use &quot;stylament/css/axioms&quot; with ($config-custom: custom.$config);
 @use &quot;stylament/css/elements&quot;;
+@use &quot;stylament/css/idioms&quot;;
 @use &quot;stylament/css/objects&quot;;
 @use &quot;stylament/css/utilities&quot;;
 </code></pre>

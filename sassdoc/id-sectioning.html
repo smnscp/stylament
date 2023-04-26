@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Layout Utilities | Stylament Documentation</title>
+  <title>Sectioning | Stylament Documentation</title>
 
   <link href="assets/img/logo.svg" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -179,7 +179,7 @@
   
   
     <li class="nav-item">
-      <a href="id-sectioning.html" data-nav="is-not-active">Sectioning</a>
+      <a href="id-sectioning.html" data-nav="is-active">Sectioning</a>
     </li>
   
   
@@ -224,7 +224,7 @@
   
   
     <li class="nav-item">
-      <a href="ut-layout.html" data-nav="is-active">Layout Utilities</a>
+      <a href="ut-layout.html" data-nav="is-not-active">Layout Utilities</a>
     </li>
   
   </ul>
@@ -264,11 +264,11 @@
   <nav class="breadcrumb">
     
     <a href="index.html" >Stylament</a> »
-    <strong>Layout Utilities</strong>
+    <strong>Sectioning</strong>
   </nav>
 
 
-        <div data-page="ut-layout">
+        <div data-page="id-sectioning">
           
   
     
@@ -283,68 +283,17 @@
 
 
 
-<section class="item" id="css--.u-measure-%23%7B%24name%7D">
+<section class="item" >
   
     
   
   
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--.u-measure-%23%7B%24name%7D" class="item-name">.u-measure-#{$name}</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">.u-measure-#{$name} {
-  --measure: var(--measure-#{$name}) !important;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
   
   
 
   
-    <div class="text-block">
-      <p>Specify individual measure.</p>
+    <div data-item-section="prose" class="text-block">
+      <h1 id="sectioning" tabindex="-1">Sectioning</h1>
 
       
   
@@ -357,8 +306,6 @@
 
     </div>
   
-
-  </div>
 
   
 
@@ -411,7 +358,7 @@
 
 
 
-<section class="item" id="css--.u-wrap-reset">
+<section class="item" id="css--New%20(2022)%20hgroup%20semantics">
   
     
   
@@ -429,7 +376,7 @@
       
 
       
-        <a href="#css--.u-wrap-reset" class="item-name">.u-wrap-reset</a>
+        <a href="#css--New%20(2022)%20hgroup%20semantics" class="item-name">New (2022) hgroup<span class="widont">&nbsp;</span>semantics</a>
       
 
       
@@ -458,10 +405,20 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">.u-wrap-reset {
-  grid-column: 1 / -1 !important;
-  max-inline-size: unset !important;
-  flex: 100% !important;
+      <pre class="hljs-pre"><code class="lang-scss">hgroup {
+  p {
+    font-family: var(--font-heading);
+    font-weight: var(--weight-heading);
+    color: var(---clr-fg);
+  }
+  h1 ~ p {
+    font-size: var(--scale-2);
+    line-height: var(--line-2);
+  }
+  h2 ~ p {
+    font-size: var(--scale-1);
+    line-height: var(--line-1);
+  }
 }</code></pre>
     </div>
   
@@ -472,20 +429,6 @@
   
   
 
-  
-    <div class="text-block">
-      <p>Reset wrapping.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
   
 
   </div>

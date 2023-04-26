@@ -9,7 +9,7 @@
   
   <title>Global Configuration | Stylament Documentation</title>
 
-  <link href="assets/img/favicon.ico" rel="shortcut icon">
+  <link href="assets/img/logo.svg" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/webpack/app_styles.min.css" />
@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.13.1</span>
+          <span class="project-version">0.14.0</span>
         
       </div>
     </header>
@@ -74,6 +74,11 @@
                 
   
     <li class="nav-item">
+      <a href="ax-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
       <a href="ax-config.html" data-nav="is-active">Global Configuration</a>
     </li>
   
@@ -99,7 +104,12 @@
                 
   
     <li class="nav-item">
-      <a href="el-document.html" data-nav="is-not-active">General Document<span class="widont">&nbsp;</span>Structure</a>
+      <a href="el-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-document.html" data-nav="is-not-active">Document-level Elements</a>
     </li>
   
   
@@ -154,9 +164,42 @@
   </ul>
             </li>
             <li class="nav-subsection">
+              <h3 class="nav-title">Idioms</h3>
+              <ul>
+                
+  
+    <li class="nav-item">
+      <a href="id-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="id-document.html" data-nav="is-not-active">Document Structure</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="id-sectioning.html" data-nav="is-not-active">Sectioning</a>
+    </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  </ul>
+            </li>
+            <li class="nav-subsection">
               <h3 class="nav-title">Objects</h3>
               <ul>
                 
+  
+    <li class="nav-item">
+      <a href="ob-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
   
     <li class="nav-item">
       <a href="ob-elementary.html" data-nav="is-not-active">Elementary</a>
@@ -174,6 +217,11 @@
               <h3 class="nav-title">Utilities</h3>
               <ul>
                 
+  
+    <li class="nav-item">
+      <a href="ut-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
   
     <li class="nav-item">
       <a href="ut-layout.html" data-nav="is-not-active">Layout Utilities</a>
@@ -454,8 +502,662 @@ For the structure of this custom configuration see <a href="#variable--default">
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">@use &quot;your-own/config&quot;;
-@use &quot;stylament/css/axioms&quot; with ($config-custom: config.$config);</code></pre>
+      <pre class="hljs-pre"><code class="lang-scss">@use &quot;custom-config&quot; as custom;
+@use &quot;stylament/css/axioms&quot; with ($config-custom: custom.$config);</code></pre>
+    </div>
+  
+
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            css
+          </span>
+
+          
+            <span class='code-description'>
+              compiled
+            </span>
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-css">@charset &quot;UTF-8&quot;;
+:root {
+  --scale-factor: 1.5;
+  --scale--2: 0.4444444444em;
+  --scale--1: 0.6666666667em;
+  --scale-0: 1em;
+  --scale-1: 1.5em;
+  --scale-2: 2.25em;
+  --scale-3: 3.375em;
+  --scale-4: 5.0625em;
+  --scale-5: 7.59375em;
+  --scale-6: 11.390625em;
+  --scale-7: 17.0859375em;
+  --scale-8: 25.62890625em;
+  --scale-9: 38.443359375em;
+  --scale-smaller: 66.6666666667%;
+  --scale-larger: 150%;
+}
+
+:root {
+  --line-root: 1.5;
+  --line-root-abs: 1.5rem;
+  --line--2: 1.6875;
+  --line--1: 1.125;
+  --line-0: 1.5;
+  --line-1: 1;
+  --line-2: 1;
+  --line-3: 1.1111111111;
+  --line-4: 1.037037037;
+  --line-5: 1.0864197531;
+  --line-6: 1.0534979424;
+  --line-7: 1.0096021948;
+  --line-8: 1.0242341107;
+  --line-9: 1.0144795001;
+}
+
+:root {
+  --font-sans: Helvetica;
+  --font-serif: Times;
+  --font-mono: Courier;
+  --font-body: var(--font-serif);
+  --font-heading: var(--font-sans);
+  --font-display: var(--font-body);
+}
+
+:root {
+  --weight-regular: 400;
+  --weight-bold: 700;
+  --weight-body: var(--weight-regular);
+  --weight-emphasis: var(--weight-bold);
+  --weight-heading: var(--weight-bold);
+}
+
+:root {
+  --letter-xxs: -0.075em;
+  --letter-xs: -0.05em;
+  --letter-sm: -0.025em;
+  --letter-md: 0em;
+  --letter-lg: 0.025em;
+  --letter-xl: 0.05em;
+  --letter-xxl: 0.075em;
+  --letter-none: var(--letter-md);
+}
+
+:root {
+  --measure-xxs: 25ch;
+  --measure-xs: 36ch;
+  --measure-sm: 49ch;
+  --measure-md: 64ch;
+  --measure-lg: 81ch;
+  --measure-xl: 100ch;
+  --measure-xxl: 121ch;
+  --measure-full: 100%;
+  --measure-inf: unset;
+  --measure-default: var(--measure-md);
+  --measure: var(--measure-default);
+}
+
+:root {
+  --length-1: 0.75rem;
+  --length-l0to1: 0.75rem;
+  --length-l0aug: 0.75rem;
+  --length-l1dim: 0.75rem;
+  --length-2: 1.5rem;
+  --length-l1: 1.5rem;
+  --length-3: 2.25rem;
+  --length-l1to2: 2.25rem;
+  --length-l1aug: 2.25rem;
+  --length-l2dim: 2.25rem;
+  --length-4: 3rem;
+  --length-l2: 3rem;
+  --length-5: 3.75rem;
+  --length-l2to3: 3.75rem;
+  --length-l2aug: 3.75rem;
+  --length-l3dim: 3.75rem;
+  --length-6: 4.5rem;
+  --length-l3: 4.5rem;
+  --length-7: 5.25rem;
+  --length-l3to4: 5.25rem;
+  --length-l3aug: 5.25rem;
+  --length-l4dim: 5.25rem;
+  --length-8: 6rem;
+  --length-l4: 6rem;
+  --length-9: 6.75rem;
+  --length-l4to5: 6.75rem;
+  --length-l4aug: 6.75rem;
+  --length-l5dim: 6.75rem;
+  --length-10: 7.5rem;
+  --length-l5: 7.5rem;
+  --length-11: 8.25rem;
+  --length-l5to6: 8.25rem;
+  --length-l5aug: 8.25rem;
+  --length-l6dim: 8.25rem;
+  --length-12: 9rem;
+  --length-l6: 9rem;
+  --length-13: 9.75rem;
+  --length-l6to7: 9.75rem;
+  --length-l6aug: 9.75rem;
+  --length-l7dim: 9.75rem;
+  --length-14: 10.5rem;
+  --length-l7: 10.5rem;
+  --length-15: 11.25rem;
+  --length-l7to8: 11.25rem;
+  --length-l7aug: 11.25rem;
+  --length-l8dim: 11.25rem;
+  --length-16: 12rem;
+  --length-l8: 12rem;
+}
+
+:root {
+  --container-xxs: 0rem;
+  --container-xs: 16rem;
+  --container-sm: 32rem;
+  --container-md: 48rem;
+  --container-lg: 64rem;
+  --container-xl: 80rem;
+  --container-xxl: 96rem;
+  --container-page: var(--container-sm);
+}
+
+:root {
+  --spacing-block: var(--length-l1);
+  --spacing-heading: var(--length-l1);
+  --spacing-sectioning: clamp(var(--length-l1), (100vi - var(--container-sm)) / 4, var(--length-l2));
+  --spacing-inline: 4ch;
+  --spacing-inline-small: 0.5ch;
+  --spacing-sectioning: var(--spacing-block);
+}
+
+:root {
+  --stroke-width-1: 0.0625rem;
+  --stroke-width-2: 0.125rem;
+  --stroke-width-3: 0.1875rem;
+  --stroke-width-4: 0.25rem;
+  --stroke-width-5: 0.3125rem;
+  --stroke-width-6: 0.375rem;
+  --stroke-width-7: 0.4375rem;
+  --stroke-width-8: 0.5rem;
+  --stroke-width-default: var(--stroke-width-2);
+}
+
+:root {
+  --stroke-style-default: solid;
+}
+
+:root {
+  --stroke-color-default: var(--color-tertiary-700);
+}
+
+:root {
+  --radius-xxs: 0rem;
+  --radius-xs: 0.2rem;
+  --radius-sm: 0.4rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 0.8rem;
+  --radius-xl: 1rem;
+  --radius-xxl: 1.2rem;
+  --radius-100: 100%;
+  --radius-full: 999rem;
+}
+
+:root {
+  --shadow-xxs: 0 0.03125em 0.0625em rgb(0 0 0 / 0.0625);
+  --shadow-xs: 0 0.0625em 0.125em rgb(0 0 0 / 0.125);
+  --shadow-sm: 0 0.125em 0.25em rgb(0 0 0 / 0.1875);
+  --shadow-md: 0 0.25em 0.5em rgb(0 0 0 / 0.25);
+  --shadow-lg: 0 0.5em 1em rgb(0 0 0 / 0.3125);
+  --shadow-xl: 0 1em 2em rgb(0 0 0 / 0.375);
+  --shadow-xxl: 0 2em 4em rgb(0 0 0 / 0.4375);
+}
+
+:root {
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-default: ease-in-out;
+}
+
+:root {
+  --color-body: PapayaWhip;
+  --color-body-contra: MidnightBlue;
+  --color-neutral: LightSlateGray;
+}
+
+/* Document
+ * ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ */
+:where(html) {
+  line-height: 1.15; /* 1 */
+}
+
+/* Sections
+ * ========================================================================== */
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Edge, Firefox, and Safari.
+ */
+:where(h1) {
+  font-size: 2em;
+  margin-block-end: 0.67em;
+  margin-block-start: 0.67em;
+}
+
+/* Grouping content
+ * ========================================================================== */
+/**
+ * Remove the margin on nested lists in Chrome, Edge, and Safari.
+ */
+:where(dl, ol, ul) :where(dl, ol, ul) {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Correct the inheritance of border color in Firefox.
+ */
+:where(hr) {
+  box-sizing: content-box; /* 1 */
+  color: inherit; /* 2 */
+  height: 0; /* 1 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+:where(pre) {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+ * ========================================================================== */
+/**
+ * Add the correct text decoration in Safari.
+ */
+:where(abbr[title]) {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+:where(b, strong) {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+:where(code, kbd, samp) {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+:where(small) {
+  font-size: 80%;
+}
+
+/* Tabular data
+ * ========================================================================== */
+/**
+ * 1. Correct table border color in Chrome, Edge, and Safari.
+ * 2. Remove text indentation from table contents in Chrome, Edge, and Safari.
+ */
+:where(table) {
+  border-color: currentColor; /* 1 */
+  text-indent: 0; /* 2 */
+}
+
+/* Forms
+ * ========================================================================== */
+/**
+ * Remove the margin on controls in Safari.
+ */
+:where(button, input, select) {
+  margin: 0;
+}
+
+/**
+ * Remove the inheritance of text transform in Firefox.
+ */
+:where(button) {
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style buttons in iOS and Safari.
+ */
+:where(button, input:is([type=button i], [type=reset i], [type=submit i])) {
+  -webkit-appearance: button;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Edge, and Firefox.
+ */
+:where(progress) {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the inheritance of text transform in Firefox.
+ */
+:where(select) {
+  text-transform: none;
+}
+
+/**
+ * Remove the margin in Firefox and Safari.
+ */
+:where(textarea) {
+  margin: 0;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+:where(input[type=search i]) {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+ */
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style upload buttons in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding of focus outlines in Firefox.
+ */
+:where(button, input:is([type=button i], [type=color i], [type=reset i], [type=submit i]))::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus outline styles unset by the previous rule in Firefox.
+ */
+:where(button, input:is([type=button i], [type=color i], [type=reset i], [type=submit i]))::-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Remove the additional :invalid styles in Firefox.
+ */
+:where(:-moz-ui-invalid) {
+  box-shadow: none;
+}
+
+/* Interactive
+ * ========================================================================== */
+/*
+ * Add the correct styles in Safari.
+ */
+:where(dialog) {
+  background-color: white;
+  border: solid;
+  color: black;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+:where(dialog:not([open])) {
+  display: none;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+:where(summary) {
+  display: list-item;
+}
+
+/*! n’ize.css v0.6.0 | MIT License | github.com/smnscp/n-ize.css */
+/**
+ * ## Document
+ */
+/**
+ * Provide a slot for setting the root line height.
+ */
+:root {
+  line-height: var(--line-root);
+}
+
+/**
+ * Set Box sizing default to border-box.
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/**
+ * 1. Remove the margin in all browsers.
+ * 2. Generic typography.
+ */
+body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: var(--scale-0);
+  line-height: var(--line-0);
+}
+
+/**
+ * ## Sectioning
+ */
+/**
+ * Generic typography for headings.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+}
+
+h1 {
+  font-size: var(--scale-3);
+  line-height: var(--line-3);
+}
+
+h2 {
+  font-size: var(--scale-2);
+  line-height: var(--line-2);
+}
+
+h3 {
+  font-size: var(--scale-1);
+  line-height: var(--line-1);
+}
+
+h4 {
+  font-size: var(--scale-0);
+  line-height: var(--line-0);
+}
+
+h5 {
+  font-size: var(--scale--1);
+  line-height: var(--line--1);
+}
+
+h6 {
+  font-size: var(--scale--2);
+  line-height: var(--line--2);
+}
+
+/**
+ * ## Block-level spacing
+ * Use common block margin to help establishing a baseline grid.
+ * https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/
+ */
+* + :is(h1, h2, h3, h4, h5, h6) {
+  margin-block-start: var(--spacing-heading);
+}
+
+* + :is(article, section) {
+  margin-block-start: var(--spacing-sectioning);
+}
+
+* + :is(p, blockquote, figure, figcaption, pre, menu, dir, hr),
+:not(dd, li, li &gt; details) &gt; * + :is(dl, ol, ul) {
+  margin-block-start: var(--spacing-block);
+}
+
+/**
+ * ## Block-level text content
+ */
+/**
+ * Replace 40px indent.
+ */
+ol,
+ul,
+menu,
+dir {
+  padding-inline-start: var(--spacing-inline);
+}
+
+dd {
+  margin-inline-start: var(--spacing-inline);
+}
+
+blockquote,
+figure {
+  margin-inline: var(--spacing-inline);
+}
+
+/**
+ * Make `hr` line-height neutral, i. e. 0px high.
+ */
+hr {
+  border: none;
+  outline-style: var(--stroke-style-hr, var(--stroke-style-default, solid));
+  outline-width: calc(0.5 * var(--stroke-width-hr, var(--stroke-width-default, 0.125rem)));
+  margin-inline: auto;
+  color: var(--color-hr);
+}
+
+/**
+ * ## Inline text semantics
+ */
+/**
+ * Generic typography for monospaced elements.
+ */
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono);
+}
+
+/**
+ * Set scale-based font size.
+ */
+small,
+sub,
+sup {
+  font-size: var(--scale-smaller);
+}
+
+/**
+ * Prevent certain inline (pseudo) elements from affecting the line height.
+ */
+code,
+kbd,
+samp,
+sub,
+sup,
+small,
+::marker {
+  line-height: 0;
+}
+
+:target {
+  scroll-margin-block-start: var(--length-l3);
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, address, summary, figcaption, caption) {
+  max-inline-size: var(--measure);
+}
+
+* {
+  ---clr-fg: var(---clr-pos);
+  ---clr-bg: var(---clr-neg);
+}</code></pre>
     </div>
   
 
@@ -834,12 +1536,16 @@ This also serves as a reference for your <a href="#variable--custom">custom<span
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">spacing: (
-  literal: (
-    block: &quot;var(--length-l1)&quot;,
-    inline: 4ch,
+      <pre class="hljs-pre"><code class="lang-scss">$cfg: (
+  layout: (
+    spacing: (
+      literal: (
+        block: &quot;var(--length-l1)&quot;,
+        inline: 4ch,
+      ),
+    ),
   ),
-),</code></pre>
+);</code></pre>
     </div>
   
 
@@ -934,11 +1640,15 @@ This also serves as a reference for your <a href="#variable--custom">custom<span
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">measure: (
-  logical: (
-    default: md,
+      <pre class="hljs-pre"><code class="lang-scss">$cfg: (
+  typography: (
+    measure: (
+      logical: (
+        default: md,
+      ),
+    ),
   ),
-),</code></pre>
+);</code></pre>
     </div>
   
 
@@ -1032,12 +1742,18 @@ This also serves as a reference for your <a href="#variable--custom">custom<span
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">radius: (
-  mapped: (
-    domain: mapping.$domain-sizes,
-    function: meta.get-function(&quot;radius&quot;, $module: &quot;mapping&quot;),
+      <pre class="hljs-pre"><code class="lang-scss">@function radius($i) { @return (2 + $i) * 0.5rem; }
+
+$cfg: (
+  ui: (
+    radius: (
+      mapped: (
+        domain: (sm: -1, md: 0, lg: 1),
+        function: get-function(&quot;radius&quot;),
+      ),
+    ),
   ),
-),</code></pre>
+);</code></pre>
     </div>
   
 
@@ -1084,13 +1800,9 @@ This also serves as a reference for your <a href="#variable--custom">custom<span
       
       
       <pre class="hljs-pre"><code class="lang-css">:root {
-  --radius-xxs: 0rem;
-  --radius-xs: .2rem;
-  --radius-sm: .4rem;
-  --radius-md: .6rem;
-  --radius-lg: .8rem;
-  --radius-xl: 1rem;
-  --radius-xxl: 1.2rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
 }</code></pre>
     </div>
   
@@ -2440,6 +3152,698 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
       ),
     )
   );</code></pre>
+    </div>
+  
+
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            css
+          </span>
+
+          
+            <span class='code-description'>
+              compiled
+            </span>
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-css">@charset &quot;UTF-8&quot;;
+:root {
+  --scale-factor: 1.2599210499;
+  --scale--2: 0.6299605249em;
+  --scale--1: 0.793700526em;
+  --scale-0: 1em;
+  --scale-1: 1.2599210499em;
+  --scale-2: 1.587401052em;
+  --scale-3: 2em;
+  --scale-4: 2.5198420998em;
+  --scale-5: 3.1748021039em;
+  --scale-6: 4em;
+  --scale-7: 5.0396841996em;
+  --scale-8: 6.3496042079em;
+  --scale-9: 8em;
+  --scale-smaller: 79.3700525984%;
+  --scale-larger: 125.9921049895%;
+}
+
+:root {
+  --line-root: 1.5;
+  --line-root-abs: 1.5rem;
+  --line--2: 2.381101578;
+  --line--1: 1.8898815748;
+  --line-0: 1.5;
+  --line-1: 1.190550789;
+  --line-2: 1.8898815748;
+  --line-3: 1.5;
+  --line-4: 1.190550789;
+  --line-5: 1.4174111811;
+  --line-6: 1.125;
+  --line-7: 1.190550789;
+  --line-8: 1.1811759843;
+  --line-9: 1.125;
+}
+
+:root {
+  --font-sans: Source Sans Pro, sans-serif;
+  --font-serif: Source Serif Pro, serif;
+  --font-mono: Source Code Pro, monospace;
+  --font-body: var(--font-serif);
+  --font-heading: var(--font-sans);
+  --font-display: var(--font-body);
+}
+
+:root {
+  --weight-regular: 400;
+  --weight-bold: 700;
+  --weight-body: var(--weight-regular);
+  --weight-emphasis: var(--weight-bold);
+  --weight-heading: var(--weight-bold);
+}
+
+:root {
+  --letter-xxs: -0.075em;
+  --letter-xs: -0.05em;
+  --letter-sm: -0.025em;
+  --letter-md: 0em;
+  --letter-lg: 0.025em;
+  --letter-xl: 0.05em;
+  --letter-xxl: 0.075em;
+  --letter-none: var(--letter-md);
+}
+
+:root {
+  --measure-xxs: 25ch;
+  --measure-xs: 36ch;
+  --measure-sm: 49ch;
+  --measure-md: 64ch;
+  --measure-lg: 81ch;
+  --measure-xl: 100ch;
+  --measure-xxl: 121ch;
+  --measure-full: 100%;
+  --measure-inf: unset;
+  --measure-default: var(--measure-md);
+  --measure: var(--measure-default);
+}
+
+:root {
+  --length-2: 0.75rem;
+  --length-l0to1: 0.75rem;
+  --length-3: 1.125rem;
+  --length-l1dim: 1.125rem;
+  --length-4: 1.5rem;
+  --length-l1: 1.5rem;
+  --length-5: 1.875rem;
+  --length-l1aug: 1.875rem;
+  --length-6: 2.25rem;
+  --length-l1to2: 2.25rem;
+  --length-7: 2.625rem;
+  --length-l2dim: 2.625rem;
+  --length-8: 3rem;
+  --length-l2: 3rem;
+  --length-9: 3.375rem;
+  --length-l2aug: 3.375rem;
+  --length-10: 3.75rem;
+  --length-l2to3: 3.75rem;
+  --length-11: 4.125rem;
+  --length-l3dim: 4.125rem;
+  --length-12: 4.5rem;
+  --length-l3: 4.5rem;
+}
+
+:root {
+  --container-xxs: 0rem;
+  --container-xs: 16rem;
+  --container-sm: 32rem;
+  --container-md: 48rem;
+  --container-lg: 64rem;
+  --container-xl: 80rem;
+  --container-xxl: 96rem;
+  --container-page: var(--container-xl);
+}
+
+:root {
+  --spacing-block: var(--length-l1);
+  --spacing-heading: var(--length-l1);
+  --spacing-sectioning: clamp(var(--length-l1), (100vi - var(--container-sm)) / 4, var(--length-l2));
+  --spacing-inline: 4ch;
+  --spacing-inline-small: 0.5ch;
+}
+
+:root {
+  --stroke-width-1: 0.0625rem;
+  --stroke-width-2: 0.125rem;
+  --stroke-width-3: 0.1875rem;
+  --stroke-width-4: 0.25rem;
+  --stroke-width-5: 0.3125rem;
+  --stroke-width-6: 0.375rem;
+  --stroke-width-7: 0.4375rem;
+  --stroke-width-8: 0.5rem;
+  --stroke-width-default: var(--stroke-width-2);
+}
+
+:root {
+  --stroke-style-default: solid;
+}
+
+:root {
+  --stroke-color-default: var(--color-tertiary-700);
+}
+
+:root {
+  --radius-xxs: 0rem;
+  --radius-xs: 0.2rem;
+  --radius-sm: 0.4rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 0.8rem;
+  --radius-xl: 1rem;
+  --radius-xxl: 1.2rem;
+  --radius-100: 100%;
+  --radius-full: 999rem;
+}
+
+:root {
+  --shadow-xxs: 0 0.03125em 0.0625em rgb(0 0 0 / 0.0625);
+  --shadow-xs: 0 0.0625em 0.125em rgb(0 0 0 / 0.125);
+  --shadow-sm: 0 0.125em 0.25em rgb(0 0 0 / 0.1875);
+  --shadow-md: 0 0.25em 0.5em rgb(0 0 0 / 0.25);
+  --shadow-lg: 0 0.5em 1em rgb(0 0 0 / 0.3125);
+  --shadow-xl: 0 1em 2em rgb(0 0 0 / 0.375);
+  --shadow-xxl: 0 2em 4em rgb(0 0 0 / 0.4375);
+}
+
+:root {
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-default: ease-in-out;
+}
+
+:root {
+  --color-grey-0: hsl(215, 21.04%, 98.7%);
+  --color-grey-100: hsl(215, 15.0515%, 97.01819%);
+  --color-grey-200: hsl(215, 10.802%, 90.62432%);
+  --color-grey-300: hsl(215, 8.2915%, 80.65473%);
+  --color-grey-400: hsl(215, 7.52%, 68.24576%);
+  --color-grey-500: hsl(215, 8.4875%, 54.53375%);
+  --color-grey-600: hsl(215, 11.194%, 40.65504%);
+  --color-grey-700: hsl(215, 15.6395%, 27.74597%);
+  --color-grey-800: hsl(215, 21.824%, 16.94288%);
+  --color-grey-900: hsl(215, 29.7475%, 9.38211%);
+  --color-grey-1000: hsl(215, 39.41%, 6.2%);
+  --color-grey: var(--color-grey-500);
+  --color-white: var(--color-grey-0);
+  --color-black: var(--color-grey-1000);
+  --color-red-100: hsl(0, 100%, 94.9619709%);
+  --color-red-300: hsl(0, 95%, 74.9990647%);
+  --color-red-500: hsl(0, 76%, 56.9990625%);
+  --color-red-700: hsl(0, 61%, 47.9994843%);
+  --color-red-900: hsl(0, 50%, 29.3461381%);
+  --color-red: var(--color-red-500);
+  --color-green-100: hsl(145, 90%, 91.5642%);
+  --color-green-300: hsl(145, 60%, 73.2898%);
+  --color-green-500: hsl(145, 46%, 53.865%);
+  --color-green-700: hsl(145, 48%, 33.2898%);
+  --color-green-900: hsl(145, 66%, 11.5642%);
+  --color-green: var(--color-green-500);
+  --color-blue-100: hsl(207, 80.005%, 82.85009%);
+  --color-blue-300: hsl(207, 79.005%, 65.13003%);
+  --color-blue-500: hsl(207, 73.005%, 58.46125%);
+  --color-blue-700: hsl(207, 62.005%, 49.12967%);
+  --color-blue-900: hsl(207, 46.005%, 23.42121%);
+  --color-blue: var(--color-blue-500);
+  --color-pink-100: hsl(332, 97%, 93.66376%);
+  --color-pink-300: hsl(332, 90%, 82.51532%);
+  --color-pink-500: hsl(332, 79%, 70.18%);
+  --color-pink-700: hsl(332, 64%, 51.51508%);
+  --color-pink-900: hsl(332, 45%, 21.37784%);
+  --color-pink: var(--color-pink-500);
+  --color-purple-100: hsl(259, 100%, 88.82983%);
+  --color-purple-300: hsl(259, 81.005%, 74.15621%);
+  --color-purple-500: hsl(259, 59.005%, 63.78875%);
+  --color-purple-700: hsl(259, 50.005%, 49.15609%);
+  --color-purple-900: hsl(259, 54.005%, 21.68687%);
+  --color-purple: var(--color-purple-500);
+  --color-teal-100: hsl(176, 92%, 88.68579%);
+  --color-teal-300: hsl(176, 67%, 68.00733%);
+  --color-teal-500: hsl(176, 52%, 49.35375%);
+  --color-teal-700: hsl(176, 47%, 31.01097%);
+  --color-teal-900: hsl(176, 52%, 11.26491%);
+  --color-teal: var(--color-teal-500);
+  --color-yellow-100: hsl(46, 100%, 88.76773%);
+  --color-yellow-300: hsl(46, 92.005%, 74.25131%);
+  --color-yellow-500: hsl(46, 81.005%, 63.93625%);
+  --color-yellow-700: hsl(46, 67.005%, 49.25119%);
+  --color-yellow-900: hsl(46, 50.005%, 21.62477%);
+  --color-yellow: var(--color-yellow-500);
+  --color-orange-100: hsl(28, 100%, 89.15954%);
+  --color-orange-300: hsl(28, 93%, 73.87218%);
+  --color-orange-500: hsl(28, 84%, 62.2525%);
+  --color-orange-700: hsl(28, 75%, 46.87202%);
+  --color-orange-900: hsl(28, 66%, 20.30226%);
+  --color-orange: var(--color-orange-500);
+  --color-brown-100: hsl(15, 0%, 80.85834%);
+  --color-brown-300: hsl(15, 14.995%, 54.94338%);
+  --color-brown-500: hsl(15, 24.995%, 39.7825%);
+  --color-brown-700: hsl(15, 25.995%, 27.94722%);
+  --color-brown-900: hsl(15, 17.995%, 12.00906%);
+  --color-brown: var(--color-brown-500);
+}
+
+/* Document
+ * ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ */
+:where(html) {
+  line-height: 1.15; /* 1 */
+}
+
+/* Sections
+ * ========================================================================== */
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Edge, Firefox, and Safari.
+ */
+:where(h1) {
+  font-size: 2em;
+  margin-block-end: 0.67em;
+  margin-block-start: 0.67em;
+}
+
+/* Grouping content
+ * ========================================================================== */
+/**
+ * Remove the margin on nested lists in Chrome, Edge, and Safari.
+ */
+:where(dl, ol, ul) :where(dl, ol, ul) {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Correct the inheritance of border color in Firefox.
+ */
+:where(hr) {
+  box-sizing: content-box; /* 1 */
+  color: inherit; /* 2 */
+  height: 0; /* 1 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+:where(pre) {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+ * ========================================================================== */
+/**
+ * Add the correct text decoration in Safari.
+ */
+:where(abbr[title]) {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+:where(b, strong) {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+:where(code, kbd, samp) {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+:where(small) {
+  font-size: 80%;
+}
+
+/* Tabular data
+ * ========================================================================== */
+/**
+ * 1. Correct table border color in Chrome, Edge, and Safari.
+ * 2. Remove text indentation from table contents in Chrome, Edge, and Safari.
+ */
+:where(table) {
+  border-color: currentColor; /* 1 */
+  text-indent: 0; /* 2 */
+}
+
+/* Forms
+ * ========================================================================== */
+/**
+ * Remove the margin on controls in Safari.
+ */
+:where(button, input, select) {
+  margin: 0;
+}
+
+/**
+ * Remove the inheritance of text transform in Firefox.
+ */
+:where(button) {
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style buttons in iOS and Safari.
+ */
+:where(button, input:is([type=button i], [type=reset i], [type=submit i])) {
+  -webkit-appearance: button;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Edge, and Firefox.
+ */
+:where(progress) {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the inheritance of text transform in Firefox.
+ */
+:where(select) {
+  text-transform: none;
+}
+
+/**
+ * Remove the margin in Firefox and Safari.
+ */
+:where(textarea) {
+  margin: 0;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+:where(input[type=search i]) {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+ */
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style upload buttons in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding of focus outlines in Firefox.
+ */
+:where(button, input:is([type=button i], [type=color i], [type=reset i], [type=submit i]))::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus outline styles unset by the previous rule in Firefox.
+ */
+:where(button, input:is([type=button i], [type=color i], [type=reset i], [type=submit i]))::-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Remove the additional :invalid styles in Firefox.
+ */
+:where(:-moz-ui-invalid) {
+  box-shadow: none;
+}
+
+/* Interactive
+ * ========================================================================== */
+/*
+ * Add the correct styles in Safari.
+ */
+:where(dialog) {
+  background-color: white;
+  border: solid;
+  color: black;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+:where(dialog:not([open])) {
+  display: none;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+:where(summary) {
+  display: list-item;
+}
+
+/*! n’ize.css v0.6.0 | MIT License | github.com/smnscp/n-ize.css */
+/**
+ * ## Document
+ */
+/**
+ * Provide a slot for setting the root line height.
+ */
+:root {
+  line-height: var(--line-root);
+}
+
+/**
+ * Set Box sizing default to border-box.
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/**
+ * 1. Remove the margin in all browsers.
+ * 2. Generic typography.
+ */
+body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: var(--scale-0);
+  line-height: var(--line-0);
+}
+
+/**
+ * ## Sectioning
+ */
+/**
+ * Generic typography for headings.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+}
+
+h1 {
+  font-size: var(--scale-3);
+  line-height: var(--line-3);
+}
+
+h2 {
+  font-size: var(--scale-2);
+  line-height: var(--line-2);
+}
+
+h3 {
+  font-size: var(--scale-1);
+  line-height: var(--line-1);
+}
+
+h4 {
+  font-size: var(--scale-0);
+  line-height: var(--line-0);
+}
+
+h5 {
+  font-size: var(--scale--1);
+  line-height: var(--line--1);
+}
+
+h6 {
+  font-size: var(--scale--2);
+  line-height: var(--line--2);
+}
+
+/**
+ * ## Block-level spacing
+ * Use common block margin to help establishing a baseline grid.
+ * https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/
+ */
+* + :is(h1, h2, h3, h4, h5, h6) {
+  margin-block-start: var(--spacing-heading);
+}
+
+* + :is(article, section) {
+  margin-block-start: var(--spacing-sectioning);
+}
+
+* + :is(p, blockquote, figure, figcaption, pre, menu, dir, hr),
+:not(dd, li, li &gt; details) &gt; * + :is(dl, ol, ul) {
+  margin-block-start: var(--spacing-block);
+}
+
+/**
+ * ## Block-level text content
+ */
+/**
+ * Replace 40px indent.
+ */
+ol,
+ul,
+menu,
+dir {
+  padding-inline-start: var(--spacing-inline);
+}
+
+dd {
+  margin-inline-start: var(--spacing-inline);
+}
+
+blockquote,
+figure {
+  margin-inline: var(--spacing-inline);
+}
+
+/**
+ * Make `hr` line-height neutral, i. e. 0px high.
+ */
+hr {
+  border: none;
+  outline-style: var(--stroke-style-hr, var(--stroke-style-default, solid));
+  outline-width: calc(0.5 * var(--stroke-width-hr, var(--stroke-width-default, 0.125rem)));
+  margin-inline: auto;
+  color: var(--color-hr);
+}
+
+/**
+ * ## Inline text semantics
+ */
+/**
+ * Generic typography for monospaced elements.
+ */
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono);
+}
+
+/**
+ * Set scale-based font size.
+ */
+small,
+sub,
+sup {
+  font-size: var(--scale-smaller);
+}
+
+/**
+ * Prevent certain inline (pseudo) elements from affecting the line height.
+ */
+code,
+kbd,
+samp,
+sub,
+sup,
+small,
+::marker {
+  line-height: 0;
+}
+
+:target {
+  scroll-margin-block-start: var(--length-l3);
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, address, summary, figcaption, caption) {
+  max-inline-size: var(--measure);
+}
+
+* {
+  ---clr-fg: var(---clr-pos);
+  ---clr-bg: var(---clr-neg);
+}</code></pre>
     </div>
   
 
