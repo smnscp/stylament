@@ -21,7 +21,7 @@
   --#{$prefix}-factor: #{$factor};
 
   @for $i from $min through $max {
-    --#{$prefix}-#{$i}: #{scale.modular($base, $factor, $i)};
+    --#{$prefix}-#{$i}: #{scale.modular($i, $base, $factor)};
   }
 
   --#{$prefix}-smaller: #{math.div(100%, $factor)};

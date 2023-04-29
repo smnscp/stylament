@@ -39,7 +39,7 @@ $rlh: $-line-root * $-scale-base-rem;
   --line-root-abs: #{$rlh};
 
   @for $i from $-scale-min through $-scale-max {
-    $font-size: scale.modular($-scale-base, $-scale-factor, $i);
+    $font-size: scale.modular($i, $-scale-base, $-scale-factor);
     --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $-line-min, $-line-sub)};
   }
 }

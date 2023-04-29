@@ -7,10 +7,10 @@
 
 /// Modular scale at a given level.
 ///
+/// @param {Number} $level Level on the scale.
 /// @param {Number<rem>} $base Base font size of the scale.
 /// @param {Number} $factor Factor between adjacent steps of the modular scale.
-/// @param {Number} $level Level on the scale.
 /// @return {Number<rem>} Font size at the given scale level.
-@function modular($base, $factor, $level) {
+@function modular($level, $base, $factor) {
   @return math.pow($factor, $level) * $base;
 }
