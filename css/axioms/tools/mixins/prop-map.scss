@@ -7,10 +7,10 @@
 
 /// List CSS custom properties.
 ///
-/// @param {Map} $properties Map of properties with simple literal values.
 /// @param {String} $prefix Property name prefix.
+/// @param {Map} $properties Map of properties with simple literal values.
 /// @output A list of `--<prefix>-*` custom properties with their respective values.
-@mixin literal-properties($properties, $prefix) {
+@mixin literal-properties($prefix, $properties) {
   @if $properties {
     @each $name, $value in $properties {
       --#{$prefix}-#{$name}: #{$value};
@@ -20,11 +20,19 @@
 
 /// Map CSS custom properties via a given function.
 ///
-/// @param {Map} $domain Map of inouts to the mapping function.
 /// @param {String} $prefix Property name prefix.
+/// @param {Map} $domain Map of inouts to the mapping function.
+/// @param {Map} $range Range limiting the domain.
 /// @param {Function} $func Mapping function.
+/// @param {Map} $params Parameters to the function.
 /// @output A list of `--<prefix>-*` custom properties with their respective calculated values.
-@mixin mapped-properties($domain, $prefix, $func) {
+@mixin mapped-properties(
+  $prefix,
+  $domain: null,
+  $range: null,
+  $func: null,
+  $params: null
+) {
   @if $domain and $func {
     @each $name, $arg in $domain {
       --#{$prefix}-#{$name}: #{meta.call($func, $arg)};
@@ -34,10 +42,10 @@
 
 /// Map logical to basic CSS custom properties.
 ///
-/// @param {Map} $properties Map of logical properties.
 /// @param {String} $prefix Property name prefix.
+/// @param {Map} $properties Map of logical properties.
 /// @output A list of `--<prefix>-*` custom properties referring to others.
-@mixin logical-properties($properties, $prefix) {
+@mixin logical-properties($prefix, $properties) {
   @if $properties {
     @each $name, $alias in $properties {
       --#{$prefix}-#{$name}: var(--#{$prefix}-#{$alias});
@@ -47,17 +55,19 @@
 
 /// Generate all configured CSS custom properties.
 ///
-/// @param {Map} $conf Configuration map for this set of properties.
 /// @param {String} $prefix Property name prefix.
+/// @param {Map} $conf Configuration map for this set of properties.
 /// @output A list of mapped, literal, and logical `--<prefix>-*` custom properties.
-@mixin configured-properties($conf, $prefix) {
+@mixin configured-properties($prefix, $conf) {
   @if $conf {
     @include mapped-properties(
-      map.get($conf, mapped, domain),
       $prefix,
-      map.get($conf, mapped, function)
+      map.get($conf, mapped, domain),
+      map.get($conf, mapped, range),
+      map.get($conf, mapped, function),
+      map.get($conf, mapped, params)
     );
-    @include literal-properties(map.get($conf, literal), $prefix);
-    @include logical-properties(map.get($conf, logical), $prefix);
+    @include literal-properties($prefix, map.get($conf, literal));
+    @include logical-properties($prefix, map.get($conf, logical));
   }
 }

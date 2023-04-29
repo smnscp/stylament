@@ -10,7 +10,7 @@
 /// @requires $merged
 :root {
   @include prop-map.configured-properties(
-    map.get(cfg.$merged, ui, radius),
-    "radius"
+    "radius",
+    map.get(cfg.$merged, ui, radius)
   );
 }

@@ -23,5 +23,5 @@ $sizes: map2.map-config($-conf);
 /// @name Container Size Scale
 /// @requires $merged
 :root {
-  @include prop-map.configured-properties($-conf, "container");
+  @include prop-map.configured-properties("container", $-conf);
 }

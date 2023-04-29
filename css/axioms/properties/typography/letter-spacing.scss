@@ -10,7 +10,7 @@
 /// @requires $merged
 :root {
   @include prop-map.configured-properties(
-    map.get(cfg.$merged, typography, letter-spacing),
-    "letter"
+    "letter",
+    map.get(cfg.$merged, typography, letter-spacing)
   );
 }

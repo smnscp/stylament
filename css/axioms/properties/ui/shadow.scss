@@ -10,7 +10,7 @@
 /// @requires $merged
 :root {
   @include prop-map.configured-properties(
-    map.get(cfg.$merged, ui, shadow),
-    "shadow"
+    "shadow",
+    map.get(cfg.$merged, ui, shadow)
   );
 }

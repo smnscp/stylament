@@ -12,8 +12,8 @@
 /// @link http://webtypography.net/2.1.2 Web Typography
 :root {
   @include prop-map.configured-properties(
-    map.get(cfg.$merged, typography, measure),
-    "measure"
+    "measure",
+    map.get(cfg.$merged, typography, measure)
   );
 
   --measure: var(--measure-default);

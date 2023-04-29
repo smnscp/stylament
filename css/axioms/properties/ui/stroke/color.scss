@@ -13,7 +13,7 @@
 /// @requires $merged
 :root {
   @include prop-map.configured-properties(
-    map.get(cfg.$merged, ui, stroke, color),
-    "stroke-color"
+    "stroke-color",
+    map.get(cfg.$merged, ui, stroke, color)
   );
 }

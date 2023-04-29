@@ -26,5 +26,5 @@
     );
   }
 
-  @include prop-map.configured-properties($conf, $prefix);
+  @include prop-map.configured-properties($prefix, $conf);
 }
