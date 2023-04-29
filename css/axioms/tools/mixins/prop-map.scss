@@ -2,6 +2,7 @@
 /// @group ax-tools
 ////
 
+@use "sass:list";
 @use "sass:map";
 @use "sass:meta";
 
@@ -16,6 +17,32 @@
       --#{$prefix}-#{$name}: #{$value};
     }
   }
+}
+
+@function -identity($x...) {
+  @return $x;
+}
+
+@function -make-domain($base, $range) {
+  $step: if(map.has-key($range, step), map.get($range, step), 1);
+  $start: if(map.has-key($range, start), map.get($range, start), 1);
+  $end: if(
+    map.has-key($range, end),
+    map.get($range, end),
+    if($base, list.length($base), 7)
+  );
+  $result: ();
+
+  $current: $start;
+  @while $current <= $end {
+    // Pick current key-value pair from the given domain or from ℤ → ℤ
+    $pair: if($base, list.nth($base, $current), "" + $current $current);
+    $result: map.set($result, $pair...);
+
+    $current: $current + $step;
+  }
+
+  @return $result;
 }
 
 /// Map CSS custom properties via a given function.
@@ -33,9 +60,16 @@
   $func: null,
   $params: null
 ) {
-  @if $domain and $func {
+  $func: if($func, $func, meta.get-function("-identity"));
+  $domain: if($range, -make-domain($domain, $range), $domain);
+
+  @if $domain {
     @each $name, $arg in $domain {
-      --#{$prefix}-#{$name}: #{meta.call($func, $arg)};
+      --#{$prefix}-#{$name}: #{if(
+          $params,
+          meta.call($func, $arg, $params...),
+          meta.call($func, $arg)
+        )};
     }
   }
 }
