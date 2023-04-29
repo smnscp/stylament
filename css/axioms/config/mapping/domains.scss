@@ -19,11 +19,37 @@
 ///   --shadow-xxl: …;
 ///
 $sizes: (
-  xxs: -3,
-  xs: -2,
-  sm: -1,
-  md: 0,
-  lg: 1,
-  xl: 2,
-  xxl: 3,
+  "xxs": -3,
+  "xs": -2,
+  "sm": -1,
+  "md": 0,
+  "lg": 1,
+  "xl": 2,
+  "xxl": 3,
+);
+
+/// Map of font weights.
+/// Used as default domain for font weight properties.
+///
+/// @example css - Complete map of commonly use font weights.
+///   --weight-thin: 100;
+///   --weight-extralight: 200;
+///   --weight-light: 300;
+///   --weight-regular: 400;
+///   --weight-book: 500;
+///   --weight-medium: 600;
+///   --weight-bold: 700;
+///   --weight-black: 800;
+///   --weight-ultra: 900;
+///
+$font-weights: (
+  "thin": 100,
+  "extralight": 200,
+  "light": 300,
+  "regular": 400,
+  "book": 500,
+  "medium": 600,
+  "bold": 700,
+  "black": 800,
+  "ultra": 900,
 );

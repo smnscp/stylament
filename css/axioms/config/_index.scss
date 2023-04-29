@@ -143,9 +143,8 @@ $default: (
       ),
     ),
     font-weight: (
-      literal: (
-        regular: 400,
-        bold: 700,
+      mapped: (
+        domain: mapping.$domain-font-weights,
       ),
       logical: (
         body: "regular",

@@ -2,6 +2,17 @@
 @use "axioms/config/color/logical";
 @use "axioms" with (
   $config-custom: (
+    typography: (
+      font-weight: (
+        mapped: (
+          range: (
+            start: 4,
+            end: 7,
+            step: 3,
+          ),
+        ),
+      ),
+    ),
     color: (
       palettes: brand.$palettes,
       logical: logical.$mapping,
