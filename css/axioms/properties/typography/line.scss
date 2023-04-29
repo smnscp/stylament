@@ -8,38 +8,30 @@
 @use "../../tools/functions/scale";
 @use "../../tools/functions/rhythm";
 
-$-scale-base: map.get(cfg.$merged, typography, scale, base);
-$-scale-factor: map.get(cfg.$merged, typography, scale, factor);
-$-scale-min: map.get(cfg.$merged, typography, scale, min);
-$-scale-max: map.get(cfg.$merged, typography, scale, max);
-
-$-line-min: map.get(cfg.$merged, typography, line, min);
-$-line-root: map.get(cfg.$merged, typography, line, root);
-$-line-sub: map.get(cfg.$merged, typography, line, sub);
-
-$-base-unit: math.unit($-scale-base);
-$-scale-base-rem: if(
-  $-base-unit == "em",
-  $-scale-base * math.div(1rem, 1em),
-  if($-base-unit == "%", $-scale-base * math.div(1rem, 100%), $-scale-base)
-);
-
-/// Root line height.
-/// @type Number<rem>
-/// @see Line Heights
-/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/length#rlh “rlh”: experimental CSS unit.
-$rlh: $-line-root * $-scale-base-rem;
-
 /// Line heights supporting the vertical rhythm at every step of the scale.
 /// @name Line Heights
 /// @requires $merged
+/// @requires $derived
 /// @link https://drewish.com/tools/vertical-rhythm/ Vertical rhythm calculation tool
 :root {
-  --line-root: #{$-line-root};
+  $scale: map.get(cfg.$merged, typography, scale);
+  $line: map.get(cfg.$merged, typography, line);
+  $rlh: map.get(cfg.$derived, typography, rlh);
+
+  --line-root: #{map.get($line, root)};
   --line-root-abs: #{$rlh};
 
-  @for $i from $-scale-min through $-scale-max {
-    $font-size: scale.modular($i, $-scale-base, $-scale-factor);
-    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $-line-min, $-line-sub)};
+  @for $i from map.get($scale, min) through map.get($scale, max) {
+    $font-size: scale.modular(
+      $i,
+      map.get($scale, base),
+      map.get($scale, factor)
+    );
+    --line-#{$i}: #{rhythm.grid-line(
+        $font-size,
+        $rlh,
+        map.get($line, min),
+        map.get($line, sub)
+      )};
   }
 }

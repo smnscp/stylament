@@ -4,16 +4,16 @@
 
 @use "sass:map";
 @use "../../config" as cfg;
-@use "../typography/line";
 @use "../../tools/mixins/scale";
 
 /// @name Length Scale
 /// @requires $merged
-/// @requires $rlh
+/// @requires $derived
 :root {
   $min: map.get(cfg.$merged, layout, length, min);
   $max: map.get(cfg.$merged, layout, length, max);
   $line: map.get(cfg.$merged, layout, length, line);
+  $rlh: map.get(cfg.$derived, typography, rlh);
 
-  @include scale.length($min, $max, line.$rlh, $line);
+  @include scale.length($min, $max, $rlh, $line);
 }

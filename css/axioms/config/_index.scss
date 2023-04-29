@@ -17,6 +17,7 @@
 @use "sass:math";
 @use "sass:meta";
 @use "mapping";
+@use "implicit";
 
 /// Configuration to be injected by consumers.
 /// This map is defined by passing `$config-custom` to Stylament.
@@ -244,3 +245,14 @@ $default: (
 /// @requires $default
 /// @requires $custom
 $merged: map.deep-merge($default, $custom);
+
+/// Map of derived configuration values.
+/// @type Map
+/// @prop {Number<rem>} typography.rlh Root line height.
+/// Absolute value mimicking the experimental CSS unit [`rlh`][mdn:rlh].
+///
+/// [mdn:rlh]: https://developer.mozilla.org/en-US/docs/Web/CSS/length#rlh
+/// @prop {Unit} typography.scale.base-unit Base unit of the typographical scale.
+/// @prop {Number<rem>} typography.scale.base-rem Base of the typographical scale in `rem`.
+/// @requires derive
+$derived: implicit.derive($merged);
