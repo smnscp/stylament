@@ -21,11 +21,14 @@
   --line-root: #{map.get($line, root)};
   --line-root-abs: #{$rlh};
 
-  @for $i from map.get($scale, min) through map.get($scale, max) {
+  @for $i
+    from map.get($scale, mapped, range, start)
+    through map.get($scale, mapped, range, end)
+  {
     $font-size: graph.exponential(
       $i,
-      map.get($scale, factor),
-      map.get($scale, base)
+      map.get($scale, mapped, params, base),
+      map.get($scale, mapped, params, coefficient)
     );
     --line-#{$i}: #{rhythm.grid-line(
         $font-size,

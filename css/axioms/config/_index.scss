@@ -18,6 +18,11 @@
 @use "sass:meta";
 @use "mapping";
 @use "implicit";
+@use "../tools/functions/graph";
+
+/// Factor for the modular type scale.
+/// @link https://www.modularscale.com/?1&em&2@3 Major third, equal-tempered: ∛2 ≅ 1.26
+$scale-factor: math.pow(2, math.div(1, 3));
 
 /// Configuration to be injected by consumers.
 /// This map is defined by passing `$config-custom` to Stylament.
@@ -180,14 +185,22 @@ $default: (
       ),
     ),
     scale: (
-      min: -2,
-      max: 9,
-      base: 1em,
-      // Major third, equal-tempered: ∛2 ≅ 1.26
-      // https://www.modularscale.com/?1&em&2@3
-      factor: math.pow(2, math.div(1, 3)),
-      literal: (),
-      logical: (),
+      mapped: (
+        range: (
+          start: -2,
+          end: 9,
+        ),
+        function: meta.get-function("exponential", $module: "graph"),
+        params: (
+          base: $scale-factor,
+          coefficient: 1em,
+        ),
+      ),
+      literal: (
+        factor: $scale-factor,
+        smaller: math.div(100%, $scale-factor),
+        larger: 100% * $scale-factor,
+      ),
     ),
   ),
   ui: (

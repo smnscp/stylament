@@ -9,7 +9,7 @@
 /// @param {Map} $base Base configuration.
 /// @return {Map} Derived configuration values.
 @function derive($base) {
-  $scale-base: map.get($base, typography, scale, base);
+  $scale-base: map.get($base, typography, scale, mapped, params, coefficient);
   $line-root: map.get($base, typography, line, root);
 
   $base-unit: math.unit($scale-base);
@@ -23,6 +23,7 @@
     typography: (
       rlh: $line-root * $base-rem,
       scale: (
+        base: $scale-base,
         base-unit: $base-unit,
         base-rem: $base-rem,
       ),

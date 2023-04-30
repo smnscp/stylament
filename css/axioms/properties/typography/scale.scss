@@ -3,29 +3,14 @@
 ////
 
 @use "sass:map";
-@use "sass:math";
 @use "../../config" as cfg;
-@use "../../tools/functions/graph";
 @use "../../tools/mixins/prop-map";
 
 /// @name Modular Font Size Scale
 /// @requires $merged
 :root {
-  $conf: map.get(cfg.$merged, typography, scale);
-  $base: map.get($conf, base);
-  $factor: map.get($conf, factor);
-  $min: map.get($conf, min);
-  $max: map.get($conf, max);
-  $prefix: "scale";
-
-  --#{$prefix}-factor: #{$factor};
-
-  @for $i from $min through $max {
-    --#{$prefix}-#{$i}: #{graph.exponential($i, $factor, $base)};
-  }
-
-  --#{$prefix}-smaller: #{math.div(100%, $factor)};
-  --#{$prefix}-larger: #{100% * $factor};
-
-  @include prop-map.configured-properties($prefix, $conf);
+  @include prop-map.configured-properties(
+    "scale",
+    map.get(cfg.$merged, typography, scale)
+  );
 }
