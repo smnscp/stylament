@@ -7,8 +7,8 @@ groups:
     ax-intro: … Introduction
     ax-config: Global Configuration
     ax-tools: Preprocessing Tools
-    ax-properties: Custom Properties
-    ax-generic: Generic Rules
+    ax-properties: CSS Custom Properties
+    ax-generic: Generic CSS
   Elements:
     el-intro: … Introduction
     el-document: Document-level Elements
