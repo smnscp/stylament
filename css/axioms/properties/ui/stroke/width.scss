@@ -3,23 +3,15 @@
 ////
 
 @use "sass:map";
-@use "sass:math";
 @use "../../../config" as cfg;
 @use "../../mixins" as props;
 
-/// A scale of stroke widths with a given number of units per root line.
+/// A scale of stroke widths.
 /// @name Stroke Width Scale
 /// @requires $merged
-/// @requires $derived
 :root {
-  $conf: map.get(cfg.$merged, ui, stroke, width);
-  $rlh: map.get(cfg.$derived, typography, rlh);
-
-  $prefix: "stroke-width";
-
-  @for $i from map.get($conf, min) through map.get($conf, max) {
-    --#{$prefix}-#{$i}: #{$rlh * math.div($i, map.get($conf, line))};
-  }
-
-  @include props.configured-properties($prefix, $conf);
+  @include props.configured-properties(
+    "stroke-width",
+    map.get(cfg.$merged, ui, stroke, width)
+  );
 }
