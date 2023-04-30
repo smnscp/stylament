@@ -1,5 +1,5 @@
 ////
-/// @group ax-tools
+/// @group ax-properties
 ////
 
 @use "sass:math";
@@ -36,7 +36,7 @@
 ///   --length-l2: 3rem;
 ///   /* … */
 ///   ```
-@mixin length($start, $end, $basis, $sub) {
+@mixin length-scale($start, $end, $basis, $sub) {
   @for $i from $start through $end {
     $ratio: math.div($i, $sub);
     $value: $basis * $ratio;

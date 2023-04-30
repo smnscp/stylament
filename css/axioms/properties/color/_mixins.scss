@@ -1,12 +1,12 @@
 ////
-/// @group ax-tools
+/// @group ax-properties
 ////
 
 @use "sass:list";
 @use "sass:map";
 @use "sass:math";
-@use "../arithmetic/function";
-@use "../geometry/parametric-curves/bézier";
+@use "../../tools/arithmetic/function";
+@use "../../tools/geometry/parametric-curves/bézier";
 
 /// Generate a color palette for a given hue.
 /// @param {String} $name The color name.

@@ -5,7 +5,7 @@
 @use "sass:map";
 @use "../../config" as cfg;
 @use "../../tools/data/map2";
-@use "../../tools/mixins/prop-map";
+@use "../mixins" as props;
 
 $-conf: map.get(cfg.$merged, layout, container);
 
@@ -23,5 +23,5 @@ $sizes: map2.map-config($-conf);
 /// @name Container Size Scale
 /// @requires $merged
 :root {
-  @include prop-map.configured-properties("container", $-conf);
+  @include props.configured-properties("container", $-conf);
 }

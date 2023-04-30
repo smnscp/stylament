@@ -6,7 +6,7 @@
 ///
 /// Rather opinonated styling for the first `nav.e-menu`.
 
-@use "../../../axioms/tools/mixins/coloring";
+@use "../../../axioms/generic/mixins/coloring";
 
 /// The  first `nav.e-menu` is implicitly considered the main menu.
 body > nav.e-menu:first-of-type {
