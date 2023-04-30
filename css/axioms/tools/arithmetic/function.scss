@@ -1,0 +1,34 @@
+////
+/// @group ax-tools
+////
+
+@use "sass:math";
+
+/// ### Mathematical Functions
+///
+/// These `@function`s represent well-known classes of mathematical functions.
+/// All parameters other than the first one define the concrete mathematical function,
+/// while the first parameter always is the argument to that function instance.
+
+/// Polynomial function (`f(x) = c₀ + c₁x + c₂x² + … = ∑cᵢxⁱ`).
+/// @param {Number} $x The argument to the function.
+/// @param {List} $coefficients The coefficients of the polynomial.
+/// @return {Number} The function value at $x.
+@function polynomial($x, $coefficients...) {
+  $sum: 0;
+  $pow: 1;
+  @each $co in $coefficients {
+    $sum: $sum + $co * $pow;
+    $pow: $pow * $x;
+  }
+  @return $sum;
+}
+
+/// Exponential function (`f(x) = abˣ`).
+/// @param {Number} $exponent The exponent (`x`).
+/// @param {Number} $base The base (`b`).
+/// @param {Number} $coefficient The coefficient (`a`).
+/// @return {Number} The coefficient times the base to the power of the exponent (`abˣ`).
+@function exponential($exponent, $base, $coefficient) {
+  @return math.pow($base, $exponent) * $coefficient;
+}

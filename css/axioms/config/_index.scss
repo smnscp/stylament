@@ -18,7 +18,7 @@
 @use "sass:meta";
 @use "mapping";
 @use "implicit";
-@use "../tools/functions/graph";
+@use "../tools/arithmetic/function";
 
 /// Factor for the modular type scale.
 /// @link https://www.modularscale.com/?1&em&2@3 Major third, equal-tempered: ∛2 ≅ 1.26
@@ -190,7 +190,7 @@ $default: (
           start: -2,
           end: 9,
         ),
-        function: meta.get-function("exponential", $module: "graph"),
+        function: meta.get-function("exponential", $module: "function"),
         params: (
           base: $scale-factor,
           coefficient: 1em,

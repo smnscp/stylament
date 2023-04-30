@@ -32,7 +32,7 @@ _Stylament_ is a system of layers, similar to [ITCSS](https://www.creativebloq.c
   - Config
   - Preprocessing Tools
   - CSS Custom Properties
-  - Generic Rules
+  - Generic CSS
 - [Elements](el-intro.html)
 - [Idioms](id-intro.html)
 - [Objects](ob-intro.html)

@@ -5,8 +5,8 @@
 @use "sass:map";
 @use "sass:math";
 @use "../../config" as cfg;
-@use "../../tools/functions/graph";
-@use "../../tools/functions/rhythm";
+@use "../../tools/arithmetic/function";
+@use "../../tools/typography/rhythm";
 
 /// Line heights supporting the vertical rhythm at every step of the scale.
 /// @name Line Heights
@@ -25,7 +25,7 @@
     from map.get($scale, mapped, range, start)
     through map.get($scale, mapped, range, end)
   {
-    $font-size: graph.exponential(
+    $font-size: function.exponential(
       $i,
       map.get($scale, mapped, params, base),
       map.get($scale, mapped, params, coefficient)

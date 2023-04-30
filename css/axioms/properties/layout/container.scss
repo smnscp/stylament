@@ -4,7 +4,7 @@
 
 @use "sass:map";
 @use "../../config" as cfg;
-@use "../../tools/functions/map2";
+@use "../../tools/data/map2";
 @use "../../tools/mixins/prop-map";
 
 $-conf: map.get(cfg.$merged, layout, container);

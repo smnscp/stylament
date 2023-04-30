@@ -5,7 +5,8 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:math";
-@use "../functions/graph";
+@use "../arithmetic/function";
+@use "../geometry/parametric-curves/bézier";
 
 /// Generate a color palette for a given hue.
 /// @param {String} $name The color name.
@@ -49,12 +50,12 @@
     $saturation: 0;
     $lightness: 0;
     @if $sl-curve {
-      $sl: graph.cubic-bezier-2d($current, $sl-curve...);
+      $sl: bézier.cubic-2d($current, $sl-curve...);
       $saturation: 100% * list.nth($sl, 1);
       $lightness: 100% * list.nth($sl, 2);
     } @else {
-      $saturation: 100% * graph.polynomial($current, $s-curve...);
-      $lightness: 100% * graph.polynomial($current, $l-curve...);
+      $saturation: 100% * function.polynomial($current, $s-curve...);
+      $lightness: 100% * function.polynomial($current, $l-curve...);
     }
     --#{$prefix}-#{$name}-#{math.round(1000 * $current)}: #{hsl(
         $hue,

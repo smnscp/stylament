@@ -1,0 +1,39 @@
+////
+/// @group ax-tools
+////
+
+/// #### Bézier Curves
+///
+/// @link https://en.wikipedia.org/wiki/B%C3%A9zier_curve Wikipedia
+
+@use "sass:math";
+
+/// Cubic Bézier curve, 1-dimensional.
+/// @param {Number} $t The argument to the curve.
+/// @param {Number} $p0 First control point, P0.
+/// @param {Number} $p1 Second control point, P1.
+/// @param {Number} $p2 Third control point, P2.
+/// @param {Number} $p3 Fourth control point, P3.
+/// @return {Number} The curve value at $t.
+@function cubic($t, $p0, $p1, $p2, $p3) {
+  @return math.pow((1 - $t), 3) * $p0 + 3 * math.pow((1 - $t), 2) * $t * $p1 + 3 *
+    (1 - $t) * math.pow($t, 2) * $p2 + math.pow($t, 3) * $p3;
+}
+
+/// Cubic Bézier curve, 2-dimensional.
+/// @param {Number} $t The argument to the curve.
+/// @param {Number} $x0 Abscissa of first control point, P0.
+/// @param {Number} $y0 Ordinate of first control point, P0.
+/// @param {Number} $x1 Abscissa of second control point, P1.
+/// @param {Number} $y1 Ordinate of second control point, P1.
+/// @param {Number} $x2 Abscissa of third control point, P2.
+/// @param {Number} $y2 Ordinate of third control point, P2.
+/// @param {Number} $x3 Abscissa of fourth control point, P3.
+/// @param {Number} $y3 Ordinate of fourth control point, P3.
+/// @return {Number} The curve value at $t.
+@function cubic-2d($t, $x0, $y0, $x1, $y1, $x2, $y2, $x3, $y3) {
+  @return (
+    cubic($t, $x0, $x1, $x2, $x3),
+    cubic($t, $y0, $y1, $y2, $y3)
+  );
+}
