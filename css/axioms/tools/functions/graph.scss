@@ -18,6 +18,15 @@
   @return $sum;
 }
 
+/// Exponential function.
+/// @param {Number} $exponent The exponent.
+/// @param {Number} $base The base.
+/// @param {Number} $coefficient The coefficient.
+/// @return {Number} The coefficient times the base to the power of the exponent.
+@function exponential($exponent, $base, $coefficient) {
+  @return math.pow($base, $exponent) * $coefficient;
+}
+
 /// Cubic Bézier function, 1-dimensional.
 /// @param {Number} $t The argument to the function.
 /// @param {Number} $p0 First control point, P0.
