@@ -13,7 +13,7 @@
 /// @param {Function} $func Mapping function.
 /// @param {Number} $arg The argument to the function.
 /// @param {Map} $params [null] Parameters to the function.
-/// @return The return value of the function call.
+/// @return {*} The return value of the function call.
 @function call-conditional($func, $arg, $params: null) {
   @return if(
     $params,
