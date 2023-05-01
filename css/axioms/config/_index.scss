@@ -17,12 +17,8 @@
 @use "sass:math";
 @use "sass:meta";
 @use "mapping";
-@use "implicit";
 @use "../tools/arithmetic/function";
-
-/// Factor for the modular type scale.
-/// @link https://www.modularscale.com/?1&em&2@3 Major third, equal-tempered: ∛2 ≅ 1.26
-$scale-factor: math.pow(2, math.div(1, 3));
+@use "../tools/typography/rhythm";
 
 /// Configuration to be injected by consumers.
 /// This map is defined by passing `$config-custom` to Stylament.
@@ -34,6 +30,42 @@ $scale-factor: math.pow(2, math.div(1, 3));
 ///
 /// @type Map
 $custom: () !default;
+
+/// Default typography settings.
+///
+/// @type Map
+/// @property {Number} line.min Relative minimal line-height.
+/// @property {Number} line.root Relative line-height of the document root.
+/// @property {Number} line.sub Sub-units per line allowed by base-line grid.
+/// @property {Number<rem|em|%>} scale.base Base font-size of the typographical scale.
+/// @property {Number} scale.ratio Ratio for the modular type scale
+/// (i. e. the base of the exponential function).
+$-default-typography: (
+  line: (
+    min: 1.1,
+    root: 1.5,
+    sub: 1,
+  ),
+  scale: (
+    base: 1rem,
+    ratio: 1.5,
+  ),
+);
+$-custom-with-typography: map.deep-merge(
+  (
+    typography: $-default-typography,
+  ),
+  $custom
+);
+$-line-root: map.get($-custom-with-typography, typography, line, root);
+$-scale-base: map.get($-custom-with-typography, typography, scale, base);
+$-scale-ratio: map.get($-custom-with-typography, typography, scale, ratio);
+
+/// Root line height.
+/// Absolute value mimicking the experimental CSS unit [`rlh`][mdn:rlh].
+/// @type Number<rem>
+/// @access private
+$-rlh: rhythm.rlh($-scale-base, $-line-root);
 
 /// Default configuration.
 /// This also serves as a reference for your [custom configuration](#variable--custom).
@@ -166,11 +198,7 @@ $default: (
         none: md,
       ),
     ),
-    line: (
-      min: 1.1,
-      root: 1.5,
-      sub: 1,
-    ),
+    line: (),
     measure: (
       mapped: (
         domain: mapping.$domain-sizes,
@@ -192,16 +220,17 @@ $default: (
         ),
         function: meta.get-function("exponential", $module: "function"),
         params: (
-          base: $scale-factor,
-          coefficient: 1em,
+          base: $-scale-ratio,
+          coefficient: $-scale-base,
         ),
       ),
       literal: (
-        factor: $scale-factor,
-        smaller: math.div(100%, $scale-factor),
-        larger: 100% * $scale-factor,
+        ratio: $-scale-ratio,
+        smaller: math.div(100%, $-scale-ratio),
+        larger: 100% * $-scale-ratio,
       ),
     ),
+    rlh: $-rlh,
   ),
   ui: (
     radius: (
@@ -230,7 +259,7 @@ $default: (
           function: meta.get-function("polynomial", $module: "function"),
           params: (
             0,
-            math.div(1.5rem, 24),
+            math.div($-rlh, 24),
           ),
         ),
         literal: (),
@@ -264,15 +293,4 @@ $default: (
 /// @type Map
 /// @requires $default
 /// @requires $custom
-$merged: map.deep-merge($default, $custom);
-
-/// Map of derived configuration values.
-/// @type Map
-/// @prop {Number<rem>} typography.rlh Root line height.
-/// Absolute value mimicking the experimental CSS unit [`rlh`][mdn:rlh].
-///
-/// [mdn:rlh]: https://developer.mozilla.org/en-US/docs/Web/CSS/length#rlh
-/// @prop {Unit} typography.scale.base-unit Base unit of the typographical scale.
-/// @prop {Number<rem>} typography.scale.base-rem Base of the typographical scale in `rem`.
-/// @requires derive
-$derived: implicit.derive($merged);
+$merged: map.deep-merge($default, $-custom-with-typography);

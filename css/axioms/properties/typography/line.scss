@@ -4,6 +4,7 @@
 
 @use "sass:map";
 @use "sass:math";
+@use "sass:meta";
 @use "../../config" as cfg;
 @use "../../tools/arithmetic/function";
 @use "../../tools/typography/rhythm";
@@ -11,12 +12,11 @@
 /// Line heights supporting the vertical rhythm at every step of the scale.
 /// @name Line Heights
 /// @requires $merged
-/// @requires $derived
 /// @link https://drewish.com/tools/vertical-rhythm/ Vertical rhythm calculation tool
 :root {
   $scale: map.get(cfg.$merged, typography, scale);
   $line: map.get(cfg.$merged, typography, line);
-  $rlh: map.get(cfg.$derived, typography, rlh);
+  $rlh: map.get(cfg.$merged, typography, rlh);
 
   --line-root: #{map.get($line, root)};
   --line-root-abs: #{$rlh};
@@ -25,10 +25,10 @@
     from map.get($scale, mapped, range, start)
     through map.get($scale, mapped, range, end)
   {
-    $font-size: function.exponential(
+    $font-size: meta.call(
+      map.get($scale, mapped, function),
       $i,
-      map.get($scale, mapped, params, base),
-      map.get($scale, mapped, params, coefficient)
+      map.get($scale, mapped, params)...
     );
     --line-#{$i}: #{rhythm.grid-line(
         $font-size,

@@ -8,12 +8,11 @@
 
 /// @name Length Scale
 /// @requires $merged
-/// @requires $derived
 :root {
-  $min: map.get(cfg.$merged, layout, length, min);
-  $max: map.get(cfg.$merged, layout, length, max);
-  $line: map.get(cfg.$merged, layout, length, line);
-  $rlh: map.get(cfg.$derived, typography, rlh);
-
-  @include mixins.length-scale($min, $max, $rlh, $line);
+  @include mixins.length-scale(
+    map.get(cfg.$merged, layout, length, min),
+    map.get(cfg.$merged, layout, length, max),
+    map.get(cfg.$merged, typography, rlh),
+    map.get(cfg.$merged, layout, length, line)
+  );
 }
