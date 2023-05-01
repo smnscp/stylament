@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Custom Properties | Stylament Documentation</title>
+  <title>CSS Custom Properties | Stylament Documentation</title>
 
   <link href="assets/img/logo.svg" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.14.0</span>
+          <span class="project-version">0.15.0</span>
         
       </div>
     </header>
@@ -89,12 +89,12 @@
   
   
     <li class="nav-item">
-      <a href="ax-properties.html" data-nav="is-active">Custom Properties</a>
+      <a href="ax-properties.html" data-nav="is-active">CSS Custom<span class="widont">&nbsp;</span>Properties</a>
     </li>
   
   
     <li class="nav-item">
-      <a href="ax-generic.html" data-nav="is-not-active">Generic Rules</a>
+      <a href="ax-generic.html" data-nav="is-not-active">Generic CSS</a>
     </li>
   </ul>
             </li>
@@ -264,7 +264,7 @@
   <nav class="breadcrumb">
     
     <a href="index.html" >Stylament</a> »
-    <strong>Custom Properties</strong>
+    <strong>CSS Custom Properties</strong>
   </nav>
 
 
@@ -293,7 +293,7 @@
 
   
     <div data-item-section="prose" class="text-block">
-      <h1 id="custom-properties" tabindex="-1">Custom Properties</h1>
+      <h1 id="css-custom-properties" tabindex="-1">CSS Custom Properties</h1>
 <p>This is a set of global CSS custom properties constituting the DNA of the design system.
 They are generated from the <a href="./ax-config.html">global configuration</a> and are used in the
 higher layers of the<span class="widont">&nbsp;</span>system.</p>
@@ -331,6 +331,1242 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
   
   
     
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="mixin--literal-properties">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--literal-properties" class="item-name">literal-properties()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>List CSS custom<span class="widont">&nbsp;</span>properties.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Output</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$prefix:</span>
+      
+      
+      <span class="value-type">(String)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Property name prefix.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$properties:</span>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Map of properties with simple literal<span class="widont">&nbsp;</span>values.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+
+      
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">{CSS output}</span>
+      
+      
+      <span class="value-type">(code<span class="widont">&nbsp;</span>block)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>A list of <code>--&lt;prefix&gt;-*</code> custom properties with their respective<span class="widont">&nbsp;</span>values.</p>
+
+      </div>
+    
+  </div>
+
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+    
+  <div data-item-section="used-by">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Used By</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-properties.html#mixin--configured-properties" class="item-name">configured-properties()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="mixin--mapped-properties">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--mapped-properties" class="item-name">mapped-properties()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Map CSS custom properties via a given<span class="widont">&nbsp;</span>function.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Output</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$prefix:</span>
+      
+      
+      <span class="value-type">(String)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Property name prefix.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$domain:</span>
+      
+      <span class="item-value">null</span>
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Map of inouts to the mapping<span class="widont">&nbsp;</span>function.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$range:</span>
+      
+      <span class="item-value">null</span>
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Range limiting the<span class="widont">&nbsp;</span>domain.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$func:</span>
+      
+      <span class="item-value">null</span>
+      <span class="value-type">(Function)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Mapping function.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$params:</span>
+      
+      <span class="item-value">null</span>
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Parameters to the<span class="widont">&nbsp;</span>function.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+
+      
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">{CSS output}</span>
+      
+      
+      <span class="value-type">(code<span class="widont">&nbsp;</span>block)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>A list of <code>--&lt;prefix&gt;-*</code> custom properties with their respective calculated<span class="widont">&nbsp;</span>values.</p>
+
+      </div>
+    
+  </div>
+
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    <div class="requires-wrapper">
+      
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@function</span>
+      
+        <a href="
+  ax-tools.html#function--map-function" class="item-name">map-function()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+      
+  
+    
+  <div data-item-section="used-by">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Used By</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-properties.html#mixin--configured-properties" class="item-name">configured-properties()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+
+    </div>
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="mixin--logical-properties">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--logical-properties" class="item-name">logical-properties()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Map logical to basic CSS custom<span class="widont">&nbsp;</span>properties.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Output</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$prefix:</span>
+      
+      
+      <span class="value-type">(String)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Property name prefix.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$properties:</span>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Map of logical<span class="widont">&nbsp;</span>properties.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+
+      
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">{CSS output}</span>
+      
+      
+      <span class="value-type">(code<span class="widont">&nbsp;</span>block)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>A list of <code>--&lt;prefix&gt;-*</code> custom properties referring to<span class="widont">&nbsp;</span>others.</p>
+
+      </div>
+    
+  </div>
+
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+    
+  <div data-item-section="used-by">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Used By</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-properties.html#mixin--configured-properties" class="item-name">configured-properties()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="mixin--configured-properties">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--configured-properties" class="item-name">configured-properties()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Generate all configured CSS custom<span class="widont">&nbsp;</span>properties.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Output</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$prefix:</span>
+      
+      
+      <span class="value-type">(String)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Property name prefix.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$conf:</span>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Configuration map for this set of<span class="widont">&nbsp;</span>properties.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+
+      
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">{CSS output}</span>
+      
+      
+      <span class="value-type">(code<span class="widont">&nbsp;</span>block)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>A list of mapped, literal, and logical <code>--&lt;prefix&gt;-*</code> custom properties.</p>
+
+      </div>
+    
+  </div>
+
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-properties.html#mixin--mapped-properties" class="item-name">mapped-properties()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-properties.html#mixin--literal-properties" class="item-name">literal-properties()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-properties.html#mixin--logical-properties" class="item-name">logical-properties()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
     
   
 
@@ -499,7 +1735,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     );
   }
 
-  @include prop-map.configured-properties($conf, $prefix);
+  @include props.configured-properties($prefix, $conf);
 }</code></pre>
     </div>
   
@@ -535,6 +1771,454 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
   
   
     
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="mixin--palette">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--palette" class="item-name">palette()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Generate a color palette for a given<span class="widont">&nbsp;</span>hue.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Output</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$name:</span>
+      
+      
+      <span class="value-type">(String)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The color name.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$hue:</span>
+      
+      
+      <span class="value-type">(Number)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The color hue (of<span class="widont">&nbsp;</span>HSL).</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$s-curve:</span>
+      
+      
+      <span class="value-type">(List)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The polynomial coefficients defining the curve described by
+cartesian coordinates of palette step and saturation (of<span class="widont">&nbsp;</span>HSL).</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$l-curve:</span>
+      
+      
+      <span class="value-type">(List)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The polynomial coefficients defining the curve described by
+cartesian coordinates of palette step and lightness (of<span class="widont">&nbsp;</span>HSL).</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$sl-curve:</span>
+      
+      
+      <span class="value-type">(List)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The control points defining a cubic Bézier in a cartesian
+coordinate system of saturation and lightness (of HSL).
+If this is definded the other two curves are<span class="widont">&nbsp;</span>ignored.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$range:</span>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Start, end, and step-size of the<span class="widont">&nbsp;</span>palette.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$prefix:</span>
+      
+      
+      <span class="value-type">(String)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Property name prefix.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+
+      
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">{CSS output}</span>
+      
+      
+      <span class="value-type">(code<span class="widont">&nbsp;</span>block)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>A list of <code>--&lt;prefix&gt;-*</code> custom properties containing the color values of the<span class="widont">&nbsp;</span>palette:</p>
+<pre><code class="lang-css">--&lt;prefix&gt;-red-100: hsl(0deg, 100%, 95%);
+--&lt;prefix&gt;-red-300: hsl(0deg, 95%, 75%);
+--&lt;prefix&gt;-red-500: hsl(0deg, 76%, 57%);
+--&lt;prefix&gt;-red-700: hsl(0deg, 61%, 48%);
+--&lt;prefix&gt;-red-900: hsl(0deg, 50%, 29%);
+--&lt;prefix&gt;-red: var(--&lt;prefix&gt;-red-500);
+</code></pre>
+
+      </div>
+    
+  </div>
+
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@function</span>
+      
+        <a href="
+  ax-tools.html#function--cubic-2d" class="item-name">cubic-2d()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@function</span>
+      
+        <a href="
+  ax-tools.html#function--polynomial" class="item-name">polynomial()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+      
+    
+  </div>
+
+  
     
   
 
@@ -640,6 +2324,293 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
 
 
 
+<section class="item" id="mixin--length-scale">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--length-scale" class="item-name">length-scale()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <h3 id="numeric-length-scale" tabindex="-1">Numeric Length Scale</h3>
+<p>This generates a scale of <code>--length-&lt;i&gt;</code> properties.
+The <code>&lt;i&gt;</code> indicates the number of sub-units the length is made up<span class="widont">&nbsp;</span>of.</p>
+<h3 id="logical-length-scale" tabindex="-1">Logical Length Scale</h3>
+<p>Additionally, there are aliases refer to use the<span class="widont">&nbsp;</span>main:</p>
+<ul>
+<li><code>--length-l&lt;j&gt;</code>: exactly <code>j</code> lines</li>
+<li><code>--length-l&lt;j&gt;aug</code>: a bit more than <code>j</code> lines</li>
+<li><code>--length-l&lt;j&gt;to&lt;j+1&gt;</code>: right between <code>j</code> and <code>j+1</code> lines</li>
+<li><code>--length-l&lt;j+1&gt;dim</code>: a bit less than <code>j+1</code> lines</li>
+</ul>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Output</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$start:</span>
+      
+      
+      
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Start of the<span class="widont">&nbsp;</span>scale.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$end:</span>
+      
+      
+      
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>End of the<span class="widont">&nbsp;</span>scale.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$basis:</span>
+      
+      
+      
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Scale basis (unit), e. g. the root line<span class="widont">&nbsp;</span>height.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$sub:</span>
+      
+      
+      
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Sub-division of the scale basis, i. e. how many sub-units per main<span class="widont">&nbsp;</span>unit.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+
+      
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">{CSS output}</span>
+      
+      
+      <span class="value-type">(code<span class="widont">&nbsp;</span>block)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>A list of <code>--length-*</code> custom properties:</p>
+<pre><code class="lang-css">/* … */
+--length-4: 1.5rem;
+--length-l1: 1.5rem;
+--length-5: 1.875rem;
+--length-l1aug: 1.875rem;
+--length-6: 2.25rem;
+--length-l1to2: 2.25rem;
+--length-7: 2.625rem;
+--length-l2dim: 2.625rem;
+--length-8: 3rem;
+--length-l2: 3rem;
+/* … */
+</code></pre>
+
+      </div>
+    
+  </div>
+
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" id="variable--sizes">
   
     
@@ -689,7 +2660,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">$sizes: map2.map-config($-conf);</code></pre>
+      <pre class="hljs-pre"><code class="lang-scss">$sizes: config.map-config($-conf);</code></pre>
     </div>
   
 
@@ -819,7 +2790,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include prop-map.configured-properties($-conf, &quot;container&quot;);
+  @include props.configured-properties(&quot;container&quot;, $-conf);
 }</code></pre>
     </div>
   
@@ -984,11 +2955,12 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $min: map.get(cfg.$merged, layout, length, min);
-  $max: map.get(cfg.$merged, layout, length, max);
-  $line: map.get(cfg.$merged, layout, length, line);
-
-  @include scale.length($min, $max, line.$rlh, $line);
+  @include mixins.length-scale(
+    map.get(cfg.$merged, layout, length, min),
+    map.get(cfg.$merged, layout, length, max),
+    map.get(cfg.$merged, typography, rlh),
+    map.get(cfg.$merged, layout, length, line)
+  );
 }</code></pre>
     </div>
   
@@ -1062,41 +3034,6 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       
       <span class="value-type">(Map)</span>
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-        
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#variable--rlh" class="item-name">$rlh</a>
-      
-      
-      <span class="value-type">(Number&lt;rem&gt;)</span>
       
     </h4>
 
@@ -1188,9 +3125,9 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include prop-map.configured-properties(
-    map.get(cfg.$merged, layout, spacing),
-    &quot;spacing&quot;
+  @include props.configured-properties(
+    &quot;spacing&quot;,
+    map.get(cfg.$merged, layout, spacing)
   );
 }</code></pre>
     </div>
@@ -1431,9 +3368,9 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include prop-map.configured-properties(
-    map.get(cfg.$merged, typography, font-family),
-    &quot;font&quot;
+  @include props.configured-properties(
+    &quot;font&quot;,
+    map.get(cfg.$merged, typography, font-family)
   );
 }</code></pre>
     </div>
@@ -1599,9 +3536,9 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include prop-map.configured-properties(
-    map.get(cfg.$merged, typography, font-weight),
-    &quot;weight&quot;
+  @include props.configured-properties(
+    &quot;weight&quot;,
+    map.get(cfg.$merged, typography, font-weight)
   );
 }</code></pre>
     </div>
@@ -1767,9 +3704,9 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include prop-map.configured-properties(
-    map.get(cfg.$merged, typography, letter-spacing),
-    &quot;letter&quot;
+  @include props.configured-properties(
+    &quot;letter&quot;,
+    map.get(cfg.$merged, typography, letter-spacing)
   );
 }</code></pre>
     </div>
@@ -1887,310 +3824,6 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
 
 
 
-<section class="item" id="variable--rlh">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#variable--rlh" class="item-name">$rlh</a>
-      
-
-      
-        <span class="value-type">(Number&lt;rem&gt;)</span>
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">$rlh: $-line-root * $-scale-base-rem;</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Root line height.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-
-    
-  <div data-item-section="related">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Related</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#rlh" class="item-name">“rlh”: experimental CSS unit.</a>
-      
-      
-      
-      <span class="item-note">[external]</span>
-    </h4>
-
-    
-  </div>
-
-
-      
-
-      
-        
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Line%20Heights" class="item-name">Line Heights</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-      
-    
-  </div>
-
-  
-  
-  
-  
-    
-    
-  
-    
-  <div data-item-section="used-by">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Used By</span>
-        
-      </h3>
-    
-
-    
-      
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Length%20Scale" class="item-name">Length Scale</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Stroke%20Width%20Scale" class="item-name">Stroke Width<span class="widont">&nbsp;</span>Scale</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      <span class="item-type">@function</span>
-      
-        <a href="
-  ax-tools.html#function--grid-line" class="item-name">grid-line()</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-      
-    
-  </div>
-
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
 <section class="item" id="css--Line%20Heights">
   
     
@@ -2239,12 +3872,28 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  --line-root: #{$-line-root};
+  $scale: map.get(cfg.$merged, typography, scale);
+  $line: map.get(cfg.$merged, typography, line);
+  $rlh: map.get(cfg.$merged, typography, rlh);
+
+  --line-root: #{map.get($line, root)};
   --line-root-abs: #{$rlh};
 
-  @for $i from $-scale-min through $-scale-max {
-    $font-size: scale.modular($-scale-base, $-scale-factor, $i);
-    --line-#{$i}: #{rhythm.grid-line($font-size, $rlh, $-line-min, $-line-sub)};
+  @for $i
+    from map.get($scale, mapped, range, start)
+    through map.get($scale, mapped, range, end)
+  {
+    $font-size: meta.call-conditional(
+      map.get($scale, mapped, function),
+      $i,
+      map.get($scale, mapped, params)
+    );
+    --line-#{$i}: #{rhythm.grid-line(
+        $font-size,
+        $rlh,
+        map.get($line, min),
+        map.get($line, sub)
+      )};
   }
 }</code></pre>
     </div>
@@ -2462,9 +4111,9 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include prop-map.configured-properties(
-    map.get(cfg.$merged, typography, measure),
-    &quot;measure&quot;
+  @include props.configured-properties(
+    &quot;measure&quot;,
+    map.get(cfg.$merged, typography, measure)
   );
 
   --measure: var(--measure-default);
@@ -2690,23 +4339,10 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $conf: map.get(cfg.$merged, typography, scale);
-  $base: map.get($conf, base);
-  $factor: map.get($conf, factor);
-  $min: map.get($conf, min);
-  $max: map.get($conf, max);
-  $prefix: &quot;scale&quot;;
-
-  --#{$prefix}-factor: #{$factor};
-
-  @for $i from $min through $max {
-    --#{$prefix}-#{$i}: #{scale.modular($base, $factor, $i)};
-  }
-
-  --#{$prefix}-smaller: #{math.div(100%, $factor)};
-  --#{$prefix}-larger: #{100% * $factor};
-
-  @include prop-map.configured-properties($conf, $prefix);
+  @include props.configured-properties(
+    &quot;scale&quot;,
+    map.get(cfg.$merged, typography, scale)
+  );
 }</code></pre>
     </div>
   
@@ -3102,9 +4738,9 @@ and approximated as cubic Bézier curves <a href="https://matthewlein.com/tools/
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include prop-map.configured-properties(
-    map.get(cfg.$merged, ui, radius),
-    &quot;radius&quot;
+  @include props.configured-properties(
+    &quot;radius&quot;,
+    map.get(cfg.$merged, ui, radius)
   );
 }</code></pre>
     </div>
@@ -3270,9 +4906,9 @@ and approximated as cubic Bézier curves <a href="https://matthewlein.com/tools/
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include prop-map.configured-properties(
-    map.get(cfg.$merged, ui, shadow),
-    &quot;shadow&quot;
+  @include props.configured-properties(
+    &quot;shadow&quot;,
+    map.get(cfg.$merged, ui, shadow)
   );
 }</code></pre>
     </div>
@@ -3438,9 +5074,9 @@ and approximated as cubic Bézier curves <a href="https://matthewlein.com/tools/
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include prop-map.configured-properties(
-    map.get(cfg.$merged, ui, stroke, color),
-    &quot;stroke-color&quot;
+  @include props.configured-properties(
+    &quot;stroke-color&quot;,
+    map.get(cfg.$merged, ui, stroke, color)
   );
 }</code></pre>
     </div>
@@ -3620,9 +5256,9 @@ and approximated as cubic Bézier curves <a href="https://matthewlein.com/tools/
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include prop-map.configured-properties(
-    map.get(cfg.$merged, ui, stroke, style),
-    &quot;stroke-style&quot;
+  @include props.configured-properties(
+    &quot;stroke-style&quot;,
+    map.get(cfg.$merged, ui, stroke, style)
   );
 }</code></pre>
     </div>
@@ -3802,17 +5438,10 @@ and approximated as cubic Bézier curves <a href="https://matthewlein.com/tools/
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $conf: map.get(cfg.$merged, ui, stroke, width);
-  $min: map.get($conf, min);
-  $max: map.get($conf, max);
-  $line: map.get($conf, line);
-  $prefix: &quot;stroke-width&quot;;
-
-  @for $i from $min through $max {
-    --#{$prefix}-#{$i}: #{line.$rlh * math.div($i, $line)};
-  }
-
-  @include prop-map.configured-properties($conf, $prefix);
+  @include props.configured-properties(
+    &quot;stroke-width&quot;,
+    map.get(cfg.$merged, ui, stroke, width)
+  );
 }</code></pre>
     </div>
   
@@ -3825,7 +5454,7 @@ and approximated as cubic Bézier curves <a href="https://matthewlein.com/tools/
 
   
     <div class="text-block">
-      <p>A scale of stroke widths with $line units per root<span class="widont">&nbsp;</span>line.</p>
+      <p>A scale of stroke<span class="widont">&nbsp;</span>widths.</p>
 
       
   
@@ -3900,41 +5529,6 @@ and approximated as cubic Bézier curves <a href="https://matthewlein.com/tools/
       
       
       <span class="value-type">(Map)</span>
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-        
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#variable--rlh" class="item-name">$rlh</a>
-      
-      
-      <span class="value-type">(Number&lt;rem&gt;)</span>
       
     </h4>
 

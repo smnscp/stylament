@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.14.0</span>
+          <span class="project-version">0.15.0</span>
         
       </div>
     </header>
@@ -89,12 +89,12 @@
   
   
     <li class="nav-item">
-      <a href="ax-properties.html" data-nav="is-not-active">Custom Properties</a>
+      <a href="ax-properties.html" data-nav="is-not-active">CSS Custom<span class="widont">&nbsp;</span>Properties</a>
     </li>
   
   
     <li class="nav-item">
-      <a href="ax-generic.html" data-nav="is-not-active">Generic Rules</a>
+      <a href="ax-generic.html" data-nav="is-not-active">Generic CSS</a>
     </li>
   </ul>
             </li>
@@ -527,7 +527,6 @@ For the structure of this custom configuration see <a href="#variable--default">
       
       <pre class="hljs-pre"><code class="lang-css">@charset &quot;UTF-8&quot;;
 :root {
-  --scale-factor: 1.5;
   --scale--2: 0.4444444444em;
   --scale--1: 0.6666666667em;
   --scale-0: 1em;
@@ -540,6 +539,7 @@ For the structure of this custom configuration see <a href="#variable--default">
   --scale-7: 17.0859375em;
   --scale-8: 25.62890625em;
   --scale-9: 38.443359375em;
+  --scale-ratio: 1.5;
   --scale-smaller: 66.6666666667%;
   --scale-larger: 150%;
 }
@@ -571,8 +571,15 @@ For the structure of this custom configuration see <a href="#variable--default">
 }
 
 :root {
+  --weight-thin: 100;
+  --weight-extralight: 200;
+  --weight-light: 300;
   --weight-regular: 400;
+  --weight-book: 500;
+  --weight-medium: 600;
   --weight-bold: 700;
+  --weight-black: 800;
+  --weight-ultra: 900;
   --weight-body: var(--weight-regular);
   --weight-emphasis: var(--weight-bold);
   --weight-heading: var(--weight-bold);
@@ -1253,6 +1260,137 @@ small,
 
 
 
+<section class="item" id="variable---rlh">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#variable---rlh" class="item-name">$-rlh</a>
+      
+
+      
+        <span class="value-type">(Number&lt;rem&gt;)</span>
+      
+
+      
+        <span class="item-note">[private]</span>
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">$-rlh: rhythm.rlh($-scale-base, $-line-root);</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Root line height.
+Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" id="variable--default">
   
     
@@ -1312,7 +1450,12 @@ small,
     container: (
       mapped: (
         domain: mapping.$domain-sizes,
-        function: meta.get-function(&quot;container&quot;, $module: &quot;mapping&quot;),
+        // Use multiples of 16rem centered around 48rem.
+        function: meta.get-function(&quot;linear&quot;, $module: &quot;function&quot;),
+        params: (
+          slope: 16rem,
+          initial: 48rem,
+        ),
       ),
       literal: (),
       logical: (
@@ -1354,9 +1497,8 @@ small,
       ),
     ),
     font-weight: (
-      literal: (
-        regular: 400,
-        bold: 700,
+      mapped: (
+        domain: mapping.$domain-font-weights,
       ),
       logical: (
         body: &quot;regular&quot;,
@@ -1367,88 +1509,21 @@ small,
     letter-spacing: (
       mapped: (
         domain: mapping.$domain-sizes,
-        function: meta.get-function(&quot;letter&quot;, $module: &quot;mapping&quot;),
+        function: meta.get-function(&quot;linear&quot;, $module: &quot;function&quot;),
+        params: (
+          slope: 0.025em,
+        ),
       ),
       logical: (
         none: md,
       ),
     ),
-    line: (
-      min: 1.1,
-      root: 1.5,
-      sub: 1,
-    ),
+    line: (),
     measure: (
       mapped: (
         domain: mapping.$domain-sizes,
-        function: meta.get-function(&quot;measure&quot;, $module: &quot;mapping&quot;),
-      ),
-      literal: (
-        full: 100%,
-        inf: unset,
-      ),
-      logical: (
-        default: md,
-      ),
-    ),
-    scale: (
-      min: -2,
-      max: 9,
-      base: 1em,
-      // Major third, equal-tempered: ∛2 ≅ 1.26
-      // https://www.modularscale.com/?1&amp;em&amp;2@3
-      factor: math.pow(2, math.div(1, 3)),
-      literal: (),
-      logical: (),
-    ),
-  ),
-  ui: (
-    radius: (
-      mapped: (
-        domain: mapping.$domain-sizes,
-        function: meta.get-function(&quot;radius&quot;, $module: &quot;mapping&quot;),
-      ),
-      literal: (
-        100: 100%,
-        full: 999rem,
-      ),
-    ),
-    shadow: (
-      mapped: (
-        domain: mapping.$domain-sizes,
-        function: meta.get-function(&quot;shadow&quot;, $module: &quot;mapping&quot;),
-      ),
-    ),
-    stroke: (
-      width: (
-        min: 1,
-        max: 8,
-        line: 24,
-        literal: (),
-        logical: (
-          default: 2,
-        ),
-      ),
-      style: (
-        literal: (
-          default: &quot;solid&quot;,
-        ),
-        logical: (),
-      ),
-      color: (
-        literal: (
-          default: &quot;var(--color-tertiary-700)&quot;,
-        ),
-        logical: (),
-      ),
-    ),
-  ),
-  color: (
-    palettes: (),
-    literal: (),
-    logical: (),
-  ),
-);</code></pre>
+        // Use square numbers centered around 64ch.
+        // math.pow($size + 8, 2) * 1ch;</code></pre>
     </div>
   
 
@@ -1948,7 +2023,7 @@ $cfg: (
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">$merged: map.deep-merge($default, $custom);</code></pre>
+      <pre class="hljs-pre"><code class="lang-scss">$merged: map.deep-merge($default, $-custom-with-typography);</code></pre>
     </div>
   
 
@@ -2566,6 +2641,898 @@ This is used to look up configuration<span class="widont">&nbsp;</span>keys.</p>
 
 
 
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="mapping" tabindex="-1">Mapping</h2>
+<p>Since most sequences of CSS custom properties are based on certain
+calculation rules, Stylament uses simple <a href="#mapping-functions">functions</a>
+to map the values of a given <a href="#mapping-domains">domain</a> to property<span class="widont">&nbsp;</span>values.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h3 id="mapping-domains" tabindex="-1">Mapping Domains</h3>
+<p>These simple maps represent the domains of property<span class="widont">&nbsp;</span>sequences.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="variable--sizes">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#variable--sizes" class="item-name">$sizes</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">$sizes: (
+  &quot;xxs&quot;: -3,
+  &quot;xs&quot;: -2,
+  &quot;sm&quot;: -1,
+  &quot;md&quot;: 0,
+  &quot;lg&quot;: 1,
+  &quot;xl&quot;: 2,
+  &quot;xxl&quot;: 3,
+);</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Map of size labels.
+Used as domain for mapped<span class="widont">&nbsp;</span>properties.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+    
+
+    <div data-item-section="examples">
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Example</span>
+      </h3>
+
+      
+        
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  <div class="example">
+    <div class="example-code">
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            css
+          </span>
+
+          
+            <span class='code-description'>
+              For generating properties like this
+            </span>
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-css">--shadow-xxs: …;
+--shadow-xs: …;
+--shadow-sm: …;
+--shadow-md: …;
+--shadow-lg: …;
+--shadow-xl: …;
+--shadow-xxl: …;</code></pre>
+    </div>
+  
+
+    </div>
+
+    
+  </div>
+
+      
+    </div>
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="variable--font-weights">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#variable--font-weights" class="item-name">$font-weights</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">$font-weights: (
+  &quot;thin&quot;: 100,
+  &quot;extralight&quot;: 200,
+  &quot;light&quot;: 300,
+  &quot;regular&quot;: 400,
+  &quot;book&quot;: 500,
+  &quot;medium&quot;: 600,
+  &quot;bold&quot;: 700,
+  &quot;black&quot;: 800,
+  &quot;ultra&quot;: 900,
+);</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Map of font weights.
+Used as default domain for font weight<span class="widont">&nbsp;</span>properties.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+    
+
+    <div data-item-section="examples">
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Example</span>
+      </h3>
+
+      
+        
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  <div class="example">
+    <div class="example-code">
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            css
+          </span>
+
+          
+            <span class='code-description'>
+              Complete map of commonly use font weights.
+            </span>
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-css">--weight-thin: 100;
+--weight-extralight: 200;
+--weight-light: 300;
+--weight-regular: 400;
+--weight-book: 500;
+--weight-medium: 600;
+--weight-bold: 700;
+--weight-black: 800;
+--weight-ultra: 900;</code></pre>
+    </div>
+  
+
+    </div>
+
+    
+  </div>
+
+      
+    </div>
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h3 id="mapping-functions" tabindex="-1">Mapping Functions</h3>
+<p>These functions calculate the final property values corresponding to
+the given domain<span class="widont">&nbsp;</span>value.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="function--shadow">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@function</span>
+      
+
+      
+        <a href="#function--shadow" class="item-name">shadow()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Mapping function to generate <a href="./ax-properties.html#css--Shadow%20Scale">Shadow<span class="widont">&nbsp;</span>Scale</a>.</p>
+<p><strong>N.B.:</strong> We do without the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow#spread-radius">spread radius</a>, so these shadows can be used as
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow">text shadows</a>, too.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Return</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$size:</span>
+      
+      
+      <span class="value-type">(Number)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The numerical size<span class="widont">&nbsp;</span>index.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">@return</span>
+      
+      
+      <span class="value-type">(String)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The mapped value, a CSS <shadow>.</p>
+
+      </div>
+    
+  </div>
+
+  
+
+      
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="color-configuration" tabindex="-1">Color Configuration</h2>
+<p>Stylament features quite sophisticated color configuration. While you can always
+resort to simply <a href="#config-examples">defining literal color values</a> you can as well
+generate whole <a href="ax-properties.html#mixin--palette">palettes</a> from just a few<span class="widont">&nbsp;</span>variables.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" id="variable--palettes%40brand">
   
     
@@ -3144,7 +4111,7 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">@use &quot;stylament/css/axioms/config/color/seed&quot;;
+      <pre class="hljs-pre"><code class="lang-scss">@use &quot;stylament/css/axioms/config/specific/color/seed&quot;;
 @use &quot;stylament/css/axioms&quot; with (
     $config-custom: (
       color: (
@@ -3175,38 +4142,38 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
       
       <pre class="hljs-pre"><code class="lang-css">@charset &quot;UTF-8&quot;;
 :root {
-  --scale-factor: 1.2599210499;
-  --scale--2: 0.6299605249em;
-  --scale--1: 0.793700526em;
-  --scale-0: 1em;
-  --scale-1: 1.2599210499em;
-  --scale-2: 1.587401052em;
-  --scale-3: 2em;
-  --scale-4: 2.5198420998em;
-  --scale-5: 3.1748021039em;
-  --scale-6: 4em;
-  --scale-7: 5.0396841996em;
-  --scale-8: 6.3496042079em;
-  --scale-9: 8em;
-  --scale-smaller: 79.3700525984%;
-  --scale-larger: 125.9921049895%;
+  --scale--2: 0.4444444444rem;
+  --scale--1: 0.6666666667rem;
+  --scale-0: 1rem;
+  --scale-1: 1.5rem;
+  --scale-2: 2.25rem;
+  --scale-3: 3.375rem;
+  --scale-4: 5.0625rem;
+  --scale-5: 7.59375rem;
+  --scale-6: 11.390625rem;
+  --scale-7: 17.0859375rem;
+  --scale-8: 25.62890625rem;
+  --scale-9: 38.443359375rem;
+  --scale-ratio: 1.5;
+  --scale-smaller: 66.6666666667%;
+  --scale-larger: 150%;
 }
 
 :root {
   --line-root: 1.5;
   --line-root-abs: 1.5rem;
-  --line--2: 2.381101578;
-  --line--1: 1.8898815748;
-  --line-0: 1.5;
-  --line-1: 1.190550789;
-  --line-2: 1.8898815748;
-  --line-3: 1.5;
-  --line-4: 1.190550789;
-  --line-5: 1.4174111811;
-  --line-6: 1.125;
-  --line-7: 1.190550789;
-  --line-8: 1.1811759843;
-  --line-9: 1.125;
+  --line--2: 1.5rem;
+  --line--1: 1.5rem;
+  --line-0: 1.5rem;
+  --line-1: 3rem;
+  --line-2: 3rem;
+  --line-3: 4.5rem;
+  --line-4: 6rem;
+  --line-5: 9rem;
+  --line-6: 13.5rem;
+  --line-7: 19.5rem;
+  --line-8: 28.5rem;
+  --line-9: 43.5rem;
 }
 
 :root {
@@ -3219,8 +4186,15 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
 }
 
 :root {
+  --weight-thin: 100;
+  --weight-extralight: 200;
+  --weight-light: 300;
   --weight-regular: 400;
+  --weight-book: 500;
+  --weight-medium: 600;
   --weight-bold: 700;
+  --weight-black: 800;
+  --weight-ultra: 900;
   --weight-body: var(--weight-regular);
   --weight-emphasis: var(--weight-bold);
   --weight-heading: var(--weight-bold);
@@ -3902,10 +4876,7 @@ small,
 
   
     <div data-item-section="prose" class="text-block">
-      <h2 id="mapping" tabindex="-1">Mapping</h2>
-<p>Since most sequences of CSS custom properties are based on certain
-calculation rules, Stylament uses simple <a href="#mapping-functions">functions</a>
-to map the values of a given <a href="#mapping-domains">domain</a> to property<span class="widont">&nbsp;</span>values.</p>
+      <h2 id="typography-configuration" tabindex="-1">Typography Configuration</h2>
 
       
   
@@ -3970,83 +4941,7 @@ to map the values of a given <a href="#mapping-domains">domain</a> to property<s
 
 
 
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h3 id="mapping-domains" tabindex="-1">Mapping Domains</h3>
-<p>These simple maps represent the domains of property<span class="widont">&nbsp;</span>sequences.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="variable--sizes">
+<section class="item" id="variable--default">
   
     
   
@@ -4064,9 +4959,11 @@ to map the values of a given <a href="#mapping-domains">domain</a> to property<s
       
 
       
-        <a href="#variable--sizes" class="item-name">$sizes</a>
+        <a href="#variable--default" class="item-name">$default</a>
       
 
+      
+        <span class="value-type">(Map)</span>
       
 
       
@@ -4093,14 +4990,16 @@ to map the values of a given <a href="#mapping-domains">domain</a> to property<s
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">$sizes: (
-  xxs: -3,
-  xs: -2,
-  sm: -1,
-  md: 0,
-  lg: 1,
-  xl: 2,
-  xxl: 3,
+      <pre class="hljs-pre"><code class="lang-scss">$default: (
+  line: (
+    min: 1.1,
+    root: 1.5,
+    sub: 1,
+  ),
+  scale: (
+    base: 1rem,
+    ratio: 1.5,
+  ),
 );</code></pre>
     </div>
   
@@ -4113,8 +5012,7 @@ to map the values of a given <a href="#mapping-domains">domain</a> to property<s
 
   
     <div class="text-block">
-      <p>Map of size labels.
-Used as domain for mapped<span class="widont">&nbsp;</span>properties.</p>
+      <p>Default typography settings.</p>
 
       
   
@@ -4140,256 +5038,11 @@ Used as domain for mapped<span class="widont">&nbsp;</span>properties.</p>
   
 
   
-
-
-  
-  
     
-
-    <div data-item-section="examples">
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Example</span>
-      </h3>
-
-      
-        
-  
-  
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  <div class="example">
-    <div class="example-code">
-      
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            css
-          </span>
-
-          
-            <span class='code-description'>
-              For generating properties like this
-            </span>
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-css">--shadow-xxs: …;
---shadow-xs: …;
---shadow-sm: …;
---shadow-md: …;
---shadow-lg: …;
---shadow-xl: …;
---shadow-xxl: …;</code></pre>
-    </div>
-  
-
-    </div>
-
-    
-  </div>
-
-      
-    </div>
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h3 id="mapping-functions" tabindex="-1">Mapping Functions</h3>
-<p>These functions calculate the final property values corresponding to
-the given domain<span class="widont">&nbsp;</span>value.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="function--measure">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type">@function</span>
-      
-
-      
-        <a href="#function--measure" class="item-name">measure()</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Mapping function to generate <a href="./ax-properties.html#css--Measure%20Scale">Measure<span class="widont">&nbsp;</span>Scale</a>.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    
-  <div data-item-section="parameter">
+  <div data-item-section="property">
     
       <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Return</span>
+        <span class="item-subtitle-main">Map Properties</span>
         
       </h3>
     
@@ -4405,7 +5058,7 @@ the given domain<span class="widont">&nbsp;</span>value.</p>
     <h4 class="param-title">
       
       
-        <span class="item-name">$size:</span>
+        <span class="item-name">line.min:</span>
       
       
       <span class="value-type">(Number)</span>
@@ -4415,169 +5068,13 @@ the given domain<span class="widont">&nbsp;</span>value.</p>
     
       
       <div class="param-details text-block">
-        <p>The numerical size<span class="widont">&nbsp;</span>index.</p>
+        <p>Relative minimal line-height.</p>
 
       </div>
     
   </div>
 
 
-      
-
-      
-  
-
-      
-  
-    
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">@return</span>
-      
-      
-      <span class="value-type">(Number)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>The mapped value.</p>
-
-      </div>
-    
-  </div>
-
-  
-
-      
-  
-
-      
-  
-
-    
-  </div>
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="function--letter">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type">@function</span>
-      
-
-      
-        <a href="#function--letter" class="item-name">letter()</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Mapping function to generate <a href="./ax-properties.html#css--Letter%20Spacing">Letter Spacing<span class="widont">&nbsp;</span>Scale</a>.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    
-  <div data-item-section="parameter">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Return</span>
-        
-      </h3>
-    
-
-    
       
         
   
@@ -4588,7 +5085,7 @@ the given domain<span class="widont">&nbsp;</span>value.</p>
     <h4 class="param-title">
       
       
-        <span class="item-name">$size:</span>
+        <span class="item-name">line.root:</span>
       
       
       <span class="value-type">(Number)</span>
@@ -4598,169 +5095,13 @@ the given domain<span class="widont">&nbsp;</span>value.</p>
     
       
       <div class="param-details text-block">
-        <p>The numerical size<span class="widont">&nbsp;</span>index.</p>
+        <p>Relative line-height of the document<span class="widont">&nbsp;</span>root.</p>
 
       </div>
     
   </div>
 
 
-      
-
-      
-  
-
-      
-  
-    
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">@return</span>
-      
-      
-      <span class="value-type">(Number)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>The mapped value.</p>
-
-      </div>
-    
-  </div>
-
-  
-
-      
-  
-
-      
-  
-
-    
-  </div>
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="function--container">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type">@function</span>
-      
-
-      
-        <a href="#function--container" class="item-name">container()</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Mapping function to generate <a href="./ax-properties.html#css--Container%20Size%20Scale">Container Size<span class="widont">&nbsp;</span>Scale</a>.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    
-  <div data-item-section="parameter">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Return</span>
-        
-      </h3>
-    
-
-    
       
         
   
@@ -4771,7 +5112,7 @@ the given domain<span class="widont">&nbsp;</span>value.</p>
     <h4 class="param-title">
       
       
-        <span class="item-name">$size:</span>
+        <span class="item-name">line.sub:</span>
       
       
       <span class="value-type">(Number)</span>
@@ -4781,169 +5122,13 @@ the given domain<span class="widont">&nbsp;</span>value.</p>
     
       
       <div class="param-details text-block">
-        <p>The numerical size<span class="widont">&nbsp;</span>index.</p>
+        <p>Sub-units per line allowed by base-line<span class="widont">&nbsp;</span>grid.</p>
 
       </div>
     
   </div>
 
 
-      
-
-      
-  
-
-      
-  
-    
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">@return</span>
-      
-      
-      <span class="value-type">(Number)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>The mapped value.</p>
-
-      </div>
-    
-  </div>
-
-  
-
-      
-  
-
-      
-  
-
-    
-  </div>
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="function--radius">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type">@function</span>
-      
-
-      
-        <a href="#function--radius" class="item-name">radius()</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Mapping function to generate <a href="./ax-properties.html#css--Radius%20Scale">Radius<span class="widont">&nbsp;</span>Scale</a>.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    
-  <div data-item-section="parameter">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Return</span>
-        
-      </h3>
-    
-
-    
       
         
   
@@ -4954,181 +5139,23 @@ the given domain<span class="widont">&nbsp;</span>value.</p>
     <h4 class="param-title">
       
       
-        <span class="item-name">$size:</span>
+        <span class="item-name">scale.base:</span>
       
       
-      <span class="value-type">(Number)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>The numerical size<span class="widont">&nbsp;</span>index.</p>
-
-      </div>
-    
-  </div>
-
-
-      
-
-      
-  
-
-      
-  
-    
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">@return</span>
-      
-      
-      <span class="value-type">(Number)</span>
+      <span class="value-type">(Number&lt;rem|em|%&gt;)</span>
       
     </h4>
 
     
       
       <div class="param-details text-block">
-        <p>The mapped value.</p>
+        <p>Base font-size of the typographical<span class="widont">&nbsp;</span>scale.</p>
 
       </div>
     
   </div>
 
-  
 
-      
-  
-
-      
-  
-
-    
-  </div>
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="function--shadow">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type">@function</span>
-      
-
-      
-        <a href="#function--shadow" class="item-name">shadow()</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Mapping function to generate <a href="./ax-properties.html#css--Shadow%20Scale">Shadow<span class="widont">&nbsp;</span>Scale</a>.</p>
-<p><strong>N.B.:</strong> We do without the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow#spread-radius">spread radius</a>, so these shadows can be used as
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow">text shadows</a>, too.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    
-  <div data-item-section="parameter">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Return</span>
-        
-      </h3>
-    
-
-    
       
         
   
@@ -5139,7 +5166,7 @@ the given domain<span class="widont">&nbsp;</span>value.</p>
     <h4 class="param-title">
       
       
-        <span class="item-name">$size:</span>
+        <span class="item-name">scale.ratio:</span>
       
       
       <span class="value-type">(Number)</span>
@@ -5149,7 +5176,8 @@ the given domain<span class="widont">&nbsp;</span>value.</p>
     
       
       <div class="param-details text-block">
-        <p>The numerical size<span class="widont">&nbsp;</span>index.</p>
+        <p>Ratio for the modular type scale
+(i. e. the base of the exponential<span class="widont">&nbsp;</span>function).</p>
 
       </div>
     
@@ -5162,28 +5190,6 @@ the given domain<span class="widont">&nbsp;</span>value.</p>
   
 
       
-  
-    
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">@return</span>
-      
-      
-      <span class="value-type">(String)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>The mapped value, a CSS <shadow>.</p>
-
-      </div>
-    
-  </div>
-
   
 
       
