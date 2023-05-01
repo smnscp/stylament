@@ -2,12 +2,15 @@
 /// @group ax-tools
 ////
 
-/// ### Map Functions
+/// ## Configuration Functions
 ///
-/// Functions for advanced operations on maps.
+/// Functions for processing configuration.
 
+@use "sass:list";
 @use "sass:map";
 @use "sass:meta";
+@use "../arithmetic/function";
+@use "../meta" as meta2;
 
 /// Translate a map of aliases to values from a dictionary.
 /// Each alias is asigned the value of the aliased dictionary key.
@@ -15,7 +18,8 @@
 /// @param {Map} $aliases Map of aliases.
 /// @param {Map} $dict Dictionary to look up values.
 /// @return {Map} Map with aliases pointing to looked up values.
-@function map-aliases($aliases, $dict) {
+/// @access private
+@function -map-aliases($aliases, $dict) {
   $result: ();
   @if $aliases and $dict {
     @each $name, $alias in $aliases {
@@ -25,16 +29,48 @@
   @return $result;
 }
 
+/// Apply a range to a given domain.
+///
+/// @param {Map} $base Map of aliases.
+/// @param {Map} $range Range limiting the domain.
+/// @return {Map} The domain limited by the range.
+/// @access private
+@function -apply-domain-range($base, $range) {
+  $step: if(map.has-key($range, step), map.get($range, step), 1);
+  $start: if(map.has-key($range, start), map.get($range, start), 1);
+  $end: if(
+    map.has-key($range, end),
+    map.get($range, end),
+    if($base, list.length($base), 7)
+  );
+  $result: ();
+
+  $current: $start;
+  @while $current <= $end {
+    // Pick current key-value pair from the given domain or from ℤ → ℤ
+    $pair: if($base, list.nth($base, $current), "" + $current $current);
+    $result: map.set($result, $pair...);
+
+    $current: $current + $step;
+  }
+
+  @return $result;
+}
+
 /// Translate a map of domain arguments to their values of a given function.
 ///
-/// @param {Map} $domain The domain on which to apply the function.
-/// @param {Function} $func Function to apply.
+/// @param {Map} $domain [null] The domain on which to apply the function.
+/// @param {Map} $range [null] Range limiting the domain.
+/// @param {Function} $func [null] Function to apply.
+/// @param {Map} $params [null] Parameters to the function.
 /// @return {Map} Map with domain symbols pointing to their function values.
-@function map-function($domain, $func) {
+@function map-function($domain: null, $range: null, $func: null, $params: null) {
   $result: ();
-  @if $domain and $func {
+  $func: if($func, $func, meta.get-function("identity", $module: "function"));
+  $domain: if($range, -apply-domain-range($domain, $range), $domain);
+  @if $domain {
     @each $name, $arg in $domain {
-      $result: map.set($result, $name, meta.call($func, $arg));
+      $result: map.set($result, $name, meta2.call-conditional($func, $arg, $params));
     }
   }
   @return $result;
@@ -47,10 +83,12 @@
 @function map-config($conf) {
   $map: map.merge(
     map-function(
-      map.get($conf, mapped, domain),
-      map.get($conf, mapped, function)
+      $domain: map.get($conf, mapped, domain),
+      $func: map.get($conf, mapped, function),
+      $range: map.get($conf, mapped, range),
+      $params: map.get($conf, mapped, params),
     ),
     map.get($conf, literal)
   );
-  @return map.merge($map, map-aliases(map.get($conf, logical), $map));
+  @return map.merge($map, -map-aliases(map.get($conf, logical), $map));
 }

@@ -4,9 +4,9 @@
 
 @use "sass:map";
 @use "sass:math";
-@use "sass:meta";
 @use "../../config" as cfg;
 @use "../../tools/arithmetic/function";
+@use "../../tools/meta";
 @use "../../tools/typography/rhythm";
 
 /// Line heights supporting the vertical rhythm at every step of the scale.
@@ -25,10 +25,10 @@
     from map.get($scale, mapped, range, start)
     through map.get($scale, mapped, range, end)
   {
-    $font-size: meta.call(
+    $font-size: meta.call-conditional(
       map.get($scale, mapped, function),
       $i,
-      map.get($scale, mapped, params)...
+      map.get($scale, mapped, params)
     );
     --line-#{$i}: #{rhythm.grid-line(
         $font-size,

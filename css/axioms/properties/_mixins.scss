@@ -6,6 +6,8 @@
 @use "sass:map";
 @use "sass:meta";
 @use "../tools/arithmetic/function";
+@use "../tools/config";
+@use "../tools/meta" as meta2;
 
 /// List CSS custom properties.
 ///
@@ -18,28 +20,6 @@
       --#{$prefix}-#{$name}: #{$value};
     }
   }
-}
-
-@function -make-domain($base, $range) {
-  $step: if(map.has-key($range, step), map.get($range, step), 1);
-  $start: if(map.has-key($range, start), map.get($range, start), 1);
-  $end: if(
-    map.has-key($range, end),
-    map.get($range, end),
-    if($base, list.length($base), 7)
-  );
-  $result: ();
-
-  $current: $start;
-  @while $current <= $end {
-    // Pick current key-value pair from the given domain or from ℤ → ℤ
-    $pair: if($base, list.nth($base, $current), "" + $current $current);
-    $result: map.set($result, $pair...);
-
-    $current: $current + $step;
-  }
-
-  @return $result;
 }
 
 /// Map CSS custom properties via a given function.
@@ -57,16 +37,11 @@
   $func: null,
   $params: null
 ) {
-  $func: if($func, $func, meta.get-function("identity", $module: "function"));
-  $domain: if($range, -make-domain($domain, $range), $domain);
+  $mapped: config.map-function($domain, $range, $func, $params);
 
-  @if $domain {
-    @each $name, $arg in $domain {
-      --#{$prefix}-#{$name}: #{if(
-          $params,
-          meta.call($func, $arg, $params...),
-          meta.call($func, $arg)
-        )};
+  @if $mapped {
+    @each $name, $value in $mapped {
+      --#{$prefix}-#{$name}: #{$value};
     }
   }
 }

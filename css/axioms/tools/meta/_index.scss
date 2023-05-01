@@ -1,0 +1,23 @@
+////
+/// @group ax-tools
+////
+
+/// ## Meta Functions
+///
+/// Functions for working with function objects.
+
+@use "sass:meta";
+
+/// Call a function with one argument and with or without additional parameters.
+///
+/// @param {Function} $func Mapping function.
+/// @param {Number} $arg The argument to the function.
+/// @param {Map} $params [null] Parameters to the function.
+/// @return The return value of the function call.
+@function call-conditional($func, $arg, $params: null) {
+  @return if(
+    $params,
+    meta.call($func, $arg, $params...),
+    meta.call($func, $arg)
+  );
+}
