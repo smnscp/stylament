@@ -4,7 +4,7 @@
 
 @use "sass:map";
 @use "../../config" as cfg;
-@use "../../tools/data/map2";
+@use "../../tools/config";
 @use "../mixins" as props;
 
 $-conf: map.get(cfg.$merged, layout, container);
@@ -18,7 +18,7 @@ $-conf: map.get(cfg.$merged, layout, container);
 /// [bholmes]: https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
 ///
 /// @type Map
-$sizes: map2.map-config($-conf);
+$sizes: config.map-config($-conf);
 
 /// @name Container Size Scale
 /// @requires $merged
