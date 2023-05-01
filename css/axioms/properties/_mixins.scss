@@ -5,6 +5,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:meta";
+@use "../tools/arithmetic/function";
 
 /// List CSS custom properties.
 ///
@@ -17,10 +18,6 @@
       --#{$prefix}-#{$name}: #{$value};
     }
   }
-}
-
-@function -identity($x...) {
-  @return $x;
 }
 
 @function -make-domain($base, $range) {
@@ -48,10 +45,10 @@
 /// Map CSS custom properties via a given function.
 ///
 /// @param {String} $prefix Property name prefix.
-/// @param {Map} $domain Map of inouts to the mapping function.
-/// @param {Map} $range Range limiting the domain.
-/// @param {Function} $func Mapping function.
-/// @param {Map} $params Parameters to the function.
+/// @param {Map} $domain [null] Map of inouts to the mapping function.
+/// @param {Map} $range [null] Range limiting the domain.
+/// @param {Function} $func [null] Mapping function.
+/// @param {Map} $params [null] Parameters to the function.
 /// @output A list of `--<prefix>-*` custom properties with their respective calculated values.
 @mixin mapped-properties(
   $prefix,
@@ -60,7 +57,7 @@
   $func: null,
   $params: null
 ) {
-  $func: if($func, $func, meta.get-function("-identity"));
+  $func: if($func, $func, meta.get-function("identity", $module: "function"));
   $domain: if($range, -make-domain($domain, $range), $domain);
 
   @if $domain {

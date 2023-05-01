@@ -10,6 +10,13 @@
 /// All parameters other than the first one define the concrete mathematical function,
 /// while the first parameter always is the argument to that function instance.
 
+/// Identity function (`f(x) = x`).
+/// @param {Number} $x The argument to the function.
+/// @return {Number} $x.
+@function identity($x) {
+  @return $x;
+}
+
 /// Polynomial function (`f(x) = c₀ + c₁x + c₂x² + … = ∑cᵢxⁱ`).
 /// @param {Number} $x The argument to the function.
 /// @param {List} $coefficients The coefficients of the polynomial.
