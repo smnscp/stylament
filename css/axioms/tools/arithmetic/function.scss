@@ -17,6 +17,15 @@
   @return $x;
 }
 
+/// Linear function (`f(x) = mx + n`).
+/// @param {Number} $x The argument to the function.
+/// @param {Number} $slope The slope of the function (`m`).
+/// @param {Number} $initial [0] The initial value (y-intercept) of the function (`n`).
+/// @return {Number} The function value at $x.
+@function linear($x, $slope, $initial: 0) {
+  @return $slope * $x + $initial;
+}
+
 /// Polynomial function (`f(x) = c₀ + c₁x + c₂x² + … = ∑cᵢxⁱ`).
 /// @param {Number} $x The argument to the function.
 /// @param {List} $coefficients The coefficients of the polynomial.
