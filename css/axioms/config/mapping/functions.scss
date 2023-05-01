@@ -9,36 +9,6 @@
 
 @use "sass:math";
 
-/// Mapping function to generate [Measure Scale](./ax-properties.html#css--Measure%20Scale).
-/// @param {Number} $size The numerical size index.
-/// @return {Number} The mapped value.
-@function measure($size) {
-  // Use square numbers centered around 64ch.
-  @return math.pow($size + 8, 2) * 1ch;
-}
-
-/// Mapping function to generate [Letter Spacing Scale](./ax-properties.html#css--Letter%20Spacing).
-/// @param {Number} $size The numerical size index.
-/// @return {Number} The mapped value.
-@function letter($size) {
-  @return $size * 0.025em;
-}
-
-/// Mapping function to generate [Container Size Scale](./ax-properties.html#css--Container%20Size%20Scale).
-/// @param {Number} $size The numerical size index.
-/// @return {Number} The mapped value.
-@function container($size) {
-  // Use multiples of 16rem centered around 48rem.
-  @return ($size + 3) * 16rem;
-}
-
-/// Mapping function to generate [Radius Scale](./ax-properties.html#css--Radius%20Scale).
-/// @param {Number} $size The numerical size index.
-/// @return {Number} The mapped value.
-@function radius($size) {
-  @return ($size + 3) * 0.2rem;
-}
-
 /// Mapping function to generate [Shadow Scale](./ax-properties.html#css--Shadow%20Scale).
 ///
 /// **N.B.:** We do without the [spread radius][mdn1], so these shadows can be used as

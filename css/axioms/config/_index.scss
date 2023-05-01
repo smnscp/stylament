@@ -138,7 +138,12 @@ $default: (
     container: (
       mapped: (
         domain: mapping.$domain-sizes,
-        function: meta.get-function("container", $module: "mapping"),
+        // Use multiples of 16rem centered around 48rem.
+        function: meta.get-function("linear", $module: "function"),
+        params: (
+          slope: 16rem,
+          initial: 48rem,
+        ),
       ),
       literal: (),
       logical: (
@@ -192,7 +197,10 @@ $default: (
     letter-spacing: (
       mapped: (
         domain: mapping.$domain-sizes,
-        function: meta.get-function("letter", $module: "mapping"),
+        function: meta.get-function("linear", $module: "function"),
+        params: (
+          slope: 0.025em,
+        ),
       ),
       logical: (
         none: md,
@@ -202,7 +210,14 @@ $default: (
     measure: (
       mapped: (
         domain: mapping.$domain-sizes,
-        function: meta.get-function("measure", $module: "mapping"),
+        // Use square numbers centered around 64ch.
+        // math.pow($size + 8, 2) * 1ch;
+        function: meta.get-function("polynomial", $module: "function"),
+        params: (
+          64ch,
+          16ch,
+          1ch,
+        ),
       ),
       literal: (
         full: 100%,
@@ -236,7 +251,12 @@ $default: (
     radius: (
       mapped: (
         domain: mapping.$domain-sizes,
-        function: meta.get-function("radius", $module: "mapping"),
+        // Use multiples of 0.2rem centered around 0.6rem.
+        function: meta.get-function("linear", $module: "function"),
+        params: (
+          initial: 0.6rem,
+          slope: 0.2rem,
+        ),
       ),
       literal: (
         100: 100%,
