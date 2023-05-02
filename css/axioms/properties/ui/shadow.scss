@@ -8,6 +8,7 @@
 
 /// @name Shadow Scale
 /// @requires $merged
+/// @requires {mixin} configured-properties
 :root {
   @include props.configured-properties(
     "shadow",

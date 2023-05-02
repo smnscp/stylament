@@ -8,6 +8,7 @@
 
 /// @name Letter Spacing
 /// @requires $merged
+/// @requires {mixin} configured-properties
 :root {
   @include props.configured-properties(
     "letter",

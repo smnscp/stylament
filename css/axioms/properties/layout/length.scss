@@ -8,6 +8,7 @@
 
 /// @name Length Scale
 /// @requires $merged
+/// @requires {mixin} length-scale
 :root {
   @include mixins.length-scale(
     map.get(cfg.$merged, layout, length, min),

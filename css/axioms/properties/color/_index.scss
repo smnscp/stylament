@@ -10,6 +10,8 @@
 @use "mixins" as color;
 
 /// @name Color Palettes
+/// @requires {mixin} palette
+/// @requires {mixin} configured-properties
 :root {
   $conf: map.get(cfg.$merged, color);
   $prefix: "color";

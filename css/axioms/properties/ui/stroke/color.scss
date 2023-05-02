@@ -11,6 +11,7 @@
 /// Stroke Colors.
 /// @name Stroke Colors
 /// @requires $merged
+/// @requires {mixin} configured-properties
 :root {
   @include props.configured-properties(
     "stroke-color",

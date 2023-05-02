@@ -8,6 +8,7 @@
 
 /// @name Font Weights
 /// @requires $merged
+/// @requires {mixin} configured-properties
 :root {
   @include props.configured-properties(
     "weight",

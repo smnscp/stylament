@@ -22,6 +22,7 @@ $sizes: config.map-config($-conf);
 
 /// @name Container Size Scale
 /// @requires $merged
+/// @requires {mixin} configured-properties
 :root {
   @include props.configured-properties("container", $-conf);
 }
