@@ -18,10 +18,24 @@
 /// [mdn2]: https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
 ///
 /// @param {Number} $size The numerical size index.
+/// @param {Number<rem>} $offset [0.25rem] The offset radius of the medium shadow.
+/// @param {Number<rem>} $blur [0.5rem] The offset radius of the medium shadow.
+/// @param {Number} $alpha [0.25] The alpha value of the medium shadow.
+/// @param {Number<deg>} $angle [270deg] The direction of the shadow.
+/// @param {List<Number{3}>} $color [0 0 0] The color of the shadow (RGB).
 /// @return {String} The mapped value, a CSS <shadow>.
-@function shadow($size) {
-  $offset: 0.25em * math.pow(2, $size);
-  $blur: 0.5em * math.pow(2, $size);
-  $alpha: math.div(4 + $size, 16);
-  @return "0 #{$offset} #{$blur} rgb(0 0 0 / #{$alpha})";
+@function shadow(
+  $size,
+  $offset: 0.25rem,
+  $blur: 0.5rem,
+  $alpha: 0.25,
+  $angle: 270deg,
+  $color: 0 0 0
+) {
+  $size-factor: math.pow(2, $size);
+  $size-x: $offset * math.cos($angle) * $size-factor;
+  $size-y: - $offset * math.sin($angle) * $size-factor;
+  $size-blur: $blur * $size-factor;
+  $size-alpha: $alpha * (1 + math.div($size, 16));
+  @return "#{$size-x} #{$size-y} #{$size-blur} rgb(#{$color} / #{$size-alpha})";
 }
