@@ -4,16 +4,14 @@
 
 @use "sass:map";
 @use "../../config" as cfg;
-@use "mixins";
+@use "../mixins" as props;
 
 /// @name Length Scale
 /// @requires $merged
-/// @requires {mixin} length-scale
+/// @requires {mixin} configured-properties
 :root {
-  @include mixins.length-scale(
-    map.get(cfg.$merged, layout, length, min),
-    map.get(cfg.$merged, layout, length, max),
-    map.get(cfg.$merged, typography, rlh),
-    map.get(cfg.$merged, layout, length, line)
+  @include props.configured-properties(
+    "length",
+    map.get(cfg.$merged, layout, length)
   );
 }

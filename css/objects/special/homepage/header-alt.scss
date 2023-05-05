@@ -13,7 +13,7 @@ body.s-homepage > header.\+alt {
   --stroke-width-box: var(--stroke-width-8);
   --stroke-style-box: dashed;
   --stroke-color-box: var(--color-grey-200);
-  --spacing-block: var(--length-l2);
+  --spacing-block: var(--length-2);
 
   & > * {
     @extend .l-center-box;

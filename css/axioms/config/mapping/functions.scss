@@ -9,6 +9,16 @@
 
 @use "sass:math";
 
+/// Quantize a given size to (sub-)units.
+/// @param {Number} $size The target size to approximate in sub-units.
+/// @param {Number} $unit The unit of whole steps.
+/// @param {Number} $sub The number of subdivisions per main unit.
+/// @return {Number} Size quantized to subunits.
+@function quantize($size, $unit, $sub) {
+  $int: math.floor($size);
+  @return ($int + math.div(math.round(($size - $int) * $sub), $sub)) * $unit;
+}
+
 /// Mapping function to generate [Shadow Scale](./ax-properties.html#css--Shadow%20Scale).
 ///
 /// **N.B.:** We do without the [spread radius][mdn1], so these shadows can be used as
@@ -34,7 +44,7 @@
 ) {
   $size-factor: math.pow(2, $size);
   $size-x: $offset * math.cos($angle) * $size-factor;
-  $size-y: - $offset * math.sin($angle) * $size-factor;
+  $size-y: -$offset * math.sin($angle) * $size-factor;
   $size-blur: $blur * $size-factor;
   $size-alpha: $alpha * (1 + math.div($size, 16));
   @return "#{$size-x} #{$size-y} #{$size-blur} rgb(#{$color} / #{$size-alpha})";

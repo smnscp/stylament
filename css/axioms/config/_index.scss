@@ -58,7 +58,7 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 ///     layout: (
 ///       spacing: (
 ///         literal: (
-///           block: "var(--length-l1)",
+///           block: "var(--length-1)",
 ///           inline: 4ch,
 ///         ),
 ///       ),
@@ -67,7 +67,7 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 ///
 /// @example css - Result
 ///   :root {
-///     --spacing-block: var(--length-l1);
+///     --spacing-block: var(--length-1);
 ///     --spacing-inline: 4ch;
 ///   }
 ///
@@ -112,9 +112,18 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 $default: (
   layout: (
     length: (
-      min: 2,
-      max: 12,
-      line: 4,
+      mapped: (
+        domain: mapping.$domain-tendency,
+        range: (
+          start: 0,
+          end: 10,
+        ),
+        function: meta.get-function("quantize", $module: "mapping"),
+        params: (
+          unit: $-rlh,
+          sub: 4,
+        ),
+      ),
     ),
     container: (
       mapped: (
@@ -133,10 +142,10 @@ $default: (
     ),
     spacing: (
       literal: (
-        block: "var(--length-l1)",
-        heading: "var(--length-l1)",
+        block: "var(--length-1)",
+        heading: "var(--length-1)",
         sectioning:
-          "clamp(var(--length-l1), (100vi - var(--container-sm)) / 4, var(--length-l2))",
+          "clamp(var(--length-1), (100vi - var(--container-sm)) / 4, var(--length-2))",
         inline: 4ch,
         inline-small: 0.5ch,
       ),
