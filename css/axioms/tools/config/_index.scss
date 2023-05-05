@@ -8,6 +8,7 @@
 
 @use "sass:list";
 @use "sass:map";
+@use "sass:math";
 @use "sass:meta";
 @use "../arithmetic/function";
 @use "../meta" as meta2;
@@ -30,27 +31,46 @@
 }
 
 /// Apply a range to a given domain.
-///
+/// If the domain doesn’t cover the range it will be repeated, adding the current
+/// lap count to each domain value and as a prefix to each key. This implies that
+/// with no domain given, we can easily use the set of integers (ℤ) as default domain.
 /// @param {Map} $base Map of aliases.
 /// @param {Map} $range Range limiting the domain.
 /// @return {Map} The domain limited by the range.
 /// @access private
 @function -apply-domain-range($base, $range) {
-  $step: if(map.has-key($range, step), map.get($range, step), 1);
-  $start: if(map.has-key($range, start), map.get($range, start), 1);
-  $end: if(
-    map.has-key($range, end),
-    map.get($range, end),
-    if($base, list.length($base), 7)
-  );
   $result: ();
 
+  // Use “ℤ” → ℤ as default domain.
+  $base: if(
+    $base,
+    $base,
+    (
+      "": 0,
+    )
+  );
+  $length: list.length($base);
+  $step: if(map.has-key($range, step), map.get($range, step), 1);
+  $start: if(map.has-key($range, start), map.get($range, start), 1);
+  $end: if(map.has-key($range, end), map.get($range, end), $length);
   $current: $start;
-  @while $current <= $end {
-    // Pick current key-value pair from the given domain or from ℤ → ℤ
-    $pair: if($base, list.nth($base, $current), "" + $current $current);
-    $result: map.set($result, $pair...);
+  // If the base domain doesn’t cover the range re-iterate over it.
+  $repeat: $start < 1 or $end > $length;
+  $lap: math.floor(math.div($start - 1, $length)) + 1;
 
+  @while $current <= $end {
+    @if $current > $length * $lap {
+      $lap: $lap + 1;
+    }
+    // Pick current key-value pair from the given domain.
+    $pair: list.nth($base, $current - $length * ($lap - 1));
+    $key: list.nth($pair, 1);
+    $value: list.nth($pair, 2);
+    @if $repeat {
+      $key: "#{$lap}#{$key}";
+      $value: $value + $lap;
+    }
+    $result: map.set($result, $key, $value);
     $current: $current + $step;
   }
 
@@ -64,13 +84,22 @@
 /// @param {Function} $func [null] Function to apply.
 /// @param {Map} $params [null] Parameters to the function.
 /// @return {Map} Map with domain symbols pointing to their function values.
-@function map-function($domain: null, $range: null, $func: null, $params: null) {
+@function map-function(
+  $domain: null,
+  $range: null,
+  $func: null,
+  $params: null
+) {
   $result: ();
   $func: if($func, $func, meta.get-function("identity", $module: "function"));
   $domain: if($range, -apply-domain-range($domain, $range), $domain);
   @if $domain {
     @each $name, $arg in $domain {
-      $result: map.set($result, $name, meta2.call-conditional($func, $arg, $params));
+      $result: map.set(
+        $result,
+        $name,
+        meta2.call-conditional($func, $arg, $params)
+      );
     }
   }
   @return $result;
