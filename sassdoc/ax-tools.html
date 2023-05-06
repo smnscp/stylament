@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.15.1</span>
+          <span class="project-version">0.15.2</span>
         
       </div>
     </header>
@@ -1731,7 +1731,10 @@ Each alias is asigned the value of the aliased dictionary<span class="widont">&n
 
   
     <div class="text-block">
-      <p>Apply a range to a given<span class="widont">&nbsp;</span>domain.</p>
+      <p>Apply a range to a given domain.
+If the domain doesn’t cover the range it will be repeated, adding the current
+lap count to each domain value and as a prefix to each key. This implies that
+with no domain given, we can easily use the set of integers (ℤ) as default<span class="widont">&nbsp;</span>domain.</p>
 
       
   

@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.15.1</span>
+          <span class="project-version">0.15.2</span>
         
       </div>
     </header>
@@ -1737,6 +1737,37 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       
         <a href="
+  ax-properties.html#css--Length%20Scale" class="item-name">Length Scale</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
   ax-properties.html#css--Spacing%20Values" class="item-name">Spacing Values</a>
       
       
@@ -3030,415 +3061,6 @@ If this is definded the other two curves are<span class="widont">&nbsp;</span>ig
 
 
 
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h3 id="layout-mixins" tabindex="-1">Layout Mixins</h3>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="mixin--length-scale">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type">@mixin</span>
-      
-
-      
-        <a href="#mixin--length-scale" class="item-name">length-scale()</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <h3 id="numeric-length-scale" tabindex="-1">Numeric Length Scale</h3>
-<p>This generates a scale of <code>--length-&lt;i&gt;</code> properties.
-The <code>&lt;i&gt;</code> indicates the number of sub-units the length is made up<span class="widont">&nbsp;</span>of.</p>
-<h3 id="logical-length-scale" tabindex="-1">Logical Length Scale</h3>
-<p>Additionally, there are aliases refer to use the<span class="widont">&nbsp;</span>main:</p>
-<ul>
-<li><code>--length-l&lt;j&gt;</code>: exactly <code>j</code> lines</li>
-<li><code>--length-l&lt;j&gt;aug</code>: a bit more than <code>j</code> lines</li>
-<li><code>--length-l&lt;j&gt;to&lt;j+1&gt;</code>: right between <code>j</code> and <code>j+1</code> lines</li>
-<li><code>--length-l&lt;j+1&gt;dim</code>: a bit less than <code>j+1</code> lines</li>
-</ul>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    
-  <div data-item-section="parameter">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Output</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$start:</span>
-      
-      
-      
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Start of the<span class="widont">&nbsp;</span>scale.</p>
-
-      </div>
-    
-  </div>
-
-
-      
-        
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$end:</span>
-      
-      
-      
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>End of the<span class="widont">&nbsp;</span>scale.</p>
-
-      </div>
-    
-  </div>
-
-
-      
-        
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$basis:</span>
-      
-      
-      
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Scale basis (unit), e. g. the root line<span class="widont">&nbsp;</span>height.</p>
-
-      </div>
-    
-  </div>
-
-
-      
-        
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$sub:</span>
-      
-      
-      
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Sub-division of the scale basis, i. e. how many sub-units per main<span class="widont">&nbsp;</span>unit.</p>
-
-      </div>
-    
-  </div>
-
-
-      
-
-      
-  
-
-      
-  
-
-      
-  
-    
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">{CSS output}</span>
-      
-      
-      <span class="value-type">(code<span class="widont">&nbsp;</span>block)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>A list of <code>--length-*</code> custom properties:</p>
-<pre><code class="lang-css">/* … */
---length-4: 1.5rem;
---length-l1: 1.5rem;
---length-5: 1.875rem;
---length-l1aug: 1.875rem;
---length-6: 2.25rem;
---length-l1to2: 2.25rem;
---length-7: 2.625rem;
---length-l2dim: 2.625rem;
---length-8: 3rem;
---length-l2: 3rem;
-/* … */
-</code></pre>
-
-      </div>
-    
-  </div>
-
-  
-
-      
-  
-
-    
-  </div>
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-    
-  <div data-item-section="used-by">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Used By</span>
-        
-      </h3>
-    
-
-    
-      
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Length%20Scale" class="item-name">Length Scale</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-    
-  </div>
-
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
 <section class="item" id="variable--sizes">
   
     
@@ -3818,11 +3440,9 @@ The <code>&lt;i&gt;</code> indicates the number of sub-units the length is made 
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  @include mixins.length-scale(
-    map.get(cfg.$merged, layout, length, min),
-    map.get(cfg.$merged, layout, length, max),
-    map.get(cfg.$merged, typography, rlh),
-    map.get(cfg.$merged, layout, length, line)
+  @include props.configured-properties(
+    &quot;length&quot;,
+    map.get(cfg.$merged, layout, length)
   );
 }</code></pre>
     </div>
@@ -3928,7 +3548,7 @@ The <code>&lt;i&gt;</code> indicates the number of sub-units the length is made 
       <span class="item-type">@mixin</span>
       
         <a href="
-  ax-properties.html#mixin--length-scale" class="item-name">length-scale()</a>
+  ax-properties.html#mixin--configured-properties" class="item-name">configured-properties()</a>
       
       
       

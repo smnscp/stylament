@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.15.1</span>
+          <span class="project-version">0.15.2</span>
         
       </div>
     </header>
@@ -611,54 +611,17 @@ For the structure of this custom configuration see <a href="#variable--default">
 }
 
 :root {
-  --length-1: 0.75rem;
-  --length-l0to1: 0.75rem;
-  --length-l0aug: 0.75rem;
-  --length-l1dim: 0.75rem;
-  --length-2: 1.5rem;
-  --length-l1: 1.5rem;
-  --length-3: 2.25rem;
-  --length-l1to2: 2.25rem;
-  --length-l1aug: 2.25rem;
-  --length-l2dim: 2.25rem;
-  --length-4: 3rem;
-  --length-l2: 3rem;
-  --length-5: 3.75rem;
-  --length-l2to3: 3.75rem;
-  --length-l2aug: 3.75rem;
-  --length-l3dim: 3.75rem;
-  --length-6: 4.5rem;
-  --length-l3: 4.5rem;
-  --length-7: 5.25rem;
-  --length-l3to4: 5.25rem;
-  --length-l3aug: 5.25rem;
-  --length-l4dim: 5.25rem;
-  --length-8: 6rem;
-  --length-l4: 6rem;
-  --length-9: 6.75rem;
-  --length-l4to5: 6.75rem;
-  --length-l4aug: 6.75rem;
-  --length-l5dim: 6.75rem;
-  --length-10: 7.5rem;
-  --length-l5: 7.5rem;
-  --length-11: 8.25rem;
-  --length-l5to6: 8.25rem;
-  --length-l5aug: 8.25rem;
-  --length-l6dim: 8.25rem;
-  --length-12: 9rem;
-  --length-l6: 9rem;
-  --length-13: 9.75rem;
-  --length-l6to7: 9.75rem;
-  --length-l6aug: 9.75rem;
-  --length-l7dim: 9.75rem;
-  --length-14: 10.5rem;
-  --length-l7: 10.5rem;
-  --length-15: 11.25rem;
-  --length-l7to8: 11.25rem;
-  --length-l7aug: 11.25rem;
-  --length-l8dim: 11.25rem;
-  --length-16: 12rem;
-  --length-l8: 12rem;
+  --length-0½: 0.75rem;
+  --length-1dim: 1.125rem;
+  --length-1: 1.5rem;
+  --length-1aug: 1.875rem;
+  --length-1½: 2.25rem;
+  --length-2dim: 2.625rem;
+  --length-2: 3rem;
+  --length-2aug: 3.375rem;
+  --length-2½: 3.75rem;
+  --length-3dim: 4.125rem;
+  --length-3: 4.5rem;
 }
 
 :root {
@@ -673,9 +636,9 @@ For the structure of this custom configuration see <a href="#variable--default">
 }
 
 :root {
-  --spacing-block: var(--length-l1);
-  --spacing-heading: var(--length-l1);
-  --spacing-sectioning: clamp(var(--length-l1), (100vi - var(--container-sm)) / 4, var(--length-l2));
+  --spacing-block: var(--length-1);
+  --spacing-heading: var(--length-1);
+  --spacing-sectioning: clamp(var(--length-1), (100vi - var(--container-sm)) / 4, var(--length-2));
   --spacing-inline: 4ch;
   --spacing-inline-small: 0.5ch;
   --spacing-sectioning: var(--spacing-block);
@@ -1154,7 +1117,7 @@ small,
 }
 
 :target {
-  scroll-margin-block-start: var(--length-l3);
+  scroll-margin-block-start: var(--length-3);
 }
 
 :where(h1, h2, h3, h4, h5, h6, p, address, summary, figcaption, caption) {
@@ -1443,9 +1406,18 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
       <pre class="hljs-pre"><code class="lang-scss">$default: (
   layout: (
     length: (
-      min: 2,
-      max: 12,
-      line: 4,
+      mapped: (
+        domain: mapping.$domain-tendency,
+        range: (
+          start: 0,
+          end: 10,
+        ),
+        function: meta.get-function(&quot;quantize&quot;, $module: &quot;mapping&quot;),
+        params: (
+          unit: $-rlh,
+          sub: 4,
+        ),
+      ),
     ),
     container: (
       mapped: (
@@ -1464,10 +1436,10 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
     ),
     spacing: (
       literal: (
-        block: &quot;var(--length-l1)&quot;,
-        heading: &quot;var(--length-l1)&quot;,
+        block: &quot;var(--length-1)&quot;,
+        heading: &quot;var(--length-1)&quot;,
         sectioning:
-          &quot;clamp(var(--length-l1), (100vi - var(--container-sm)) / 4, var(--length-l2))&quot;,
+          &quot;clamp(var(--length-1), (100vi - var(--container-sm)) / 4, var(--length-2))&quot;,
         inline: 4ch,
         inline-small: 0.5ch,
       ),
@@ -1615,7 +1587,7 @@ This also serves as a reference for your <a href="#variable--custom">custom<span
   layout: (
     spacing: (
       literal: (
-        block: &quot;var(--length-l1)&quot;,
+        block: &quot;var(--length-1)&quot;,
         inline: 4ch,
       ),
     ),
@@ -1667,7 +1639,7 @@ This also serves as a reference for your <a href="#variable--custom">custom<span
       
       
       <pre class="hljs-pre"><code class="lang-css">:root {
-  --spacing-block: var(--length-l1);
+  --spacing-block: var(--length-1);
   --spacing-inline: 4ch;
 }</code></pre>
     </div>
@@ -3270,6 +3242,243 @@ the given domain<span class="widont">&nbsp;</span>value.</p>
 
 
 
+<section class="item" id="function--quantize">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@function</span>
+      
+
+      
+        <a href="#function--quantize" class="item-name">quantize()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Quantize a given size to<span class="widont">&nbsp;</span>(sub-)units.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Return</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$size:</span>
+      
+      
+      <span class="value-type">(Number)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The target size to approximate in<span class="widont">&nbsp;</span>sub-units.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$unit:</span>
+      
+      
+      <span class="value-type">(Number)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The unit of whole<span class="widont">&nbsp;</span>steps.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$sub:</span>
+      
+      
+      <span class="value-type">(Number)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The number of subdivisions per main<span class="widont">&nbsp;</span>unit.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">@return</span>
+      
+      
+      <span class="value-type">(Number)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Size quantized to<span class="widont">&nbsp;</span>subunits.</p>
+
+      </div>
+    
+  </div>
+
+  
+
+      
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" id="function--shadow">
   
     
@@ -4361,28 +4570,17 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
 }
 
 :root {
-  --length-2: 0.75rem;
-  --length-l0to1: 0.75rem;
-  --length-3: 1.125rem;
-  --length-l1dim: 1.125rem;
-  --length-4: 1.5rem;
-  --length-l1: 1.5rem;
-  --length-5: 1.875rem;
-  --length-l1aug: 1.875rem;
-  --length-6: 2.25rem;
-  --length-l1to2: 2.25rem;
-  --length-7: 2.625rem;
-  --length-l2dim: 2.625rem;
-  --length-8: 3rem;
-  --length-l2: 3rem;
-  --length-9: 3.375rem;
-  --length-l2aug: 3.375rem;
-  --length-10: 3.75rem;
-  --length-l2to3: 3.75rem;
-  --length-11: 4.125rem;
-  --length-l3dim: 4.125rem;
-  --length-12: 4.5rem;
-  --length-l3: 4.5rem;
+  --length-0½: 0.75rem;
+  --length-1dim: 1.125rem;
+  --length-1: 1.5rem;
+  --length-1aug: 1.875rem;
+  --length-1½: 2.25rem;
+  --length-2dim: 2.625rem;
+  --length-2: 3rem;
+  --length-2aug: 3.375rem;
+  --length-2½: 3.75rem;
+  --length-3dim: 4.125rem;
+  --length-3: 4.5rem;
 }
 
 :root {
@@ -4397,9 +4595,9 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
 }
 
 :root {
-  --spacing-block: var(--length-l1);
-  --spacing-heading: var(--length-l1);
-  --spacing-sectioning: clamp(var(--length-l1), (100vi - var(--container-sm)) / 4, var(--length-l2));
+  --spacing-block: var(--length-1);
+  --spacing-heading: var(--length-1);
+  --spacing-sectioning: clamp(var(--length-1), (100vi - var(--container-sm)) / 4, var(--length-2));
   --spacing-inline: 4ch;
   --spacing-inline-small: 0.5ch;
 }
@@ -4942,7 +5140,7 @@ small,
 }
 
 :target {
-  scroll-margin-block-start: var(--length-l3);
+  scroll-margin-block-start: var(--length-3);
 }
 
 :where(h1, h2, h3, h4, h5, h6, p, address, summary, figcaption, caption) {
