@@ -39,7 +39,7 @@ groups:
     ob-elementary: Elementary
     ob-layout: Layout
     ob-coloring: Coloring
-    ob-special: More Specific Styling
+    ob-scope: Scope-specific
   Utilities:
     ut-intro: … Introduction
     ut-layout: Layout Utilities
