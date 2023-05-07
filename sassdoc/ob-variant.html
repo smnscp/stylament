@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Elementary | Stylament Documentation</title>
+  <title>Elementary Variants | Stylament Documentation</title>
 
   <link href="assets/img/logo.svg" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.15.2</span>
+          <span class="project-version">0.16.0</span>
         
       </div>
     </header>
@@ -202,14 +202,12 @@
   
   
     <li class="nav-item">
-      <a href="ob-elementary.html" data-nav="is-active">Elementary</a>
+      <a href="ob-variant.html" data-nav="is-active">Elementary Variants</a>
     </li>
   
   
-  
-  
     <li class="nav-item">
-      <a href="ob-special.html" data-nav="is-not-active">More Specific<span class="widont">&nbsp;</span>Styling</a>
+      <a href="ob-scope.html" data-nav="is-not-active">Scope-defining Classes</a>
     </li>
   </ul>
             </li>
@@ -224,9 +222,23 @@
   
   
     <li class="nav-item">
+      <a href="ut-atomic.html" data-nav="is-not-active">Atomic Utilities</a>
+    </li>
+  
+  
+    <li class="nav-item">
       <a href="ut-layout.html" data-nav="is-not-active">Layout Utilities</a>
     </li>
   
+  
+    <li class="nav-item">
+      <a href="ut-coloring.html" data-nav="is-not-active">Coloring Utilities</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ut-dev.html" data-nav="is-not-active">Development Utilities</a>
+    </li>
   </ul>
             </li></ul>
     </div>
@@ -264,11 +276,11 @@
   <nav class="breadcrumb">
     
     <a href="index.html" >Stylament</a> »
-    <strong>Elementary</strong>
+    <strong>Elementary Variants</strong>
   </nav>
 
 
-        <div data-page="ob-elementary">
+        <div data-page="ob-variant">
           
   
     
@@ -294,7 +306,7 @@
   
     <div data-item-section="prose" class="text-block">
       <h2 id="main-navigation-bar" tabindex="-1">Main Navigation Bar</h2>
-<p>Rather opinonated styling for the first <code>nav.e-menu</code>.</p>
+<p>Rather opinonated styling for the first <code>nav.var-menu</code>.</p>
 
       
   
@@ -359,7 +371,7 @@
 
 
 
-<section class="item" id="css--body%20%3E%20nav.e-menu%3Afirst-of-type">
+<section class="item" id="css--body%20%3E%20nav.var-menu%3Afirst-of-type">
   
     
   
@@ -377,7 +389,7 @@
       
 
       
-        <a href="#css--body%20%3E%20nav.e-menu%3Afirst-of-type" class="item-name">body &gt;<span class="widont">&nbsp;</span>nav.e-menu:first-of-type</a>
+        <a href="#css--body%20%3E%20nav.var-menu%3Afirst-of-type" class="item-name">body &gt;<span class="widont">&nbsp;</span>nav.var-menu:first-of-type</a>
       
 
       
@@ -406,7 +418,7 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">body &gt; nav.e-menu:first-of-type {
+      <pre class="hljs-pre"><code class="lang-scss">body &gt; nav.var-menu:first-of-type {
   $size: var(--length-2);
   --item-block-size: #{$size};
   --item-line-height: var(--length-1dim);
@@ -447,7 +459,7 @@
 
   
     <div class="text-block">
-      <p>The  first <code>nav.e-menu</code> is implicitly considered the main<span class="widont">&nbsp;</span>menu.</p>
+      <p>The  first <code>nav.var-menu</code> is implicitly considered the main<span class="widont">&nbsp;</span>menu.</p>
 
       
   
@@ -524,7 +536,7 @@
 
   
     <div data-item-section="prose" class="text-block">
-      <h1 id="navigation-menu" tabindex="-1">Navigation Menu</h1>
+      <h2 id="navigation-menu" tabindex="-1">Navigation Menu</h2>
 <p>Common patterns for navigation menus. Separated into several<span class="widont">&nbsp;</span>aspects.</p>
 
       
@@ -842,7 +854,7 @@
 
 
 
-<section class="item" id="css--nav.e-menu">
+<section class="item" id="css--nav.var-menu">
   
     
   
@@ -860,7 +872,7 @@
       
 
       
-        <a href="#css--nav.e-menu" class="item-name">nav.e-menu</a>
+        <a href="#css--nav.var-menu" class="item-name">nav.var-menu</a>
       
 
       
@@ -889,7 +901,7 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu {
+      <pre class="hljs-pre"><code class="lang-scss">nav.var-menu {
   --item-block-size: #{$size};
   display: flex;
   flex-direction: row;
@@ -982,7 +994,7 @@
 
 
 
-<section class="item" id="css--nav.e-menu.%5C%2Blevelable">
+<section class="item" id="css--nav.var-menu.%5C%2Blevelable">
   
     
   
@@ -1000,7 +1012,7 @@
       
 
       
-        <a href="#css--nav.e-menu.%5C%2Blevelable" class="item-name">nav.e-menu.&#92;+levelable</a>
+        <a href="#css--nav.var-menu.%5C%2Blevelable" class="item-name">nav.var-menu.&#92;+levelable</a>
       
 
       
@@ -1029,7 +1041,7 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu.&#92;+levelable {
+      <pre class="hljs-pre"><code class="lang-scss">nav.var-menu.&#92;+levelable {
   &amp; &gt; menu {
     display: flex;
     flex-wrap: wrap;
@@ -1123,7 +1135,7 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
 
 
 
-<section class="item" id="css--nav.e-menu.%5C%2Bfoldable">
+<section class="item" id="css--nav.var-menu.%5C%2Bfoldable">
   
     
   
@@ -1141,7 +1153,7 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
       
 
       
-        <a href="#css--nav.e-menu.%5C%2Bfoldable" class="item-name">nav.e-menu.&#92;+foldable</a>
+        <a href="#css--nav.var-menu.%5C%2Bfoldable" class="item-name">nav.var-menu.&#92;+foldable</a>
       
 
       
@@ -1170,7 +1182,7 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu.&#92;+foldable {
+      <pre class="hljs-pre"><code class="lang-scss">nav.var-menu.&#92;+foldable {
   --toggle-size: #{$size};
 
   /// Places toggle to the inline end (rhs in Latin).
@@ -1610,7 +1622,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
 
 
-<section class="item" id="css--nav.e-menu.%5C%2Bsticky">
+<section class="item" id="css--nav.var-menu.%5C%2Bsticky">
   
     
   
@@ -1628,7 +1640,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
       
 
       
-        <a href="#css--nav.e-menu.%5C%2Bsticky" class="item-name">nav.e-menu.&#92;+sticky</a>
+        <a href="#css--nav.var-menu.%5C%2Bsticky" class="item-name">nav.var-menu.&#92;+sticky</a>
       
 
       
@@ -1657,7 +1669,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.e-menu.&#92;+sticky {
+      <pre class="hljs-pre"><code class="lang-scss">nav.var-menu.&#92;+sticky {
   position: sticky;
   inset-block-start: 0;
   z-index: 1;
@@ -1741,7 +1753,7 @@ Makes navbar stick to the top of the<span class="widont">&nbsp;</span>viewport.<
 
 
 
-<section class="item" id="css--table.e-standard-table">
+<section class="item" id="css--table.var-standard-table">
   
     
   
@@ -1759,7 +1771,7 @@ Makes navbar stick to the top of the<span class="widont">&nbsp;</span>viewport.<
       
 
       
-        <a href="#css--table.e-standard-table" class="item-name">table.e-standard-table</a>
+        <a href="#css--table.var-standard-table" class="item-name">table.var-standard-table</a>
       
 
       
@@ -1788,7 +1800,7 @@ Makes navbar stick to the top of the<span class="widont">&nbsp;</span>viewport.<
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">table.e-standard-table {
+      <pre class="hljs-pre"><code class="lang-scss">table.var-standard-table {
   --table-border-width: var(--stroke-width-table, var(--stroke-width-default));
   --table-border-style: var(--stroke-style-table, var(--stroke-style-default));
   --table-border-color: var(--stroke-color-table, var(--stroke-color-default));

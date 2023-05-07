@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>&lt;un-grouped&gt; | Stylament Documentation</title>
+  <title>Development Utilities | Stylament Documentation</title>
 
-  <link href="assets/img/favicon.ico" rel="shortcut icon">
+  <link href="assets/img/logo.svg" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/webpack/app_styles.min.css" />
@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.7.0</span>
+          <span class="project-version">0.16.0</span>
         
       </div>
     </header>
@@ -68,14 +68,15 @@
     <div class="nav-subsection">
       <ul>
   
-    <li class="nav-item">
-      <a href="undefined.html" data-nav="is-active">&lt;un-grouped&gt;</a>
-    </li>
-  
             <li class="nav-subsection">
               <h3 class="nav-title">Axioms</h3>
               <ul>
                 
+  
+    <li class="nav-item">
+      <a href="ax-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
   
     <li class="nav-item">
       <a href="ax-config.html" data-nav="is-not-active">Global Configuration</a>
@@ -88,12 +89,12 @@
   
   
     <li class="nav-item">
-      <a href="ax-properties.html" data-nav="is-not-active">Custom Properties</a>
+      <a href="ax-properties.html" data-nav="is-not-active">CSS Custom<span class="widont">&nbsp;</span>Properties</a>
     </li>
   
   
     <li class="nav-item">
-      <a href="ax-generic.html" data-nav="is-not-active">Generic Rules</a>
+      <a href="ax-generic.html" data-nav="is-not-active">Generic CSS</a>
     </li>
   </ul>
             </li>
@@ -103,7 +104,12 @@
                 
   
     <li class="nav-item">
-      <a href="el-document.html" data-nav="is-not-active">General Document<span class="widont">&nbsp;</span>Structure</a>
+      <a href="el-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-document.html" data-nav="is-not-active">Document-level Elements</a>
     </li>
   
   
@@ -158,17 +164,50 @@
   </ul>
             </li>
             <li class="nav-subsection">
+              <h3 class="nav-title">Idioms</h3>
+              <ul>
+                
+  
+    <li class="nav-item">
+      <a href="id-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="id-document.html" data-nav="is-not-active">Document Structure</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="id-sectioning.html" data-nav="is-not-active">Sectioning</a>
+    </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  </ul>
+            </li>
+            <li class="nav-subsection">
               <h3 class="nav-title">Objects</h3>
               <ul>
                 
   
     <li class="nav-item">
-      <a href="ob-navigation.html" data-nav="is-not-active">Navigation</a>
+      <a href="ob-intro.html" data-nav="is-not-active">… Introduction</a>
     </li>
   
   
     <li class="nav-item">
-      <a href="ob-special.html" data-nav="is-not-active">More Specific<span class="widont">&nbsp;</span>Styling</a>
+      <a href="ob-variant.html" data-nav="is-not-active">Elementary Variants</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ob-scope.html" data-nav="is-not-active">Scope-defining Classes</a>
     </li>
   </ul>
             </li>
@@ -178,9 +217,28 @@
                 
   
     <li class="nav-item">
+      <a href="ut-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ut-atomic.html" data-nav="is-not-active">Atomic Utilities</a>
+    </li>
+  
+  
+    <li class="nav-item">
       <a href="ut-layout.html" data-nav="is-not-active">Layout Utilities</a>
     </li>
   
+  
+    <li class="nav-item">
+      <a href="ut-coloring.html" data-nav="is-not-active">Coloring Utilities</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ut-dev.html" data-nav="is-active">Development Utilities</a>
+    </li>
   </ul>
             </li></ul>
     </div>
@@ -218,11 +276,11 @@
   <nav class="breadcrumb">
     
     <a href="index.html" >Stylament</a> »
-    <strong>&lt;un-grouped&gt;</strong>
+    <strong>Development Utilities</strong>
   </nav>
 
 
-        <div data-page="undefined">
+        <div data-page="ut-dev">
           
   
     
@@ -237,70 +295,20 @@
 
 
 
-<section class="item" id="css--thead%20%2B%20tbody">
+<section class="item" >
   
     
   
   
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--thead%20%2B%20tbody" class="item-name">thead +<span class="widont">&nbsp;</span>tbody</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">thead + tbody {
-  th:first-child {
-      text-align: start;
-    }
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
   
   
 
   
-    <div class="text-block">
-      <p>Do not center <code>th</code> in vertical<span class="widont">&nbsp;</span>tables.</p>
+    <div data-item-section="prose" class="text-block">
+      <h1 id="development-utilities" tabindex="-1">Development Utilities</h1>
+<p>These are utility classes to be used as helpers during<span class="widont">&nbsp;</span>development.</p>
+<h2 id="naming-convention" tabindex="-1">Naming Convention</h2>
+<p>Dev utilities carry the <code>dev-</code> prefix, e. g. <code>dev-lorem-ipsum</code>.</p>
 
       
   
@@ -313,8 +321,6 @@
 
     </div>
   
-
-  </div>
 
   
 

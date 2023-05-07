@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>More Specific Styling | Stylament Documentation</title>
+  <title>Scope-defining Classes | Stylament Documentation</title>
 
   <link href="assets/img/logo.svg" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.15.2</span>
+          <span class="project-version">0.16.0</span>
         
       </div>
     </header>
@@ -202,14 +202,12 @@
   
   
     <li class="nav-item">
-      <a href="ob-elementary.html" data-nav="is-not-active">Elementary</a>
+      <a href="ob-variant.html" data-nav="is-not-active">Elementary Variants</a>
     </li>
   
   
-  
-  
     <li class="nav-item">
-      <a href="ob-special.html" data-nav="is-active">More Specific<span class="widont">&nbsp;</span>Styling</a>
+      <a href="ob-scope.html" data-nav="is-active">Scope-defining Classes</a>
     </li>
   </ul>
             </li>
@@ -224,9 +222,23 @@
   
   
     <li class="nav-item">
+      <a href="ut-atomic.html" data-nav="is-not-active">Atomic Utilities</a>
+    </li>
+  
+  
+    <li class="nav-item">
       <a href="ut-layout.html" data-nav="is-not-active">Layout Utilities</a>
     </li>
   
+  
+    <li class="nav-item">
+      <a href="ut-coloring.html" data-nav="is-not-active">Coloring Utilities</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ut-dev.html" data-nav="is-not-active">Development Utilities</a>
+    </li>
   </ul>
             </li></ul>
     </div>
@@ -264,12 +276,92 @@
   <nav class="breadcrumb">
     
     <a href="index.html" >Stylament</a> »
-    <strong>More Specific Styling</strong>
+    <strong>Scope-defining Classes</strong>
   </nav>
 
 
-        <div data-page="ob-special">
+        <div data-page="ob-scope">
           
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h1 id="scope-defining-classes" tabindex="-1">Scope-defining Classes</h1>
+<p>These are classes that define specific scopes. They potentially affect the
+children of the classified element, e. g. the <code>header</code> inside <code>body.scp-homepage</code>
+might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
+<h2 id="naming-convention" tabindex="-1">Naming Convention</h2>
+<p>Scope classes carry the <code>scp-</code> prefix, e. g. <code>scp-homepage</code>.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
   
     
     
@@ -358,7 +450,7 @@
 
 
 
-<section class="item" id="css--body.s-homepage%20%3E%20header.%5C%2Balt">
+<section class="item" id="css--body.scp-homepage%20%3E%20header.%5C%2Balt">
   
     
   
@@ -376,7 +468,7 @@
       
 
       
-        <a href="#css--body.s-homepage%20%3E%20header.%5C%2Balt" class="item-name">body.s-homepage &gt;<span class="widont">&nbsp;</span>header.&#92;+alt</a>
+        <a href="#css--body.scp-homepage%20%3E%20header.%5C%2Balt" class="item-name">body.scp-homepage &gt;<span class="widont">&nbsp;</span>header.&#92;+alt</a>
       
 
       
@@ -405,7 +497,7 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">body.s-homepage &gt; header.&#92;+alt {
+      <pre class="hljs-pre"><code class="lang-scss">body.scp-homepage &gt; header.&#92;+alt {
   --radius-box: var(--radius-xl);
   --stroke-width-box: var(--stroke-width-8);
   --stroke-style-box: dashed;
@@ -413,8 +505,8 @@
   --spacing-block: var(--length-2);
 
   &amp; &gt; * {
-    @extend .l-center-box;
-    @extend %l-center--intrinsic;
+    @extend .lay-center-box;
+    @extend %lay-center--intrinsic;
   }
 }</code></pre>
     </div>
@@ -570,7 +662,7 @@
 
 
 
-<section class="item" id="css--body.s-homepage%20%3E%20header">
+<section class="item" id="css--body.scp-homepage%20%3E%20header">
   
     
   
@@ -588,7 +680,7 @@
       
 
       
-        <a href="#css--body.s-homepage%20%3E%20header" class="item-name">body.s-homepage &gt;<span class="widont">&nbsp;</span>header</a>
+        <a href="#css--body.scp-homepage%20%3E%20header" class="item-name">body.scp-homepage &gt;<span class="widont">&nbsp;</span>header</a>
       
 
       
@@ -617,15 +709,15 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">body.s-homepage &gt; header {
-  @extend .l-cover;
+      <pre class="hljs-pre"><code class="lang-scss">body.scp-homepage &gt; header {
+  @extend .lay-cover;
 
   h1 {
     font-size: clamp(var(--scale-3), 8vmin, var(--scale-9));
   }
 
   &amp; &gt; * {
-    @extend %l-center--intrinsic;
+    @extend %lay-center--intrinsic;
   }
 
   // Any image alone in an hgroup row is considered a logo.

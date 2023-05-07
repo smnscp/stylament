@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.15.2</span>
+          <span class="project-version">0.16.0</span>
         
       </div>
     </header>
@@ -202,14 +202,12 @@
   
   
     <li class="nav-item">
-      <a href="ob-elementary.html" data-nav="is-not-active">Elementary</a>
+      <a href="ob-variant.html" data-nav="is-not-active">Elementary Variants</a>
     </li>
   
   
-  
-  
     <li class="nav-item">
-      <a href="ob-special.html" data-nav="is-not-active">More Specific<span class="widont">&nbsp;</span>Styling</a>
+      <a href="ob-scope.html" data-nav="is-not-active">Scope-defining Classes</a>
     </li>
   </ul>
             </li>
@@ -224,9 +222,23 @@
   
   
     <li class="nav-item">
+      <a href="ut-atomic.html" data-nav="is-not-active">Atomic Utilities</a>
+    </li>
+  
+  
+    <li class="nav-item">
       <a href="ut-layout.html" data-nav="is-not-active">Layout Utilities</a>
     </li>
   
+  
+    <li class="nav-item">
+      <a href="ut-coloring.html" data-nav="is-not-active">Coloring Utilities</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ut-dev.html" data-nav="is-not-active">Development Utilities</a>
+    </li>
   </ul>
             </li></ul>
     </div>
@@ -294,9 +306,22 @@
   
     <div data-item-section="prose" class="text-block">
       <h1 id="utilities" tabindex="-1">Utilities</h1>
-<p>Utilities are classes that can be added to any individual element in order to
-apply rather atomic styling to<span class="widont">&nbsp;</span>it.</p>
-<p>Stylament is utility-last.</p>
+<p>Utilities are <em>non-semantic</em> classes that can be used to apply <em>presentational</em>
+styling regardless of any semantic<span class="widont">&nbsp;</span>context.</p>
+<p>Unlike with popular utility-first frameworks this is not limited to
+<a href="ut-atomic.html">atomic utilities</a> but also includes complex classes like
+<a href="ut-layout.html">layout utilities</a>. Using semantics as 	differentiating factor
+helps to draw a clear line between utility and <a href="ob-intro.html">object</a><span class="widont">&nbsp;</span>classes.</p>
+<h2 id="utility-last" tabindex="-1">Utility-Last</h2>
+<p>Stylament follows the <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">official recommendations</a> on using the HTML
+<code>class</code> attribute:</p>
+<blockquote>
+<p>[…] authors are encouraged to use values that describe the nature of the content,
+rather than values that describe the desired presentation of the<span class="widont">&nbsp;</span>content.</p>
+</blockquote>
+<p>With that in mind it is obvious that utility classes should only be used as last
+resort when an elements needs a certain presentational trait without recognizable
+semantic<span class="widont">&nbsp;</span>reason.</p>
 
       
   
