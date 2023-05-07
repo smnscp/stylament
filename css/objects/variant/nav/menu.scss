@@ -1,12 +1,12 @@
 ////
-/// @group ob-elementary
+/// @group ob-variant
 ////
 
 @use "sass:map";
 @use "../../../axioms/properties/layout/container";
 @use "../../../axioms/generic/mixins/coloring";
 
-/// # Navigation Menu
+/// ## Navigation Menu
 ///
 /// Common patterns for navigation menus. Separated into several aspects.
 
@@ -18,7 +18,7 @@ $nav-wide: map.get(container.$sizes, "sm");
 $size: 2em;
 
 /// General navigation menu. This is the basic selector with the basic rules applied.
-nav.e-menu {
+nav.var-menu {
   --item-block-size: #{$size};
   display: flex;
   flex-direction: row;
@@ -36,7 +36,7 @@ nav.e-menu {
 
 /// Levelable Nav.
 /// Places items on a horizontal level if enough space is available.
-nav.e-menu.\+levelable {
+nav.var-menu.\+levelable {
   & > menu {
     display: flex;
     flex-wrap: wrap;
@@ -66,7 +66,7 @@ nav.e-menu.\+levelable {
 
 /// Foldable Nav.
 /// Allows to toggle the display of the menu.
-nav.e-menu.\+foldable {
+nav.var-menu.\+foldable {
   --toggle-size: #{$size};
 
   /// Places toggle to the inline end (rhs in Latin).
@@ -158,7 +158,7 @@ nav.e-menu.\+foldable {
 
 /// Sticky Nav.
 /// Makes navbar stick to the top of the viewport.
-nav.e-menu.\+sticky {
+nav.var-menu.\+sticky {
   position: sticky;
   inset-block-start: 0;
   z-index: 1;

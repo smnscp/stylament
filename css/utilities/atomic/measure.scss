@@ -1,17 +1,17 @@
 ////
-/// @group ut-layout
+/// @group ut-atomic
 ////
 
 @use "sass:list";
 @use "sass:map";
-@use "../axioms/config" as cfg;
+@use "../../axioms/config" as cfg;
 
 $conf: map.get(cfg.$merged, typography, measure);
 $sizes: map.merge(map.get($conf, mapped, domain), map.get($conf, literal));
 
 @each $name, $value in $sizes {
   /// Specify individual measure.
-  .u-measure-#{$name} {
+  .\@measure-#{$name} {
     --measure: var(--measure-#{$name}) !important;
   }
 }

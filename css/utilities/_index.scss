@@ -4,10 +4,27 @@
 
 /// # Utilities
 ///
-/// Utilities are classes that can be added to any individual element in order to
-/// apply rather atomic styling to it.
+/// Utilities are _non-semantic_ classes that can be used to apply _presentational_
+/// styling regardless of any semantic context.
 ///
-/// Stylament is utility-last.
+/// Unlike with popular utility-first frameworks this is not limited to
+/// [atomic utilities](ut-atomic.html) but also includes complex classes like
+/// [layout utilities](ut-layout.html). Using semantics as 	differentiating factor
+/// helps to draw a clear line between utility and [object](ob-intro.html) classes.
+///
+/// ## Utility-Last
+///
+/// Stylament follows the [official recommendations][whatwg] on using the HTML
+/// `class` attribute:
+///
+/// > […] authors are encouraged to use values that describe the nature of the content,
+/// > rather than values that describe the desired presentation of the content.
+///
+/// With that in mind it is obvious that utility classes should only be used as last
+/// resort when an elements needs a certain presentational trait without recognizable
+/// semantic reason.
+///
+/// [whatwg]: https://html.spec.whatwg.org/multipage/dom.html#classes
 
-@use "measure";
-@use "wrap";
+@use "layout";
+@use "coloring";

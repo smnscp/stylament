@@ -35,7 +35,6 @@
 // Scope-specific objects not include by default.
 @use "objects/scope/homepage";
 @use "utilities";
-@use "utilities/placeholder";
-@use "utilities/debug";
+@use "utilities/dev";
 
 @use "fonts";

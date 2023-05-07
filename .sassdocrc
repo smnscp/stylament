@@ -36,13 +36,13 @@ groups:
     id-interactive: Interactive Elements
   Objects:
     ob-intro: … Introduction
-    ob-elementary: Elementary
-    ob-layout: Layout
-    ob-coloring: Coloring
-    ob-scope: Scope-specific
+    ob-variant: Elementary Variants
+    ob-scope: Scope-defining Classes
   Utilities:
     ut-intro: … Introduction
+    ut-atomic: Atomic Utilities
     ut-layout: Layout Utilities
+    ut-coloring: Coloring Utilities
     ut-dev: Development Utilities
 herman:
   sass:

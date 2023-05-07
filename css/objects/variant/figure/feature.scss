@@ -2,7 +2,7 @@
 @use "../../../axioms/generic/mixins/coloring";
 @use "../../../axioms/properties/layout/container";
 
-figure.e-feature {
+figure.var-feature {
   @include coloring.set-colors("feature", "alternate");
   @include coloring.use-colors;
   padding: var(--spacing-sectioning);

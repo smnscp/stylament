@@ -1,11 +1,11 @@
 ////
-/// @group ob-elementary
+/// @group ob-variant
 ////
 
 /// Standard table style.
 /// In contrast to the neutral styles applied to the bare `table` element
 /// this adds some borders and stripes.
-table.e-standard-table {
+table.var-standard-table {
   --table-border-width: var(--stroke-width-table, var(--stroke-width-default));
   --table-border-style: var(--stroke-style-table, var(--stroke-style-default));
   --table-border-color: var(--stroke-color-table, var(--stroke-color-default));

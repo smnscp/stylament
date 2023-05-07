@@ -1,0 +1,15 @@
+////
+/// @group ut-atomic
+////
+
+/// # Atomic Utilities
+///
+/// These are utility classes as known from most CSS utility frameworks.
+/// Add them to any individual element in order to apply to it atomic styling,
+/// i. e. set only one property to one specific value.
+///
+/// ## Naming Convention
+///
+/// Atomic utilities carry the `@` prefix, e. g. `@color-red`.
+
+@use "measure";

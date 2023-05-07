@@ -4,8 +4,19 @@
 
 /// # Objects
 ///
-/// The concept of CSS objects was coined in OOCSS.
+/// Objects are _semantic_ classes that extend/specify the meaning of the elements
+/// they are applied to.
+///
+/// ## `class` – Just as Intended
+///
+/// The term of CSS objects was coined in [OOCSS][oocss]. Despite all the detailed ideas
+/// behind OOCSS, essentially, object classes are nothing else but the implementation of
+/// the [official recommendations][whatwg] on using the HTML `class` attribute:
+///
+/// > […] authors are encouraged to use values that describe the nature of the content,
+/// > rather than values that describe the desired presentation of the content.
+///
+/// [oocss]: https://github.com/stubbornella/oocss/wiki
+/// [whatwg]: https://html.spec.whatwg.org/multipage/dom.html#classes
 
-@use "layout";
-@use "coloring";
-@use "elementary";
+@use "variant";

@@ -1,4 +1,4 @@
-.l-center {
+.lay-center {
   display: block;
   box-sizing: content-box;
   max-inline-size: var(--container-size);
@@ -6,8 +6,8 @@
   margin-inline: auto;
 }
 
-.l-center.\+intrinsic,
-%l-center--intrinsic {
+.lay-center.\+intrinsic,
+%lay-center--intrinsic {
   > * {
     text-align: center;
     margin-inline: auto;

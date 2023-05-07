@@ -4,19 +4,19 @@
 
 /// ## Homepage Header
 
-@use "../../layout/primitive/center";
-@use "../../layout/primitive/cover";
+@use "../../../utilities/layout/primitive/center.scss";
+@use "../../../utilities/layout/primitive/cover";
 
 /// Special homepage header styles.
-body.s-homepage > header {
-  @extend .l-cover;
+body.scp-homepage > header {
+  @extend .lay-cover;
 
   h1 {
     font-size: clamp(var(--scale-3), 8vmin, var(--scale-9));
   }
 
   & > * {
-    @extend %l-center--intrinsic;
+    @extend %lay-center--intrinsic;
   }
 
   // Any image alone in an hgroup row is considered a logo.

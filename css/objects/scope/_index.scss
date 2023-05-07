@@ -1,0 +1,13 @@
+////
+/// @group ob-scope
+////
+
+/// # Scope-defining Classes
+///
+/// These are classes that define specific scopes. They potentially affect the
+/// children of the classified element, e. g. the `header` inside `body.scp-homepage`
+/// might have scope-specific styles applied.
+///
+/// ## Naming Convention
+///
+/// Scope classes carry the `scp-` prefix, e. g. `scp-homepage`.

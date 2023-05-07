@@ -4,11 +4,11 @@
 
 /// ## Homepage Header, alternative
 
-@use "../../layout/primitive/center";
-@use "../../layout/primitive/center-box";
+@use "../../../utilities/layout/primitive/center";
+@use "../../../utilities/layout/primitive/center-box";
 
 /// Special homepage header styles.
-body.s-homepage > header.\+alt {
+body.scp-homepage > header.\+alt {
   --radius-box: var(--radius-xl);
   --stroke-width-box: var(--stroke-width-8);
   --stroke-style-box: dashed;
@@ -16,7 +16,7 @@ body.s-homepage > header.\+alt {
   --spacing-block: var(--length-2);
 
   & > * {
-    @extend .l-center-box;
-    @extend %l-center--intrinsic;
+    @extend .lay-center-box;
+    @extend %lay-center--intrinsic;
   }
 }

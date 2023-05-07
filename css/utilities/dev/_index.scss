@@ -1,0 +1,14 @@
+////
+/// @group ut-dev
+////
+
+/// # Development Utilities
+///
+/// These are utility classes to be used as helpers during development.
+///
+/// ## Naming Convention
+///
+/// Dev utilities carry the `dev-` prefix, e. g. `dev-lorem-ipsum`.
+
+@use "debug";
+@use "placeholder";

@@ -1,4 +1,15 @@
-.l-wrap-grid {
+////
+/// @group ut-layout
+////
+
+/// Reset wrapping.
+.lay-wrap-reset {
+  grid-column: 1 / -1 !important;
+  max-inline-size: unset !important;
+  flex: 100% !important;
+}
+
+.lay-wrap-grid {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
@@ -6,8 +17,8 @@
   );
 }
 
-.l-wrap-flex,
-.l-wrap-cluster {
+.lay-wrap-flex,
+.lay-wrap-cluster {
   display: flex;
   flex-wrap: wrap;
 
@@ -16,14 +27,14 @@
   }
 }
 
-.l-wrap-flex {
+.lay-wrap-flex {
   & > * {
     flex-basis: calc(2 / 3 * var(--measure));
   }
 }
 
-[class^="l-wrap-"],
-[class*=" l-wrap-"] {
+[class^="lay-wrap-"],
+[class*=" lay-wrap-"] {
   &:is(article, section) {
     gap: var(--spacing-sectioning);
   }
