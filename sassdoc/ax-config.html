@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.16.0</span>
+          <span class="project-version">0.17.0</span>
         
       </div>
     </header>
@@ -3939,24 +3939,32 @@ generate whole <a href="ax-properties.html#mixin--palette">palettes</a> from jus
       <pre class="hljs-pre"><code class="lang-scss">$palettes: (
   &quot;grey&quot;: (
     hue: $prim,
-    sl-curve: .1 .9 .2 .9 .2 .1 .1 .1,
+    sl-curve: 0.1 0.9 0.2 0.9 0.2 0.1 0.1 0.1,
     range: (
       step: 0.1,
       start: 0,
       end: 1,
     ),
+    prefix: $prefix,
+    suffix: $suffix,
   ),
   &quot;primary&quot;: (
     hue: $prim,
     sl-curve: $sl-curve,
+    prefix: $prefix,
+    suffix: $suffix,
   ),
   &quot;secondary&quot;: (
     hue: $prim + $dist,
     sl-curve: $sl-curve,
+    prefix: $prefix,
+    suffix: $suffix,
   ),
   &quot;tertiary&quot;: (
     hue: $prim - $dist,
     sl-curve: $sl-curve,
+    prefix: $prefix,
+    suffix: $suffix,
   ),
 );</code></pre>
     </div>
@@ -4086,9 +4094,9 @@ Kept separate from the default configuration to make it optional to<span class="
       
       
       <pre class="hljs-pre"><code class="lang-scss">$mapping: (
-  body: &quot;black&quot;,
-  body-contra: &quot;white&quot;,
-  neutral: &quot;grey&quot;,
+  body: &quot;grey-1000&quot;,
+  body-contra: &quot;grey-0&quot;,
+  neutral: &quot;grey-500&quot;,
   alternate: &quot;grey-700&quot;,
   alternate-contra: &quot;grey-100&quot;,
   mark: &quot;grey-900&quot;,
@@ -4103,7 +4111,7 @@ Kept separate from the default configuration to make it optional to<span class="
   links-alternate-contra: &quot;secondary-300&quot;,
   nav: &quot;heading&quot;,
   nav-contra: &quot;heading-contra&quot;,
-  hr: &quot;primary&quot;,
+  hr: &quot;primary-500&quot;,
 );</code></pre>
     </div>
   
@@ -4696,63 +4704,51 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --color-grey-800: hsl(215, 21.824%, 16.94288%);
   --color-grey-900: hsl(215, 29.7475%, 9.38211%);
   --color-grey-1000: hsl(215, 39.41%, 6.2%);
-  --color-grey: var(--color-grey-500);
-  --color-white: var(--color-grey-0);
-  --color-black: var(--color-grey-1000);
   --color-red-100: hsl(0, 100%, 94.9619709%);
   --color-red-300: hsl(0, 95%, 74.9990647%);
   --color-red-500: hsl(0, 76%, 56.9990625%);
   --color-red-700: hsl(0, 61%, 47.9994843%);
   --color-red-900: hsl(0, 50%, 29.3461381%);
-  --color-red: var(--color-red-500);
   --color-green-100: hsl(145, 90%, 91.5642%);
   --color-green-300: hsl(145, 60%, 73.2898%);
   --color-green-500: hsl(145, 46%, 53.865%);
   --color-green-700: hsl(145, 48%, 33.2898%);
   --color-green-900: hsl(145, 66%, 11.5642%);
-  --color-green: var(--color-green-500);
   --color-blue-100: hsl(207, 80.005%, 82.85009%);
   --color-blue-300: hsl(207, 79.005%, 65.13003%);
   --color-blue-500: hsl(207, 73.005%, 58.46125%);
   --color-blue-700: hsl(207, 62.005%, 49.12967%);
   --color-blue-900: hsl(207, 46.005%, 23.42121%);
-  --color-blue: var(--color-blue-500);
   --color-pink-100: hsl(332, 97%, 93.66376%);
   --color-pink-300: hsl(332, 90%, 82.51532%);
   --color-pink-500: hsl(332, 79%, 70.18%);
   --color-pink-700: hsl(332, 64%, 51.51508%);
   --color-pink-900: hsl(332, 45%, 21.37784%);
-  --color-pink: var(--color-pink-500);
   --color-purple-100: hsl(259, 100%, 88.82983%);
   --color-purple-300: hsl(259, 81.005%, 74.15621%);
   --color-purple-500: hsl(259, 59.005%, 63.78875%);
   --color-purple-700: hsl(259, 50.005%, 49.15609%);
   --color-purple-900: hsl(259, 54.005%, 21.68687%);
-  --color-purple: var(--color-purple-500);
   --color-teal-100: hsl(176, 92%, 88.68579%);
   --color-teal-300: hsl(176, 67%, 68.00733%);
   --color-teal-500: hsl(176, 52%, 49.35375%);
   --color-teal-700: hsl(176, 47%, 31.01097%);
   --color-teal-900: hsl(176, 52%, 11.26491%);
-  --color-teal: var(--color-teal-500);
   --color-yellow-100: hsl(46, 100%, 88.76773%);
   --color-yellow-300: hsl(46, 92.005%, 74.25131%);
   --color-yellow-500: hsl(46, 81.005%, 63.93625%);
   --color-yellow-700: hsl(46, 67.005%, 49.25119%);
   --color-yellow-900: hsl(46, 50.005%, 21.62477%);
-  --color-yellow: var(--color-yellow-500);
   --color-orange-100: hsl(28, 100%, 89.15954%);
   --color-orange-300: hsl(28, 93%, 73.87218%);
   --color-orange-500: hsl(28, 84%, 62.2525%);
   --color-orange-700: hsl(28, 75%, 46.87202%);
   --color-orange-900: hsl(28, 66%, 20.30226%);
-  --color-orange: var(--color-orange-500);
   --color-brown-100: hsl(15, 0%, 80.85834%);
   --color-brown-300: hsl(15, 14.995%, 54.94338%);
   --color-brown-500: hsl(15, 24.995%, 39.7825%);
   --color-brown-700: hsl(15, 25.995%, 27.94722%);
   --color-brown-900: hsl(15, 17.995%, 12.00906%);
-  --color-brown: var(--color-brown-500);
 }
 
 /* Document

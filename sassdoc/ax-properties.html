@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.16.0</span>
+          <span class="project-version">0.17.0</span>
         
       </div>
     </header>
@@ -2260,21 +2260,12 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
   $conf: map.get(cfg.$merged, color);
-  $prefix: &quot;color&quot;;
 
   @each $name, $pal in map.get($conf, palettes) {
-    @include color.palette(
-      $name,
-      map.get($pal, hue),
-      map.get($pal, s-curve),
-      map.get($pal, l-curve),
-      map.get($pal, sl-curve),
-      map.get($pal, range),
-      $prefix
-    );
+    @include color.palette($name, $pal...);
   }
 
-  @include props.configured-properties($prefix, $conf);
+  @include props.configured-properties(&quot;color&quot;, $conf);
 }</code></pre>
     </div>
   
@@ -2763,6 +2754,33 @@ If this is definded the other two curves are<span class="widont">&nbsp;</span>ig
       
       <div class="param-details text-block">
         <p>Property name prefix.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$suffix:</span>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Property name suffix (factor: <Number>, inverse: <Boolean>).</p>
 
       </div>
     
