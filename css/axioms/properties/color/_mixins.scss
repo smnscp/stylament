@@ -7,6 +7,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:math";
+@use "sass:meta";
 @use "../../tools/arithmetic/function";
 @use "../../tools/geometry/parametric-curves/bézier";
 
@@ -22,6 +23,7 @@
 ///                 If this is definded the other two curves are ignored.
 /// @param {Map} $range Start, end, and step-size of the palette.
 /// @param {String} $prefix Property name prefix.
+/// @param {Map} $suffix Property name suffix (factor: <Number>, inverse: <Boolean>).
 /// @output A list of `--<prefix>-*` custom properties containing the color values of the palette:
 ///   ```css
 ///   --<prefix>-red-100: hsl(0deg, 100%, 95%);
@@ -34,11 +36,12 @@
 @mixin palette(
   $name,
   $hue,
-  $s-curve,
-  $l-curve,
-  $sl-curve,
-  $range,
-  $prefix: "color"
+  $s-curve: null,
+  $l-curve: null,
+  $sl-curve: null,
+  $range: null,
+  $prefix: "color",
+  $suffix: null
 ) {
   $range: if($range, $range, ());
   $step: if(map.has-key($range, step), map.get($range, step), 0.2);
@@ -46,6 +49,9 @@
   $end: if(map.has-key($range, end), map.get($range, end), 0.9);
   $s-curve: if($s-curve, $s-curve, (1, -1, 1));
   $l-curve: if($l-curve, $l-curve, (1, -1));
+  $suffix: if($suffix, $suffix, ());
+  $suffac: if(map.has-key($suffix, factor), map.get($suffix, factor), 1000);
+  $sufinv: if(map.has-key($suffix, inverse), map.get($suffix, inverse), false);
 
   $current: $start;
   @while $current <= $end {
@@ -59,7 +65,7 @@
       $saturation: 100% * function.polynomial($current, $s-curve...);
       $lightness: 100% * function.polynomial($current, $l-curve...);
     }
-    --#{$prefix}-#{$name}-#{math.round(1000 * $current)}: #{hsl(
+    --#{$prefix}-#{$name}-#{math.round($suffac * if($sufinv, 1 - $current, $current))}: #{hsl(
         $hue,
         $saturation,
         $lightness
