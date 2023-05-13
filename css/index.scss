@@ -1,5 +1,4 @@
 @use "sass:math";
-@use "axioms/config/specific/color/brand";
 @use "axioms/config/specific/color/logical";
 @use "axioms" with (
   $config-custom: (
@@ -24,7 +23,6 @@
       ),
     ),
     color: (
-      palettes: brand.$palettes,
       logical: logical.$mapping,
     ),
   )

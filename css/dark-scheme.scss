@@ -1,0 +1,14 @@
+@use "axioms/config/specific/color/brand" with (
+  $suffix: (
+    factor: 1000,
+    inverse: true,
+  )
+);
+@use "axioms/config" with (
+  $custom: (
+    color: (
+      palettes: brand.$palettes,
+    ),
+  )
+);
+@use "axioms/properties/color";

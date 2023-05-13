@@ -4,7 +4,13 @@
 
 $prim: 215deg;
 $dist: 140deg;
-$sl-curve: .1 .9 .8 .9 .8 .1 .1 .1;
+$sl-curve: 0.1 0.9 0.8 0.9 0.8 0.1 0.1 0.1;
+$prefix: "color" !default;
+$suffix: (
+  factor: 1000,
+  inverse: false,
+) !default;
+@debug $suffix;
 
 /// Brand colors.
 /// Kept separate from the default configuration to make it optional to import.
@@ -12,23 +18,31 @@ $sl-curve: .1 .9 .8 .9 .8 .1 .1 .1;
 $palettes: (
   "grey": (
     hue: $prim,
-    sl-curve: .1 .9 .2 .9 .2 .1 .1 .1,
+    sl-curve: 0.1 0.9 0.2 0.9 0.2 0.1 0.1 0.1,
     range: (
       step: 0.1,
       start: 0,
       end: 1,
     ),
+    prefix: $prefix,
+    suffix: $suffix,
   ),
   "primary": (
     hue: $prim,
     sl-curve: $sl-curve,
+    prefix: $prefix,
+    suffix: $suffix,
   ),
   "secondary": (
     hue: $prim + $dist,
     sl-curve: $sl-curve,
+    prefix: $prefix,
+    suffix: $suffix,
   ),
   "tertiary": (
     hue: $prim - $dist,
     sl-curve: $sl-curve,
+    prefix: $prefix,
+    suffix: $suffix,
   ),
 );
