@@ -3,14 +3,24 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   build: {
-    assetsInlineLimit: 1024,
+    assetsInlineLimit: 0,
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
         exampleLayout: resolve(__dirname, "example/layout.html"),
         exampleBodyCopy: resolve(__dirname, "example/body-copy.html"),
-        exampleColorTable: resolve(__dirname, "example/color.html"),
-        exampleElementsShowcase: resolve(__dirname, "example/elements-showcase.html"),
+        exampleColor: resolve(__dirname, "example/color.html"),
+        exampleElements: resolve(__dirname, "example/elements-showcase.html"),
+        mainSheet: resolve(__dirname, "css/index.scss"),
+        fontsSheet: resolve(__dirname, "css/fonts.scss"),
+        schemeDark: resolve(__dirname, "css/dark.scheme.scss"),
+        schemeLight: resolve(__dirname, "css/light.scheme.scss"),
+      },
+      output: {
+        assetFileNames: (assetInfo) =>
+          (assetInfo.name.endsWith("css") ? "css" : "assets") +
+          "/" +
+          assetInfo.name,
       },
     },
   },

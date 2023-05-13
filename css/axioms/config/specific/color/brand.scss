@@ -10,7 +10,6 @@ $suffix: (
   factor: 1000,
   inverse: false,
 ) !default;
-@debug $suffix;
 
 /// Brand colors.
 /// Kept separate from the default configuration to make it optional to import.
