@@ -66,11 +66,4 @@
       )};
     $current: $current + $step;
   }
-  --#{$prefix}-#{$name}: var(--#{$prefix}-#{$name}-500);
-  // If the palette runs the full range the extrema get aliased “black” and “white”.
-  // There should be only palette like this. Otherwise, only the last of them will prevail.
-  @if $start == 0 and $end == 1 {
-    --#{$prefix}-white: var(--#{$prefix}-grey-0);
-    --#{$prefix}-black: var(--#{$prefix}-grey-1000);
-  }
 }

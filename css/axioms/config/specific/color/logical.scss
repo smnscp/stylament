@@ -6,9 +6,9 @@
 /// Kept separate from the default configuration to make it optional to import.
 /// @name mapping@logical
 $mapping: (
-  body: "black",
-  body-contra: "white",
-  neutral: "grey",
+  body: "grey-1000",
+  body-contra: "grey-0",
+  neutral: "grey-500",
   alternate: "grey-700",
   alternate-contra: "grey-100",
   mark: "grey-900",
@@ -23,5 +23,5 @@ $mapping: (
   links-alternate-contra: "secondary-300",
   nav: "heading",
   nav-contra: "heading-contra",
-  hr: "primary",
+  hr: "primary-500",
 );
