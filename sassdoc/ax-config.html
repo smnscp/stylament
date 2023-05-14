@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.17.0</span>
+          <span class="project-version">0.18.0</span>
         
       </div>
     </header>
@@ -3940,29 +3940,28 @@ generate whole <a href="ax-properties.html#mixin--palette">palettes</a> from jus
   &quot;grey&quot;: (
     hue: $prim,
     sl-curve: 0.1 0.9 0.2 0.9 0.2 0.1 0.1 0.1,
-    range: (
-      step: 0.1,
-      start: 0,
-      end: 1,
-    ),
+    range: $range,
     prefix: $prefix,
     suffix: $suffix,
   ),
   &quot;primary&quot;: (
     hue: $prim,
     sl-curve: $sl-curve,
+    range: $range,
     prefix: $prefix,
     suffix: $suffix,
   ),
   &quot;secondary&quot;: (
     hue: $prim + $dist,
     sl-curve: $sl-curve,
+    range: $range,
     prefix: $prefix,
     suffix: $suffix,
   ),
   &quot;tertiary&quot;: (
     hue: $prim - $dist,
     sl-curve: $sl-curve,
+    range: $range,
     prefix: $prefix,
     suffix: $suffix,
   ),
@@ -4094,21 +4093,21 @@ Kept separate from the default configuration to make it optional to<span class="
       
       
       <pre class="hljs-pre"><code class="lang-scss">$mapping: (
-  body: &quot;grey-1000&quot;,
+  body: &quot;grey-600&quot;,
   body-contra: &quot;grey-0&quot;,
   neutral: &quot;grey-500&quot;,
-  alternate: &quot;grey-700&quot;,
-  alternate-contra: &quot;grey-100&quot;,
-  mark: &quot;grey-900&quot;,
-  mark-contra: &quot;grey-200&quot;,
+  alternate: &quot;grey-800&quot;,
+  alternate-contra: &quot;grey-200&quot;,
+  mark: &quot;grey-700&quot;,
+  mark-contra: &quot;grey-100&quot;,
   heading: &quot;primary-700&quot;,
-  heading-contra: &quot;primary-300&quot;,
-  heading-alternate: &quot;tertiary-700&quot;,
-  heading-alternate-contra: &quot;tertiary-300&quot;,
+  heading-contra: &quot;primary-200&quot;,
+  heading-alternate: &quot;tertiary-800&quot;,
+  heading-alternate-contra: &quot;tertiary-200&quot;,
   links: &quot;secondary-700&quot;,
-  links-contra: &quot;secondary-300&quot;,
-  links-alternate: &quot;secondary-500&quot;,
-  links-alternate-contra: &quot;secondary-300&quot;,
+  links-contra: &quot;secondary-100&quot;,
+  links-alternate: &quot;secondary-800&quot;,
+  links-alternate-contra: &quot;secondary-200&quot;,
   nav: &quot;heading&quot;,
   nav-contra: &quot;heading-contra&quot;,
   hr: &quot;primary-500&quot;,
