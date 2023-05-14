@@ -3,13 +3,34 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Stylament</title>
+  <title>Stylament – Colors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="/img/logo.svg" rel="shortcut icon">
   
-  <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/assets/dark-scheme.css">
-  <link rel="stylesheet" media="not (prefers-color-scheme: dark)" href="/assets/light-scheme.css">
-  <link rel="stylesheet" href="/assets/index.css">
+  
+  <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/css/dark.scheme.css">
+  <link rel="stylesheet" media="not (prefers-color-scheme: dark)" href="/css/light.scheme.css">
+    <style>
+    .dev-color-table {
+      --stroke-width-table: var(--stroke-width-4);
+      --stroke-color-table: var(--color-body-contra);
+      --background-heavy: transparent;
+      --background-light: transparent;
+    }
+    .dev-color-table th {
+      text-transform: capitalize;
+    }
+    .dev-color-table thead th,
+    .dev-color-table td {
+      min-inline-size: var(--length-2);
+      max-inline-size: var(--length-2);
+      letter-spacing: var(--letter-xxs);
+    }
+
+  </style>
+
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/fonts.css">
 </head>
 
 <body class="lay-page-center">
@@ -21,160 +42,99 @@
 
   <main>
     <section>
-      <table class="var-standard-table dev-debug-color-palette">
+      <table class="var-standard-table dev-color-table">
         <thead>
           <tr>
             <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+              <th>0</th>
+              <th>100</th>
+              <th>200</th>
+              <th>300</th>
+              <th>400</th>
+              <th>500</th>
+              <th>600</th>
+              <th>700</th>
+              <th>800</th>
+              <th>900</th>
+              <th>1000</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+            <tr>
+              <th>grey</th>
+                <td style="background: var(--color-grey-0);"></td>
+                <td style="background: var(--color-grey-100);"></td>
+                <td style="background: var(--color-grey-200);"></td>
+                <td style="background: var(--color-grey-300);"></td>
+                <td style="background: var(--color-grey-400);"></td>
+                <td style="background: var(--color-grey-500);"></td>
+                <td style="background: var(--color-grey-600);"></td>
+                <td style="background: var(--color-grey-700);"></td>
+                <td style="background: var(--color-grey-800);"></td>
+                <td style="background: var(--color-grey-900);"></td>
+                <td style="background: var(--color-grey-1000);"></td>
+            </tr>
+            <tr>
+              <th>primary</th>
+                <td style="background: var(--color-primary-0);"></td>
+                <td style="background: var(--color-primary-100);"></td>
+                <td style="background: var(--color-primary-200);"></td>
+                <td style="background: var(--color-primary-300);"></td>
+                <td style="background: var(--color-primary-400);"></td>
+                <td style="background: var(--color-primary-500);"></td>
+                <td style="background: var(--color-primary-600);"></td>
+                <td style="background: var(--color-primary-700);"></td>
+                <td style="background: var(--color-primary-800);"></td>
+                <td style="background: var(--color-primary-900);"></td>
+                <td style="background: var(--color-primary-1000);"></td>
+            </tr>
+            <tr>
+              <th>secondary</th>
+                <td style="background: var(--color-secondary-0);"></td>
+                <td style="background: var(--color-secondary-100);"></td>
+                <td style="background: var(--color-secondary-200);"></td>
+                <td style="background: var(--color-secondary-300);"></td>
+                <td style="background: var(--color-secondary-400);"></td>
+                <td style="background: var(--color-secondary-500);"></td>
+                <td style="background: var(--color-secondary-600);"></td>
+                <td style="background: var(--color-secondary-700);"></td>
+                <td style="background: var(--color-secondary-800);"></td>
+                <td style="background: var(--color-secondary-900);"></td>
+                <td style="background: var(--color-secondary-1000);"></td>
+            </tr>
+            <tr>
+              <th>tertiary</th>
+                <td style="background: var(--color-tertiary-0);"></td>
+                <td style="background: var(--color-tertiary-100);"></td>
+                <td style="background: var(--color-tertiary-200);"></td>
+                <td style="background: var(--color-tertiary-300);"></td>
+                <td style="background: var(--color-tertiary-400);"></td>
+                <td style="background: var(--color-tertiary-500);"></td>
+                <td style="background: var(--color-tertiary-600);"></td>
+                <td style="background: var(--color-tertiary-700);"></td>
+                <td style="background: var(--color-tertiary-800);"></td>
+                <td style="background: var(--color-tertiary-900);"></td>
+                <td style="background: var(--color-tertiary-1000);"></td>
+            </tr>
         </tbody>
       </table>
     </section>
   </main>
 
-  <footer class="clr-alternate">
-    <section>
-      <p class="footer-copyright">© 2023 Simon Schrape</p>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/example/layout.html">Layout example</a></li>
-        <li><a href="/example/body-copy.html">Body copy example</a></li>
-        <li><a href="/example/color.html">Color table</a></li>
-        <li><a href="/example/elements-showcase.html">All elements showcase</a></li>
-        <li><a href="https://stylament.sim.ilitu.de/sassdoc/index.html">Documentation</a></li>
-      </ul>
-    </section>
-  </footer>
+    <footer class="clr-alternate">
+      <section>
+        <p class="footer-copyright">© 2023 Simon Schrape</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/example/layout.html">Layout example</a></li>
+          <li><a href="/example/body-copy.html">Body copy example</a></li>
+          <li><a href="/example/color.html">Color table</a></li>
+          <li><a href="/example/elements-showcase.html">All elements showcase</a></li>
+          <li><a href="https://stylament.sim.ilitu.de/sassdoc/index.html">Documentation</a></li>
+        </ul>
+      </section>
+    </footer>
+
 </body>
 
 </html>
