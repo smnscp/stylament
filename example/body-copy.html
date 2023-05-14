@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
-{{> head title="Stylament – Body Copy" }}
-
-<body class="lay-page-center dev-debug-baseline-grid">
+{{#> head title="Stylament – Body Copy" }}
+  <link rel="stylesheet" href="/css/dev.utils.scss">
   <style>
     body {
       display: grid;
@@ -27,8 +26,10 @@
       grid-column: 1 / 5;
     }
   </style>
+{{/head}}
 
-  <aside class="document-toc-container dev-debug-baseline-grid">
+<body class="lay-page-center dev-baseline-grid">
+  <aside class="document-toc-container dev-baseline-grid">
     <section class="document-toc">
       <header class="clr-alternate">
         <h2 class="document-toc-heading">Table of Contents</h2>

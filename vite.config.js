@@ -22,6 +22,7 @@ export default defineConfig({
         fontsSheet: resolve(__dirname, "css/fonts.scss"),
         schemeDark: resolve(__dirname, "css/dark.scheme.scss"),
         schemeLight: resolve(__dirname, "css/light.scheme.scss"),
+        utilsDev: resolve(__dirname, "css/dev.utils.scss"),
       },
       output: {
         assetFileNames: (assetInfo) =>

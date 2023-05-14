@@ -10,5 +10,6 @@
 ///
 /// Dev utilities carry the `dev-` prefix, e. g. `dev-lorem-ipsum`.
 
-@use "debug";
+@use "baseline-grid";
+@use "color-table";
 @use "placeholder";
