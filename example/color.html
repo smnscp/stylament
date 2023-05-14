@@ -2,7 +2,24 @@
 <html class="no-js" lang="en">
 
 {{#> head title="Stylament – Colors" }}
-  <link rel="stylesheet" href="/css/dev.utils.scss">
+  <style>
+    .dev-color-table {
+      --stroke-width-table: var(--stroke-width-4);
+      --stroke-color-table: var(--color-body-contra);
+      --background-heavy: transparent;
+      --background-light: transparent;
+    }
+    .dev-color-table th {
+      text-transform: capitalize;
+    }
+    .dev-color-table thead th,
+    .dev-color-table td {
+      min-inline-size: var(--length-2);
+      max-inline-size: var(--length-2);
+      letter-spacing: var(--letter-xxs);
+    }
+
+  </style>
 {{/head}}
 
 <body class="lay-page-center">
@@ -18,138 +35,20 @@
         <thead>
           <tr>
             <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+            {{#each color.steps}}
+              <th>{{this}}</th>
+            {{/each}}
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+          {{#each color.palettes}}
+            <tr>
+              <th>{{this}}</th>
+              {{#each ../color.steps}}
+                <td style="background: var(--color-{{../this}}-{{this}});"></td>
+              {{/each}}
+            </tr>
+          {{/each}}
         </tbody>
       </table>
     </section>

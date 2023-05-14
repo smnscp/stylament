@@ -5,7 +5,13 @@ import handlebars from "vite-plugin-handlebars";
 export default defineConfig({
   plugins: [
     handlebars({
-      context: {isDev: process.env.NODE_ENV == "development"},
+      context: {
+        isDev: process.env.NODE_ENV == "development",
+        color: {
+          steps: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
+          palettes: ["grey", "primary", "secondary", "tertiary"],
+        },
+      },
       partialDirectory: resolve(__dirname, "partials"),
     }),
   ],

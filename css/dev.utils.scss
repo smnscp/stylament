@@ -1,9 +1,1 @@
-@use "axioms/config/specific/color/brand";
-@use "axioms/config" with (
-  $custom: (
-    color: (
-      palettes: brand.$palettes,
-    ),
-  )
-);
 @use "utilities/dev";
