@@ -6,10 +6,6 @@
 $weights: 400 700; // 200 300 400 600 700 900;
 $styles: normal italic;
 
-@each $weight in $weights {
-  @each $style in $styles {
-    @include Sans.fontFace($fontDir: "/fonts/source-sans-pro/files", $weight: $weight, $style: $style);
-    @include Serif.fontFace($fontDir: "/fonts/source-serif-pro/files", $weight: $weight, $style: $style);
-    @include Mono.fontFace($fontDir: "/fonts/source-code-pro/files", $weight: $weight, $style: $style);
-  }
-}
+@include Sans.faces($directory: "/fonts/source-sans-pro/files", $weights: $weights, $styles: $styles);
+@include Serif.faces($directory: "/fonts/source-serif-pro/files", $weights: $weights, $styles: $styles);
+@include Mono.faces($directory: "/fonts/source-code-pro/files", $weights: $weights, $styles: $styles);
