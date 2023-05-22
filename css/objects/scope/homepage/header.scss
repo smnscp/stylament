@@ -13,6 +13,7 @@ body.scp-homepage > header {
 
   h1 {
     font-size: clamp(var(--scale-3), 8vmin, var(--scale-9));
+    line-height: 1;
   }
 
   & > * {
@@ -22,12 +23,7 @@ body.scp-homepage > header {
   // Any image alone in an hgroup row is considered a logo.
   hgroup > * > img:only-child {
     // Size it so that it nicely fits the viewport.
-    max-inline-size: 66vmin;
+    max-inline-size: min(66vmin, 100%);
     max-block-size: 66vmin;
-
-    // Don’t measure-limit width of logo container.
-    :has(&) {
-      max-inline-size: none;
-    }
   }
 }
