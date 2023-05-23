@@ -25,8 +25,5 @@
     "vite": "latest",
     "vite-plugin-handlebars": "^1.6.0"
   },
-  "dependencies": {
-    "@csstools/normalize.css": "latest",
-    "n-ize.css": "latest"
-  }
+  "dependencies": {}
 }

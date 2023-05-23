@@ -1,0 +1,35 @@
+////
+/// @group ax-generic
+////
+
+/// ## The BasiCSS
+
+/// Remove margins. Rely on [flow spacing](#flow-spacing) instead.
+/// @name Margin Reset
+* {
+  margin: 0;
+}
+
+/// Set Box sizing default to border-box.
+/// @name Convenient Box Sizing
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/// The current target element.
+/// @name Target Scroll Spacing
+:target {
+  // Give URL fragment target enough air.
+  scroll-margin-block-start: var(--length-3);
+}
+
+/// Set abstract colors.
+/// @name Abstract Coloring
+/// @see {mixin} set-colors
+/// @see {mixin} use-colors
+* {
+  ---clr-fg: var(---clr-pos);
+  ---clr-bg: var(---clr-neg);
+}

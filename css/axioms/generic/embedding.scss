@@ -1,0 +1,21 @@
+////
+/// @group ax-generic
+////
+
+/// ## Embedding
+
+/// @name Default Embedding Boxes
+:is(img, picture, video, audio),
+:is(embed, iframe, object),
+svg,
+canvas {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/// @name Full-width Boxes
+audio,
+iframe:not([width]) {
+  inline-size: 100%;
+}

@@ -1,0 +1,21 @@
+////
+/// @group ax-generic
+////
+
+/// ## Indentation
+
+/// @name Nested Lists
+li :is(ol, ul, menu, dir) {
+  padding-inline-start: var(--spacing-inline);
+}
+
+/// @name Definition Details
+dd {
+  margin-inline-start: var(--spacing-inline);
+}
+
+/// @name Emphasized Blocks
+blockquote,
+figure {
+  margin-inline: var(--spacing-inline);
+}

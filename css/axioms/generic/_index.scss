@@ -8,16 +8,8 @@
 /// Together with [custom properties](./ax-properties.html) they form the foundation
 /// of the design system.
 
-/// ## normalize.css
-/// *Stylament* uses [`normalize.css`][repo] for normalizing browser styling.
-///
-/// [repo]: https://github.com/csstools/normalize.css
-@use "@csstools/normalize.css/normalize.css";
-
-/// ## n’ize.css
-/// *Stylament* uses [`n’ize.css`][repo] to extend basic styling with slots for CSS custom properties.
-///
-/// [repo]: https://github.com/smnscp/n-ize.css
-@use "n-ize.css/n-ize.css";
-
-@use "additional";
+@use "basics";
+@use "embedding";
+@use "flow";
+@use "indent";
+@use "typography";

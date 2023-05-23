@@ -4,5 +4,13 @@
 
 /// ### Thematic break
 
+/// Make `hr` line-height neutral, i. e. 0px high, by using `outline` rather than `border`.
 hr {
+  border: none;
+  block-size: 0;
+  inline-size: 100%;
+  outline-style: var(--stroke-style-hr, var(--stroke-style-default, solid));
+  outline-width: calc(0.5 * var(--stroke-width-hr, var(--stroke-width-default, 0.125rem)));
+  margin-inline: auto;
+  color: var(--color-hr);
 }

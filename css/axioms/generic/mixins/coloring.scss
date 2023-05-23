@@ -2,16 +2,23 @@
 /// @group ax-generic
 ////
 
+/// ## Coloring Mixins
+
+/// Set abstract color properties to the color specified by `$name` and its counterpart (`-contra`).
+/// @param {String} $name Name of the color token.
+/// @param {String} $default [null] Name of the fall-back color token.
 @mixin set-colors($name, $default: null) {
   ---clr-pos: var(--color-#{$name}, #{if($default, var(--color-#{$default}), inherit)});
   ---clr-neg: var(--color-#{$name}-contra, #{if($default, var(--color-#{$default}-contra), inherit)});
 }
 
+/// Use abstract color properties as `color` and `background-color`, respectively.
 @mixin use-colors {
   color: var(---clr-fg);
   background-color: var(---clr-bg);
 }
 
+/// Use abstract color properties as `background-color` and `color` (inverse of `use-colors`), respectively.
 @mixin use-colors-inverse {
   color: var(---clr-bg);
   background-color: var(---clr-fg);

@@ -1,0 +1,32 @@
+////
+/// @group ax-generic
+////
+
+/// ## Flow Spacing
+///
+/// Use common block margin to establish consistency in [flow layout][flow-layout] and to support a baseline grid.
+///
+/// [flow-layout]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout
+/// @link https://andy-bell.co.uk/my-favourite-3-lines-of-css/ Recap of “The Stack”
+
+/// @name Before Headings
+* + :is(h1, h2, h3, h4, h5, h6) {
+  margin-block-start: var(--spacing-heading);
+}
+
+/// @name Before Sections
+* + :is(article, section) {
+  margin-block-start: var(--spacing-sectioning);
+}
+
+/// @name Before General Blocks
+* + :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr),
+:is(h1, h2, h3, h4, h5, h6) + div,
+:is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr) + div {
+  margin-block-start: var(--spacing-block);
+}
+
+/// @name Not Before Nested Lists
+li :is(ol, ul, menu, dir) {
+  margin-block-start: unset;
+}
