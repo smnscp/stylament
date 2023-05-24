@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.18.0</span>
+          <span class="project-version">0.19.0</span>
         
       </div>
     </header>
@@ -383,8 +383,7 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
   
     <div data-item-section="prose" class="text-block">
-      <h2 id="normalize-css" tabindex="-1">normalize.css</h2>
-<p><em>Stylament</em> uses <a href="https://github.com/csstools/normalize.css"><code>normalize.css</code></a> for normalizing browser<span class="widont">&nbsp;</span>styling.</p>
+      <h2 id="the-basicss" tabindex="-1">The BasiCSS</h2>
 
       
   
@@ -449,8 +448,59 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
 
 
-<section class="item" >
+<section class="item" id="css--Margin%20Reset">
   
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Margin%20Reset" class="item-name">Margin Reset</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">* {
+  margin: 0;
+}</code></pre>
+    </div>
+  
+
     
   
   
@@ -458,9 +508,8 @@ of the design<span class="widont">&nbsp;</span>system.</p>
   
 
   
-    <div data-item-section="prose" class="text-block">
-      <h2 id="n-ize-css" tabindex="-1">n’ize.css</h2>
-<p><em>Stylament</em> uses <a href="https://github.com/smnscp/n-ize.css"><code>n’ize.css</code></a> to extend basic styling with slots for CSS custom<span class="widont">&nbsp;</span>properties.</p>
+    <div class="text-block">
+      <p>Remove margins. Rely on <a href="#flow-spacing">flow spacing</a><span class="widont">&nbsp;</span>instead.</p>
 
       
   
@@ -473,6 +522,8 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
     </div>
   
+
+  </div>
 
   
 
@@ -525,8 +576,61 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
 
 
-<section class="item" >
+<section class="item" id="css--Convenient%20Box%20Sizing">
   
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Convenient%20Box%20Sizing" class="item-name">Convenient Box<span class="widont">&nbsp;</span>Sizing</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}</code></pre>
+    </div>
+  
+
     
   
   
@@ -534,9 +638,8 @@ of the design<span class="widont">&nbsp;</span>system.</p>
   
 
   
-    <div data-item-section="prose" class="text-block">
-      <h2 id="additional-generic-rules" tabindex="-1">Additional Generic Rules</h2>
-<p>These are generic rules not covered by<span class="widont">&nbsp;</span>normalizers.</p>
+    <div class="text-block">
+      <p>Set Box sizing default to<span class="widont">&nbsp;</span>border-box.</p>
 
       
   
@@ -549,6 +652,8 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
     </div>
   
+
+  </div>
 
   
 
@@ -730,6 +835,2638 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
 
 
+<section class="item" id="css--Abstract%20Coloring">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Abstract%20Coloring" class="item-name">Abstract Coloring</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">* {
+  ---clr-fg: var(---clr-pos);
+  ---clr-bg: var(---clr-neg);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Set abstract colors.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-generic.html#mixin--set-colors" class="item-name">set-colors()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-generic.html#mixin--use-colors" class="item-name">use-colors()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="coloring-mixins" tabindex="-1">Coloring Mixins</h2>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="mixin--set-colors">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--set-colors" class="item-name">set-colors()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Set abstract color properties to the color specified by <code>$name</code> and its counterpart (<code>-contra</code>).</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$name:</span>
+      
+      
+      <span class="value-type">(String)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Name of the color<span class="widont">&nbsp;</span>token.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$default:</span>
+      
+      <span class="item-value">null</span>
+      <span class="value-type">(String)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>Name of the fall-back color<span class="widont">&nbsp;</span>token.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+
+      
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-config.html#variable--default" class="item-name">$default</a>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+      
+        
+        
+        
+
+        
+      
+        
+        
+        
+
+        
+      
+    
+  </div>
+
+  
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="mixin--use-colors">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--use-colors" class="item-name">use-colors()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Use abstract color properties as <code>color</code> and <code>background-color</code>, respectively.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="mixin--use-colors-inverse">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--use-colors-inverse" class="item-name">use-colors-inverse()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Use abstract color properties as <code>background-color</code> and <code>color</code> (inverse of <code>use-colors</code>), respectively.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="embedding" tabindex="-1">Embedding</h2>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Default%20Embedding%20Boxes">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Default%20Embedding%20Boxes" class="item-name">Default Embedding<span class="widont">&nbsp;</span>Boxes</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:is(img, picture, video, audio),
+:is(embed, iframe, object),
+svg,
+canvas {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Full-width%20Boxes">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Full-width%20Boxes" class="item-name">Full-width Boxes</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">audio,
+iframe:not([width]) {
+  inline-size: 100%;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="flow-spacing" tabindex="-1">Flow Spacing</h2>
+<p>Use common block margin to establish consistency in <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout">flow layout</a> and to support a baseline<span class="widont">&nbsp;</span>grid.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://andy-bell.co.uk/my-favourite-3-lines-of-css/" class="item-name">Recap of “The Stack”</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Before%20Headings">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Before%20Headings" class="item-name">Before Headings</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">* + :is(h1, h2, h3, h4, h5, h6) {
+  margin-block-start: var(--spacing-heading);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Before%20Sections">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Before%20Sections" class="item-name">Before Sections</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">* + :is(article, section) {
+  margin-block-start: var(--spacing-sectioning);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Before%20General%20Blocks">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Before%20General%20Blocks" class="item-name">Before General<span class="widont">&nbsp;</span>Blocks</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">* + :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr),
+:is(h1, h2, h3, h4, h5, h6) + div,
+:is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr) + div {
+  margin-block-start: var(--spacing-block);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Not%20Before%20Nested%20Lists">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Not%20Before%20Nested%20Lists" class="item-name">Not Before Nested<span class="widont">&nbsp;</span>Lists</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">li :is(ol, ul, menu, dir) {
+  margin-block-start: unset;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="indentation" tabindex="-1">Indentation</h2>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Nested%20Lists">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Nested%20Lists" class="item-name">Nested Lists</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">li :is(ol, ul, menu, dir) {
+  padding-inline-start: var(--spacing-inline);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Definition%20Details">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Definition%20Details" class="item-name">Definition Details</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">dd {
+  margin-inline-start: var(--spacing-inline);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Emphasized%20Blocks">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Emphasized%20Blocks" class="item-name">Emphasized Blocks</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">blockquote,
+figure {
+  margin-inline: var(--spacing-inline);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="generic-typography" tabindex="-1">Generic Typography</h2>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Root%20Line%20Height">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Root%20Line%20Height" class="item-name">Root Line<span class="widont">&nbsp;</span>Height</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">html {
+  line-height: var(--line-root);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>The line-height of the root<span class="widont">&nbsp;</span>element.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Body%20Copy">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Body%20Copy" class="item-name">Body Copy</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: var(--scale-0);
+  line-height: var(--line-0);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Fonts for body<span class="widont">&nbsp;</span>copy.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Headings">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Headings" class="item-name">Headings</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Fonts for headings.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--h%23%7B%24level%7D">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--h%23%7B%24level%7D" class="item-name">h#{$level}</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">h#{$level} {
+  font-size: var(--scale-#{4 - $level});
+    line-height: var(--line-#{4 - $level});
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Apply respective font-size and line-height to each heading<span class="widont">&nbsp;</span>level.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" id="css--General%20Measure">
   
     
@@ -777,7 +3514,8 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">:where(h1, h2, h3, h4, h5, h6, p, address, summary, figcaption, caption) {
+      <pre class="hljs-pre"><code class="lang-scss">:is(h1, h2, h3, h4, h5, h6),
+:is(p, address, summary, figcaption, caption) {
   max-inline-size: var(--measure);
 }</code></pre>
     </div>
@@ -858,7 +3596,7 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
 
 
-<section class="item" id="css--*">
+<section class="item" id="css--Monospaced">
   
     
   
@@ -876,7 +3614,7 @@ of the design<span class="widont">&nbsp;</span>system.</p>
       
 
       
-        <a href="#css--*" class="item-name">*</a>
+        <a href="#css--Monospaced" class="item-name">Monospaced</a>
       
 
       
@@ -905,9 +3643,9 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">* {
-  ---clr-fg: var(---clr-pos);
-  ---clr-bg: var(---clr-neg);
+      <pre class="hljs-pre"><code class="lang-scss">:is(code, kbd, samp),
+pre {
+  font-family: var(--font-mono);
 }</code></pre>
     </div>
   
@@ -920,7 +3658,265 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
   
     <div class="text-block">
-      <p>Set abstract colors.</p>
+      <p>Generic typography for monospaced<span class="widont">&nbsp;</span>elements.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Smaller">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Smaller" class="item-name">Smaller</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:is(small, sub, sup) {
+  font-size: var(--scale-smaller);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Set scale-based font<span class="widont">&nbsp;</span>size.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Base%20Line%20Fix">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Base%20Line%20Fix" class="item-name">Base Line<span class="widont">&nbsp;</span>Fix</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:is(code, kbd, samp),
+:is(small, sub, sup),
+::marker {
+  line-height: 0;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Prevent certain inline (pseudo) elements from affecting the line<span class="widont">&nbsp;</span>height.</p>
 
       
   

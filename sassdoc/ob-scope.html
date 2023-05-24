@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.18.0</span>
+          <span class="project-version">0.19.0</span>
         
       </div>
     </header>
@@ -714,6 +714,7 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
 
   h1 {
     font-size: clamp(var(--scale-3), 8vmin, var(--scale-9));
+    line-height: 1;
   }
 
   &amp; &gt; * {
@@ -723,13 +724,8 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
   // Any image alone in an hgroup row is considered a logo.
   hgroup &gt; * &gt; img:only-child {
     // Size it so that it nicely fits the viewport.
-    max-inline-size: 66vmin;
+    max-inline-size: min(66vmin, 100%);
     max-block-size: 66vmin;
-
-    // Don’t measure-limit width of logo container.
-    :has(&amp;) {
-      max-inline-size: none;
-    }
   }
 }</code></pre>
     </div>

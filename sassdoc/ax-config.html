@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.18.0</span>
+          <span class="project-version">0.19.0</span>
         
       </div>
     </header>
@@ -732,263 +732,74 @@ For the structure of this custom configuration see <a href="#variable--default">
   --color-neutral: LightSlateGray;
 }
 
-/* Document
- * ========================================================================== */
-/**
- * 1. Correct the line height in all browsers.
- */
-:where(html) {
-  line-height: 1.15; /* 1 */
-}
-
-/* Sections
- * ========================================================================== */
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Edge, Firefox, and Safari.
- */
-:where(h1) {
-  font-size: 2em;
-  margin-block-end: 0.67em;
-  margin-block-start: 0.67em;
-}
-
-/* Grouping content
- * ========================================================================== */
-/**
- * Remove the margin on nested lists in Chrome, Edge, and Safari.
- */
-:where(dl, ol, ul) :where(dl, ol, ul) {
-  margin-block-end: 0;
-  margin-block-start: 0;
-}
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Correct the inheritance of border color in Firefox.
- */
-:where(hr) {
-  box-sizing: content-box; /* 1 */
-  color: inherit; /* 2 */
-  height: 0; /* 1 */
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-:where(pre) {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/* Text-level semantics
- * ========================================================================== */
-/**
- * Add the correct text decoration in Safari.
- */
-:where(abbr[title]) {
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-:where(b, strong) {
-  font-weight: bolder;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-:where(code, kbd, samp) {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-:where(small) {
-  font-size: 80%;
-}
-
-/* Tabular data
- * ========================================================================== */
-/**
- * 1. Correct table border color in Chrome, Edge, and Safari.
- * 2. Remove text indentation from table contents in Chrome, Edge, and Safari.
- */
-:where(table) {
-  border-color: currentColor; /* 1 */
-  text-indent: 0; /* 2 */
-}
-
-/* Forms
- * ========================================================================== */
-/**
- * Remove the margin on controls in Safari.
- */
-:where(button, input, select) {
+* {
   margin: 0;
 }
 
-/**
- * Remove the inheritance of text transform in Firefox.
- */
-:where(button) {
-  text-transform: none;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/**
- * Correct the inability to style buttons in iOS and Safari.
- */
-:where(button, input:is([type=button i], [type=reset i], [type=submit i])) {
-  -webkit-appearance: button;
+:target {
+  scroll-margin-block-start: var(--length-3);
 }
 
-/**
- * Add the correct vertical alignment in Chrome, Edge, and Firefox.
- */
-:where(progress) {
-  vertical-align: baseline;
+* {
+  ---clr-fg: var(---clr-pos);
+  ---clr-bg: var(---clr-neg);
 }
 
-/**
- * Remove the inheritance of text transform in Firefox.
- */
-:where(select) {
-  text-transform: none;
+:is(img, picture, video, audio),
+:is(embed, iframe, object),
+svg,
+canvas {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
 }
 
-/**
- * Remove the margin in Firefox and Safari.
- */
-:where(textarea) {
-  margin: 0;
+audio,
+iframe:not([width]) {
+  inline-size: 100%;
 }
 
-/**
- * 1. Correct the odd appearance in Chrome, Edge, and Safari.
- * 2. Correct the outline style in Safari.
- */
-:where(input[type=search i]) {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+* + :is(h1, h2, h3, h4, h5, h6) {
+  margin-block-start: var(--spacing-heading);
 }
 
-/**
- * Correct the cursor style of increment and decrement buttons in Safari.
- */
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
+* + :is(article, section) {
+  margin-block-start: var(--spacing-sectioning);
 }
 
-/**
- * Correct the text style of placeholders in Chrome, Edge, and Safari.
- */
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
+* + :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr),
+:is(h1, h2, h3, h4, h5, h6) + div,
+:is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr) + div {
+  margin-block-start: var(--spacing-block);
 }
 
-/**
- * Remove the inner padding in Chrome, Edge, and Safari on macOS.
- */
-::-webkit-search-decoration {
-  -webkit-appearance: none;
+li :is(ol, ul, menu, dir) {
+  margin-block-start: unset;
 }
 
-/**
- * 1. Correct the inability to style upload buttons in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+li :is(ol, ul, menu, dir) {
+  padding-inline-start: var(--spacing-inline);
 }
 
-/**
- * Remove the inner border and padding of focus outlines in Firefox.
- */
-:where(button, input:is([type=button i], [type=color i], [type=reset i], [type=submit i]))::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+dd {
+  margin-inline-start: var(--spacing-inline);
 }
 
-/**
- * Restore the focus outline styles unset by the previous rule in Firefox.
- */
-:where(button, input:is([type=button i], [type=color i], [type=reset i], [type=submit i]))::-moz-focusring {
-  outline: 1px dotted ButtonText;
+blockquote,
+figure {
+  margin-inline: var(--spacing-inline);
 }
 
-/**
- * Remove the additional :invalid styles in Firefox.
- */
-:where(:-moz-ui-invalid) {
-  box-shadow: none;
-}
-
-/* Interactive
- * ========================================================================== */
-/*
- * Add the correct styles in Safari.
- */
-:where(dialog) {
-  background-color: white;
-  border: solid;
-  color: black;
-  height: -moz-fit-content;
-  height: fit-content;
-  left: 0;
-  margin: auto;
-  padding: 1em;
-  position: absolute;
-  right: 0;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-:where(dialog:not([open])) {
-  display: none;
-}
-
-/*
- * Add the correct display in all browsers.
- */
-:where(summary) {
-  display: list-item;
-}
-
-/*! n’ize.css v0.6.0 | MIT License | github.com/smnscp/n-ize.css */
-/**
- * ## Document
- */
-/**
- * Provide a slot for setting the root line height.
- */
-:root {
+html {
   line-height: var(--line-root);
 }
 
-/**
- * Set Box sizing default to border-box.
- */
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-/**
- * 1. Remove the margin in all browsers.
- * 2. Generic typography.
- */
 body {
   font-family: var(--font-body);
   font-weight: var(--weight-body);
@@ -996,18 +807,7 @@ body {
   line-height: var(--line-0);
 }
 
-/**
- * ## Sectioning
- */
-/**
- * Generic typography for headings.
- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--font-heading);
   font-weight: var(--weight-heading);
 }
@@ -1042,103 +842,24 @@ h6 {
   line-height: var(--line--2);
 }
 
-/**
- * ## Block-level spacing
- * Use common block margin to help establishing a baseline grid.
- * https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/
- */
-* + :is(h1, h2, h3, h4, h5, h6) {
-  margin-block-start: var(--spacing-heading);
+:is(h1, h2, h3, h4, h5, h6),
+:is(p, address, summary, figcaption, caption) {
+  max-inline-size: var(--measure);
 }
 
-* + :is(article, section) {
-  margin-block-start: var(--spacing-sectioning);
-}
-
-* + :is(p, blockquote, figure, figcaption, pre, menu, dir, hr),
-:not(dd, li, li &gt; details) &gt; * + :is(dl, ol, ul) {
-  margin-block-start: var(--spacing-block);
-}
-
-/**
- * ## Block-level text content
- */
-/**
- * Replace 40px indent.
- */
-ol,
-ul,
-menu,
-dir {
-  padding-inline-start: var(--spacing-inline);
-}
-
-dd {
-  margin-inline-start: var(--spacing-inline);
-}
-
-blockquote,
-figure {
-  margin-inline: var(--spacing-inline);
-}
-
-/**
- * Make `hr` line-height neutral, i. e. 0px high.
- */
-hr {
-  border: none;
-  outline-style: var(--stroke-style-hr, var(--stroke-style-default, solid));
-  outline-width: calc(0.5 * var(--stroke-width-hr, var(--stroke-width-default, 0.125rem)));
-  margin-inline: auto;
-  color: var(--color-hr);
-}
-
-/**
- * ## Inline text semantics
- */
-/**
- * Generic typography for monospaced elements.
- */
-code,
-kbd,
-samp,
+:is(code, kbd, samp),
 pre {
   font-family: var(--font-mono);
 }
 
-/**
- * Set scale-based font size.
- */
-small,
-sub,
-sup {
+:is(small, sub, sup) {
   font-size: var(--scale-smaller);
 }
 
-/**
- * Prevent certain inline (pseudo) elements from affecting the line height.
- */
-code,
-kbd,
-samp,
-sub,
-sup,
-small,
+:is(code, kbd, samp),
+:is(small, sub, sup),
 ::marker {
   line-height: 0;
-}
-
-:target {
-  scroll-margin-block-start: var(--length-3);
-}
-
-:where(h1, h2, h3, h4, h5, h6, p, address, summary, figcaption, caption) {
-  max-inline-size: var(--measure);
-}
-
-* {
-  ---clr-fg: var(---clr-pos);
-  ---clr-bg: var(---clr-neg);
 }</code></pre>
     </div>
   
@@ -1923,6 +1644,49 @@ $cfg: (
     
   </div>
 
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-generic.html#mixin--set-colors" class="item-name">set-colors()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+      
+        
+
+        
+      
+        
 
         
       
@@ -4750,263 +4514,74 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --color-brown-900: hsl(15, 17.995%, 12.00906%);
 }
 
-/* Document
- * ========================================================================== */
-/**
- * 1. Correct the line height in all browsers.
- */
-:where(html) {
-  line-height: 1.15; /* 1 */
-}
-
-/* Sections
- * ========================================================================== */
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Edge, Firefox, and Safari.
- */
-:where(h1) {
-  font-size: 2em;
-  margin-block-end: 0.67em;
-  margin-block-start: 0.67em;
-}
-
-/* Grouping content
- * ========================================================================== */
-/**
- * Remove the margin on nested lists in Chrome, Edge, and Safari.
- */
-:where(dl, ol, ul) :where(dl, ol, ul) {
-  margin-block-end: 0;
-  margin-block-start: 0;
-}
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Correct the inheritance of border color in Firefox.
- */
-:where(hr) {
-  box-sizing: content-box; /* 1 */
-  color: inherit; /* 2 */
-  height: 0; /* 1 */
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-:where(pre) {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/* Text-level semantics
- * ========================================================================== */
-/**
- * Add the correct text decoration in Safari.
- */
-:where(abbr[title]) {
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-:where(b, strong) {
-  font-weight: bolder;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-:where(code, kbd, samp) {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-:where(small) {
-  font-size: 80%;
-}
-
-/* Tabular data
- * ========================================================================== */
-/**
- * 1. Correct table border color in Chrome, Edge, and Safari.
- * 2. Remove text indentation from table contents in Chrome, Edge, and Safari.
- */
-:where(table) {
-  border-color: currentColor; /* 1 */
-  text-indent: 0; /* 2 */
-}
-
-/* Forms
- * ========================================================================== */
-/**
- * Remove the margin on controls in Safari.
- */
-:where(button, input, select) {
+* {
   margin: 0;
 }
 
-/**
- * Remove the inheritance of text transform in Firefox.
- */
-:where(button) {
-  text-transform: none;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/**
- * Correct the inability to style buttons in iOS and Safari.
- */
-:where(button, input:is([type=button i], [type=reset i], [type=submit i])) {
-  -webkit-appearance: button;
+:target {
+  scroll-margin-block-start: var(--length-3);
 }
 
-/**
- * Add the correct vertical alignment in Chrome, Edge, and Firefox.
- */
-:where(progress) {
-  vertical-align: baseline;
+* {
+  ---clr-fg: var(---clr-pos);
+  ---clr-bg: var(---clr-neg);
 }
 
-/**
- * Remove the inheritance of text transform in Firefox.
- */
-:where(select) {
-  text-transform: none;
+:is(img, picture, video, audio),
+:is(embed, iframe, object),
+svg,
+canvas {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
 }
 
-/**
- * Remove the margin in Firefox and Safari.
- */
-:where(textarea) {
-  margin: 0;
+audio,
+iframe:not([width]) {
+  inline-size: 100%;
 }
 
-/**
- * 1. Correct the odd appearance in Chrome, Edge, and Safari.
- * 2. Correct the outline style in Safari.
- */
-:where(input[type=search i]) {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+* + :is(h1, h2, h3, h4, h5, h6) {
+  margin-block-start: var(--spacing-heading);
 }
 
-/**
- * Correct the cursor style of increment and decrement buttons in Safari.
- */
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
+* + :is(article, section) {
+  margin-block-start: var(--spacing-sectioning);
 }
 
-/**
- * Correct the text style of placeholders in Chrome, Edge, and Safari.
- */
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
+* + :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr),
+:is(h1, h2, h3, h4, h5, h6) + div,
+:is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr) + div {
+  margin-block-start: var(--spacing-block);
 }
 
-/**
- * Remove the inner padding in Chrome, Edge, and Safari on macOS.
- */
-::-webkit-search-decoration {
-  -webkit-appearance: none;
+li :is(ol, ul, menu, dir) {
+  margin-block-start: unset;
 }
 
-/**
- * 1. Correct the inability to style upload buttons in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+li :is(ol, ul, menu, dir) {
+  padding-inline-start: var(--spacing-inline);
 }
 
-/**
- * Remove the inner border and padding of focus outlines in Firefox.
- */
-:where(button, input:is([type=button i], [type=color i], [type=reset i], [type=submit i]))::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+dd {
+  margin-inline-start: var(--spacing-inline);
 }
 
-/**
- * Restore the focus outline styles unset by the previous rule in Firefox.
- */
-:where(button, input:is([type=button i], [type=color i], [type=reset i], [type=submit i]))::-moz-focusring {
-  outline: 1px dotted ButtonText;
+blockquote,
+figure {
+  margin-inline: var(--spacing-inline);
 }
 
-/**
- * Remove the additional :invalid styles in Firefox.
- */
-:where(:-moz-ui-invalid) {
-  box-shadow: none;
-}
-
-/* Interactive
- * ========================================================================== */
-/*
- * Add the correct styles in Safari.
- */
-:where(dialog) {
-  background-color: white;
-  border: solid;
-  color: black;
-  height: -moz-fit-content;
-  height: fit-content;
-  left: 0;
-  margin: auto;
-  padding: 1em;
-  position: absolute;
-  right: 0;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-:where(dialog:not([open])) {
-  display: none;
-}
-
-/*
- * Add the correct display in all browsers.
- */
-:where(summary) {
-  display: list-item;
-}
-
-/*! n’ize.css v0.6.0 | MIT License | github.com/smnscp/n-ize.css */
-/**
- * ## Document
- */
-/**
- * Provide a slot for setting the root line height.
- */
-:root {
+html {
   line-height: var(--line-root);
 }
 
-/**
- * Set Box sizing default to border-box.
- */
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-/**
- * 1. Remove the margin in all browsers.
- * 2. Generic typography.
- */
 body {
   font-family: var(--font-body);
   font-weight: var(--weight-body);
@@ -5014,18 +4589,7 @@ body {
   line-height: var(--line-0);
 }
 
-/**
- * ## Sectioning
- */
-/**
- * Generic typography for headings.
- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--font-heading);
   font-weight: var(--weight-heading);
 }
@@ -5060,103 +4624,24 @@ h6 {
   line-height: var(--line--2);
 }
 
-/**
- * ## Block-level spacing
- * Use common block margin to help establishing a baseline grid.
- * https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/
- */
-* + :is(h1, h2, h3, h4, h5, h6) {
-  margin-block-start: var(--spacing-heading);
+:is(h1, h2, h3, h4, h5, h6),
+:is(p, address, summary, figcaption, caption) {
+  max-inline-size: var(--measure);
 }
 
-* + :is(article, section) {
-  margin-block-start: var(--spacing-sectioning);
-}
-
-* + :is(p, blockquote, figure, figcaption, pre, menu, dir, hr),
-:not(dd, li, li &gt; details) &gt; * + :is(dl, ol, ul) {
-  margin-block-start: var(--spacing-block);
-}
-
-/**
- * ## Block-level text content
- */
-/**
- * Replace 40px indent.
- */
-ol,
-ul,
-menu,
-dir {
-  padding-inline-start: var(--spacing-inline);
-}
-
-dd {
-  margin-inline-start: var(--spacing-inline);
-}
-
-blockquote,
-figure {
-  margin-inline: var(--spacing-inline);
-}
-
-/**
- * Make `hr` line-height neutral, i. e. 0px high.
- */
-hr {
-  border: none;
-  outline-style: var(--stroke-style-hr, var(--stroke-style-default, solid));
-  outline-width: calc(0.5 * var(--stroke-width-hr, var(--stroke-width-default, 0.125rem)));
-  margin-inline: auto;
-  color: var(--color-hr);
-}
-
-/**
- * ## Inline text semantics
- */
-/**
- * Generic typography for monospaced elements.
- */
-code,
-kbd,
-samp,
+:is(code, kbd, samp),
 pre {
   font-family: var(--font-mono);
 }
 
-/**
- * Set scale-based font size.
- */
-small,
-sub,
-sup {
+:is(small, sub, sup) {
   font-size: var(--scale-smaller);
 }
 
-/**
- * Prevent certain inline (pseudo) elements from affecting the line height.
- */
-code,
-kbd,
-samp,
-sub,
-sup,
-small,
+:is(code, kbd, samp),
+:is(small, sub, sup),
 ::marker {
   line-height: 0;
-}
-
-:target {
-  scroll-margin-block-start: var(--length-3);
-}
-
-:where(h1, h2, h3, h4, h5, h6, p, address, summary, figcaption, caption) {
-  max-inline-size: var(--measure);
-}
-
-* {
-  ---clr-fg: var(---clr-pos);
-  ---clr-bg: var(---clr-neg);
 }</code></pre>
     </div>
   
