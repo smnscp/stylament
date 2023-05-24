@@ -1,4 +1,4 @@
-@use "../../axioms/generic/mixins/coloring";
+@use "../../axioms/generic/coloring";
 
 .clr-alternate {
   @include coloring.alternate;

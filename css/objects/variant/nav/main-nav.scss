@@ -6,7 +6,7 @@
 ///
 /// Rather opinonated styling for the first `nav.var-menu`.
 
-@use "../../../axioms/generic/mixins/coloring";
+@use "../../../axioms/generic/coloring";
 
 /// The  first `nav.var-menu` is implicitly considered the main menu.
 body > nav.var-menu:first-of-type {
