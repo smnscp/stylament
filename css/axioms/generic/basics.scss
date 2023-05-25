@@ -4,10 +4,28 @@
 
 /// ## The BasiCSS
 
-/// Remove margins. Rely on [flow spacing](#flow-spacing) instead.
-/// @name Margin Reset
+/// Remove UA style margins, paddings, and borders. These basic box properties need to be redefined in any design system anyways.
+///
+/// ### Rationale
+///
+/// * The 8px body margin [is a relic][mia-8px] no longer needed.
+/// * Generic `margin-block` is handled by [flow spacing](#flow-spacing).
+/// * Generic `margin-inline` is handled by [indentation](#indentation).
+/// * Generic `padding-inline` is handled by [indentation](#indentation).
+/// * More specific boxes are handled on element level:
+///   * [`hr`](el-grouping.html#css--hr).
+///   * [`table`](el-tables.html#css--table), [`td`, `th`](el-tables.html#css--td%2C%0Ath), [`caption`](el-tables.html#css--caption).
+///   * [`dialog`](el-interactive.html#css--dialog).
+///   * `iframe` tbd.
+///   * `[popover]` tbd.
+///
+/// [mia-8px]: https://www.miriamsuzanne.com/2022/07/04/body-margin-8px/
+/// @name Basic Box Reset
+/// @link https://hg.mozilla.org/mozilla-central/file/tip/layout/style/res/html.css Browser styles for reference
 * {
-  margin: 0;
+  margin: unset;
+  padding: unset;
+  border: unset;
 }
 
 /// Set Box sizing default to border-box.
