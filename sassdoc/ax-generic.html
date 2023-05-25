@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.19.1</span>
+          <span class="project-version">0.19.2</span>
         
       </div>
     </header>
@@ -448,7 +448,7 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
 
 
-<section class="item" id="css--Margin%20Reset">
+<section class="item" id="css--Basic%20Box%20Reset">
   
     
   
@@ -466,7 +466,7 @@ of the design<span class="widont">&nbsp;</span>system.</p>
       
 
       
-        <a href="#css--Margin%20Reset" class="item-name">Margin Reset</a>
+        <a href="#css--Basic%20Box%20Reset" class="item-name">Basic Box<span class="widont">&nbsp;</span>Reset</a>
       
 
       
@@ -496,7 +496,9 @@ of the design<span class="widont">&nbsp;</span>system.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">* {
-  margin: 0;
+  margin: unset;
+  padding: unset;
+  border: unset;
 }</code></pre>
     </div>
   
@@ -509,7 +511,23 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
   
     <div class="text-block">
-      <p>Remove margins. Rely on <a href="#flow-spacing">flow spacing</a><span class="widont">&nbsp;</span>instead.</p>
+      <p>Remove UA style margins, paddings, and borders. These basic box properties need to be redefined in any design system<span class="widont">&nbsp;</span>anyways.</p>
+<h3 id="rationale" tabindex="-1">Rationale</h3>
+<ul>
+<li>The 8px body margin <a href="https://www.miriamsuzanne.com/2022/07/04/body-margin-8px/">is a relic</a> no longer<span class="widont">&nbsp;</span>needed.</li>
+<li>Generic <code>margin-block</code> is handled by <a href="#flow-spacing">flow<span class="widont">&nbsp;</span>spacing</a>.</li>
+<li>Generic <code>margin-inline</code> is handled by <a href="#indentation">indentation</a>.</li>
+<li>Generic <code>padding-inline</code> is handled by <a href="#indentation">indentation</a>.</li>
+<li>More specific boxes are handled on element level:
+<ul>
+<li><a href="el-grouping.html#css--hr"><code>hr</code></a>.</li>
+<li><a href="el-tables.html#css--table"><code>table</code></a>, <a href="el-tables.html#css--td%2C%0Ath"><code>td</code>, <code>th</code></a>, <a href="el-tables.html#css--caption"><code>caption</code></a>.</li>
+<li><a href="el-interactive.html#css--dialog"><code>dialog</code></a>.</li>
+<li><code>iframe</code> tbd.</li>
+<li><code>[popover]</code> tbd.</li>
+</ul>
+</li>
+</ul>
 
       
   
@@ -540,6 +558,44 @@ of the design<span class="widont">&nbsp;</span>system.</p>
   
   
 
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://hg.mozilla.org/mozilla-central/file/tip/layout/style/res/html.css" class="item-name">Browser styles for reference</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
 
   
   
