@@ -70,20 +70,23 @@
       font-weight: var(--weight-emphasis);
     }
 
-    .document-toc {
+    aside > details {
       block-size: 100%;
       overflow-y: auto;
     }
 
-    .document-toc>summary:first-of-type {
+    aside > details > summary {
       position: absolute;
       inset-inline-end: 1ch;
       inset-block-start: 0.5rem;
+      text-align: end;
     }
 
     aside h2 {
       font-size: var(--scale-1);
       margin: initial;
+      display: inline;
+      line-height: var(--scale-0);
     }
   </style>
 {{/head}}
@@ -94,12 +97,9 @@
       <h1>All Elements Showcase</h1>
     </hgroup>
   </header>
-  <aside class="document-toc-container clr-alternate">
-    <details class="document-toc">
-      <summary>TOC</summary>
-      <header class="clr-alternate">
-        <h2 class="document-toc-heading">Table of Contents</h2>
-      </header>
+  <aside class="clr-alternate">
+    <details role="tree">
+      <summary><h2>Table&nbsp;of Contents</h2></summary>
       <ul>
         <li>
           <details>
