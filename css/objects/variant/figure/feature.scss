@@ -9,6 +9,8 @@ figure.var-feature {
   padding: var(--spacing-sectioning);
 
   blockquote {
+    --no-stroke: 1;
+    --indent: 0;
     font-size: var(--scale-4);
     line-height: var(--line-3);
     font-family: var(--font-display, var(--font-body));
