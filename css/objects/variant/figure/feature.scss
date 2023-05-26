@@ -5,6 +5,7 @@
 figure.var-feature {
   @include coloring.set-colors("feature", "alternate");
   @include coloring.use-colors;
+  margin-inline: 0;
   padding: var(--spacing-sectioning);
 
   blockquote {
