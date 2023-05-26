@@ -4,18 +4,28 @@
 
 /// ## Indentation
 
+/// Define a global custom property for indentation.
+/// @name Default Indent
+:root {
+  --indent: var(--spacing-inline);
+}
+
+/// Indent nested lists. Top-level list are excluded from this rule,
+/// hence their bullet points become [hanging punctuation](https://en.wikipedia.org/wiki/Hanging_punctuation).
 /// @name Nested Lists
 li :is(ol, ul, menu, dir) {
-  padding-inline-start: var(--spacing-inline);
+  padding-inline-start: var(--indent);
 }
 
+/// Indent definition details.
 /// @name Definition Details
 dd {
-  margin-inline-start: var(--spacing-inline);
+  margin-inline-start: var(--indent);
 }
 
+/// Indent quotation blocks and figures symmetrically.
 /// @name Emphasized Blocks
 blockquote,
 figure {
-  margin-inline: var(--spacing-inline);
+  margin-inline: var(--indent);
 }
