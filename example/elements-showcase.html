@@ -10,7 +10,8 @@
   
   <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/css/dark.scheme.css">
   <link rel="stylesheet" media="not (prefers-color-scheme: dark)" href="/css/light.scheme.css">
-    <style>
+    
+  <style>
     body {
       display: flex;
       flex-wrap: wrap;
@@ -55,6 +56,7 @@
       --figure-border-color: var(--stroke-color-default);
       padding: calc(1.5 * (var(--line-root-abs) - var(--figure-border-width)));
       border: var(--figure-border-width) var(--figure-border-color) solid;
+      margin-inline: 0;
       margin-block: calc(-0.5 * var(--figure-border-width));
       position: relative;
     }
@@ -77,25 +79,29 @@
       font-weight: var(--weight-emphasis);
     }
 
-    .document-toc {
+    aside > details {
       block-size: 100%;
       overflow-y: auto;
     }
 
-    .document-toc>summary:first-of-type {
+    aside > details > summary {
       position: absolute;
       inset-inline-end: 1ch;
       inset-block-start: 0.5rem;
+      text-align: end;
     }
 
     aside h2 {
       font-size: var(--scale-1);
       margin: initial;
+      display: inline;
+      line-height: var(--scale-0);
     }
   </style>
 
   <link rel="stylesheet" href="/css/index.css">
   <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/dev.utils.css">
 </head>
 
 <body id="content-root" class="lay-page-center">
@@ -104,29 +110,26 @@
       <h1>All Elements Showcase</h1>
     </hgroup>
   </header>
-  <aside class="document-toc-container clr-alternate">
-    <details class="document-toc">
-      <summary>TOC</summary>
-      <header class="clr-alternate">
-        <h2 class="document-toc-heading">Table of Contents</h2>
-      </header>
-      <ol type="a" class="document-toc-body">
+  <aside class="clr-alternate">
+    <details role="tree">
+      <summary><h2>Table&nbsp;of Contents</h2></summary>
+      <ul>
         <li>
           <details>
             <summary><a href="#sec:document">General Document Structure</a></summary>
-            <ol type="a">
+            <ul>
               <li><a href="#sec:root">Document root</a></li>
               <li><a href="#sec:body">Content root</a></li>
               <li><a href="#sec:main">The document’s main content</a></li>
               <li><a href="#sec:header">The document’s main header</a></li>
               <li><a href="#sec:footer">The document’s main footer</a></li>
-            </ol>
+            </ul>
           </details>
         </li>
         <li>
           <details>
             <summary><a href="#sec:sectioning">Sectioning</a></summary>
-            <ol type="a">
+            <ul>
               <li>
                 <details>
                   <summary><a href="#sec:sections">Sections</a></summary>
@@ -157,13 +160,13 @@
                   </ul>
                 </details>
               </li>
-            </ol>
+            </ul>
           </details>
         </li>
         <li>
           <details>
             <summary><a href="#sec:grouping">Grouping Content</a></summary>
-            <ol type="a">
+            <ul>
               <li>
                 <details>
                   <summary><a href="#sec:generic-block">Generic block</a></summary>
@@ -234,13 +237,13 @@
                   </ul>
                 </details>
               </li>
-            </ol>
+            </ul>
           </details>
         </li>
         <li>
           <details>
             <summary><a href="#sec:text">Text-level Semantics</a></summary>
-            <ol type="a">
+            <ul>
               <li>
                 <details>
                   <summary><a href="#sec:generic-range">Generic range</a></summary>
@@ -360,7 +363,7 @@
                   </ul>
                 </details>
               </li>
-            </ol>
+            </ul>
           </details>
         </li>
         <li>
@@ -385,7 +388,7 @@
         <li>
           <details>
             <summary><a href="#sec:embedding">Embedding</a></summary>
-            <ol type="a">
+            <ul>
               <li>
                 <details>
                   <summary><a href="#sec:media">Multimedia Content</a></summary>
@@ -421,7 +424,7 @@
                   </ul>
                 </details>
               </li>
-            </ol>
+            </ul>
           </details>
         </li>
         <li>
@@ -443,7 +446,7 @@
         <li>
           <details>
             <summary><a href="#sec:forms">Form-associated Content</a></summary>
-            <ol type="a">
+            <ul>
               <li>
                 <details>
                   <summary><a href="#sec:general">General</a></summary>
@@ -493,7 +496,7 @@
                   </ul>
                 </details>
               </li>
-            </ol>
+            </ul>
           </details>
         </li>
         <li>
@@ -516,7 +519,7 @@
             </ul>
           </details>
         </li>
-      </ol>
+      </ul>
     </details>
   </aside>
   <main id="main-content">
@@ -788,15 +791,39 @@
         <h3 id="sec:lists">Lists</h3>
         <dl>
           <dt>Selectors</dt>
+          <dd><code>ul</code></dd>
+          <dd><code>ul &gt; li</code></dd>
+          <dt>Example</dt>
+          <dd>
+            <figure>
+              <ul>
+                <li>I am a
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">list item</a>
+                  in an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">unordered list</a>.
+                </li>
+                <li>I am a list item, too.</li>
+                <li>I am a third list.
+                  <ul>
+                    <li>I am a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul#nesting_a_list">nested list item</a>.</li>
+                    <li>I am a nested list item, too.</li>
+                    <li>I am a third nested list item.</li>
+                  </ul>
+                </li>
+                <li>I am yet another list item.</li>
+              </ul>
+              <figcaption><code>ul</code> element with <code>li</code> and <code>a</code></figcaption>
+            </figure>
+          </dd>
+          <dt>Selectors</dt>
           <dd><code>ol</code></dd>
           <dd><code>ol &gt; li</code></dd>
           <dt>Example</dt>
           <dd>
             <figure>
               <ol>
-                <li>I am a list item.</li>
+                <li>I am a list item in an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">unordered list</a>.</li>
                 <li>I am a list item, too.</li>
-                <li>I am a third list .</a>
+                <li>I am a third list .
                   <ol>
                     <li>I am a nested list item.</li>
                     <li>I am a nested list item, too.</li>
@@ -809,24 +836,23 @@
             </figure>
           </dd>
           <dt>Selectors</dt>
-          <dd><code>ul</code></dd>
-          <dd><code>ul &gt; li</code></dd>
+          <dd><code>ol[type]</code></dd>
           <dt>Example</dt>
           <dd>
             <figure>
-              <ul>
-                <li>I am a list item.</li>
+              <ol type="I">
+                <li>I am a list item in an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li#ordered_list_with_a_custom_value">ordered list with custom value</a>.</li>
                 <li>I am a list item, too.</li>
-                <li>I am a third list .</a>
-                  <ul>
+                <li>I am a third list.
+                  <ol type="a">
                     <li>I am a nested list item.</li>
                     <li>I am a nested list item, too.</li>
                     <li>I am a third nested list item.</li>
-                  </ul>
+                  </ol>
                 </li>
                 <li>I am yet another list item.</li>
-              </ul>
-              <figcaption><code>ul</code> element with <code>li</code> and <code>a</code></figcaption>
+              </ol>
+              <figcaption><code>ol</code> element with <code>type</code> attributes.</figcaption>
             </figure>
           </dd>
           <dt>Selectors</dt>
@@ -873,6 +899,15 @@
             <figure>
               <blockquote>I am a <code>blockquote</code> element.</blockquote>
               <figcaption><code>blockquote</code> element stand-alone</figcaption>
+            </figure>
+            <figure>
+              <p class="dev-lorem-ipsum"></p>
+              <blockquote>
+                <p class="dev-lorem-ipsum"></p>
+                <blockquote class="dev-lorem-ipsum"></blockquote>
+                <p class="dev-lorem-ipsum"></p>
+              </blockquote>
+              <figcaption>Nesting <code>blockquote</code> elements</figcaption>
             </figure>
             <figure>
               <blockquote>

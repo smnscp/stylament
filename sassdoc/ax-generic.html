@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.19.2</span>
+          <span class="project-version">0.19.3</span>
         
       </div>
     </header>
@@ -240,7 +240,12 @@
       <a href="ut-dev.html" data-nav="is-not-active">Development Utilities</a>
     </li>
   </ul>
-            </li></ul>
+            </li>
+  
+    <li class="nav-item">
+      <a href="id-navigation.html" data-nav="is-not-active">id-navigation</a>
+    </li>
+  </ul>
     </div>
 
     
@@ -2588,6 +2593,134 @@ iframe:not([width]) {
 
 
 
+<section class="item" id="css--Default%20Indent">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Default%20Indent" class="item-name">Default Indent</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  --indent: var(--spacing-inline);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Define a global custom property for<span class="widont">&nbsp;</span>indentation.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" id="css--Nested%20Lists">
   
     
@@ -2636,7 +2769,7 @@ iframe:not([width]) {
       
       
       <pre class="hljs-pre"><code class="lang-scss">li :is(ol, ul, menu, dir) {
-  padding-inline-start: var(--spacing-inline);
+  padding-inline-start: var(--indent);
 }</code></pre>
     </div>
   
@@ -2647,6 +2780,21 @@ iframe:not([width]) {
   
   
 
+  
+    <div class="text-block">
+      <p>Indent nested lists. Top-level list are excluded from this rule,
+hence their bullet points become <a href="https://en.wikipedia.org/wiki/Hanging_punctuation">hanging<span class="widont">&nbsp;</span>punctuation</a>.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
   
 
   </div>
@@ -2750,7 +2898,7 @@ iframe:not([width]) {
       
       
       <pre class="hljs-pre"><code class="lang-scss">dd {
-  margin-inline-start: var(--spacing-inline);
+  margin-inline-start: var(--indent);
 }</code></pre>
     </div>
   
@@ -2761,6 +2909,20 @@ iframe:not([width]) {
   
   
 
+  
+    <div class="text-block">
+      <p>Indent definition details.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
   
 
   </div>
@@ -2865,7 +3027,7 @@ iframe:not([width]) {
       
       <pre class="hljs-pre"><code class="lang-scss">blockquote,
 figure {
-  margin-inline: var(--spacing-inline);
+  margin-inline: var(--indent);
 }</code></pre>
     </div>
   
@@ -2876,6 +3038,20 @@ figure {
   
   
 
+  
+    <div class="text-block">
+      <p>Indent quotation blocks and figures<span class="widont">&nbsp;</span>symmetrically.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
   
 
   </div>

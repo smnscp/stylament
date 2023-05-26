@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.19.2</span>
+          <span class="project-version">0.19.3</span>
         
       </div>
     </header>
@@ -240,7 +240,12 @@
       <a href="ut-dev.html" data-nav="is-not-active">Development Utilities</a>
     </li>
   </ul>
-            </li></ul>
+            </li>
+  
+    <li class="nav-item">
+      <a href="id-navigation.html" data-nav="is-not-active">id-navigation</a>
+    </li>
+  </ul>
     </div>
 
     
@@ -785,17 +790,21 @@ li :is(ol, ul, menu, dir) {
   margin-block-start: unset;
 }
 
+:root {
+  --indent: var(--spacing-inline);
+}
+
 li :is(ol, ul, menu, dir) {
-  padding-inline-start: var(--spacing-inline);
+  padding-inline-start: var(--indent);
 }
 
 dd {
-  margin-inline-start: var(--spacing-inline);
+  margin-inline-start: var(--indent);
 }
 
 blockquote,
 figure {
-  margin-inline: var(--spacing-inline);
+  margin-inline: var(--indent);
 }
 
 html {
@@ -4569,17 +4578,21 @@ li :is(ol, ul, menu, dir) {
   margin-block-start: unset;
 }
 
+:root {
+  --indent: var(--spacing-inline);
+}
+
 li :is(ol, ul, menu, dir) {
-  padding-inline-start: var(--spacing-inline);
+  padding-inline-start: var(--indent);
 }
 
 dd {
-  margin-inline-start: var(--spacing-inline);
+  margin-inline-start: var(--indent);
 }
 
 blockquote,
 figure {
-  margin-inline: var(--spacing-inline);
+  margin-inline: var(--indent);
 }
 
 html {

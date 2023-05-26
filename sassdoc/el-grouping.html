@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.19.2</span>
+          <span class="project-version">0.19.3</span>
         
       </div>
     </header>
@@ -240,7 +240,12 @@
       <a href="ut-dev.html" data-nav="is-not-active">Development Utilities</a>
     </li>
   </ul>
-            </li></ul>
+            </li>
+  
+    <li class="nav-item">
+      <a href="id-navigation.html" data-nav="is-not-active">id-navigation</a>
+    </li>
+  </ul>
     </div>
 
     
@@ -847,6 +852,158 @@
 
     </div>
   
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--blockquote">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--blockquote" class="item-name">blockquote</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">blockquote {
+  --stroke-width: var(--stroke-width-4);
+  --stroke-color: currentcolor;
+  --bullet: &quot;“&quot;;
+  position: relative;
+  padding-inline: var(--indent);
+  border-inline-start: var(--no-stroke, var(--stroke-width)) var(--stroke-color) solid;
+  margin-inline-start: var(--no-stroke, calc(-1 * var(--stroke-width)));
+
+  &amp;::before {
+    content: var(--bullet);
+    position: absolute;
+    inset-inline-start: var(--no-stroke, -0.25em);
+    margin-inline-start: calc(var(--no-stroke, 0) * -0.5em);
+    font-size: 2em;
+    line-height: 0.5;
+    background: var(--no-stroke, var(---clr-neg));
+    border-radius: 100%;
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Custom properties:</p>
+<ul>
+<li><code>--indent</code>: Customize the indent. Set to <code>0</code> to remove<span class="widont">&nbsp;</span>it.</li>
+<li><code>--stroke-width</code>: Customize the width of the<span class="widont">&nbsp;</span>stroke.</li>
+<li><code>--stroke-color</code>: Customize the color of the<span class="widont">&nbsp;</span>stroke.</li>
+<li><code>--bullet</code>: Customize the bullet. Set to <code>&quot;&quot;</code> to remove<span class="widont">&nbsp;</span>it.</li>
+<li><code>--no-stroke</code>: Set to <code>1</code> to remove the<span class="widont">&nbsp;</span>stroke.</li>
+</ul>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
 
   
 
