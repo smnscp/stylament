@@ -1,0 +1,16 @@
+////
+/// @group id-navigation
+////
+
+/// @name Treeview
+[role="tree"] {
+  --indent: var(--length-1dim);
+
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
