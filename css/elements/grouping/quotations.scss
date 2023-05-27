@@ -5,27 +5,30 @@
 /// ### Extended quotation
 
 /// Custom properties:
-/// * `--indent`: Customize the indent. Set to `0` to remove it.
-/// * `--stroke-width`: Customize the width of the stroke.
-/// * `--stroke-color`: Customize the color of the stroke.
-/// * `--marker`: Customize the marker. Set to `""` to remove it.
-/// * `--no-stroke`: Set to `1` to remove the stroke.
+/// * `--indent` {Number<ch>}: Customize the indent.
+/// * `--stroke-width` {Number<rem|em>}: Customize the width of the stroke.
+/// * `--stroke-color` {Color} [currentcolor]: Customize the color of the stroke.
+/// * `--marker` {String} ["“"]: Customize the marker. Set to `""` to remove it.
+/// * `--marker-size` {Number} [2]: Customize the size of the marker.
+/// * `--marker-outdent` {Number<ch>} [0.5ch]: Customize the outdent of the marker.
+/// * `--no-stroke` {unset|any} [unset]: Set to anything to remove the stroke.
 blockquote {
   --stroke-width: var(--stroke-width-4);
   --stroke-color: currentcolor;
   --marker: "“";
-  position: relative;
+  --marker-size: 2;
+  --marker-outdent: 0.5ch;
   padding-inline: var(--indent);
   border-inline-start: var(--no-stroke, var(--stroke-width)) var(--stroke-color) solid;
   margin-inline-start: var(--no-stroke, calc(-1 * var(--stroke-width)));
 
   &::before {
     content: var(--marker);
-    position: absolute;
-    inset-inline-start: var(--no-stroke, -0.25em);
-    margin-inline-start: calc(var(--no-stroke, 0) * -0.5em);
-    font-size: 2em;
-    line-height: 0.75;
-    background: var(--no-stroke, var(---clr-neg));
+    display: block;
+    line-height: 0;
+    font-size: calc(var(--marker-size) * 1em);
+    margin-inline-start: calc(-1 * (var(--marker-outdent) + var(--indent, 0) / var(--marker-size)));
+    margin-block-end: calc(-1em / var(--marker-size));
+    margin-block-start: calc(1em / var(--marker-size));
   }
 }
