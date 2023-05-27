@@ -8,25 +8,24 @@
 /// * `--indent`: Customize the indent. Set to `0` to remove it.
 /// * `--stroke-width`: Customize the width of the stroke.
 /// * `--stroke-color`: Customize the color of the stroke.
-/// * `--bullet`: Customize the bullet. Set to `""` to remove it.
+/// * `--marker`: Customize the marker. Set to `""` to remove it.
 /// * `--no-stroke`: Set to `1` to remove the stroke.
 blockquote {
   --stroke-width: var(--stroke-width-4);
   --stroke-color: currentcolor;
-  --bullet: "“";
+  --marker: "“";
   position: relative;
   padding-inline: var(--indent);
   border-inline-start: var(--no-stroke, var(--stroke-width)) var(--stroke-color) solid;
   margin-inline-start: var(--no-stroke, calc(-1 * var(--stroke-width)));
 
   &::before {
-    content: var(--bullet);
+    content: var(--marker);
     position: absolute;
     inset-inline-start: var(--no-stroke, -0.25em);
     margin-inline-start: calc(var(--no-stroke, 0) * -0.5em);
     font-size: 2em;
     line-height: 0.5;
     background: var(--no-stroke, var(---clr-neg));
-    border-radius: 100%;
   }
 }
