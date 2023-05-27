@@ -65,7 +65,7 @@
       margin-block-start: calc(var(--line-root-abs) - 0.5 * var(--figure-border-width));
     }
 
-    figcaption {
+    :not(blockquote)+figcaption {
       font-size: var(--scale--1);
       border: solid var(--stroke-width-1);
       margin: calc(-1 * var(--stroke-width-1));
@@ -918,14 +918,13 @@
               <figcaption><code>blockquote</code> with <code>cite</code> in an adjacent <code>p</code></figcaption>
             </figure>
             <figure>
-              </figcaption>
               <figure>
                 <blockquote>
                   <p>Always build on solid ground!</p>
                 </blockquote>
                 <figcaption><cite>— Old wisdom</cite></figcaption>
               </figure>
-              <figcaption><code>blockquote</code> inside <code>figure</code>, followed by <code>figcaption</code>
+              <figcaption><code>blockquote</code> inside <code>figure</code>, followed by <code>figcaption</code></figcaption>
             </figure>
           </dd>
         </dl>
@@ -934,7 +933,7 @@
           <dt>Selectors</dt>
           <dd><code>figure</code></dd>
           <dd><code>figure &gt; figcaption</code></dd>
-          <dt>Example</dt>
+          <dt>Examples</dt>
           <dd>
             <figure>
               <figure>
@@ -942,6 +941,15 @@
                 <figcaption>I am a <code>figcaption</code> element.</figcaption>
               </figure>
               <figcaption><code>figure</code> element with <code>figcaption</code></figcaption>
+            </figure>
+            <figure>
+              <figure class="var-feature">
+                <blockquote>
+                  <p>Always build on solid ground!</p>
+                </blockquote>
+                <figcaption><cite>— Old wisdom</cite></figcaption>
+              </figure>
+              <figcaption><code>figure.var-feature</code> with <code>blockquote</code></figcaption>
             </figure>
           </dd>
         </dl>

@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.19.3</span>
+          <span class="project-version">0.19.4</span>
         
       </div>
     </header>
@@ -954,21 +954,21 @@
       <pre class="hljs-pre"><code class="lang-scss">blockquote {
   --stroke-width: var(--stroke-width-4);
   --stroke-color: currentcolor;
-  --bullet: &quot;“&quot;;
-  position: relative;
+  --marker: &quot;“&quot;;
+  --marker-size: 2;
+  --marker-outdent: 0.5ch;
   padding-inline: var(--indent);
   border-inline-start: var(--no-stroke, var(--stroke-width)) var(--stroke-color) solid;
   margin-inline-start: var(--no-stroke, calc(-1 * var(--stroke-width)));
 
   &amp;::before {
-    content: var(--bullet);
-    position: absolute;
-    inset-inline-start: var(--no-stroke, -0.25em);
-    margin-inline-start: calc(var(--no-stroke, 0) * -0.5em);
-    font-size: 2em;
-    line-height: 0.5;
-    background: var(--no-stroke, var(---clr-neg));
-    border-radius: 100%;
+    content: var(--marker);
+    display: block;
+    line-height: 0;
+    font-size: calc(var(--marker-size) * 1em);
+    margin-inline-start: calc(-1 * (var(--marker-outdent) + var(--indent, 0) / var(--marker-size)));
+    margin-block-end: calc(-1em / var(--marker-size));
+    margin-block-start: calc(1em / var(--marker-size));
   }
 }</code></pre>
     </div>
@@ -984,11 +984,13 @@
     <div class="text-block">
       <p>Custom properties:</p>
 <ul>
-<li><code>--indent</code>: Customize the indent. Set to <code>0</code> to remove<span class="widont">&nbsp;</span>it.</li>
-<li><code>--stroke-width</code>: Customize the width of the<span class="widont">&nbsp;</span>stroke.</li>
-<li><code>--stroke-color</code>: Customize the color of the<span class="widont">&nbsp;</span>stroke.</li>
-<li><code>--bullet</code>: Customize the bullet. Set to <code>&quot;&quot;</code> to remove<span class="widont">&nbsp;</span>it.</li>
-<li><code>--no-stroke</code>: Set to <code>1</code> to remove the<span class="widont">&nbsp;</span>stroke.</li>
+<li><code>--indent</code> {Number<ch>}: Customize the<span class="widont">&nbsp;</span>indent.</li>
+<li><code>--stroke-width</code> {Number&lt;rem|em&gt;}: Customize the width of the<span class="widont">&nbsp;</span>stroke.</li>
+<li><code>--stroke-color</code> {Color} [currentcolor]: Customize the color of the<span class="widont">&nbsp;</span>stroke.</li>
+<li><code>--marker</code> {String} [““”]: Customize the marker. Set to <code>&quot;&quot;</code> to remove<span class="widont">&nbsp;</span>it.</li>
+<li><code>--marker-size</code> {Number} [2]: Customize the size of the<span class="widont">&nbsp;</span>marker.</li>
+<li><code>--marker-outdent</code> {Number<ch>} [0.5ch]: Customize the outdent of the<span class="widont">&nbsp;</span>marker.</li>
+<li><code>--no-stroke</code> {unset|any} [unset]: Set to anything to remove the<span class="widont">&nbsp;</span>stroke.</li>
 </ul>
 
       
