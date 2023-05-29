@@ -1,0 +1,11 @@
+@use "../../../axioms/generic/coloring";
+
+blockquote.var-alternate {
+  @include coloring.set-colors("alternate");
+  @include coloring.use-colors;
+  --stroke-width: var(--stroke-width-8);
+  --marker: "❝";
+  --marker-size: 1.5;
+  --marker-outdent: -0.75ch;
+  padding-block: var(--length-0½);
+}
