@@ -93,7 +93,7 @@ nav.var-menu.\+foldable {
       font-size: calc(var(--toggle-size) - 2 * var(--toggle-padding));
       line-height: 1;
       text-align: center;
-      font-weight: var(--weight-emphasis);
+      font-weight: var(--font-weight-emphasis);
       transition: all 0.3s var(--ease-default);
       border-radius: var(--toggle-radius);
       box-shadow: var(--toggle-shadow);

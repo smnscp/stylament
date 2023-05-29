@@ -13,6 +13,6 @@
 :root {
   @include props.configured-properties(
     "stroke-width",
-    map.get(cfg.$merged, ui, stroke, width)
+    map.get(cfg.$merged, ui, stroke-width)
   );
 }

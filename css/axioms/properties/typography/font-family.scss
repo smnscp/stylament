@@ -11,7 +11,7 @@
 /// @requires {mixin} configured-properties
 :root {
   @include props.configured-properties(
-    "font",
+    "font-family",
     map.get(cfg.$merged, typography, font-family)
   );
 }

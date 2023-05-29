@@ -15,6 +15,6 @@
 :root {
   @include props.configured-properties(
     "stroke-color",
-    map.get(cfg.$merged, ui, stroke, color)
+    map.get(cfg.$merged, ui, stroke-color)
   );
 }

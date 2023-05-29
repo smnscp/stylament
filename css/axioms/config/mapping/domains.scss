@@ -39,15 +39,15 @@ $tendency: (
 /// Used as default domain for font weight properties.
 ///
 /// @example css - Complete map of commonly use font weights.
-///   --weight-thin: 100;
-///   --weight-extralight: 200;
-///   --weight-light: 300;
-///   --weight-regular: 400;
-///   --weight-book: 500;
-///   --weight-medium: 600;
-///   --weight-bold: 700;
-///   --weight-black: 800;
-///   --weight-ultra: 900;
+///   --font-weight-thin: 100;
+///   --font-weight-extralight: 200;
+///   --font-weight-light: 300;
+///   --font-weight-regular: 400;
+///   --font-weight-book: 500;
+///   --font-weight-medium: 600;
+///   --font-weight-bold: 700;
+///   --font-weight-black: 800;
+///   --font-weight-ultra: 900;
 ///
 $font-weights: (
   "thin": 100,

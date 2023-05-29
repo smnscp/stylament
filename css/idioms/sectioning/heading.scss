@@ -5,8 +5,8 @@
 /// @name New (2022) hgroup semantics
 hgroup {
   p {
-    font-family: var(--font-heading);
-    font-weight: var(--weight-heading);
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-heading);
     color: var(---clr-fg);
   }
   h1 ~ p {

@@ -13,8 +13,8 @@ html {
 /// Fonts for body copy.
 /// @name Body Copy
 body {
-  font-family: var(--font-body);
-  font-weight: var(--weight-body);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
   font-size: var(--scale-0);
   line-height: var(--line-0);
 }
@@ -22,8 +22,8 @@ body {
 /// Fonts for headings.
 /// @name Headings
 :is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--font-heading);
-  font-weight: var(--weight-heading);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
 }
 
 @for $level from 1 through 6 {
@@ -45,7 +45,7 @@ body {
 /// @name Monospaced
 :is(code, kbd, samp),
 pre {
-  font-family: var(--font-mono);
+  font-family: var(--font-family-mono);
 }
 
 /// Set scale-based font size.
