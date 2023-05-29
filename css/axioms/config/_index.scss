@@ -196,7 +196,9 @@ $default: (
         none: md,
       ),
     ),
-    line: (),
+    line: (
+      rlh: $-rlh,
+    ),
     measure: (
       mapped: (
         domain: mapping.$domain-sizes,
@@ -235,7 +237,6 @@ $default: (
         larger: 100% * $-scale-ratio,
       ),
     ),
-    rlh: $-rlh,
   ),
   ui: (
     radius: (

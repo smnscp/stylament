@@ -16,7 +16,7 @@
 :root {
   $scale: map.get(cfg.$merged, typography, scale);
   $line: map.get(cfg.$merged, typography, line);
-  $rlh: map.get(cfg.$merged, typography, rlh);
+  $rlh: map.get($line, rlh);
 
   --line-root: #{map.get($line, root)};
   --line-root-abs: #{$rlh};
