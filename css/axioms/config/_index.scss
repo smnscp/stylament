@@ -290,10 +290,12 @@ $default: (
       logical: (),
     ),
   ),
-  color: (
+  coloring: (
     palettes: (),
-    literal: (),
-    logical: (),
+    color: (
+      literal: (),
+      logical: (),
+    ),
   ),
 );
 

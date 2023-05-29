@@ -14,7 +14,7 @@
   color: var(---clr-fg);
 }
 
-$colors: map.get(cfg.$merged, color, logical);
+$colors: map.get(cfg.$merged, coloring, color, logical);
 @for $level from 1 through 6 {
   @if map.get($colors, heading-#{$level}) {
     /// @name Level-specific heading styles

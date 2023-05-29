@@ -1,7 +1,7 @@
 @use "axioms/config/specific/color/brand";
 @use "axioms/config" with (
   $custom: (
-    color: (
+    coloring: (
       palettes: brand.$palettes,
     ),
   )

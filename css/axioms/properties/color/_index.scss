@@ -13,11 +13,9 @@
 /// @requires {mixin} palette
 /// @requires {mixin} configured-properties
 :root {
-  $conf: map.get(cfg.$merged, color);
-
-  @each $name, $pal in map.get($conf, palettes) {
+  @each $name, $pal in map.get(cfg.$merged, coloring, palettes) {
     @include color.palette($name, $pal...);
   }
 
-  @include props.configured-properties("color", $conf);
+  @include props.configured-properties("color", map.get(cfg.$merged, coloring, color));
 }

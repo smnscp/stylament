@@ -22,8 +22,10 @@
         ratio: math.pow(2, math.div(1, 3)),
       ),
     ),
-    color: (
-      logical: logical.$mapping,
+    coloring: (
+      color: (
+        logical: logical.$mapping,
+      ),
     ),
   )
 );
