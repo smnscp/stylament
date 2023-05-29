@@ -4,18 +4,4 @@
 
 /// ## Color
 
-@use "sass:map";
-@use "../../config" as cfg;
-@use "../mixins" as props;
-@use "mixins" as color;
-
-/// @name Color Palettes
-/// @requires {mixin} palette
-/// @requires {mixin} configured-properties
-:root {
-  @each $name, $pal in map.get(cfg.$merged, coloring, palettes) {
-    @include color.palette($name, $pal...);
-  }
-
-  @include props.configured-properties("color", map.get(cfg.$merged, coloring, color));
-}
+@use "palettes";

@@ -1,0 +1,36 @@
+////
+/// @group ax-properties
+////
+
+/// # CSS Custom Properties
+///
+/// This is a set of global CSS custom properties constituting the DNA of the design system.
+/// They are generated from the [global configuration](./ax-config.html) and are used in the
+/// higher layers of the system.
+
+@use "sass:list";
+@use "sass:map";
+@use "../config" as cfg;
+@use "mixins" as props;
+
+$exclude: () !default;
+$group-props: false !default;
+
+:root {
+  @each $group, $configs in cfg.$merged {
+    @each $prop, $config in $configs {
+      @if (not list.index($exclude, "#{$group}.#{$prop}")) and
+        (
+          map.has-key($config, "literal") or
+            map.has-key($config, "logical") or
+            map.has-key($config, "mapped")
+        )
+      {
+        @include props.configured-properties(
+          if($group-props, "#{$group}-#{$prop}", $prop),
+          $config
+        );
+      }
+    }
+  }
+}

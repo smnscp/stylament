@@ -8,6 +8,7 @@
 /// They are generated from the [global configuration](./ax-config.html) and are used in the
 /// higher layers of the system.
 
+@use "generate";
 @use "typography";
 @use "layout";
 @use "ui";

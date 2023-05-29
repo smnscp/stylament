@@ -7,8 +7,6 @@
 @use "../../tools/config";
 @use "../mixins" as props;
 
-$-conf: map.get(cfg.$merged, layout, container);
-
 /// Container sizes for preprocessing.
 ///
 /// We need this preprocessor variable map because
@@ -18,11 +16,4 @@ $-conf: map.get(cfg.$merged, layout, container);
 /// [bholmes]: https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
 ///
 /// @type Map
-$sizes: config.map-config($-conf);
-
-/// @name Container Size Scale
-/// @requires $merged
-/// @requires {mixin} configured-properties
-:root {
-  @include props.configured-properties("container", $-conf);
-}
+$sizes: config.map-config(map.get(cfg.$merged, layout, container));
