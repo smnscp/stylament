@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.19.4</span>
+          <span class="project-version">0.20.0</span>
         
       </div>
     </header>
@@ -544,6 +544,67 @@ For the structure of this custom configuration see <a href="#variable--default">
       
       <pre class="hljs-pre"><code class="lang-css">@charset &quot;UTF-8&quot;;
 :root {
+  --length-0½: 0.75rem;
+  --length-1dim: 1.125rem;
+  --length-1: 1.5rem;
+  --length-1aug: 1.875rem;
+  --length-1½: 2.25rem;
+  --length-2dim: 2.625rem;
+  --length-2: 3rem;
+  --length-2aug: 3.375rem;
+  --length-2½: 3.75rem;
+  --length-3dim: 4.125rem;
+  --length-3: 4.5rem;
+  --container-xxs: 0rem;
+  --container-xs: 16rem;
+  --container-sm: 32rem;
+  --container-md: 48rem;
+  --container-lg: 64rem;
+  --container-xl: 80rem;
+  --container-xxl: 96rem;
+  --container-page: var(--container-sm);
+  --spacing-block: var(--length-1);
+  --spacing-heading: var(--length-1);
+  --spacing-sectioning: clamp(var(--length-1), (100vi - var(--container-sm)) / 4, var(--length-2));
+  --spacing-inline: 4ch;
+  --spacing-inline-small: 0.5ch;
+  --spacing-sectioning: var(--spacing-block);
+  --font-family-sans: Helvetica;
+  --font-family-serif: Times;
+  --font-family-mono: Courier;
+  --font-family-body: var(--font-family-serif);
+  --font-family-heading: var(--font-family-sans);
+  --font-family-display: var(--font-family-body);
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-book: 500;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+  --font-weight-ultra: 900;
+  --font-weight-body: var(--font-weight-regular);
+  --font-weight-emphasis: var(--font-weight-bold);
+  --font-weight-heading: var(--font-weight-bold);
+  --letter-spacing-xxs: -0.075em;
+  --letter-spacing-xs: -0.05em;
+  --letter-spacing-sm: -0.025em;
+  --letter-spacing-md: 0em;
+  --letter-spacing-lg: 0.025em;
+  --letter-spacing-xl: 0.05em;
+  --letter-spacing-xxl: 0.075em;
+  --letter-spacing-none: var(--letter-spacing-md);
+  --measure-xxs: 25ch;
+  --measure-xs: 36ch;
+  --measure-sm: 49ch;
+  --measure-md: 64ch;
+  --measure-lg: 81ch;
+  --measure-xl: 100ch;
+  --measure-xxl: 121ch;
+  --measure-full: 100%;
+  --measure-inf: unset;
+  --measure-default: var(--measure-md);
   --scale--2: 0.4444444444em;
   --scale--1: 0.6666666667em;
   --scale-0: 1em;
@@ -559,6 +620,33 @@ For the structure of this custom configuration see <a href="#variable--default">
   --scale-ratio: 1.5;
   --scale-smaller: 66.6666666667%;
   --scale-larger: 150%;
+  --radius-xxs: 0rem;
+  --radius-xs: 0.2rem;
+  --radius-sm: 0.4rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 0.8rem;
+  --radius-xl: 1rem;
+  --radius-xxl: 1.2rem;
+  --radius-100: 100%;
+  --radius-full: 999rem;
+  --shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
+  --shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
+  --shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
+  --shadow-md: 0rem 0.25rem 0.5rem rgb(0 0 0 / 0.25);
+  --shadow-lg: 0rem 0.5rem 1rem rgb(0 0 0 / 0.265625);
+  --shadow-xl: 0rem 1rem 2rem rgb(0 0 0 / 0.28125);
+  --shadow-xxl: 0rem 2rem 4rem rgb(0 0 0 / 0.296875);
+  --stroke-width-1: 0.0625rem;
+  --stroke-width-2: 0.125rem;
+  --stroke-width-3: 0.1875rem;
+  --stroke-width-4: 0.25rem;
+  --stroke-width-5: 0.3125rem;
+  --stroke-width-6: 0.375rem;
+  --stroke-width-7: 0.4375rem;
+  --stroke-width-8: 0.5rem;
+  --stroke-width-default: var(--stroke-width-2);
+  --stroke-style-default: solid;
+  --stroke-color-default: var(--color-tertiary-700);
 }
 
 :root {
@@ -576,131 +664,6 @@ For the structure of this custom configuration see <a href="#variable--default">
   --line-7: 1.0096021948;
   --line-8: 1.0242341107;
   --line-9: 1.0144795001;
-}
-
-:root {
-  --font-sans: Helvetica;
-  --font-serif: Times;
-  --font-mono: Courier;
-  --font-body: var(--font-serif);
-  --font-heading: var(--font-sans);
-  --font-display: var(--font-body);
-}
-
-:root {
-  --weight-thin: 100;
-  --weight-extralight: 200;
-  --weight-light: 300;
-  --weight-regular: 400;
-  --weight-book: 500;
-  --weight-medium: 600;
-  --weight-bold: 700;
-  --weight-black: 800;
-  --weight-ultra: 900;
-  --weight-body: var(--weight-regular);
-  --weight-emphasis: var(--weight-bold);
-  --weight-heading: var(--weight-bold);
-}
-
-:root {
-  --letter-xxs: -0.075em;
-  --letter-xs: -0.05em;
-  --letter-sm: -0.025em;
-  --letter-md: 0em;
-  --letter-lg: 0.025em;
-  --letter-xl: 0.05em;
-  --letter-xxl: 0.075em;
-  --letter-none: var(--letter-md);
-}
-
-:root {
-  --measure-xxs: 25ch;
-  --measure-xs: 36ch;
-  --measure-sm: 49ch;
-  --measure-md: 64ch;
-  --measure-lg: 81ch;
-  --measure-xl: 100ch;
-  --measure-xxl: 121ch;
-  --measure-full: 100%;
-  --measure-inf: unset;
-  --measure-default: var(--measure-md);
-  --measure: var(--measure-default);
-}
-
-:root {
-  --length-0½: 0.75rem;
-  --length-1dim: 1.125rem;
-  --length-1: 1.5rem;
-  --length-1aug: 1.875rem;
-  --length-1½: 2.25rem;
-  --length-2dim: 2.625rem;
-  --length-2: 3rem;
-  --length-2aug: 3.375rem;
-  --length-2½: 3.75rem;
-  --length-3dim: 4.125rem;
-  --length-3: 4.5rem;
-}
-
-:root {
-  --container-xxs: 0rem;
-  --container-xs: 16rem;
-  --container-sm: 32rem;
-  --container-md: 48rem;
-  --container-lg: 64rem;
-  --container-xl: 80rem;
-  --container-xxl: 96rem;
-  --container-page: var(--container-sm);
-}
-
-:root {
-  --spacing-block: var(--length-1);
-  --spacing-heading: var(--length-1);
-  --spacing-sectioning: clamp(var(--length-1), (100vi - var(--container-sm)) / 4, var(--length-2));
-  --spacing-inline: 4ch;
-  --spacing-inline-small: 0.5ch;
-  --spacing-sectioning: var(--spacing-block);
-}
-
-:root {
-  --stroke-width-1: 0.0625rem;
-  --stroke-width-2: 0.125rem;
-  --stroke-width-3: 0.1875rem;
-  --stroke-width-4: 0.25rem;
-  --stroke-width-5: 0.3125rem;
-  --stroke-width-6: 0.375rem;
-  --stroke-width-7: 0.4375rem;
-  --stroke-width-8: 0.5rem;
-  --stroke-width-default: var(--stroke-width-2);
-}
-
-:root {
-  --stroke-style-default: solid;
-}
-
-:root {
-  --stroke-color-default: var(--color-tertiary-700);
-}
-
-:root {
-  --radius-xxs: 0rem;
-  --radius-xs: 0.2rem;
-  --radius-sm: 0.4rem;
-  --radius-md: 0.6rem;
-  --radius-lg: 0.8rem;
-  --radius-xl: 1rem;
-  --radius-xxl: 1.2rem;
-  --radius-100: 100%;
-  --radius-full: 999rem;
-}
-
-:root {
-  --shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
-  --shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
-  --shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
-  --shadow-md: 0rem 0.25rem 0.5rem rgb(0 0 0 / 0.25);
-  --shadow-lg: 0rem 0.5rem 1rem rgb(0 0 0 / 0.265625);
-  --shadow-xl: 0rem 1rem 2rem rgb(0 0 0 / 0.28125);
-  --shadow-xxl: 0rem 2rem 4rem rgb(0 0 0 / 0.296875);
 }
 
 :root {
@@ -729,12 +692,6 @@ For the structure of this custom configuration see <a href="#variable--default">
   --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --ease-default: ease-in-out;
-}
-
-:root {
-  --color-body: PapayaWhip;
-  --color-body-contra: MidnightBlue;
-  --color-neutral: LightSlateGray;
 }
 
 * {
@@ -812,15 +769,15 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
-  font-weight: var(--weight-body);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
   font-size: var(--scale-0);
   line-height: var(--line-0);
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--font-heading);
-  font-weight: var(--weight-heading);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
 }
 
 h1 {
@@ -860,7 +817,7 @@ h6 {
 
 :is(code, kbd, samp),
 pre {
-  font-family: var(--font-mono);
+  font-family: var(--font-family-mono);
 }
 
 :is(small, sub, sup) {
@@ -1234,7 +1191,9 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
         none: md,
       ),
     ),
-    line: (),
+    line: (
+      rlh: $-rlh,
+    ),
     measure: (
       mapped: (
         domain: mapping.$domain-sizes,
@@ -1951,410 +1910,7 @@ This is used to look up configuration<span class="widont">&nbsp;</span>keys.</p>
       
       
         <a href="
-  ax-properties.html#css--Container%20Size%20Scale" class="item-name">Container Size<span class="widont">&nbsp;</span>Scale</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Length%20Scale" class="item-name">Length Scale</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Spacing%20Values" class="item-name">Spacing Values</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Font%20Families" class="item-name">Font Families</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Font%20Weights" class="item-name">Font Weights</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Letter%20Spacing" class="item-name">Letter Spacing</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
   ax-properties.html#css--Line%20Heights" class="item-name">Line Heights</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Measure%20Scale" class="item-name">Measure Scale</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Modular%20Font%20Size%20Scale" class="item-name">Modular Font Size<span class="widont">&nbsp;</span>Scale</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Radius%20Scale" class="item-name">Radius Scale</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Shadow%20Scale" class="item-name">Shadow Scale</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Stroke%20Colors" class="item-name">Stroke Colors</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Stroke%20Styles" class="item-name">Stroke Styles</a>
-      
-      
-      
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <a href="
-  ax-properties.html#css--Stroke%20Width%20Scale" class="item-name">Stroke Width<span class="widont">&nbsp;</span>Scale</a>
       
       
       
@@ -2895,15 +2451,15 @@ Used as default domain for font weight<span class="widont">&nbsp;</span>properti
 
       
       
-      <pre class="hljs-pre"><code class="lang-css">--weight-thin: 100;
---weight-extralight: 200;
---weight-light: 300;
---weight-regular: 400;
---weight-book: 500;
---weight-medium: 600;
---weight-bold: 700;
---weight-black: 800;
---weight-ultra: 900;</code></pre>
+      <pre class="hljs-pre"><code class="lang-css">--font-weight-thin: 100;
+--font-weight-extralight: 200;
+--font-weight-light: 300;
+--font-weight-regular: 400;
+--font-weight-book: 500;
+--font-weight-medium: 600;
+--font-weight-bold: 700;
+--font-weight-black: 800;
+--font-weight-ultra: 900;</code></pre>
     </div>
   
 
@@ -4280,6 +3836,66 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
       
       <pre class="hljs-pre"><code class="lang-css">@charset &quot;UTF-8&quot;;
 :root {
+  --length-0½: 0.75rem;
+  --length-1dim: 1.125rem;
+  --length-1: 1.5rem;
+  --length-1aug: 1.875rem;
+  --length-1½: 2.25rem;
+  --length-2dim: 2.625rem;
+  --length-2: 3rem;
+  --length-2aug: 3.375rem;
+  --length-2½: 3.75rem;
+  --length-3dim: 4.125rem;
+  --length-3: 4.5rem;
+  --container-xxs: 0rem;
+  --container-xs: 16rem;
+  --container-sm: 32rem;
+  --container-md: 48rem;
+  --container-lg: 64rem;
+  --container-xl: 80rem;
+  --container-xxl: 96rem;
+  --container-page: var(--container-xl);
+  --spacing-block: var(--length-1);
+  --spacing-heading: var(--length-1);
+  --spacing-sectioning: clamp(var(--length-1), (100vi - var(--container-sm)) / 4, var(--length-2));
+  --spacing-inline: 4ch;
+  --spacing-inline-small: 0.5ch;
+  --font-family-sans: Source Sans Pro, sans-serif;
+  --font-family-serif: Source Serif Pro, serif;
+  --font-family-mono: Source Code Pro, monospace;
+  --font-family-body: var(--font-family-serif);
+  --font-family-heading: var(--font-family-sans);
+  --font-family-display: var(--font-family-body);
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-book: 500;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+  --font-weight-ultra: 900;
+  --font-weight-body: var(--font-weight-regular);
+  --font-weight-emphasis: var(--font-weight-bold);
+  --font-weight-heading: var(--font-weight-bold);
+  --letter-spacing-xxs: -0.075em;
+  --letter-spacing-xs: -0.05em;
+  --letter-spacing-sm: -0.025em;
+  --letter-spacing-md: 0em;
+  --letter-spacing-lg: 0.025em;
+  --letter-spacing-xl: 0.05em;
+  --letter-spacing-xxl: 0.075em;
+  --letter-spacing-none: var(--letter-spacing-md);
+  --measure-xxs: 25ch;
+  --measure-xs: 36ch;
+  --measure-sm: 49ch;
+  --measure-md: 64ch;
+  --measure-lg: 81ch;
+  --measure-xl: 100ch;
+  --measure-xxl: 121ch;
+  --measure-full: 100%;
+  --measure-inf: unset;
+  --measure-default: var(--measure-md);
   --scale--2: 0.4444444444rem;
   --scale--1: 0.6666666667rem;
   --scale-0: 1rem;
@@ -4295,6 +3911,33 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --scale-ratio: 1.5;
   --scale-smaller: 66.6666666667%;
   --scale-larger: 150%;
+  --radius-xxs: 0rem;
+  --radius-xs: 0.2rem;
+  --radius-sm: 0.4rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 0.8rem;
+  --radius-xl: 1rem;
+  --radius-xxl: 1.2rem;
+  --radius-100: 100%;
+  --radius-full: 999rem;
+  --shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
+  --shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
+  --shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
+  --shadow-md: 0rem 0.25rem 0.5rem rgb(0 0 0 / 0.25);
+  --shadow-lg: 0rem 0.5rem 1rem rgb(0 0 0 / 0.265625);
+  --shadow-xl: 0rem 1rem 2rem rgb(0 0 0 / 0.28125);
+  --shadow-xxl: 0rem 2rem 4rem rgb(0 0 0 / 0.296875);
+  --stroke-width-1: 0.0625rem;
+  --stroke-width-2: 0.125rem;
+  --stroke-width-3: 0.1875rem;
+  --stroke-width-4: 0.25rem;
+  --stroke-width-5: 0.3125rem;
+  --stroke-width-6: 0.375rem;
+  --stroke-width-7: 0.4375rem;
+  --stroke-width-8: 0.5rem;
+  --stroke-width-default: var(--stroke-width-2);
+  --stroke-style-default: solid;
+  --stroke-color-default: var(--color-tertiary-700);
 }
 
 :root {
@@ -4312,130 +3955,6 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --line-7: 19.5rem;
   --line-8: 28.5rem;
   --line-9: 43.5rem;
-}
-
-:root {
-  --font-sans: Source Sans Pro, sans-serif;
-  --font-serif: Source Serif Pro, serif;
-  --font-mono: Source Code Pro, monospace;
-  --font-body: var(--font-serif);
-  --font-heading: var(--font-sans);
-  --font-display: var(--font-body);
-}
-
-:root {
-  --weight-thin: 100;
-  --weight-extralight: 200;
-  --weight-light: 300;
-  --weight-regular: 400;
-  --weight-book: 500;
-  --weight-medium: 600;
-  --weight-bold: 700;
-  --weight-black: 800;
-  --weight-ultra: 900;
-  --weight-body: var(--weight-regular);
-  --weight-emphasis: var(--weight-bold);
-  --weight-heading: var(--weight-bold);
-}
-
-:root {
-  --letter-xxs: -0.075em;
-  --letter-xs: -0.05em;
-  --letter-sm: -0.025em;
-  --letter-md: 0em;
-  --letter-lg: 0.025em;
-  --letter-xl: 0.05em;
-  --letter-xxl: 0.075em;
-  --letter-none: var(--letter-md);
-}
-
-:root {
-  --measure-xxs: 25ch;
-  --measure-xs: 36ch;
-  --measure-sm: 49ch;
-  --measure-md: 64ch;
-  --measure-lg: 81ch;
-  --measure-xl: 100ch;
-  --measure-xxl: 121ch;
-  --measure-full: 100%;
-  --measure-inf: unset;
-  --measure-default: var(--measure-md);
-  --measure: var(--measure-default);
-}
-
-:root {
-  --length-0½: 0.75rem;
-  --length-1dim: 1.125rem;
-  --length-1: 1.5rem;
-  --length-1aug: 1.875rem;
-  --length-1½: 2.25rem;
-  --length-2dim: 2.625rem;
-  --length-2: 3rem;
-  --length-2aug: 3.375rem;
-  --length-2½: 3.75rem;
-  --length-3dim: 4.125rem;
-  --length-3: 4.5rem;
-}
-
-:root {
-  --container-xxs: 0rem;
-  --container-xs: 16rem;
-  --container-sm: 32rem;
-  --container-md: 48rem;
-  --container-lg: 64rem;
-  --container-xl: 80rem;
-  --container-xxl: 96rem;
-  --container-page: var(--container-xl);
-}
-
-:root {
-  --spacing-block: var(--length-1);
-  --spacing-heading: var(--length-1);
-  --spacing-sectioning: clamp(var(--length-1), (100vi - var(--container-sm)) / 4, var(--length-2));
-  --spacing-inline: 4ch;
-  --spacing-inline-small: 0.5ch;
-}
-
-:root {
-  --stroke-width-1: 0.0625rem;
-  --stroke-width-2: 0.125rem;
-  --stroke-width-3: 0.1875rem;
-  --stroke-width-4: 0.25rem;
-  --stroke-width-5: 0.3125rem;
-  --stroke-width-6: 0.375rem;
-  --stroke-width-7: 0.4375rem;
-  --stroke-width-8: 0.5rem;
-  --stroke-width-default: var(--stroke-width-2);
-}
-
-:root {
-  --stroke-style-default: solid;
-}
-
-:root {
-  --stroke-color-default: var(--color-tertiary-700);
-}
-
-:root {
-  --radius-xxs: 0rem;
-  --radius-xs: 0.2rem;
-  --radius-sm: 0.4rem;
-  --radius-md: 0.6rem;
-  --radius-lg: 0.8rem;
-  --radius-xl: 1rem;
-  --radius-xxl: 1.2rem;
-  --radius-100: 100%;
-  --radius-full: 999rem;
-}
-
-:root {
-  --shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
-  --shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
-  --shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
-  --shadow-md: 0rem 0.25rem 0.5rem rgb(0 0 0 / 0.25);
-  --shadow-lg: 0rem 0.5rem 1rem rgb(0 0 0 / 0.265625);
-  --shadow-xl: 0rem 1rem 2rem rgb(0 0 0 / 0.28125);
-  --shadow-xxl: 0rem 2rem 4rem rgb(0 0 0 / 0.296875);
 }
 
 :root {
@@ -4464,65 +3983,6 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --ease-default: ease-in-out;
-}
-
-:root {
-  --color-grey-0: hsl(215, 21.04%, 98.7%);
-  --color-grey-100: hsl(215, 15.0515%, 97.01819%);
-  --color-grey-200: hsl(215, 10.802%, 90.62432%);
-  --color-grey-300: hsl(215, 8.2915%, 80.65473%);
-  --color-grey-400: hsl(215, 7.52%, 68.24576%);
-  --color-grey-500: hsl(215, 8.4875%, 54.53375%);
-  --color-grey-600: hsl(215, 11.194%, 40.65504%);
-  --color-grey-700: hsl(215, 15.6395%, 27.74597%);
-  --color-grey-800: hsl(215, 21.824%, 16.94288%);
-  --color-grey-900: hsl(215, 29.7475%, 9.38211%);
-  --color-grey-1000: hsl(215, 39.41%, 6.2%);
-  --color-red-100: hsl(0, 100%, 94.9619709%);
-  --color-red-300: hsl(0, 95%, 74.9990647%);
-  --color-red-500: hsl(0, 76%, 56.9990625%);
-  --color-red-700: hsl(0, 61%, 47.9994843%);
-  --color-red-900: hsl(0, 50%, 29.3461381%);
-  --color-green-100: hsl(145, 90%, 91.5642%);
-  --color-green-300: hsl(145, 60%, 73.2898%);
-  --color-green-500: hsl(145, 46%, 53.865%);
-  --color-green-700: hsl(145, 48%, 33.2898%);
-  --color-green-900: hsl(145, 66%, 11.5642%);
-  --color-blue-100: hsl(207, 80.005%, 82.85009%);
-  --color-blue-300: hsl(207, 79.005%, 65.13003%);
-  --color-blue-500: hsl(207, 73.005%, 58.46125%);
-  --color-blue-700: hsl(207, 62.005%, 49.12967%);
-  --color-blue-900: hsl(207, 46.005%, 23.42121%);
-  --color-pink-100: hsl(332, 97%, 93.66376%);
-  --color-pink-300: hsl(332, 90%, 82.51532%);
-  --color-pink-500: hsl(332, 79%, 70.18%);
-  --color-pink-700: hsl(332, 64%, 51.51508%);
-  --color-pink-900: hsl(332, 45%, 21.37784%);
-  --color-purple-100: hsl(259, 100%, 88.82983%);
-  --color-purple-300: hsl(259, 81.005%, 74.15621%);
-  --color-purple-500: hsl(259, 59.005%, 63.78875%);
-  --color-purple-700: hsl(259, 50.005%, 49.15609%);
-  --color-purple-900: hsl(259, 54.005%, 21.68687%);
-  --color-teal-100: hsl(176, 92%, 88.68579%);
-  --color-teal-300: hsl(176, 67%, 68.00733%);
-  --color-teal-500: hsl(176, 52%, 49.35375%);
-  --color-teal-700: hsl(176, 47%, 31.01097%);
-  --color-teal-900: hsl(176, 52%, 11.26491%);
-  --color-yellow-100: hsl(46, 100%, 88.76773%);
-  --color-yellow-300: hsl(46, 92.005%, 74.25131%);
-  --color-yellow-500: hsl(46, 81.005%, 63.93625%);
-  --color-yellow-700: hsl(46, 67.005%, 49.25119%);
-  --color-yellow-900: hsl(46, 50.005%, 21.62477%);
-  --color-orange-100: hsl(28, 100%, 89.15954%);
-  --color-orange-300: hsl(28, 93%, 73.87218%);
-  --color-orange-500: hsl(28, 84%, 62.2525%);
-  --color-orange-700: hsl(28, 75%, 46.87202%);
-  --color-orange-900: hsl(28, 66%, 20.30226%);
-  --color-brown-100: hsl(15, 0%, 80.85834%);
-  --color-brown-300: hsl(15, 14.995%, 54.94338%);
-  --color-brown-500: hsl(15, 24.995%, 39.7825%);
-  --color-brown-700: hsl(15, 25.995%, 27.94722%);
-  --color-brown-900: hsl(15, 17.995%, 12.00906%);
 }
 
 * {
@@ -4600,15 +4060,15 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
-  font-weight: var(--weight-body);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
   font-size: var(--scale-0);
   line-height: var(--line-0);
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--font-heading);
-  font-weight: var(--weight-heading);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
 }
 
 h1 {
@@ -4648,7 +4108,7 @@ h6 {
 
 :is(code, kbd, samp),
 pre {
-  font-family: var(--font-mono);
+  font-family: var(--font-family-mono);
 }
 
 :is(small, sub, sup) {
