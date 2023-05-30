@@ -85,6 +85,7 @@ nav.var-menu.\+foldable {
       @include coloring.use-colors;
       display: block;
       position: relative; // Place over backdrop.
+      max-inline-size: unset;
       inline-size: var(--toggle-size);
       block-size: var(--toggle-size);
       padding: var(--toggle-padding);
