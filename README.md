@@ -6,37 +6,40 @@ This is gonna be solid. And flexible. At the same time. 😲 Awesome!
 
 ## What?
 
-**⚠️ Spoiler ⚠️:** Yes, this is **yet another HTML & CSS framework**.
+_Stylament_ is
+- a design _system_,
+- a blueprint for building well-structured and prettily-styled web pages,
+- a collection of HTML & CSS patterns.
 
-_Stylament_ is a framework or a blueprint for building well-structured and prettily-styled web pages.
+_Stylament_ is **not**
+- a “CSS framework” to keep you from learning CSS,
+- a simple theme to apply to your pages and be done,
+- a component library adding tons of JavaScript dependencies.
 
 ## Why?
 
-After decades of using HTML & CSS frameworks like _Foundation_ and _Bootstrap_, giving fresh candidates like _Bulma_ a try, even fighting popular misconceptions like _“utility first”_ 🙄, I finally wanted to build my own thing. 💪
-
-I am well-aware of the existence of a bazillion of CSS frameworks out there. And I know about the notion that CSS frameworks in general suck. So, who needs another one? – Well, I do. Why? Because it’s probably true: CSS frameworks suck. At least, they tend to be less helpful the more confident you are writing CSS from scratch. In other words: Having your website depend on a CSS framework can quickly become a pain in the ass. Bloated stylesheets, littered mark-up, opinionated solutions you don’t agree with.
-
-How does that make sense? Building a CSS framework because CSS frameworks are bad? It’s not that they are intrinsically bad. It’s just that expecting such a framework to fit every use-case is futile. If you want an API (as in, a set of building blocks and means to customize them) that fits (almost) any kind of web document just rely on vanilla HTML and vanilla CSS. It’s as easy as that. But it’s also easy to mess up. Of course, you need to establish reasonable structures for your HTML and CSS. Potentially reusable structures. That’s where your own personal HTML & CSS framework comes into play. Now it makes sense. 😌
-
-That being said, I can’t tell if this project will ever be useful for anyone but me. Maybe people can learn from it, just as I have learned from others.
+After decades of using big HTML & CSS frameworks like _Foundation_ and _Bootstrap_, seeing hundreds of micro-frameworks popping up, being confronted with the popular misconception called _“utility first”_, I finally followed the urge to build my own design system. Mainly because I wanted to give proof of the viability of _really systematic_ design approaches.
 
 ## How?
 
-🚧 N. B.: The _how_ is still subject to change quite a bit.
+🚧 N. B.: The _how_ is still subject to change. There may be breaking changes with every release.
 
-_Stylament_ is a system of layers, similar to [ITCSS](https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528), but also incorporating ideas from [Every Layout](https://every-layout.dev/), [CUBE CSS](https://cube.fyi/), and a lot of my own 🧪📐🧮🔍✏️
+### Standing on the Shoulders of Giants
+
+_Stylament_ is inspired by a lot of good work others did before me:
+
+- organized in layers like [ITCSS](https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528)
+- using the best of different methodologies (the right tool for the job) like [CUBE CSS](https://cube.fyi/)
+- founded on axioms like [Every Layout](https://every-layout.dev/)
+- driven by a comprehensive set of CSS custom properties like [Open Props](https://open-props.style/) or [Pollen](https://www.pollen.style/)
 
 ### Layers of Stylament
 
-- [Axioms](ax-intro.html)
-  - Config
-  - Preprocessing Tools
-  - CSS Custom Properties
-  - Generic CSS
-- [Elements](el-intro.html)
-- [Idioms](id-intro.html)
-- [Objects](ob-intro.html)
-- [Utilities](ut-intro.html)
+- [Axioms](https://stylament.sim.ilitu.de/sassdoc/ax-intro.html)
+- [Elements](https://stylament.sim.ilitu.de/sassdoc/el-intro.html)
+- [Idioms](https://stylament.sim.ilitu.de/sassdoc/id-intro.html)
+- [Objects](https://stylament.sim.ilitu.de/sassdoc/ob-intro.html)
+- [Utilities](https://stylament.sim.ilitu.de/sassdoc/ut-intro.html)
 
 ### Install
 
@@ -88,19 +91,19 @@ $config: (
     shadow: (
       // …
     ),
-    stroke: (
+  ),
+  coloring: (
+    palettes: (
       // …
     ),
-  ),
-  color: (
-    palettes: (
+    color: (
       // …
     ),
   ),
 );
 ```
 
-See [the documentation](ax-config.html) for details.
+See [the documentation](https://stylament.sim.ilitu.de/sassdoc/ax-config.html) for details.
 
 ### Use
 

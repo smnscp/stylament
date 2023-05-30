@@ -4,7 +4,18 @@
 
 /// # Axioms
 ///
-/// Axioms are the very foundation of the design system.
+/// Design axioms are the [essential foundation of any viable design system][axioms].
+/// Hence, Stylament’s first main layer is called “Axioms”. It consists of the following
+/// sub-layers (that, in a way, resemble the first three layers of [ITCSS][itcss]):
+///
+/// - [Config](ax-config.html)
+/// - [Preprocessing Tools](ax-tools.html)
+/// - [CSS Custom Properties](ax-properties.html)
+/// - [Generic CSS](ax-generic.html)
+///
+/// [axioms]: https://every-layout.dev/rudiments/axioms/
+/// [itcss]: https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528
+
 
 @forward "config" as config-*;
 
