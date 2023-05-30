@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.20.1</span>
+          <span class="project-version">0.20.2</span>
         
       </div>
     </header>
@@ -300,6 +300,197 @@
 
 
 
+<section class="item" id="css--figure.var-feature">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--figure.var-feature" class="item-name">figure.var-feature</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">figure.var-feature {
+  @include coloring.set-colors(&quot;feature&quot;, &quot;alternate&quot;);
+  @include coloring.use-colors;
+  margin-inline: 0;
+  padding: var(--spacing-sectioning);
+
+  blockquote {
+    --no-stroke: true;
+    --indent: 0ch;
+    --marker-outdent: 1ch;
+    font-size: var(--scale-4);
+    line-height: var(--line-3);
+    font-family: var(--font-family-display, var(--font-family-body));
+  }
+
+  &gt; * {
+    max-inline-size: 85.7%;
+    margin-inline-start: auto;
+
+    @media (min-width: map.get(container.$sizes, &quot;sm&quot;)) {
+      // Occupy bigger golden ratio part.
+      max-inline-size: 61.8%;
+    }
+    @media (min-width: map.get(container.$sizes, &quot;lg&quot;)) {
+      // Occupy smaller golden ratio part.
+      max-inline-size: 38.2%;
+    }
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#variable--sizes%40container" class="item-name">$sizes@container</a>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" >
   
     
@@ -439,7 +630,7 @@
     &amp; &gt; li {
       @include coloring.set-colors(&quot;nav&quot;, &quot;alternate&quot;);
       @include coloring.use-colors;
-      transition: all 0.3s var(--ease-default);
+      transition: all 0.3s var(--easing-default);
       &amp;:hover {
         @include coloring.use-colors-inverse;
       }
@@ -703,6 +894,57 @@
   
   
     
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#variable--sizes%40container" class="item-name">$sizes@container</a>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
     
   
 
@@ -1206,6 +1448,7 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
       @include coloring.use-colors;
       display: block;
       position: relative; // Place over backdrop.
+      max-inline-size: unset;
       inline-size: var(--toggle-size);
       block-size: var(--toggle-size);
       padding: var(--toggle-padding);
@@ -1215,7 +1458,7 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
       line-height: 1;
       text-align: center;
       font-weight: var(--font-weight-emphasis);
-      transition: all 0.3s var(--ease-default);
+      transition: all 0.3s var(--easing-default);
       border-radius: var(--toggle-radius);
       box-shadow: var(--toggle-shadow);
       content: var(--toggle-content, &quot;⋮&quot;);
@@ -1226,7 +1469,7 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
     margin-bottom: -100%; // Do not occupy flow space when foldable.
     max-inline-size: 100%;
     overflow: hidden;
-    transition: max-inline-size 0.3s var(--ease-default);
+    transition: max-inline-size 0.3s var(--easing-default);
   }
 
   // Special behavior on narrow screen: Act as overlay with backdrop.
@@ -1535,6 +1778,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
   @include coloring.use-colors;
       display: block;
       position: relative; // Place over backdrop.
+      max-inline-size: unset;
       inline-size: var(--toggle-size);
       block-size: var(--toggle-size);
       padding: var(--toggle-padding);
@@ -1544,7 +1788,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
       line-height: 1;
       text-align: center;
       font-weight: var(--font-weight-emphasis);
-      transition: all 0.3s var(--ease-default);
+      transition: all 0.3s var(--easing-default);
       border-radius: var(--toggle-radius);
       box-shadow: var(--toggle-shadow);
       content: var(--toggle-content, &quot;⋮&quot;);

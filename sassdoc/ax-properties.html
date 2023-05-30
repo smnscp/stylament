@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.20.1</span>
+          <span class="project-version">0.20.2</span>
         
       </div>
     </header>
@@ -1692,6 +1692,37 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
       
         <a href="
+  ax-properties.html#css--Generated%20Properties" class="item-name">Generated Properties</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
   ax-properties.html#css--Color%20Palettes" class="item-name">Color Palettes</a>
       
       
@@ -1748,7 +1779,300 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
 
   
     <div data-item-section="prose" class="text-block">
-      <h2 id="color" tabindex="-1">Color</h2>
+      <h2 id="dynamically-generated-css-custom-properties" tabindex="-1">Dynamically Generated CSS Custom<span class="widont">&nbsp;</span>Properties</h2>
+<p>By default Stylament generates CSS custom properties from the <a href="ax-config.html">configuration map</a>.
+This is done for every property map that is not explicitly excluded from and contains at least
+one of the keys <code>literal</code>, <code>logical</code>, or <code>mapped</code>.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Generated%20Properties">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Generated%20Properties" class="item-name">Generated Properties</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:root {
+  @each $group, $configs in cfg.$merged {
+    @each $prop, $config in $configs {
+      @if (not list.index($exclude, &quot;#{$group}.#{$prop}&quot;)) and
+        (
+          map.has-key($config, &quot;literal&quot;) or
+            map.has-key($config, &quot;logical&quot;) or
+            map.has-key($config, &quot;mapped&quot;)
+        )
+      {
+        @include props.configured-properties(
+          if($group-props, &quot;#{$group}-#{$prop}&quot;, $prop),
+          $config
+        );
+      }
+    }
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-properties.html#mixin--configured-properties" class="item-name">configured-properties()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="specifically-defined-css-custom-properties" tabindex="-1">Specifically Defined CSS Custom<span class="widont">&nbsp;</span>Properties</h2>
 
       
   
@@ -1823,7 +2147,82 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
 
   
     <div data-item-section="prose" class="text-block">
-      <h3 id="color-mixins" tabindex="-1">Color Mixins</h3>
+      <h3 id="coloring" tabindex="-1">Coloring</h3>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h4 id="coloring-mixins" tabindex="-1">Coloring Mixins</h4>
 
       
   
@@ -2461,7 +2860,7 @@ If this is definded the other two curves are<span class="widont">&nbsp;</span>ig
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
   @each $name, $pal in map.get(cfg.$merged, coloring, palettes) {
-    @include color.palette($name, $pal...);
+    @include coloring.palette($name, $pal...);
   }
 }</code></pre>
     </div>
@@ -2509,6 +2908,41 @@ If this is definded the other two curves are<span class="widont">&nbsp;</span>ig
 
     
       
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
       
         
         
@@ -2624,10 +3058,7 @@ If this is definded the other two curves are<span class="widont">&nbsp;</span>ig
 
   
     <div data-item-section="prose" class="text-block">
-      <h1 id="css-custom-properties" tabindex="-1">CSS Custom Properties</h1>
-<p>This is a set of global CSS custom properties constituting the DNA of the design system.
-They are generated from the <a href="./ax-config.html">global configuration</a> and are used in the
-higher layers of the<span class="widont">&nbsp;</span>system.</p>
+      <h3 id="layout" tabindex="-1">Layout</h3>
 
       
   
@@ -2692,82 +3123,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
 
 
 
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h2 id="layout" tabindex="-1">Layout</h2>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="variable--sizes">
+<section class="item" id="variable--sizes%40container">
   
     
   
@@ -2785,7 +3141,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
 
       
-        <a href="#variable--sizes" class="item-name">$sizes</a>
+        <a href="#variable--sizes%40container" class="item-name">$sizes@container</a>
       
 
       
@@ -2867,10 +3223,141 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
   
   
   
+    <div class="requires-wrapper">
+      
     
+  <div data-item-section="requires">
     
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
   
 
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+      
+  
+    
+  <div data-item-section="used-by">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Used By</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ob-variant.html#css--figure.var-feature" class="item-name">figure.var-feature</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ob-variant.html#variable--nav-wide" class="item-name">$nav-wide</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+
+    </div>
   
 
   
@@ -2908,7 +3395,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
 
   
     <div data-item-section="prose" class="text-block">
-      <h2 id="typography" tabindex="-1">Typography</h2>
+      <h3 id="typography" tabindex="-1">Typography</h3>
 
       
   
@@ -3182,237 +3669,6 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
   </div>
 
   
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h2 id="ui" tabindex="-1">UI</h2>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--Easing%20Curves">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--Easing%20Curves" class="item-name">Easing Curves</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-  --ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
-  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
-  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
-  --ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-
-  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
-  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
-  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
-  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
-  --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
-  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
-  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
-  --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
-  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-  --ease-default: ease-in-out;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Easing functions <a href="http://robertpenner.com/easing/">introduced by Robert Penner</a>
-and approximated as cubic Bézier curves <a href="https://matthewlein.com/tools/ceaser">by Matthew<span class="widont">&nbsp;</span>Lein</a>.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
     
   
 
