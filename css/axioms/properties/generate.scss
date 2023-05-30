@@ -2,11 +2,11 @@
 /// @group ax-properties
 ////
 
-/// # CSS Custom Properties
+/// ## Dynamically Generated CSS Custom Properties
 ///
-/// This is a set of global CSS custom properties constituting the DNA of the design system.
-/// They are generated from the [global configuration](./ax-config.html) and are used in the
-/// higher layers of the system.
+/// By default Stylament generates CSS custom properties from the [configuration map](ax-config.html).
+/// This is done for every property map that is not explicitly excluded from and contains at least
+/// one of the keys `literal`, `logical`, or `mapped`.
 
 @use "sass:list";
 @use "sass:map";
@@ -16,6 +16,9 @@
 $exclude: () !default;
 $group-props: false !default;
 
+/// @name Generated Properties
+/// @requires $merged
+/// @requires {mixin} configured-properties
 :root {
   @each $group, $configs in cfg.$merged {
     @each $prop, $config in $configs {

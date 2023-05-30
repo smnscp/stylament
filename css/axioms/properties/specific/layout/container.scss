@@ -3,9 +3,9 @@
 ////
 
 @use "sass:map";
-@use "../../config" as cfg;
-@use "../../tools/config";
-@use "../mixins" as props;
+@use "../../../config" as cfg;
+@use "../../../tools/config";
+@use "../../mixins" as props;
 
 /// Container sizes for preprocessing.
 ///
@@ -15,5 +15,7 @@
 ///
 /// [bholmes]: https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
 ///
+/// @name sizes@container
 /// @type Map
+/// @requires $merged
 $sizes: config.map-config(map.get(cfg.$merged, layout, container));

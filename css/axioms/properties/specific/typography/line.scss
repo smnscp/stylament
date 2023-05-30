@@ -4,10 +4,10 @@
 
 @use "sass:map";
 @use "sass:math";
-@use "../../config" as cfg;
-@use "../../tools/arithmetic/function";
-@use "../../tools/meta";
-@use "../../tools/typography/rhythm";
+@use "../../../config" as cfg;
+@use "../../../tools/arithmetic/function";
+@use "../../../tools/meta";
+@use "../../../tools/typography/rhythm";
 
 /// Line heights supporting the vertical rhythm at every step of the scale.
 /// @name Line Heights

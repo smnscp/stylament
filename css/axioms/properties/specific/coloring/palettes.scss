@@ -3,14 +3,15 @@
 ////
 
 @use "sass:map";
-@use "../../config" as cfg;
-@use "mixins" as color;
+@use "../../../config" as cfg;
+@use "mixins" as coloring;
 
 /// @name Color Palettes
+/// @requires $merged
 /// @requires {mixin} palette
 /// @requires {mixin} configured-properties
 :root {
   @each $name, $pal in map.get(cfg.$merged, coloring, palettes) {
-    @include color.palette($name, $pal...);
+    @include coloring.palette($name, $pal...);
   }
 }

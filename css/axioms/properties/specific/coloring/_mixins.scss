@@ -2,14 +2,14 @@
 /// @group ax-properties
 ////
 
-/// ### Color Mixins
+/// #### Coloring Mixins
 
 @use "sass:list";
 @use "sass:map";
 @use "sass:math";
 @use "sass:meta";
-@use "../../tools/arithmetic/function";
-@use "../../tools/geometry/parametric-curves/bézier";
+@use "../../../tools/arithmetic/function";
+@use "../../../tools/geometry/parametric-curves/bézier";
 
 /// Generate a color palette for a given hue.
 /// @param {String} $name The color name.

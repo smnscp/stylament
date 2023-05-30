@@ -1,7 +1,12 @@
+////
+/// @group ob-variant
+////
+
 @use "sass:map";
 @use "../../../axioms/generic/coloring";
-@use "../../../axioms/properties/layout/container";
+@use "../../../axioms/properties/specific/layout/container";
 
+/// @requires {variable} sizes@container
 figure.var-feature {
   @include coloring.set-colors("feature", "alternate");
   @include coloring.use-colors;

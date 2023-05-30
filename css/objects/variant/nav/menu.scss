@@ -3,7 +3,7 @@
 ////
 
 @use "sass:map";
-@use "../../../axioms/properties/layout/container";
+@use "../../../axioms/properties/specific/layout/container";
 @use "../../../axioms/generic/coloring";
 
 /// ## Navigation Menu
@@ -11,6 +11,7 @@
 /// Common patterns for navigation menus. Separated into several aspects.
 
 /// Breakpoint for switching to wide layout.
+/// @requires {variable} sizes@container
 $nav-wide: map.get(container.$sizes, "sm");
 
 /// Size factor of the menu.
