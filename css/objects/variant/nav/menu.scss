@@ -95,7 +95,7 @@ nav.var-menu.\+foldable {
       line-height: 1;
       text-align: center;
       font-weight: var(--font-weight-emphasis);
-      transition: all 0.3s var(--ease-default);
+      transition: all 0.3s var(--easing-default);
       border-radius: var(--toggle-radius);
       box-shadow: var(--toggle-shadow);
       content: var(--toggle-content, "⋮");
@@ -106,7 +106,7 @@ nav.var-menu.\+foldable {
     margin-bottom: -100%; // Do not occupy flow space when foldable.
     max-inline-size: 100%;
     overflow: hidden;
-    transition: max-inline-size 0.3s var(--ease-default);
+    transition: max-inline-size 0.3s var(--easing-default);
   }
 
   // Special behavior on narrow screen: Act as overlay with backdrop.

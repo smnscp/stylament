@@ -25,7 +25,7 @@ body > nav.var-menu:first-of-type {
     & > li {
       @include coloring.set-colors("nav", "alternate");
       @include coloring.use-colors;
-      transition: all 0.3s var(--ease-default);
+      transition: all 0.3s var(--easing-default);
       &:hover {
         @include coloring.use-colors-inverse;
       }
