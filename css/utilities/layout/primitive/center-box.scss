@@ -1,9 +1,9 @@
 @use "center";
 @use "box";
 
-.lay-center-box {
-  @extend .lay-center;
-  @extend .lay-box;
+.lyo-center-box {
+  @extend .lyo-center;
+  @extend .lyo-box;
   box-sizing: border-box;
   @supports (margin: max(1ch, 1%)) {
     margin-inline: max(

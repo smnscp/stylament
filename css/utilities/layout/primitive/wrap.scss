@@ -3,13 +3,13 @@
 ////
 
 /// Reset wrapping.
-.lay-wrap-reset {
+.lyo-wrap-reset {
   grid-column: 1 / -1 !important;
   max-inline-size: unset !important;
   flex: 100% !important;
 }
 
-.lay-wrap-grid {
+.lyo-wrap-grid {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
@@ -17,8 +17,8 @@
   );
 }
 
-.lay-wrap-flex,
-.lay-wrap-cluster {
+.lyo-wrap-flex,
+.lyo-wrap-cluster {
   display: flex;
   flex-wrap: wrap;
 
@@ -27,14 +27,14 @@
   }
 }
 
-.lay-wrap-flex {
+.lyo-wrap-flex {
   & > * {
     flex-basis: calc(2 / 3 * var(--measure));
   }
 }
 
-[class^="lay-wrap-"],
-[class*=" lay-wrap-"] {
+[class^="lyo-wrap-"],
+[class*=" lyo-wrap-"] {
   gap: var(--spacing-block);
 
   &:is(article, section) {

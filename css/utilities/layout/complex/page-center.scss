@@ -1,12 +1,12 @@
 @use "../primitive/center";
 
-:where(body.lay-page-center) > {
+:where(body.lyo-page-center) > {
   :where(header, main, footer) {
     --container-size: var(--container-page);
     --container-gutter: 5vw;
 
     > * {
-      @extend .lay-center;
+      @extend .lyo-center;
     }
 
     > .\~breakout {

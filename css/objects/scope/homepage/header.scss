@@ -9,7 +9,7 @@
 
 /// Special homepage header styles.
 body.scp-homepage > header {
-  @extend .lay-cover;
+  @extend .lyo-cover;
 
   h1 {
     font-size: clamp(var(--scale-3), 8vmin, var(--scale-9));
@@ -17,7 +17,7 @@ body.scp-homepage > header {
   }
 
   & > * {
-    @extend %lay-center--intrinsic;
+    @extend %lyo-center--intrinsic;
   }
 
   // Any image alone in an hgroup row is considered a logo.

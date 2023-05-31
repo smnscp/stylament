@@ -16,7 +16,7 @@ body.scp-homepage > header.\+alt {
   --spacing-block: var(--length-2);
 
   & > * {
-    @extend .lay-center-box;
-    @extend %lay-center--intrinsic;
+    @extend .lyo-center-box;
+    @extend %lyo-center--intrinsic;
   }
 }
