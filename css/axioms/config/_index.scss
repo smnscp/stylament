@@ -290,7 +290,9 @@ $default: (
       ),
       logical: (),
     ),
-    easing: easing.$penner,
+    easing: (
+      literal: easing.$penner,
+    ),
   ),
   coloring: (
     palettes: (),
