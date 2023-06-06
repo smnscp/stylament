@@ -21,6 +21,7 @@ body.scp-homepage > header {
   }
 
   // Any image alone in an hgroup row is considered a logo.
+  // NB: `:only-child does not guarantee the absence of sibling text nodes.
   hgroup > * > :is(img, picture, svg):only-child {
     // Size it so that it nicely fits the viewport.
     max-inline-size: min(66vmin, 100%);

@@ -5,13 +5,16 @@
 /// ## Embedding
 
 /// @name Default Embedding Boxes
-:is(img, picture, video, audio),
-:is(embed, iframe, object),
-svg,
-canvas {
+:is(img, picture, video, audio, embed, iframe, object, svg, canvas) {
   display: block;
   max-inline-size: 100%;
   block-size: auto;
+
+  // Pictures in phrasing containers shall act like character boxes.
+  :is(h1, h2, h3, h4, h5, h6, p) & {
+    display: inline;
+    max-block-size: 1em;
+  }
 }
 
 /// @name Full-width Boxes
