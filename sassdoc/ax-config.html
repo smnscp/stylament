@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.20.2</span>
+          <span class="project-version">0.21.0</span>
         
       </div>
     </header>
@@ -544,6 +544,7 @@ For the structure of this custom configuration see <a href="#variable--default">
       
       <pre class="hljs-pre"><code class="lang-css">@charset &quot;UTF-8&quot;;
 :root {
+  --length-0aug: 0.375rem;
   --length-0½: 0.75rem;
   --length-1dim: 1.125rem;
   --length-1: 1.5rem;
@@ -563,11 +564,30 @@ For the structure of this custom configuration see <a href="#variable--default">
   --container-xl: 80rem;
   --container-xxl: 96rem;
   --container-page: var(--container-sm);
-  --spacing-block: var(--length-1);
-  --spacing-heading: var(--length-1);
-  --spacing-sectioning: clamp(var(--length-1), (100vi - var(--container-sm)) / 4, var(--length-2));
-  --spacing-inline: 4ch;
-  --spacing-inline-small: 0.5ch;
+  --flow-space-default: var(--spacing-block);
+  --flow-space-heading: var(--spacing-block-md);
+  --flow-space-sectioning: clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg));
+  --flow-space: var(--flow-space-default);
+  --spacing-block-xxs: 0.1875rem;
+  --spacing-block-xs: 0.375rem;
+  --spacing-block-sm: 0.75rem;
+  --spacing-block-md: 1.5rem;
+  --spacing-block-lg: 3rem;
+  --spacing-block-xl: 6rem;
+  --spacing-block-xxl: 12rem;
+  --spacing-block-default: var(--spacing-block-md);
+  --spacing-block: var(--spacing-block-default);
+  --spacing-block: var(--spacing-block-default);
+  --spacing-inline-xxs: 0.25ch;
+  --spacing-inline-xs: 0.5ch;
+  --spacing-inline-sm: 1ch;
+  --spacing-inline-md: 2ch;
+  --spacing-inline-lg: 4ch;
+  --spacing-inline-xl: 8ch;
+  --spacing-inline-xxl: 16ch;
+  --spacing-inline-default: var(--spacing-inline-md);
+  --spacing-inline: var(--spacing-inline-default);
+  --spacing-inline: var(--spacing-inline-default);
   --spacing-sectioning: var(--spacing-block);
   --font-family-sans: Helvetica;
   --font-family-serif: Times;
@@ -606,6 +626,7 @@ For the structure of this custom configuration see <a href="#variable--default">
   --measure-inf: unset;
   --measure-default: var(--measure-md);
   --measure: var(--measure-default);
+  --measure: var(--measure-default);
   --scale--2: 0.4444444444em;
   --scale--1: 0.6666666667em;
   --scale-0: 1em;
@@ -628,8 +649,8 @@ For the structure of this custom configuration see <a href="#variable--default">
   --radius-lg: 0.8rem;
   --radius-xl: 1rem;
   --radius-xxl: 1.2rem;
-  --radius-100: 100%;
-  --radius-full: 999rem;
+  --radius-ellipse: 100%;
+  --radius-obround: 999rem;
   --shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
   --shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
   --shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
@@ -647,8 +668,37 @@ For the structure of this custom configuration see <a href="#variable--default">
   --stroke-width-8: 0.5rem;
   --stroke-width-default: var(--stroke-width-2);
   --stroke-width: var(--stroke-width-default);
+  --stroke-width: var(--stroke-width-default);
   --stroke-style-default: solid;
+  --stroke-style: var(--stroke-style-default);
   --stroke-color-default: var(--color-tertiary-700);
+  --stroke-color: var(--stroke-color-default);
+  --easing-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --easing-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --easing-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --easing-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --easing-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --easing-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --easing-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --easing-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --easing-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --easing-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --easing-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --easing-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --easing-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --easing-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --easing-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --easing-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --easing-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --easing-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --easing-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --easing-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --easing-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --easing-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --easing-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --easing-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --easing-default: ease-in-out;
+  --easing: var(--easing-default);
 }
 
 :root {
@@ -689,13 +739,14 @@ For the structure of this custom configuration see <a href="#variable--default">
   ---clr-bg: var(---clr-neg);
 }
 
-:is(img, picture, video, audio),
-:is(embed, iframe, object),
-svg,
-canvas {
+:is(img, picture, video, audio, embed, iframe, object, svg, canvas) {
   display: block;
   max-inline-size: 100%;
   block-size: auto;
+}
+:is(h1, h2, h3, h4, h5, h6, p) :is(img, picture, video, audio, embed, iframe, object, svg, canvas) {
+  display: inline;
+  max-block-size: 1em;
 }
 
 audio,
@@ -704,17 +755,18 @@ iframe:not([width]) {
 }
 
 * + :is(h1, h2, h3, h4, h5, h6) {
-  margin-block-start: var(--spacing-heading);
+  margin-block-start: var(--flow-space-heading);
 }
 
 * + :is(article, section) {
-  margin-block-start: var(--spacing-sectioning);
+  margin-block-start: var(--flow-space-sectioning);
+  margin-block-start: 4.5rem;
 }
 
 * + :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr),
 :is(h1, h2, h3, h4, h5, h6) + div,
 :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr) + div {
-  margin-block-start: var(--spacing-block);
+  margin-block-start: var(--flow-space);
 }
 
 li :is(ol, ul, menu, dir) {
@@ -1084,7 +1136,8 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
       mapped: (
         domain: mapping.$domain-tendency,
         range: (
-          start: 0,
+          // -1: 0aug, 0: 0½, 1: 1dim, 2: 1, …
+          start: -1,
           end: 10,
         ),
         function: meta.get-function(&quot;quantize&quot;, $module: &quot;mapping&quot;),
@@ -1109,16 +1162,39 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
         page: &quot;xl&quot;,
       ),
     ),
-    spacing: (
+    flow-space: (
       literal: (
-        block: &quot;var(--length-1)&quot;,
-        heading: &quot;var(--length-1)&quot;,
+        default: &quot;var(--spacing-block)&quot;,
+        heading: &quot;var(--spacing-block-md)&quot;,
         sectioning:
-          &quot;clamp(var(--length-1), (100vi - var(--container-sm)) / 4, var(--length-2))&quot;,
-        inline: 4ch,
-        inline-small: 0.5ch,
+          &quot;clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg))&quot;,
       ),
-      logical: (),
+    ),
+    spacing-block: (
+      mapped: (
+        domain: mapping.$domain-sizes,
+        function: meta.get-function(&quot;exponential&quot;, $module: &quot;function&quot;),
+        params: (
+          base: 2,
+          coefficient: $-rlh,
+        ),
+      ),
+      logical: (
+        default: md,
+      ),
+    ),
+    spacing-inline: (
+      mapped: (
+        domain: mapping.$domain-sizes,
+        function: meta.get-function(&quot;exponential&quot;, $module: &quot;function&quot;),
+        params: (
+          base: 2,
+          coefficient: 2ch,
+        ),
+      ),
+      logical: (
+        default: md,
+      ),
     ),
   ),
   typography: (
@@ -2336,6 +2412,145 @@ Used as domain for mapped<span class="widont">&nbsp;</span>properties.</p>
 
       
     </div>
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="variable--tendency">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#variable--tendency" class="item-name">$tendency</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">$tendency: (
+  &quot;dim&quot;: -0.29,
+  &quot;&quot;: 0,
+  // ⪅ (¼ + ⅓)/2, i. e. approx. equal distance to ¼ and ⅓, slightly closer to ¼.
+  &quot;aug&quot;: 0.29,
+  &quot;½&quot;: 0.5,
+);</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Map of tendency<span class="widont">&nbsp;</span>indicators.</p>
+<p>This is for specifying sizes that are smaller or bigger than, exactly
+on a whole step or right between two steps (known from grading at school
+or musical<span class="widont">&nbsp;</span>intervals).</p>
+<p>Meant as a recurring domain the labels are appended as suffixes to
+continuous integer<span class="widont">&nbsp;</span>numbers.</p>
+<p>Stylament uses this for its length scale to produce a series of tokens
+based on whole logical units (rlh), while including sub-units as<span class="widont">&nbsp;</span>well.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
   
 
 
@@ -3903,6 +4118,7 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
       
       <pre class="hljs-pre"><code class="lang-css">@charset &quot;UTF-8&quot;;
 :root {
+  --length-0aug: 0.375rem;
   --length-0½: 0.75rem;
   --length-1dim: 1.125rem;
   --length-1: 1.5rem;
@@ -3922,11 +4138,30 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --container-xl: 80rem;
   --container-xxl: 96rem;
   --container-page: var(--container-xl);
-  --spacing-block: var(--length-1);
-  --spacing-heading: var(--length-1);
-  --spacing-sectioning: clamp(var(--length-1), (100vi - var(--container-sm)) / 4, var(--length-2));
-  --spacing-inline: 4ch;
-  --spacing-inline-small: 0.5ch;
+  --flow-space-default: var(--spacing-block);
+  --flow-space-heading: var(--spacing-block-md);
+  --flow-space-sectioning: clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg));
+  --flow-space: var(--flow-space-default);
+  --spacing-block-xxs: 0.1875rem;
+  --spacing-block-xs: 0.375rem;
+  --spacing-block-sm: 0.75rem;
+  --spacing-block-md: 1.5rem;
+  --spacing-block-lg: 3rem;
+  --spacing-block-xl: 6rem;
+  --spacing-block-xxl: 12rem;
+  --spacing-block-default: var(--spacing-block-md);
+  --spacing-block: var(--spacing-block-default);
+  --spacing-block: var(--spacing-block-default);
+  --spacing-inline-xxs: 0.25ch;
+  --spacing-inline-xs: 0.5ch;
+  --spacing-inline-sm: 1ch;
+  --spacing-inline-md: 2ch;
+  --spacing-inline-lg: 4ch;
+  --spacing-inline-xl: 8ch;
+  --spacing-inline-xxl: 16ch;
+  --spacing-inline-default: var(--spacing-inline-md);
+  --spacing-inline: var(--spacing-inline-default);
+  --spacing-inline: var(--spacing-inline-default);
   --font-family-sans: Source Sans Pro, sans-serif;
   --font-family-serif: Source Serif Pro, serif;
   --font-family-mono: Source Code Pro, monospace;
@@ -3964,6 +4199,7 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --measure-inf: unset;
   --measure-default: var(--measure-md);
   --measure: var(--measure-default);
+  --measure: var(--measure-default);
   --scale--2: 0.4444444444rem;
   --scale--1: 0.6666666667rem;
   --scale-0: 1rem;
@@ -3986,8 +4222,8 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --radius-lg: 0.8rem;
   --radius-xl: 1rem;
   --radius-xxl: 1.2rem;
-  --radius-100: 100%;
-  --radius-full: 999rem;
+  --radius-ellipse: 100%;
+  --radius-obround: 999rem;
   --shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
   --shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
   --shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
@@ -4005,8 +4241,37 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --stroke-width-8: 0.5rem;
   --stroke-width-default: var(--stroke-width-2);
   --stroke-width: var(--stroke-width-default);
+  --stroke-width: var(--stroke-width-default);
   --stroke-style-default: solid;
+  --stroke-style: var(--stroke-style-default);
   --stroke-color-default: var(--color-tertiary-700);
+  --stroke-color: var(--stroke-color-default);
+  --easing-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --easing-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --easing-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --easing-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --easing-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --easing-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --easing-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --easing-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --easing-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --easing-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --easing-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --easing-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --easing-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --easing-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --easing-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --easing-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --easing-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --easing-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --easing-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --easing-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --easing-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --easing-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --easing-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --easing-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --easing-default: ease-in-out;
+  --easing: var(--easing-default);
 }
 
 :root {
@@ -4047,13 +4312,14 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   ---clr-bg: var(---clr-neg);
 }
 
-:is(img, picture, video, audio),
-:is(embed, iframe, object),
-svg,
-canvas {
+:is(img, picture, video, audio, embed, iframe, object, svg, canvas) {
   display: block;
   max-inline-size: 100%;
   block-size: auto;
+}
+:is(h1, h2, h3, h4, h5, h6, p) :is(img, picture, video, audio, embed, iframe, object, svg, canvas) {
+  display: inline;
+  max-block-size: 1em;
 }
 
 audio,
@@ -4062,17 +4328,18 @@ iframe:not([width]) {
 }
 
 * + :is(h1, h2, h3, h4, h5, h6) {
-  margin-block-start: var(--spacing-heading);
+  margin-block-start: var(--flow-space-heading);
 }
 
 * + :is(article, section) {
-  margin-block-start: var(--spacing-sectioning);
+  margin-block-start: var(--flow-space-sectioning);
+  margin-block-start: 4.5rem;
 }
 
 * + :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr),
 :is(h1, h2, h3, h4, h5, h6) + div,
 :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr) + div {
-  margin-block-start: var(--spacing-block);
+  margin-block-start: var(--flow-space);
 }
 
 li :is(ol, ul, menu, dir) {

@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.20.2</span>
+          <span class="project-version">0.21.0</span>
         
       </div>
     </header>
@@ -507,11 +507,11 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
   --stroke-width-box: var(--stroke-width-8);
   --stroke-style-box: dashed;
   --stroke-color-box: var(--color-grey-300);
-  --spacing-block: var(--length-2);
+  --flow-space: var(--spacing-block-lg);
 
   &amp; &gt; * {
-    @extend .lay-center-box;
-    @extend %lay-center--intrinsic;
+    @extend .lyo-center-box;
+    @extend %lyo-center--intrinsic;
   }
 }</code></pre>
     </div>
@@ -715,7 +715,7 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">body.scp-homepage &gt; header {
-  @extend .lay-cover;
+  @extend .lyo-cover;
 
   h1 {
     font-size: clamp(var(--scale-3), 8vmin, var(--scale-9));
@@ -723,10 +723,11 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
   }
 
   &amp; &gt; * {
-    @extend %lay-center--intrinsic;
+    @extend %lyo-center--intrinsic;
   }
 
   // Any image alone in an hgroup row is considered a logo.
+  // NB: `:only-child` does not guarantee the absence of sibling text nodes.
   hgroup &gt; * &gt; :is(img, picture, svg):only-child {
     // Size it so that it nicely fits the viewport.
     max-inline-size: min(66vmin, 100%);

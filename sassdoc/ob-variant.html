@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.20.2</span>
+          <span class="project-version">0.21.0</span>
         
       </div>
     </header>
@@ -300,6 +300,84 @@
 
 
 
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h1 id="elementary-variants" tabindex="-1">Elementary Variants</h1>
+<p>These are classes for marking up variants of specific types of<span class="widont">&nbsp;</span>elements.</p>
+<h2 id="naming-convention" tabindex="-1">Naming Convention</h2>
+<p>Elementary variants classes carry the <code>var-</code> prefix, e. g. <code>var-standard-table</code>.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" id="css--figure.var-feature">
   
     
@@ -351,7 +429,7 @@
   @include coloring.set-colors(&quot;feature&quot;, &quot;alternate&quot;);
   @include coloring.use-colors;
   margin-inline: 0;
-  padding: var(--spacing-sectioning);
+  padding: var(--spacing-block-lg);
 
   blockquote {
     --no-stroke: true;
@@ -1382,7 +1460,7 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
 
 
 
-<section class="item" id="css--nav.var-menu.%5C%2Bfoldable">
+<section class="item" id="mixin--menu-foldable">
   
     
   
@@ -1396,11 +1474,11 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
   <div data-item-section="header">
     <h2 class="item-title">
       
-        <span class="item-type"></span>
+        <span class="item-type">@mixin</span>
       
 
       
-        <a href="#css--nav.var-menu.%5C%2Bfoldable" class="item-name">nav.var-menu.&#92;+foldable</a>
+        <a href="#mixin--menu-foldable" class="item-name">menu-foldable()</a>
       
 
       
@@ -1413,115 +1491,6 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
 
 
     
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">nav.var-menu.&#92;+foldable {
-  --toggle-size: #{$size};
-
-  /// Places toggle to the inline end (rhs in Latin).
-  &amp;.&#92;+end {
-    flex-direction: row-reverse;
-  }
-
-  &amp; &gt; label[for^=&quot;-toggle-state&quot;] {
-    cursor: context-menu;
-    display: block;
-    @include coloring.set-colors(&quot;nav-toggle&quot;, &quot;alternate&quot;);
-
-    /// Toggle
-    &amp; &gt; :first-child,
-    &amp;:empty::after {
-      @include coloring.use-colors;
-      display: block;
-      position: relative; // Place over backdrop.
-      max-inline-size: unset;
-      inline-size: var(--toggle-size);
-      block-size: var(--toggle-size);
-      padding: var(--toggle-padding);
-      border: var(--toggle-border);
-      margin: 0;
-      font-size: calc(var(--toggle-size) - 2 * var(--toggle-padding));
-      line-height: 1;
-      text-align: center;
-      font-weight: var(--font-weight-emphasis);
-      transition: all 0.3s var(--easing-default);
-      border-radius: var(--toggle-radius);
-      box-shadow: var(--toggle-shadow);
-      content: var(--toggle-content, &quot;⋮&quot;);
-    }
-  }
-
-  &amp; &gt; menu {
-    margin-bottom: -100%; // Do not occupy flow space when foldable.
-    max-inline-size: 100%;
-    overflow: hidden;
-    transition: max-inline-size 0.3s var(--easing-default);
-  }
-
-  // Special behavior on narrow screen: Act as overlay with backdrop.
-  @media (max-width: $nav-wide) {
-    &amp; &gt; input[id^=&quot;-toggle-state&quot;] {
-      // Unfolded state on narrow screen.
-      &amp;:checked {
-        // Use `label` as backdrop. Clicking on it toggles the state.
-        &amp; ~ label[for^=&quot;-toggle-state&quot;]::before {
-          content: &quot;&quot;;
-          position: absolute;
-          inset: 0;
-          block-size: 100vh;
-          background: rgba(0, 0, 0, 0.5);
-        }
-      }
-
-      // Folded state on narrow screen. (This is the default, as in not checked.)
-      &amp;:not(:checked) {
-        &amp; ~ menu {
-          @include menu-folded;
-        }
-
-        &amp; ~ label[for^=&quot;-toggle-state&quot;] &gt; :first-child,
-        &amp; ~ label[for^=&quot;-toggle-state&quot;]:empty::after {
-          @include toggle-folded;
-        }
-      }
-    }
-
-    &amp; &gt; menu {
-      position: relative; // Place over backdrop.
-    }
-  }
-
-  // Folded state on wide screen. (Only when explicitly toggled.)
-  @media (min-width: $nav-wide) {
-    &amp; &gt; input[id^=&quot;-toggle-state&quot;]:checked {
-      &amp; ~ menu {
-        @include menu-folded;
-      }
-
-      &amp; ~ label[for^=&quot;-toggle-state&quot;] &gt; :first-child,
-      &amp; ~ label[for^=&quot;-toggle-state&quot;]:empty::after {
-        @include toggle-folded;
-      }
-    }
-  }
-}</code></pre>
-    </div>
-  
-
     
   
   

@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.20.2</span>
+          <span class="project-version">0.21.0</span>
         
       </div>
     </header>
@@ -1759,13 +1759,16 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">:is(img, picture, video, audio),
-:is(embed, iframe, object),
-svg,
-canvas {
+      <pre class="hljs-pre"><code class="lang-scss">:is(img, picture, video, audio, embed, iframe, object, svg, canvas) {
   display: block;
   max-inline-size: 100%;
   block-size: auto;
+
+  // Pictures in phrasing containers shall act like character boxes.
+  :is(h1, h2, h3, h4, h5, h6, p) &amp; {
+    display: inline;
+    max-block-size: 1em;
+  }
 }</code></pre>
     </div>
   
@@ -2108,7 +2111,7 @@ iframe:not([width]) {
       
       
       <pre class="hljs-pre"><code class="lang-scss">* + :is(h1, h2, h3, h4, h5, h6) {
-  margin-block-start: var(--spacing-heading);
+  margin-block-start: var(--flow-space-heading);
 }</code></pre>
     </div>
   
@@ -2222,7 +2225,8 @@ iframe:not([width]) {
       
       
       <pre class="hljs-pre"><code class="lang-scss">* + :is(article, section) {
-  margin-block-start: var(--spacing-sectioning);
+  margin-block-start: var(--flow-space-sectioning);
+  margin-block-start: 4.5rem;
 }</code></pre>
     </div>
   
@@ -2338,7 +2342,7 @@ iframe:not([width]) {
       <pre class="hljs-pre"><code class="lang-scss">* + :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr),
 :is(h1, h2, h3, h4, h5, h6) + div,
 :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr) + div {
-  margin-block-start: var(--spacing-block);
+  margin-block-start: var(--flow-space);
 }</code></pre>
     </div>
   
