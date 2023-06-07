@@ -11,19 +11,19 @@
 
 /// @name Before Headings
 * + :is(h1, h2, h3, h4, h5, h6) {
-  margin-block-start: var(--flow-space-heading);
+  margin-block-start: var(--flow-space-heading, var(--flow-space, 1em));
 }
 
 /// @name Before Sections
 * + :is(article, section) {
-  margin-block-start: var(--flow-space-sectioning);
+  margin-block-start: var(--flow-space-sectioning, var(--flow-space, 1em));
 }
 
 /// @name Before General Blocks
 * + :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr),
 :is(h1, h2, h3, h4, h5, h6) + div,
 :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr) + div {
-  margin-block-start: var(--flow-space);
+  margin-block-start: var(--flow-space, 1em);
 }
 
 /// @name Not Before Nested Lists
