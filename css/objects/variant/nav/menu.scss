@@ -67,7 +67,7 @@ nav.var-menu.\+levelable {
 
 /// Foldable Nav.
 /// Allows to toggle the display of the menu.
-nav.var-menu.\+foldable {
+@mixin menu-foldable {
   --toggle-size: #{$size};
 
   /// Places toggle to the inline end (rhs in Latin).
@@ -155,6 +155,16 @@ nav.var-menu.\+foldable {
         @include toggle-folded;
       }
     }
+  }
+}
+
+nav.var-menu.\+foldable {
+  @include menu-foldable;
+}
+
+@media (max-width: $nav-wide) {
+  nav.var-menu.\+foldable-when-stacked {
+    @include menu-foldable;
   }
 }
 
