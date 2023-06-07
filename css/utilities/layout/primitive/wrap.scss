@@ -38,7 +38,7 @@
   gap: var(--spacing-block);
 
   &:is(article, section) {
-    gap: var(--spacing-sectioning);
+    gap: var(--flow-space-sectioning);
   }
 
   > * {

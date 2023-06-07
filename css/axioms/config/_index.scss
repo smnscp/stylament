@@ -142,16 +142,39 @@ $default: (
         page: "xl",
       ),
     ),
-    spacing: (
+    flow-space: (
       literal: (
-        block: "var(--length-1)",
-        heading: "var(--length-1)",
+        default: "var(--spacing-block)",
+        heading: "var(--spacing-block-md)",
         sectioning:
-          "clamp(var(--length-1), (100vi - var(--container-sm)) / 4, var(--length-2))",
-        inline: 4ch,
-        inline-small: 0.5ch,
+          "clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg))",
       ),
-      logical: (),
+    ),
+    spacing-block: (
+      mapped: (
+        domain: mapping.$domain-sizes,
+        function: meta.get-function("exponential", $module: "function"),
+        params: (
+          base: 2,
+          coefficient: $-rlh,
+        ),
+      ),
+      logical: (
+        default: md,
+      ),
+    ),
+    spacing-inline: (
+      mapped: (
+        domain: mapping.$domain-sizes,
+        function: meta.get-function("exponential", $module: "function"),
+        params: (
+          base: 2,
+          coefficient: 2ch,
+        ),
+      ),
+      logical: (
+        default: lg,
+      ),
     ),
   ),
   typography: (

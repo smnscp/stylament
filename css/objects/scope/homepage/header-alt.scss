@@ -13,7 +13,7 @@ body.scp-homepage > header.\+alt {
   --stroke-width-box: var(--stroke-width-8);
   --stroke-style-box: dashed;
   --stroke-color-box: var(--color-grey-300);
-  --spacing-block: var(--length-2);
+  --flow-space: var(--spacing-block-lg);
 
   & > * {
     @extend .lyo-center-box;

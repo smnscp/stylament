@@ -12,7 +12,7 @@ $body-or-wrapper: ":where(body, body > div:only-child)";
 /// The document’s main header and footer.
 /// (There could be more than one of each. But that would not make much sense.)
 #{$body-or-wrapper} > :is(header, footer) {
-  padding-block: var(--spacing-sectioning);
+  padding-block: var(--spacing-block-lg);
 }
 
 /// Apply [“clever sticky footer”][css-tricks] technique.
