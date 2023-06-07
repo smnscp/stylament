@@ -9,8 +9,12 @@
 /// [flow-layout]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout
 /// @link https://andy-bell.co.uk/my-favourite-3-lines-of-css/ Recap of “The Stack”
 
+$-headings: h1, h2, h3, h4, h5, h6;
+$-lists: ol, ul, menu, dir;
+$-blocks: p, blockquote, figure, figcaption, pre, dl, #{$-lists}, hr;
+
 /// @name Before Headings
-* + :is(h1, h2, h3, h4, h5, h6) {
+* + :is(#{$-headings}) {
   margin-block-start: var(--flow-space-heading, var(--flow-space, 1em));
 }
 
@@ -20,13 +24,13 @@
 }
 
 /// @name Before General Blocks
-* + :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr),
-:is(h1, h2, h3, h4, h5, h6) + div,
-:is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr) + div {
+* + :is(#{$-blocks}),
+:is(#{$-headings}) + div,
+:is(#{$-blocks}) + div {
   margin-block-start: var(--flow-space, 1em);
 }
 
 /// @name Not Before Nested Lists
-li :is(ol, ul, menu, dir) {
+li :is(#{$-lists}) {
   margin-block-start: unset;
 }
