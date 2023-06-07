@@ -80,5 +80,11 @@
     );
     @include literal-properties($prefix, map.get($conf, literal));
     @include logical-properties($prefix, map.get($conf, logical));
+    @if (
+      map.has-key($conf, literal, default) or
+        map.has-key($conf, logical, default)
+    ) {
+      --#{$prefix}: var(--#{$prefix}-default);
+    }
   }
 }
