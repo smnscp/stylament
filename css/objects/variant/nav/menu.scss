@@ -109,9 +109,16 @@ nav.var-menu.\+levelable {
     overflow: hidden;
     transition: max-inline-size 0.3s var(--easing-default);
   }
+}
+
+@media (max-width: $nav-wide) {
+  nav.var-menu.\+foldable-when-stacked {
+    @include menu-foldable;
+  }
 
   // Special behavior on narrow screen: Act as overlay with backdrop.
-  @media (max-width: $nav-wide) {
+  nav.var-menu.\+foldable,
+  nav.var-menu.\+foldable-when-stacked {
     & > input[id^="-toggle-state"] {
       // Unfolded state on narrow screen.
       &:checked {
@@ -142,6 +149,10 @@ nav.var-menu.\+levelable {
       position: relative; // Place over backdrop.
     }
   }
+}
+
+nav.var-menu.\+foldable {
+  @include menu-foldable;
 
   // Folded state on wide screen. (Only when explicitly toggled.)
   @media (min-width: $nav-wide) {
@@ -155,16 +166,6 @@ nav.var-menu.\+levelable {
         @include toggle-folded;
       }
     }
-  }
-}
-
-nav.var-menu.\+foldable {
-  @include menu-foldable;
-}
-
-@media (max-width: $nav-wide) {
-  nav.var-menu.\+foldable-when-stacked {
-    @include menu-foldable;
   }
 }
 
