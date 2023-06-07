@@ -116,7 +116,8 @@ $default: (
       mapped: (
         domain: mapping.$domain-tendency,
         range: (
-          start: 0,
+          // -1: 0aug, 0: 0½, 1: 1dim, 2: 1, …
+          start: -1,
           end: 10,
         ),
         function: meta.get-function("quantize", $module: "mapping"),

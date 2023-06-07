@@ -28,9 +28,21 @@ $sizes: (
   "xxl": 3,
 );
 
+/// Map of tendency indicators.
+///
+/// This is for specifying sizes that are smaller or bigger than, exactly
+/// on a whole step or right between two steps (known from grading at school
+/// or musical intervals).
+///
+/// Meant as a recurring domain the labels are appended as suffixes to
+/// continuous integer numbers.
+///
+/// Stylament uses this for its length scale to produce a series of tokens
+/// based on whole logical units (rlh), while including sub-units as well.
 $tendency: (
   "dim": -0.29,
   "": 0,
+  // ⪅ (¼ + ⅓)/2, i. e. approx. equal distance to ¼ and ⅓, slightly closer to ¼.
   "aug": 0.29,
   "½": 0.5,
 );
