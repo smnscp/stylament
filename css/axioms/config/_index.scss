@@ -146,6 +146,8 @@ $default: (
       literal: (
         default: "var(--spacing-block)",
         heading: "var(--spacing-block-md)",
+        list: 0em,
+        deflist: "var(--spacing-block-sm)",
         sectioning:
           "clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg))",
       ),

@@ -22,7 +22,7 @@
   @return $line-root * $base-rem;
 }
 
-/// Base-line grid compatible line height at a given font size.
+/// Baseline grid compatible line height at a given font size.
 ///
 /// @param {Number<rem|em|%>} $em Font size to fit.
 /// @param {Number<rem>} $rlh Root line height.

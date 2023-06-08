@@ -49,12 +49,12 @@
       padding: calc(1.5 * (var(--line-root-abs) - var(--figure-border-width)));
       border: var(--figure-border-width) var(--figure-border-color) solid;
       margin-inline: 0;
-      margin-block: calc(-0.5 * var(--figure-border-width));
+      margin-block-end: calc(-1 * var(--figure-border-width));
       position: relative;
     }
 
-    figure+figure {
-      margin-block-start: calc(var(--line-root-abs) - 0.5 * var(--figure-border-width));
+    dd>figure {
+      --flow-space: var(--flow-space-default);
     }
 
     :not(blockquote)+figcaption {
@@ -901,6 +901,7 @@
                 <blockquote class="dev-lorem-ipsum"></blockquote>
                 <p class="dev-lorem-ipsum"></p>
               </blockquote>
+              <p class="dev-lorem-ipsum"></p>
               <figcaption>Nesting <code>blockquote</code> elements</figcaption>
             </figure>
             <figure>
@@ -1509,6 +1510,7 @@
             <figcaption>a simple <code>table</code></figcaption>
           </figure>
           <figure>
+            <h2>Standard Table</h2>
             <table class="var-standard-table">
               <caption>What MDN says about table mark-up</caption>
               <thead>
@@ -1790,10 +1792,15 @@
         <dt>Example</dt>
         <dd>
           <figure>
+            <p class="dev-lorem-ipsum"></p>
             <details>
               <summary>I am a <code>summary</code> element.</summary>
-              I am a <code>details</code> element.
+              <p>
+                I am a <code>details</code> element.
+                <span class="dev-lorem-ipsum"></span>
+              </p>
             </details>
+            <p class="dev-lorem-ipsum"></p>
             <figcaption><code>details</code> element with <code>summary</code> element</figcaption>
           </figure>
         </dd>
