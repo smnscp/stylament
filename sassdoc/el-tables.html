@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.21.0</span>
+          <span class="project-version">0.21.1</span>
         
       </div>
     </header>
@@ -486,7 +486,8 @@
   border-collapse: collapse;
   padding: 0;
   border-spacing: 0;
-  margin-block: calc(-0.5 * var(--border-width));
+  // Compensate border to stay in baseline grid.
+  margin-block-end: calc(-1 * var(--border-width));
 }</code></pre>
     </div>
   

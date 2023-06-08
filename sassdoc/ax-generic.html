@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.21.0</span>
+          <span class="project-version">0.21.1</span>
         
       </div>
     </header>
@@ -2063,120 +2063,6 @@ iframe:not([width]) {
 
 
 
-<section class="item" id="css--Before%20Headings">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--Before%20Headings" class="item-name">Before Headings</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">* + :is(h1, h2, h3, h4, h5, h6) {
-  margin-block-start: var(--flow-space-heading);
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
 <section class="item" id="css--Before%20Sections">
   
     
@@ -2225,8 +2111,7 @@ iframe:not([width]) {
       
       
       <pre class="hljs-pre"><code class="lang-scss">* + :is(article, section) {
-  margin-block-start: var(--flow-space-sectioning);
-  margin-block-start: 4.5rem;
+  margin-block-start: var(--flow-space-sectioning, var(--flow-space, 1em));
 }</code></pre>
     </div>
   
@@ -2339,10 +2224,9 @@ iframe:not([width]) {
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">* + :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr),
-:is(h1, h2, h3, h4, h5, h6) + div,
-:is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr) + div {
-  margin-block-start: var(--flow-space);
+      <pre class="hljs-pre"><code class="lang-scss">* + :is(#{$-blocks}),
+:is(#{$-blocks}) + div {
+  margin-block-start: var(--flow-space, 1em);
 }</code></pre>
     </div>
   
@@ -2408,7 +2292,7 @@ iframe:not([width]) {
 
 
 
-<section class="item" id="css--Not%20Before%20Nested%20Lists">
+<section class="item" id="css--Before%20Headings">
   
     
   
@@ -2426,7 +2310,7 @@ iframe:not([width]) {
       
 
       
-        <a href="#css--Not%20Before%20Nested%20Lists" class="item-name">Not Before Nested<span class="widont">&nbsp;</span>Lists</a>
+        <a href="#css--Before%20Headings" class="item-name">Before Headings</a>
       
 
       
@@ -2455,8 +2339,350 @@ iframe:not([width]) {
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">li :is(ol, ul, menu, dir) {
-  margin-block-start: unset;
+      <pre class="hljs-pre"><code class="lang-scss">* + :is(#{$-headings}) {
+  --flow-space: var(--flow-space-heading, var(--flow-space-default));
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Inside%20Lists">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Inside%20Lists" class="item-name">Inside Lists</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">li {
+  --flow-space: var(--flow-space-list, var(--flow-space-default));
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Inside%20Definition%20Terms">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Inside%20Definition%20Terms" class="item-name">Inside Definition<span class="widont">&nbsp;</span>Terms</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">dt {
+  --flow-space: var(--flow-space-defterm, var(--flow-space-deflist, var(--flow-space-default)));
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Inside%20Definition%20Data">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Inside%20Definition%20Data" class="item-name">Inside Definition<span class="widont">&nbsp;</span>Data</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">dd {
+  --flow-space: var(--flow-space-defdata, var(--flow-space-deflist, var(--flow-space-default)));
 }</code></pre>
     </div>
   

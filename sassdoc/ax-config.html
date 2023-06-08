@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.21.0</span>
+          <span class="project-version">0.21.1</span>
         
       </div>
     </header>
@@ -566,6 +566,8 @@ For the structure of this custom configuration see <a href="#variable--default">
   --container-page: var(--container-sm);
   --flow-space-default: var(--spacing-block);
   --flow-space-heading: var(--spacing-block-md);
+  --flow-space-list: 0em;
+  --flow-space-deflist: var(--spacing-block-sm);
   --flow-space-sectioning: clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg));
   --flow-space: var(--flow-space-default);
   --spacing-block-xxs: 0.1875rem;
@@ -754,23 +756,29 @@ iframe:not([width]) {
   inline-size: 100%;
 }
 
-* + :is(h1, h2, h3, h4, h5, h6) {
-  margin-block-start: var(--flow-space-heading);
-}
-
 * + :is(article, section) {
-  margin-block-start: var(--flow-space-sectioning);
-  margin-block-start: 4.5rem;
+  margin-block-start: var(--flow-space-sectioning, var(--flow-space, 1em));
 }
 
-* + :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr),
-:is(h1, h2, h3, h4, h5, h6) + div,
-:is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr) + div {
-  margin-block-start: var(--flow-space);
+* + :is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details),
+:is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details) + div {
+  margin-block-start: var(--flow-space, 1em);
 }
 
-li :is(ol, ul, menu, dir) {
-  margin-block-start: unset;
+* + :is(h1, h2, h3, h4, h5, h6) {
+  --flow-space: var(--flow-space-heading, var(--flow-space-default));
+}
+
+li {
+  --flow-space: var(--flow-space-list, var(--flow-space-default));
+}
+
+dt {
+  --flow-space: var(--flow-space-defterm, var(--flow-space-deflist, var(--flow-space-default)));
+}
+
+dd {
+  --flow-space: var(--flow-space-defdata, var(--flow-space-deflist, var(--flow-space-default)));
 }
 
 :root {
@@ -1166,6 +1174,8 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
       literal: (
         default: &quot;var(--spacing-block)&quot;,
         heading: &quot;var(--spacing-block-md)&quot;,
+        list: 0em,
+        deflist: &quot;var(--spacing-block-sm)&quot;,
         sectioning:
           &quot;clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg))&quot;,
       ),
@@ -4140,6 +4150,8 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --container-page: var(--container-xl);
   --flow-space-default: var(--spacing-block);
   --flow-space-heading: var(--spacing-block-md);
+  --flow-space-list: 0em;
+  --flow-space-deflist: var(--spacing-block-sm);
   --flow-space-sectioning: clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg));
   --flow-space: var(--flow-space-default);
   --spacing-block-xxs: 0.1875rem;
@@ -4327,23 +4339,29 @@ iframe:not([width]) {
   inline-size: 100%;
 }
 
-* + :is(h1, h2, h3, h4, h5, h6) {
-  margin-block-start: var(--flow-space-heading);
-}
-
 * + :is(article, section) {
-  margin-block-start: var(--flow-space-sectioning);
-  margin-block-start: 4.5rem;
+  margin-block-start: var(--flow-space-sectioning, var(--flow-space, 1em));
 }
 
-* + :is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr),
-:is(h1, h2, h3, h4, h5, h6) + div,
-:is(p, blockquote, figure, figcaption, pre, dl, ol, ul, menu, dir, hr) + div {
-  margin-block-start: var(--flow-space);
+* + :is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details),
+:is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details) + div {
+  margin-block-start: var(--flow-space, 1em);
 }
 
-li :is(ol, ul, menu, dir) {
-  margin-block-start: unset;
+* + :is(h1, h2, h3, h4, h5, h6) {
+  --flow-space: var(--flow-space-heading, var(--flow-space-default));
+}
+
+li {
+  --flow-space: var(--flow-space-list, var(--flow-space-default));
+}
+
+dt {
+  --flow-space: var(--flow-space-defterm, var(--flow-space-deflist, var(--flow-space-default)));
+}
+
+dd {
+  --flow-space: var(--flow-space-defdata, var(--flow-space-deflist, var(--flow-space-default)));
 }
 
 :root {
@@ -4732,7 +4750,7 @@ pre {
     
       
       <div class="param-details text-block">
-        <p>Sub-units per line allowed by base-line<span class="widont">&nbsp;</span>grid.</p>
+        <p>Sub-units per line allowed by baseline<span class="widont">&nbsp;</span>grid.</p>
 
       </div>
     
