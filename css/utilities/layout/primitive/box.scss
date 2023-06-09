@@ -1,8 +1,17 @@
+////
+/// @group ut-layout
+////
+
+/// Box layout.
+/// @link https://every-layout.dev/ Inspired by Every Layout
 .lyo-box {
   display: block;
-  padding: var(--spacing-block);
-  border: var(--stroke-width-box, var(--stroke-width-default))
-    var(--stroke-style-box, var(--stroke-style-default))
-    var(--stroke-color-box, var(--stroke-color-default));
-  border-radius: var(--radius-box, var(--radius-default));
+  padding: var(--box-space, var(--spacing-block));
+  border: var(
+    --box-border,
+    var(--box-border-width, var(--stroke-width-default))
+      var(--box-border-style, var(--stroke-style-default))
+      var(--box-border-color, var(--stroke-color-default))
+  );
+  border-radius: var(--box-radius, var(--radius-default));
 }

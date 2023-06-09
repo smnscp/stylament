@@ -9,6 +9,7 @@
 
 /// Special homepage header styles.
 body.scp-homepage > header {
+  --cover-space: var(--spacing-block-lg) var(--container-gutter);
   @extend .lyo-cover;
 
   h1 {

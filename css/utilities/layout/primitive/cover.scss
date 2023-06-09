@@ -1,7 +1,14 @@
+////
+/// @group ut-layout
+////
+
+/// Cover layout.
+/// @link https://every-layout.dev/ Inspired by Every Layout
 .lyo-cover {
   display: flex;
   flex-direction: column;
   min-block-size: 100vh;
+  padding: var(--cover-space, var(--spacing-block));
 
   & > * {
     margin-block: auto;

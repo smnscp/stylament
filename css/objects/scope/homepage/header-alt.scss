@@ -4,19 +4,15 @@
 
 /// ## Homepage Header, alternative
 
-@use "../../../utilities/layout/primitive/center";
-@use "../../../utilities/layout/primitive/center-box";
+@use "../../../utilities/layout/primitive/box";
 
 /// Special homepage header styles.
 body.scp-homepage > header.\+alt {
-  --radius-box: var(--radius-xl);
-  --stroke-width-box: var(--stroke-width-8);
-  --stroke-style-box: dashed;
-  --stroke-color-box: var(--color-grey-300);
-  --flow-space: var(--spacing-block-lg);
+  --box-radius: var(--radius-xl);
+  --box-border: var(--stroke-width-8) dashed var(--color-grey-300);
+  --box-space: var(--spacing-block-lg);
 
   & > * {
-    @extend .lyo-center-box;
-    @extend %lyo-center--intrinsic;
+    @extend .lyo-box;
   }
 }
