@@ -57,9 +57,6 @@
   @if $properties {
     @each $name, $alias in $properties {
       --#{$prefix}-#{$name}: var(--#{$prefix}-#{$alias});
-      @if $name == "default" {
-        --#{$prefix}: var(--#{$prefix}-default);
-      }
     }
   }
 }
