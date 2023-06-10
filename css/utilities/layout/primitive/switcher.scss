@@ -1,0 +1,12 @@
+/// Switcher layout.
+/// @link https://every-layout.dev/ Inspired by Every Layout
+/// @link https://heydonworks.com/article/the-flexbox-holy-albatross/ The Flexbox Holy Albatross
+.lyo-switcher {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > * {
+    flex-basis: calc((var(--threshold) - 100%) * 999);
+    flex-grow: 1;
+  }
+}

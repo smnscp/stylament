@@ -5,6 +5,7 @@
 @use "sass:map";
 @use "../../../axioms/properties/specific/layout/container";
 @use "../../../axioms/generic/coloring";
+@use "../../../utilities/layout/primitive/switcher";
 
 /// ## Navigation Menu
 ///
@@ -39,16 +40,12 @@ nav.var-menu {
 /// Places items on a horizontal level if enough space is available.
 nav.var-menu.\+levelable {
   & > menu {
-    display: flex;
-    flex-wrap: wrap;
-
+    // Horizontal nav as long as items have enough space.
+    --threshold: #{$nav-wide};
+    @extend .lyo-switcher;
     & > li {
       display: block;
       text-align: center;
-      // Horizontal nav as long as items have enough space.
-      // https://heydonworks.com/article/the-flexbox-holy-albatross/
-      flex-basis: calc(($nav-wide - 100%) * 999);
-      flex-grow: 1;
     }
   }
 }
