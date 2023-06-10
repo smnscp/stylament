@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.21.1</span>
+          <span class="project-version">0.22.0</span>
         
       </div>
     </header>
@@ -311,7 +311,8 @@
   
     <div data-item-section="prose" class="text-block">
       <h1 id="layout-utilities" tabindex="-1">Layout Utilities</h1>
-<p>These are utility classes for layout<span class="widont">&nbsp;</span>purposes.</p>
+<p>These are classes for layout purposes. Since all layout aspects are presentational
+Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p>
 <h2 id="naming-convention" tabindex="-1">Naming Convention</h2>
 <p>Layout utilities carry the <code>lyo-</code> prefix, e. g. <code>lyo-box</code>.</p>
 
@@ -378,7 +379,83 @@
 
 
 
-<section class="item" id="css--.lyo-wrap-reset">
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="layout-primitives" tabindex="-1">Layout Primitives</h2>
+<p>These are layout primitives greatly inspired by <a href="https://every-layout.dev/">Every<span class="widont">&nbsp;</span>Layout</a>.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-box">
   
     
   
@@ -396,7 +473,7 @@
       
 
       
-        <a href="#css--.lyo-wrap-reset" class="item-name">.lyo-wrap-reset</a>
+        <a href="#css--.lyo-box" class="item-name">.lyo-box</a>
       
 
       
@@ -425,7 +502,1983 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-reset {
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-box {
+  display: block;
+  padding: var(--box-space, var(--spacing-block));
+  border: var(
+    --box-border,
+    var(--box-border-width, var(--stroke-width-default))
+      var(--box-border-style, var(--stroke-style-default))
+      var(--box-border-color, var(--stroke-color-default))
+  );
+  border-radius: var(--box-radius, var(--radius-default));
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Box layout.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-center">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-center" class="item-name">.lyo-center</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-center {
+  display: block;
+  box-sizing: content-box;
+  max-inline-size: var(--container-size);
+  padding-inline: var(--container-gutter);
+  margin-inline: auto;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Center layout.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-center.%5C%2Bintrinsic%2C%0A%25lyo-center--intrinsic">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-center.%5C%2Bintrinsic%2C%0A%25lyo-center--intrinsic" class="item-name">.lyo-center.&#92;+intrinsic,
+%lyo-center--intrinsic</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-center.&#92;+intrinsic,
+%lyo-center--intrinsic {
+  &gt; * {
+    text-align: center;
+    margin-inline: auto;
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Center layout with intrinsic<span class="widont">&nbsp;</span>centering.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-cover">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-cover" class="item-name">.lyo-cover</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-cover {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+  padding: var(--cover-space, var(--spacing-block));
+
+  &amp; &gt; * {
+    margin-block: auto;
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Cover layout.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-switcher">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-switcher" class="item-name">.lyo-switcher</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-switcher {
+  display: flex;
+  flex-wrap: wrap;
+
+  &amp; &gt; * {
+    flex-basis: calc((var(--threshold) - 100%) * 999);
+    flex-grow: 1;
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Switcher layout.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://heydonworks.com/article/the-flexbox-holy-albatross/" class="item-name">The Flexbox Holy Albatross</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h3 id="wrap" tabindex="-1">Wrap</h3>
+<p>Layout utilities to control how successive elements are wrapped in<span class="widont">&nbsp;</span>lines.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--All%20wrap%20layouts">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--All%20wrap%20layouts" class="item-name">All wrap<span class="widont">&nbsp;</span>layouts</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">[class^=&quot;lyo-wrap-&quot;],
+[class*=&quot; lyo-wrap-&quot;] {
+  --min-column-size: calc(0.7 * var(--measure));
+  gap: var(--spacing-block) var(--spacing-inline);
+
+  &amp;:is(article, section) {
+    gap: var(--flow-space-sectioning);
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>General sizing and spacing for wrap<span class="widont">&nbsp;</span>layouts.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--All%20wrap%20layout%20children">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--All%20wrap%20layout%20children" class="item-name">All wrap layout<span class="widont">&nbsp;</span>children</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:is([class^=&quot;lyo-wrap-&quot;], [class*=&quot; lyo-wrap-&quot;]) &gt; * {
+  margin-block: 0;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Do not apply <a href="ax-generic.html#flow-spacing">flow space</a> in flex or grid layout.
+Note: Once <a href="https://www.w3.org/TR/css-contain-3/#style-container">container style queries</a> have sufficient browser
+support this can be done as a generic flow<span class="widont">&nbsp;</span>rule.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-wrap-grid">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-wrap-grid" class="item-name">.lyo-wrap-grid</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-grid {
+  --fill-method: auto-fill;
+  display: grid;
+  grid-template-columns: repeat(
+    var(--fill-method),
+    minmax(min(100%, var(--min-column-size)), 1fr)
+  );
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Wrap in a grid: Get equal columns over all<span class="widont">&nbsp;</span>rows.</p>
+<p>Custom properties:</p>
+<ul>
+<li><code>--min-column-size</code> {number} [70% of current measure]: The minimum size of<span class="widont">&nbsp;</span>columns.</li>
+<li><code>--fill-method</code> {auto-fill|auto-fit}: Use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fill"><code>auto-fill</code></a> to get empty
+filler columns if there are too few grid items for one row. Use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fit"><code>auto-fit</code></a>
+to prevent that behaviour and give all space to the filled<span class="widont">&nbsp;</span>columns.</li>
+</ul>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Modifier%3A%20%2Bfit">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Modifier%3A%20%2Bfit" class="item-name">Modifier: +fit</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-grid.&#92;+fit,
+%lyo-wrap-grid--fit {
+  --fill-method: auto-fit;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Grid layout with fitting under-full<span class="widont">&nbsp;</span>grids.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-wrap-flex">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-wrap-flex" class="item-name">.lyo-wrap-flex</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  &amp; &gt; * {
+    flex-basis: var(--min-column-size);
+    flex-grow: 1;
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Wrap in flexible rows: Similar to the grid, but with the width of columns determined
+individually based on the number of columns in each row. <strong>Example:</strong> Given five items and a
+container that can take three of them in a row, the second row will made up of the two
+remaininng items taking up one half of the space each, instead of leaving the last third<span class="widont">&nbsp;</span>empty.</p>
+<p>Custom properties:</p>
+<ul>
+<li><code>--min-column-size</code> {number} [70% of current measure]: The minimum size of<span class="widont">&nbsp;</span>columns.</li>
+</ul>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-wrap-cluster">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-wrap-cluster" class="item-name">.lyo-wrap-cluster</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: start;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Wrap as cluster (densely<span class="widont">&nbsp;</span>packed).</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Modifier%3A%20%2Bcenter">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Modifier%3A%20%2Bcenter" class="item-name">Modifier: +center</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-cluster.&#92;+center,
+%lyo-wrap-cluster--center {
+  justify-content: center;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Cluster layout with centered<span class="widont">&nbsp;</span>alignment.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Modifier%3A%20%2Bend">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Modifier%3A%20%2Bend" class="item-name">Modifier: +end</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-cluster.&#92;+end,
+%lyo-wrap-cluster--end {
+  justify-content: end;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Cluster layout with alignment to the<span class="widont">&nbsp;</span>end.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Modifier%3A%20%2Bjustified">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Modifier%3A%20%2Bjustified" class="item-name">Modifier: +justified</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-cluster.&#92;+justified,
+%lyo-wrap-cluster--justified {
+  justify-content: space-between;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Cluster layout with justified<span class="widont">&nbsp;</span>alignment.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-reset-wrap">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-reset-wrap" class="item-name">.lyo-reset-wrap</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-reset-wrap {
   grid-column: 1 / -1 !important;
   max-inline-size: unset !important;
   flex: 100% !important;
@@ -441,7 +2494,7 @@
 
   
     <div class="text-block">
-      <p>Reset wrapping.</p>
+      <p>Reset wrapping: Let this item claim the space of the whole<span class="widont">&nbsp;</span>row.</p>
 
       
   

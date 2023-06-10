@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.21.1</span>
+          <span class="project-version">0.22.0</span>
         
       </div>
     </header>
@@ -1319,7 +1319,7 @@
 
 
 
-<section class="item" id="css--nav.var-menu.%5C%2Blevelable">
+<section class="item" id="css--Modifier%3A%20%2Blevelable">
   
     
   
@@ -1337,7 +1337,7 @@
       
 
       
-        <a href="#css--nav.var-menu.%5C%2Blevelable" class="item-name">nav.var-menu.&#92;+levelable</a>
+        <a href="#css--Modifier%3A%20%2Blevelable" class="item-name">Modifier: +levelable</a>
       
 
       
@@ -1368,16 +1368,12 @@
       
       <pre class="hljs-pre"><code class="lang-scss">nav.var-menu.&#92;+levelable {
   &amp; &gt; menu {
-    display: flex;
-    flex-wrap: wrap;
-
+    // Horizontal nav as long as items have enough space.
+    --threshold: #{$nav-wide};
+    @extend .lyo-switcher;
     &amp; &gt; li {
       display: block;
       text-align: center;
-      // Horizontal nav as long as items have enough space.
-      // https://heydonworks.com/article/the-flexbox-holy-albatross/
-      flex-basis: calc(($nav-wide - 100%) * 999);
-      flex-grow: 1;
     }
   }
 }</code></pre>
@@ -1392,8 +1388,220 @@
 
   
     <div class="text-block">
-      <p>Levelable Nav.
+      <p>Levelable menu.
 Places items on a horizontal level if enough space is<span class="widont">&nbsp;</span>available.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="mixin--menu-folded">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--menu-folded" class="item-name">menu-folded()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Menu when folded.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="mixin--toggle-folded">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin--toggle-folded" class="item-name">toggle-folded()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Toggle when folded.</p>
 
       
   
@@ -1499,7 +1707,7 @@ Places items on a horizontal level if enough space is<span class="widont">&nbsp;
 
   
     <div class="text-block">
-      <p>Foldable Nav.
+      <p>Common traits of foldable menu.
 Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
       
@@ -1567,7 +1775,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
 
 
-<section class="item" id="css--%26.%5C%2Bend">
+<section class="item" id="css--Modifier%3A%20%2Bfoldable">
   
     
   
@@ -1585,7 +1793,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
       
 
       
-        <a href="#css--%26.%5C%2Bend" class="item-name">&amp;.&#92;+end</a>
+        <a href="#css--Modifier%3A%20%2Bfoldable" class="item-name">Modifier: +foldable</a>
       
 
       
@@ -1614,7 +1822,439 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">&amp;.&#92;+end {
+      <pre class="hljs-pre"><code class="lang-scss">nav.var-menu.&#92;+foldable,
+nav.var-menu.&#92;+foldable-when-stacked:where(:not(.&#92;+levelable)) {
+  @include menu-foldable;
+
+  // Folded state on wide screen. (Only when explicitly toggled.)
+  @media (min-width: $nav-wide) {
+    &amp; &gt; input[id^=&quot;-toggle-state&quot;]:checked {
+      &amp; ~ menu {
+        @include menu-folded;
+      }
+
+      &amp; ~ label[for^=&quot;-toggle-state&quot;] &gt; :first-child,
+      &amp; ~ label[for^=&quot;-toggle-state&quot;]:empty::after {
+        @include toggle-folded;
+      }
+    }
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Always foldable menu.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Modifier%3A%20%2Bfoldable-when-stacked">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Modifier%3A%20%2Bfoldable-when-stacked" class="item-name">Modifier: +foldable-when-stacked</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">nav.var-menu.&#92;+foldable-when-stacked {
+  @media (max-width: $nav-wide) {
+    @include menu-foldable;
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Menu foldable only when<span class="widont">&nbsp;</span>stacked.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Modal%20menu%20on%20narrow%20screen">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Modal%20menu%20on%20narrow%20screen" class="item-name">Modal menu on narrow<span class="widont">&nbsp;</span>screen</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">nav.var-menu.&#92;+foldable,
+nav.var-menu.&#92;+foldable-when-stacked {
+  @media (max-width: $nav-wide) {
+    &amp; &gt; input[id^=&quot;-toggle-state&quot;] {
+      // Unfolded state on narrow screen.
+      &amp;:checked {
+        // Use `label` as backdrop. Clicking on it toggles the state.
+        &amp; ~ label[for^=&quot;-toggle-state&quot;]::before {
+          content: &quot;&quot;;
+          position: absolute;
+          inset: 0;
+          block-size: 100vh;
+          background: rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      // Folded state on narrow screen. (This is the default, as in not checked.)
+      &amp;:not(:checked) {
+        &amp; ~ menu {
+          @include menu-folded;
+        }
+
+        &amp; ~ label[for^=&quot;-toggle-state&quot;] &gt; :first-child,
+        &amp; ~ label[for^=&quot;-toggle-state&quot;]:empty::after {
+          @include toggle-folded;
+        }
+      }
+    }
+
+    &amp; &gt; menu {
+      position: relative; // Place over backdrop.
+    }
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Special behavior on narrow screen: Act as overlay with<span class="widont">&nbsp;</span>backdrop.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Modifier%3A%20%2Bend">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Modifier%3A%20%2Bend" class="item-name">Modifier: +end</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">nav.var-menu.&#92;+end {
   flex-direction: row-reverse;
 }</code></pre>
     </div>
@@ -1628,7 +2268,8 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
   
     <div class="text-block">
-      <p>Places toggle to the inline end (rhs in<span class="widont">&nbsp;</span>Latin).</p>
+      <p>Places toggle to the inline end (rhs in Latin).
+This only has an effect if the menu is<span class="widont">&nbsp;</span>foldable.</p>
 
       
   
@@ -1695,7 +2336,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
 
 
-<section class="item" id="css--%26%20%3E%20%3Afirst-child%2C%0A%20%20%20%20%26%3Aempty%3A%3Aafter">
+<section class="item" id="css--Modifier%3A%20%2Bsticky">
   
     
   
@@ -1713,152 +2354,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
       
 
       
-        <a href="#css--%26%20%3E%20%3Afirst-child%2C%0A%20%20%20%20%26%3Aempty%3A%3Aafter" class="item-name">&amp; &gt; :first-child,<span class="widont">&nbsp;</span>&amp;:empty::after</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">&amp; &gt; :first-child,
-    &amp;:empty::after {
-  @include coloring.use-colors;
-      display: block;
-      position: relative; // Place over backdrop.
-      max-inline-size: unset;
-      inline-size: var(--toggle-size);
-      block-size: var(--toggle-size);
-      padding: var(--toggle-padding);
-      border: var(--toggle-border);
-      margin: 0;
-      font-size: calc(var(--toggle-size) - 2 * var(--toggle-padding));
-      line-height: 1;
-      text-align: center;
-      font-weight: var(--font-weight-emphasis);
-      transition: all 0.3s var(--easing-default);
-      border-radius: var(--toggle-radius);
-      box-shadow: var(--toggle-shadow);
-      content: var(--toggle-content, &quot;⋮&quot;);
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Toggle</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--nav.var-menu.%5C%2Bsticky">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--nav.var-menu.%5C%2Bsticky" class="item-name">nav.var-menu.&#92;+sticky</a>
+        <a href="#css--Modifier%3A%20%2Bsticky" class="item-name">Modifier: +sticky</a>
       
 
       
@@ -1903,7 +2399,7 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
   
     <div class="text-block">
-      <p>Sticky Nav.
+      <p>Sticky menu.
 Makes navbar stick to the top of the<span class="widont">&nbsp;</span>viewport.</p>
 
       
