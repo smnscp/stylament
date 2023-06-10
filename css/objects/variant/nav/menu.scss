@@ -107,7 +107,8 @@ nav.var-menu.\+levelable {
 
 /// Always foldable menu.
 /// @name Modifier: +foldable
-nav.var-menu.\+foldable {
+nav.var-menu.\+foldable,
+nav.var-menu.\+foldable-when-stacked:where(:not(.\+levelable)) {
   @include menu-foldable;
 
   // Folded state on wide screen. (Only when explicitly toggled.)
