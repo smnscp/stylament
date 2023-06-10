@@ -6,3 +6,4 @@ TODO.md
 .cache
 .parcel-cache
 .DS_Store
+.vscode/settings.json
