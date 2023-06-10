@@ -34,6 +34,7 @@ groups:
     id-tables: Tabular Content
     id-forms: Form-associated Content
     id-interactive: Interactive Elements
+    id-navigation: Navigation
   Objects:
     ob-intro: … Introduction
     ob-variant: Elementary Variants
@@ -45,6 +46,11 @@ groups:
     ut-coloring: Coloring Utilities
     ut-dev: Development Utilities
 herman:
+  extraLinks:
+    - name: Homepage
+      url: https://stylament.sim.ilitu.de/
+    - name: Code
+      url: https://github.com/smnscp/stylament
   sass:
     sassOptions:
       loadPaths:
