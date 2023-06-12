@@ -47,7 +47,8 @@
     }
 
     :target {
-      box-shadow: inset 0 0 .25rem var(--color-links), 0 .5rem .5rem #00000040;
+      outline: var(--color-links-contra) 0.125rem solid;
+      outline-offset: 0.5rem;
       border-radius: var(--radius-xs);
     }
 
@@ -806,7 +807,13 @@
                   <ul>
                     <li>I am a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul#nesting_a_list">nested list item</a>.</li>
                     <li>I am a nested list item, too.</li>
-                    <li>I am a third nested list item.</li>
+                    <li>I am a third nested list item.
+                      <ul>
+                        <li>I am a nested list item.</li>
+                        <li>I am a nested list item, too.</li>
+                        <li>I am a third nested list item.</li>
+                      </ul>
+                    </li>
                   </ul>
                 </li>
                 <li>I am yet another list item.</li>
@@ -821,38 +828,24 @@
           <dd>
             <figure>
               <ol>
-                <li>I am a list item in an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">unordered list</a>.</li>
+                <li>I am a list item in an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol">ordered list</a>.</li>
                 <li>I am a list item, too.</li>
                 <li>I am a third list .
                   <ol>
                     <li>I am a nested list item.</li>
                     <li>I am a nested list item, too.</li>
-                    <li>I am a third nested list item.</li>
+                    <li>I am a third nested list item.
+                      <ol>
+                        <li>I am a nested list item.</li>
+                        <li>I am a nested list item, too.</li>
+                        <li>I am a third nested list item.</li>
+                      </ol>
+                    </li>
                   </ol>
                 </li>
                 <li>I am yet another list item.</li>
               </ol>
               <figcaption><code>ol</code> element with <code>li</code> and <code>a</code></figcaption>
-            </figure>
-          </dd>
-          <dt>Selectors</dt>
-          <dd><code>ol[type]</code></dd>
-          <dt>Example</dt>
-          <dd>
-            <figure>
-              <ol type="I">
-                <li>I am a list item in an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li#ordered_list_with_a_custom_value">ordered list with custom value</a>.</li>
-                <li>I am a list item, too.</li>
-                <li>I am a third list.
-                  <ol type="a">
-                    <li>I am a nested list item.</li>
-                    <li>I am a nested list item, too.</li>
-                    <li>I am a third nested list item.</li>
-                  </ol>
-                </li>
-                <li>I am yet another list item.</li>
-              </ol>
-              <figcaption><code>ol</code> element with <code>type</code> attributes.</figcaption>
             </figure>
           </dd>
           <dt>Selectors</dt>

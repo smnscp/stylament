@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.22.0</span>
+          <span class="project-version">0.22.1</span>
         
       </div>
     </header>
@@ -582,7 +582,7 @@ For the structure of this custom configuration see <a href="#variable--default">
   --container-xl: 80rem;
   --container-xxl: 96rem;
   --container-page: var(--container-sm);
-  --flow-space-default: var(--spacing-block);
+  --flow-space-default: var(--spacing-block-sm);
   --flow-space-heading: var(--spacing-block-md);
   --flow-space-list: 0em;
   --flow-space-deflist: var(--spacing-block-sm);
@@ -1186,7 +1186,7 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
     ),
     flow-space: (
       literal: (
-        default: &quot;var(--spacing-block)&quot;,
+        default: &quot;var(--spacing-block-sm)&quot;,
         heading: &quot;var(--spacing-block-md)&quot;,
         list: 0em,
         deflist: &quot;var(--spacing-block-sm)&quot;,
@@ -3748,6 +3748,7 @@ Kept separate from the default configuration to make it optional to<span class="
   nav: &quot;heading&quot;,
   nav-contra: &quot;heading-contra&quot;,
   hr: &quot;primary-500&quot;,
+  list-marker: &quot;primary-400&quot;,
 );</code></pre>
     </div>
   
@@ -4162,7 +4163,7 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --container-xl: 80rem;
   --container-xxl: 96rem;
   --container-page: var(--container-xl);
-  --flow-space-default: var(--spacing-block);
+  --flow-space-default: var(--spacing-block-sm);
   --flow-space-heading: var(--spacing-block-md);
   --flow-space-list: 0em;
   --flow-space-deflist: var(--spacing-block-sm);
@@ -4299,18 +4300,18 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
 :root {
   --line-root: 1.5;
   --line-root-abs: 1.5rem;
-  --line--2: 1.5rem;
+  --line--2: 0.75rem;
   --line--1: 1.5rem;
   --line-0: 1.5rem;
-  --line-1: 3rem;
+  --line-1: 2.25rem;
   --line-2: 3rem;
   --line-3: 4.5rem;
-  --line-4: 6rem;
-  --line-5: 9rem;
-  --line-6: 13.5rem;
-  --line-7: 19.5rem;
-  --line-8: 28.5rem;
-  --line-9: 43.5rem;
+  --line-4: 6.75rem;
+  --line-5: 9.75rem;
+  --line-6: 14.25rem;
+  --line-7: 21rem;
+  --line-8: 31.5rem;
+  --line-9: 46.5rem;
 }
 
 * {
@@ -4630,9 +4631,9 @@ pre {
       
       <pre class="hljs-pre"><code class="lang-scss">$default: (
   line: (
-    min: 1.1,
+    min: 1.2,
     root: 1.5,
-    sub: 1,
+    sub: 2,
   ),
   scale: (
     base: 1rem,
