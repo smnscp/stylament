@@ -28,4 +28,6 @@ menu {
   }
 }
 
-li {}
+li::marker {
+  color: var(--color-list-marker);
+}
