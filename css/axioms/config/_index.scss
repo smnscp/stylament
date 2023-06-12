@@ -144,7 +144,7 @@ $default: (
     ),
     flow-space: (
       literal: (
-        default: "var(--spacing-block)",
+        default: "var(--spacing-block-sm)",
         heading: "var(--spacing-block-md)",
         list: 0em,
         deflist: "var(--spacing-block-sm)",
