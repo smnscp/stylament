@@ -11,5 +11,5 @@
 ///
 /// Layout utilities carry the `lyo-` prefix, e. g. `lyo-box`.
 
-@use "primitive/wrap";
-@use "complex/page-center";
+@use "primitive";
+@use "complex";
