@@ -17,18 +17,22 @@ blockquote {
   --stroke-color: currentcolor;
   --marker: "“";
   --marker-size: 2;
-  --marker-outdent: 0.5ch;
+  --marker-outdent: 0.45ch;
   padding-inline: var(--indent);
   border-inline-start: var(--no-stroke, var(--stroke-width)) var(--stroke-color) solid;
   margin-inline-start: var(--no-stroke, calc(-1 * var(--stroke-width)));
 
   &::before {
     content: var(--marker);
-    display: block;
-    line-height: 0;
     font-size: calc(var(--marker-size) * 1em);
-    margin-inline-start: calc(-1 * (var(--marker-outdent) + var(--indent, 0) / var(--marker-size)));
-    margin-block-end: calc(-1em / var(--marker-size));
-    margin-block-start: calc(1em / var(--marker-size));
+    // Same line height as content:
+    line-height: calc(var(--line-root) / var(--marker-size));
+    // Take out of flow but keep static position:
+    position: absolute;
+    // Outdent:
+    margin-inline-start: calc(-0.5 * var(--stroke-width) - var(--marker-outdent) - var(--indent, 0ch) / var(--marker-size));
+    // Cover a small piece of the border with background color:
+    block-size: calc(0.75em / var(--marker-size));
+    background-color: var(---clr-bg);
   }
 }
