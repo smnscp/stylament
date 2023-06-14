@@ -54,10 +54,6 @@
       position: relative;
     }
 
-    dd>figure {
-      --flow-space: var(--flow-space-default);
-    }
-
     :not(blockquote)+figcaption {
       font-size: var(--scale--1);
       border: solid var(--stroke-width-1);
@@ -879,12 +875,14 @@
           <dd>
             <figure>
               <blockquote>I am a <code>blockquote</code> element.</blockquote>
+              <p class="dev-lorem-ipsum"></p>
               <figcaption><code>blockquote</code> element stand-alone</figcaption>
             </figure>
             <figure>
               <blockquote class="var-alternate">
                 <p class="dev-lorem-ipsum"></p>
               </blockquote>
+              <p class="dev-lorem-ipsum"></p>
               <figcaption><code>blockquote.var-alternate</code> element stand-alone</figcaption>
             </figure>
             <figure>
