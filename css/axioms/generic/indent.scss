@@ -4,28 +4,45 @@
 
 /// ## Indentation
 
-/// Define a global custom property for indentation.
-/// @name Default Indent
-:root {
-  --indent: var(--spacing-inline);
+/// Indent list roots, i. e. top-level lists.
+///
+/// Custom properties:
+/// * `---indent-root` {Number<ch>}: Indentation of the top level. If this is 0,
+///   the bullet points become [hanging punctuation](https://en.wikipedia.org/wiki/Hanging_punctuation).
+/// * `---indent` {Number<ch>}: Indentation of nested levels.
+///
+/// @name List Root Indentation
+:is(ol, ul, menu) {
+  ---indent-root: var(--indent-list-root, 0);
+  ---indent: var(--indent-list, var(--indent-list-root, var(--indent-default)));
+  padding-inline-start: var(---indent-root);
 }
 
-/// Indent nested lists. Top-level list are excluded from this rule,
-/// hence their bullet points become [hanging punctuation](https://en.wikipedia.org/wiki/Hanging_punctuation).
-/// @name Nested Lists
-li :is(ol, ul, menu, dir) {
-  padding-inline-start: var(--indent);
+/// Indent nested lists. Inheritance allows to customize the indentation of the whole
+/// ilst consistently by only changing the `---indent` property of the root list node.
+/// @name Nested Lists Indentation
+li :is(ol, ul, menu) {
+  ---indent: inherit;
+  padding-inline-start: var(---indent);
 }
 
 /// Indent definition details.
-/// @name Definition Details
+/// @name Definition Details Indentation
 dd {
-  margin-inline-start: var(--indent);
+  ---indent: var(--indent-deflist, var(--indent-default));
+  margin-inline-start: var(---indent);
 }
 
-/// Indent quotation blocks and figures symmetrically.
-/// @name Emphasized Blocks
-blockquote,
+/// Indent quotation blocks symmetrically.
+/// @name Block Quotations Indentation
+blockquote {
+  ---indent: var(--indent-quotation, var(--indent-default));
+  margin-inline: var(---indent);
+}
+
+/// Indent figures symmetrically.
+/// @name Figures Indentation
 figure {
-  margin-inline: var(--indent);
+  ---indent: var(--indent-figure, var(--indent-default));
+  margin-inline: var(---indent);
 }

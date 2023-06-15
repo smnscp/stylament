@@ -1,0 +1,5 @@
+$sections: "article, section, nav, aside";
+$headings: "h1, h2, h3, h4, h5, h6";
+$lists: "ol, ul, menu";
+$dlists: "dl, dt, dd";
+$blocks: "#{$headings}, p, hr, pre, blockquote, #{$lists}, li, #{$dlists}, figure, figcaption, search, table, details";

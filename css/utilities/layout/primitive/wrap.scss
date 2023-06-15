@@ -2,20 +2,28 @@
 /// @group ut-layout
 ////
 
+@use "../../../elements/selectors" as el;
+
 /// ### Wrap
 ///
 /// Layout utilities to control how successive elements are wrapped in lines.
+
+/// @name Default Wrap Space Definition
+* {
+  ---wrap-space: var(--wrap-space-default);
+}
+
+/// @name Wrap Space Definition for Sections
+:is(#{el.$sections}) {
+  ---wrap-space: var(--wrap-space-sectioning);
+}
 
 /// General sizing and spacing for wrap layouts.
 /// @name All wrap layouts
 [class^="lyo-wrap-"],
 [class*=" lyo-wrap-"] {
   --min-column-size: calc(0.7 * var(--measure));
-  gap: var(--spacing-block) var(--spacing-inline);
-
-  &:is(article, section) {
-    gap: var(--flow-space-sectioning);
-  }
+  gap: var(---wrap-space, var(---flow-space));
 }
 
 /// Do not apply [flow space](ax-generic.html#flow-spacing) in flex or grid layout.

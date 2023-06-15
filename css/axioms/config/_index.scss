@@ -142,16 +142,6 @@ $default: (
         page: "xl",
       ),
     ),
-    flow-space: (
-      literal: (
-        default: "var(--spacing-block-sm)",
-        heading: "var(--spacing-block-md)",
-        list: 0em,
-        deflist: "var(--spacing-block-sm)",
-        sectioning:
-          "clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg))",
-      ),
-    ),
     spacing-block: (
       mapped: (
         domain: mapping.$domain-sizes,
@@ -176,6 +166,27 @@ $default: (
       ),
       logical: (
         default: md,
+      ),
+    ),
+    flow-space: (
+      literal: (
+        default: "var(--spacing-block-sm)",
+        heading: "var(--spacing-block-md)",
+        list: 0em,
+        deflist: "var(--spacing-block-sm)",
+        sectioning:
+          "clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg))",
+      ),
+    ),
+    wrap-space: (
+      literal: (
+        default: "var(--flow-space-default) var(--spacing-inline-default)",
+        sectioning: "var(--flow-space-sectioning) var(--spacing-inline-lg)",
+      ),
+    ),
+    indent: (
+      literal: (
+        default: "var(--spacing-inline-default)",
       ),
     ),
   ),
