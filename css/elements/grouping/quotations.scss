@@ -6,33 +6,33 @@
 
 /// Custom properties:
 /// * `---indent` {Number<ch>}: Customize the indent.
-/// * `--stroke-width` {Number<rem|em>}: Customize the width of the stroke.
-/// * `--stroke-color` {Color} [currentcolor]: Customize the color of the stroke.
-/// * `--marker` {String} ["“"]: Customize the marker. Set to `""` to remove it.
-/// * `--marker-size` {Number} [2]: Customize the size of the marker.
-/// * `--marker-outdent` {Number<ch>} [0.5ch]: Customize the outdent of the marker.
-/// * `--no-stroke` {unset|any} [unset]: Set to anything to remove the stroke.
+/// * `---stroke-width` {Number<rem|em>}: Customize the width of the stroke.
+/// * `---stroke-color` {Color} [currentcolor]: Customize the color of the stroke.
+/// * `---marker` {String} ["“"]: Customize the marker. Set to `""` to remove it.
+/// * `---marker-size` {Number} [2]: Customize the size of the marker.
+/// * `---marker-outdent` {Number<ch>} [0.5ch]: Customize the outdent of the marker.
+/// * `---no-stroke` {unset|any} [unset]: Set to anything to remove the stroke.
 blockquote {
-  --stroke-width: var(--stroke-width-4);
-  --stroke-color: currentcolor;
-  --marker: "“";
-  --marker-size: 2;
-  --marker-outdent: 0.45ch;
+  ---stroke-width: var(--stroke-width-4);
+  ---stroke-color: currentcolor;
+  ---marker: "“";
+  ---marker-size: 2;
+  ---marker-outdent: 0.45ch;
   padding-inline: var(---indent);
-  border-inline-start: var(--no-stroke, var(--stroke-width)) var(--stroke-color) solid;
-  margin-inline-start: var(--no-stroke, calc(-1 * var(--stroke-width)));
+  border-inline-start: var(---no-stroke, var(---stroke-width)) var(---stroke-color) solid;
+  margin-inline-start: var(---no-stroke, calc(-1 * var(---stroke-width)));
 
   &::before {
-    content: var(--marker);
-    font-size: calc(var(--marker-size) * 1em);
+    content: var(---marker);
+    font-size: calc(var(---marker-size) * 1em);
     // Same line height as content:
-    line-height: calc(var(--line-root) / var(--marker-size));
+    line-height: calc(var(--line-root) / var(---marker-size));
     // Take out of flow but keep static position:
     position: absolute;
     // Outdent:
-    margin-inline-start: calc(-0.5 * var(--stroke-width) - var(--marker-outdent) - var(---indent, 0ch) / var(--marker-size));
+    margin-inline-start: calc(-0.5 * var(---stroke-width) - var(---marker-outdent) - var(---indent, 0ch) / var(---marker-size));
     // Cover a small piece of the border with background color:
-    block-size: calc(0.75em / var(--marker-size));
+    block-size: calc(0.75em / var(---marker-size));
     background-color: var(---clr-bg);
   }
 }

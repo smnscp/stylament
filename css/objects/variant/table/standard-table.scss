@@ -6,16 +6,16 @@
 /// In contrast to the neutral styles applied to the bare `table` element
 /// this adds some borders and stripes.
 table.var-standard-table {
-  --table-border-width: var(--stroke-width-table, var(--stroke-width-default));
-  --table-border-style: var(--stroke-style-table, var(--stroke-style-default));
-  --table-border-color: var(--stroke-color-table, var(--stroke-color-default));
+  ---table-border-width: var(--stroke-width-table, var(--stroke-width-default));
+  ---table-border-style: var(--stroke-style-table, var(--stroke-style-default));
+  ---table-border-color: var(--stroke-color-table, var(--stroke-color-default));
 
   thead {
-    background-color: var(--background-heavy, var(--color-mark-contra));
+    background-color: var(---background-heavy, var(--color-mark-contra));
   }
 
   tr:nth-child(2n) {
-    background-color: var(--background-light, var(--color-alternate-contra));
+    background-color: var(---background-light, var(--color-alternate-contra));
   }
 
   // Do not center `th` in vertical tables.

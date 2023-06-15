@@ -38,7 +38,7 @@ body {
 /// @name General Measure
 :is(h1, h2, h3, h4, h5, h6),
 :is(p, address, summary, figcaption, caption) {
-  max-inline-size: var(--measure);
+  max-inline-size: var(---measure, var(--measure-default));
 }
 
 /// Generic typography for monospaced elements.

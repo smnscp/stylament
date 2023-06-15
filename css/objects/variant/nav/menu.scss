@@ -21,7 +21,7 @@ $size: 2em;
 
 /// General navigation menu. This is the basic selector with the basic rules applied.
 nav.var-menu {
-  --item-block-size: #{$size};
+  ---item-block-size: #{$size};
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -42,7 +42,7 @@ nav.var-menu {
 nav.var-menu.\+levelable {
   & > menu {
     // Horizontal nav as long as items have enough space.
-    --threshold: #{$nav-wide};
+    ---threshold: #{$nav-wide};
     @extend .lyo-switcher;
     & > li {
       display: block;
@@ -58,16 +58,16 @@ nav.var-menu.\+levelable {
 
 /// Toggle when folded.
 @mixin toggle-folded {
-  border: var(--toggle-folded-border, var(--toggle-border));
-  border-radius: var(--toggle-folded-radius, var(--toggle-radius));
-  box-shadow: var(--toggle-folded-shadow, var(--toggle-shadow));
-  content: var(--toggle-folded-content, var(--toggle-content, "⋯"));
+  border: var(---toggle-folded-border, var(---toggle-border));
+  border-radius: var(---toggle-folded-radius, var(---toggle-radius));
+  box-shadow: var(---toggle-folded-shadow, var(---toggle-shadow));
+  content: var(---toggle-folded-content, var(---toggle-content, "⋯"));
 }
 
 /// Common traits of foldable menu.
 /// Allows to toggle the display of the menu.
 @mixin menu-foldable {
-  --toggle-size: #{$size};
+  ---toggle-size: #{$size};
 
   & > label[for^="-toggle-state"] {
     cursor: context-menu;
@@ -81,19 +81,19 @@ nav.var-menu.\+levelable {
       display: block;
       position: relative; // Place over backdrop.
       max-inline-size: unset;
-      inline-size: var(--toggle-size);
-      block-size: var(--toggle-size);
-      padding: var(--toggle-padding);
-      border: var(--toggle-border);
+      inline-size: var(---toggle-size);
+      block-size: var(---toggle-size);
+      padding: var(---toggle-padding);
+      border: var(---toggle-border);
       margin: 0;
-      font-size: calc(var(--toggle-size) - 2 * var(--toggle-padding));
+      font-size: calc(var(---toggle-size) - 2 * var(---toggle-padding));
       line-height: 1;
       text-align: center;
       font-weight: var(--font-weight-emphasis);
       transition: all 0.3s var(--easing-default);
-      border-radius: var(--toggle-radius);
-      box-shadow: var(--toggle-shadow);
-      content: var(--toggle-content, "⋮");
+      border-radius: var(---toggle-radius);
+      box-shadow: var(---toggle-shadow);
+      content: var(---toggle-content, "⋮");
     }
   }
 

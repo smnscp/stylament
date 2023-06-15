@@ -11,12 +11,12 @@
 
 /// The table itself.
 table {
-  --border-width: var(--table-border-width, 0rem);
+  ---border-width: var(---table-border-width, 0rem);
   border-collapse: collapse;
   padding: 0;
   border-spacing: 0;
   // Compensate border to stay in baseline grid.
-  margin-block-end: calc(-1 * var(--border-width));
+  margin-block-end: calc(-1 * var(---border-width));
 }
 
 /// Table caption.
@@ -43,9 +43,9 @@ tr {
 /// Table cells.
 td,
 th {
-  border: var(--border-width) var(--table-border-color)
-    var(--table-border-style);
-  padding: calc(0.5 * (var(--line-root-abs) - var(--border-width)));
+  border: var(---border-width) var(---table-border-color)
+    var(---table-border-style);
+  padding: calc(0.5 * (var(--line-root-abs) - var(---border-width)));
 }
 
 col {

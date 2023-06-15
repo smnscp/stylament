@@ -22,7 +22,7 @@
 /// @name All wrap layouts
 [class^="lyo-wrap-"],
 [class*=" lyo-wrap-"] {
-  --min-column-size: calc(0.7 * var(--measure));
+  ---min-column-size: calc(0.7 * var(---measure));
   gap: var(---wrap-space, var(---flow-space));
 }
 
@@ -40,19 +40,19 @@
 /// Wrap in a grid: Get equal columns over all rows.
 ///
 /// Custom properties:
-/// * `--min-column-size` {number} [70% of current measure]: The minimum size of columns.
-/// * `--fill-method` {auto-fill|auto-fit}: Use [`auto-fill`][mdn:auto-fill] to get empty
+/// * `---min-column-size` {number} [70% of current measure]: The minimum size of columns.
+/// * `---fill-method` {auto-fill|auto-fit}: Use [`auto-fill`][mdn:auto-fill] to get empty
 ///   filler columns if there are too few grid items for one row. Use [`auto-fit`][mdn:auto-fit]
 ///   to prevent that behaviour and give all space to the filled columns.
 ///
 /// [mdn:auto-fill]: https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fill
 /// [mdn:auto-fit]: https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fit
 .lyo-wrap-grid {
-  --fill-method: auto-fill;
+  ---fill-method: auto-fill;
   display: grid;
   grid-template-columns: repeat(
-    var(--fill-method),
-    minmax(min(100%, var(--min-column-size)), 1fr)
+    var(---fill-method),
+    minmax(min(100%, var(---min-column-size)), 1fr)
   );
 }
 
@@ -60,7 +60,7 @@
 /// @name Modifier: +fit
 .lyo-wrap-grid.\+fit,
 %lyo-wrap-grid--fit {
-  --fill-method: auto-fit;
+  ---fill-method: auto-fit;
 }
 
 /// Wrap in flexible rows: Similar to the grid, but with the width of columns determined
@@ -70,13 +70,13 @@
 /// empty.
 ///
 /// Custom properties:
-/// * `--min-column-size` {number} [70% of current measure]: The minimum size of columns.
+/// * `---min-column-size` {number} [70% of current measure]: The minimum size of columns.
 .lyo-wrap-flex {
   display: flex;
   flex-wrap: wrap;
 
   & > * {
-    flex-basis: var(--min-column-size);
+    flex-basis: var(---min-column-size);
     flex-grow: 1;
   }
 }

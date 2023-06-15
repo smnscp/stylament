@@ -8,9 +8,9 @@
 
 /// Special homepage header styles.
 body.scp-homepage > header.\+alt {
-  --box-radius: var(--radius-xl);
-  --box-border: var(--stroke-width-8) dashed var(--color-grey-300);
-  --box-space: var(--spacing-block-lg);
+  ---box-radius: var(--radius-xl);
+  ---box-border: var(--stroke-width-8) dashed var(--color-grey-300);
+  ---box-space: var(--spacing-block-lg);
 
   & > * {
     @extend .lyo-box;

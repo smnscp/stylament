@@ -3,17 +3,17 @@
 
 {{#> head title="Stylament – Colors" }}
   <style>
-    .dev-color-table {
-      --stroke-width-table: var(--stroke-width-4);
-      --stroke-color-table: var(--color-body-contra);
-      --background-heavy: transparent;
-      --background-light: transparent;
+    table.dev-color-table {
+      ---table-border-width: var(--stroke-width-4);
+      ---table-border-color: var(--color-body-contra);
+      ---background-heavy: transparent;
+      ---background-light: transparent;
     }
-    .dev-color-table th {
+    table.dev-color-table.dev-color-table th {
       text-transform: capitalize;
     }
-    .dev-color-table thead th,
-    .dev-color-table td {
+    table.dev-color-table.dev-color-table thead th,
+    table.dev-color-table.dev-color-table td {
       min-inline-size: var(--length-2);
       max-inline-size: var(--length-2);
       letter-spacing: var(--letter-spacing-xxs);
@@ -45,7 +45,7 @@
             <tr>
               <th>{{this}}</th>
               {{#each ../color.steps}}
-                <td style="background: var(--color-{{../this}}-{{this}});"></td>
+                <td style="background: var(--s-color-{{../this}}-{{this}});"></td>
               {{/each}}
             </tr>
           {{/each}}
