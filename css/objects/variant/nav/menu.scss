@@ -89,8 +89,8 @@ nav.var-menu.\+levelable {
       font-size: calc(var(---toggle-size) - 2 * var(---toggle-padding));
       line-height: 1;
       text-align: center;
-      font-weight: var(--font-weight-emphasis);
-      transition: all 0.3s var(--easing-default);
+      font-weight: var(--s-font-weight-emphasis);
+      transition: all 0.3s var(--s-easing-default);
       border-radius: var(---toggle-radius);
       box-shadow: var(---toggle-shadow);
       content: var(---toggle-content, "⋮");
@@ -101,7 +101,7 @@ nav.var-menu.\+levelable {
     margin-bottom: -100%; // Do not occupy flow space when foldable.
     max-inline-size: 100%;
     overflow: hidden;
-    transition: max-inline-size 0.3s var(--easing-default);
+    transition: max-inline-size 0.3s var(--s-easing-default);
   }
 }
 

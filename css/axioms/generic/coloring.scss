@@ -8,8 +8,8 @@
 /// @param {String} $name Name of the color token.
 /// @param {String} $default [null] Name of the fall-back color token.
 @mixin set-colors($name, $default: null) {
-  ---clr-pos: var(--color-#{$name}, #{if($default, var(--color-#{$default}), inherit)});
-  ---clr-neg: var(--color-#{$name}-contra, #{if($default, var(--color-#{$default}-contra), inherit)});
+  ---clr-pos: var(--s-color-#{$name}, #{if($default, var(--s-color-#{$default}), inherit)});
+  ---clr-neg: var(--s-color-#{$name}-contra, #{if($default, var(--s-color-#{$default}-contra), inherit)});
 }
 
 /// Use abstract color properties as `color` and `background-color`, respectively.

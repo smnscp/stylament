@@ -9,8 +9,8 @@ hr {
   border: none;
   block-size: 0;
   inline-size: 100%;
-  outline-style: var(--stroke-style-hr, var(--stroke-style-default, solid));
-  outline-width: calc(0.5 * var(--stroke-width-hr, var(--stroke-width-default, 0.125rem)));
+  outline-style: var(--s-stroke-style-hr, var(--s-stroke-style-default, solid));
+  outline-width: calc(0.5 * var(--s-stroke-width-hr, var(--s-stroke-width-default, 0.125rem)));
   margin-inline: auto;
-  color: var(--color-hr);
+  color: var(--s-color-hr);
 }

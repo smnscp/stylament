@@ -9,11 +9,11 @@
 
 /// Special homepage header styles.
 body.scp-homepage > header {
-  ---cover-space: var(--spacing-block-lg) var(---container-gutter);
+  ---cover-space: var(--s-spacing-block-lg) var(---container-gutter);
   @extend .lyo-cover;
 
   h1 {
-    font-size: clamp(var(--scale-3), 8vmin, var(--scale-9));
+    font-size: clamp(var(--s-scale-3), 8vmin, var(--s-scale-9));
     line-height: 1;
   }
 

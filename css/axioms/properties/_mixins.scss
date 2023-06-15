@@ -15,11 +15,11 @@
 ///
 /// @param {String} $prefix Property name prefix.
 /// @param {Map} $properties Map of properties with simple literal values.
-/// @output A list of `--<prefix>-*` custom properties with their respective values.
+/// @output A list of `--s-<prefix>-*` custom properties with their respective values.
 @mixin literal-properties($prefix, $properties) {
   @if $properties {
     @each $name, $value in $properties {
-      --#{$prefix}-#{$name}: #{$value};
+      --s-#{$prefix}-#{$name}: #{$value};
     }
   }
 }
@@ -31,7 +31,7 @@
 /// @param {Map} $range [null] Range limiting the domain.
 /// @param {Function} $func [null] Mapping function.
 /// @param {Map} $params [null] Parameters to the function.
-/// @output A list of `--<prefix>-*` custom properties with their respective calculated values.
+/// @output A list of `--s-<prefix>-*` custom properties with their respective calculated values.
 @mixin mapped-properties(
   $prefix,
   $domain: null,
@@ -43,7 +43,7 @@
 
   @if $mapped {
     @each $name, $value in $mapped {
-      --#{$prefix}-#{$name}: #{$value};
+      --s-#{$prefix}-#{$name}: #{$value};
     }
   }
 }
@@ -52,11 +52,11 @@
 ///
 /// @param {String} $prefix Property name prefix.
 /// @param {Map} $properties Map of logical properties.
-/// @output A list of `--<prefix>-*` custom properties referring to others.
+/// @output A list of `--s-<prefix>-*` custom properties referring to others.
 @mixin logical-properties($prefix, $properties) {
   @if $properties {
     @each $name, $alias in $properties {
-      --#{$prefix}-#{$name}: var(--#{$prefix}-#{$alias});
+      --s-#{$prefix}-#{$name}: var(--s-#{$prefix}-#{$alias});
     }
   }
 }
@@ -65,7 +65,7 @@
 ///
 /// @param {String} $prefix Property name prefix.
 /// @param {Map} $conf Configuration map for this set of properties.
-/// @output A list of mapped, literal, and logical `--<prefix>-*` custom properties.
+/// @output A list of mapped, literal, and logical `--s-<prefix>-*` custom properties.
 @mixin configured-properties($prefix, $conf) {
   @if $conf {
     @include mapped-properties(
@@ -81,7 +81,7 @@
       map.has-key($conf, literal, default) or
         map.has-key($conf, logical, default)
     ) {
-      --#{$prefix}: var(--#{$prefix}-default);
+      --s-#{$prefix}: var(--s-#{$prefix}-default);
     }
   }
 }

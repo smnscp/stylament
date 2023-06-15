@@ -4,10 +4,10 @@
 
 .dev-baseline-grid {
   background-image: linear-gradient(0deg, #f001 1px, #f000 1px);
-  background-size: 30em var(--line-root-abs);
+  background-size: 30em var(--s-line-root-abs);
 
   :is(h1, h2, h3, h4, h5, h6, p) {
     background-image: linear-gradient(0deg, #0f04 1px, #0f00 1px);
-    background-size: 30em var(--line-root-abs);
+    background-size: 30em var(--s-line-root-abs);
   }
 }

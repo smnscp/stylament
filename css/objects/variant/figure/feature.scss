@@ -11,15 +11,15 @@ figure.var-feature {
   @include coloring.set-colors("feature", "alternate");
   @include coloring.use-colors;
   margin-inline: 0;
-  padding: var(--spacing-block-lg);
+  padding: var(--s-spacing-block-lg);
 
   blockquote {
     ---no-stroke: true;
     ---indent: 0ch;
     ---marker-outdent: 1ch;
-    font-size: var(--scale-4);
-    line-height: var(--line-3);
-    font-family: var(--font-family-display, var(--font-family-body));
+    font-size: var(--s-scale-4);
+    line-height: var(--s-line-3);
+    font-family: var(--s-font-family-display, var(--s-font-family-body));
   }
 
   > * {

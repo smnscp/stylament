@@ -10,13 +10,13 @@
 /// Used as domain for mapped properties.
 ///
 /// @example css - For generating properties like this
-///   --shadow-xxs: …;
-///   --shadow-xs: …;
-///   --shadow-sm: …;
-///   --shadow-md: …;
-///   --shadow-lg: …;
-///   --shadow-xl: …;
-///   --shadow-xxl: …;
+///   --s-shadow-xxs: …;
+///   --s-shadow-xs: …;
+///   --s-shadow-sm: …;
+///   --s-shadow-md: …;
+///   --s-shadow-lg: …;
+///   --s-shadow-xl: …;
+///   --s-shadow-xxl: …;
 ///
 $sizes: (
   "xxs": -3,
@@ -51,15 +51,15 @@ $tendency: (
 /// Used as default domain for font weight properties.
 ///
 /// @example css - Complete map of commonly used font weights.
-///   --font-weight-thin: 100;
-///   --font-weight-extralight: 200;
-///   --font-weight-light: 300;
-///   --font-weight-regular: 400;
-///   --font-weight-book: 500;
-///   --font-weight-medium: 600;
-///   --font-weight-bold: 700;
-///   --font-weight-black: 800;
-///   --font-weight-ultra: 900;
+///   --s-font-weight-thin: 100;
+///   --s-font-weight-extralight: 200;
+///   --s-font-weight-light: 300;
+///   --s-font-weight-regular: 400;
+///   --s-font-weight-book: 500;
+///   --s-font-weight-medium: 600;
+///   --s-font-weight-bold: 700;
+///   --s-font-weight-black: 800;
+///   --s-font-weight-ultra: 900;
 ///
 $font-weights: (
   "thin": 100,

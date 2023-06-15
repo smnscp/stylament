@@ -59,7 +59,7 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 ///     layout: (
 ///       spacing: (
 ///         literal: (
-///           block: "var(--length-1)",
+///           block: "var(--s-length-1)",
 ///           inline: 4ch,
 ///         ),
 ///       ),
@@ -68,8 +68,8 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 ///
 /// @example css - Result
 ///   :root {
-///     --spacing-block: var(--length-1);
-///     --spacing-inline: 4ch;
+///     --s-spacing-block: var(--s-length-1);
+///     --s-spacing-inline: 4ch;
 ///   }
 ///
 /// @example scss - Defining logical properties (aliases)
@@ -85,7 +85,7 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 ///
 /// @example css - Result
 ///   :root {
-///     --measure-default: var(--measure-md);
+///     --s-measure-default: var(--s-measure-md);
 ///   }
 ///
 /// @example scss - Defining mapped properties (calculated series)
@@ -104,9 +104,9 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 ///
 /// @example css - Result
 ///   :root {
-///     --radius-sm: 0.5rem;
-///     --radius-md: 1rem;
-///     --radius-lg: 1.5rem;
+///     --s-radius-sm: 0.5rem;
+///     --s-radius-md: 1rem;
+///     --s-radius-lg: 1.5rem;
 ///   }
 ///
 /// @type Map
@@ -170,23 +170,25 @@ $default: (
     ),
     flow-space: (
       literal: (
-        default: "var(--spacing-block-sm)",
-        heading: "var(--spacing-block-md)",
+        default: "var(--s-spacing-block-sm)",
+        heading: "var(--s-spacing-block-md)",
         list: 0em,
-        deflist: "var(--spacing-block-sm)",
+        deflist: "var(--s-spacing-block-sm)",
         sectioning:
-          "clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg))",
+          "clamp(var(--s-spacing-block-md), (100vi - var(--s-container-sm)) / 4, var(--s-spacing-block-lg))",
       ),
     ),
     wrap-space: (
       literal: (
-        default: "var(--flow-space-default) var(--spacing-inline-default)",
-        sectioning: "var(--flow-space-sectioning) var(--spacing-inline-lg)",
+        default:
+          "var(--s-flow-space-default) var(--s-spacing-inline-default)",
+        sectioning:
+          "var(--s-flow-space-sectioning) var(--s-spacing-inline-lg)",
       ),
     ),
     indent: (
       literal: (
-        default: "var(--spacing-inline-default)",
+        default: "var(--s-spacing-inline-default)",
       ),
     ),
   ),
@@ -323,7 +325,7 @@ $default: (
     ),
     stroke-color: (
       literal: (
-        default: "var(--color-tertiary-700)",
+        default: "var(--s-color-tertiary-700)",
       ),
       logical: (),
     ),

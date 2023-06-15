@@ -10,12 +10,12 @@
 
 /// @name Default Wrap Space Definition
 * {
-  ---wrap-space: var(--wrap-space-default);
+  ---wrap-space: var(--s-wrap-space-default);
 }
 
 /// @name Wrap Space Definition for Sections
 :is(#{el.$sections}) {
-  ---wrap-space: var(--wrap-space-sectioning);
+  ---wrap-space: var(--s-wrap-space-sectioning);
 }
 
 /// General sizing and spacing for wrap layouts.

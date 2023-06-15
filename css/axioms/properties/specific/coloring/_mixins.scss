@@ -24,14 +24,14 @@
 /// @param {Map} $range Start, end, and step-size of the palette.
 /// @param {String} $prefix Property name prefix.
 /// @param {Map} $suffix Property name suffix (factor: <Number>, inverse: <Boolean>).
-/// @output A list of `--<prefix>-*` custom properties containing the color values of the palette:
+/// @output A list of `--s-<prefix>-*` custom properties containing the color values of the palette:
 ///   ```css
-///   --<prefix>-red-100: hsl(0deg, 100%, 95%);
-///   --<prefix>-red-300: hsl(0deg, 95%, 75%);
-///   --<prefix>-red-500: hsl(0deg, 76%, 57%);
-///   --<prefix>-red-700: hsl(0deg, 61%, 48%);
-///   --<prefix>-red-900: hsl(0deg, 50%, 29%);
-///   --<prefix>-red: var(--<prefix>-red-500);
+///   --s-<prefix>-red-100: hsl(0deg, 100%, 95%);
+///   --s-<prefix>-red-300: hsl(0deg, 95%, 75%);
+///   --s-<prefix>-red-500: hsl(0deg, 76%, 57%);
+///   --s-<prefix>-red-700: hsl(0deg, 61%, 48%);
+///   --s-<prefix>-red-900: hsl(0deg, 50%, 29%);
+///   --s-<prefix>-red: var(--s-<prefix>-red-500);
 ///   ```
 @mixin palette(
   $name,
@@ -65,7 +65,7 @@
       $saturation: 100% * function.polynomial($current, $s-curve...);
       $lightness: 100% * function.polynomial($current, $l-curve...);
     }
-    --#{$prefix}-#{$name}-#{math.round($suffac * if($sufinv, 1 - $current, $current))}: #{hsl(
+    --s-#{$prefix}-#{$name}-#{math.round($suffac * if($sufinv, 1 - $current, $current))}: #{hsl(
         $hue,
         $saturation,
         $lightness

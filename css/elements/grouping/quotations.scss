@@ -13,7 +13,7 @@
 /// * `---marker-outdent` {Number<ch>} [0.5ch]: Customize the outdent of the marker.
 /// * `---no-stroke` {unset|any} [unset]: Set to anything to remove the stroke.
 blockquote {
-  ---stroke-width: var(--stroke-width-4);
+  ---stroke-width: var(--s-stroke-width-4);
   ---stroke-color: currentcolor;
   ---marker: "“";
   ---marker-size: 2;
@@ -26,7 +26,7 @@ blockquote {
     content: var(---marker);
     font-size: calc(var(---marker-size) * 1em);
     // Same line height as content:
-    line-height: calc(var(--line-root) / var(---marker-size));
+    line-height: calc(var(--s-line-root) / var(---marker-size));
     // Take out of flow but keep static position:
     position: absolute;
     // Outdent:

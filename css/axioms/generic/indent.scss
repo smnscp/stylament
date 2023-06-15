@@ -13,8 +13,11 @@
 ///
 /// @name List Root Indentation
 :is(ol, ul, menu) {
-  ---indent-root: var(--indent-list-root, 0);
-  ---indent: var(--indent-list, var(--indent-list-root, var(--indent-default)));
+  ---indent-root: var(--s-indent-list-root, 0);
+  ---indent: var(
+    --s-indent-list,
+    var(--s-indent-list-root, var(--s-indent-default))
+  );
   padding-inline-start: var(---indent-root);
 }
 
@@ -29,20 +32,20 @@ li :is(ol, ul, menu) {
 /// Indent definition details.
 /// @name Definition Details Indentation
 dd {
-  ---indent: var(--indent-deflist, var(--indent-default));
+  ---indent: var(--s-indent-deflist, var(--s-indent-default));
   margin-inline-start: var(---indent);
 }
 
 /// Indent quotation blocks symmetrically.
 /// @name Block Quotations Indentation
 blockquote {
-  ---indent: var(--indent-quotation, var(--indent-default));
+  ---indent: var(--s-indent-quotation, var(--s-indent-default));
   margin-inline: var(---indent);
 }
 
 /// Indent figures symmetrically.
 /// @name Figures Indentation
 figure {
-  ---indent: var(--indent-figure, var(--indent-default));
+  ---indent: var(--s-indent-figure, var(--s-indent-default));
   margin-inline: var(---indent);
 }
