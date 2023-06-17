@@ -58,10 +58,10 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 /// @example scss - Defining literal properties
 ///   $cfg: (
 ///     layout: (
-///       spacing: (
+///       indent: (
 ///         literal: (
-///           block: "var(#{$🌱}length-1)",
-///           inline: 4ch,
+///           editor: 4ch,
+///           extra: "var(--external-var)",
 ///         ),
 ///       ),
 ///     ),
@@ -69,8 +69,8 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 ///
 /// @example css - Result
 ///   :root {
-///     --s-spacing-block: var(--s-length-1);
-///     --s-spacing-inline: 4ch;
+///     --s-indent-editor: 4ch;
+///     --s-indent-extra: var(--external-var);
 ///   }
 ///
 /// @example scss - Defining logical properties (aliases)
@@ -78,7 +78,10 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 ///     typography: (
 ///       measure: (
 ///         logical: (
+///           // Link within the same group:
 ///           default: md,
+///           // Use a leading “/” to refer to any other property:
+///           container: "/container-md",
 ///         ),
 ///       ),
 ///     ),
@@ -87,6 +90,7 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 /// @example css - Result
 ///   :root {
 ///     --s-measure-default: var(--s-measure-md);
+///     --s-measure-container: var(--s-container-md);
 ///   }
 ///
 /// @example scss - Defining mapped properties (calculated series)
@@ -171,12 +175,14 @@ $default: (
     ),
     flow-space: (
       literal: (
-        default: "var(#{$🌱}spacing-block-sm)",
-        heading: "var(#{$🌱}spacing-block-md)",
         list: 0em,
-        deflist: "var(#{$🌱}spacing-block-sm)",
         sectioning:
           "clamp(var(#{$🌱}spacing-block-md), (100vi - var(#{$🌱}container-sm)) / 4, var(#{$🌱}spacing-block-lg))",
+      ),
+      logical: (
+        default: "/spacing-block-sm",
+        heading: "/spacing-block-md",
+        deflist: "/spacing-block-sm",
       ),
     ),
     wrap-space: (
@@ -188,8 +194,8 @@ $default: (
       ),
     ),
     indent: (
-      literal: (
-        default: "var(#{$🌱}spacing-inline-default)",
+      logical: (
+        default: "/spacing-inline-default",
       ),
     ),
   ),
@@ -313,7 +319,6 @@ $default: (
           math.div($-rlh, 24),
         ),
       ),
-      literal: (),
       logical: (
         default: 2,
       ),
@@ -322,13 +327,11 @@ $default: (
       literal: (
         default: "solid",
       ),
-      logical: (),
     ),
     stroke-color: (
-      literal: (
-        default: "var(#{$🌱}color-tertiary-700)",
+      logical: (
+        default: "/color-tertiary-700",
       ),
-      logical: (),
     ),
     easing: (
       literal: easing.$penner,
@@ -337,7 +340,6 @@ $default: (
   coloring: (
     palettes: (),
     color: (
-      literal: (),
       logical: (),
     ),
   ),

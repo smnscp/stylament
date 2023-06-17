@@ -7,6 +7,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:meta";
+@use "sass:string";
 @use "../properties/settings" as *;
 @use "../tools/arithmetic/function";
 @use "../tools/config";
@@ -57,7 +58,12 @@
 @mixin logical-properties($group, $properties) {
   @if $properties {
     @each $name, $alias in $properties {
-      #{$🌱}#{$group}-#{$name}: var(#{$🌱}#{$group}-#{$alias});
+      $alias: if(
+        string.slice(#{$alias}, 1, 1) == "/",
+        string.slice($alias, 2),
+        #{$group}-#{$alias}
+      );
+      #{$🌱}#{$group}-#{$name}: var(#{$🌱}#{$alias});
     }
   }
 }
