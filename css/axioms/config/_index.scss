@@ -186,11 +186,9 @@ $default: (
       ),
     ),
     wrap-space: (
-      literal: (
-        default:
-          "var(#{$🌱}flow-space-default) var(#{$🌱}spacing-inline-default)",
-        sectioning:
-          "var(#{$🌱}flow-space-sectioning) var(#{$🌱}spacing-inline-lg)",
+      logical: (
+        default: "/flow-space-default" "/spacing-inline-default",
+        sectioning: "/flow-space-sectioning" "/spacing-inline-lg",
       ),
     ),
     indent: (

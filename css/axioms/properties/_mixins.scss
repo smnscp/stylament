@@ -58,12 +58,16 @@
 @mixin logical-properties($group, $properties) {
   @if $properties {
     @each $name, $alias in $properties {
-      $alias: if(
-        string.slice(#{$alias}, 1, 1) == "/",
-        string.slice($alias, 2),
-        #{$group}-#{$alias}
-      );
-      #{$🌱}#{$group}-#{$name}: var(#{$🌱}#{$alias});
+      $value: ();
+      @each $part in $alias {
+        $part: if(
+          string.slice(#{$part}, 1, 1) == "/",
+          string.slice($part, 2),
+          #{$group}-#{$part}
+        );
+        $value: list.append($value, var(#{$🌱}#{$part}));
+      }
+      #{$🌱}#{$group}-#{$name}: $value;
     }
   }
 }
