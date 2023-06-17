@@ -4,14 +4,14 @@
 
 /// ## Homepage Header, alternative
 
-@use "../../../axioms/properties/settings" as *;
+@use "../../../axioms/properties/io" as *;
 @use "../../../utilities/layout/primitive/box";
 
 /// Special homepage header styles.
 body.scp-homepage > header.\+alt {
-  ---box-radius: var(#{$🌱}radius-xl);
-  ---box-border: var(#{$🌱}stroke-width-8) dashed var(#{$🌱}color-grey-300);
-  ---box-space: var(#{$🌱}spacing-block-lg);
+  ---box-radius: #{svar(radius-xl)};
+  ---box-border: #{svar(stroke-width-8) dashed svar(color-grey-300)};
+  ---box-space: #{svar(spacing-block-lg)};
 
   & > * {
     @extend .lyo-box;

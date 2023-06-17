@@ -1,9 +1,9 @@
-@use "../../../axioms/properties/settings" as *;
+@use "../../../axioms/properties/io" as *;
 @use "../primitive/center";
 
 :where(body.lyo-page-center) > {
   :where(header, main, footer) {
-    ---container-size: var(#{$🌱}container-page);
+    ---container-size: #{svar(container-page)};
     ---container-gutter: 5vw;
 
     > * {

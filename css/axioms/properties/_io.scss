@@ -1,0 +1,19 @@
+////
+/// @group ax-properties
+////
+
+/// Configurable CSS variable prefix.
+$-prefix: "s-" !default;
+
+/// Shortcut for system CSS variable prefix.
+/// @name 🌱
+$🌱: --#{$-prefix};
+
+/// Shortcut for system CSS variable reference.
+/// @param {string} $name The un-prefixed variable name.
+/// @param {string} $fallback The custom property’s fallback value.
+///   Same as [in `var()`](https://developer.mozilla.org/en-US/docs/Web/CSS/var#declaration-value).
+/// @return {string} A standard [CSS `var()` reference](https://developer.mozilla.org/en-US/docs/Web/CSS/var).
+@function svar($name, $fallback: null) {
+  @return if($fallback, var(#{$🌱}#{$name}, #{$fallback}), var(#{$🌱}#{$name}));
+}

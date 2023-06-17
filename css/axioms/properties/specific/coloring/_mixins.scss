@@ -8,7 +8,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "sass:meta";
-@use "../../../properties/settings" as *;
+@use "../../../properties/io" as *;
 @use "../../../tools/arithmetic/function";
 @use "../../../tools/geometry/parametric-curves/bézier";
 

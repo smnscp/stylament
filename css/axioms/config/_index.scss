@@ -21,7 +21,7 @@
 @use "specific/ui/easing";
 @use "../tools/arithmetic/function";
 @use "../tools/typography/rhythm";
-@use "../properties/settings" as *;
+@use "../properties/io" as *;
 
 /// Configuration to be injected by consumers.
 /// This map is defined by passing `$config-custom` to Stylament.
@@ -177,7 +177,7 @@ $default: (
       literal: (
         list: 0em,
         sectioning:
-          "clamp(var(#{$🌱}spacing-block-md), (100vi - var(#{$🌱}container-sm)) / 4, var(#{$🌱}spacing-block-lg))",
+          clamp(svar(spacing-block-md), (100vi - svar(container-sm)) / 4, svar(spacing-block-lg)),
       ),
       logical: (
         default: "/spacing-block-sm",

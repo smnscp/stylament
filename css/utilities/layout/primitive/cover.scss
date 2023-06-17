@@ -2,14 +2,14 @@
 /// @group ut-layout
 ////
 
-@use "../../../axioms/properties/settings" as *;
+@use "../../../axioms/properties/io" as *;
 
 /// Cover layout.
 .lyo-cover {
   display: flex;
   flex-direction: column;
   min-block-size: 100vh;
-  padding: var(---cover-space, var(#{$🌱}spacing-block));
+  padding: var(---cover-space, svar(spacing-block));
 
   & > * {
     margin-block: auto;

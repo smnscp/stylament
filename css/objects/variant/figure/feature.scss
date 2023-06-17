@@ -3,7 +3,7 @@
 ////
 
 @use "sass:map";
-@use "../../../axioms/properties/settings" as *;
+@use "../../../axioms/properties/io" as *;
 @use "../../../axioms/properties/specific/layout/container";
 @use "../../../axioms/generic/coloring";
 
@@ -12,15 +12,15 @@ figure.var-feature {
   @include coloring.set-colors("feature", "alternate");
   @include coloring.use-colors;
   margin-inline: 0;
-  padding: var(#{$🌱}spacing-block-lg);
+  padding: svar(spacing-block-lg);
 
   blockquote {
     ---no-stroke: true;
     ---indent: 0ch;
     ---marker-outdent: 1ch;
-    font-size: var(#{$🌱}scale-4);
-    line-height: var(#{$🌱}line-3);
-    font-family: var(#{$🌱}font-family-display, var(#{$🌱}font-family-body));
+    font-size: svar(scale-4);
+    line-height: svar(line-3);
+    font-family: svar(font-family-display, svar(font-family-body));
   }
 
   > * {

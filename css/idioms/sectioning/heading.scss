@@ -2,21 +2,21 @@
 /// @group id-sectioning
 ////
 
-@use "../../axioms/properties/settings" as *;
+@use "../../axioms/properties/io" as *;
 
 /// @name New (2022) hgroup semantics
 hgroup {
   p {
-    font-family: var(#{$🌱}font-family-heading);
-    font-weight: var(#{$🌱}font-weight-heading);
+    font-family: svar(font-family-heading);
+    font-weight: svar(font-weight-heading);
     color: var(---clr-fg);
   }
   h1 ~ p {
-    font-size: var(#{$🌱}scale-2);
-    line-height: var(#{$🌱}line-2);
+    font-size: svar(scale-2);
+    line-height: svar(line-2);
   }
   h2 ~ p {
-    font-size: var(#{$🌱}scale-1);
-    line-height: var(#{$🌱}line-1);
+    font-size: svar(scale-1);
+    line-height: svar(line-1);
   }
 }

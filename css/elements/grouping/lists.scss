@@ -4,7 +4,7 @@
 
 /// ### List
 
-@use "../../axioms/properties/settings" as *;
+@use "../../axioms/properties/io" as *;
 
 ol {}
 
@@ -31,5 +31,5 @@ menu {
 }
 
 li::marker {
-  color: var(#{$🌱}color-list-marker);
+  color: svar(color-list-marker);
 }

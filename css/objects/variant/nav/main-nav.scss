@@ -6,28 +6,28 @@
 ///
 /// Rather opinonated styling for the first `nav.var-menu`.
 
-@use "../../../axioms/properties/settings" as *;
+@use "../../../axioms/properties/io" as *;
 @use "../../../axioms/generic/coloring";
 
 /// The  first `nav.var-menu` is implicitly considered the main menu.
 body > nav.var-menu:first-of-type {
-  $size: var(#{$🌱}length-2);
+  $size: svar(length-2);
   ---flow-space: 0em;
   ---item-block-size: #{$size};
-  ---item-line-height: var(#{$🌱}length-1dim);
-  ---item-padding: var(#{$🌱}length-1dim);
+  ---item-line-height: #{svar(length-1dim)};
+  ---item-padding: #{svar(length-1dim)};
   ---toggle-size: #{$size};
-  ---toggle-padding: var(#{$🌱}length-0½);
-  ---toggle-shadow: var(#{$🌱}shadow-sm);
-  ---toggle-folded-shadow: var(#{$🌱}shadow-lg);
+  ---toggle-padding: #{svar(length-0½)};
+  ---toggle-shadow: #{svar(shadow-sm)};
+  ---toggle-folded-shadow: #{svar(shadow-lg)};
 
   & > menu {
-    box-shadow: var(#{$🌱}shadow-sm);
+    box-shadow: svar(shadow-sm);
 
     & > li {
       @include coloring.set-colors("nav", "alternate");
       @include coloring.use-colors;
-      transition: all 0.3s var(#{$🌱}easing-default);
+      transition: all 0.3s svar(easing-default);
       &:hover {
         @include coloring.use-colors-inverse;
       }
@@ -35,7 +35,7 @@ body > nav.var-menu:first-of-type {
       & > a {
         color: inherit;
         background-color: transparent;
-        font-weight: var(#{$🌱}font-weight-emphasis);
+        font-weight: svar(font-weight-emphasis);
         text-decoration: none;
       }
     }

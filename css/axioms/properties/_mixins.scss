@@ -8,7 +8,7 @@
 @use "sass:map";
 @use "sass:meta";
 @use "sass:string";
-@use "../properties/settings" as *;
+@use "../properties/io" as *;
 @use "../tools/arithmetic/function";
 @use "../tools/config";
 @use "../tools/meta" as meta2;
@@ -65,7 +65,7 @@
           string.slice($part, 2),
           #{$group}-#{$part}
         );
-        $value: list.append($value, var(#{$🌱}#{$part}));
+        $value: list.append($value, svar(#{$part}));
       }
       #{$🌱}#{$group}-#{$name}: $value;
     }
@@ -92,7 +92,7 @@
       map.has-key($conf, literal, default) or
         map.has-key($conf, logical, default)
     ) {
-      #{$🌱}#{$group}: var(#{$🌱}#{$group}-default);
+      #{$🌱}#{$group}: svar(#{$group}-default);
     }
   }
 }

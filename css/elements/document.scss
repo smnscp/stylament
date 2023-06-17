@@ -7,7 +7,7 @@
 /// These are elements unique to each document.
 
 @use "../axioms/generic/coloring";
-@use "../axioms/properties/settings" as *;
+@use "../axioms/properties/io" as *;
 
 /// Document root.
 /// Also selectable as `:root` (which has a higher specificity).
@@ -15,7 +15,7 @@
 /// @link https://html.spec.whatwg.org/multipage/semantics.html#the-root-element Spec
 /// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element#main_root MDN
 html {
-  font-size: var(#{$🌱}scale-root, 100%);
+  font-size: svar(scale-root, 100%);
 }
 
 /// Content root.
@@ -34,5 +34,5 @@ body {
 /// @link https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element Spec
 /// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main MDN
 main {
-  padding-block: var(#{$🌱}spacing-block-lg);
+  padding-block: svar(spacing-block-lg);
 }

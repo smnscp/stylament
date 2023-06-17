@@ -2,7 +2,7 @@
 /// @group el-edits
 ////
 
-@use "../axioms/properties/settings" as *;
+@use "../axioms/properties/io" as *;
 
 /// # Edits
 ///
@@ -12,10 +12,10 @@
 
 /// Deletion.
 del {
-  background: var(#{$🌱}color-red-300);
+  background: svar(color-red-300);
 }
 
 /// Insertion.
 ins {
-  background: var(#{$🌱}color-green-300);
+  background: svar(color-green-300);
 }

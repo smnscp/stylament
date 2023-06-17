@@ -2,11 +2,11 @@
 /// @group id-navigation
 ////
 
-@use "../../axioms/properties/settings" as *;
+@use "../../axioms/properties/io" as *;
 
 /// @name Treeview
 [role="tree"] {
-  ---indent: var(#{$🌱}spacing-inline-md);
+  ---indent: #{svar(spacing-inline-md)};
 
   ul {
     list-style: none;

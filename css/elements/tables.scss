@@ -9,7 +9,7 @@
 /// @link https://html.spec.whatwg.org/multipage/tables.html Spec
 /// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element#table_content MDN
 
-@use "../axioms/properties/settings" as *;
+@use "../axioms/properties/io" as *;
 
 /// The table itself.
 table {
@@ -47,7 +47,7 @@ td,
 th {
   border: var(---border-width) var(---table-border-color)
     var(---table-border-style);
-  padding: calc(0.5 * (var(#{$🌱}line-root-abs) - var(---border-width)));
+  padding: calc(0.5 * (svar(line-root-abs) - var(---border-width)));
 }
 
 col {

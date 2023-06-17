@@ -4,17 +4,17 @@
 
 /// ## Homepage Header
 
-@use "../../../axioms/properties/settings" as *;
+@use "../../../axioms/properties/io" as *;
 @use "../../../utilities/layout/primitive/center.scss";
 @use "../../../utilities/layout/primitive/cover";
 
 /// Special homepage header styles.
 body.scp-homepage > header {
-  ---cover-space: var(#{$🌱}spacing-block-lg) var(---container-gutter);
+  ---cover-space: #{svar(spacing-block-lg) var(---container-gutter)};
   @extend .lyo-cover;
 
   h1 {
-    font-size: clamp(var(#{$🌱}scale-3), 8vmin, var(#{$🌱}scale-9));
+    font-size: clamp(svar(scale-3), 8vmin, svar(scale-9));
     line-height: 1;
   }
 

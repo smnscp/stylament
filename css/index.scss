@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "axioms/properties/settings" with (
+@use "axioms/properties/io" with (
   $-prefix: "🎟"
 );
 @use "axioms/config/specific/color/logical";

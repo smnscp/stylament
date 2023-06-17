@@ -5,7 +5,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "../../../config" as cfg;
-@use "../../../properties/settings" as *;
+@use "../../../properties/io" as *;
 @use "../../../tools/arithmetic/function";
 @use "../../../tools/meta";
 @use "../../../tools/typography/rhythm";

@@ -4,14 +4,14 @@
 
 /// ## Coloring Mixins
 
-@use "../properties/settings" as *;
+@use "../properties/io" as *;
 
 /// Set abstract color properties to the color specified by `$name` and its counterpart (`-contra`).
 /// @param {String} $name Name of the color token.
 /// @param {String} $default [null] Name of the fall-back color token.
 @mixin set-colors($name, $default: null) {
-  ---clr-pos: var(#{$🌱}color-#{$name}, #{if($default, var(#{$🌱}color-#{$default}), inherit)});
-  ---clr-neg: var(#{$🌱}color-#{$name}-contra, #{if($default, var(#{$🌱}color-#{$default}-contra), inherit)});
+  ---clr-pos: #{svar(color-#{$name}, #{if($default, svar(color-#{$default}), inherit)})};
+  ---clr-neg: #{svar(color-#{$name}-contra, #{if($default, svar(color-#{$default}-contra), inherit)})};
 }
 
 /// Use abstract color properties as `color` and `background-color`, respectively.

@@ -1,13 +1,13 @@
-@use "../../../axioms/properties/settings" as *;
+@use "../../../axioms/properties/io" as *;
 @use "../../../axioms/generic/coloring";
 
 blockquote.var-alternate {
   @include coloring.set-colors("alternate");
   @include coloring.use-colors;
-  ---indent: var(#{$🌱}spacing-inline-lg);
-  ---stroke-width: var(#{$🌱}stroke-width-8);
+  ---indent: #{svar(spacing-inline-lg)};
+  ---stroke-width: #{svar(stroke-width-8)};
   ---marker: "❝";
   ---marker-size: 1.5;
   ---marker-outdent: -0.75ch;
-  padding-block: var(#{$🌱}length-0½);
+  padding-block: svar(length-0½);
 }

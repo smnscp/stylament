@@ -2,17 +2,17 @@
 /// @group ut-layout
 ////
 
-@use "../../../axioms/properties/settings" as *;
+@use "../../../axioms/properties/io" as *;
 
 /// Box layout.
 .lyo-box {
   display: block;
-  padding: var(---box-space, var(#{$🌱}spacing-block));
+  padding: var(---box-space, svar(spacing-block));
   border: var(
     ---box-border,
-    var(---box-border-width, var(#{$🌱}stroke-width-default))
-      var(---box-border-style, var(#{$🌱}stroke-style-default))
-      var(---box-border-color, var(#{$🌱}stroke-color-default))
+    var(---box-border-width, svar(stroke-width-default))
+      var(---box-border-style, svar(stroke-style-default))
+      var(---box-border-color, svar(stroke-color-default))
   );
-  border-radius: var(---box-radius, var(#{$🌱}radius-default));
+  border-radius: var(---box-radius, svar(radius-default));
 }

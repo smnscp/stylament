@@ -4,15 +4,15 @@
 
 /// ### Thematic break
 
-@use "../../axioms/properties/settings" as *;
+@use "../../axioms/properties/io" as *;
 
 /// Make `hr` line-height neutral, i. e. 0px high, by using `outline` rather than `border`.
 hr {
   border: none;
   block-size: 0;
   inline-size: 100%;
-  outline-style: var(#{$🌱}stroke-style-hr, var(#{$🌱}stroke-style-default, solid));
-  outline-width: calc(0.5 * var(#{$🌱}stroke-width-hr, var(#{$🌱}stroke-width-default, 0.125rem)));
+  outline-style: svar(stroke-style-hr, svar(stroke-style-default, solid));
+  outline-width: calc(0.5 * svar(stroke-width-hr, svar(stroke-width-default, 0.125rem)));
   margin-inline: auto;
-  color: var(#{$🌱}color-hr);
+  color: svar(color-hr);
 }
