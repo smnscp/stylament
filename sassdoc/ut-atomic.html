@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.22.1</span>
+          <span class="project-version">0.23.0</span>
         
       </div>
     </header>
@@ -446,7 +446,7 @@ i. e. set only one property to one specific<span class="widont">&nbsp;</span>val
       
       
       <pre class="hljs-pre"><code class="lang-scss">.&#92;@measure-#{$name} {
-  --measure: var(--measure-#{$name}) !important;
+  ---measure: #{svar(measure-#{$name})} !important;
 }</code></pre>
     </div>
   

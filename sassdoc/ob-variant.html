@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.22.1</span>
+          <span class="project-version">0.23.0</span>
         
       </div>
     </header>
@@ -447,15 +447,15 @@
   @include coloring.set-colors(&quot;feature&quot;, &quot;alternate&quot;);
   @include coloring.use-colors;
   margin-inline: 0;
-  padding: var(--spacing-block-lg);
+  padding: svar(spacing-block-lg);
 
   blockquote {
-    --no-stroke: true;
-    --indent: 0ch;
-    --marker-outdent: 1ch;
-    font-size: var(--scale-4);
-    line-height: var(--line-3);
-    font-family: var(--font-family-display, var(--font-family-body));
+    ---no-stroke: true;
+    ---indent: 0ch;
+    ---marker-outdent: 1ch;
+    font-size: svar(scale-4);
+    line-height: svar(line-3);
+    font-family: svar(font-family-display, svar(font-family-body));
   }
 
   &gt; * {
@@ -711,22 +711,23 @@
       
       
       <pre class="hljs-pre"><code class="lang-scss">body &gt; nav.var-menu:first-of-type {
-  $size: var(--length-2);
-  --item-block-size: #{$size};
-  --item-line-height: var(--length-1dim);
-  --item-padding: var(--length-1dim);
-  --toggle-size: #{$size};
-  --toggle-padding: var(--length-0½);
-  --toggle-shadow: var(--shadow-sm);
-  --toggle-folded-shadow: var(--shadow-lg);
+  $size: svar(length-2);
+  ---flow-space: 0em;
+  ---item-block-size: #{$size};
+  ---item-line-height: #{svar(length-1dim)};
+  ---item-padding: #{svar(length-1dim)};
+  ---toggle-size: #{$size};
+  ---toggle-padding: #{svar(length-0½)};
+  ---toggle-shadow: #{svar(shadow-sm)};
+  ---toggle-folded-shadow: #{svar(shadow-lg)};
 
   &amp; &gt; menu {
-    box-shadow: var(--shadow-sm);
+    box-shadow: svar(shadow-sm);
 
     &amp; &gt; li {
       @include coloring.set-colors(&quot;nav&quot;, &quot;alternate&quot;);
       @include coloring.use-colors;
-      transition: all 0.3s var(--easing-default);
+      transition: all 0.3s svar(easing-default);
       &amp;:hover {
         @include coloring.use-colors-inverse;
       }
@@ -734,7 +735,7 @@
       &amp; &gt; a {
         color: inherit;
         background-color: transparent;
-        font-weight: var(--font-weight-emphasis);
+        font-weight: svar(font-weight-emphasis);
         text-decoration: none;
       }
     }
@@ -1245,7 +1246,7 @@
       
       
       <pre class="hljs-pre"><code class="lang-scss">nav.var-menu {
-  --item-block-size: #{$size};
+  ---item-block-size: #{$size};
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -1387,7 +1388,7 @@
       <pre class="hljs-pre"><code class="lang-scss">nav.var-menu.&#92;+levelable {
   &amp; &gt; menu {
     // Horizontal nav as long as items have enough space.
-    --threshold: #{$nav-wide};
+    ---threshold: #{$nav-wide};
     @extend .lyo-switcher;
     &amp; &gt; li {
       display: block;
@@ -1763,6 +1764,69 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
   
   
     
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@function</span>
+      
+        <a href="
+  ax-properties.html#function--svar" class="item-name">svar()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+      
+        
+        
+        
+
+        
+      
+    
+  </div>
+
+  
     
   
 
@@ -2533,16 +2597,16 @@ Makes navbar stick to the top of the<span class="widont">&nbsp;</span>viewport.<
       
       
       <pre class="hljs-pre"><code class="lang-scss">table.var-standard-table {
-  --table-border-width: var(--stroke-width-table, var(--stroke-width-default));
-  --table-border-style: var(--stroke-style-table, var(--stroke-style-default));
-  --table-border-color: var(--stroke-color-table, var(--stroke-color-default));
+  ---table-border-width: #{svar(stroke-width-table, svar(stroke-width-default))};
+  ---table-border-style: #{svar(stroke-style-table, svar(stroke-style-default))};
+  ---table-border-color: #{svar(stroke-color-table, svar(stroke-color-default))};
 
   thead {
-    background-color: var(--background-heavy, var(--color-mark-contra));
+    background-color: var(---background-heavy, svar(color-mark-contra));
   }
 
   tr:nth-child(2n) {
-    background-color: var(--background-light, var(--color-alternate-contra));
+    background-color: var(---background-light, svar(color-alternate-contra));
   }
 
   // Do not center `th` in vertical tables.

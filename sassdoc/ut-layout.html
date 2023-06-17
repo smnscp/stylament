@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.22.1</span>
+          <span class="project-version">0.23.0</span>
         
       </div>
     </header>
@@ -407,6 +407,82 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
 
   
     <div data-item-section="prose" class="text-block">
+      <h2 id="complex-layouts" tabindex="-1">Complex Layouts</h2>
+<p>These are layouts that affect wider parts of the<span class="widont">&nbsp;</span>document.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
       <h2 id="layout-primitives" tabindex="-1">Layout Primitives</h2>
 <p>These are layout primitives greatly inspired by <a href="https://every-layout.dev/">Every<span class="widont">&nbsp;</span>Layout</a>.</p>
 
@@ -522,14 +598,14 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
       
       <pre class="hljs-pre"><code class="lang-scss">.lyo-box {
   display: block;
-  padding: var(--box-space, var(--spacing-block));
+  padding: var(---box-space, svar(spacing-block));
   border: var(
-    --box-border,
-    var(--box-border-width, var(--stroke-width-default))
-      var(--box-border-style, var(--stroke-style-default))
-      var(--box-border-color, var(--stroke-color-default))
+    ---box-border,
+    var(---box-border-width, svar(stroke-width-default))
+      var(---box-border-style, svar(stroke-style-default))
+      var(---box-border-color, svar(stroke-color-default))
   );
-  border-radius: var(--box-radius, var(--radius-default));
+  border-radius: var(---box-radius, svar(radius-default));
 }</code></pre>
     </div>
   
@@ -659,8 +735,8 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
       <pre class="hljs-pre"><code class="lang-scss">.lyo-center {
   display: block;
   box-sizing: content-box;
-  max-inline-size: var(--container-size);
-  padding-inline: var(--container-gutter);
+  max-inline-size: var(---container-size);
+  padding-inline: var(---container-gutter);
   margin-inline: auto;
 }</code></pre>
     </div>
@@ -925,7 +1001,7 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
   display: flex;
   flex-direction: column;
   min-block-size: 100vh;
-  padding: var(--cover-space, var(--spacing-block));
+  padding: var(---cover-space, svar(spacing-block));
 
   &amp; &gt; * {
     margin-block: auto;
@@ -1061,7 +1137,7 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
   flex-wrap: wrap;
 
   &amp; &gt; * {
-    flex-basis: calc((var(--threshold) - 100%) * 999);
+    flex-basis: calc((var(---threshold) - 100%) * 999);
     flex-grow: 1;
   }
 }</code></pre>
@@ -1257,6 +1333,234 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
 
 
 
+<section class="item" id="css--Default%20Wrap%20Space%20Definition">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Default%20Wrap%20Space%20Definition" class="item-name">Default Wrap Space<span class="widont">&nbsp;</span>Definition</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">* {
+  ---wrap-space: #{svar(wrap-space-default)};
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Wrap%20Space%20Definition%20for%20Sections">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Wrap%20Space%20Definition%20for%20Sections" class="item-name">Wrap Space Definition for<span class="widont">&nbsp;</span>Sections</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:is(#{el.$sections}) {
+  ---wrap-space: #{svar(wrap-space-sectioning)};
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" id="css--All%20wrap%20layouts">
   
     
@@ -1306,12 +1610,8 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
       
       <pre class="hljs-pre"><code class="lang-scss">[class^=&quot;lyo-wrap-&quot;],
 [class*=&quot; lyo-wrap-&quot;] {
-  --min-column-size: calc(0.7 * var(--measure));
-  gap: var(--spacing-block) var(--spacing-inline);
-
-  &amp;:is(article, section) {
-    gap: var(--flow-space-sectioning);
-  }
+  ---min-column-size: calc(0.7 * var(---measure));
+  gap: var(---wrap-space, var(---flow-space));
 }</code></pre>
     </div>
   
@@ -1569,11 +1869,11 @@ support this can be done as a generic flow<span class="widont">&nbsp;</span>rule
       
       
       <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-grid {
-  --fill-method: auto-fill;
+  ---fill-method: auto-fill;
   display: grid;
   grid-template-columns: repeat(
-    var(--fill-method),
-    minmax(min(100%, var(--min-column-size)), 1fr)
+    var(---fill-method),
+    minmax(min(100%, var(---min-column-size)), 1fr)
   );
 }</code></pre>
     </div>
@@ -1590,8 +1890,8 @@ support this can be done as a generic flow<span class="widont">&nbsp;</span>rule
       <p>Wrap in a grid: Get equal columns over all<span class="widont">&nbsp;</span>rows.</p>
 <p>Custom properties:</p>
 <ul>
-<li><code>--min-column-size</code> {number} [70% of current measure]: The minimum size of<span class="widont">&nbsp;</span>columns.</li>
-<li><code>--fill-method</code> {auto-fill|auto-fit}: Use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fill"><code>auto-fill</code></a> to get empty
+<li><code>---min-column-size</code> {number} [70% of current measure]: The minimum size of<span class="widont">&nbsp;</span>columns.</li>
+<li><code>---fill-method</code> {auto-fill|auto-fit}: Use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fill"><code>auto-fill</code></a> to get empty
 filler columns if there are too few grid items for one row. Use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fit"><code>auto-fit</code></a>
 to prevent that behaviour and give all space to the filled<span class="widont">&nbsp;</span>columns.</li>
 </ul>
@@ -1710,7 +2010,7 @@ to prevent that behaviour and give all space to the filled<span class="widont">&
       
       <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-grid.&#92;+fit,
 %lyo-wrap-grid--fit {
-  --fill-method: auto-fit;
+  ---fill-method: auto-fit;
 }</code></pre>
     </div>
   
@@ -1842,7 +2142,7 @@ to prevent that behaviour and give all space to the filled<span class="widont">&
   flex-wrap: wrap;
 
   &amp; &gt; * {
-    flex-basis: var(--min-column-size);
+    flex-basis: var(---min-column-size);
     flex-grow: 1;
   }
 }</code></pre>
@@ -1863,7 +2163,7 @@ container that can take three of them in a row, the second row will made up of t
 remaininng items taking up one half of the space each, instead of leaving the last third<span class="widont">&nbsp;</span>empty.</p>
 <p>Custom properties:</p>
 <ul>
-<li><code>--min-column-size</code> {number} [70% of current measure]: The minimum size of<span class="widont">&nbsp;</span>columns.</li>
+<li><code>---min-column-size</code> {number} [70% of current measure]: The minimum size of<span class="widont">&nbsp;</span>columns.</li>
 </ul>
 
       

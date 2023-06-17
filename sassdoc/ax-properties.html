@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.22.1</span>
+          <span class="project-version">0.23.0</span>
         
       </div>
     </header>
@@ -396,6 +396,631 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
 
 
 
+<section class="item" id="variable---prefix">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#variable---prefix" class="item-name">$-prefix</a>
+      
+
+      
+
+      
+        <span class="item-note">[private]</span>
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">$-prefix: &quot;s-&quot; !default;</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Configurable CSS variable<span class="widont">&nbsp;</span>prefix.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="variable--%F0%9F%8C%B1">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#variable--%F0%9F%8C%B1" class="item-name">$🌱</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">$🌱: --#{$-prefix};</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Shortcut for system CSS variable<span class="widont">&nbsp;</span>prefix.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="function--svar">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@function</span>
+      
+
+      
+        <a href="#function--svar" class="item-name">svar()</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Shortcut for system CSS variable<span class="widont">&nbsp;</span>reference.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters &amp;<span class="widont">&nbsp;</span>Return</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$name:</span>
+      
+      
+      <span class="value-type">(string)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The un-prefixed variable<span class="widont">&nbsp;</span>name.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$fallback:</span>
+      
+      
+      <span class="value-type">(string)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The custom property’s fallback value.
+Same as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var#declaration-value">in <code>var()</code></a>.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+    
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">@return</span>
+      
+      
+      <span class="value-type">(string)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>A standard <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var">CSS <code>var()</code> reference</a>.</p>
+
+      </div>
+    
+  </div>
+
+  
+
+      
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+    
+  <div data-item-section="used-by">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Used By</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-generic.html#mixin--set-colors" class="item-name">set-colors()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+      
+        
+
+        
+      
+        
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-properties.html#mixin--logical-properties" class="item-name">logical-properties()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-properties.html#mixin--configured-properties" class="item-name">configured-properties()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ob-variant.html#mixin--menu-foldable" class="item-name">menu-foldable()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+
+        
+      
+        
+
+        
+      
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
 <section class="item" >
   
     
@@ -556,7 +1181,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     <h4 class="param-title">
       
       
-        <span class="item-name">$prefix:</span>
+        <span class="item-name">$group:</span>
       
       
       <span class="value-type">(String)</span>
@@ -566,7 +1191,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     
       
       <div class="param-details text-block">
-        <p>Property name prefix.</p>
+        <p>Property group name.</p>
 
       </div>
     
@@ -625,7 +1250,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     
       
       <div class="param-details text-block">
-        <p>A list of <code>--&lt;prefix&gt;-*</code> custom properties with their respective<span class="widont">&nbsp;</span>values.</p>
+        <p>A list of <code>--&lt;prefix&gt;&lt;group&gt;-*</code> custom properties with their respective<span class="widont">&nbsp;</span>values.</p>
 
       </div>
     
@@ -813,7 +1438,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     <h4 class="param-title">
       
       
-        <span class="item-name">$prefix:</span>
+        <span class="item-name">$group:</span>
       
       
       <span class="value-type">(String)</span>
@@ -823,7 +1448,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     
       
       <div class="param-details text-block">
-        <p>Property name prefix.</p>
+        <p>Property group name.</p>
 
       </div>
     
@@ -963,7 +1588,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     
       
       <div class="param-details text-block">
-        <p>A list of <code>--&lt;prefix&gt;-*</code> custom properties with their respective calculated<span class="widont">&nbsp;</span>values.</p>
+        <p>A list of <code>--&lt;prefix&gt;&lt;group&gt;-*</code> custom properties with their respective calculated<span class="widont">&nbsp;</span>values.</p>
 
       </div>
     
@@ -1204,7 +1829,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     <h4 class="param-title">
       
       
-        <span class="item-name">$prefix:</span>
+        <span class="item-name">$group:</span>
       
       
       <span class="value-type">(String)</span>
@@ -1214,7 +1839,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     
       
       <div class="param-details text-block">
-        <p>Property name prefix.</p>
+        <p>Property group name.</p>
 
       </div>
     
@@ -1273,7 +1898,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     
       
       <div class="param-details text-block">
-        <p>A list of <code>--&lt;prefix&gt;-*</code> custom properties referring to<span class="widont">&nbsp;</span>others.</p>
+        <p>A list of <code>--&lt;prefix&gt;&lt;group&gt;-*</code> custom properties referring to<span class="widont">&nbsp;</span>others.</p>
 
       </div>
     
@@ -1298,8 +1923,60 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
   
   
   
+    <div class="requires-wrapper">
+      
     
+  <div data-item-section="requires">
     
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@function</span>
+      
+        <a href="
+  ax-properties.html#function--svar" class="item-name">svar()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+      
   
     
   <div data-item-section="used-by">
@@ -1349,6 +2026,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
 
   
 
+    </div>
   
 
   
@@ -1461,7 +2139,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     <h4 class="param-title">
       
       
-        <span class="item-name">$prefix:</span>
+        <span class="item-name">$group:</span>
       
       
       <span class="value-type">(String)</span>
@@ -1471,7 +2149,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     
       
       <div class="param-details text-block">
-        <p>Property name prefix.</p>
+        <p>Property group name.</p>
 
       </div>
     
@@ -1530,7 +2208,7 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
     
       
       <div class="param-details text-block">
-        <p>A list of mapped, literal, and logical <code>--&lt;prefix&gt;-*</code> custom properties.</p>
+        <p>A list of mapped, literal, and logical <code>--&lt;prefix&gt;&lt;group&gt;-*</code> custom properties.</p>
 
       </div>
     
@@ -1662,6 +2340,41 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
       
         <a href="
   ax-properties.html#mixin--logical-properties" class="item-name">logical-properties()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@function</span>
+      
+        <a href="
+  ax-properties.html#function--svar" class="item-name">svar()</a>
       
       
       
@@ -2556,7 +3269,7 @@ If this is definded the other two curves are<span class="widont">&nbsp;</span>ig
     <h4 class="param-title">
       
       
-        <span class="item-name">$prefix:</span>
+        <span class="item-name">$group:</span>
       
       
       <span class="value-type">(String)</span>
@@ -2566,7 +3279,7 @@ If this is definded the other two curves are<span class="widont">&nbsp;</span>ig
     
       
       <div class="param-details text-block">
-        <p>Property name prefix.</p>
+        <p>Property group name.</p>
 
       </div>
     
@@ -2625,13 +3338,12 @@ If this is definded the other two curves are<span class="widont">&nbsp;</span>ig
     
       
       <div class="param-details text-block">
-        <p>A list of <code>--&lt;prefix&gt;-*</code> custom properties containing the color values of the<span class="widont">&nbsp;</span>palette:</p>
-<pre><code class="lang-css">--&lt;prefix&gt;-red-100: hsl(0deg, 100%, 95%);
---&lt;prefix&gt;-red-300: hsl(0deg, 95%, 75%);
---&lt;prefix&gt;-red-500: hsl(0deg, 76%, 57%);
---&lt;prefix&gt;-red-700: hsl(0deg, 61%, 48%);
---&lt;prefix&gt;-red-900: hsl(0deg, 50%, 29%);
---&lt;prefix&gt;-red: var(--&lt;prefix&gt;-red-500);
+        <p>A list of <code>--&lt;prefix&gt;&lt;group&gt;-*</code> custom properties containing the color values of the<span class="widont">&nbsp;</span>palette:</p>
+<pre><code class="lang-css">--s-color-red-100: hsl(0deg, 100%, 95%);
+--s-color-red-300: hsl(0deg, 95%, 75%);
+--s-color-red-500: hsl(0deg, 76%, 57%);
+--s-color-red-700: hsl(0deg, 61%, 48%);
+--s-color-red-900: hsl(0deg, 50%, 29%);
 </code></pre>
 
       </div>
@@ -3530,8 +4242,8 @@ If this is definded the other two curves are<span class="widont">&nbsp;</span>ig
   $line: map.get(cfg.$merged, typography, line);
   $rlh: map.get($line, rlh);
 
-  --line-root: #{map.get($line, root)};
-  --line-root-abs: #{$rlh};
+  #{$🌱}line-root: #{map.get($line, root)};
+  #{$🌱}line-root-abs: #{$rlh};
 
   @for $i
     from map.get($scale, mapped, range, start)
@@ -3542,7 +4254,7 @@ If this is definded the other two curves are<span class="widont">&nbsp;</span>ig
       $i,
       map.get($scale, mapped, params)
     );
-    --line-#{$i}: #{rhythm.grid-line(
+    #{$🌱}line-#{$i}: #{rhythm.grid-line(
         $font-size,
         $rlh,
         map.get($line, min),

@@ -36,8 +36,8 @@
       display: flex;
       flex-direction: column;
       /* act nice-looking */
-      box-shadow: var(--shadow-lg);
-      padding: var(--line-root-abs) 1ch;
+      box-shadow: var(--🎟shadow-lg);
+      padding: var(--🎟line-root-abs) 1ch;
     }
 
     body>main {
@@ -47,37 +47,33 @@
     }
 
     :target {
-      outline: var(--color-links-contra) 0.125rem solid;
+      outline: var(--🎟color-links-contra) 0.125rem solid;
       outline-offset: 0.5rem;
-      border-radius: var(--radius-xs);
+      border-radius: var(--🎟radius-xs);
     }
 
     figure {
-      --figure-border-width: var(--stroke-width-2);
-      --figure-border-color: var(--stroke-color-default);
-      padding: calc(1.5 * (var(--line-root-abs) - var(--figure-border-width)));
-      border: var(--figure-border-width) var(--figure-border-color) solid;
+      ---figure-border-width: var(--🎟stroke-width-2);
+      ---figure-border-color: var(--🎟stroke-color-default);
+      padding: calc(1.5 * (var(--🎟line-root-abs) - var(---figure-border-width)));
+      border: var(---figure-border-width) var(---figure-border-color) solid;
       margin-inline: 0;
-      margin-block-end: calc(-1 * var(--figure-border-width));
+      margin-block-end: calc(-1 * var(---figure-border-width));
       position: relative;
     }
 
-    dd>figure {
-      --flow-space: var(--flow-space-default);
-    }
-
     :not(blockquote)+figcaption {
-      font-size: var(--scale--1);
-      border: solid var(--stroke-width-1);
-      margin: calc(-1 * var(--stroke-width-1));
+      font-size: var(--🎟scale--1);
+      border: solid var(--🎟stroke-width-1);
+      margin: calc(-1 * var(--🎟stroke-width-1));
       position: absolute;
       inset-block-end: 0rem;
       inset-inline-end: 0rem;
-      padding-inline: var(--spacing-inline-xs);
+      padding-inline: var(--🎟spacing-inline-xs);
     }
 
     dt {
-      font-weight: var(--font-weight-emphasis);
+      font-weight: var(--🎟font-weight-emphasis);
     }
 
     aside > details {
@@ -93,10 +89,10 @@
     }
 
     aside h2 {
-      font-size: var(--scale-1);
+      font-size: var(--🎟scale-1);
       margin: initial;
       display: inline;
-      line-height: var(--scale-0);
+      line-height: var(--🎟scale-0);
     }
   </style>
 
@@ -891,12 +887,14 @@
           <dd>
             <figure>
               <blockquote>I am a <code>blockquote</code> element.</blockquote>
+              <p class="dev-lorem-ipsum"></p>
               <figcaption><code>blockquote</code> element stand-alone</figcaption>
             </figure>
             <figure>
               <blockquote class="var-alternate">
                 <p class="dev-lorem-ipsum"></p>
               </blockquote>
+              <p class="dev-lorem-ipsum"></p>
               <figcaption><code>blockquote.var-alternate</code> element stand-alone</figcaption>
             </figure>
             <figure>

@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.22.1</span>
+          <span class="project-version">0.23.0</span>
         
       </div>
     </header>
@@ -521,9 +521,9 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">body.scp-homepage &gt; header.&#92;+alt {
-  --box-radius: var(--radius-xl);
-  --box-border: var(--stroke-width-8) dashed var(--color-grey-300);
-  --box-space: var(--spacing-block-lg);
+  ---box-radius: #{svar(radius-xl)};
+  ---box-border: #{svar(stroke-width-8) dashed svar(color-grey-300)};
+  ---box-space: #{svar(spacing-block-lg)};
 
   &amp; &gt; * {
     @extend .lyo-box;
@@ -730,11 +730,11 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">body.scp-homepage &gt; header {
-  --cover-space: var(--spacing-block-lg) var(--container-gutter);
+  ---cover-space: #{svar(spacing-block-lg) var(---container-gutter)};
   @extend .lyo-cover;
 
   h1 {
-    font-size: clamp(var(--scale-3), 8vmin, var(--scale-9));
+    font-size: clamp(svar(scale-3), 8vmin, svar(scale-9));
     line-height: 1;
   }
 

@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.22.1</span>
+          <span class="project-version">0.23.0</span>
         
       </div>
     </header>
@@ -970,23 +970,27 @@
       
       
       <pre class="hljs-pre"><code class="lang-scss">blockquote {
-  --stroke-width: var(--stroke-width-4);
-  --stroke-color: currentcolor;
-  --marker: &quot;“&quot;;
-  --marker-size: 2;
-  --marker-outdent: 0.5ch;
-  padding-inline: var(--indent);
-  border-inline-start: var(--no-stroke, var(--stroke-width)) var(--stroke-color) solid;
-  margin-inline-start: var(--no-stroke, calc(-1 * var(--stroke-width)));
+  ---stroke-width: #{svar(stroke-width-4)};
+  ---stroke-color: currentcolor;
+  ---marker: &quot;“&quot;;
+  ---marker-size: 2;
+  ---marker-outdent: 0.45ch;
+  padding-inline: var(---indent);
+  border-inline-start: var(---no-stroke, var(---stroke-width)) var(---stroke-color) solid;
+  margin-inline-start: var(---no-stroke, calc(-1 * var(---stroke-width)));
 
   &amp;::before {
-    content: var(--marker);
-    display: block;
-    line-height: 0;
-    font-size: calc(var(--marker-size) * 1em);
-    margin-inline-start: calc(-1 * (var(--marker-outdent) + var(--indent, 0) / var(--marker-size)));
-    margin-block-end: calc(-1em / var(--marker-size));
-    margin-block-start: calc(1em / var(--marker-size));
+    content: var(---marker);
+    font-size: calc(var(---marker-size) * 1em);
+    // Same line height as content:
+    line-height: calc(svar(line-root) / var(---marker-size));
+    // Take out of flow but keep static position:
+    position: absolute;
+    // Outdent:
+    margin-inline-start: calc(-0.5 * var(---stroke-width) - var(---marker-outdent) - var(---indent, 0ch) / var(---marker-size));
+    // Cover a small piece of the border with background color:
+    block-size: calc(0.75em / var(---marker-size));
+    background-color: var(---clr-bg);
   }
 }</code></pre>
     </div>
@@ -1002,13 +1006,13 @@
     <div class="text-block">
       <p>Custom properties:</p>
 <ul>
-<li><code>--indent</code> {Number<ch>}: Customize the<span class="widont">&nbsp;</span>indent.</li>
-<li><code>--stroke-width</code> {Number&lt;rem|em&gt;}: Customize the width of the<span class="widont">&nbsp;</span>stroke.</li>
-<li><code>--stroke-color</code> {Color} [currentcolor]: Customize the color of the<span class="widont">&nbsp;</span>stroke.</li>
-<li><code>--marker</code> {String} [““”]: Customize the marker. Set to <code>&quot;&quot;</code> to remove<span class="widont">&nbsp;</span>it.</li>
-<li><code>--marker-size</code> {Number} [2]: Customize the size of the<span class="widont">&nbsp;</span>marker.</li>
-<li><code>--marker-outdent</code> {Number<ch>} [0.5ch]: Customize the outdent of the<span class="widont">&nbsp;</span>marker.</li>
-<li><code>--no-stroke</code> {unset|any} [unset]: Set to anything to remove the<span class="widont">&nbsp;</span>stroke.</li>
+<li><code>---indent</code> {Number<ch>}: Customize the<span class="widont">&nbsp;</span>indent.</li>
+<li><code>---stroke-width</code> {Number&lt;rem|em&gt;}: Customize the width of the<span class="widont">&nbsp;</span>stroke.</li>
+<li><code>---stroke-color</code> {Color} [currentcolor]: Customize the color of the<span class="widont">&nbsp;</span>stroke.</li>
+<li><code>---marker</code> {String} [““”]: Customize the marker. Set to <code>&quot;&quot;</code> to remove<span class="widont">&nbsp;</span>it.</li>
+<li><code>---marker-size</code> {Number} [2]: Customize the size of the<span class="widont">&nbsp;</span>marker.</li>
+<li><code>---marker-outdent</code> {Number<ch>} [0.5ch]: Customize the outdent of the<span class="widont">&nbsp;</span>marker.</li>
+<li><code>---no-stroke</code> {unset|any} [unset]: Set to anything to remove the<span class="widont">&nbsp;</span>stroke.</li>
 </ul>
 
       
@@ -1202,10 +1206,10 @@
   border: none;
   block-size: 0;
   inline-size: 100%;
-  outline-style: var(--stroke-style-hr, var(--stroke-style-default, solid));
-  outline-width: calc(0.5 * var(--stroke-width-hr, var(--stroke-width-default, 0.125rem)));
+  outline-style: svar(stroke-style-hr, svar(stroke-style-default, solid));
+  outline-width: calc(0.5 * svar(stroke-width-hr, svar(stroke-width-default, 0.125rem)));
   margin-inline: auto;
-  color: var(--color-hr);
+  color: svar(color-hr);
 }</code></pre>
     </div>
   

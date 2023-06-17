@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.22.1</span>
+          <span class="project-version">0.23.0</span>
         
       </div>
     </header>
@@ -834,7 +834,7 @@ of the design<span class="widont">&nbsp;</span>system.</p>
       
       <pre class="hljs-pre"><code class="lang-scss">:target {
   // Give URL fragment target enough air.
-  scroll-margin-block-start: var(--length-3);
+  scroll-margin-block-start: svar(length-3);
 }</code></pre>
     </div>
   
@@ -1355,6 +1355,59 @@ of the design<span class="widont">&nbsp;</span>system.</p>
 
     
       
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@function</span>
+      
+        <a href="
+  ax-properties.html#function--svar" class="item-name">svar()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+      
+        
+        
+        
+
+        
+      
+        
+        
+        
+
+        
       
         
         
@@ -2081,7 +2134,7 @@ iframe:not([width]) {
 
 
 
-<section class="item" id="css--Before%20Sections">
+<section class="item" id="css--Flow%20Space%20Definition%20for%20General%20Blocks">
   
     
   
@@ -2099,7 +2152,7 @@ iframe:not([width]) {
       
 
       
-        <a href="#css--Before%20Sections" class="item-name">Before Sections</a>
+        <a href="#css--Flow%20Space%20Definition%20for%20General%20Blocks" class="item-name">Flow Space Definition for General<span class="widont">&nbsp;</span>Blocks</a>
       
 
       
@@ -2128,8 +2181,8 @@ iframe:not([width]) {
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">* + :is(article, section) {
-  margin-block-start: var(--flow-space-sectioning, var(--flow-space, 1em));
+      <pre class="hljs-pre"><code class="lang-scss">:is(#{el.$blocks}, div) {
+  ---flow-space: #{svar(flow-space-default)};
 }</code></pre>
     </div>
   
@@ -2195,7 +2248,7 @@ iframe:not([width]) {
 
 
 
-<section class="item" id="css--Before%20General%20Blocks">
+<section class="item" id="css--Flow%20Space%20Definition%20for%20Sections">
   
     
   
@@ -2213,7 +2266,7 @@ iframe:not([width]) {
       
 
       
-        <a href="#css--Before%20General%20Blocks" class="item-name">Before General<span class="widont">&nbsp;</span>Blocks</a>
+        <a href="#css--Flow%20Space%20Definition%20for%20Sections" class="item-name">Flow Space Definition for<span class="widont">&nbsp;</span>Sections</a>
       
 
       
@@ -2242,9 +2295,8 @@ iframe:not([width]) {
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">* + :is(#{$-blocks}),
-:is(#{$-blocks}) + div {
-  margin-block-start: var(--flow-space, 1em);
+      <pre class="hljs-pre"><code class="lang-scss">:is(#{el.$sections}) {
+  ---flow-space: #{svar(flow-space-sectioning)};
 }</code></pre>
     </div>
   
@@ -2310,7 +2362,7 @@ iframe:not([width]) {
 
 
 
-<section class="item" id="css--Before%20Headings">
+<section class="item" id="css--Flow%20Space%20Definition%20for%20Headings">
   
     
   
@@ -2328,7 +2380,7 @@ iframe:not([width]) {
       
 
       
-        <a href="#css--Before%20Headings" class="item-name">Before Headings</a>
+        <a href="#css--Flow%20Space%20Definition%20for%20Headings" class="item-name">Flow Space Definition for<span class="widont">&nbsp;</span>Headings</a>
       
 
       
@@ -2357,8 +2409,8 @@ iframe:not([width]) {
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">* + :is(#{$-headings}) {
-  --flow-space: var(--flow-space-heading, var(--flow-space-default));
+      <pre class="hljs-pre"><code class="lang-scss">:is(#{el.$headings}) {
+  ---flow-space: #{svar(flow-space-heading, svar(flow-space-default))};
 }</code></pre>
     </div>
   
@@ -2424,7 +2476,7 @@ iframe:not([width]) {
 
 
 
-<section class="item" id="css--Inside%20Lists">
+<section class="item" id="css--Flow%20Space%20Definition%20for%20List%20Items%20and%20Nested%20Lists">
   
     
   
@@ -2442,7 +2494,7 @@ iframe:not([width]) {
       
 
       
-        <a href="#css--Inside%20Lists" class="item-name">Inside Lists</a>
+        <a href="#css--Flow%20Space%20Definition%20for%20List%20Items%20and%20Nested%20Lists" class="item-name">Flow Space Definition for List Items and Nested<span class="widont">&nbsp;</span>Lists</a>
       
 
       
@@ -2471,8 +2523,9 @@ iframe:not([width]) {
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">li {
-  --flow-space: var(--flow-space-list, var(--flow-space-default));
+      <pre class="hljs-pre"><code class="lang-scss">li,
+li :is(#{el.$lists}) {
+  ---flow-space: #{svar(flow-space-list, svar(flow-space-default))};
 }</code></pre>
     </div>
   
@@ -2538,7 +2591,7 @@ iframe:not([width]) {
 
 
 
-<section class="item" id="css--Inside%20Definition%20Terms">
+<section class="item" id="css--Flow%20Space%20Definition%20for%20Definition%20Terms">
   
     
   
@@ -2556,7 +2609,7 @@ iframe:not([width]) {
       
 
       
-        <a href="#css--Inside%20Definition%20Terms" class="item-name">Inside Definition<span class="widont">&nbsp;</span>Terms</a>
+        <a href="#css--Flow%20Space%20Definition%20for%20Definition%20Terms" class="item-name">Flow Space Definition for Definition<span class="widont">&nbsp;</span>Terms</a>
       
 
       
@@ -2586,7 +2639,10 @@ iframe:not([width]) {
       
       
       <pre class="hljs-pre"><code class="lang-scss">dt {
-  --flow-space: var(--flow-space-defterm, var(--flow-space-deflist, var(--flow-space-default)));
+  ---flow-space: #{svar(
+      flow-space-defterm,
+      svar(flow-space-deflist, svar(flow-space-default))
+    )};
 }</code></pre>
     </div>
   
@@ -2652,7 +2708,7 @@ iframe:not([width]) {
 
 
 
-<section class="item" id="css--Inside%20Definition%20Data">
+<section class="item" id="css--Flow%20Space%20Definition%20for%20Definition%20Data">
   
     
   
@@ -2670,7 +2726,7 @@ iframe:not([width]) {
       
 
       
-        <a href="#css--Inside%20Definition%20Data" class="item-name">Inside Definition<span class="widont">&nbsp;</span>Data</a>
+        <a href="#css--Flow%20Space%20Definition%20for%20Definition%20Data" class="item-name">Flow Space Definition for Definition<span class="widont">&nbsp;</span>Data</a>
       
 
       
@@ -2700,7 +2756,244 @@ iframe:not([width]) {
       
       
       <pre class="hljs-pre"><code class="lang-scss">dd {
-  --flow-space: var(--flow-space-defdata, var(--flow-space-deflist, var(--flow-space-default)));
+  ---flow-space: #{svar(
+      flow-space-defdata,
+      svar(flow-space-deflist, svar(flow-space-default))
+    )};
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Flow%20Space%20Applied%20Before%20General%20Blocks">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Flow%20Space%20Applied%20Before%20General%20Blocks" class="item-name">Flow Space Applied Before General<span class="widont">&nbsp;</span>Blocks</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">* + :is(#{el.$blocks}),
+:is(#{el.$blocks}) + div {
+  margin-block-start: var(---flow-space, 1em);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Flow%20Space%20Applied%20Around%20Sections">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Flow%20Space%20Applied%20Around%20Sections" class="item-name">Flow Space Applied Around<span class="widont">&nbsp;</span>Sections</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">:is(#{el.$sections}) {
+  :where(&amp;:not(:first-child)) {
+    margin-block-start: var(---flow-space);
+  }
+  :where(&amp;:not(:last-child)) {
+    margin-block-end: var(---flow-space);
+  }
 }</code></pre>
     </div>
   
@@ -2841,7 +3134,7 @@ iframe:not([width]) {
 
 
 
-<section class="item" id="css--Default%20Indent">
+<section class="item" id="css--List%20Root%20Indentation">
   
     
   
@@ -2859,7 +3152,7 @@ iframe:not([width]) {
       
 
       
-        <a href="#css--Default%20Indent" class="item-name">Default Indent</a>
+        <a href="#css--List%20Root%20Indentation" class="item-name">List Root<span class="widont">&nbsp;</span>Indentation</a>
       
 
       
@@ -2888,8 +3181,10 @@ iframe:not([width]) {
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  --indent: var(--spacing-inline);
+      <pre class="hljs-pre"><code class="lang-scss">:is(ol, ul, menu) {
+  ---indent-root: #{svar(indent-list-root, 0)};
+  ---indent: #{svar(indent-list, svar(indent-list-root, svar(indent-default)))};
+  padding-inline-start: var(---indent-root);
 }</code></pre>
     </div>
   
@@ -2902,7 +3197,13 @@ iframe:not([width]) {
 
   
     <div class="text-block">
-      <p>Define a global custom property for<span class="widont">&nbsp;</span>indentation.</p>
+      <p>Indent list roots, i. e. top-level<span class="widont">&nbsp;</span>lists.</p>
+<p>Custom properties:</p>
+<ul>
+<li><code>---indent-root</code> {Number<ch>}: Indentation of the top level. If this is 0,
+the bullet points become <a href="https://en.wikipedia.org/wiki/Hanging_punctuation">hanging<span class="widont">&nbsp;</span>punctuation</a>.</li>
+<li><code>---indent</code> {Number<ch>}: Indentation of nested<span class="widont">&nbsp;</span>levels.</li>
+</ul>
 
       
   
@@ -2969,7 +3270,7 @@ iframe:not([width]) {
 
 
 
-<section class="item" id="css--Nested%20Lists">
+<section class="item" id="css--Nested%20Lists%20Indentation">
   
     
   
@@ -2987,7 +3288,7 @@ iframe:not([width]) {
       
 
       
-        <a href="#css--Nested%20Lists" class="item-name">Nested Lists</a>
+        <a href="#css--Nested%20Lists%20Indentation" class="item-name">Nested Lists<span class="widont">&nbsp;</span>Indentation</a>
       
 
       
@@ -3016,8 +3317,9 @@ iframe:not([width]) {
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">li :is(ol, ul, menu, dir) {
-  padding-inline-start: var(--indent);
+      <pre class="hljs-pre"><code class="lang-scss">li :is(ol, ul, menu) {
+  ---indent: inherit;
+  padding-inline-start: var(---indent);
 }</code></pre>
     </div>
   
@@ -3030,8 +3332,8 @@ iframe:not([width]) {
 
   
     <div class="text-block">
-      <p>Indent nested lists. Top-level list are excluded from this rule,
-hence their bullet points become <a href="https://en.wikipedia.org/wiki/Hanging_punctuation">hanging<span class="widont">&nbsp;</span>punctuation</a>.</p>
+      <p>Indent nested lists. Inheritance allows to customize the indentation of the whole
+ilst consistently by only changing the <code>---indent</code> property of the root list<span class="widont">&nbsp;</span>node.</p>
 
       
   
@@ -3098,7 +3400,7 @@ hence their bullet points become <a href="https://en.wikipedia.org/wiki/Hanging_
 
 
 
-<section class="item" id="css--Definition%20Details">
+<section class="item" id="css--Definition%20Details%20Indentation">
   
     
   
@@ -3116,7 +3418,7 @@ hence their bullet points become <a href="https://en.wikipedia.org/wiki/Hanging_
       
 
       
-        <a href="#css--Definition%20Details" class="item-name">Definition Details</a>
+        <a href="#css--Definition%20Details%20Indentation" class="item-name">Definition Details<span class="widont">&nbsp;</span>Indentation</a>
       
 
       
@@ -3146,7 +3448,8 @@ hence their bullet points become <a href="https://en.wikipedia.org/wiki/Hanging_
       
       
       <pre class="hljs-pre"><code class="lang-scss">dd {
-  margin-inline-start: var(--indent);
+  ---indent: #{svar(indent-deflist, svar(indent-default))};
+  margin-inline-start: var(---indent);
 }</code></pre>
     </div>
   
@@ -3226,7 +3529,7 @@ hence their bullet points become <a href="https://en.wikipedia.org/wiki/Hanging_
 
 
 
-<section class="item" id="css--Emphasized%20Blocks">
+<section class="item" id="css--Block%20Quotations%20Indentation">
   
     
   
@@ -3244,7 +3547,7 @@ hence their bullet points become <a href="https://en.wikipedia.org/wiki/Hanging_
       
 
       
-        <a href="#css--Emphasized%20Blocks" class="item-name">Emphasized Blocks</a>
+        <a href="#css--Block%20Quotations%20Indentation" class="item-name">Block Quotations<span class="widont">&nbsp;</span>Indentation</a>
       
 
       
@@ -3273,9 +3576,9 @@ hence their bullet points become <a href="https://en.wikipedia.org/wiki/Hanging_
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">blockquote,
-figure {
-  margin-inline: var(--indent);
+      <pre class="hljs-pre"><code class="lang-scss">blockquote {
+  ---indent: #{svar(indent-quotation, svar(indent-default))};
+  margin-inline: var(---indent);
 }</code></pre>
     </div>
   
@@ -3288,7 +3591,136 @@ figure {
 
   
     <div class="text-block">
-      <p>Indent quotation blocks and figures<span class="widont">&nbsp;</span>symmetrically.</p>
+      <p>Indent quotation blocks<span class="widont">&nbsp;</span>symmetrically.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--Figures%20Indentation">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--Figures%20Indentation" class="item-name">Figures Indentation</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">figure {
+  ---indent: #{svar(indent-figure, svar(indent-default))};
+  margin-inline: var(---indent);
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Indent figures symmetrically.</p>
 
       
   
@@ -3478,7 +3910,7 @@ figure {
       
       
       <pre class="hljs-pre"><code class="lang-scss">html {
-  line-height: var(--line-root);
+  line-height: svar(line-root);
 }</code></pre>
     </div>
   
@@ -3606,10 +4038,10 @@ figure {
       
       
       <pre class="hljs-pre"><code class="lang-scss">body {
-  font-family: var(--font-family-body);
-  font-weight: var(--font-weight-body);
-  font-size: var(--scale-0);
-  line-height: var(--line-0);
+  font-family: svar(font-family-body);
+  font-weight: svar(font-weight-body);
+  font-size: svar(scale-0);
+  line-height: svar(line-0);
 }</code></pre>
     </div>
   
@@ -3737,8 +4169,8 @@ figure {
       
       
       <pre class="hljs-pre"><code class="lang-scss">:is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-heading);
+  font-family: svar(font-family-heading);
+  font-weight: svar(font-weight-heading);
 }</code></pre>
     </div>
   
@@ -3866,8 +4298,8 @@ figure {
       
       
       <pre class="hljs-pre"><code class="lang-scss">h#{$level} {
-  font-size: var(--scale-#{4 - $level});
-    line-height: var(--line-#{4 - $level});
+  font-size: svar(scale-#{4 - $level});
+    line-height: svar(line-#{4 - $level});
 }</code></pre>
     </div>
   
@@ -3996,7 +4428,7 @@ figure {
       
       <pre class="hljs-pre"><code class="lang-scss">:is(h1, h2, h3, h4, h5, h6),
 :is(p, address, summary, figcaption, caption) {
-  max-inline-size: var(--measure);
+  max-inline-size: var(---measure, svar(measure-default));
 }</code></pre>
     </div>
   
@@ -4125,7 +4557,7 @@ figure {
       
       <pre class="hljs-pre"><code class="lang-scss">:is(code, kbd, samp),
 pre {
-  font-family: var(--font-family-mono);
+  font-family: svar(font-family-mono);
 }</code></pre>
     </div>
   
@@ -4253,7 +4685,7 @@ pre {
       
       
       <pre class="hljs-pre"><code class="lang-scss">:is(small, sub, sup) {
-  font-size: var(--scale-smaller);
+  font-size: svar(scale-smaller);
 }</code></pre>
     </div>
   

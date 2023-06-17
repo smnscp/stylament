@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.22.1</span>
+          <span class="project-version">0.23.0</span>
         
       </div>
     </header>
@@ -562,176 +562,181 @@ For the structure of this custom configuration see <a href="#variable--default">
       
       <pre class="hljs-pre"><code class="lang-css">@charset &quot;UTF-8&quot;;
 :root {
-  --length-0aug: 0.375rem;
-  --length-0½: 0.75rem;
-  --length-1dim: 1.125rem;
-  --length-1: 1.5rem;
-  --length-1aug: 1.875rem;
-  --length-1½: 2.25rem;
-  --length-2dim: 2.625rem;
-  --length-2: 3rem;
-  --length-2aug: 3.375rem;
-  --length-2½: 3.75rem;
-  --length-3dim: 4.125rem;
-  --length-3: 4.5rem;
-  --container-xxs: 0rem;
-  --container-xs: 16rem;
-  --container-sm: 32rem;
-  --container-md: 48rem;
-  --container-lg: 64rem;
-  --container-xl: 80rem;
-  --container-xxl: 96rem;
-  --container-page: var(--container-sm);
-  --flow-space-default: var(--spacing-block-sm);
-  --flow-space-heading: var(--spacing-block-md);
-  --flow-space-list: 0em;
-  --flow-space-deflist: var(--spacing-block-sm);
-  --flow-space-sectioning: clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg));
-  --flow-space: var(--flow-space-default);
-  --spacing-block-xxs: 0.1875rem;
-  --spacing-block-xs: 0.375rem;
-  --spacing-block-sm: 0.75rem;
-  --spacing-block-md: 1.5rem;
-  --spacing-block-lg: 3rem;
-  --spacing-block-xl: 6rem;
-  --spacing-block-xxl: 12rem;
-  --spacing-block-default: var(--spacing-block-md);
-  --spacing-block: var(--spacing-block-default);
-  --spacing-inline-xxs: 0.25ch;
-  --spacing-inline-xs: 0.5ch;
-  --spacing-inline-sm: 1ch;
-  --spacing-inline-md: 2ch;
-  --spacing-inline-lg: 4ch;
-  --spacing-inline-xl: 8ch;
-  --spacing-inline-xxl: 16ch;
-  --spacing-inline-default: var(--spacing-inline-md);
-  --spacing-inline: var(--spacing-inline-default);
-  --spacing-sectioning: var(--spacing-block);
-  --font-family-sans: Helvetica;
-  --font-family-serif: Times;
-  --font-family-mono: Courier;
-  --font-family-body: var(--font-family-serif);
-  --font-family-heading: var(--font-family-sans);
-  --font-family-display: var(--font-family-body);
-  --font-weight-thin: 100;
-  --font-weight-extralight: 200;
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-book: 500;
-  --font-weight-medium: 600;
-  --font-weight-bold: 700;
-  --font-weight-black: 800;
-  --font-weight-ultra: 900;
-  --font-weight-body: var(--font-weight-regular);
-  --font-weight-emphasis: var(--font-weight-bold);
-  --font-weight-heading: var(--font-weight-bold);
-  --letter-spacing-xxs: -0.075em;
-  --letter-spacing-xs: -0.05em;
-  --letter-spacing-sm: -0.025em;
-  --letter-spacing-md: 0em;
-  --letter-spacing-lg: 0.025em;
-  --letter-spacing-xl: 0.05em;
-  --letter-spacing-xxl: 0.075em;
-  --letter-spacing-none: var(--letter-spacing-md);
-  --measure-xxs: 25ch;
-  --measure-xs: 36ch;
-  --measure-sm: 49ch;
-  --measure-md: 64ch;
-  --measure-lg: 81ch;
-  --measure-xl: 100ch;
-  --measure-xxl: 121ch;
-  --measure-full: 100%;
-  --measure-inf: unset;
-  --measure-default: var(--measure-md);
-  --measure: var(--measure-default);
-  --scale--2: 0.4444444444em;
-  --scale--1: 0.6666666667em;
-  --scale-0: 1em;
-  --scale-1: 1.5em;
-  --scale-2: 2.25em;
-  --scale-3: 3.375em;
-  --scale-4: 5.0625em;
-  --scale-5: 7.59375em;
-  --scale-6: 11.390625em;
-  --scale-7: 17.0859375em;
-  --scale-8: 25.62890625em;
-  --scale-9: 38.443359375em;
-  --scale-ratio: 1.5;
-  --scale-smaller: 66.6666666667%;
-  --scale-larger: 150%;
-  --radius-xxs: 0rem;
-  --radius-xs: 0.2rem;
-  --radius-sm: 0.4rem;
-  --radius-md: 0.6rem;
-  --radius-lg: 0.8rem;
-  --radius-xl: 1rem;
-  --radius-xxl: 1.2rem;
-  --radius-ellipse: 100%;
-  --radius-obround: 999rem;
-  --shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
-  --shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
-  --shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
-  --shadow-md: 0rem 0.25rem 0.5rem rgb(0 0 0 / 0.25);
-  --shadow-lg: 0rem 0.5rem 1rem rgb(0 0 0 / 0.265625);
-  --shadow-xl: 0rem 1rem 2rem rgb(0 0 0 / 0.28125);
-  --shadow-xxl: 0rem 2rem 4rem rgb(0 0 0 / 0.296875);
-  --stroke-width-1: 0.0625rem;
-  --stroke-width-2: 0.125rem;
-  --stroke-width-3: 0.1875rem;
-  --stroke-width-4: 0.25rem;
-  --stroke-width-5: 0.3125rem;
-  --stroke-width-6: 0.375rem;
-  --stroke-width-7: 0.4375rem;
-  --stroke-width-8: 0.5rem;
-  --stroke-width-default: var(--stroke-width-2);
-  --stroke-width: var(--stroke-width-default);
-  --stroke-style-default: solid;
-  --stroke-style: var(--stroke-style-default);
-  --stroke-color-default: var(--color-tertiary-700);
-  --stroke-color: var(--stroke-color-default);
-  --easing-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-  --easing-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  --easing-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  --easing-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-  --easing-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
-  --easing-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
-  --easing-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
-  --easing-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-  --easing-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --easing-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
-  --easing-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
-  --easing-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-  --easing-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
-  --easing-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-  --easing-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
-  --easing-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --easing-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  --easing-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
-  --easing-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
-  --easing-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
-  --easing-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  --easing-in-out-expo: cubic-bezier(1, 0, 0, 1);
-  --easing-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  --easing-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --easing-default: ease-in-out;
-  --easing: var(--easing-default);
+  --s-length-0aug: 0.375rem;
+  --s-length-0½: 0.75rem;
+  --s-length-1dim: 1.125rem;
+  --s-length-1: 1.5rem;
+  --s-length-1aug: 1.875rem;
+  --s-length-1½: 2.25rem;
+  --s-length-2dim: 2.625rem;
+  --s-length-2: 3rem;
+  --s-length-2aug: 3.375rem;
+  --s-length-2½: 3.75rem;
+  --s-length-3dim: 4.125rem;
+  --s-length-3: 4.5rem;
+  --s-container-xxs: 0rem;
+  --s-container-xs: 16rem;
+  --s-container-sm: 32rem;
+  --s-container-md: 48rem;
+  --s-container-lg: 64rem;
+  --s-container-xl: 80rem;
+  --s-container-xxl: 96rem;
+  --s-container-page: var(--s-container-sm);
+  --s-spacing-block-xxs: 0.1875rem;
+  --s-spacing-block-xs: 0.375rem;
+  --s-spacing-block-sm: 0.75rem;
+  --s-spacing-block-md: 1.5rem;
+  --s-spacing-block-lg: 3rem;
+  --s-spacing-block-xl: 6rem;
+  --s-spacing-block-xxl: 12rem;
+  --s-spacing-block-default: var(--s-spacing-block-md);
+  --s-spacing-block: var(--s-spacing-block-default);
+  --s-spacing-inline-xxs: 0.25ch;
+  --s-spacing-inline-xs: 0.5ch;
+  --s-spacing-inline-sm: 1ch;
+  --s-spacing-inline-md: 2ch;
+  --s-spacing-inline-lg: 4ch;
+  --s-spacing-inline-xl: 8ch;
+  --s-spacing-inline-xxl: 16ch;
+  --s-spacing-inline-default: var(--s-spacing-inline-md);
+  --s-spacing-inline: var(--s-spacing-inline-default);
+  --s-flow-space-list: 0em;
+  --s-flow-space-sectioning: clamp(var(--s-spacing-block-md), (100vi - var(--s-container-sm)) / 4, var(--s-spacing-block-lg));
+  --s-flow-space-default: var(--s-spacing-block-sm);
+  --s-flow-space-heading: var(--s-spacing-block-md);
+  --s-flow-space-deflist: var(--s-spacing-block-sm);
+  --s-flow-space: var(--s-flow-space-default);
+  --s-wrap-space-default: var(--s-flow-space-default) var(--s-spacing-inline-default);
+  --s-wrap-space-sectioning: var(--s-flow-space-sectioning) var(--s-spacing-inline-lg);
+  --s-wrap-space: var(--s-wrap-space-default);
+  --s-indent-default: var(--s-spacing-inline-default);
+  --s-indent: var(--s-indent-default);
+  --s-spacing-sectioning: var(--s-spacing-block);
+  --s-font-family-sans: Helvetica;
+  --s-font-family-serif: Times;
+  --s-font-family-mono: Courier;
+  --s-font-family-body: var(--s-font-family-serif);
+  --s-font-family-heading: var(--s-font-family-sans);
+  --s-font-family-display: var(--s-font-family-body);
+  --s-font-weight-thin: 100;
+  --s-font-weight-extralight: 200;
+  --s-font-weight-light: 300;
+  --s-font-weight-regular: 400;
+  --s-font-weight-book: 500;
+  --s-font-weight-medium: 600;
+  --s-font-weight-bold: 700;
+  --s-font-weight-black: 800;
+  --s-font-weight-ultra: 900;
+  --s-font-weight-body: var(--s-font-weight-regular);
+  --s-font-weight-emphasis: var(--s-font-weight-bold);
+  --s-font-weight-heading: var(--s-font-weight-bold);
+  --s-letter-spacing-xxs: -0.075em;
+  --s-letter-spacing-xs: -0.05em;
+  --s-letter-spacing-sm: -0.025em;
+  --s-letter-spacing-md: 0em;
+  --s-letter-spacing-lg: 0.025em;
+  --s-letter-spacing-xl: 0.05em;
+  --s-letter-spacing-xxl: 0.075em;
+  --s-letter-spacing-none: var(--s-letter-spacing-md);
+  --s-measure-xxs: 25ch;
+  --s-measure-xs: 36ch;
+  --s-measure-sm: 49ch;
+  --s-measure-md: 64ch;
+  --s-measure-lg: 81ch;
+  --s-measure-xl: 100ch;
+  --s-measure-xxl: 121ch;
+  --s-measure-full: 100%;
+  --s-measure-inf: unset;
+  --s-measure-default: var(--s-measure-md);
+  --s-measure: var(--s-measure-default);
+  --s-scale--2: 0.4444444444em;
+  --s-scale--1: 0.6666666667em;
+  --s-scale-0: 1em;
+  --s-scale-1: 1.5em;
+  --s-scale-2: 2.25em;
+  --s-scale-3: 3.375em;
+  --s-scale-4: 5.0625em;
+  --s-scale-5: 7.59375em;
+  --s-scale-6: 11.390625em;
+  --s-scale-7: 17.0859375em;
+  --s-scale-8: 25.62890625em;
+  --s-scale-9: 38.443359375em;
+  --s-scale-ratio: 1.5;
+  --s-scale-smaller: 66.6666666667%;
+  --s-scale-larger: 150%;
+  --s-radius-xxs: 0rem;
+  --s-radius-xs: 0.2rem;
+  --s-radius-sm: 0.4rem;
+  --s-radius-md: 0.6rem;
+  --s-radius-lg: 0.8rem;
+  --s-radius-xl: 1rem;
+  --s-radius-xxl: 1.2rem;
+  --s-radius-ellipse: 100%;
+  --s-radius-obround: 999rem;
+  --s-shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
+  --s-shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
+  --s-shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
+  --s-shadow-md: 0rem 0.25rem 0.5rem rgb(0 0 0 / 0.25);
+  --s-shadow-lg: 0rem 0.5rem 1rem rgb(0 0 0 / 0.265625);
+  --s-shadow-xl: 0rem 1rem 2rem rgb(0 0 0 / 0.28125);
+  --s-shadow-xxl: 0rem 2rem 4rem rgb(0 0 0 / 0.296875);
+  --s-stroke-width-1: 0.0625rem;
+  --s-stroke-width-2: 0.125rem;
+  --s-stroke-width-3: 0.1875rem;
+  --s-stroke-width-4: 0.25rem;
+  --s-stroke-width-5: 0.3125rem;
+  --s-stroke-width-6: 0.375rem;
+  --s-stroke-width-7: 0.4375rem;
+  --s-stroke-width-8: 0.5rem;
+  --s-stroke-width-default: var(--s-stroke-width-2);
+  --s-stroke-width: var(--s-stroke-width-default);
+  --s-stroke-style-default: solid;
+  --s-stroke-style: var(--s-stroke-style-default);
+  --s-stroke-color-default: var(--s-color-tertiary-700);
+  --s-stroke-color: var(--s-stroke-color-default);
+  --s-easing-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --s-easing-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --s-easing-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --s-easing-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --s-easing-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --s-easing-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --s-easing-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --s-easing-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --s-easing-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --s-easing-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --s-easing-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --s-easing-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --s-easing-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --s-easing-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --s-easing-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --s-easing-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --s-easing-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --s-easing-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --s-easing-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --s-easing-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --s-easing-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --s-easing-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --s-easing-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --s-easing-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --s-easing-default: ease-in-out;
+  --s-easing: var(--s-easing-default);
 }
 
 :root {
-  --line-root: 1.5;
-  --line-root-abs: 1.5rem;
-  --line--2: 1.6875;
-  --line--1: 1.125;
-  --line-0: 1.5;
-  --line-1: 1;
-  --line-2: 1;
-  --line-3: 1.1111111111;
-  --line-4: 1.037037037;
-  --line-5: 1.0864197531;
-  --line-6: 1.0534979424;
-  --line-7: 1.0096021948;
-  --line-8: 1.0242341107;
-  --line-9: 1.0144795001;
+  --s-line-root: 1.5;
+  --s-line-root-abs: 1.5rem;
+  --s-line--2: 1.6875;
+  --s-line--1: 1.125;
+  --s-line-0: 1.5;
+  --s-line-1: 1;
+  --s-line-2: 1;
+  --s-line-3: 1.1111111111;
+  --s-line-4: 1.037037037;
+  --s-line-5: 1.0864197531;
+  --s-line-6: 1.0534979424;
+  --s-line-7: 1.0096021948;
+  --s-line-8: 1.0242341107;
+  --s-line-9: 1.0144795001;
 }
 
 * {
@@ -747,7 +752,7 @@ For the structure of this custom configuration see <a href="#variable--default">
 }
 
 :target {
-  scroll-margin-block-start: var(--length-3);
+  scroll-margin-block-start: var(--s-length-3);
 }
 
 * {
@@ -770,106 +775,127 @@ iframe:not([width]) {
   inline-size: 100%;
 }
 
-* + :is(article, section) {
-  margin-block-start: var(--flow-space-sectioning, var(--flow-space, 1em));
+:is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details, div) {
+  ---flow-space: var(--s-flow-space-default);
+}
+
+:is(article, section, nav, aside) {
+  ---flow-space: var(--s-flow-space-sectioning);
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  ---flow-space: var(--s-flow-space-heading, var(--s-flow-space-default));
+}
+
+li,
+li :is(ol, ul, menu) {
+  ---flow-space: var(--s-flow-space-list, var(--s-flow-space-default));
+}
+
+dt {
+  ---flow-space: var(--s-flow-space-defterm, var(--s-flow-space-deflist, var(--s-flow-space-default)));
+}
+
+dd {
+  ---flow-space: var(--s-flow-space-defdata, var(--s-flow-space-deflist, var(--s-flow-space-default)));
 }
 
 * + :is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details),
 :is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details) + div {
-  margin-block-start: var(--flow-space, 1em);
+  margin-block-start: var(---flow-space, 1em);
 }
 
-* + :is(h1, h2, h3, h4, h5, h6) {
-  --flow-space: var(--flow-space-heading, var(--flow-space-default));
+:where(:is(article, section, nav, aside):not(:first-child)) {
+  margin-block-start: var(---flow-space);
+}
+:where(:is(article, section, nav, aside):not(:last-child)) {
+  margin-block-end: var(---flow-space);
 }
 
-li {
-  --flow-space: var(--flow-space-list, var(--flow-space-default));
+:is(ol, ul, menu) {
+  ---indent-root: var(--s-indent-list-root, 0);
+  ---indent: var(--s-indent-list, var(--s-indent-list-root, var(--s-indent-default)));
+  padding-inline-start: var(---indent-root);
 }
 
-dt {
-  --flow-space: var(--flow-space-defterm, var(--flow-space-deflist, var(--flow-space-default)));
-}
-
-dd {
-  --flow-space: var(--flow-space-defdata, var(--flow-space-deflist, var(--flow-space-default)));
-}
-
-:root {
-  --indent: var(--spacing-inline);
-}
-
-li :is(ol, ul, menu, dir) {
-  padding-inline-start: var(--indent);
+li :is(ol, ul, menu) {
+  ---indent: inherit;
+  padding-inline-start: var(---indent);
 }
 
 dd {
-  margin-inline-start: var(--indent);
+  ---indent: var(--s-indent-deflist, var(--s-indent-default));
+  margin-inline-start: var(---indent);
 }
 
-blockquote,
+blockquote {
+  ---indent: var(--s-indent-quotation, var(--s-indent-default));
+  margin-inline: var(---indent);
+}
+
 figure {
-  margin-inline: var(--indent);
+  ---indent: var(--s-indent-figure, var(--s-indent-default));
+  margin-inline: var(---indent);
 }
 
 html {
-  line-height: var(--line-root);
+  line-height: var(--s-line-root);
 }
 
 body {
-  font-family: var(--font-family-body);
-  font-weight: var(--font-weight-body);
-  font-size: var(--scale-0);
-  line-height: var(--line-0);
+  font-family: var(--s-font-family-body);
+  font-weight: var(--s-font-weight-body);
+  font-size: var(--s-scale-0);
+  line-height: var(--s-line-0);
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-heading);
+  font-family: var(--s-font-family-heading);
+  font-weight: var(--s-font-weight-heading);
 }
 
 h1 {
-  font-size: var(--scale-3);
-  line-height: var(--line-3);
+  font-size: var(--s-scale-3);
+  line-height: var(--s-line-3);
 }
 
 h2 {
-  font-size: var(--scale-2);
-  line-height: var(--line-2);
+  font-size: var(--s-scale-2);
+  line-height: var(--s-line-2);
 }
 
 h3 {
-  font-size: var(--scale-1);
-  line-height: var(--line-1);
+  font-size: var(--s-scale-1);
+  line-height: var(--s-line-1);
 }
 
 h4 {
-  font-size: var(--scale-0);
-  line-height: var(--line-0);
+  font-size: var(--s-scale-0);
+  line-height: var(--s-line-0);
 }
 
 h5 {
-  font-size: var(--scale--1);
-  line-height: var(--line--1);
+  font-size: var(--s-scale--1);
+  line-height: var(--s-line--1);
 }
 
 h6 {
-  font-size: var(--scale--2);
-  line-height: var(--line--2);
+  font-size: var(--s-scale--2);
+  line-height: var(--s-line--2);
 }
 
 :is(h1, h2, h3, h4, h5, h6),
 :is(p, address, summary, figcaption, caption) {
-  max-inline-size: var(--measure);
+  max-inline-size: var(---measure, var(--s-measure-default));
 }
 
 :is(code, kbd, samp),
 pre {
-  font-family: var(--font-family-mono);
+  font-family: var(--s-font-family-mono);
 }
 
 :is(small, sub, sup) {
-  font-size: var(--scale-smaller);
+  font-size: var(--s-scale-smaller);
 }
 
 :is(code, kbd, samp),
@@ -1184,16 +1210,6 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
         page: &quot;xl&quot;,
       ),
     ),
-    flow-space: (
-      literal: (
-        default: &quot;var(--spacing-block-sm)&quot;,
-        heading: &quot;var(--spacing-block-md)&quot;,
-        list: 0em,
-        deflist: &quot;var(--spacing-block-sm)&quot;,
-        sectioning:
-          &quot;clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg))&quot;,
-      ),
-    ),
     spacing-block: (
       mapped: (
         domain: mapping.$domain-sizes,
@@ -1218,6 +1234,29 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
       ),
       logical: (
         default: md,
+      ),
+    ),
+    flow-space: (
+      literal: (
+        list: 0em,
+        sectioning:
+          clamp(svar(spacing-block-md), (100vi - svar(container-sm)) / 4, svar(spacing-block-lg)),
+      ),
+      logical: (
+        default: &quot;/spacing-block-sm&quot;,
+        heading: &quot;/spacing-block-md&quot;,
+        deflist: &quot;/spacing-block-sm&quot;,
+      ),
+    ),
+    wrap-space: (
+      logical: (
+        default: &quot;/flow-space-default&quot; &quot;/spacing-inline-default&quot;,
+        sectioning: &quot;/flow-space-sectioning&quot; &quot;/spacing-inline-lg&quot;,
+      ),
+    ),
+    indent: (
+      logical: (
+        default: &quot;/spacing-inline-default&quot;,
       ),
     ),
   ),
@@ -1362,10 +1401,10 @@ This also serves as a reference for your <a href="#variable--custom">custom<span
       
       <pre class="hljs-pre"><code class="lang-scss">$cfg: (
   layout: (
-    spacing: (
+    indent: (
       literal: (
-        block: &quot;var(--length-1)&quot;,
-        inline: 4ch,
+        editor: 4ch,
+        extra: &quot;var(--external-var)&quot;,
       ),
     ),
   ),
@@ -1416,8 +1455,8 @@ This also serves as a reference for your <a href="#variable--custom">custom<span
       
       
       <pre class="hljs-pre"><code class="lang-css">:root {
-  --spacing-block: var(--length-1);
-  --spacing-inline: 4ch;
+  --s-indent-editor: 4ch;
+  --s-indent-extra: var(--external-var);
 }</code></pre>
     </div>
   
@@ -1468,7 +1507,10 @@ This also serves as a reference for your <a href="#variable--custom">custom<span
   typography: (
     measure: (
       logical: (
+        // Link within the same group:
         default: md,
+        // Use a leading “/” to refer to any other property:
+        container: &quot;/container-md&quot;,
       ),
     ),
   ),
@@ -1519,7 +1561,8 @@ This also serves as a reference for your <a href="#variable--custom">custom<span
       
       
       <pre class="hljs-pre"><code class="lang-css">:root {
-  --measure-default: var(--measure-md);
+  --s-measure-default: var(--s-measure-md);
+  --s-measure-container: var(--s-container-md);
 }</code></pre>
     </div>
   
@@ -1624,9 +1667,9 @@ $cfg: (
       
       
       <pre class="hljs-pre"><code class="lang-css">:root {
-  --radius-sm: 0.5rem;
-  --radius-md: 1rem;
-  --radius-lg: 1.5rem;
+  --s-radius-sm: 0.5rem;
+  --s-radius-md: 1rem;
+  --s-radius-lg: 1.5rem;
 }</code></pre>
     </div>
   
@@ -2419,13 +2462,13 @@ Used as domain for mapped<span class="widont">&nbsp;</span>properties.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-css">--shadow-xxs: …;
---shadow-xs: …;
---shadow-sm: …;
---shadow-md: …;
---shadow-lg: …;
---shadow-xl: …;
---shadow-xxl: …;</code></pre>
+      <pre class="hljs-pre"><code class="lang-css">--s-shadow-xxs: …;
+--s-shadow-xs: …;
+--s-shadow-sm: …;
+--s-shadow-md: …;
+--s-shadow-lg: …;
+--s-shadow-xl: …;
+--s-shadow-xxl: …;</code></pre>
     </div>
   
 
@@ -2757,15 +2800,15 @@ Used as default domain for font weight<span class="widont">&nbsp;</span>properti
 
       
       
-      <pre class="hljs-pre"><code class="lang-css">--font-weight-thin: 100;
---font-weight-extralight: 200;
---font-weight-light: 300;
---font-weight-regular: 400;
---font-weight-book: 500;
---font-weight-medium: 600;
---font-weight-bold: 700;
---font-weight-black: 800;
---font-weight-ultra: 900;</code></pre>
+      <pre class="hljs-pre"><code class="lang-css">--s-font-weight-thin: 100;
+--s-font-weight-extralight: 200;
+--s-font-weight-light: 300;
+--s-font-weight-regular: 400;
+--s-font-weight-book: 500;
+--s-font-weight-medium: 600;
+--s-font-weight-bold: 700;
+--s-font-weight-black: 800;
+--s-font-weight-ultra: 900;</code></pre>
     </div>
   
 
@@ -3578,28 +3621,24 @@ generate whole <a href="ax-properties.html#mixin--palette">palettes</a> from jus
     hue: $prim,
     sl-curve: 0.1 0.9 0.2 0.9 0.2 0.1 0.1 0.1,
     range: $range,
-    prefix: $prefix,
     suffix: $suffix,
   ),
   &quot;primary&quot;: (
     hue: $prim,
     sl-curve: $sl-curve,
     range: $range,
-    prefix: $prefix,
     suffix: $suffix,
   ),
   &quot;secondary&quot;: (
     hue: $prim + $dist,
     sl-curve: $sl-curve,
     range: $range,
-    prefix: $prefix,
     suffix: $suffix,
   ),
   &quot;tertiary&quot;: (
     hue: $prim - $dist,
     sl-curve: $sl-curve,
     range: $range,
-    prefix: $prefix,
     suffix: $suffix,
   ),
 );</code></pre>
@@ -4143,175 +4182,180 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
       
       <pre class="hljs-pre"><code class="lang-css">@charset &quot;UTF-8&quot;;
 :root {
-  --length-0aug: 0.375rem;
-  --length-0½: 0.75rem;
-  --length-1dim: 1.125rem;
-  --length-1: 1.5rem;
-  --length-1aug: 1.875rem;
-  --length-1½: 2.25rem;
-  --length-2dim: 2.625rem;
-  --length-2: 3rem;
-  --length-2aug: 3.375rem;
-  --length-2½: 3.75rem;
-  --length-3dim: 4.125rem;
-  --length-3: 4.5rem;
-  --container-xxs: 0rem;
-  --container-xs: 16rem;
-  --container-sm: 32rem;
-  --container-md: 48rem;
-  --container-lg: 64rem;
-  --container-xl: 80rem;
-  --container-xxl: 96rem;
-  --container-page: var(--container-xl);
-  --flow-space-default: var(--spacing-block-sm);
-  --flow-space-heading: var(--spacing-block-md);
-  --flow-space-list: 0em;
-  --flow-space-deflist: var(--spacing-block-sm);
-  --flow-space-sectioning: clamp(var(--spacing-block-md), (100vi - var(--container-sm)) / 4, var(--spacing-block-lg));
-  --flow-space: var(--flow-space-default);
-  --spacing-block-xxs: 0.1875rem;
-  --spacing-block-xs: 0.375rem;
-  --spacing-block-sm: 0.75rem;
-  --spacing-block-md: 1.5rem;
-  --spacing-block-lg: 3rem;
-  --spacing-block-xl: 6rem;
-  --spacing-block-xxl: 12rem;
-  --spacing-block-default: var(--spacing-block-md);
-  --spacing-block: var(--spacing-block-default);
-  --spacing-inline-xxs: 0.25ch;
-  --spacing-inline-xs: 0.5ch;
-  --spacing-inline-sm: 1ch;
-  --spacing-inline-md: 2ch;
-  --spacing-inline-lg: 4ch;
-  --spacing-inline-xl: 8ch;
-  --spacing-inline-xxl: 16ch;
-  --spacing-inline-default: var(--spacing-inline-md);
-  --spacing-inline: var(--spacing-inline-default);
-  --font-family-sans: Source Sans Pro, sans-serif;
-  --font-family-serif: Source Serif Pro, serif;
-  --font-family-mono: Source Code Pro, monospace;
-  --font-family-body: var(--font-family-serif);
-  --font-family-heading: var(--font-family-sans);
-  --font-family-display: var(--font-family-body);
-  --font-weight-thin: 100;
-  --font-weight-extralight: 200;
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-book: 500;
-  --font-weight-medium: 600;
-  --font-weight-bold: 700;
-  --font-weight-black: 800;
-  --font-weight-ultra: 900;
-  --font-weight-body: var(--font-weight-regular);
-  --font-weight-emphasis: var(--font-weight-bold);
-  --font-weight-heading: var(--font-weight-bold);
-  --letter-spacing-xxs: -0.075em;
-  --letter-spacing-xs: -0.05em;
-  --letter-spacing-sm: -0.025em;
-  --letter-spacing-md: 0em;
-  --letter-spacing-lg: 0.025em;
-  --letter-spacing-xl: 0.05em;
-  --letter-spacing-xxl: 0.075em;
-  --letter-spacing-none: var(--letter-spacing-md);
-  --measure-xxs: 25ch;
-  --measure-xs: 36ch;
-  --measure-sm: 49ch;
-  --measure-md: 64ch;
-  --measure-lg: 81ch;
-  --measure-xl: 100ch;
-  --measure-xxl: 121ch;
-  --measure-full: 100%;
-  --measure-inf: unset;
-  --measure-default: var(--measure-md);
-  --measure: var(--measure-default);
-  --scale--2: 0.4444444444rem;
-  --scale--1: 0.6666666667rem;
-  --scale-0: 1rem;
-  --scale-1: 1.5rem;
-  --scale-2: 2.25rem;
-  --scale-3: 3.375rem;
-  --scale-4: 5.0625rem;
-  --scale-5: 7.59375rem;
-  --scale-6: 11.390625rem;
-  --scale-7: 17.0859375rem;
-  --scale-8: 25.62890625rem;
-  --scale-9: 38.443359375rem;
-  --scale-ratio: 1.5;
-  --scale-smaller: 66.6666666667%;
-  --scale-larger: 150%;
-  --radius-xxs: 0rem;
-  --radius-xs: 0.2rem;
-  --radius-sm: 0.4rem;
-  --radius-md: 0.6rem;
-  --radius-lg: 0.8rem;
-  --radius-xl: 1rem;
-  --radius-xxl: 1.2rem;
-  --radius-ellipse: 100%;
-  --radius-obround: 999rem;
-  --shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
-  --shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
-  --shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
-  --shadow-md: 0rem 0.25rem 0.5rem rgb(0 0 0 / 0.25);
-  --shadow-lg: 0rem 0.5rem 1rem rgb(0 0 0 / 0.265625);
-  --shadow-xl: 0rem 1rem 2rem rgb(0 0 0 / 0.28125);
-  --shadow-xxl: 0rem 2rem 4rem rgb(0 0 0 / 0.296875);
-  --stroke-width-1: 0.0625rem;
-  --stroke-width-2: 0.125rem;
-  --stroke-width-3: 0.1875rem;
-  --stroke-width-4: 0.25rem;
-  --stroke-width-5: 0.3125rem;
-  --stroke-width-6: 0.375rem;
-  --stroke-width-7: 0.4375rem;
-  --stroke-width-8: 0.5rem;
-  --stroke-width-default: var(--stroke-width-2);
-  --stroke-width: var(--stroke-width-default);
-  --stroke-style-default: solid;
-  --stroke-style: var(--stroke-style-default);
-  --stroke-color-default: var(--color-tertiary-700);
-  --stroke-color: var(--stroke-color-default);
-  --easing-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-  --easing-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  --easing-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  --easing-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-  --easing-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
-  --easing-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
-  --easing-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
-  --easing-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-  --easing-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --easing-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
-  --easing-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
-  --easing-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-  --easing-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
-  --easing-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-  --easing-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
-  --easing-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --easing-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  --easing-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
-  --easing-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
-  --easing-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
-  --easing-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  --easing-in-out-expo: cubic-bezier(1, 0, 0, 1);
-  --easing-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  --easing-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --easing-default: ease-in-out;
-  --easing: var(--easing-default);
+  --s-length-0aug: 0.375rem;
+  --s-length-0½: 0.75rem;
+  --s-length-1dim: 1.125rem;
+  --s-length-1: 1.5rem;
+  --s-length-1aug: 1.875rem;
+  --s-length-1½: 2.25rem;
+  --s-length-2dim: 2.625rem;
+  --s-length-2: 3rem;
+  --s-length-2aug: 3.375rem;
+  --s-length-2½: 3.75rem;
+  --s-length-3dim: 4.125rem;
+  --s-length-3: 4.5rem;
+  --s-container-xxs: 0rem;
+  --s-container-xs: 16rem;
+  --s-container-sm: 32rem;
+  --s-container-md: 48rem;
+  --s-container-lg: 64rem;
+  --s-container-xl: 80rem;
+  --s-container-xxl: 96rem;
+  --s-container-page: var(--s-container-xl);
+  --s-spacing-block-xxs: 0.1875rem;
+  --s-spacing-block-xs: 0.375rem;
+  --s-spacing-block-sm: 0.75rem;
+  --s-spacing-block-md: 1.5rem;
+  --s-spacing-block-lg: 3rem;
+  --s-spacing-block-xl: 6rem;
+  --s-spacing-block-xxl: 12rem;
+  --s-spacing-block-default: var(--s-spacing-block-md);
+  --s-spacing-block: var(--s-spacing-block-default);
+  --s-spacing-inline-xxs: 0.25ch;
+  --s-spacing-inline-xs: 0.5ch;
+  --s-spacing-inline-sm: 1ch;
+  --s-spacing-inline-md: 2ch;
+  --s-spacing-inline-lg: 4ch;
+  --s-spacing-inline-xl: 8ch;
+  --s-spacing-inline-xxl: 16ch;
+  --s-spacing-inline-default: var(--s-spacing-inline-md);
+  --s-spacing-inline: var(--s-spacing-inline-default);
+  --s-flow-space-list: 0em;
+  --s-flow-space-sectioning: clamp(var(--s-spacing-block-md), (100vi - var(--s-container-sm)) / 4, var(--s-spacing-block-lg));
+  --s-flow-space-default: var(--s-spacing-block-sm);
+  --s-flow-space-heading: var(--s-spacing-block-md);
+  --s-flow-space-deflist: var(--s-spacing-block-sm);
+  --s-flow-space: var(--s-flow-space-default);
+  --s-wrap-space-default: var(--s-flow-space-default) var(--s-spacing-inline-default);
+  --s-wrap-space-sectioning: var(--s-flow-space-sectioning) var(--s-spacing-inline-lg);
+  --s-wrap-space: var(--s-wrap-space-default);
+  --s-indent-default: var(--s-spacing-inline-default);
+  --s-indent: var(--s-indent-default);
+  --s-font-family-sans: Source Sans Pro, sans-serif;
+  --s-font-family-serif: Source Serif Pro, serif;
+  --s-font-family-mono: Source Code Pro, monospace;
+  --s-font-family-body: var(--s-font-family-serif);
+  --s-font-family-heading: var(--s-font-family-sans);
+  --s-font-family-display: var(--s-font-family-body);
+  --s-font-weight-thin: 100;
+  --s-font-weight-extralight: 200;
+  --s-font-weight-light: 300;
+  --s-font-weight-regular: 400;
+  --s-font-weight-book: 500;
+  --s-font-weight-medium: 600;
+  --s-font-weight-bold: 700;
+  --s-font-weight-black: 800;
+  --s-font-weight-ultra: 900;
+  --s-font-weight-body: var(--s-font-weight-regular);
+  --s-font-weight-emphasis: var(--s-font-weight-bold);
+  --s-font-weight-heading: var(--s-font-weight-bold);
+  --s-letter-spacing-xxs: -0.075em;
+  --s-letter-spacing-xs: -0.05em;
+  --s-letter-spacing-sm: -0.025em;
+  --s-letter-spacing-md: 0em;
+  --s-letter-spacing-lg: 0.025em;
+  --s-letter-spacing-xl: 0.05em;
+  --s-letter-spacing-xxl: 0.075em;
+  --s-letter-spacing-none: var(--s-letter-spacing-md);
+  --s-measure-xxs: 25ch;
+  --s-measure-xs: 36ch;
+  --s-measure-sm: 49ch;
+  --s-measure-md: 64ch;
+  --s-measure-lg: 81ch;
+  --s-measure-xl: 100ch;
+  --s-measure-xxl: 121ch;
+  --s-measure-full: 100%;
+  --s-measure-inf: unset;
+  --s-measure-default: var(--s-measure-md);
+  --s-measure: var(--s-measure-default);
+  --s-scale--2: 0.4444444444rem;
+  --s-scale--1: 0.6666666667rem;
+  --s-scale-0: 1rem;
+  --s-scale-1: 1.5rem;
+  --s-scale-2: 2.25rem;
+  --s-scale-3: 3.375rem;
+  --s-scale-4: 5.0625rem;
+  --s-scale-5: 7.59375rem;
+  --s-scale-6: 11.390625rem;
+  --s-scale-7: 17.0859375rem;
+  --s-scale-8: 25.62890625rem;
+  --s-scale-9: 38.443359375rem;
+  --s-scale-ratio: 1.5;
+  --s-scale-smaller: 66.6666666667%;
+  --s-scale-larger: 150%;
+  --s-radius-xxs: 0rem;
+  --s-radius-xs: 0.2rem;
+  --s-radius-sm: 0.4rem;
+  --s-radius-md: 0.6rem;
+  --s-radius-lg: 0.8rem;
+  --s-radius-xl: 1rem;
+  --s-radius-xxl: 1.2rem;
+  --s-radius-ellipse: 100%;
+  --s-radius-obround: 999rem;
+  --s-shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
+  --s-shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
+  --s-shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
+  --s-shadow-md: 0rem 0.25rem 0.5rem rgb(0 0 0 / 0.25);
+  --s-shadow-lg: 0rem 0.5rem 1rem rgb(0 0 0 / 0.265625);
+  --s-shadow-xl: 0rem 1rem 2rem rgb(0 0 0 / 0.28125);
+  --s-shadow-xxl: 0rem 2rem 4rem rgb(0 0 0 / 0.296875);
+  --s-stroke-width-1: 0.0625rem;
+  --s-stroke-width-2: 0.125rem;
+  --s-stroke-width-3: 0.1875rem;
+  --s-stroke-width-4: 0.25rem;
+  --s-stroke-width-5: 0.3125rem;
+  --s-stroke-width-6: 0.375rem;
+  --s-stroke-width-7: 0.4375rem;
+  --s-stroke-width-8: 0.5rem;
+  --s-stroke-width-default: var(--s-stroke-width-2);
+  --s-stroke-width: var(--s-stroke-width-default);
+  --s-stroke-style-default: solid;
+  --s-stroke-style: var(--s-stroke-style-default);
+  --s-stroke-color-default: var(--s-color-tertiary-700);
+  --s-stroke-color: var(--s-stroke-color-default);
+  --s-easing-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --s-easing-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --s-easing-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --s-easing-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --s-easing-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --s-easing-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --s-easing-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --s-easing-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --s-easing-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --s-easing-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --s-easing-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --s-easing-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --s-easing-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --s-easing-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --s-easing-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --s-easing-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --s-easing-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --s-easing-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --s-easing-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --s-easing-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --s-easing-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --s-easing-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --s-easing-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --s-easing-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --s-easing-default: ease-in-out;
+  --s-easing: var(--s-easing-default);
 }
 
 :root {
-  --line-root: 1.5;
-  --line-root-abs: 1.5rem;
-  --line--2: 0.75rem;
-  --line--1: 1.5rem;
-  --line-0: 1.5rem;
-  --line-1: 2.25rem;
-  --line-2: 3rem;
-  --line-3: 4.5rem;
-  --line-4: 6.75rem;
-  --line-5: 9.75rem;
-  --line-6: 14.25rem;
-  --line-7: 21rem;
-  --line-8: 31.5rem;
-  --line-9: 46.5rem;
+  --s-line-root: 1.5;
+  --s-line-root-abs: 1.5rem;
+  --s-line--2: 0.75rem;
+  --s-line--1: 1.5rem;
+  --s-line-0: 1.5rem;
+  --s-line-1: 2.25rem;
+  --s-line-2: 3rem;
+  --s-line-3: 4.5rem;
+  --s-line-4: 6.75rem;
+  --s-line-5: 9.75rem;
+  --s-line-6: 14.25rem;
+  --s-line-7: 21rem;
+  --s-line-8: 31.5rem;
+  --s-line-9: 46.5rem;
 }
 
 * {
@@ -4327,7 +4371,7 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
 }
 
 :target {
-  scroll-margin-block-start: var(--length-3);
+  scroll-margin-block-start: var(--s-length-3);
 }
 
 * {
@@ -4350,106 +4394,127 @@ iframe:not([width]) {
   inline-size: 100%;
 }
 
-* + :is(article, section) {
-  margin-block-start: var(--flow-space-sectioning, var(--flow-space, 1em));
+:is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details, div) {
+  ---flow-space: var(--s-flow-space-default);
+}
+
+:is(article, section, nav, aside) {
+  ---flow-space: var(--s-flow-space-sectioning);
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  ---flow-space: var(--s-flow-space-heading, var(--s-flow-space-default));
+}
+
+li,
+li :is(ol, ul, menu) {
+  ---flow-space: var(--s-flow-space-list, var(--s-flow-space-default));
+}
+
+dt {
+  ---flow-space: var(--s-flow-space-defterm, var(--s-flow-space-deflist, var(--s-flow-space-default)));
+}
+
+dd {
+  ---flow-space: var(--s-flow-space-defdata, var(--s-flow-space-deflist, var(--s-flow-space-default)));
 }
 
 * + :is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details),
 :is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details) + div {
-  margin-block-start: var(--flow-space, 1em);
+  margin-block-start: var(---flow-space, 1em);
 }
 
-* + :is(h1, h2, h3, h4, h5, h6) {
-  --flow-space: var(--flow-space-heading, var(--flow-space-default));
+:where(:is(article, section, nav, aside):not(:first-child)) {
+  margin-block-start: var(---flow-space);
+}
+:where(:is(article, section, nav, aside):not(:last-child)) {
+  margin-block-end: var(---flow-space);
 }
 
-li {
-  --flow-space: var(--flow-space-list, var(--flow-space-default));
+:is(ol, ul, menu) {
+  ---indent-root: var(--s-indent-list-root, 0);
+  ---indent: var(--s-indent-list, var(--s-indent-list-root, var(--s-indent-default)));
+  padding-inline-start: var(---indent-root);
 }
 
-dt {
-  --flow-space: var(--flow-space-defterm, var(--flow-space-deflist, var(--flow-space-default)));
-}
-
-dd {
-  --flow-space: var(--flow-space-defdata, var(--flow-space-deflist, var(--flow-space-default)));
-}
-
-:root {
-  --indent: var(--spacing-inline);
-}
-
-li :is(ol, ul, menu, dir) {
-  padding-inline-start: var(--indent);
+li :is(ol, ul, menu) {
+  ---indent: inherit;
+  padding-inline-start: var(---indent);
 }
 
 dd {
-  margin-inline-start: var(--indent);
+  ---indent: var(--s-indent-deflist, var(--s-indent-default));
+  margin-inline-start: var(---indent);
 }
 
-blockquote,
+blockquote {
+  ---indent: var(--s-indent-quotation, var(--s-indent-default));
+  margin-inline: var(---indent);
+}
+
 figure {
-  margin-inline: var(--indent);
+  ---indent: var(--s-indent-figure, var(--s-indent-default));
+  margin-inline: var(---indent);
 }
 
 html {
-  line-height: var(--line-root);
+  line-height: var(--s-line-root);
 }
 
 body {
-  font-family: var(--font-family-body);
-  font-weight: var(--font-weight-body);
-  font-size: var(--scale-0);
-  line-height: var(--line-0);
+  font-family: var(--s-font-family-body);
+  font-weight: var(--s-font-weight-body);
+  font-size: var(--s-scale-0);
+  line-height: var(--s-line-0);
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-heading);
+  font-family: var(--s-font-family-heading);
+  font-weight: var(--s-font-weight-heading);
 }
 
 h1 {
-  font-size: var(--scale-3);
-  line-height: var(--line-3);
+  font-size: var(--s-scale-3);
+  line-height: var(--s-line-3);
 }
 
 h2 {
-  font-size: var(--scale-2);
-  line-height: var(--line-2);
+  font-size: var(--s-scale-2);
+  line-height: var(--s-line-2);
 }
 
 h3 {
-  font-size: var(--scale-1);
-  line-height: var(--line-1);
+  font-size: var(--s-scale-1);
+  line-height: var(--s-line-1);
 }
 
 h4 {
-  font-size: var(--scale-0);
-  line-height: var(--line-0);
+  font-size: var(--s-scale-0);
+  line-height: var(--s-line-0);
 }
 
 h5 {
-  font-size: var(--scale--1);
-  line-height: var(--line--1);
+  font-size: var(--s-scale--1);
+  line-height: var(--s-line--1);
 }
 
 h6 {
-  font-size: var(--scale--2);
-  line-height: var(--line--2);
+  font-size: var(--s-scale--2);
+  line-height: var(--s-line--2);
 }
 
 :is(h1, h2, h3, h4, h5, h6),
 :is(p, address, summary, figcaption, caption) {
-  max-inline-size: var(--measure);
+  max-inline-size: var(---measure, var(--s-measure-default));
 }
 
 :is(code, kbd, samp),
 pre {
-  font-family: var(--font-family-mono);
+  font-family: var(--s-font-family-mono);
 }
 
 :is(small, sub, sup) {
-  font-size: var(--scale-smaller);
+  font-size: var(--s-scale-smaller);
 }
 
 :is(code, kbd, samp),
