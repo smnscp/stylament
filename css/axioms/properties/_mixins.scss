@@ -7,6 +7,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:meta";
+@use "../properties/settings" as *;
 @use "../tools/arithmetic/function";
 @use "../tools/config";
 @use "../tools/meta" as meta2;
@@ -19,7 +20,7 @@
 @mixin literal-properties($prefix, $properties) {
   @if $properties {
     @each $name, $value in $properties {
-      --s-#{$prefix}-#{$name}: #{$value};
+      #{$🌱}#{$prefix}-#{$name}: #{$value};
     }
   }
 }
@@ -43,7 +44,7 @@
 
   @if $mapped {
     @each $name, $value in $mapped {
-      --s-#{$prefix}-#{$name}: #{$value};
+      #{$🌱}#{$prefix}-#{$name}: #{$value};
     }
   }
 }
@@ -56,7 +57,7 @@
 @mixin logical-properties($prefix, $properties) {
   @if $properties {
     @each $name, $alias in $properties {
-      --s-#{$prefix}-#{$name}: var(--s-#{$prefix}-#{$alias});
+      #{$🌱}#{$prefix}-#{$name}: var(#{$🌱}#{$prefix}-#{$alias});
     }
   }
 }
@@ -81,7 +82,7 @@
       map.has-key($conf, literal, default) or
         map.has-key($conf, logical, default)
     ) {
-      --s-#{$prefix}: var(--s-#{$prefix}-default);
+      #{$🌱}#{$prefix}: var(#{$🌱}#{$prefix}-default);
     }
   }
 }

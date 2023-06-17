@@ -7,6 +7,7 @@ export default defineConfig({
     handlebars({
       context: {
         isDev: process.env.NODE_ENV == "development",
+        propPrefix: "🎟",
         color: {
           steps: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
           palettes: ["grey", "primary", "secondary", "tertiary"],

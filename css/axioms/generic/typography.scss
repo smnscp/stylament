@@ -4,33 +4,35 @@
 
 /// ## Generic Typography
 
+@use "../properties/settings" as *;
+
 /// The line-height of the root element.
 /// @name Root Line Height
 html {
-  line-height: var(--s-line-root);
+  line-height: var(#{$🌱}line-root);
 }
 
 /// Fonts for body copy.
 /// @name Body Copy
 body {
-  font-family: var(--s-font-family-body);
-  font-weight: var(--s-font-weight-body);
-  font-size: var(--s-scale-0);
-  line-height: var(--s-line-0);
+  font-family: var(#{$🌱}font-family-body);
+  font-weight: var(#{$🌱}font-weight-body);
+  font-size: var(#{$🌱}scale-0);
+  line-height: var(#{$🌱}line-0);
 }
 
 /// Fonts for headings.
 /// @name Headings
 :is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--s-font-family-heading);
-  font-weight: var(--s-font-weight-heading);
+  font-family: var(#{$🌱}font-family-heading);
+  font-weight: var(#{$🌱}font-weight-heading);
 }
 
 @for $level from 1 through 6 {
   /// Apply respective font-size and line-height to each heading level.
   h#{$level} {
-    font-size: var(--s-scale-#{4 - $level});
-    line-height: var(--s-line-#{4 - $level});
+    font-size: var(#{$🌱}scale-#{4 - $level});
+    line-height: var(#{$🌱}line-#{4 - $level});
   }
 }
 
@@ -38,20 +40,20 @@ body {
 /// @name General Measure
 :is(h1, h2, h3, h4, h5, h6),
 :is(p, address, summary, figcaption, caption) {
-  max-inline-size: var(---measure, var(--s-measure-default));
+  max-inline-size: var(---measure, var(#{$🌱}measure-default));
 }
 
 /// Generic typography for monospaced elements.
 /// @name Monospaced
 :is(code, kbd, samp),
 pre {
-  font-family: var(--s-font-family-mono);
+  font-family: var(#{$🌱}font-family-mono);
 }
 
 /// Set scale-based font size.
 /// @name Smaller
 :is(small, sub, sup) {
-  font-size: var(--s-scale-smaller);
+  font-size: var(#{$🌱}scale-smaller);
 }
 
 /// Prevent certain inline (pseudo) elements from affecting the line height.

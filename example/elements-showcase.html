@@ -28,8 +28,8 @@
       display: flex;
       flex-direction: column;
       /* act nice-looking */
-      box-shadow: var(--s-shadow-lg);
-      padding: var(--s-line-root-abs) 1ch;
+      box-shadow: var(--{{propPrefix}}shadow-lg);
+      padding: var(--{{propPrefix}}line-root-abs) 1ch;
     }
 
     body>main {
@@ -39,15 +39,15 @@
     }
 
     :target {
-      outline: var(--s-color-links-contra) 0.125rem solid;
+      outline: var(--{{propPrefix}}color-links-contra) 0.125rem solid;
       outline-offset: 0.5rem;
-      border-radius: var(--s-radius-xs);
+      border-radius: var(--{{propPrefix}}radius-xs);
     }
 
     figure {
-      ---figure-border-width: var(--s-stroke-width-2);
-      ---figure-border-color: var(--s-stroke-color-default);
-      padding: calc(1.5 * (var(--s-line-root-abs) - var(---figure-border-width)));
+      ---figure-border-width: var(--{{propPrefix}}stroke-width-2);
+      ---figure-border-color: var(--{{propPrefix}}stroke-color-default);
+      padding: calc(1.5 * (var(--{{propPrefix}}line-root-abs) - var(---figure-border-width)));
       border: var(---figure-border-width) var(---figure-border-color) solid;
       margin-inline: 0;
       margin-block-end: calc(-1 * var(---figure-border-width));
@@ -55,17 +55,17 @@
     }
 
     :not(blockquote)+figcaption {
-      font-size: var(--s-scale--1);
-      border: solid var(--s-stroke-width-1);
-      margin: calc(-1 * var(--s-stroke-width-1));
+      font-size: var(--{{propPrefix}}scale--1);
+      border: solid var(--{{propPrefix}}stroke-width-1);
+      margin: calc(-1 * var(--{{propPrefix}}stroke-width-1));
       position: absolute;
       inset-block-end: 0rem;
       inset-inline-end: 0rem;
-      padding-inline: var(--s-spacing-inline-xs);
+      padding-inline: var(--{{propPrefix}}spacing-inline-xs);
     }
 
     dt {
-      font-weight: var(--s-font-weight-emphasis);
+      font-weight: var(--{{propPrefix}}font-weight-emphasis);
     }
 
     aside > details {
@@ -81,10 +81,10 @@
     }
 
     aside h2 {
-      font-size: var(--s-scale-1);
+      font-size: var(--{{propPrefix}}scale-1);
       margin: initial;
       display: inline;
-      line-height: var(--s-scale-0);
+      line-height: var(--{{propPrefix}}scale-0);
     }
   </style>
 {{/head}}

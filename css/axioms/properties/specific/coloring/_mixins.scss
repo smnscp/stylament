@@ -8,6 +8,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "sass:meta";
+@use "../../../properties/settings" as *;
 @use "../../../tools/arithmetic/function";
 @use "../../../tools/geometry/parametric-curves/bézier";
 
@@ -31,7 +32,7 @@
 ///   --s-<prefix>-red-500: hsl(0deg, 76%, 57%);
 ///   --s-<prefix>-red-700: hsl(0deg, 61%, 48%);
 ///   --s-<prefix>-red-900: hsl(0deg, 50%, 29%);
-///   --s-<prefix>-red: var(--s-<prefix>-red-500);
+///   --s-<prefix>-red: var(#{$🌱}<prefix>-red-500);
 ///   ```
 @mixin palette(
   $name,
@@ -65,7 +66,7 @@
       $saturation: 100% * function.polynomial($current, $s-curve...);
       $lightness: 100% * function.polynomial($current, $l-curve...);
     }
-    --s-#{$prefix}-#{$name}-#{math.round($suffac * if($sufinv, 1 - $current, $current))}: #{hsl(
+    #{$🌱}#{$prefix}-#{$name}-#{math.round($suffac * if($sufinv, 1 - $current, $current))}: #{hsl(
         $hue,
         $saturation,
         $lightness

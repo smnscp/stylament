@@ -6,13 +6,15 @@
 ///
 /// These are typical patterns of the top-level document structure.
 
+@use "../axioms/properties/settings" as *;
+
 /// The body or an inevitable wrapper div.
 $body-or-wrapper: ":where(body, body > div:only-child)";
 
 /// The document’s main header and footer.
 /// (There could be more than one of each. But that would not make much sense.)
 #{$body-or-wrapper} > :is(header, footer) {
-  padding-block: var(--s-spacing-block-lg);
+  padding-block: var(#{$🌱}spacing-block-lg);
 }
 
 /// Apply [“clever sticky footer”][css-tricks] technique.

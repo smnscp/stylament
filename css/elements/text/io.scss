@@ -4,13 +4,15 @@
 
 /// ### Input/Output
 
+@use "../../axioms/properties/settings" as *;
+
 // keyboard input
 kbd {
-  color: var(--s-color-mark);
-  background: var(--s-color-mark-contra);
-  border: var(--s-stroke-width-1) solid var(--s-stroke-color-default);
-  border-radius: var(--s-radius-xs);
-  padding-inline: var(--s-spacing-inline-xs);
+  color: var(#{$🌱}color-mark);
+  background: var(#{$🌱}color-mark-contra);
+  border: var(#{$🌱}stroke-width-1) solid var(#{$🌱}stroke-color-default);
+  border-radius: var(#{$🌱}radius-xs);
+  padding-inline: var(#{$🌱}spacing-inline-xs);
 }
 
 // sample output

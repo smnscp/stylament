@@ -4,6 +4,8 @@
 
 /// ## The BasiCSS
 
+@use "../properties/settings" as *;
+
 /// Remove UA style margins, paddings, and borders. These basic box properties need to be redefined in any design system anyways.
 ///
 /// ### Rationale
@@ -40,7 +42,7 @@
 /// @name Target Scroll Spacing
 :target {
   // Give URL fragment target enough air.
-  scroll-margin-block-start: var(--s-length-3);
+  scroll-margin-block-start: var(#{$🌱}length-3);
 }
 
 /// Set abstract colors.

@@ -21,6 +21,7 @@
 @use "specific/ui/easing";
 @use "../tools/arithmetic/function";
 @use "../tools/typography/rhythm";
+@use "../properties/settings" as *;
 
 /// Configuration to be injected by consumers.
 /// This map is defined by passing `$config-custom` to Stylament.
@@ -59,7 +60,7 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 ///     layout: (
 ///       spacing: (
 ///         literal: (
-///           block: "var(--s-length-1)",
+///           block: "var(#{$🌱}length-1)",
 ///           inline: 4ch,
 ///         ),
 ///       ),
@@ -170,25 +171,25 @@ $default: (
     ),
     flow-space: (
       literal: (
-        default: "var(--s-spacing-block-sm)",
-        heading: "var(--s-spacing-block-md)",
+        default: "var(#{$🌱}spacing-block-sm)",
+        heading: "var(#{$🌱}spacing-block-md)",
         list: 0em,
-        deflist: "var(--s-spacing-block-sm)",
+        deflist: "var(#{$🌱}spacing-block-sm)",
         sectioning:
-          "clamp(var(--s-spacing-block-md), (100vi - var(--s-container-sm)) / 4, var(--s-spacing-block-lg))",
+          "clamp(var(#{$🌱}spacing-block-md), (100vi - var(#{$🌱}container-sm)) / 4, var(#{$🌱}spacing-block-lg))",
       ),
     ),
     wrap-space: (
       literal: (
         default:
-          "var(--s-flow-space-default) var(--s-spacing-inline-default)",
+          "var(#{$🌱}flow-space-default) var(#{$🌱}spacing-inline-default)",
         sectioning:
-          "var(--s-flow-space-sectioning) var(--s-spacing-inline-lg)",
+          "var(#{$🌱}flow-space-sectioning) var(#{$🌱}spacing-inline-lg)",
       ),
     ),
     indent: (
       literal: (
-        default: "var(--s-spacing-inline-default)",
+        default: "var(#{$🌱}spacing-inline-default)",
       ),
     ),
   ),
@@ -325,7 +326,7 @@ $default: (
     ),
     stroke-color: (
       literal: (
-        default: "var(--s-color-tertiary-700)",
+        default: "var(#{$🌱}color-tertiary-700)",
       ),
       logical: (),
     ),

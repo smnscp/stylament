@@ -1,3 +1,6 @@
+@use "axioms/properties/settings" with (
+  $-prefix: "🎟"
+);
 @use "axioms/config/specific/color/brand";
 @use "axioms/config" with (
   $custom: (

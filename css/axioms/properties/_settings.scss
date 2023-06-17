@@ -1,0 +1,9 @@
+////
+/// @group ax-properties
+////
+
+// Configurable CSS variable prefix.
+$-prefix: "s-" !default;
+
+// Shortcut for CSS variable prefix.
+$🌱: --#{$-prefix};

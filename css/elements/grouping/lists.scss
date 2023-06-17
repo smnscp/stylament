@@ -4,6 +4,8 @@
 
 /// ### List
 
+@use "../../axioms/properties/settings" as *;
+
 ol {}
 
 ul {}
@@ -29,5 +31,5 @@ menu {
 }
 
 li::marker {
-  color: var(--s-color-list-marker);
+  color: var(#{$🌱}color-list-marker);
 }

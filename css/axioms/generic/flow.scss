@@ -2,8 +2,6 @@
 /// @group ax-generic
 ////
 
-@use "../../elements/selectors" as el;
-
 /// ## Flow Spacing
 ///
 /// Use common block margin to establish consistency in [flow layout][flow-layout] and to support a baseline grid.
@@ -11,40 +9,43 @@
 /// [flow-layout]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout
 /// @link https://andy-bell.co.uk/my-favourite-3-lines-of-css/ Recap of “The Stack”
 
+@use "../properties/settings" as *;
+@use "../../elements/selectors" as el;
+
 /// @name Flow Space Definition for General Blocks
 :is(#{el.$blocks}, div) {
-  ---flow-space: var(--s-flow-space-default);
+  ---flow-space: var(#{$🌱}flow-space-default);
 }
 
 /// @name Flow Space Definition for Sections
 :is(#{el.$sections}) {
-  ---flow-space: var(--s-flow-space-sectioning);
+  ---flow-space: var(#{$🌱}flow-space-sectioning);
 }
 
 /// @name Flow Space Definition for Headings
 :is(#{el.$headings}) {
-  ---flow-space: var(--s-flow-space-heading, var(--s-flow-space-default));
+  ---flow-space: var(#{$🌱}flow-space-heading, var(#{$🌱}flow-space-default));
 }
 
 /// @name Flow Space Definition for List Items and Nested Lists
 li,
 li :is(#{el.$lists}) {
-  ---flow-space: var(--s-flow-space-list, var(--s-flow-space-default));
+  ---flow-space: var(#{$🌱}flow-space-list, var(#{$🌱}flow-space-default));
 }
 
 /// @name Flow Space Definition for Definition Terms
 dt {
   ---flow-space: var(
-    --s-flow-space-defterm,
-    var(--s-flow-space-deflist, var(--s-flow-space-default))
+    #{$🌱}flow-space-defterm,
+    var(#{$🌱}flow-space-deflist, var(#{$🌱}flow-space-default))
   );
 }
 
 /// @name Flow Space Definition for Definition Data
 dd {
   ---flow-space: var(
-    --s-flow-space-defdata,
-    var(--s-flow-space-deflist, var(--s-flow-space-default))
+    #{$🌱}flow-space-defdata,
+    var(#{$🌱}flow-space-deflist, var(#{$🌱}flow-space-default))
   );
 }
 

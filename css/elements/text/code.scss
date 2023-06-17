@@ -4,8 +4,10 @@
 
 /// ### Inline Code
 
+@use "../../axioms/properties/settings" as *;
+
 code {
-  color: var(--s-color-mark);
-  background-color: var(--s-color-mark-contra);
-  padding-inline: var(--s-spacing-inline-xs);
+  color: var(#{$🌱}color-mark);
+  background-color: var(#{$🌱}color-mark-contra);
+  padding-inline: var(#{$🌱}spacing-inline-xs);
 }

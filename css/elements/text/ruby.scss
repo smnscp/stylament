@@ -4,9 +4,11 @@
 
 /// ### Ruby
 
+@use "../../axioms/properties/settings" as *;
+
 // ruby annotation
 ruby {
-  line-height: calc(2 * var(--s-line-root-abs));
+  line-height: calc(2 * var(#{$🌱}line-root-abs));
 }
 
 // ruby text

@@ -5,6 +5,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "../../../config" as cfg;
+@use "../../../properties/settings" as *;
 @use "../../../tools/arithmetic/function";
 @use "../../../tools/meta";
 @use "../../../tools/typography/rhythm";
@@ -19,8 +20,8 @@
   $rlh: map.get($line, rlh);
   $prefix: line;
 
-  --s-#{$prefix}-root: #{map.get($line, root)};
-  --s-#{$prefix}-root-abs: #{$rlh};
+  #{$🌱}#{$prefix}-root: #{map.get($line, root)};
+  #{$🌱}#{$prefix}-root-abs: #{$rlh};
 
   @for $i
     from map.get($scale, mapped, range, start)
@@ -31,7 +32,7 @@
       $i,
       map.get($scale, mapped, params)
     );
-    --s-#{$prefix}-#{$i}: #{rhythm.grid-line(
+    #{$🌱}#{$prefix}-#{$i}: #{rhythm.grid-line(
         $font-size,
         $rlh,
         map.get($line, min),
