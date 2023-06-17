@@ -10,7 +10,6 @@ $range: (
   start: 0,
   end: 1,
 );
-$prefix: "color" !default;
 $suffix: (
   factor: 1000,
   inverse: false,
@@ -24,28 +23,24 @@ $palettes: (
     hue: $prim,
     sl-curve: 0.1 0.9 0.2 0.9 0.2 0.1 0.1 0.1,
     range: $range,
-    prefix: $prefix,
     suffix: $suffix,
   ),
   "primary": (
     hue: $prim,
     sl-curve: $sl-curve,
     range: $range,
-    prefix: $prefix,
     suffix: $suffix,
   ),
   "secondary": (
     hue: $prim + $dist,
     sl-curve: $sl-curve,
     range: $range,
-    prefix: $prefix,
     suffix: $suffix,
   ),
   "tertiary": (
     hue: $prim - $dist,
     sl-curve: $sl-curve,
     range: $range,
-    prefix: $prefix,
     suffix: $suffix,
   ),
 );

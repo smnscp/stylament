@@ -14,27 +14,27 @@
 
 /// List CSS custom properties.
 ///
-/// @param {String} $prefix Property name prefix.
+/// @param {String} $group Property group name.
 /// @param {Map} $properties Map of properties with simple literal values.
-/// @output A list of `--s-<prefix>-*` custom properties with their respective values.
-@mixin literal-properties($prefix, $properties) {
+/// @output A list of `--<prefix><group>-*` custom properties with their respective values.
+@mixin literal-properties($group, $properties) {
   @if $properties {
     @each $name, $value in $properties {
-      #{$🌱}#{$prefix}-#{$name}: #{$value};
+      #{$🌱}#{$group}-#{$name}: #{$value};
     }
   }
 }
 
 /// Map CSS custom properties via a given function.
 ///
-/// @param {String} $prefix Property name prefix.
+/// @param {String} $group Property group name.
 /// @param {Map} $domain [null] Map of inouts to the mapping function.
 /// @param {Map} $range [null] Range limiting the domain.
 /// @param {Function} $func [null] Mapping function.
 /// @param {Map} $params [null] Parameters to the function.
-/// @output A list of `--s-<prefix>-*` custom properties with their respective calculated values.
+/// @output A list of `--<prefix><group>-*` custom properties with their respective calculated values.
 @mixin mapped-properties(
-  $prefix,
+  $group,
   $domain: null,
   $range: null,
   $func: null,
@@ -44,45 +44,45 @@
 
   @if $mapped {
     @each $name, $value in $mapped {
-      #{$🌱}#{$prefix}-#{$name}: #{$value};
+      #{$🌱}#{$group}-#{$name}: #{$value};
     }
   }
 }
 
 /// Map logical to basic CSS custom properties.
 ///
-/// @param {String} $prefix Property name prefix.
+/// @param {String} $group Property group name.
 /// @param {Map} $properties Map of logical properties.
-/// @output A list of `--s-<prefix>-*` custom properties referring to others.
-@mixin logical-properties($prefix, $properties) {
+/// @output A list of `--<prefix><group>-*` custom properties referring to others.
+@mixin logical-properties($group, $properties) {
   @if $properties {
     @each $name, $alias in $properties {
-      #{$🌱}#{$prefix}-#{$name}: var(#{$🌱}#{$prefix}-#{$alias});
+      #{$🌱}#{$group}-#{$name}: var(#{$🌱}#{$group}-#{$alias});
     }
   }
 }
 
 /// Generate all configured CSS custom properties.
 ///
-/// @param {String} $prefix Property name prefix.
+/// @param {String} $group Property group name.
 /// @param {Map} $conf Configuration map for this set of properties.
-/// @output A list of mapped, literal, and logical `--s-<prefix>-*` custom properties.
-@mixin configured-properties($prefix, $conf) {
+/// @output A list of mapped, literal, and logical `--<prefix><group>-*` custom properties.
+@mixin configured-properties($group, $conf) {
   @if $conf {
     @include mapped-properties(
-      $prefix,
+      $group,
       map.get($conf, mapped, domain),
       map.get($conf, mapped, range),
       map.get($conf, mapped, function),
       map.get($conf, mapped, params)
     );
-    @include literal-properties($prefix, map.get($conf, literal));
-    @include logical-properties($prefix, map.get($conf, logical));
+    @include literal-properties($group, map.get($conf, literal));
+    @include logical-properties($group, map.get($conf, logical));
     @if (
       map.has-key($conf, literal, default) or
         map.has-key($conf, logical, default)
     ) {
-      #{$🌱}#{$prefix}: var(#{$🌱}#{$prefix}-default);
+      #{$🌱}#{$group}: var(#{$🌱}#{$group}-default);
     }
   }
 }

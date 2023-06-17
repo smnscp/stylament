@@ -18,10 +18,9 @@
   $scale: map.get(cfg.$merged, typography, scale);
   $line: map.get(cfg.$merged, typography, line);
   $rlh: map.get($line, rlh);
-  $prefix: line;
 
-  #{$🌱}#{$prefix}-root: #{map.get($line, root)};
-  #{$🌱}#{$prefix}-root-abs: #{$rlh};
+  #{$🌱}line-root: #{map.get($line, root)};
+  #{$🌱}line-root-abs: #{$rlh};
 
   @for $i
     from map.get($scale, mapped, range, start)
@@ -32,7 +31,7 @@
       $i,
       map.get($scale, mapped, params)
     );
-    #{$🌱}#{$prefix}-#{$i}: #{rhythm.grid-line(
+    #{$🌱}line-#{$i}: #{rhythm.grid-line(
         $font-size,
         $rlh,
         map.get($line, min),
