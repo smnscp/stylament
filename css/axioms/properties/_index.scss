@@ -4,8 +4,9 @@
 
 /// # CSS Custom Properties
 ///
-/// This is a set of global CSS custom properties constituting the DNA of the design system.
-/// They are generated from the [global configuration](./ax-config.html) and are used in the
+/// This layer defines the system’s global (assigned to `:root`) CSS custom properties.
+/// As a CSS-specific design token implementation they are generated from the
+/// [global configuration](./ax-config.html) and are being applied in the
 /// higher layers of the system.
 
 @use "generate";

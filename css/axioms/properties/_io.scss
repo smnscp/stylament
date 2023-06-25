@@ -2,10 +2,33 @@
 /// @group ax-properties
 ////
 
-/// Configurable CSS variable prefix.
+/// ## Prop I/O: Read and Write Properties
+///
+/// On CSS level it can be helpful to adhere to naming conventions for custom properties
+/// in order to keep a better overview of their respective origin and purpose. Stylament
+/// allows you to define a custom prefix to brand all its system properties and provides
+/// shortcuts to reference properties in a prefix-agnostic way.
+
+/// Configurable prefix for system CSS variables.
+///
+/// Stylament defines a prefix for its **system** (hence `s-`) custom properties by default.
+/// This can be replaced by any [valid][spec] identifier part when `@use`-ing this file:
+///
+/// [spec]: https://drafts.csswg.org/css-variables/#defining-variables
+///
+/// @example scss - Add custom prefix to all system CSS custom properties
+///   @use "stylament/css/axioms/properties/io" with ($-prefix: "myBrand-");
+///
+/// @example scss - Keep all system CSS custom properties un-prefixed
+///   @use "stylament/css/axioms/properties/io" with ($-prefix: "");
+///
+/// @example scss - Use a fancy prefix
+///   @use "stylament/css/axioms/properties/io" with ($-prefix: "💅");
+///
 $-prefix: "s-" !default;
 
 /// Shortcut for system CSS variable prefix.
+/// @link https://github.com/picocss/pico/commit/c5a1ffc Credits: Pico CSS
 /// @name 🌱
 $🌱: --#{$-prefix};
 
