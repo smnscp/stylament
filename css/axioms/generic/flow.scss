@@ -14,38 +14,38 @@
 
 /// @name Flow Space Definition for General Blocks
 :is(#{el.$blocks}, div) {
-  ---flow-space: #{svar(flow-space-default)};
+  ---flow-space: #{svar(spacing-flow-default)};
 }
 
 /// @name Flow Space Definition for Sections
 :is(#{el.$sections}) {
-  ---flow-space: #{svar(flow-space-sectioning)};
+  ---flow-space: #{svar(spacing-flow-sectioning)};
 }
 
 /// @name Flow Space Definition for Headings
 :is(#{el.$headings}) {
-  ---flow-space: #{svar(flow-space-heading, svar(flow-space-default))};
+  ---flow-space: #{svar(spacing-flow-heading, svar(spacing-flow-default))};
 }
 
 /// @name Flow Space Definition for List Items and Nested Lists
 li,
 li :is(#{el.$lists}) {
-  ---flow-space: #{svar(flow-space-list, svar(flow-space-default))};
+  ---flow-space: #{svar(spacing-flow-list, svar(spacing-flow-default))};
 }
 
 /// @name Flow Space Definition for Definition Terms
 dt {
   ---flow-space: #{svar(
-      flow-space-defterm,
-      svar(flow-space-deflist, svar(flow-space-default))
+      spacing-flow-defterm,
+      svar(spacing-flow-deflist, svar(spacing-flow-default))
     )};
 }
 
 /// @name Flow Space Definition for Definition Data
 dd {
   ---flow-space: #{svar(
-      flow-space-defdata,
-      svar(flow-space-deflist, svar(flow-space-default))
+      spacing-flow-defdata,
+      svar(spacing-flow-deflist, svar(spacing-flow-default))
     )};
 }
 

@@ -147,86 +147,94 @@ $default: (
         page: "xl",
       ),
     ),
-    spacing-block: (
-      mapped: (
-        domain: mapping.$domain-sizes,
-        function: meta.get-function("exponential", $module: "function"),
-        params: (
-          base: 2,
-          coefficient: $-rlh,
+    spacing: (
+      block: (
+        mapped: (
+          domain: mapping.$domain-sizes,
+          function: meta.get-function("exponential", $module: "function"),
+          params: (
+            base: 2,
+            coefficient: $-rlh,
+          ),
+        ),
+        logical: (
+          default: md,
         ),
       ),
-      logical: (
-        default: md,
-      ),
-    ),
-    spacing-inline: (
-      mapped: (
-        domain: mapping.$domain-sizes,
-        function: meta.get-function("exponential", $module: "function"),
-        params: (
-          base: 2,
-          coefficient: 2ch,
+      inline: (
+        mapped: (
+          domain: mapping.$domain-sizes,
+          function: meta.get-function("exponential", $module: "function"),
+          params: (
+            base: 2,
+            coefficient: 2ch,
+          ),
+        ),
+        logical: (
+          default: md,
         ),
       ),
-      logical: (
-        default: md,
+      flow: (
+        literal: (
+          list: 0em,
+          sectioning:
+            clamp(
+              svar(spacing-block-md),
+              (100vi - svar(container-sm)) / 4,
+              svar(spacing-block-lg)
+            ),
+        ),
+        logical: (
+          default: "/spacing-block-sm",
+          heading: "/spacing-block-md",
+          deflist: "/spacing-block-sm",
+        ),
       ),
-    ),
-    flow-space: (
-      literal: (
-        list: 0em,
-        sectioning:
-          clamp(svar(spacing-block-md), (100vi - svar(container-sm)) / 4, svar(spacing-block-lg)),
+      wrap: (
+        logical: (
+          default: "/spacing-flow-default" "/spacing-inline-default",
+          sectioning: "/spacing-flow-sectioning" "/spacing-inline-lg",
+        ),
       ),
-      logical: (
-        default: "/spacing-block-sm",
-        heading: "/spacing-block-md",
-        deflist: "/spacing-block-sm",
-      ),
-    ),
-    wrap-space: (
-      logical: (
-        default: "/flow-space-default" "/spacing-inline-default",
-        sectioning: "/flow-space-sectioning" "/spacing-inline-lg",
-      ),
-    ),
-    indent: (
-      logical: (
-        default: "/spacing-inline-default",
+      indent: (
+        logical: (
+          default: "/spacing-inline-default",
+        ),
       ),
     ),
   ),
   typography: (
-    font-family: (
-      literal: (
-        sans: (
-          "Source Sans Pro",
-          sans-serif,
+    font: (
+      family: (
+        literal: (
+          sans: (
+            "Source Sans Pro",
+            sans-serif,
+          ),
+          serif: (
+            "Source Serif Pro",
+            serif,
+          ),
+          mono: (
+            "Source Code Pro",
+            monospace,
+          ),
         ),
-        serif: (
-          "Source Serif Pro",
-          serif,
-        ),
-        mono: (
-          "Source Code Pro",
-          monospace,
+        logical: (
+          body: "serif",
+          heading: "sans",
+          display: "body",
         ),
       ),
-      logical: (
-        body: "serif",
-        heading: "sans",
-        display: "body",
-      ),
-    ),
-    font-weight: (
-      mapped: (
-        domain: mapping.$domain-font-weights,
-      ),
-      logical: (
-        body: "regular",
-        emphasis: "bold",
-        heading: "bold",
+      weight: (
+        mapped: (
+          domain: mapping.$domain-font-weights,
+        ),
+        logical: (
+          body: "regular",
+          emphasis: "bold",
+          heading: "bold",
+        ),
       ),
     ),
     letter-spacing: (
@@ -305,30 +313,32 @@ $default: (
         function: meta.get-function("shadow", $module: "mapping"),
       ),
     ),
-    stroke-width: (
-      mapped: (
-        range: (
-          start: 1,
-          end: 8,
+    stroke: (
+      width: (
+        mapped: (
+          range: (
+            start: 1,
+            end: 8,
+          ),
+          function: meta.get-function("polynomial", $module: "function"),
+          params: (
+            0,
+            math.div($-rlh, 24),
+          ),
         ),
-        function: meta.get-function("polynomial", $module: "function"),
-        params: (
-          0,
-          math.div($-rlh, 24),
+        logical: (
+          default: 2,
         ),
       ),
-      logical: (
-        default: 2,
+      style: (
+        literal: (
+          default: "solid",
+        ),
       ),
-    ),
-    stroke-style: (
-      literal: (
-        default: "solid",
-      ),
-    ),
-    stroke-color: (
-      logical: (
-        default: "/color-tertiary-700",
+      color: (
+        logical: (
+          default: "/color-tertiary-700",
+        ),
       ),
     ),
     easing: (
