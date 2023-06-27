@@ -19,10 +19,10 @@ $group-props: false !default;
 /// @name Generated Properties
 /// @requires $merged
 /// @requires {mixin} configured-properties
-:root {
-  @each $group, $configs in cfg.$merged {
-    @each $prop, $config in $configs {
-      @if not list.index($exclude, "#{$group}.#{$prop}") {
+@each $group, $configs in cfg.$merged {
+  @each $prop, $config in $configs {
+    @if not list.index($exclude, "#{$group}.#{$prop}") {
+      :root {
         @include props.configured-properties(
           if($group-props, "#{$group}-#{$prop}", $prop),
           $config
