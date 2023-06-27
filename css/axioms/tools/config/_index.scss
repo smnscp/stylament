@@ -59,7 +59,7 @@
   $lap: math.floor(math.div($start - 1, $length)) + 1;
 
   @while $current <= $end {
-    @if $current > $length * $lap {
+    @while $current > $length * $lap {
       $lap: $lap + 1;
     }
     // Pick current key-value pair from the given domain.
