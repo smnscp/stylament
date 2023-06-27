@@ -10,24 +10,40 @@
 
 @use "sass:list";
 @use "sass:map";
+@use "sass:meta";
 @use "../config" as cfg;
 @use "mixins" as props;
 
+/// Config paths to exclude from property generation. The dash (`-`) is used as path separator.
+/// @type List
 $exclude: () !default;
-$group-props: false !default;
 
-/// @name Generated Properties
-/// @requires $merged
+/// Number of top-level token path levels to exclude from property names.
+/// By default the root level and the first categorization level (“layout”, “typography”, etc.)
+/// are skipped.
+/// @type Number
+$root-trim: 2 !default;
+
+/// Traverse the configuration tree recursively to generate properties.
+/// @param {Map} $config The configuration (sub-)tree to traverse.
+/// @param {String} $group The token group name for the current subtree.
+/// @param {Number} $trim The number of token path levels to exclude from property names.
 /// @requires {mixin} configured-properties
-@each $group, $configs in cfg.$merged {
-  @each $prop, $config in $configs {
-    @if not list.index($exclude, "#{$group}.#{$prop}") {
-      :root {
-        @include props.configured-properties(
-          if($group-props, "#{$group}-#{$prop}", $prop),
-          $config
-        );
-      }
+@mixin -traverse-config($config, $group: null, $trim: $root-trim) {
+  @if (meta.type-of($config) == "map") and (not list.index($exclude, $group)) {
+    :root {
+      @include props.configured-properties($group, $config);
+    }
+    @each $subgroup, $subconfig in $config {
+      @include -traverse-config(
+        $subconfig,
+        if($trim > 0, $subgroup, "#{$group}-#{$subgroup}"),
+        $trim - 1
+      );
     }
   }
 }
+
+/// @name Generated Properties
+/// @requires $merged
+@include -traverse-config(cfg.$merged);
