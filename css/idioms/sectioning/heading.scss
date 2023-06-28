@@ -12,11 +12,11 @@ hgroup {
     color: var(---clr-fg);
   }
   h1 ~ p {
-    font-size: svar(scale-2);
+    font-size: svar(font-size-2);
     line-height: svar(line-2);
   }
   h2 ~ p {
-    font-size: svar(scale-1);
+    font-size: svar(font-size-1);
     line-height: svar(line-1);
   }
 }

@@ -15,7 +15,7 @@
 /// @requires $merged
 /// @link https://drewish.com/tools/vertical-rhythm/ Vertical rhythm calculation tool
 :root {
-  $scale: map.get(cfg.$merged, typography, scale);
+  $scale: map.get(cfg.$merged, typography, font, size);
   $line: map.get(cfg.$merged, typography, line);
   $rlh: map.get($line, rlh);
 

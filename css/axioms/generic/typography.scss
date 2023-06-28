@@ -17,7 +17,7 @@ html {
 body {
   font-family: svar(font-family-body);
   font-weight: svar(font-weight-body);
-  font-size: svar(scale-0);
+  font-size: svar(font-size-0);
   line-height: svar(line-0);
 }
 
@@ -31,7 +31,7 @@ body {
 @for $level from 1 through 6 {
   /// Apply respective font-size and line-height to each heading level.
   h#{$level} {
-    font-size: svar(scale-#{4 - $level});
+    font-size: svar(font-size-#{4 - $level});
     line-height: svar(line-#{4 - $level});
   }
 }
@@ -53,7 +53,7 @@ pre {
 /// Set scale-based font size.
 /// @name Smaller
 :is(small, sub, sup) {
-  font-size: svar(scale-smaller);
+  font-size: svar(font-size-smaller);
 }
 
 /// Prevent certain inline (pseudo) elements from affecting the line height.

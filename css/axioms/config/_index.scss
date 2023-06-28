@@ -226,6 +226,24 @@ $default: (
           display: "body",
         ),
       ),
+      size: (
+        mapped: (
+          range: (
+            start: -2,
+            end: 9,
+          ),
+          function: meta.get-function("exponential", $module: "function"),
+          params: (
+            base: $-scale-ratio,
+            coefficient: $-scale-base,
+          ),
+        ),
+        literal: (
+          ratio: $-scale-ratio,
+          smaller: math.div(100%, $-scale-ratio),
+          larger: 100% * $-scale-ratio,
+        ),
+      ),
       weight: (
         mapped: (
           domain: mapping.$domain-font-weights,
@@ -270,24 +288,6 @@ $default: (
       ),
       logical: (
         default: md,
-      ),
-    ),
-    scale: (
-      mapped: (
-        range: (
-          start: -2,
-          end: 9,
-        ),
-        function: meta.get-function("exponential", $module: "function"),
-        params: (
-          base: $-scale-ratio,
-          coefficient: $-scale-base,
-        ),
-      ),
-      literal: (
-        ratio: $-scale-ratio,
-        smaller: math.div(100%, $-scale-ratio),
-        larger: 100% * $-scale-ratio,
       ),
     ),
   ),
