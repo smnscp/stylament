@@ -6,9 +6,10 @@
 
 @use "../properties/io" as *;
 
-/// The line-height of the root element.
-/// @name Root Line Height
+/// The font size and line height of the root element.
+/// @name Root Line Height and Font Size
 html {
+  font-size: svar(font-size-root, 1rem);
   line-height: svar(line-root);
 }
 
