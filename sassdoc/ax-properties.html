@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.23.0</span>
+          <span class="project-version">0.23.2</span>
         
       </div>
     </header>
@@ -329,9 +329,89 @@
   
     <div data-item-section="prose" class="text-block">
       <h1 id="css-custom-properties" tabindex="-1">CSS Custom Properties</h1>
-<p>This is a set of global CSS custom properties constituting the DNA of the design system.
-They are generated from the <a href="./ax-config.html">global configuration</a> and are used in the
+<p>This layer defines the system’s global (assigned to <code>:root</code>) CSS custom properties.
+As a CSS-specific design token implementation they are generated from the
+<a href="./ax-config.html">global configuration</a> and are being applied in the
 higher layers of the<span class="widont">&nbsp;</span>system.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="prop-i-o-read-and-write-properties" tabindex="-1">Prop I/O: Read and Write<span class="widont">&nbsp;</span>Properties</h2>
+<p>On CSS level it can be helpful to adhere to naming conventions for custom properties
+in order to keep a better overview of their respective origin and purpose. Stylament
+allows you to define a custom prefix to brand all its system properties and provides
+shortcuts to reference properties in a prefix-agnostic<span class="widont">&nbsp;</span>way.</p>
 
       
   
@@ -457,7 +537,9 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
 
   
     <div class="text-block">
-      <p>Configurable CSS variable<span class="widont">&nbsp;</span>prefix.</p>
+      <p>Configurable prefix for system CSS<span class="widont">&nbsp;</span>variables.</p>
+<p>Stylament defines a prefix for its <strong>system</strong> (hence <code>s-</code>) custom properties by default.
+This can be replaced by any <a href="https://drafts.csswg.org/css-variables/#defining-variables">valid</a> identifier part when <code>@use</code>-ing this file:</p>
 
       
   
@@ -486,6 +568,154 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
 
 
   
+  
+    
+
+    <div data-item-section="examples">
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Examples</span>
+      </h3>
+
+      
+        
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  <div class="example">
+    <div class="example-code">
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+            <span class='code-description'>
+              Add custom prefix to all system CSS custom properties
+            </span>
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@use &quot;stylament/css/axioms/properties/io&quot; with ($-prefix: &quot;myBrand-&quot;);</code></pre>
+    </div>
+  
+
+    </div>
+
+    
+  </div>
+
+      
+        
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  <div class="example">
+    <div class="example-code">
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+            <span class='code-description'>
+              Keep all system CSS custom properties un-prefixed
+            </span>
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@use &quot;stylament/css/axioms/properties/io&quot; with ($-prefix: &quot;&quot;);</code></pre>
+    </div>
+  
+
+    </div>
+
+    
+  </div>
+
+      
+        
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  <div class="example">
+    <div class="example-code">
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+            <span class='code-description'>
+              Use a fancy prefix
+            </span>
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@use &quot;stylament/css/axioms/properties/io&quot; with ($-prefix: &quot;💅&quot;);</code></pre>
+    </div>
+  
+
+    </div>
+
+    
+  </div>
+
+      
+    </div>
   
 
 
@@ -614,6 +844,44 @@ higher layers of the<span class="widont">&nbsp;</span>system.</p>
   
   
 
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://github.com/picocss/pico/commit/c5a1ffc" class="item-name">Credits: Pico CSS</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
 
   
   
@@ -1465,9 +1733,9 @@ Same as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var#declaratio
     <h4 class="param-title">
       
       
-        <span class="item-name">$domain:</span>
+        <span class="item-name">$mapping:</span>
       
-      <span class="item-value">null</span>
+      
       <span class="value-type">(Map)</span>
       
     </h4>
@@ -1475,88 +1743,7 @@ Same as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var#declaratio
     
       
       <div class="param-details text-block">
-        <p>Map of inouts to the mapping<span class="widont">&nbsp;</span>function.</p>
-
-      </div>
-    
-  </div>
-
-
-      
-        
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$range:</span>
-      
-      <span class="item-value">null</span>
-      <span class="value-type">(Map)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Range limiting the<span class="widont">&nbsp;</span>domain.</p>
-
-      </div>
-    
-  </div>
-
-
-      
-        
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$func:</span>
-      
-      <span class="item-value">null</span>
-      <span class="value-type">(Function)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Mapping function.</p>
-
-      </div>
-    
-  </div>
-
-
-      
-        
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$params:</span>
-      
-      <span class="item-value">null</span>
-      <span class="value-type">(Map)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Parameters to the<span class="widont">&nbsp;</span>function.</p>
+        <p>Mapping configuration.</p>
 
       </div>
     
@@ -2420,14 +2607,14 @@ Same as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var#declaratio
   
   <div class="param-list">
     <h4 class="param-title">
-      
+      <span class="item-type">@mixin</span>
       
         <a href="
-  ax-properties.html#css--Generated%20Properties" class="item-name">Generated Properties</a>
+  ax-properties.html#mixin---traverse-config" class="item-name">-traverse-config()</a>
       
       
       
-      
+      <span class="item-note">[private]</span>
     </h4>
 
     
@@ -2578,7 +2765,7 @@ one of the keys <code>literal</code>, <code>logical</code>, or <code>mapped</cod
 
 
 
-<section class="item" id="css--Generated%20Properties">
+<section class="item" id="variable--exclude">
   
     
   
@@ -2596,9 +2783,11 @@ one of the keys <code>literal</code>, <code>logical</code>, or <code>mapped</cod
       
 
       
-        <a href="#css--Generated%20Properties" class="item-name">Generated Properties</a>
+        <a href="#variable--exclude" class="item-name">$exclude</a>
       
 
+      
+        <span class="value-type">(List)</span>
       
 
       
@@ -2625,24 +2814,7 @@ one of the keys <code>literal</code>, <code>logical</code>, or <code>mapped</cod
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">:root {
-  @each $group, $configs in cfg.$merged {
-    @each $prop, $config in $configs {
-      @if (not list.index($exclude, &quot;#{$group}.#{$prop}&quot;)) and
-        (
-          map.has-key($config, &quot;literal&quot;) or
-            map.has-key($config, &quot;logical&quot;) or
-            map.has-key($config, &quot;mapped&quot;)
-        )
-      {
-        @include props.configured-properties(
-          if($group-props, &quot;#{$group}-#{$prop}&quot;, $prop),
-          $config
-        );
-      }
-    }
-  }
-}</code></pre>
+      <pre class="hljs-pre"><code class="lang-scss">$exclude: () !default;</code></pre>
     </div>
   
 
@@ -2653,8 +2825,563 @@ one of the keys <code>literal</code>, <code>logical</code>, or <code>mapped</cod
   
 
   
+    <div class="text-block">
+      <p>Config paths to exclude from property generation. The dash (<code>-</code>) is used as path<span class="widont">&nbsp;</span>separator.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
 
   </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+    
+  <div data-item-section="used-by">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Used By</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-properties.html#mixin---traverse-config" class="item-name">-traverse-config()</a>
+      
+      
+      
+      <span class="item-note">[private]</span>
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="variable--root-trim">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#variable--root-trim" class="item-name">$root-trim</a>
+      
+
+      
+        <span class="value-type">(Number)</span>
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">$root-trim: 2 !default;</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Number of top-level token path levels to exclude from property names.
+By default the root level and the first categorization level (“layout”, “typography”, etc.)
+are<span class="widont">&nbsp;</span>skipped.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="mixin---traverse-config">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type">@mixin</span>
+      
+
+      
+        <a href="#mixin---traverse-config" class="item-name">-traverse-config()</a>
+      
+
+      
+
+      
+        <span class="item-note">[private]</span>
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Traverse the configuration tree recursively to generate<span class="widont">&nbsp;</span>properties.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    
+  <div data-item-section="parameter">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Parameters</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$config:</span>
+      
+      
+      <span class="value-type">(Map)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The configuration (sub-)tree to<span class="widont">&nbsp;</span>traverse.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$group:</span>
+      
+      
+      <span class="value-type">(String)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The token group name for the current<span class="widont">&nbsp;</span>subtree.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+        
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <span class="item-name">$trim:</span>
+      
+      
+      <span class="value-type">(Number)</span>
+      
+    </h4>
+
+    
+      
+      <div class="param-details text-block">
+        <p>The number of token path levels to exclude from property<span class="widont">&nbsp;</span>names.</p>
+
+      </div>
+    
+  </div>
+
+
+      
+
+      
+  
+
+      
+  
+
+      
+  
+
+      
+  
+
+    
+  </div>
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  <div data-item-section="requires">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Requires</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-properties.html#variable--exclude" class="item-name">$exclude</a>
+      
+      
+      <span class="value-type">(List)</span>
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+        
+        
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-properties.html#mixin--configured-properties" class="item-name">configured-properties()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
+  
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="prose--Generated%20Properties">
+  
+    
+  
+  
+  
+  
+
+  
 
   
 
@@ -2715,41 +3442,6 @@ one of the keys <code>literal</code>, <code>logical</code>, or <code>mapped</cod
       
       
       <span class="value-type">(Map)</span>
-      
-    </h4>
-
-    
-  </div>
-
-
-        
-      
-        
-        
-        
-
-        
-          
-          
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      <span class="item-type">@mixin</span>
-      
-        <a href="
-  ax-properties.html#mixin--configured-properties" class="item-name">configured-properties()</a>
-      
-      
-      
       
     </h4>
 
@@ -4238,7 +4930,7 @@ If this is definded the other two curves are<span class="widont">&nbsp;</span>ig
       
       
       <pre class="hljs-pre"><code class="lang-scss">:root {
-  $scale: map.get(cfg.$merged, typography, scale);
+  $scale: map.get(cfg.$merged, typography, font, size);
   $line: map.get(cfg.$merged, typography, line);
   $rlh: map.get($line, rlh);
 

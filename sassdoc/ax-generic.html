@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.23.0</span>
+          <span class="project-version">0.23.2</span>
         
       </div>
     </header>
@@ -2182,7 +2182,7 @@ iframe:not([width]) {
       
       
       <pre class="hljs-pre"><code class="lang-scss">:is(#{el.$blocks}, div) {
-  ---flow-space: #{svar(flow-space-default)};
+  ---flow-space: #{svar(spacing-flow-default)};
 }</code></pre>
     </div>
   
@@ -2296,7 +2296,7 @@ iframe:not([width]) {
       
       
       <pre class="hljs-pre"><code class="lang-scss">:is(#{el.$sections}) {
-  ---flow-space: #{svar(flow-space-sectioning)};
+  ---flow-space: #{svar(spacing-flow-sectioning)};
 }</code></pre>
     </div>
   
@@ -2410,7 +2410,7 @@ iframe:not([width]) {
       
       
       <pre class="hljs-pre"><code class="lang-scss">:is(#{el.$headings}) {
-  ---flow-space: #{svar(flow-space-heading, svar(flow-space-default))};
+  ---flow-space: #{svar(spacing-flow-heading, svar(spacing-flow-default))};
 }</code></pre>
     </div>
   
@@ -2525,7 +2525,7 @@ iframe:not([width]) {
       
       <pre class="hljs-pre"><code class="lang-scss">li,
 li :is(#{el.$lists}) {
-  ---flow-space: #{svar(flow-space-list, svar(flow-space-default))};
+  ---flow-space: #{svar(spacing-flow-list, svar(spacing-flow-default))};
 }</code></pre>
     </div>
   
@@ -2640,8 +2640,8 @@ li :is(#{el.$lists}) {
       
       <pre class="hljs-pre"><code class="lang-scss">dt {
   ---flow-space: #{svar(
-      flow-space-defterm,
-      svar(flow-space-deflist, svar(flow-space-default))
+      spacing-flow-defterm,
+      svar(spacing-flow-deflist, svar(spacing-flow-default))
     )};
 }</code></pre>
     </div>
@@ -2757,8 +2757,8 @@ li :is(#{el.$lists}) {
       
       <pre class="hljs-pre"><code class="lang-scss">dd {
   ---flow-space: #{svar(
-      flow-space-defdata,
-      svar(flow-space-deflist, svar(flow-space-default))
+      spacing-flow-defdata,
+      svar(spacing-flow-deflist, svar(spacing-flow-default))
     )};
 }</code></pre>
     </div>
@@ -3182,8 +3182,8 @@ li :is(#{el.$lists}) {
       
       
       <pre class="hljs-pre"><code class="lang-scss">:is(ol, ul, menu) {
-  ---indent-root: #{svar(indent-list-root, 0)};
-  ---indent: #{svar(indent-list, svar(indent-list-root, svar(indent-default)))};
+  ---indent-root: #{svar(spacing-indent-list-root, 0)};
+  ---indent: #{svar(spacing-indent-list, svar(spacing-indent-list-root, svar(spacing-indent-default)))};
   padding-inline-start: var(---indent-root);
 }</code></pre>
     </div>
@@ -3448,7 +3448,7 @@ ilst consistently by only changing the <code>---indent</code> property of the ro
       
       
       <pre class="hljs-pre"><code class="lang-scss">dd {
-  ---indent: #{svar(indent-deflist, svar(indent-default))};
+  ---indent: #{svar(spacing-indent-deflist, svar(spacing-indent-default))};
   margin-inline-start: var(---indent);
 }</code></pre>
     </div>
@@ -3577,7 +3577,7 @@ ilst consistently by only changing the <code>---indent</code> property of the ro
       
       
       <pre class="hljs-pre"><code class="lang-scss">blockquote {
-  ---indent: #{svar(indent-quotation, svar(indent-default))};
+  ---indent: #{svar(spacing-indent-quotation, svar(spacing-indent-default))};
   margin-inline: var(---indent);
 }</code></pre>
     </div>
@@ -3706,7 +3706,7 @@ ilst consistently by only changing the <code>---indent</code> property of the ro
       
       
       <pre class="hljs-pre"><code class="lang-scss">figure {
-  ---indent: #{svar(indent-figure, svar(indent-default))};
+  ---indent: #{svar(spacing-indent-figure, svar(spacing-indent-default))};
   margin-inline: var(---indent);
 }</code></pre>
     </div>
@@ -3862,7 +3862,7 @@ ilst consistently by only changing the <code>---indent</code> property of the ro
 
 
 
-<section class="item" id="css--Root%20Line%20Height">
+<section class="item" id="css--Root%20Line%20Height%20and%20Font%20Size">
   
     
   
@@ -3880,7 +3880,7 @@ ilst consistently by only changing the <code>---indent</code> property of the ro
       
 
       
-        <a href="#css--Root%20Line%20Height" class="item-name">Root Line<span class="widont">&nbsp;</span>Height</a>
+        <a href="#css--Root%20Line%20Height%20and%20Font%20Size" class="item-name">Root Line Height and Font<span class="widont">&nbsp;</span>Size</a>
       
 
       
@@ -3910,6 +3910,7 @@ ilst consistently by only changing the <code>---indent</code> property of the ro
       
       
       <pre class="hljs-pre"><code class="lang-scss">html {
+  font-size: svar(font-size-root, 1rem);
   line-height: svar(line-root);
 }</code></pre>
     </div>
@@ -3923,7 +3924,7 @@ ilst consistently by only changing the <code>---indent</code> property of the ro
 
   
     <div class="text-block">
-      <p>The line-height of the root<span class="widont">&nbsp;</span>element.</p>
+      <p>The font size and line height of the root<span class="widont">&nbsp;</span>element.</p>
 
       
   
@@ -4040,7 +4041,7 @@ ilst consistently by only changing the <code>---indent</code> property of the ro
       <pre class="hljs-pre"><code class="lang-scss">body {
   font-family: svar(font-family-body);
   font-weight: svar(font-weight-body);
-  font-size: svar(scale-0);
+  font-size: svar(font-size-0);
   line-height: svar(line-0);
 }</code></pre>
     </div>
@@ -4298,7 +4299,7 @@ ilst consistently by only changing the <code>---indent</code> property of the ro
       
       
       <pre class="hljs-pre"><code class="lang-scss">h#{$level} {
-  font-size: svar(scale-#{4 - $level});
+  font-size: svar(font-size-#{4 - $level});
     line-height: svar(line-#{4 - $level});
 }</code></pre>
     </div>
@@ -4685,7 +4686,7 @@ pre {
       
       
       <pre class="hljs-pre"><code class="lang-scss">:is(small, sub, sup) {
-  font-size: svar(scale-smaller);
+  font-size: svar(font-size-smaller);
 }</code></pre>
     </div>
   

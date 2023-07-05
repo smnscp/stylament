@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.23.0</span>
+          <span class="project-version">0.23.2</span>
         
       </div>
     </header>
@@ -574,6 +574,9 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-length-2½: 3.75rem;
   --s-length-3dim: 4.125rem;
   --s-length-3: 4.5rem;
+}
+
+:root {
   --s-container-xxs: 0rem;
   --s-container-xs: 16rem;
   --s-container-sm: 32rem;
@@ -582,6 +585,13 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-container-xl: 80rem;
   --s-container-xxl: 96rem;
   --s-container-page: var(--s-container-sm);
+}
+
+:root {
+  --s-spacing-sectioning: var(--s-spacing-block);
+}
+
+:root {
   --s-spacing-block-xxs: 0.1875rem;
   --s-spacing-block-xs: 0.375rem;
   --s-spacing-block-sm: 0.75rem;
@@ -591,6 +601,9 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-spacing-block-xxl: 12rem;
   --s-spacing-block-default: var(--s-spacing-block-md);
   --s-spacing-block: var(--s-spacing-block-default);
+}
+
+:root {
   --s-spacing-inline-xxs: 0.25ch;
   --s-spacing-inline-xs: 0.5ch;
   --s-spacing-inline-sm: 1ch;
@@ -600,24 +613,57 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-spacing-inline-xxl: 16ch;
   --s-spacing-inline-default: var(--s-spacing-inline-md);
   --s-spacing-inline: var(--s-spacing-inline-default);
-  --s-flow-space-list: 0em;
-  --s-flow-space-sectioning: clamp(var(--s-spacing-block-md), (100vi - var(--s-container-sm)) / 4, var(--s-spacing-block-lg));
-  --s-flow-space-default: var(--s-spacing-block-sm);
-  --s-flow-space-heading: var(--s-spacing-block-md);
-  --s-flow-space-deflist: var(--s-spacing-block-sm);
-  --s-flow-space: var(--s-flow-space-default);
-  --s-wrap-space-default: var(--s-flow-space-default) var(--s-spacing-inline-default);
-  --s-wrap-space-sectioning: var(--s-flow-space-sectioning) var(--s-spacing-inline-lg);
-  --s-wrap-space: var(--s-wrap-space-default);
-  --s-indent-default: var(--s-spacing-inline-default);
-  --s-indent: var(--s-indent-default);
-  --s-spacing-sectioning: var(--s-spacing-block);
-  --s-font-family-sans: Helvetica;
-  --s-font-family-serif: Times;
-  --s-font-family-mono: Courier;
+}
+
+:root {
+  --s-spacing-flow-list: 0em;
+  --s-spacing-flow-sectioning: clamp(var(--s-spacing-block-md), (100vi - var(--s-container-sm)) / 4, var(--s-spacing-block-lg));
+  --s-spacing-flow-default: var(--s-spacing-block-sm);
+  --s-spacing-flow-heading: var(--s-spacing-block-md);
+  --s-spacing-flow-deflist: var(--s-spacing-block-sm);
+  --s-spacing-flow: var(--s-spacing-flow-default);
+}
+
+:root {
+  --s-spacing-wrap-default: var(--s-spacing-flow-default) var(--s-spacing-inline-default);
+  --s-spacing-wrap-sectioning: var(--s-spacing-flow-sectioning) var(--s-spacing-inline-lg);
+  --s-spacing-wrap: var(--s-spacing-wrap-default);
+}
+
+:root {
+  --s-spacing-indent-default: var(--s-spacing-inline-default);
+  --s-spacing-indent: var(--s-spacing-indent-default);
+}
+
+:root {
+  --s-font-family-sans: Source Sans Pro, sans-serif;
+  --s-font-family-serif: Source Serif Pro, serif;
+  --s-font-family-mono: Source Code Pro, monospace;
   --s-font-family-body: var(--s-font-family-serif);
   --s-font-family-heading: var(--s-font-family-sans);
   --s-font-family-display: var(--s-font-family-body);
+}
+
+:root {
+  --s-font-size--2: 0.4444444444em;
+  --s-font-size--1: 0.6666666667em;
+  --s-font-size-0: 1em;
+  --s-font-size-1: 1.5em;
+  --s-font-size-2: 2.25em;
+  --s-font-size-3: 3.375em;
+  --s-font-size-4: 5.0625em;
+  --s-font-size-5: 7.59375em;
+  --s-font-size-6: 11.390625em;
+  --s-font-size-7: 17.0859375em;
+  --s-font-size-8: 25.62890625em;
+  --s-font-size-9: 38.443359375em;
+  --s-font-size-ratio: 1.5;
+  --s-font-size-smaller: 66.6666666667%;
+  --s-font-size-larger: 150%;
+  --s-font-size-root: clamp(0.96875rem, 0.9375rem + 0.1953125vw, 1.25rem);
+}
+
+:root {
   --s-font-weight-thin: 100;
   --s-font-weight-extralight: 200;
   --s-font-weight-light: 300;
@@ -630,6 +676,9 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-font-weight-body: var(--s-font-weight-regular);
   --s-font-weight-emphasis: var(--s-font-weight-bold);
   --s-font-weight-heading: var(--s-font-weight-bold);
+}
+
+:root {
   --s-letter-spacing-xxs: -0.075em;
   --s-letter-spacing-xs: -0.05em;
   --s-letter-spacing-sm: -0.025em;
@@ -638,6 +687,9 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-letter-spacing-xl: 0.05em;
   --s-letter-spacing-xxl: 0.075em;
   --s-letter-spacing-none: var(--s-letter-spacing-md);
+}
+
+:root {
   --s-measure-xxs: 25ch;
   --s-measure-xs: 36ch;
   --s-measure-sm: 49ch;
@@ -649,21 +701,17 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-measure-inf: unset;
   --s-measure-default: var(--s-measure-md);
   --s-measure: var(--s-measure-default);
-  --s-scale--2: 0.4444444444em;
-  --s-scale--1: 0.6666666667em;
-  --s-scale-0: 1em;
-  --s-scale-1: 1.5em;
-  --s-scale-2: 2.25em;
-  --s-scale-3: 3.375em;
-  --s-scale-4: 5.0625em;
-  --s-scale-5: 7.59375em;
-  --s-scale-6: 11.390625em;
-  --s-scale-7: 17.0859375em;
-  --s-scale-8: 25.62890625em;
-  --s-scale-9: 38.443359375em;
-  --s-scale-ratio: 1.5;
-  --s-scale-smaller: 66.6666666667%;
-  --s-scale-larger: 150%;
+}
+
+:root {
+  --s-font-family-serif: Times;
+  --s-font-family-sans: Helvetica;
+  --s-font-family-mono: Courier;
+  --s-font-family-body: var(--s-font-family-serif);
+  --s-font-family-heading: var(--s-font-family-sans);
+}
+
+:root {
   --s-radius-xxs: 0rem;
   --s-radius-xs: 0.2rem;
   --s-radius-sm: 0.4rem;
@@ -673,6 +721,9 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-radius-xxl: 1.2rem;
   --s-radius-ellipse: 100%;
   --s-radius-obround: 999rem;
+}
+
+:root {
   --s-shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
   --s-shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
   --s-shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
@@ -680,6 +731,9 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-shadow-lg: 0rem 0.5rem 1rem rgb(0 0 0 / 0.265625);
   --s-shadow-xl: 0rem 1rem 2rem rgb(0 0 0 / 0.28125);
   --s-shadow-xxl: 0rem 2rem 4rem rgb(0 0 0 / 0.296875);
+}
+
+:root {
   --s-stroke-width-1: 0.0625rem;
   --s-stroke-width-2: 0.125rem;
   --s-stroke-width-3: 0.1875rem;
@@ -690,10 +744,19 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-stroke-width-8: 0.5rem;
   --s-stroke-width-default: var(--s-stroke-width-2);
   --s-stroke-width: var(--s-stroke-width-default);
+}
+
+:root {
   --s-stroke-style-default: solid;
   --s-stroke-style: var(--s-stroke-style-default);
+}
+
+:root {
   --s-stroke-color-default: var(--s-color-tertiary-700);
   --s-stroke-color: var(--s-stroke-color-default);
+}
+
+:root {
   --s-easing-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
   --s-easing-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   --s-easing-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
@@ -720,6 +783,12 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-easing-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --s-easing-default: ease-in-out;
   --s-easing: var(--s-easing-default);
+}
+
+:root {
+  --s-color-body: PapayaWhip;
+  --s-color-body-contra: MidnightBlue;
+  --s-color-neutral: LightSlateGray;
 }
 
 :root {
@@ -776,28 +845,28 @@ iframe:not([width]) {
 }
 
 :is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details, div) {
-  ---flow-space: var(--s-flow-space-default);
+  ---flow-space: var(--s-spacing-flow-default);
 }
 
 :is(article, section, nav, aside) {
-  ---flow-space: var(--s-flow-space-sectioning);
+  ---flow-space: var(--s-spacing-flow-sectioning);
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
-  ---flow-space: var(--s-flow-space-heading, var(--s-flow-space-default));
+  ---flow-space: var(--s-spacing-flow-heading, var(--s-spacing-flow-default));
 }
 
 li,
 li :is(ol, ul, menu) {
-  ---flow-space: var(--s-flow-space-list, var(--s-flow-space-default));
+  ---flow-space: var(--s-spacing-flow-list, var(--s-spacing-flow-default));
 }
 
 dt {
-  ---flow-space: var(--s-flow-space-defterm, var(--s-flow-space-deflist, var(--s-flow-space-default)));
+  ---flow-space: var(--s-spacing-flow-defterm, var(--s-spacing-flow-deflist, var(--s-spacing-flow-default)));
 }
 
 dd {
-  ---flow-space: var(--s-flow-space-defdata, var(--s-flow-space-deflist, var(--s-flow-space-default)));
+  ---flow-space: var(--s-spacing-flow-defdata, var(--s-spacing-flow-deflist, var(--s-spacing-flow-default)));
 }
 
 * + :is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details),
@@ -813,8 +882,8 @@ dd {
 }
 
 :is(ol, ul, menu) {
-  ---indent-root: var(--s-indent-list-root, 0);
-  ---indent: var(--s-indent-list, var(--s-indent-list-root, var(--s-indent-default)));
+  ---indent-root: var(--s-spacing-indent-list-root, 0);
+  ---indent: var(--s-spacing-indent-list, var(--s-spacing-indent-list-root, var(--s-spacing-indent-default)));
   padding-inline-start: var(---indent-root);
 }
 
@@ -824,28 +893,29 @@ li :is(ol, ul, menu) {
 }
 
 dd {
-  ---indent: var(--s-indent-deflist, var(--s-indent-default));
+  ---indent: var(--s-spacing-indent-deflist, var(--s-spacing-indent-default));
   margin-inline-start: var(---indent);
 }
 
 blockquote {
-  ---indent: var(--s-indent-quotation, var(--s-indent-default));
+  ---indent: var(--s-spacing-indent-quotation, var(--s-spacing-indent-default));
   margin-inline: var(---indent);
 }
 
 figure {
-  ---indent: var(--s-indent-figure, var(--s-indent-default));
+  ---indent: var(--s-spacing-indent-figure, var(--s-spacing-indent-default));
   margin-inline: var(---indent);
 }
 
 html {
+  font-size: var(--s-font-size-root, 1rem);
   line-height: var(--s-line-root);
 }
 
 body {
   font-family: var(--s-font-family-body);
   font-weight: var(--s-font-weight-body);
-  font-size: var(--s-scale-0);
+  font-size: var(--s-font-size-0);
   line-height: var(--s-line-0);
 }
 
@@ -855,32 +925,32 @@ body {
 }
 
 h1 {
-  font-size: var(--s-scale-3);
+  font-size: var(--s-font-size-3);
   line-height: var(--s-line-3);
 }
 
 h2 {
-  font-size: var(--s-scale-2);
+  font-size: var(--s-font-size-2);
   line-height: var(--s-line-2);
 }
 
 h3 {
-  font-size: var(--s-scale-1);
+  font-size: var(--s-font-size-1);
   line-height: var(--s-line-1);
 }
 
 h4 {
-  font-size: var(--s-scale-0);
+  font-size: var(--s-font-size-0);
   line-height: var(--s-line-0);
 }
 
 h5 {
-  font-size: var(--s-scale--1);
+  font-size: var(--s-font-size--1);
   line-height: var(--s-line--1);
 }
 
 h6 {
-  font-size: var(--s-scale--2);
+  font-size: var(--s-font-size--2);
   line-height: var(--s-line--2);
 }
 
@@ -895,7 +965,7 @@ pre {
 }
 
 :is(small, sub, sup) {
-  font-size: var(--s-scale-smaller);
+  font-size: var(--s-font-size-smaller);
 }
 
 :is(code, kbd, samp),
@@ -1210,86 +1280,116 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
         page: &quot;xl&quot;,
       ),
     ),
-    spacing-block: (
-      mapped: (
-        domain: mapping.$domain-sizes,
-        function: meta.get-function(&quot;exponential&quot;, $module: &quot;function&quot;),
-        params: (
-          base: 2,
-          coefficient: $-rlh,
+    spacing: (
+      block: (
+        mapped: (
+          domain: mapping.$domain-sizes,
+          function: meta.get-function(&quot;exponential&quot;, $module: &quot;function&quot;),
+          params: (
+            base: 2,
+            coefficient: $-rlh,
+          ),
+        ),
+        logical: (
+          default: md,
         ),
       ),
-      logical: (
-        default: md,
-      ),
-    ),
-    spacing-inline: (
-      mapped: (
-        domain: mapping.$domain-sizes,
-        function: meta.get-function(&quot;exponential&quot;, $module: &quot;function&quot;),
-        params: (
-          base: 2,
-          coefficient: 2ch,
+      inline: (
+        mapped: (
+          domain: mapping.$domain-sizes,
+          function: meta.get-function(&quot;exponential&quot;, $module: &quot;function&quot;),
+          params: (
+            base: 2,
+            coefficient: 2ch,
+          ),
+        ),
+        logical: (
+          default: md,
         ),
       ),
-      logical: (
-        default: md,
+      flow: (
+        literal: (
+          list: 0em,
+          sectioning:
+            clamp(
+              svar(spacing-block-md),
+              (100vi - svar(container-sm)) / 4,
+              svar(spacing-block-lg)
+            ),
+        ),
+        logical: (
+          default: &quot;/spacing-block-sm&quot;,
+          heading: &quot;/spacing-block-md&quot;,
+          deflist: &quot;/spacing-block-sm&quot;,
+        ),
       ),
-    ),
-    flow-space: (
-      literal: (
-        list: 0em,
-        sectioning:
-          clamp(svar(spacing-block-md), (100vi - svar(container-sm)) / 4, svar(spacing-block-lg)),
+      wrap: (
+        logical: (
+          default: &quot;/spacing-flow-default&quot; &quot;/spacing-inline-default&quot;,
+          sectioning: &quot;/spacing-flow-sectioning&quot; &quot;/spacing-inline-lg&quot;,
+        ),
       ),
-      logical: (
-        default: &quot;/spacing-block-sm&quot;,
-        heading: &quot;/spacing-block-md&quot;,
-        deflist: &quot;/spacing-block-sm&quot;,
-      ),
-    ),
-    wrap-space: (
-      logical: (
-        default: &quot;/flow-space-default&quot; &quot;/spacing-inline-default&quot;,
-        sectioning: &quot;/flow-space-sectioning&quot; &quot;/spacing-inline-lg&quot;,
-      ),
-    ),
-    indent: (
-      logical: (
-        default: &quot;/spacing-inline-default&quot;,
+      indent: (
+        logical: (
+          default: &quot;/spacing-inline-default&quot;,
+        ),
       ),
     ),
   ),
   typography: (
-    font-family: (
-      literal: (
-        sans: (
-          &quot;Source Sans Pro&quot;,
-          sans-serif,
+    font: (
+      family: (
+        literal: (
+          sans: (
+            &quot;Source Sans Pro&quot;,
+            sans-serif,
+          ),
+          serif: (
+            &quot;Source Serif Pro&quot;,
+            serif,
+          ),
+          mono: (
+            &quot;Source Code Pro&quot;,
+            monospace,
+          ),
         ),
-        serif: (
-          &quot;Source Serif Pro&quot;,
-          serif,
-        ),
-        mono: (
-          &quot;Source Code Pro&quot;,
-          monospace,
+        logical: (
+          body: &quot;serif&quot;,
+          heading: &quot;sans&quot;,
+          display: &quot;body&quot;,
         ),
       ),
-      logical: (
-        body: &quot;serif&quot;,
-        heading: &quot;sans&quot;,
-        display: &quot;body&quot;,
+      size: (
+        mapped: (
+          range: (
+            start: -2,
+            end: 9,
+          ),
+          function: meta.get-function(&quot;exponential&quot;, $module: &quot;function&quot;),
+          params: (
+            base: $-scale-ratio,
+            coefficient: $-scale-base,
+          ),
+        ),
+        literal: (
+          ratio: $-scale-ratio,
+          smaller: math.div(100%, $-scale-ratio),
+          larger: 100% * $-scale-ratio,
+          // Fluid root font size:
+          // 1rem + (100vw - 32rem) * (1.125rem - 1rem) / (96rem - 32rem)
+          // = 0.9375rem + 0.1953125vw
+          root: clamp(0.96875rem, 0.9375rem + 0.1953125vw, 1.25rem),
+        ),
       ),
-    ),
-    font-weight: (
-      mapped: (
-        domain: mapping.$domain-font-weights,
-      ),
-      logical: (
-        body: &quot;regular&quot;,
-        emphasis: &quot;bold&quot;,
-        heading: &quot;bold&quot;,
+      weight: (
+        mapped: (
+          domain: mapping.$domain-font-weights,
+        ),
+        logical: (
+          body: &quot;regular&quot;,
+          emphasis: &quot;bold&quot;,
+          heading: &quot;bold&quot;,
+        ),
       ),
     ),
     letter-spacing: (
@@ -2024,10 +2124,10 @@ This is used to look up configuration<span class="widont">&nbsp;</span>keys.</p>
   
   <div class="param-list">
     <h4 class="param-title">
-      
+      <span class="item-type">prose</span>
       
         <a href="
-  ax-properties.html#css--Generated%20Properties" class="item-name">Generated Properties</a>
+  ax-properties.html#prose--Generated%20Properties" class="item-name">Generated<span class="widont">&nbsp;</span>Properties</a>
       
       
       
@@ -4194,6 +4294,9 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --s-length-2½: 3.75rem;
   --s-length-3dim: 4.125rem;
   --s-length-3: 4.5rem;
+}
+
+:root {
   --s-container-xxs: 0rem;
   --s-container-xs: 16rem;
   --s-container-sm: 32rem;
@@ -4202,6 +4305,9 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --s-container-xl: 80rem;
   --s-container-xxl: 96rem;
   --s-container-page: var(--s-container-xl);
+}
+
+:root {
   --s-spacing-block-xxs: 0.1875rem;
   --s-spacing-block-xs: 0.375rem;
   --s-spacing-block-sm: 0.75rem;
@@ -4211,6 +4317,9 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --s-spacing-block-xxl: 12rem;
   --s-spacing-block-default: var(--s-spacing-block-md);
   --s-spacing-block: var(--s-spacing-block-default);
+}
+
+:root {
   --s-spacing-inline-xxs: 0.25ch;
   --s-spacing-inline-xs: 0.5ch;
   --s-spacing-inline-sm: 1ch;
@@ -4220,23 +4329,57 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --s-spacing-inline-xxl: 16ch;
   --s-spacing-inline-default: var(--s-spacing-inline-md);
   --s-spacing-inline: var(--s-spacing-inline-default);
-  --s-flow-space-list: 0em;
-  --s-flow-space-sectioning: clamp(var(--s-spacing-block-md), (100vi - var(--s-container-sm)) / 4, var(--s-spacing-block-lg));
-  --s-flow-space-default: var(--s-spacing-block-sm);
-  --s-flow-space-heading: var(--s-spacing-block-md);
-  --s-flow-space-deflist: var(--s-spacing-block-sm);
-  --s-flow-space: var(--s-flow-space-default);
-  --s-wrap-space-default: var(--s-flow-space-default) var(--s-spacing-inline-default);
-  --s-wrap-space-sectioning: var(--s-flow-space-sectioning) var(--s-spacing-inline-lg);
-  --s-wrap-space: var(--s-wrap-space-default);
-  --s-indent-default: var(--s-spacing-inline-default);
-  --s-indent: var(--s-indent-default);
+}
+
+:root {
+  --s-spacing-flow-list: 0em;
+  --s-spacing-flow-sectioning: clamp(var(--s-spacing-block-md), (100vi - var(--s-container-sm)) / 4, var(--s-spacing-block-lg));
+  --s-spacing-flow-default: var(--s-spacing-block-sm);
+  --s-spacing-flow-heading: var(--s-spacing-block-md);
+  --s-spacing-flow-deflist: var(--s-spacing-block-sm);
+  --s-spacing-flow: var(--s-spacing-flow-default);
+}
+
+:root {
+  --s-spacing-wrap-default: var(--s-spacing-flow-default) var(--s-spacing-inline-default);
+  --s-spacing-wrap-sectioning: var(--s-spacing-flow-sectioning) var(--s-spacing-inline-lg);
+  --s-spacing-wrap: var(--s-spacing-wrap-default);
+}
+
+:root {
+  --s-spacing-indent-default: var(--s-spacing-inline-default);
+  --s-spacing-indent: var(--s-spacing-indent-default);
+}
+
+:root {
   --s-font-family-sans: Source Sans Pro, sans-serif;
   --s-font-family-serif: Source Serif Pro, serif;
   --s-font-family-mono: Source Code Pro, monospace;
   --s-font-family-body: var(--s-font-family-serif);
   --s-font-family-heading: var(--s-font-family-sans);
   --s-font-family-display: var(--s-font-family-body);
+}
+
+:root {
+  --s-font-size--2: 0.4444444444rem;
+  --s-font-size--1: 0.6666666667rem;
+  --s-font-size-0: 1rem;
+  --s-font-size-1: 1.5rem;
+  --s-font-size-2: 2.25rem;
+  --s-font-size-3: 3.375rem;
+  --s-font-size-4: 5.0625rem;
+  --s-font-size-5: 7.59375rem;
+  --s-font-size-6: 11.390625rem;
+  --s-font-size-7: 17.0859375rem;
+  --s-font-size-8: 25.62890625rem;
+  --s-font-size-9: 38.443359375rem;
+  --s-font-size-ratio: 1.5;
+  --s-font-size-smaller: 66.6666666667%;
+  --s-font-size-larger: 150%;
+  --s-font-size-root: clamp(0.96875rem, 0.9375rem + 0.1953125vw, 1.25rem);
+}
+
+:root {
   --s-font-weight-thin: 100;
   --s-font-weight-extralight: 200;
   --s-font-weight-light: 300;
@@ -4249,6 +4392,9 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --s-font-weight-body: var(--s-font-weight-regular);
   --s-font-weight-emphasis: var(--s-font-weight-bold);
   --s-font-weight-heading: var(--s-font-weight-bold);
+}
+
+:root {
   --s-letter-spacing-xxs: -0.075em;
   --s-letter-spacing-xs: -0.05em;
   --s-letter-spacing-sm: -0.025em;
@@ -4257,6 +4403,9 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --s-letter-spacing-xl: 0.05em;
   --s-letter-spacing-xxl: 0.075em;
   --s-letter-spacing-none: var(--s-letter-spacing-md);
+}
+
+:root {
   --s-measure-xxs: 25ch;
   --s-measure-xs: 36ch;
   --s-measure-sm: 49ch;
@@ -4268,21 +4417,9 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --s-measure-inf: unset;
   --s-measure-default: var(--s-measure-md);
   --s-measure: var(--s-measure-default);
-  --s-scale--2: 0.4444444444rem;
-  --s-scale--1: 0.6666666667rem;
-  --s-scale-0: 1rem;
-  --s-scale-1: 1.5rem;
-  --s-scale-2: 2.25rem;
-  --s-scale-3: 3.375rem;
-  --s-scale-4: 5.0625rem;
-  --s-scale-5: 7.59375rem;
-  --s-scale-6: 11.390625rem;
-  --s-scale-7: 17.0859375rem;
-  --s-scale-8: 25.62890625rem;
-  --s-scale-9: 38.443359375rem;
-  --s-scale-ratio: 1.5;
-  --s-scale-smaller: 66.6666666667%;
-  --s-scale-larger: 150%;
+}
+
+:root {
   --s-radius-xxs: 0rem;
   --s-radius-xs: 0.2rem;
   --s-radius-sm: 0.4rem;
@@ -4292,6 +4429,9 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --s-radius-xxl: 1.2rem;
   --s-radius-ellipse: 100%;
   --s-radius-obround: 999rem;
+}
+
+:root {
   --s-shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
   --s-shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
   --s-shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
@@ -4299,6 +4439,9 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --s-shadow-lg: 0rem 0.5rem 1rem rgb(0 0 0 / 0.265625);
   --s-shadow-xl: 0rem 1rem 2rem rgb(0 0 0 / 0.28125);
   --s-shadow-xxl: 0rem 2rem 4rem rgb(0 0 0 / 0.296875);
+}
+
+:root {
   --s-stroke-width-1: 0.0625rem;
   --s-stroke-width-2: 0.125rem;
   --s-stroke-width-3: 0.1875rem;
@@ -4309,10 +4452,19 @@ However, you can use this map in your custom<span class="widont">&nbsp;</span>co
   --s-stroke-width-8: 0.5rem;
   --s-stroke-width-default: var(--s-stroke-width-2);
   --s-stroke-width: var(--s-stroke-width-default);
+}
+
+:root {
   --s-stroke-style-default: solid;
   --s-stroke-style: var(--s-stroke-style-default);
+}
+
+:root {
   --s-stroke-color-default: var(--s-color-tertiary-700);
   --s-stroke-color: var(--s-stroke-color-default);
+}
+
+:root {
   --s-easing-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
   --s-easing-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   --s-easing-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
@@ -4395,28 +4547,28 @@ iframe:not([width]) {
 }
 
 :is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details, div) {
-  ---flow-space: var(--s-flow-space-default);
+  ---flow-space: var(--s-spacing-flow-default);
 }
 
 :is(article, section, nav, aside) {
-  ---flow-space: var(--s-flow-space-sectioning);
+  ---flow-space: var(--s-spacing-flow-sectioning);
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
-  ---flow-space: var(--s-flow-space-heading, var(--s-flow-space-default));
+  ---flow-space: var(--s-spacing-flow-heading, var(--s-spacing-flow-default));
 }
 
 li,
 li :is(ol, ul, menu) {
-  ---flow-space: var(--s-flow-space-list, var(--s-flow-space-default));
+  ---flow-space: var(--s-spacing-flow-list, var(--s-spacing-flow-default));
 }
 
 dt {
-  ---flow-space: var(--s-flow-space-defterm, var(--s-flow-space-deflist, var(--s-flow-space-default)));
+  ---flow-space: var(--s-spacing-flow-defterm, var(--s-spacing-flow-deflist, var(--s-spacing-flow-default)));
 }
 
 dd {
-  ---flow-space: var(--s-flow-space-defdata, var(--s-flow-space-deflist, var(--s-flow-space-default)));
+  ---flow-space: var(--s-spacing-flow-defdata, var(--s-spacing-flow-deflist, var(--s-spacing-flow-default)));
 }
 
 * + :is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details),
@@ -4432,8 +4584,8 @@ dd {
 }
 
 :is(ol, ul, menu) {
-  ---indent-root: var(--s-indent-list-root, 0);
-  ---indent: var(--s-indent-list, var(--s-indent-list-root, var(--s-indent-default)));
+  ---indent-root: var(--s-spacing-indent-list-root, 0);
+  ---indent: var(--s-spacing-indent-list, var(--s-spacing-indent-list-root, var(--s-spacing-indent-default)));
   padding-inline-start: var(---indent-root);
 }
 
@@ -4443,28 +4595,29 @@ li :is(ol, ul, menu) {
 }
 
 dd {
-  ---indent: var(--s-indent-deflist, var(--s-indent-default));
+  ---indent: var(--s-spacing-indent-deflist, var(--s-spacing-indent-default));
   margin-inline-start: var(---indent);
 }
 
 blockquote {
-  ---indent: var(--s-indent-quotation, var(--s-indent-default));
+  ---indent: var(--s-spacing-indent-quotation, var(--s-spacing-indent-default));
   margin-inline: var(---indent);
 }
 
 figure {
-  ---indent: var(--s-indent-figure, var(--s-indent-default));
+  ---indent: var(--s-spacing-indent-figure, var(--s-spacing-indent-default));
   margin-inline: var(---indent);
 }
 
 html {
+  font-size: var(--s-font-size-root, 1rem);
   line-height: var(--s-line-root);
 }
 
 body {
   font-family: var(--s-font-family-body);
   font-weight: var(--s-font-weight-body);
-  font-size: var(--s-scale-0);
+  font-size: var(--s-font-size-0);
   line-height: var(--s-line-0);
 }
 
@@ -4474,32 +4627,32 @@ body {
 }
 
 h1 {
-  font-size: var(--s-scale-3);
+  font-size: var(--s-font-size-3);
   line-height: var(--s-line-3);
 }
 
 h2 {
-  font-size: var(--s-scale-2);
+  font-size: var(--s-font-size-2);
   line-height: var(--s-line-2);
 }
 
 h3 {
-  font-size: var(--s-scale-1);
+  font-size: var(--s-font-size-1);
   line-height: var(--s-line-1);
 }
 
 h4 {
-  font-size: var(--s-scale-0);
+  font-size: var(--s-font-size-0);
   line-height: var(--s-line-0);
 }
 
 h5 {
-  font-size: var(--s-scale--1);
+  font-size: var(--s-font-size--1);
   line-height: var(--s-line--1);
 }
 
 h6 {
-  font-size: var(--s-scale--2);
+  font-size: var(--s-font-size--2);
   line-height: var(--s-line--2);
 }
 
@@ -4514,7 +4667,7 @@ pre {
 }
 
 :is(small, sub, sup) {
-  font-size: var(--s-scale-smaller);
+  font-size: var(--s-font-size-smaller);
 }
 
 :is(code, kbd, samp),
