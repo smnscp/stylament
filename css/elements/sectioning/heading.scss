@@ -15,11 +15,13 @@
 }
 
 $colors: map.get(cfg.$merged, coloring, color, logical);
-@for $level from 1 through 6 {
-  @if map.get($colors, heading-#{$level}) {
-    /// @name Level-specific heading styles
-    h#{$level} {
-      @include coloring.set-colors("heading-#{$level}", "heading");
+@if $colors {
+  @for $level from 1 through 6 {
+    @if map.get($colors, heading-#{$level}) {
+      /// @name Level-specific heading styles
+      h#{$level} {
+        @include coloring.set-colors("heading-#{$level}", "heading");
+      }
     }
   }
 }
