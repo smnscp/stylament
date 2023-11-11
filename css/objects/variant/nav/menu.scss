@@ -69,6 +69,8 @@ nav.var-menu.\+levelable {
 /// Allows to toggle the display of the menu.
 @mixin menu-foldable {
   ---toggle-size: #{$size};
+  // Reset padding potentially added by center layout.
+  padding-inline: 0;
 
   & > label[for^="-toggle-state"] {
     cursor: context-menu;
