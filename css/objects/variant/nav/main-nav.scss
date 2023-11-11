@@ -16,13 +16,14 @@ body > nav.var-menu:first-of-type {
   ---item-block-size: #{$size};
   ---item-line-height: #{svar(length-1dim)};
   ---item-padding: #{svar(length-1dim)};
+  ---menu-shadow: #{svar(shadow-sm)};
   ---toggle-size: #{$size};
   ---toggle-padding: #{svar(length-0½)};
   ---toggle-shadow: #{svar(shadow-sm)};
   ---toggle-folded-shadow: #{svar(shadow-lg)};
 
   & > menu {
-    box-shadow: svar(shadow-sm);
+    box-shadow: var(---menu-shadow);
 
     & > li {
       @include coloring.set-colors("nav", "alternate");
