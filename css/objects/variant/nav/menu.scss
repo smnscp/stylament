@@ -71,7 +71,6 @@ nav.var-menu.\+levelable {
 /// Allows to toggle the display of the menu.
 @mixin menu-foldable {
   ---toggle-size: #{$size};
-  inline-size: fit-content; // shrink the menu so as to not cover contents with a transparent overlay
 
   & > label[for^="-toggle-state"] {
     cursor: context-menu;
@@ -181,7 +180,6 @@ nav.var-menu.\+foldable-when-stacked {
 /// @name Modifier: +end
 nav.var-menu.\+end {
   flex-direction: row-reverse;
-  margin-inline-start: auto;
 }
 
 /// Sticky menu.
