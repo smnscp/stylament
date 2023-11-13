@@ -55,6 +55,8 @@ nav.var-menu.\+levelable {
 /// Menu when folded.
 @mixin menu-folded {
   max-inline-size: 0;
+  padding-inline: 0;
+  border-inline: 0;
 }
 
 /// Toggle when folded.
