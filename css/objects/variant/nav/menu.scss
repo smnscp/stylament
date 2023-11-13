@@ -171,6 +171,7 @@ nav.var-menu.\+foldable-when-stacked {
 
     & > menu {
       position: relative; // Place over backdrop.
+      margin-inline: 0; // Revert potential center layout.
     }
   }
 }
