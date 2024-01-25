@@ -1,0 +1,25 @@
+/// ## Main Navigation Bar Overrides
+///
+/// Rather opinionated styling for the first `nav`.
+
+@use "../../../../css/axioms/properties/io" as *;
+@use "../../../../css/axioms/generic/coloring";
+
+/// The  first `nav` is implicitly considered the main navigation.
+body > nav:first-of-type {
+  & > menu {
+    box-shadow: svar(shadow-sm);
+
+    & > li {
+      transition: all 0.3s svar(easing-default);
+
+      &:hover {
+        @include coloring.use-colors-inverse;
+      }
+
+      & > a {
+        font-weight: svar(font-weight-emphasis);
+      }
+    }
+  }
+}

@@ -36,5 +36,7 @@
 );
 @use "elements";
 @use "idioms";
+// Example overrides:
+@use "../example/css/idioms/navigation/main";
 @use "objects";
 @use "utilities";

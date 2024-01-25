@@ -4,7 +4,6 @@
 
 /// ## Main Navigation Bar
 ///
-/// Rather opinionated styling for the first `nav`.
 
 @use "../../axioms/properties/io" as *;
 @use "../../axioms/generic/coloring";
@@ -16,27 +15,19 @@ body > nav:first-of-type {
   ---item-block-size: #{$size};
   ---item-line-height: #{svar(length-1dim)};
   ---item-padding: #{svar(length-1dim)};
-  ---menu-shadow: #{svar(shadow-sm)};
   ---toggle-size: #{$size};
   ---toggle-padding: #{svar(length-0½)};
   ---toggle-shadow: #{svar(shadow-sm)};
   ---toggle-folded-shadow: #{svar(shadow-lg)};
 
   & > menu {
-    box-shadow: var(---menu-shadow);
-
     & > li {
       @include coloring.set-colors("nav", "alternate");
       @include coloring.use-colors;
-      transition: all 0.3s svar(easing-default);
-      &:hover {
-        @include coloring.use-colors-inverse;
-      }
 
       & > a {
         color: inherit;
         background-color: transparent;
-        font-weight: svar(font-weight-emphasis);
         text-decoration: none;
       }
     }
