@@ -6,23 +6,14 @@
 @use "../../../axioms/properties/io" as *;
 @use "../../../axioms/properties/specific/layout/container";
 @use "../../../axioms/generic/coloring";
+@use "../../../idioms/navigation/menubar";
 @use "../../../utilities/layout/primitive/switcher";
 
-/// ## Navigation Menu
+/// ## Foldable Navigation Menu
 ///
-/// Common patterns for navigation menus. Separated into several aspects.
 
-/// Breakpoint for switching to wide layout.
-/// @requires {variable} sizes@container
-$nav-wide: map.get(container.$sizes, "sm");
-
-/// Size factor of the menu.
-/// @name size (menu)
-$size: 2em;
-
-/// General navigation menu. This is the basic selector with the basic rules applied.
-nav.var-menu {
-  ---item-block-size: #{$size};
+/// Foldable navigation menu.
+nav.var-foldable {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -34,21 +25,6 @@ nav.var-menu {
 
   & > menu {
     flex-grow: 1;
-  }
-}
-
-/// Levelable menu.
-/// Places items on a horizontal level if enough space is available.
-/// @name Modifier: +levelable
-nav.var-menu.\+levelable {
-  & > menu {
-    // Horizontal nav as long as items have enough space.
-    ---threshold: #{$nav-wide};
-    @extend .lyo-switcher;
-    & > li {
-      display: block;
-      text-align: center;
-    }
   }
 }
 
@@ -70,8 +46,6 @@ nav.var-menu.\+levelable {
 /// Common traits of foldable menu.
 /// Allows to toggle the display of the menu.
 @mixin menu-foldable {
-  ---toggle-size: #{$size};
-
   & > label[for^="-toggle-state"] {
     cursor: context-menu;
     display: block;
@@ -109,13 +83,12 @@ nav.var-menu.\+levelable {
 }
 
 /// Always foldable menu.
-/// @name Modifier: +foldable
-nav.var-menu.\+foldable,
-nav.var-menu.\+foldable-when-stacked:where(:not(.\+levelable)) {
+/// @name Without Modifier
+nav.var-foldable:not(.\+only-when-stacked) {
   @include menu-foldable;
 
   // Folded state on wide screen. (Only when explicitly toggled.)
-  @media (min-width: $nav-wide) {
+  @media (min-width: menubar.$nav-wide) {
     & > input[id^="-toggle-state"]:checked {
       & ~ menu {
         @include menu-folded;
@@ -130,18 +103,17 @@ nav.var-menu.\+foldable-when-stacked:where(:not(.\+levelable)) {
 }
 
 /// Menu foldable only when stacked.
-/// @name Modifier: +foldable-when-stacked
-nav.var-menu.\+foldable-when-stacked {
-  @media (max-width: $nav-wide) {
+/// @name Modifier: +only-when-stacked
+nav.var-foldable.\+only-when-stacked {
+  @media (max-width: menubar.$nav-wide) {
     @include menu-foldable;
   }
 }
 
 /// Special behavior on narrow screen: Act as overlay with backdrop.
 /// @name Modal menu on narrow screen
-nav.var-menu.\+foldable,
-nav.var-menu.\+foldable-when-stacked {
-  @media (max-width: $nav-wide) {
+nav.var-foldable {
+  @media (max-width: menubar.$nav-wide) {
     & > input[id^="-toggle-state"] {
       // Unfolded state on narrow screen.
       &:checked {
@@ -178,15 +150,6 @@ nav.var-menu.\+foldable-when-stacked {
 /// Places toggle to the inline end (rhs in Latin).
 /// This only has an effect if the menu is foldable.
 /// @name Modifier: +end
-nav.var-menu.\+end {
+nav.var-foldable.\+end {
   flex-direction: row-reverse;
-}
-
-/// Sticky menu.
-/// Makes navbar stick to the top of the viewport.
-/// @name Modifier: +sticky
-nav.var-menu.\+sticky {
-  position: sticky;
-  inset-block-start: 0;
-  z-index: 1;
 }

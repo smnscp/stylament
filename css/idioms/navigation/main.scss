@@ -1,16 +1,16 @@
 ////
-/// @group ob-variant
+/// @group id-navigation
 ////
 
 /// ## Main Navigation Bar
 ///
-/// Rather opinonated styling for the first `nav.var-menu`.
+/// Rather opinionated styling for the first `nav`.
 
-@use "../../../axioms/properties/io" as *;
-@use "../../../axioms/generic/coloring";
+@use "../../axioms/properties/io" as *;
+@use "../../axioms/generic/coloring";
 
-/// The  first `nav.var-menu` is implicitly considered the main menu.
-body > nav.var-menu:first-of-type {
+/// The  first `nav` is implicitly considered the main navigation.
+body > nav:first-of-type {
   $size: svar(length-2);
   ---flow-space: 0em;
   ---item-block-size: #{$size};

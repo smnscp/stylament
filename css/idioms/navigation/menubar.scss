@@ -1,0 +1,29 @@
+////
+/// @group id-navigation
+////
+
+@use "sass:map";
+@use "../../axioms/properties/io" as *;
+@use "../../axioms/properties/specific/layout/container";
+@use "../../axioms/generic/coloring";
+@use "../../utilities/layout/primitive/switcher";
+
+/// ## Menu Bar
+///
+/// A horizontal navigation menu.
+
+/// Breakpoint for switching to wide layout.
+/// @requires {variable} sizes@container
+$nav-wide: map.get(container.$sizes, "sm");
+
+/// Menu bar.
+/// Places items on a horizontal level if enough space is available.
+menu[role="menubar"] {
+  // Horizontal nav as long as items have enough space.
+  ---threshold: #{$nav-wide};
+  @extend .lyo-switcher;
+  & > li {
+    display: block;
+    text-align: center;
+  }
+}
