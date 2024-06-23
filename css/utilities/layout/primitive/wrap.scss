@@ -22,7 +22,8 @@
 /// General sizing and spacing for wrap layouts.
 /// @name All wrap layouts
 [class^="lyo-wrap-"],
-[class*=" lyo-wrap-"] {
+[class*=" lyo-wrap-"],
+%lyo-wrap-base {
   ---min-column-size: calc(0.7 * var(---measure));
   gap: var(---wrap-space, var(---flow-space));
 }
