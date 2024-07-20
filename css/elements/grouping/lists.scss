@@ -22,7 +22,8 @@ menu {
     margin: 0;
 
     & > a {
-      display: grid;
+      // Let the link area cover the whole height.
+      display: inline-grid;
       align-content: center;
       block-size: 100%;
       padding-inline: var(---item-padding, 1em);
