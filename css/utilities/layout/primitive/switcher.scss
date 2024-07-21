@@ -9,7 +9,10 @@
   flex-wrap: wrap;
 
   & > * {
-    flex-basis: calc((var(---threshold) - 100%) * 999);
+    flex-basis: max(
+      var(---min-item-size, 0px),
+      ((var(---threshold) - 100%) * 999)
+    );
     flex-grow: 1;
   }
 }
