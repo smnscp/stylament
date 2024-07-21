@@ -14,7 +14,7 @@
 
 /// Breakpoint for switching to wide layout.
 /// @requires {variable} sizes@container
-$nav-wide: map.get(container.$sizes, "sm");
+$nav-wide: map.get(container.$sizes, "nav-wide");
 
 /// Menu bar.
 /// Places items on a horizontal level if enough space is available.
