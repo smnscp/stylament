@@ -55,7 +55,8 @@ nav.var-foldable {
     & > :first-child,
     &:empty::after {
       @include coloring.use-colors;
-      display: block;
+      display: block; // Fallback
+      display: grid; // More robust content placement.
       position: relative; // Place over backdrop.
       max-inline-size: unset;
       inline-size: var(---toggle-size);
@@ -66,6 +67,7 @@ nav.var-foldable {
       font-size: calc(var(---toggle-size) - 2 * var(---toggle-padding));
       line-height: 1;
       text-align: center;
+      place-content: center center;
       font-weight: svar(font-weight-emphasis);
       transition: all 0.3s svar(easing-default);
       border-radius: var(---toggle-radius);
