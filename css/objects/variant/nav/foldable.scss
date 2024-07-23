@@ -37,6 +37,8 @@ nav.var-foldable {
 
 /// Toggle when folded.
 @mixin toggle-folded {
+  display: block;
+  display: grid;
   border: var(---toggle-folded-border, var(---toggle-border));
   border-radius: var(---toggle-folded-radius, var(---toggle-radius));
   box-shadow: var(---toggle-folded-shadow, var(---toggle-shadow));
@@ -52,7 +54,7 @@ nav.var-foldable {
     @include coloring.set-colors("nav-toggle", "alternate");
 
     // Toggle
-    & > :first-child,
+    & > *,
     &:empty::after {
       @include coloring.use-colors;
       display: block; // Fallback
@@ -73,6 +75,10 @@ nav.var-foldable {
       border-radius: var(---toggle-radius);
       box-shadow: var(---toggle-shadow);
       content: var(---toggle-content, "⋮");
+    }
+
+    & > * + * {
+      display: none;
     }
   }
 
@@ -96,7 +102,11 @@ nav.var-foldable:not(.\+only-when-stacked) {
         @include menu-folded;
       }
 
-      & ~ label[for^="-toggle-state"] > :first-child,
+      & ~ label[for^="-toggle-state"] > :not(:last-child) {
+        display: none;
+      }
+
+      & ~ label[for^="-toggle-state"] > :last-child,
       & ~ label[for^="-toggle-state"]:empty::after {
         @include toggle-folded;
       }
@@ -135,7 +145,11 @@ nav.var-foldable {
           @include menu-folded;
         }
 
-        & ~ label[for^="-toggle-state"] > :first-child,
+        & ~ label[for^="-toggle-state"] > :not(:last-child) {
+          display: none;
+        }
+
+        & ~ label[for^="-toggle-state"] > :last-child,
         & ~ label[for^="-toggle-state"]:empty::after {
           @include toggle-folded;
         }
