@@ -12,19 +12,35 @@
 /// ## Foldable Navigation Menu
 ///
 
+// One archaic tool for maintaining popover state.
+$rock: 'input[id^="-toggle-"]';
+$rockToggle: 'label[for^="-toggle-"]';
+// The new way to pop.
+$pop: "menu[popover]";
+$popOn: "#{$pop}:popover-open";
+$popOff: "#{$pop}:not(:popover-open)";
+$popToggle: "button[popovertarget]";
+$anyToggle: "#{$popToggle}, #{$rockToggle}";
+
 /// Foldable navigation menu.
 nav.var-foldable {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 
-  & > input[id^="-toggle-state"],
-  & > label[for^="-toggle-state"] {
+  // Hide toggle controls.
+  & > :is(#{$rock}, #{$anyToggle}) {
     display: none;
   }
 
   & > menu {
     flex-grow: 1;
+  }
+
+  // Do not act as popover on wide screen. Stay visible in regular document flow.
+  & > #{$popOff} {
+    display: flex;
+    position: static;
   }
 }
 
@@ -48,12 +64,13 @@ nav.var-foldable {
 /// Common traits of foldable menu.
 /// Allows to toggle the display of the menu.
 @mixin menu-foldable {
-  & > label[for^="-toggle-state"] {
+  // Toggle container
+  & > :is(#{$anyToggle}) {
     cursor: context-menu;
     display: block;
     @include coloring.set-colors("nav-toggle", "alternate");
 
-    // Toggle
+    // Actual toggle area: first child or pseudo content.
     & > *,
     &:empty::after {
       @include coloring.use-colors;
@@ -77,14 +94,16 @@ nav.var-foldable {
       content: var(---toggle-content, "⋮");
     }
 
+    // Hide potential other children (i. e. folded state button).
     & > * + * {
       display: none;
     }
   }
 
   & > menu {
-    margin-bottom: -100%; // Do not occupy flow space when foldable.
+    margin-block-end: -100%; // Do not occupy flow space when foldable.
     max-inline-size: 100%;
+    inline-size: auto;
     overflow: hidden;
     transition: max-inline-size 0.3s svar(easing-default);
   }
@@ -97,17 +116,18 @@ nav.var-foldable:not(.\+only-when-stacked) {
 
   // Folded state on wide screen. (Only when explicitly toggled.)
   @media (min-width: menubar.$nav-wide) {
-    & > input[id^="-toggle-state"]:checked {
+    & > #{$popToggle}:has(~ #{$popOff}),
+    & > #{$rock}:checked ~ #{$rockToggle} {
       & ~ menu {
         @include menu-folded;
       }
 
-      & ~ label[for^="-toggle-state"] > :not(:last-child) {
+      & > :not(:last-child) {
         display: none;
       }
 
-      & ~ label[for^="-toggle-state"] > :last-child,
-      & ~ label[for^="-toggle-state"]:empty::after {
+      & > :last-child,
+      &:empty::after {
         @include toggle-folded;
       }
     }
@@ -126,39 +146,52 @@ nav.var-foldable.\+only-when-stacked {
 /// @name Modal menu on narrow screen
 nav.var-foldable {
   @media (max-width: menubar.$nav-wide) {
-    & > input[id^="-toggle-state"] {
-      // Unfolded state on narrow screen.
-      &:checked {
-        // Use `label` as backdrop. Clicking on it toggles the state.
-        & ~ label[for^="-toggle-state"]::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          block-size: 100vh;
-          background: rgba(0, 0, 0, 0.5);
-        }
+    // Use `label` as backdrop. Clicking on it toggles the state.
+    & > #{$rock}:checked ~ #{$rockToggle}::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      block-size: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    & > #{$pop}::backdrop {
+      position: fixed;
+      inset: var(---toggle-size) 0 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    // Folded state on narrow screen.
+    & > #{$popToggle}:has(~ #{$popOff}),
+    & > #{$rock}:not(:checked) ~ #{$rockToggle} {
+      & ~ menu {
+        @include menu-folded;
       }
 
-      // Folded state on narrow screen. (This is the default, as in not checked.)
-      &:not(:checked) {
-        & ~ menu {
-          @include menu-folded;
-        }
-
-        & ~ label[for^="-toggle-state"] > :not(:last-child) {
-          display: none;
-        }
-
-        & ~ label[for^="-toggle-state"] > :last-child,
-        & ~ label[for^="-toggle-state"]:empty::after {
-          @include toggle-folded;
-        }
+      & > :not(:last-child) {
+        display: none;
       }
+
+      & > :last-child,
+      &:empty::after {
+        @include toggle-folded;
+      }
+    }
+
+    // Unfolded state on narrow screen.
+    & > #{$popToggle}:has(~ #{$popOn}) {
+      position: fixed;
+      inset-block-start: 0;
     }
 
     & > menu {
       position: relative; // Place over backdrop.
       margin-inline: 0; // Revert potential center layout.
+    }
+
+    & > #{$pop} {
+      position: fixed;
+      inset: 0 auto 0 var(---toggle-size);
     }
   }
 }
@@ -168,4 +201,8 @@ nav.var-foldable {
 /// @name Modifier: +end
 nav.var-foldable.\+end {
   flex-direction: row-reverse;
+
+  & > #{$pop} {
+    inset: 0 var(---toggle-size) 0 auto;
+  }
 }

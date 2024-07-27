@@ -6,6 +6,27 @@
 {{/head}}
 
 <body class="scp-homepage lyo-page-center">
+  <template id="popToggle">
+    <button popovertarget="main-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7"  width="100%" fill="currentColor">
+        <g transform="rotate(45 3.5 3.5)">
+          <rect height="1" rx=".5" y="3" width="9" x="-1"></rect>
+          <rect width="1" rx=".5" x="3" y="-1" height="9"></rect>
+        </g>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7"  width="100%" fill="currentColor">
+        <rect width="7" height="1" rx=".5" x="0" y="0" />
+        <rect width="7" height="1" rx=".5" x="0" y="3" />
+        <rect width="7" height="1" rx=".5" x="0" y="6" />
+      </svg>
+    </button>
+  </template>
+
+  <template id="rockToggle">
+    <input type="checkbox" id="-toggle-state">
+    <label for="-toggle-state"></label>
+  </template>
+
   <header class="clr-alternate +alt">
     <hgroup>
       <p>
@@ -26,9 +47,7 @@
   </header>
 
   <nav class="var-sticky var-foldable +only-when-stacked +end">
-    <input type="checkbox" id="-toggle-state-0">
-    <label for="-toggle-state-0"></label>
-    <menu role="menubar">
+    <menu id="main-menu" role="menubar">
       <li><a href="#section-one">Section One</a></li>
       <li><a href="#section-two">Section Two</a></li>
       <li><a href="#section-three">Section Three</a></li>
@@ -38,6 +57,16 @@
   </nav>
 
   <main>
+    <section>
+      <h2>Select Navigation Type</h2>
+      <menu>
+        <li><a href="?navType=rock&navAlign=start#main-menu">Hidden checkbox, left</a></li>
+        <li><a href="?navType=rock&navAlign=end#main-menu">Hidden checkbox, right</a></li>
+        <li><a href="?navType=pop&navAlign=start#main-menu">Popover, left</a></li>
+        <li><a href="?navType=pop&navAlign=end#main-menu">Popover, right</a></li>
+      </menu>
+    </section>
+
     <figure class="~breakout var-feature">
       <blockquote>
         <p>Always build on solid ground!</p>
@@ -117,6 +146,19 @@
   </main>
 
   {{> footer }}
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const navType = params.get('navType');
+    const navAlignEnd = params.get('navAlign') != 'start';
+    const toggleTemplate = document.querySelector(`#${navType}Toggle, #rockToggle`);
+    const nav = document.querySelector('body > nav:first-of-type');
+    const menu = nav.querySelector('menu');
+    nav.replaceChildren(toggleTemplate.content.cloneNode(true));
+    nav.appendChild(menu);
+    nav.classList.toggle('+end', navAlignEnd);
+    if (navType == 'pop') menu.setAttribute('popover', '');
+  </script>
 
 </body>
 
