@@ -14,6 +14,8 @@
 
 // One archaic tool for maintaining popover state.
 $rock: 'input[type="checkbox"][hidden]';
+$rockOn: "#{$rock}:checked";
+$rockOff: "#{$rock}:not(:checked)";
 $rockToggle: 'label[role="switch"]';
 // The new way to pop.
 $pop: "menu[popover]";
@@ -114,10 +116,10 @@ nav.var-foldable {
 nav.var-foldable:not(.\+only-when-stacked) {
   @include menu-foldable;
 
-  // Folded state on wide screen. (Only when explicitly toggled.)
+  // Folded state on wide screen.
   @media (min-width: menubar.$nav-wide) {
     & > #{$popToggle}:has(~ #{$popOff}),
-    & > #{$rock}:checked ~ #{$rockToggle} {
+    & > #{$rockOff} ~ #{$rockToggle} {
       & ~ menu {
         @include menu-folded;
       }
@@ -147,7 +149,7 @@ nav.var-foldable.\+only-when-stacked {
 nav.var-foldable {
   @media (max-width: menubar.$nav-wide) {
     // Use `label` as backdrop. Clicking on it toggles the state.
-    & > #{$rock}:checked ~ #{$rockToggle}::before {
+    & > #{$rockOn} ~ #{$rockToggle}::before {
       content: "";
       position: absolute;
       inset: 0;
@@ -163,7 +165,7 @@ nav.var-foldable {
 
     // Folded state on narrow screen.
     & > #{$popToggle}:has(~ #{$popOff}),
-    & > #{$rock}:not(:checked) ~ #{$rockToggle} {
+    & > #{$rockOff} ~ #{$rockToggle} {
       & ~ menu {
         @include menu-folded;
       }
