@@ -161,19 +161,20 @@ nav.var-foldable {
   }
 }
 
-/// Always foldable menu.
-/// @name Without Modifier
-nav.var-foldable:not(.\+only-when-stacked) {
-  @include menu-foldable;
-}
-
-/// Special behavior on narrow screen: Act as overlay with backdrop.
+/// Default behavior: Folding is only applied on narrow screen.
 /// @name Modal menu on narrow screen
 nav.var-foldable {
   @media (width < menubar.$nav-wide) {
     @include menu-foldable;
     @include backdrop;
   }
+}
+
+/// Apply folding also to leveled menu.
+/// (The backdrop is kept transparent in this case.)
+/// @name Modifier: +always
+nav.var-foldable.\+always {
+  @include menu-foldable;
 }
 
 /// Places toggle to the inline end (rhs in Latin).

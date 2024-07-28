@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 {{#> head title="Stylament – Sample Layout" }}
-  <link rel="stylesheet" href="/css/dev.utils.scss">
+  <link rel="stylesheet" href="/css/dev.utils.{{#if isDev}}s{{/if}}css">
 {{/head}}
 
 <body class="scp-homepage lyo-page-center">
@@ -46,7 +46,7 @@
     </hgroup>
   </header>
 
-  <nav class="var-sticky var-foldable +only-when-stacked +end">
+  <nav class="var-sticky var-foldable +end">
     <menu id="main-menu" role="menubar">
       <li><a href="#section-one">Section One</a></li>
       <li><a href="#section-two">Section Two</a></li>
@@ -62,6 +62,7 @@
       <menu>
         <li><a href="?navType=rock&navAlign=start#main-menu">Hidden checkbox, left</a></li>
         <li><a href="?navType=rock&navAlign=end#main-menu">Hidden checkbox, right</a></li>
+        <li><a href="?navType=rock&navAlign=end&navFold=always#main-menu">Hidden checkbox, right, always foldable</a></li>
         <li><a href="?navType=pop&navAlign=start#main-menu">Popover, left</a></li>
         <li><a href="?navType=pop&navAlign=end#main-menu">Popover, right</a></li>
       </menu>
@@ -151,12 +152,14 @@
     const params = new URLSearchParams(location.search);
     const navType = params.get('navType');
     const navAlignEnd = params.get('navAlign') != 'start';
+    const navFoldAlways = params.get('navFold') == 'always';
     const toggleTemplate = document.querySelector(`#${navType}Toggle, #rockToggle`);
     const nav = document.querySelector('body > nav:first-of-type');
     const menu = nav.querySelector('menu');
     nav.replaceChildren(toggleTemplate.content.cloneNode(true));
     nav.appendChild(menu);
     nav.classList.toggle('+end', navAlignEnd);
+    nav.classList.toggle('+always', navFoldAlways);
     if (navType == 'pop') menu.setAttribute('popover', '');
   </script>
 
