@@ -121,10 +121,8 @@ nav.var-foldable {
     position: fixed;
     inset: 0 auto 0 var(---toggle-size);
   }
-}
 
-/// Menu when folded.
-@mixin menu-off {
+  // Menu when folded.
   & > #{$popToggle}:has(~ #{$popOff}),
   & > #{$rockOff} ~ #{$rockToggle} {
     & ~ menu {
@@ -167,28 +165,13 @@ nav.var-foldable {
 /// @name Without Modifier
 nav.var-foldable:not(.\+only-when-stacked) {
   @include menu-foldable;
-
-  // Folded state on wide screen.
-  @media (min-width: menubar.$nav-wide) {
-    @include menu-off;
-  }
-}
-
-/// Menu foldable only when stacked.
-/// @name Modifier: +only-when-stacked
-nav.var-foldable.\+only-when-stacked {
-  @media (max-width: menubar.$nav-wide) {
-    @include menu-foldable;
-  }
 }
 
 /// Special behavior on narrow screen: Act as overlay with backdrop.
 /// @name Modal menu on narrow screen
 nav.var-foldable {
-  @media (max-width: menubar.$nav-wide) {
-    // Folded state on narrow screen.
-    @include menu-off;
-
+  @media (width < menubar.$nav-wide) {
+    @include menu-foldable;
     @include backdrop;
   }
 }
