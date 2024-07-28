@@ -53,6 +53,29 @@ nav.var-foldable {
   border-inline: 0;
 }
 
+/// Toggle.
+@mixin toggle {
+  @include coloring.use-colors;
+  display: block; // Fallback
+  display: grid; // More robust content placement.
+  position: relative; // Place over backdrop.
+  max-inline-size: unset;
+  inline-size: var(---toggle-size);
+  block-size: var(---toggle-size);
+  padding: var(---toggle-padding);
+  border: var(---toggle-border);
+  margin: 0;
+  font-size: calc(var(---toggle-size) - 2 * var(---toggle-padding));
+  line-height: 1;
+  text-align: center;
+  place-content: center center;
+  font-weight: svar(font-weight-emphasis);
+  transition: all 0.3s svar(easing-default);
+  border-radius: var(---toggle-radius);
+  box-shadow: var(---toggle-shadow);
+  content: var(---toggle-content, "⋮");
+}
+
 /// Toggle when folded.
 @mixin toggle-folded {
   display: block;
@@ -75,25 +98,7 @@ nav.var-foldable {
     // Actual toggle area: first child or pseudo content.
     & > *,
     &:empty::after {
-      @include coloring.use-colors;
-      display: block; // Fallback
-      display: grid; // More robust content placement.
-      position: relative; // Place over backdrop.
-      max-inline-size: unset;
-      inline-size: var(---toggle-size);
-      block-size: var(---toggle-size);
-      padding: var(---toggle-padding);
-      border: var(---toggle-border);
-      margin: 0;
-      font-size: calc(var(---toggle-size) - 2 * var(---toggle-padding));
-      line-height: 1;
-      text-align: center;
-      place-content: center center;
-      font-weight: svar(font-weight-emphasis);
-      transition: all 0.3s svar(easing-default);
-      border-radius: var(---toggle-radius);
-      box-shadow: var(---toggle-shadow);
-      content: var(---toggle-content, "⋮");
+      @include toggle;
     }
 
     // Hide potential other children (i. e. folded state button).
