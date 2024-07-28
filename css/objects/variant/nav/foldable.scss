@@ -46,13 +46,6 @@ nav.var-foldable {
   }
 }
 
-/// Menu when folded.
-@mixin menu-folded {
-  max-inline-size: 0;
-  padding-inline: 0;
-  border-inline: 0;
-}
-
 /// Toggle.
 @mixin toggle {
   @include coloring.use-colors;
@@ -77,7 +70,7 @@ nav.var-foldable {
 }
 
 /// Toggle when folded.
-@mixin toggle-folded {
+@mixin toggle-off {
   display: block;
   display: grid;
   border: var(---toggle-folded-border, var(---toggle-border));
@@ -116,6 +109,27 @@ nav.var-foldable {
   }
 }
 
+/// Menu when folded.
+@mixin menu-off {
+  & > #{$popToggle}:has(~ #{$popOff}),
+  & > #{$rockOff} ~ #{$rockToggle} {
+    & ~ menu {
+      max-inline-size: 0;
+      padding-inline: 0;
+      border-inline: 0;
+    }
+
+    & > :last-child,
+    &:empty::after {
+      @include toggle-off;
+    }
+
+    & > :not(:last-child) {
+      display: none;
+    }
+  }
+}
+
 /// Always foldable menu.
 /// @name Without Modifier
 nav.var-foldable:not(.\+only-when-stacked) {
@@ -123,21 +137,7 @@ nav.var-foldable:not(.\+only-when-stacked) {
 
   // Folded state on wide screen.
   @media (min-width: menubar.$nav-wide) {
-    & > #{$popToggle}:has(~ #{$popOff}),
-    & > #{$rockOff} ~ #{$rockToggle} {
-      & ~ menu {
-        @include menu-folded;
-      }
-
-      & > :not(:last-child) {
-        display: none;
-      }
-
-      & > :last-child,
-      &:empty::after {
-        @include toggle-folded;
-      }
-    }
+    @include menu-off;
   }
 }
 
@@ -153,6 +153,9 @@ nav.var-foldable.\+only-when-stacked {
 /// @name Modal menu on narrow screen
 nav.var-foldable {
   @media (max-width: menubar.$nav-wide) {
+    // Folded state on narrow screen.
+    @include menu-off;
+
     // Use `label` as backdrop. Clicking on it toggles the state.
     & > #{$rockOn} ~ #{$rockToggle}::before {
       content: "";
@@ -166,23 +169,6 @@ nav.var-foldable {
       position: fixed;
       inset: var(---toggle-size) 0 0;
       background: rgba(0, 0, 0, 0.5);
-    }
-
-    // Folded state on narrow screen.
-    & > #{$popToggle}:has(~ #{$popOff}),
-    & > #{$rockOff} ~ #{$rockToggle} {
-      & ~ menu {
-        @include menu-folded;
-      }
-
-      & > :not(:last-child) {
-        display: none;
-      }
-
-      & > :last-child,
-      &:empty::after {
-        @include toggle-folded;
-      }
     }
 
     // Unfolded state on narrow screen.
