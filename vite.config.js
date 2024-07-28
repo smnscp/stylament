@@ -27,6 +27,7 @@ export default defineConfig({
         exampleElements: resolve(__dirname, "example/elements-showcase.html"),
         mainSheet: resolve(__dirname, "css/index.scss"),
         fontsSheet: resolve(__dirname, "css/fonts.scss"),
+        optionalSheet: resolve(__dirname, "css/opt.scss"),
         schemeDark: resolve(__dirname, "css/dark.scheme.scss"),
         schemeLight: resolve(__dirname, "css/light.scheme.scss"),
         utilsDev: resolve(__dirname, "css/dev.utils.scss"),

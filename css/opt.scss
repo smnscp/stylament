@@ -1,0 +1,4 @@
+@use "axioms/properties/io" with (
+  $-prefix: "🎟"
+);
+@use "objects/variant/nav/foldable/always.scss";

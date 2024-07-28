@@ -3,11 +3,10 @@
 ////
 
 @use "sass:map";
-@use "../../../axioms/properties/io" as *;
-@use "../../../axioms/properties/specific/layout/container";
-@use "../../../axioms/generic/coloring";
-@use "../../../idioms/navigation/menubar";
-@use "../../../utilities/layout/primitive/switcher";
+@use "../../../../axioms/properties/io" as *;
+@use "../../../../axioms/properties/specific/layout/container";
+@use "../../../../axioms/generic/coloring";
+@use "../../../../utilities/layout/primitive/switcher";
 
 /// ## Foldable Navigation Menu
 ///
@@ -23,28 +22,6 @@ $popOn: "#{$pop}:popover-open";
 $popOff: "#{$pop}:not(:popover-open)";
 $popToggle: "button[popovertarget]";
 $anyToggle: "#{$popToggle}, #{$rockToggle}";
-
-/// Foldable navigation menu: Initial setup.
-nav.var-foldable {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-
-  // Hide toggle controls.
-  & > :is(#{$anyToggle}) {
-    display: none;
-  }
-
-  & > menu {
-    flex-grow: 1;
-  }
-
-  // Do not act as popover on wide screen. Stay visible in regular document flow.
-  & > #{$popOff} {
-    display: flex;
-    position: static;
-  }
-}
 
 /// Toggle.
 @mixin toggle {
@@ -158,32 +135,5 @@ nav.var-foldable {
     position: fixed;
     inset: var(---toggle-size) 0 0;
     background: rgba(0, 0, 0, 0.5);
-  }
-}
-
-/// Default behavior: Folding is only applied on narrow screen.
-/// @name Modal menu on narrow screen
-nav.var-foldable {
-  @media (width < menubar.$nav-wide) {
-    @include menu-foldable;
-    @include backdrop;
-  }
-}
-
-/// Apply folding also to leveled menu.
-/// (The backdrop is kept transparent in this case.)
-/// @name Modifier: +always
-nav.var-foldable.\+always {
-  @include menu-foldable;
-}
-
-/// Places toggle to the inline end (rhs in Latin).
-/// This only has an effect if the menu is foldable.
-/// @name Modifier: +end
-nav.var-foldable.\+end {
-  flex-direction: row-reverse;
-
-  & > #{$pop} {
-    inset: 0 var(---toggle-size) 0 auto;
   }
 }

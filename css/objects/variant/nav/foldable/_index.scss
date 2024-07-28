@@ -1,0 +1,48 @@
+////
+/// @group ob-variant
+////
+
+@use "./_mixins.scss" as *;
+@use "../../../../idioms/navigation/menubar";
+
+/// Foldable navigation menu: Initial setup.
+nav.var-foldable {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  // Hide toggle controls.
+  & > :is(#{$anyToggle}) {
+    display: none;
+  }
+
+  & > menu {
+    flex-grow: 1;
+  }
+
+  // Do not act as popover on wide screen. Stay visible in regular document flow.
+  & > #{$popOff} {
+    display: flex;
+    position: static;
+  }
+}
+
+/// Default behavior: Folding is only applied on narrow screen.
+/// @name Modal menu on narrow screen
+nav.var-foldable {
+  @media (width < menubar.$nav-wide) {
+    @include menu-foldable;
+    @include backdrop;
+  }
+}
+
+/// Places toggle to the inline end (rhs in Latin).
+/// This only has an effect if the menu is foldable.
+/// @name Modifier: +end
+nav.var-foldable.\+end {
+  flex-direction: row-reverse!important;
+
+  & > #{$pop} {
+    inset: 0 var(---toggle-size) 0 auto!important;
+  }
+}
