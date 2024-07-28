@@ -24,7 +24,7 @@ $popOff: "#{$pop}:not(:popover-open)";
 $popToggle: "button[popovertarget]";
 $anyToggle: "#{$popToggle}, #{$rockToggle}";
 
-/// Foldable navigation menu.
+/// Foldable navigation menu: Initial setup.
 nav.var-foldable {
   display: flex;
   flex-direction: row;
@@ -101,11 +101,25 @@ nav.var-foldable {
   }
 
   & > menu {
+    position: relative; // Place menu over backdrop.
     margin-block-end: -100%; // Do not occupy flow space when foldable.
+    margin-inline: 0; // Stick to toggle. (Revert potential center layout.)
     max-inline-size: 100%;
     inline-size: auto;
     overflow: hidden;
     transition: max-inline-size 0.3s svar(easing-default);
+  }
+
+  // Toggle when unfolded.
+  & > #{$popToggle}:has(~ #{$popOn}) {
+    position: fixed;
+    inset-block-start: 0;
+  }
+
+  // Position popover at top of viewport.
+  & > #{$pop} {
+    position: fixed;
+    inset: 0 auto 0 var(---toggle-size);
   }
 }
 
@@ -127,6 +141,25 @@ nav.var-foldable {
     & > :not(:last-child) {
       display: none;
     }
+  }
+}
+
+@mixin backdrop {
+  // Legacy popover:
+  // Use `label` as backdrop. Clicking on it toggles the state.
+  & > #{$rockOn} ~ #{$rockToggle}::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    block-size: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  // Native popover backdrop.
+  & > #{$pop}::backdrop {
+    position: fixed;
+    inset: var(---toggle-size) 0 0;
+    background: rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -156,36 +189,7 @@ nav.var-foldable {
     // Folded state on narrow screen.
     @include menu-off;
 
-    // Use `label` as backdrop. Clicking on it toggles the state.
-    & > #{$rockOn} ~ #{$rockToggle}::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      block-size: 100vh;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    & > #{$pop}::backdrop {
-      position: fixed;
-      inset: var(---toggle-size) 0 0;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    // Unfolded state on narrow screen.
-    & > #{$popToggle}:has(~ #{$popOn}) {
-      position: fixed;
-      inset-block-start: 0;
-    }
-
-    & > menu {
-      position: relative; // Place over backdrop.
-      margin-inline: 0; // Revert potential center layout.
-    }
-
-    & > #{$pop} {
-      position: fixed;
-      inset: 0 auto 0 var(---toggle-size);
-    }
+    @include backdrop;
   }
 }
 
