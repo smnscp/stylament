@@ -13,8 +13,8 @@
 ///
 
 // One archaic tool for maintaining popover state.
-$rock: 'input[id^="-toggle-"]';
-$rockToggle: 'label[for^="-toggle-"]';
+$rock: 'input[type="checkbox"][hidden]';
+$rockToggle: 'label[role="switch"]';
 // The new way to pop.
 $pop: "menu[popover]";
 $popOn: "#{$pop}:popover-open";
@@ -29,7 +29,7 @@ nav.var-foldable {
   align-items: flex-start;
 
   // Hide toggle controls.
-  & > :is(#{$rock}, #{$anyToggle}) {
+  & > :is(#{$anyToggle}) {
     display: none;
   }
 
