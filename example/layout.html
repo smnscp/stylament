@@ -28,6 +28,26 @@
     <label role="switch" for="-show-menu"></label>
   </template>
 
+  <template id="punkToggle">
+    <div role="switch" id="/nav">
+      <a href="#/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7" width="100%" fill="currentColor">
+          <g transform="rotate(45 3.5 3.5)">
+            <rect height="1" rx=".5" y="3" width="9" x="-1"></rect>
+            <rect width="1" rx=".5" x="3" y="-1" height="9"></rect>
+          </g>
+        </svg>
+      </a>
+      <a href="#/nav">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7" width="100%" fill="currentColor">
+          <rect width="7" height="1" rx=".5" x="0" y="0" />
+          <rect width="7" height="1" rx=".5" x="0" y="3" />
+          <rect width="7" height="1" rx=".5" x="0" y="6" />
+        </svg>
+      </a>
+    </div>
+  </template>
+
   <header class="clr-alternate +alt">
     <hgroup>
       <p>
@@ -66,6 +86,8 @@
         <li><a href="?navType=rock&navAlign=end&navFold=always#main-menu">Hidden checkbox, right, always foldable</a></li>
         <li><a href="?navType=pop&navAlign=start#main-menu">Popover, left</a></li>
         <li><a href="?navType=pop&navAlign=end#main-menu">Popover, right</a></li>
+        <li><a href="?navType=punk&navAlign=start#main-menu">Fragment target, left</a></li>
+        <li><a href="?navType=punk&navAlign=end#main-menu">Fragment target, right</a></li>
       </menu>
     </section>
 
@@ -154,7 +176,7 @@
     const navType = params.get('navType');
     const navAlignEnd = params.get('navAlign') != 'start';
     const navFoldAlways = params.get('navFold') == 'always';
-    const toggleTemplate = document.querySelector(`#${navType}Toggle, #rockToggle`);
+    const toggleTemplate = document.querySelector(`#${navType}Toggle, #punkToggle`);
     const nav = document.querySelector('body > nav:first-of-type');
     const menu = nav.querySelector('menu');
     nav.replaceChildren(toggleTemplate.content.cloneNode(true));
