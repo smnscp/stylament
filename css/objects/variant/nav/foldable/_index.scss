@@ -40,9 +40,9 @@ nav.var-foldable {
 /// This only has an effect if the menu is foldable.
 /// @name Modifier: +end
 nav.var-foldable.\+end {
-  flex-direction: row-reverse!important;
+  flex-direction: row-reverse;
 
   & > #{$pop} {
-    inset: 0 var(---toggle-size) 0 auto!important;
+    margin-inline: auto var(---toggle-size);
   }
 }

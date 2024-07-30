@@ -101,7 +101,8 @@ $anyToggle: "#{$popToggle}, #{$rockToggle}, #{$punkToggle}";
   // Position popover at top of viewport.
   & > #{$pop} {
     position: fixed;
-    inset: 0 auto 0 var(---toggle-size);
+    inset: 0;
+    margin-inline: var(---toggle-size) auto;
   }
 
   // Menu when folded.
