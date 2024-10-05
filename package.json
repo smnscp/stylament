@@ -1,7 +1,7 @@
 {
   "name": "stylament",
   "title": "Stylament",
-  "version": "0.23.6",
+  "version": "0.24.0",
   "description": "A fundament for your document styling.",
   "keywords": [
     "document structure",
@@ -18,12 +18,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@fontsource/source-code-pro": "^5.0.0",
-    "@fontsource/source-sans-pro": "^5.0.0",
-    "@fontsource/source-serif-pro": "^5.0.0",
-    "sass": "^1.55.0",
+    "@fontsource/source-code-pro": "latest",
+    "@fontsource/source-sans-pro": "latest",
+    "@fontsource/source-serif-pro": "latest",
+    "sass": "latest",
     "vite": "latest",
-    "vite-plugin-handlebars": "^1.6.0"
+    "vite-plugin-handlebars": "latest"
   },
   "dependencies": {}
 }
