@@ -42,7 +42,7 @@ nav.var-foldable {
 nav.var-foldable.\+end {
   flex-direction: row-reverse;
 
-  & > #{$pop} {
+  & > #{$popOn} {
     margin-inline: auto var(---toggle-size);
   }
 }
