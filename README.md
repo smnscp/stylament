@@ -2,25 +2,28 @@
 
 > A fundament for your document styling.
 
-This is gonna be solid. And flexible. At the same time. 😲 Awesome!
+Designed to advocate consistency while providing a fair amount of flexibility.
 
 ## What?
 
 _Stylament_ is
-- a design _system_,
-- a blueprint for building well-structured and prettily-styled web pages,
-- a collection of HTML & CSS patterns.
-
-_Stylament_ is **not**
-- a “CSS framework” to keep you from learning CSS,
-- a simple theme to apply to your pages and be done,
-- a component library adding tons of JavaScript dependencies.
+- **not** a design system itself
+- **but** a system of tools for scaffolding design systems, think _meta design system_,
+- **neither** a “CSS framework” **nor** a “CSS methodology” intended to relieve you of the need to learn CSS
+- **but** a rather sophisticated approach to take advantage of the strengths of CSS (reusability, organizability, … _The Cascade™_)
+- **not** a simple theme to apply to your pages and be done, **but** it comes with [blueprints](example) for building well-structured and prettily-styled web pages,
+- **simply put**, a collection of HTML & CSS patterns (but free of JavaScript overkill).
 
 ## Why?
 
-After decades of using big HTML & CSS frameworks like _Foundation_ and _Bootstrap_, seeing hundreds of micro-frameworks popping up, being confronted with the popular misconception called _“utility first”_, I finally followed the urge to build my own design system. Mainly because I wanted to give proof of the viability of _really systematic_ design approaches.
+After decades of using big HTML & CSS frameworks like _Foundation_ and _Bootstrap_, seeing hundreds of CSS micro-frameworks popping up, being confronted with the popular misconception called _“utility first”_, I still hadn’t found an  HTML & CSS system that really met my expectations. So, I could no longer resist to build my own.
 
 ## How?
+
+- **Rules-driven:** Good style _needs_ rules. _Stylament_ relies on a set of rules (yes, that’s CSS DNA, you name it) that build on one another.
+- **Consistency-first:** Obey the rules! The less exceptions, the better. But if they exist, they do so to prove the rules.
+- **Classless-first:** Good mark-up can do without extra class-level specificity more often than you’d think. Although not a typical classless CSS framework per se, _Stylament_ does a lot of heavy lifting on the [element](css/elements/) and [idiom](css/idioms/) layers.
+- **Utility-last:** With the above being said, _Stylament_ acknowledges the usefulness of [utility](css/utilities/) CSS – for said legitimate but rare exceptions.
 
 🚧 N. B.: The _how_ is still subject to change. There may be breaking changes with every release.
 
@@ -31,7 +34,7 @@ _Stylament_ is inspired by a lot of good work others did before me:
 - organized in layers like [ITCSS](https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528)
 - using the best of different methodologies (the right tool for the job) like [CUBE CSS](https://cube.fyi/)
 - founded on axioms like [Every Layout](https://every-layout.dev/)
-- driven by a comprehensive set of CSS custom properties like [Open Props](https://open-props.style/) or [Pollen](https://www.pollen.style/)
+- driven by a comprehensive set of CSS custom properties like [Open Props](https://open-props.style/)
 
 ### Layers of Stylament
 
