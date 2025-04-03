@@ -83,6 +83,11 @@
   }
 }
 
+/// Wrap column-wise (multi-column layout).
+.lyo-wrap-columns {
+  column-width: var(---min-column-size);
+}
+
 /// Wrap as cluster (densely packed).
 .lyo-wrap-cluster {
   display: flex;
