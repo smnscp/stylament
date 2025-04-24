@@ -8,14 +8,16 @@
 
 /// ## Heading Content
 
-/// @name General heading styles
-:is(h1, h2, h3, h4, h5, h6) {
-  @include coloring.set-colors("heading");
-  color: var(---clr-fg);
-}
-
 $colors: map.get(cfg.$merged, coloring, color, logical);
 @if $colors {
+  @if map.get($colors, heading) {
+    /// @name General heading styles
+    :is(h1, h2, h3, h4, h5, h6) {
+      @include coloring.set-colors("heading");
+      color: var(---clr-fg);
+    }
+  }
+
   @for $level from 1 through 6 {
     @if map.get($colors, heading-#{$level}) {
       /// @name Level-specific heading styles

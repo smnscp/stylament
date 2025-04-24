@@ -4,6 +4,8 @@
 
 /// ## Coloring Mixins
 
+@use "sass:map";
+@use "../config" as cfg;
 @use "../properties/io" as *;
 
 /// Set abstract color properties to the color specified by `$name` and its counterpart (`-contra`).
@@ -44,12 +46,18 @@
   @include alternate-base;
   @include use-colors;
 
-  :is(h1, h2, h3, h4, h5, h6, hgroup > p) {
-    @include set-colors("heading-alternate", "heading");
-  }
-
-  :where(a:any-link) {
-    @include set-colors("links-alternate", "links");
+  $colors: map.get(cfg.$merged, coloring, color, logical);
+  @if $colors {
+    @if map.get($colors, heading-alternate) {
+      :is(h1, h2, h3, h4, h5, h6, hgroup > p) {
+        @include set-colors("heading-alternate");
+      }
+    }
+    @if map.get($colors, links-alternate) {
+      :where(a:any-link) {
+        @include set-colors("links-alternate");
+      }
+    }
   }
 }
 
