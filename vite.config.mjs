@@ -34,9 +34,9 @@ export default defineConfig({
       },
       output: {
         assetFileNames: (assetInfo) =>
-          (assetInfo.name.endsWith("css") ? "css" : "assets") +
-          "/" +
-          assetInfo.name,
+          assetInfo.originalFileNames[0]?.endsWith(".scss")
+            ? assetInfo.originalFileNames[0].replace(".scss", ".css") // keep original names for stylesheets
+            : "assets/[name]-[hash][extname]", // use the default pattern
       },
     },
   },
@@ -44,6 +44,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         api: "modern",
+        loadPaths: ["node_modules"],
       },
     },
   },

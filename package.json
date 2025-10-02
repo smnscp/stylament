@@ -22,8 +22,7 @@
     "@fontsource/source-sans-pro": "latest",
     "@fontsource/source-serif-pro": "latest",
     "sass": "latest",
-    "vite": "latest",
+    "vite": "^6.0.0",
     "vite-plugin-handlebars": "latest"
-  },
-  "dependencies": {}
+  }
 }
