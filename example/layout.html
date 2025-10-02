@@ -6,18 +6,57 @@
   <title>Stylament – Sample Layout</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="/img/logo.svg" rel="shortcut icon">
-  
-  
   <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/css/dark.scheme.css">
   <link rel="stylesheet" media="not (prefers-color-scheme: dark)" href="/css/light.scheme.css">
-    
-
-  <link rel="stylesheet" href="/css/index.css">
-  <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/opt.css">
   <link rel="stylesheet" href="/css/dev.utils.css">
+
+  <link rel="stylesheet" crossorigin href="/css/index.css">
+  <link rel="stylesheet" crossorigin href="/css/fonts.css">
 </head>
 
 <body class="scp-homepage lyo-page-center">
+  <template id="popToggle">
+    <button popovertarget="main-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7"  width="100%" fill="currentColor">
+        <g transform="rotate(45 3.5 3.5)">
+          <rect height="1" rx=".5" y="3" width="9" x="-1"></rect>
+          <rect width="1" rx=".5" x="3" y="-1" height="9"></rect>
+        </g>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7"  width="100%" fill="currentColor">
+        <rect width="7" height="1" rx=".5" x="0" y="0" />
+        <rect width="7" height="1" rx=".5" x="0" y="3" />
+        <rect width="7" height="1" rx=".5" x="0" y="6" />
+      </svg>
+    </button>
+  </template>
+
+  <template id="rockToggle">
+    <input type="checkbox" id="-show-menu" hidden>
+    <label role="switch" for="-show-menu"></label>
+  </template>
+
+  <template id="punkToggle">
+    <div role="switch" id="/nav">
+      <a href="#/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7" width="100%" fill="currentColor">
+          <g transform="rotate(45 3.5 3.5)">
+            <rect height="1" rx=".5" y="3" width="9" x="-1"></rect>
+            <rect width="1" rx=".5" x="3" y="-1" height="9"></rect>
+          </g>
+        </svg>
+      </a>
+      <a href="#/nav">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7" width="100%" fill="currentColor">
+          <rect width="7" height="1" rx=".5" x="0" y="0" />
+          <rect width="7" height="1" rx=".5" x="0" y="3" />
+          <rect width="7" height="1" rx=".5" x="0" y="6" />
+        </svg>
+      </a>
+    </div>
+  </template>
+
   <header class="clr-alternate +alt">
     <hgroup>
       <p>
@@ -37,10 +76,8 @@
     </hgroup>
   </header>
 
-  <nav class="var-menu +levelable +foldable-when-stacked +sticky +end">
-    <input type="checkbox" id="-toggle-state-0">
-    <label for="-toggle-state-0"></label>
-    <menu>
+  <nav class="var-sticky var-foldable +end">
+    <menu id="main-menu" role="menubar">
       <li><a href="#section-one">Section One</a></li>
       <li><a href="#section-two">Section Two</a></li>
       <li><a href="#section-three">Section Three</a></li>
@@ -50,6 +87,28 @@
   </nav>
 
   <main>
+    <section class="lyo-wrap-flex @measure-xs">
+      <h2 class="lyo-reset-wrap">Select Navigation Type</h2>
+      <menu>
+        <li><a href="?navType=rock&navAlign=start#main-menu">Hidden checkbox, left</a></li>
+        <li><a href="?navType=rock&navAlign=end#main-menu">Hidden checkbox, right</a></li>
+        <li><a href="?navType=rock&navAlign=start&navFold=always#main-menu">Hidden checkbox, left, always foldable</a></li>
+        <li><a href="?navType=rock&navAlign=end&navFold=always#main-menu">Hidden checkbox, right, always foldable</a></li>
+      </menu>
+      <menu>
+        <li><a href="?navType=pop&navAlign=start#main-menu">Popover, left</a></li>
+        <li><a href="?navType=pop&navAlign=end#main-menu">Popover, right</a></li>
+        <li><a href="?navType=pop&navAlign=start&navFold=always#main-menu">Popover, left, always foldable</a></li>
+        <li><a href="?navType=pop&navAlign=end&navFold=always#main-menu">Popover, right, always foldable</a></li>
+      </menu>
+      <menu>
+        <li><a href="?navType=punk&navAlign=start#main-menu">Fragment target, left</a></li>
+        <li><a href="?navType=punk&navAlign=end#main-menu">Fragment target, right</a></li>
+        <li><a href="?navType=punk&navAlign=start&navFold=always#main-menu">Fragment target, left, always foldable</a></li>
+        <li><a href="?navType=punk&navAlign=end&navFold=always#main-menu">Fragment target, right, always foldable</a></li>
+      </menu>
+    </section>
+
     <figure class="~breakout var-feature">
       <blockquote>
         <p>Always build on solid ground!</p>
@@ -141,6 +200,21 @@
         </ul>
       </section>
     </footer>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const navType = params.get('navType');
+    const navAlignEnd = params.get('navAlign') != 'start';
+    const navFoldAlways = params.get('navFold') == 'always';
+    const toggleTemplate = document.querySelector(`#${navType}Toggle, #punkToggle`);
+    const nav = document.querySelector('body > nav:first-of-type');
+    const menu = nav.querySelector('menu');
+    nav.replaceChildren(toggleTemplate.content.cloneNode(true));
+    nav.appendChild(menu);
+    nav.classList.toggle('+end', navAlignEnd);
+    nav.classList.toggle('+always', navFoldAlways);
+    if (navType == 'pop') menu.setAttribute('popover', '');
+  </script>
 
 </body>
 

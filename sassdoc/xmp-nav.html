@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-herman="root">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <title>Navigation Bar | Stylament Documentation</title>
+
+  <link href="assets/img/logo.svg" rel="shortcut icon">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+3:400,400i,700,700i" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/webpack/app_styles.min.css" />
+
+  
+
+  
+</head>
+<body data-herman="body">
+  <svg xmlns="http://www.w3.org/2000/svg" hidden>
+  <symbol id="icon-logo" viewBox="0 0 16 16">
+    <path d="M.2 8 0 7.8v-.2C.8 6.9 1.9 5.9 2.7 5l.4.3c-.5.8-1.1 1.6-1.8 2.3 1 1.2 1 1.3 1.7 2.4l-.4.3c-.4-.4-.5-.6-1-1C1 8.6 1.1 8.7.2 8M13 10c.6-1.1.7-1.1 1.7-2.4-.6-.6-1.3-1.5-1.7-2.3l.3-.3c.8.8 1.8 1.8 2.7 2.6v.2l-.8.7c-.3.3-1.2 1.1-1.8 1.7z"/><path d="M2.6 13.1H3c.9 0 1.1-.2 1.1-1.4V4.2c0-1.1-.2-1.4-1.1-1.4h-.4v-.6h4.5v.7h-.3c-.9 0-1.1.2-1.1 1.4v3.2h4.6V4.2c0-1.1-.2-1.4-1.1-1.4h-.3v-.6h4.5v.7H13c-.9 0-1.1.2-1.1 1.4v7.5c0 1.1.2 1.4 1.1 1.4h.4v.7H8.9v-.7h.3c.9 0 1.1-.2 1.1-1.4V8.2H5.7v3.5c0 1.1.2 1.4 1.1 1.4h.3v.7H2.6z"/>
+  </symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 28">
+    <path d="M24 21v2c0 .547-.453 1-1 1H1c-.547 0-1-.453-1-1v-2c0-.547.453-1 1-1h22c.547 0 1 .453 1 1m0-8v2c0 .547-.453 1-1 1H1c-.547 0-1-.453-1-1v-2c0-.547.453-1 1-1h22c.547 0 1 .453 1 1m0-8v2c0 .547-.453 1-1 1H1c-.547 0-1-.453-1-1V5c0-.547.453-1 1-1h22c.547 0 1 .453 1 1"/>
+  </symbol>
+</svg>
+
+  <div data-region="app">
+    <header data-region="banner">
+      
+  <button data-nav-toggle data-toggle="button" aria-controls="nav" aria-pressed="false" type="button" data-toggle-synced="false">
+    
+  <svg data-icon="menu" data-icon-size="nav-icon" ><title>menu</title><use xlink:href="#icon-menu" />
+  </svg>
+
+  </button>
+
+
+      <div class="project-title">
+        <a href="index.html" rel="home" class="project-name">Stylament</a>
+        
+          <span class="project-version">0.25.1</span>
+        
+      </div>
+    </header>
+
+    <div data-region="container">
+      
+  <nav data-region="nav" data-toggle="target" id="nav" data-target-id="nav" aria-expanded="false" data-auto-closing="false" data-auto-closing-on-any-click="false">
+    <form action="search.html">
+      <input type="text" name="q" placeholder="Search…" required minlength="3">
+    </form>
+
+    <div class="nav-subsection">
+      <h3 class="nav-home">
+        
+        <a href="index.html" data-nav="is-not-active">Stylament</a>
+      </h3>
+
+      
+      
+    </div>
+
+    
+    <div class="nav-subsection">
+      <ul>
+  
+            <li class="nav-subsection">
+              <h3 class="nav-title">Axioms</h3>
+              <ul>
+                
+  
+    <li class="nav-item">
+      <a href="ax-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ax-config.html" data-nav="is-not-active">Global Configuration</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ax-tools.html" data-nav="is-not-active">Preprocessing Tools</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ax-properties.html" data-nav="is-not-active">CSS Custom<span class="widont">&nbsp;</span>Properties</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ax-generic.html" data-nav="is-not-active">Generic CSS</a>
+    </li>
+  </ul>
+            </li>
+            <li class="nav-subsection">
+              <h3 class="nav-title">Elements</h3>
+              <ul>
+                
+  
+    <li class="nav-item">
+      <a href="el-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-document.html" data-nav="is-not-active">Document-level Elements</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-sectioning.html" data-nav="is-not-active">Sectioning</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-grouping.html" data-nav="is-not-active">Grouping Content</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-text.html" data-nav="is-not-active">Text-level Semantics</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-edits.html" data-nav="is-not-active">Edits</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-links.html" data-nav="is-not-active">Links</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-embedding.html" data-nav="is-not-active">Embedding</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-tables.html" data-nav="is-not-active">Tabular Content</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-forms.html" data-nav="is-not-active">Form-associated Content</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-interactive.html" data-nav="is-not-active">Interactive Elements</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="el-scripting.html" data-nav="is-not-active">Scripting</a>
+    </li>
+  </ul>
+            </li>
+            <li class="nav-subsection">
+              <h3 class="nav-title">Idioms</h3>
+              <ul>
+                
+  
+    <li class="nav-item">
+      <a href="id-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="id-document.html" data-nav="is-not-active">Document Structure</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="id-sectioning.html" data-nav="is-not-active">Sectioning</a>
+    </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <li class="nav-item">
+      <a href="id-navigation.html" data-nav="is-not-active">Navigation</a>
+    </li>
+  </ul>
+            </li>
+            <li class="nav-subsection">
+              <h3 class="nav-title">Objects</h3>
+              <ul>
+                
+  
+    <li class="nav-item">
+      <a href="ob-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ob-variant.html" data-nav="is-not-active">Elementary Variants</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ob-scope.html" data-nav="is-not-active">Scope-defining Classes</a>
+    </li>
+  </ul>
+            </li>
+            <li class="nav-subsection">
+              <h3 class="nav-title">Utilities</h3>
+              <ul>
+                
+  
+    <li class="nav-item">
+      <a href="ut-intro.html" data-nav="is-not-active">… Introduction</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ut-atomic.html" data-nav="is-not-active">Atomic Utilities</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ut-layout.html" data-nav="is-not-active">Layout Utilities</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ut-coloring.html" data-nav="is-not-active">Coloring Utilities</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="ut-dev.html" data-nav="is-not-active">Development Utilities</a>
+    </li>
+  </ul>
+            </li>
+            <li class="nav-subsection">
+              <h3 class="nav-title">Examples</h3>
+              <ul>
+                
+  
+    <li class="nav-item">
+      <a href="xmp-nav.html" data-nav="is-active">Navigation Bar</a>
+    </li>
+  </ul>
+            </li></ul>
+    </div>
+
+    
+    
+      <div class="nav-subsection">
+        <h3 class="nav-title">
+          External Links
+        </h3>
+
+        <ul>
+          
+            <li class="nav-item">
+              <a href="https://stylament.sim.ilitu.de/" data-nav="is-not-active">Homepage</a>
+            </li>
+          
+            <li class="nav-item">
+              <a href="https://github.com/smnscp/stylament" data-nav="is-not-active">Code</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+
+    
+      <aside class="footer-credit">
+        <a href="https://www.oddbird.net/herman/" class="footer-icon">
+          
+  <svg data-icon="logo" data-icon-size="footer-logo" ><use xlink:href="#icon-logo" />
+  </svg>
+
+        </a>
+        <span>
+          Documented with
+          <a href="https://www.oddbird.net/herman/" class="footer-link">
+            Herman
+          </a>
+        </span>
+        <span>
+          by
+          <a href="https://www.oddbird.net/" class="footer-link">
+            OddBird
+          </a>
+        </span>
+      </aside>
+    
+  </nav>
+
+
+      <main data-region="main">
+        
+  <nav class="breadcrumb">
+    
+    <a href="index.html" >Stylament</a> »
+    <strong>Navigation Bar</strong>
+  </nav>
+
+
+        <div data-page="xmp-nav">
+          
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" >
+  
+    
+  
+  
+  
+  
+
+  
+    <div data-item-section="prose" class="text-block">
+      <h2 id="main-navigation-bar-overrides" tabindex="-1">Main Navigation Bar<span class="widont">&nbsp;</span>Overrides</h2>
+<p>Rather opinionated styling for the first <code>nav</code>.
+This is used in the <a href="/example/layout.html#main-menu">layout<span class="widont">&nbsp;</span>example</a>.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--body%20%3E%20nav%3Afirst-of-type">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--body%20%3E%20nav%3Afirst-of-type" class="item-name">body &gt;<span class="widont">&nbsp;</span>nav:first-of-type</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">body &gt; nav:first-of-type {
+  &amp; &gt; menu {
+    box-shadow: svar(shadow-sm);
+
+    &amp; &gt; li {
+      transition: all 0.3s svar(easing-default);
+
+      &amp;:hover {
+        @include coloring.use-colors-inverse;
+      }
+
+      &amp; &gt; a {
+        font-weight: svar(font-weight-emphasis);
+      }
+    }
+  }
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>The  first <code>nav</code> is implicitly considered the main<span class="widont">&nbsp;</span>navigation.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="assets/webpack/runtime.min.js"></script>
+  <script type="text/javascript" src="assets/webpack/common.min.js"></script>
+  <script type="text/javascript" src="assets/webpack/app.min.js"></script>
+  
+</body>
+</html>
