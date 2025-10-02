@@ -1,5 +1,6 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import { NodePackageImporter } from "sass";
 import handlebars from "vite-plugin-handlebars";
 
 export default defineConfig({
@@ -44,7 +45,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         api: "modern",
-        loadPaths: ["node_modules"],
+        importers: [new NodePackageImporter()],
       },
     },
   },

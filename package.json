@@ -18,9 +18,10 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@fontsource/source-code-pro": "latest",
-    "@fontsource/source-sans-pro": "latest",
-    "@fontsource/source-serif-pro": "latest",
+    "@fontsource-utils/scss": "latest",
+    "@fontsource-variable/source-code-pro": "latest",
+    "@fontsource-variable/source-sans-3": "latest",
+    "@fontsource-variable/source-serif-4": "latest",
     "sass": "latest",
     "vite": "^6.0.0",
     "vite-plugin-handlebars": "latest"

@@ -1,11 +1,12 @@
 @use "sass:map";
-@use "@fontsource/source-sans-pro/scss/mixins" as Sans;
-@use "@fontsource/source-serif-pro/scss/mixins" as Serif;
-@use "@fontsource/source-code-pro/scss/mixins" as Mono;
+@use "pkg:@fontsource-utils/scss" as fontsource;
+@use "pkg:@fontsource-variable/source-sans-3/scss" as sans;
+@use "pkg:@fontsource-variable/source-serif-4/scss" as serif;
+@use "pkg:@fontsource-variable/source-code-pro/scss" as mono;
 
 $weights: 400 700; // 200 300 400 600 700 900;
 $styles: normal italic;
 
-@include Sans.faces($directory: "/fonts/source-sans-pro/files", $weights: $weights, $styles: $styles);
-@include Serif.faces($directory: "/fonts/source-serif-pro/files", $weights: $weights, $styles: $styles);
-@include Mono.faces($directory: "/fonts/source-code-pro/files", $weights: $weights, $styles: $styles);
+@include fontsource.faces($metadata: sans.$metadata, $family: "Source Sans", $directory: "/fonts/source-sans-3/files", $weights: $weights, $styles: $styles);
+@include fontsource.faces($metadata: serif.$metadata, $family: "Source Serif", $directory: "/fonts/source-serif-4/files", $weights: $weights, $styles: $styles);
+@include fontsource.faces($metadata: mono.$metadata, $family: "Source Code", $directory: "/fonts/source-code-pro/files", $weights: $weights, $styles: $styles);
