@@ -1,5 +1,5 @@
 @use "axioms/properties/io" with (
-  $-prefix: "🎟"
+  $prop-prefix: "🎟"
 );
 @use "axioms/config/specific/color/brand";
 @use "axioms/config" with (
