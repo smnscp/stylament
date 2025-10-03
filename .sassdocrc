@@ -45,6 +45,8 @@ groups:
     ut-layout: Layout Utilities
     ut-coloring: Coloring Utilities
     ut-dev: Development Utilities
+  Examples:
+    xmp-nav: Navigation Bar
 herman:
   extraLinks:
     - name: Homepage

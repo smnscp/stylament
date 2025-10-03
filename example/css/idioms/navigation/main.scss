@@ -1,6 +1,11 @@
+////
+/// @group xmp-nav
+////
+
 /// ## Main Navigation Bar Overrides
 ///
 /// Rather opinionated styling for the first `nav`.
+/// This is used in the [layout example](/example/layout.html#main-menu).
 
 @use "../../../../css/axioms/properties/io" as *;
 @use "../../../../css/axioms/generic/coloring";
