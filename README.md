@@ -11,7 +11,7 @@ _Stylament_ is
 - **but** a system of tools for scaffolding design systems, think _meta design system_,
 - **neither** a “CSS framework” **nor** a “CSS methodology” intended to relieve you of the need to learn CSS
 - **but** a rather sophisticated approach to take advantage of the strengths of CSS (reusability, organizability, … _The Cascade™_)
-- **not** a simple theme to apply to your pages and be done, **but** it comes with [blueprints](example) for building well-structured and prettily-styled web pages,
+- **not** a simple theme to apply to your pages and be done, **but** it comes with [blueprints](/example/) for building well-structured and prettily-styled web pages,
 - **simply put**, a collection of HTML & CSS patterns (but free of JavaScript overkill).
 
 ## Why?
@@ -22,8 +22,8 @@ After decades of using big HTML & CSS frameworks like _Foundation_ and _Bootstra
 
 - **Rules-driven:** Good style _needs_ rules. _Stylament_ relies on a set of rules (yes, that’s CSS DNA, you name it) that build on one another.
 - **Consistency-first:** Obey the rules! The less exceptions, the better. But if they exist, they do so to prove the rules.
-- **Classless-first:** Good mark-up can do without extra class-level specificity more often than you’d think. Although not a typical classless CSS framework per se, _Stylament_ does a lot of heavy lifting on the [element](css/elements/) and [idiom](css/idioms/) layers.
-- **Utility-last:** With the above being said, _Stylament_ acknowledges the usefulness of [utility](css/utilities/) CSS – for said legitimate but rare exceptions.
+- **Classless-first:** Good mark-up can do without extra class-level specificity more often than you’d think. Although not a typical classless CSS framework per se, _Stylament_ does a lot of heavy lifting on the [element](https://stylament.sim.ilitu.de/sassdoc/el-intro.html) and [idiom](https://stylament.sim.ilitu.de/sassdoc/id-intro.html) layers.
+- **Utility-last:** With the above being said, _Stylament_ acknowledges the usefulness of [utility](https://stylament.sim.ilitu.de/sassdoc/ut-intro.html) CSS – for said legitimate but rare exceptions.
 
 🚧 N. B.: The _how_ is still subject to change. There may be breaking changes with every release.
 

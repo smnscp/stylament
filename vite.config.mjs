@@ -22,10 +22,13 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
+        exampleIndex: resolve(__dirname, "example/index.html"),
         exampleLayout: resolve(__dirname, "example/layout.html"),
         exampleBodyCopy: resolve(__dirname, "example/body-copy.html"),
-        exampleColor: resolve(__dirname, "example/color.html"),
         exampleElements: resolve(__dirname, "example/elements-showcase.html"),
+        exampleColor: resolve(__dirname, "example/color.html"),
+        exampleLength: resolve(__dirname, "example/length.html"),
+        exampleShadow: resolve(__dirname, "example/shadow.html"),
         mainSheet: resolve(__dirname, "css/index.scss"),
         fontsSheet: resolve(__dirname, "css/fonts.scss"),
         optionalSheet: resolve(__dirname, "css/opt.scss"),

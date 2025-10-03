@@ -5,33 +5,45 @@
   <link rel="stylesheet" href="/css/dev.utils.scss">
   <style>
     body {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--{{propPrefix}}line-root-abs);
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
+    }
+
+    body>header,
+    body>footer {
+      flex-basis: 100%;
     }
 
     body>aside:first-of-type {
-      grid-column: 4;
-      grid-row: 1;
+      /* act as responsive sidebar, fill when single column */
+      flex-grow: 1;
+      /* act as sticky nav */
       position: sticky;
-      inset-block-start: var(--{{propPrefix}}line-root-abs);
+      inset-block-start: 0;
+      block-size: 100vh;
+      margin-block-end: -100vh;
+      z-index: 2;
+      padding: var(--{{propPrefix}}line-root-abs) 1ch;
     }
 
     body>main {
-      grid-column: 1 / 4;
-      grid-row: 1 / 3;
-    }
-
-    body>footer {
-      grid-column: 1 / 5;
+      flex-basis: 0;
+      flex-grow: 999;
+      min-inline-size: 66.667%;
     }
   </style>
 {{/head}}
 
 <body class="lyo-page-center dev-baseline-grid">
+  <header class="clr-alternate">
+    <hgroup>
+      <h1><a href="/"><img src="/img/logo.svg" alt="logo"></a> Stylament – Body Copy Sample</h1>
+    </hgroup>
+  </header>
   <aside class="document-toc-container dev-baseline-grid">
     <section class="document-toc">
-      <header class="clr-alternate">
+      <header>
         <h2 class="document-toc-heading">Table of Contents</h2>
       </header>
       <ul class="document-toc-list" id="toc-entries">
@@ -43,7 +55,6 @@
     </section>
   </aside>
   <main>
-    <h1>Body Copy Sample</h1>
     <section id="headings_paragraphs" class="dev-lorem-ipsum">
       <h1>Headline 1</h1>
       <h2>Headline 2</h2>
