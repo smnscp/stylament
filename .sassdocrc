@@ -49,10 +49,10 @@ groups:
     xmp-nav: Navigation Bar
 herman:
   extraLinks:
-    - name: Homepage
-      url: https://stylament.sim.ilitu.de/
-    - name: Code
-      url: https://github.com/smnscp/stylament
+    # - name: Homepage
+    #   url: https://stylament.sim.ilitu.de/
+    # - name: Code
+    #   url: https://github.com/smnscp/stylament
   sass:
     sassOptions:
       loadPaths:
