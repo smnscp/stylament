@@ -101,7 +101,7 @@ $-rlh: rhythm.rlh($-scale-base, $-line-root);
 ///       radius: (
 ///         mapped: (
 ///           domain: (sm: -1, md: 0, lg: 1),
-///           function: get-function("radius"),
+///           function: meta.get-function("radius"),
 ///         ),
 ///       ),
 ///     ),

@@ -1,6 +1,8 @@
 dest: ./dist/sassdoc
 theme: herman
+# basePath: https://github.com/smnscp/stylament/tree/main
 shortcutIcon: public/img/logo.svg
+# descriptionPath: README.md
 groups:
   undefined: '<un-grouped>'
   Axioms:
@@ -54,6 +56,8 @@ herman:
     # - name: Code
     #   url: https://github.com/smnscp/stylament
   sass:
+    use:
+      - 'sass:meta'
     sassOptions:
       loadPaths:
         - 'example'
