@@ -34,6 +34,12 @@
 /// @type Map
 $custom: () !default;
 
+/// Whether to use or to ignore the default configuration. With this set to false only
+/// the custom configuration is taken into account.
+///
+/// @type Boolean
+$use-default: true !default;
+
 $-custom-with-typography: map.deep-merge(
   (
     typography: typography.$default,
@@ -361,6 +367,7 @@ $default: (
 /// Map of all configuration values merged together.
 /// This is used to look up configuration keys.
 /// @type Map
+/// @requires $use-default
 /// @requires $default
 /// @requires $custom
-$merged: map.deep-merge($default, $-custom-with-typography);
+$merged: if($use-default, map.deep-merge($default, $-custom-with-typography), $custom);
