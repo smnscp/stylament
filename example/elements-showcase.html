@@ -29,7 +29,7 @@
       flex-direction: column;
       /* act nice-looking */
       box-shadow: var(--{{propPrefix}}shadow-lg);
-      padding: var(--{{propPrefix}}line-root-abs) 1ch;
+      padding: 1rlh 1ch;
     }
 
     body>main {
@@ -47,7 +47,7 @@
     figure {
       ---figure-border-width: var(--{{propPrefix}}stroke-width-2);
       ---figure-border-color: var(--{{propPrefix}}stroke-color-default);
-      padding: calc(1.5 * (var(--{{propPrefix}}line-root-abs) - var(---figure-border-width)));
+      padding: calc(1.5 * (1rlh - var(---figure-border-width)));
       border: var(---figure-border-width) var(---figure-border-color) solid;
       margin-inline: 0;
       margin-block-end: calc(-1 * var(---figure-border-width));

@@ -47,7 +47,7 @@ td,
 th {
   border: var(---border-width) var(---table-border-color)
     var(---table-border-style);
-  padding: calc(0.5 * (svar(line-root-abs) - var(---border-width)));
+  padding: calc(0.5 * (1rlh - var(---border-width)));
 }
 
 col {
