@@ -15,27 +15,31 @@
 /// @requires $merged
 /// @link https://drewish.com/tools/vertical-rhythm/ Vertical rhythm calculation tool
 :root {
-  $scale: map.get(cfg.$merged, typography, font, size);
+  $scale: map.get(cfg.$merged, typography, font, size, mapped);
   $line: map.get(cfg.$merged, typography, line);
-  $rlh: map.get($line, rlh);
 
-  #{$🌱}line-root: #{map.get($line, root)};
-  #{$🌱}line-root-abs: #{$rlh};
+  @if $scale and $line and map.get($line, rlh) {
+    $rlh: map.get($line, rlh);
 
-  @for $i
-    from map.get($scale, mapped, range, start)
-    through map.get($scale, mapped, range, end)
-  {
-    $font-size: meta.call-conditional(
-      map.get($scale, mapped, function),
-      $i,
-      map.get($scale, mapped, params)
-    );
-    #{$🌱}line-#{$i}: #{rhythm.grid-line(
-        $font-size,
-        $rlh,
-        map.get($line, min),
-        map.get($line, sub)
-      )};
+    #{$🌱}line-root: #{map.get($line, root)};
+    /// @deprecated Use native `rlh` instead.
+    #{$🌱}line-root-abs: #{$rlh};
+
+    @for $i
+      from map.get($scale, range, start)
+      through map.get($scale, range, end)
+    {
+      $font-size: meta.call-conditional(
+        map.get($scale, function),
+        $i,
+        map.get($scale, params)
+      );
+      #{$🌱}line-#{$i}: #{rhythm.grid-line(
+          $font-size,
+          $rlh,
+          map.get($line, min),
+          map.get($line, sub)
+        )};
+    }
   }
 }

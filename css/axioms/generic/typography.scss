@@ -4,13 +4,17 @@
 
 /// ## Generic Typography
 
+@use "sass:map";
+@use "../../axioms/config" as cfg;
 @use "../properties/io" as *;
+
+$rlh: map.get(cfg.$merged, typography, line, rlh);
 
 /// The font size and line height of the root element.
 /// @name Root Line Height and Font Size
 html {
   font-size: svar(font-size-root, 1rem);
-  line-height: svar(line-root);
+  line-height: svar(line-root, svar(line-default));
 }
 
 /// Fonts for body copy.
@@ -19,7 +23,10 @@ body {
   font-family: svar(font-family-body);
   font-weight: svar(font-weight-body);
   font-size: svar(font-size-0);
-  line-height: svar(line-0);
+  // Only use baseline-grid-supporting line heights if rlh is defined.
+  @if $rlh {
+    line-height: svar(line-0);
+  }
 }
 
 /// Fonts for headings.
@@ -33,7 +40,10 @@ body {
   /// Apply respective font-size and line-height to each heading level.
   h#{$level} {
     font-size: svar(font-size-#{4 - $level});
-    line-height: svar(line-#{4 - $level});
+    // Only use baseline-grid-supporting line heights if rlh is defined.
+    @if $rlh {
+      line-height: svar(line-#{4 - $level});
+    }
   }
 }
 
