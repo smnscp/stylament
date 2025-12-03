@@ -17,7 +17,6 @@
 @use "sass:math";
 @use "sass:meta";
 @use "mapping";
-@use "specific/typography";
 @use "specific/ui/easing";
 @use "../tools/arithmetic/function";
 @use "../tools/typography/rhythm";
@@ -40,21 +39,9 @@ $custom: () !default;
 /// @type Boolean
 $use-default: true !default;
 
-$-custom-with-typography: map.deep-merge(
-  (
-    typography: typography.$default,
-  ),
-  $custom
-);
-$-line-root: map.get($-custom-with-typography, typography, line, root);
-$-scale-base: map.get($-custom-with-typography, typography, scale, base);
-$-scale-ratio: map.get($-custom-with-typography, typography, scale, ratio);
-
-/// Root line height.
-/// Absolute value mimicking the experimental CSS unit [`rlh`][mdn:rlh].
-/// @type Number<rem>
-/// @access private
-$-rlh: rhythm.rlh($-scale-base, $-line-root);
+$-line-root: map.get($custom, typography, line, root);
+$-scale-base: map.get($custom, typography, scale, base);
+$-scale-ratio: map.get($custom, typography, scale, ratio);
 
 /// Default configuration.
 /// This also serves as a reference for your [custom configuration](#variable--custom).
@@ -133,7 +120,7 @@ $default: (
         ),
         function: meta.get-function("quantize", $module: "mapping"),
         params: (
-          unit: $-rlh,
+          unit: 1rlh,
           sub: 4,
         ),
       ),
@@ -161,7 +148,7 @@ $default: (
           function: meta.get-function("exponential", $module: "function"),
           params: (
             base: 2,
-            coefficient: $-rlh,
+            coefficient: 1rlh,
           ),
         ),
         logical: (
@@ -247,8 +234,8 @@ $default: (
         ),
         literal: (
           ratio: $-scale-ratio,
-          smaller: math.div(100%, $-scale-ratio),
-          larger: 100% * $-scale-ratio,
+          smaller: if($-scale-ratio, math.div(100%, $-scale-ratio), null),
+          larger: if($-scale-ratio, 100% * $-scale-ratio, null),
           // Fluid root font size:
           // 1rem + (100vw - 32rem) * (1.125rem - 1rem) / (96rem - 32rem)
           // = 0.9375rem + 0.1953125vw
@@ -279,7 +266,7 @@ $default: (
       ),
     ),
     line: (
-      rlh: $-rlh,
+      rlh: if($-line-root and $-scale-base, rhythm.rlh($-scale-base, $-line-root), null),
     ),
     measure: (
       mapped: (
@@ -334,7 +321,7 @@ $default: (
           function: meta.get-function("polynomial", $module: "function"),
           params: (
             0,
-            math.div($-rlh, 24),
+            math.div(1rem, 16),
           ),
         ),
         logical: (
@@ -370,4 +357,4 @@ $default: (
 /// @requires $use-default
 /// @requires $default
 /// @requires $custom
-$merged: if($use-default, map.deep-merge($default, $-custom-with-typography), $custom);
+$merged: if($use-default, map.deep-merge($default, $custom), $custom);
