@@ -67,10 +67,12 @@ pre {
   font-size: svar(font-size-smaller);
 }
 
-/// Prevent certain inline (pseudo) elements from affecting the line height.
-/// @name Base Line Fix
-:is(code, kbd, samp),
-:is(small, sub, sup),
-::marker {
-  line-height: 0;
+@if $rlh {
+  /// Prevent certain inline (pseudo) elements from affecting the line height.
+  /// @name Base Line Fix
+  :is(code, kbd, samp),
+  :is(small, sub, sup),
+  ::marker {
+    line-height: 0;
+  }
 }
