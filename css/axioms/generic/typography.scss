@@ -36,13 +36,17 @@ body {
   font-weight: svar(font-weight-heading);
 }
 
+// Get configured heading level at rem size. Default to h4.
+$-rh: map.get(cfg.$merged, typography, font, size, rem-heading);
+$-rh: if($-rh, $-rh, 4);
+
 @for $level from 1 through 6 {
   /// Apply respective font-size and line-height to each heading level.
   h#{$level} {
-    font-size: svar(font-size-#{4 - $level});
+    font-size: svar(font-size-#{$-rh - $level});
     // Only use baseline-grid-supporting line heights if rlh is defined.
     @if $-rlh {
-      line-height: svar(line-#{4 - $level});
+      line-height: svar(line-#{$-rh - $level});
     }
   }
 }
