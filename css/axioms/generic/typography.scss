@@ -8,7 +8,7 @@
 @use "../../axioms/config" as cfg;
 @use "../properties/io" as *;
 
-$rlh: map.get(cfg.$merged, typography, line, rlh);
+$-rlh: map.get(cfg.$merged, typography, line, rlh);
 
 /// The font size and line height of the root element.
 /// @name Root Line Height and Font Size
@@ -24,7 +24,7 @@ body {
   font-weight: svar(font-weight-body);
   font-size: svar(font-size-0);
   // Only use baseline-grid-supporting line heights if rlh is defined.
-  @if $rlh {
+  @if $-rlh {
     line-height: svar(line-0);
   }
 }
@@ -41,7 +41,7 @@ body {
   h#{$level} {
     font-size: svar(font-size-#{4 - $level});
     // Only use baseline-grid-supporting line heights if rlh is defined.
-    @if $rlh {
+    @if $-rlh {
       line-height: svar(line-#{4 - $level});
     }
   }
@@ -67,7 +67,7 @@ pre {
   font-size: svar(font-size-smaller);
 }
 
-@if $rlh {
+@if $-rlh {
   /// Prevent certain inline (pseudo) elements from affecting the line height.
   /// @name Base Line Fix
   :is(code, kbd, samp),
