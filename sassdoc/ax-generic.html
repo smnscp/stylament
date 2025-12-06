@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.25.1</span>
+          <span class="project-version">0.26.2</span>
         
       </div>
     </header>
@@ -61,6 +61,20 @@
       </h3>
 
       
+      
+        <ul>
+          
+            
+            <li class="nav-item">
+              <a href="Naming.html" data-nav="is-not-active">Naming</a>
+            </li>
+          
+            
+            <li class="nav-item">
+              <a href="Layers.html" data-nav="is-not-active">Layers</a>
+            </li>
+          
+        </ul>
       
     </div>
 
@@ -3903,7 +3917,7 @@ ilst consistently by only changing the <code>---indent</code> property of the ro
       
       <pre class="hljs-pre"><code class="lang-scss">html {
   font-size: svar(font-size-root, 1rem);
-  line-height: svar(line-root);
+  line-height: svar(line-root, svar(line-default));
 }</code></pre>
     </div>
   
@@ -4034,7 +4048,10 @@ ilst consistently by only changing the <code>---indent</code> property of the ro
   font-family: svar(font-family-body);
   font-weight: svar(font-weight-body);
   font-size: svar(font-size-0);
-  line-height: svar(line-0);
+  // Only use baseline-grid-supporting line heights if rlh is defined.
+  @if $-rlh {
+    line-height: svar(line-0);
+  }
 }</code></pre>
     </div>
   
@@ -4291,8 +4308,11 @@ ilst consistently by only changing the <code>---indent</code> property of the ro
       
       
       <pre class="hljs-pre"><code class="lang-scss">h#{$level} {
-  font-size: svar(font-size-#{4 - $level});
-    line-height: svar(line-#{4 - $level});
+  font-size: svar(font-size-#{$-rh - $level});
+    // Only use baseline-grid-supporting line heights if rlh is defined.
+    @if $-rlh {
+      line-height: svar(line-#{$-rh - $level});
+    }
 }</code></pre>
     </div>
   
@@ -4758,7 +4778,7 @@ pre {
 
 
 
-<section class="item" id="css--Base%20Line%20Fix">
+<section class="item" id="css--%3Ais(code%2C%20kbd%2C%20samp)%2C%0A%20%20%3Ais(small%2C%20sub%2C%20sup)%2C%0A%20%20%3A%3Amarker">
   
     
   
@@ -4776,7 +4796,8 @@ pre {
       
 
       
-        <a href="#css--Base%20Line%20Fix" class="item-name">Base Line<span class="widont">&nbsp;</span>Fix</a>
+        <a href="#css--%3Ais(code%2C%20kbd%2C%20samp)%2C%0A%20%20%3Ais(small%2C%20sub%2C%20sup)%2C%0A%20%20%3A%3Amarker" class="item-name">:is(code, kbd, samp),
+  :is(small, sub, sup),<span class="widont">&nbsp;</span>::marker</a>
       
 
       
@@ -4806,8 +4827,8 @@ pre {
       
       
       <pre class="hljs-pre"><code class="lang-scss">:is(code, kbd, samp),
-:is(small, sub, sup),
-::marker {
+  :is(small, sub, sup),
+  ::marker {
   line-height: 0;
 }</code></pre>
     </div>
@@ -4821,7 +4842,8 @@ pre {
 
   
     <div class="text-block">
-      <p>Prevent certain inline (pseudo) elements from affecting the line<span class="widont">&nbsp;</span>height.</p>
+      <p>Prevent certain inline (pseudo) elements from affecting the line height.
+@name Base Line<span class="widont">&nbsp;</span>Fix</p>
 
       
   

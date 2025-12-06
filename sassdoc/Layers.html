@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Atomic Utilities | Stylament Documentation</title>
+  <title>Layers | Stylament Documentation</title>
 
   <link href="assets/img/logo.svg" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+3:400,400i,700,700i" rel="stylesheet">
@@ -71,7 +71,7 @@
           
             
             <li class="nav-item">
-              <a href="Layers.html" data-nav="is-not-active">Layers</a>
+              <a href="Layers.html" data-nav="is-active">Layers</a>
             </li>
           
         </ul>
@@ -241,7 +241,7 @@
   
   
     <li class="nav-item">
-      <a href="ut-atomic.html" data-nav="is-active">Atomic Utilities</a>
+      <a href="ut-atomic.html" data-nav="is-not-active">Atomic Utilities</a>
     </li>
   
   
@@ -305,221 +305,66 @@
   <nav class="breadcrumb">
     
     <a href="index.html" >Stylament</a> »
-    <strong>Atomic Utilities</strong>
+    <strong>Layers</strong>
   </nav>
 
 
-        <div data-page="ut-atomic">
+        <div data-page="Layers">
           
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h1 id="atomic-utilities" tabindex="-1">Atomic Utilities</h1>
-<p>These are utility classes as known from most CSS utility frameworks.
-Add them to any individual element in order to apply to it atomic styling,
-i. e. set only one property to one specific<span class="widont">&nbsp;</span>value.</p>
-<h2 id="naming-convention" tabindex="-1">Naming Convention</h2>
-<p>Atomic utilities carry the <code>@</code> prefix, e. g. <code>@color-red</code>.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--.%5C%40measure-%23%7B%24name%7D">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--.%5C%40measure-%23%7B%24name%7D" class="item-name">.&#92;@measure-#{$name}</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">.&#92;@measure-#{$name} {
-  ---measure: #{svar(measure-#{$name})} !important;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Specify individual measure.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
+  <div class="text-block">
+    <ul>
+<li>
+<p><a href="./ax-intro.html">Axioms</a></p>
+<ul>
+<li><a href="./ax-config.html">Global Configuration</a></li>
+<li><a href="./ax-tools.html">Preprocessing Tools</a></li>
+<li><a href="./ax-properties.html">CSS Custom Properties</a></li>
+<li><a href="./ax-generic.html">Generic CSS</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./el-intro.html">Elements</a></p>
+<ul>
+<li><a href="./el-document.html">Document-level Elements</a></li>
+<li><a href="./el-sectioning.html">Sectioning</a></li>
+<li><a href="./el-grouping.html">Grouping Content</a></li>
+<li><a href="./el-text.html">Text-level Semantics</a></li>
+<li><a href="./el-edits.html">Edits</a></li>
+<li><a href="./el-links.html">Links</a></li>
+<li><a href="./el-embedding.html">Embedding</a></li>
+<li><a href="./el-tables.html">Tabular Content</a></li>
+<li><a href="./el-forms.html">Form-associated Content</a></li>
+<li><a href="./el-interactive.html">Interactive Elements</a></li>
+<li><a href="./el-scripting.html">Scripting</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./id-intro.html">Idioms</a></p>
+<ul>
+<li><a href="./id-document.html">Document Structure</a></li>
+<li><a href="./id-sectioning.html">Sectioning</a></li>
+<li><a href="./id-navigation.html">Navigation</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./ob-intro.html">Objects</a></p>
+<ul>
+<li><a href="./ob-variant.html">Elementary Variants</a></li>
+<li><a href="./ob-scope.html">Scope-defining Classes</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./ut-intro.html">Utilities</a></p>
+<ul>
+<li><a href="./ut-atomic.html">Atomic Utilities</a></li>
+<li><a href="./ut-layout.html">Layout Utilities</a></li>
+<li><a href="./ut-coloring.html">Coloring Utilities</a></li>
+<li><a href="./ut-dev.html">Development Utilities</a></li>
+</ul>
+</li>
+</ul>
 
   </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
 
         </div>
       </main>

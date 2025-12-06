@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.25.1</span>
+          <span class="project-version">0.26.2</span>
         
       </div>
     </header>
@@ -61,6 +61,20 @@
       </h3>
 
       
+      
+        <ul>
+          
+            
+            <li class="nav-item">
+              <a href="Naming.html" data-nav="is-not-active">Naming</a>
+            </li>
+          
+            
+            <li class="nav-item">
+              <a href="Layers.html" data-nav="is-not-active">Layers</a>
+            </li>
+          
+        </ul>
       
     </div>
 
@@ -327,7 +341,29 @@ In contrast to that flat list of variables, this configuration object is a
 hierachical map. By using <a href="#mapping">mapping functions</a> and <a href="#config-examples">aliases</a>
 it reflects the relationships between<span class="widont">&nbsp;</span>properties.</p>
 <p>There is a <a href="#variable--default">default configuration</a> tree that
-will be merged with your <a href="#variable--custom">custom<span class="widont">&nbsp;</span>configuration</a>.</p>
+will be merged with your <a href="#variable--custom">custom configuration</a>
+(unless you <a href="#variable--use-default">opt out</a>).</p>
+<h2 id="structure-of-the-configuration-map" tabindex="-1">Structure of the Configuration<span class="widont">&nbsp;</span>Map</h2>
+<p>The map consists of the following<span class="widont">&nbsp;</span>sections:</p>
+<ul>
+<li>layout (length, container, spacing,<span class="widont">&nbsp;</span>…)</li>
+<li>typography (font, letter-spacing, line, measure,<span class="widont">&nbsp;</span>…)</li>
+<li>ui (radius, shadow, stroke, easing,<span class="widont">&nbsp;</span>…)</li>
+<li>coloring (palettes,  color,<span class="widont">&nbsp;</span>…)</li>
+</ul>
+<p>These sections exist merely for organizational purpose. Their names are not included in
+the generated <a href="ax-properties.html">CSS custom properties</a>. The maps nested under each
+section are searched for the following contained<span class="widont">&nbsp;</span>maps:</p>
+<ul>
+<li>literal (for defining literal<span class="widont">&nbsp;</span>values)</li>
+<li>logical (for defining<span class="widont">&nbsp;</span>aliases)</li>
+<li>mapped (for generating series from<span class="widont">&nbsp;</span>parameters)</li>
+</ul>
+<p>Any map that contains either will be turned into a series of custom properties. Its name
+will be prefixed with the names of any parent maps (except the top-level section) to
+make up the property name, e. g. the map <code>typography/font/size</code> containing a map <code>literal</code>
+will result in properties like <code>--s-font-size-…</code>.</p>
+<p>See <a href="#config-examples">the config examples</a> on how to use <code>literal</code>, <code>logical</code>, and <code>mapped</code>.</p>
 
       
   
@@ -554,18 +590,18 @@ For the structure of this custom configuration see <a href="#variable--default">
       
       <pre class="hljs-pre"><code class="lang-css">@charset &quot;UTF-8&quot;;
 :root {
-  --s-length-0aug: 0.375rem;
-  --s-length-0½: 0.75rem;
-  --s-length-1dim: 1.125rem;
-  --s-length-1: 1.5rem;
-  --s-length-1aug: 1.875rem;
-  --s-length-1½: 2.25rem;
-  --s-length-2dim: 2.625rem;
-  --s-length-2: 3rem;
-  --s-length-2aug: 3.375rem;
-  --s-length-2½: 3.75rem;
-  --s-length-3dim: 4.125rem;
-  --s-length-3: 4.5rem;
+  --s-length-0aug: 0.25rlh;
+  --s-length-0½: 0.5rlh;
+  --s-length-1dim: 0.75rlh;
+  --s-length-1: 1rlh;
+  --s-length-1aug: 1.25rlh;
+  --s-length-1½: 1.5rlh;
+  --s-length-2dim: 1.75rlh;
+  --s-length-2: 2rlh;
+  --s-length-2aug: 2.25rlh;
+  --s-length-2½: 2.5rlh;
+  --s-length-3dim: 2.75rlh;
+  --s-length-3: 3rlh;
 }
 
 :root {
@@ -576,6 +612,7 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-container-lg: 64rem;
   --s-container-xl: 80rem;
   --s-container-xxl: 96rem;
+  --s-container-sm: 32rem;
   --s-container-nav-wide: var(--s-container-sm);
   --s-container-page: var(--s-container-sm);
 }
@@ -585,13 +622,13 @@ For the structure of this custom configuration see <a href="#variable--default">
 }
 
 :root {
-  --s-spacing-block-xxs: 0.1875rem;
-  --s-spacing-block-xs: 0.375rem;
-  --s-spacing-block-sm: 0.75rem;
-  --s-spacing-block-md: 1.5rem;
-  --s-spacing-block-lg: 3rem;
-  --s-spacing-block-xl: 6rem;
-  --s-spacing-block-xxl: 12rem;
+  --s-spacing-block-xxs: 0.125rlh;
+  --s-spacing-block-xs: 0.25rlh;
+  --s-spacing-block-sm: 0.5rlh;
+  --s-spacing-block-md: 1rlh;
+  --s-spacing-block-lg: 2rlh;
+  --s-spacing-block-xl: 4rlh;
+  --s-spacing-block-xxl: 8rlh;
   --s-spacing-block-default: var(--s-spacing-block-md);
   --s-spacing-block: var(--s-spacing-block-default);
 }
@@ -629,9 +666,9 @@ For the structure of this custom configuration see <a href="#variable--default">
 }
 
 :root {
-  --s-font-family-sans: Source Sans, sans-serif;
-  --s-font-family-serif: Source Serif, serif;
-  --s-font-family-mono: Source Code, monospace;
+  --s-font-family-sans: Helvetica;
+  --s-font-family-serif: Times;
+  --s-font-family-mono: Courier;
   --s-font-family-body: var(--s-font-family-serif);
   --s-font-family-heading: var(--s-font-family-sans);
   --s-font-family-display: var(--s-font-family-body);
@@ -694,14 +731,6 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-measure-inf: unset;
   --s-measure-default: var(--s-measure-md);
   --s-measure: var(--s-measure-default);
-}
-
-:root {
-  --s-font-family-serif: Times;
-  --s-font-family-sans: Helvetica;
-  --s-font-family-mono: Courier;
-  --s-font-family-body: var(--s-font-family-serif);
-  --s-font-family-heading: var(--s-font-family-sans);
 }
 
 :root {
@@ -782,23 +811,6 @@ For the structure of this custom configuration see <a href="#variable--default">
   --s-color-body: PapayaWhip;
   --s-color-body-contra: MidnightBlue;
   --s-color-neutral: LightSlateGray;
-}
-
-:root {
-  --s-line-root: 1.5;
-  --s-line-root-abs: 1.5rem;
-  --s-line--2: 1.6875;
-  --s-line--1: 1.125;
-  --s-line-0: 1.5;
-  --s-line-1: 1;
-  --s-line-2: 1;
-  --s-line-3: 1.1111111111;
-  --s-line-4: 1.037037037;
-  --s-line-5: 1.0864197531;
-  --s-line-6: 1.0534979424;
-  --s-line-7: 1.0096021948;
-  --s-line-8: 1.0242341107;
-  --s-line-9: 1.0144795001;
 }
 
 * {
@@ -902,14 +914,13 @@ figure {
 
 html {
   font-size: var(--s-font-size-root, 1rem);
-  line-height: var(--s-line-root);
+  line-height: var(--s-line-root, var(--s-line-default));
 }
 
 body {
   font-family: var(--s-font-family-body);
   font-weight: var(--s-font-weight-body);
   font-size: var(--s-font-size-0);
-  line-height: var(--s-line-0);
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
@@ -919,32 +930,26 @@ body {
 
 h1 {
   font-size: var(--s-font-size-3);
-  line-height: var(--s-line-3);
 }
 
 h2 {
   font-size: var(--s-font-size-2);
-  line-height: var(--s-line-2);
 }
 
 h3 {
   font-size: var(--s-font-size-1);
-  line-height: var(--s-line-1);
 }
 
 h4 {
   font-size: var(--s-font-size-0);
-  line-height: var(--s-line-0);
 }
 
 h5 {
   font-size: var(--s-font-size--1);
-  line-height: var(--s-line--1);
 }
 
 h6 {
   font-size: var(--s-font-size--2);
-  line-height: var(--s-line--2);
 }
 
 :is(h1, h2, h3, h4, h5, h6),
@@ -959,12 +964,6 @@ pre {
 
 :is(small, sub, sup) {
   font-size: var(--s-font-size-smaller);
-}
-
-:is(code, kbd, samp),
-:is(small, sub, sup),
-::marker {
-  line-height: 0;
 }</code></pre>
     </div>
   
@@ -1061,7 +1060,7 @@ pre {
 
 
 
-<section class="item" id="variable---rlh">
+<section class="item" id="variable--use-default">
   
     
   
@@ -1079,15 +1078,13 @@ pre {
       
 
       
-        <a href="#variable---rlh" class="item-name">$-rlh</a>
+        <a href="#variable--use-default" class="item-name">$use-default</a>
       
 
       
-        <span class="value-type">(Number&lt;rem&gt;)</span>
+        <span class="value-type">(Boolean)</span>
       
 
-      
-        <span class="item-note">[private]</span>
       
     </h2>
 
@@ -1112,7 +1109,7 @@ pre {
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">$-rlh: rhythm.rlh($-scale-base, $-line-root);</code></pre>
+      <pre class="hljs-pre"><code class="lang-scss">$use-default: true !default;</code></pre>
     </div>
   
 
@@ -1124,8 +1121,8 @@ pre {
 
   
     <div class="text-block">
-      <p>Root line height.
-Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].</p>
+      <p>Whether to use or to ignore the <a href="#variable--default">default configuration</a>. With this set to false only
+the custom configuration is taken into<span class="widont">&nbsp;</span>account.</p>
 
       
   
@@ -1155,6 +1152,259 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
 
   
   
+    
+
+    <div data-item-section="examples">
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Example</span>
+      </h3>
+
+      
+        
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  <div class="example">
+    <div class="example-code">
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+            <span class='code-description'>
+              Using Stylament without default configuration
+            </span>
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@use &quot;custom-config&quot; as custom;
+@use &quot;stylament/css/axioms&quot; with ($config-custom: custom.$config, $config-use-default: false);</code></pre>
+    </div>
+  
+
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            css
+          </span>
+
+          
+            <span class='code-description'>
+              compiled
+            </span>
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-css">:root {
+  --s-container-sm: 32rem;
+  --s-container-page: var(--s-container-sm);
+}
+
+:root {
+  --s-spacing-sectioning: var(--s-spacing-block);
+}
+
+:root {
+  --s-font-family-serif: Times;
+  --s-font-family-sans: Helvetica;
+  --s-font-family-mono: Courier;
+  --s-font-family-body: var(--s-font-family-serif);
+  --s-font-family-heading: var(--s-font-family-sans);
+}
+
+:root {
+  --s-color-body: PapayaWhip;
+  --s-color-body-contra: MidnightBlue;
+  --s-color-neutral: LightSlateGray;
+}
+
+* {
+  margin: unset;
+  padding: unset;
+  border: unset;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:target {
+  scroll-margin-block-start: var(--s-length-3);
+}
+
+* {
+  ---clr-fg: var(---clr-pos);
+  ---clr-bg: var(---clr-neg);
+}
+
+:is(img, picture, video, audio, embed, iframe, object, svg, canvas) {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+:is(h1, h2, h3, h4, h5, h6, p) :is(img, picture, video, audio, embed, iframe, object, svg, canvas) {
+  display: inline;
+  max-block-size: 1em;
+}
+
+audio,
+iframe:not([width]) {
+  inline-size: 100%;
+}
+
+:is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details, div) {
+  ---flow-space: var(--s-spacing-flow-default);
+}
+
+:is(article, section, nav, aside) {
+  ---flow-space: var(--s-spacing-flow-sectioning);
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  ---flow-space: var(--s-spacing-flow-heading, var(--s-spacing-flow-default));
+}
+
+li,
+li :is(ol, ul, menu) {
+  ---flow-space: var(--s-spacing-flow-list, var(--s-spacing-flow-default));
+}
+
+dt {
+  ---flow-space: var(--s-spacing-flow-defterm, var(--s-spacing-flow-deflist, var(--s-spacing-flow-default)));
+}
+
+dd {
+  ---flow-space: var(--s-spacing-flow-defdata, var(--s-spacing-flow-deflist, var(--s-spacing-flow-default)));
+}
+
+* + :is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details),
+:is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details) + div {
+  margin-block-start: var(---flow-space, 1em);
+}
+
+:where(:is(article, section, nav, aside):not(:first-child)) {
+  margin-block-start: var(---flow-space);
+}
+:where(:is(article, section, nav, aside):not(:last-child)) {
+  margin-block-end: var(---flow-space);
+}
+
+:is(ol, ul, menu) {
+  ---indent-root: var(--s-spacing-indent-list-root, 0);
+  ---indent: var(--s-spacing-indent-list, var(--s-spacing-indent-list-root, var(--s-spacing-indent-default)));
+  padding-inline-start: var(---indent-root);
+}
+
+li :is(ol, ul, menu) {
+  ---indent: inherit;
+  padding-inline-start: var(---indent);
+}
+
+dd {
+  ---indent: var(--s-spacing-indent-deflist, var(--s-spacing-indent-default));
+  margin-inline-start: var(---indent);
+}
+
+blockquote {
+  ---indent: var(--s-spacing-indent-quotation, var(--s-spacing-indent-default));
+  margin-inline: var(---indent);
+}
+
+figure {
+  ---indent: var(--s-spacing-indent-figure, var(--s-spacing-indent-default));
+  margin-inline: var(---indent);
+}
+
+html {
+  font-size: var(--s-font-size-root, 1rem);
+  line-height: var(--s-line-root, var(--s-line-default));
+}
+
+body {
+  font-family: var(--s-font-family-body);
+  font-weight: var(--s-font-weight-body);
+  font-size: var(--s-font-size-0);
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--s-font-family-heading);
+  font-weight: var(--s-font-weight-heading);
+}
+
+h1 {
+  font-size: var(--s-font-size-3);
+}
+
+h2 {
+  font-size: var(--s-font-size-2);
+}
+
+h3 {
+  font-size: var(--s-font-size-1);
+}
+
+h4 {
+  font-size: var(--s-font-size-0);
+}
+
+h5 {
+  font-size: var(--s-font-size--1);
+}
+
+h6 {
+  font-size: var(--s-font-size--2);
+}
+
+:is(h1, h2, h3, h4, h5, h6),
+:is(p, address, summary, figcaption, caption) {
+  max-inline-size: var(---measure, var(--s-measure-default));
+}
+
+:is(code, kbd, samp),
+pre {
+  font-family: var(--s-font-family-mono);
+}
+
+:is(small, sub, sup) {
+  font-size: var(--s-font-size-smaller);
+}</code></pre>
+    </div>
+  
+
+    </div>
+
+    
+  </div>
+
+      
+    </div>
+  
 
 
   
@@ -1163,6 +1413,53 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
   
     
     
+  
+    
+  <div data-item-section="used-by">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Used By</span>
+        
+      </h3>
+    
+
+    
+      
+      
+        
+
+        
+          
+          
+  
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="
+  ax-config.html#variable--merged" class="item-name">$merged</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+        
+      
+    
+  </div>
+
   
 
   
@@ -1253,7 +1550,7 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
         ),
         function: meta.get-function(&quot;quantize&quot;, $module: &quot;mapping&quot;),
         params: (
-          unit: $-rlh,
+          unit: 1rlh,
           sub: 4,
         ),
       ),
@@ -1281,7 +1578,7 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
           function: meta.get-function(&quot;exponential&quot;, $module: &quot;function&quot;),
           params: (
             base: 2,
-            coefficient: $-rlh,
+            coefficient: 1rlh,
           ),
         ),
         logical: (
@@ -1367,8 +1664,8 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
         ),
         literal: (
           ratio: $-scale-ratio,
-          smaller: math.div(100%, $-scale-ratio),
-          larger: 100% * $-scale-ratio,
+          smaller: if($-scale-ratio, math.div(100%, $-scale-ratio), null),
+          larger: if($-scale-ratio, 100% * $-scale-ratio, null),
           // Fluid root font size:
           // 1rem + (100vw - 32rem) * (1.125rem - 1rem) / (96rem - 32rem)
           // = 0.9375rem + 0.1953125vw
@@ -1399,7 +1696,7 @@ Absolute value mimicking the experimental CSS unit [<code>rlh</code>][mdn:rlh].<
       ),
     ),
     line: (
-      rlh: $-rlh,
+      rlh: if($-line-root and $-scale-base, rhythm.rlh($-scale-base, $-line-root), null),
     ),
     measure: (
       mapped: (
@@ -1952,7 +2249,7 @@ $cfg: (
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">$merged: map.deep-merge($default, $-custom-with-typography);</code></pre>
+      <pre class="hljs-pre"><code class="lang-scss">$merged: if($use-default, map.deep-merge($default, $custom), $custom);</code></pre>
     </div>
   
 
@@ -1964,7 +2261,7 @@ $cfg: (
 
   
     <div class="text-block">
-      <p>Map of all configuration values merged together.
+      <p>The final map of all configuration values combined.
 This is used to look up configuration<span class="widont">&nbsp;</span>keys.</p>
 
       
@@ -2037,16 +2334,22 @@ This is used to look up configuration<span class="widont">&nbsp;</span>keys.</p>
       
       
         <a href="
-  ax-config.html#variable--default" class="item-name">$default</a>
+  ax-config.html#variable--use-default" class="item-name">$use-default</a>
       
       
-      <span class="value-type">(Map)</span>
+      <span class="value-type">(Boolean)</span>
       
     </h4>
 
     
   </div>
 
+
+        
+      
+        
+        
+        
 
         
       
@@ -3919,1139 +4222,6 @@ Kept separate from the default configuration to make it optional to<span class="
   
   
   
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="variable--palettes%40seed">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#variable--palettes%40seed" class="item-name">$palettes@seed</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">$palettes: (
-  &quot;grey&quot;: (
-    hue: 215,
-    s-curve: (
-      0.2104,
-      -0.6858,
-      0.8695,
-    ),
-    l-curve: (
-      0.987,
-      0.1053,
-      -2.9242,
-      1.8939,
-    ),
-    range: (
-      step: 0.1,
-      start: 0,
-      end: 1,
-    ),
-  ),
-  &quot;red&quot;: (
-    hue: 0,
-    s-curve: (
-      1.31,
-      -1.35,
-      0.5,
-    ),
-    l-curve: (
-      1,
-      -0.2151,
-      -3.2645,
-      3.5435,
-      2.6872,
-      -3.7511,
-    ),
-  ),
-  &quot;green&quot;: (
-    hue: 145,
-    s-curve: (
-      1.11,
-      -2.3,
-      2,
-    ),
-    l-curve: (
-      1.0027,
-      -0.8562,
-      -0.1438,
-    ),
-  ),
-  &quot;blue&quot;: (
-    hue: 207,
-    s-curve: (
-      0.7863,
-      0.2,
-      -0.625,
-    ),
-    l-curve: (
-      1.0014,
-      -2.0957,
-      3.9528,
-      -2.8571,
-    ),
-  ),
-  &quot;pink&quot;: (
-    hue: 332,
-    s-curve: (
-      0.99,
-      -0.15,
-      -0.5,
-    ),
-    l-curve: (
-      1.004,
-      -0.7445,
-      0.8159,
-      -1.0714,
-    ),
-  ),
-  &quot;purple&quot;: (
-    hue: 259,
-    s-curve: (
-      1.3838,
-      -2.4,
-      1.625,
-    ),
-    l-curve: (
-      1.0046,
-      -1.3597,
-      2.1454,
-      -1.7857,
-    ),
-  ),
-  &quot;teal&quot;: (
-    hue: 176,
-    s-curve: (
-      1.0825,
-      -1.75,
-      1.25,
-    ),
-    l-curve: (
-      1.0032,
-      -1.2173,
-      0.5745,
-      -0.3571,
-    ),
-  ),
-  &quot;yellow&quot;: (
-    hue: 46,
-    s-curve: (
-      1.0288,
-      -0.25,
-      -0.375,
-    ),
-    l-curve: (
-      1.0028,
-      -1.3466,
-      2.1323,
-      -1.7857,
-    ),
-  ),
-  &quot;orange&quot;: (
-    hue: 28,
-    s-curve: (
-      1.065,
-      -0.45,
-    ),
-    l-curve: (
-      1.005,
-      -1.3037,
-      1.8513,
-      -1.5476,
-    ),
-  ),
-  &quot;brown&quot;: (
-    hue: 15,
-    s-curve: (
-      -0.1688,
-      1.4,
-      -1.125,
-    ),
-    l-curve: (
-      1.0017,
-      -2.1894,
-      2.7371,
-      -1.5476,
-    ),
-  ),
-);</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Colors derived from <a href="https://www.pollen.style/modules/colors">Pollen’s color<span class="widont">&nbsp;</span>palette</a>.</p>
-<p>These colors are not merged into Stylament’s configuration by default.
-They are only here as an example for defining palettes via polynomial
-saturation and lightness curves. And for nostalgic reasons, I guess.
-However, you can use this map in your custom<span class="widont">&nbsp;</span>configuration.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-    
-
-    <div data-item-section="examples">
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Example</span>
-      </h3>
-
-      
-        
-  
-  
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  <div class="example">
-    <div class="example-code">
-      
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-            <span class='code-description'>
-              Using seed colors with custom configuration
-            </span>
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">@use &quot;stylament/css/axioms/config/specific/color/seed&quot;;
-@use &quot;stylament/css/axioms&quot; with (
-    $config-custom: (
-      color: (
-        palettes: seed.$palettes,
-      ),
-    )
-  );</code></pre>
-    </div>
-  
-
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            css
-          </span>
-
-          
-            <span class='code-description'>
-              compiled
-            </span>
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-css">@charset &quot;UTF-8&quot;;
-:root {
-  --s-length-0aug: 0.375rem;
-  --s-length-0½: 0.75rem;
-  --s-length-1dim: 1.125rem;
-  --s-length-1: 1.5rem;
-  --s-length-1aug: 1.875rem;
-  --s-length-1½: 2.25rem;
-  --s-length-2dim: 2.625rem;
-  --s-length-2: 3rem;
-  --s-length-2aug: 3.375rem;
-  --s-length-2½: 3.75rem;
-  --s-length-3dim: 4.125rem;
-  --s-length-3: 4.5rem;
-}
-
-:root {
-  --s-container-xxs: 0rem;
-  --s-container-xs: 16rem;
-  --s-container-sm: 32rem;
-  --s-container-md: 48rem;
-  --s-container-lg: 64rem;
-  --s-container-xl: 80rem;
-  --s-container-xxl: 96rem;
-  --s-container-nav-wide: var(--s-container-sm);
-  --s-container-page: var(--s-container-xl);
-}
-
-:root {
-  --s-spacing-block-xxs: 0.1875rem;
-  --s-spacing-block-xs: 0.375rem;
-  --s-spacing-block-sm: 0.75rem;
-  --s-spacing-block-md: 1.5rem;
-  --s-spacing-block-lg: 3rem;
-  --s-spacing-block-xl: 6rem;
-  --s-spacing-block-xxl: 12rem;
-  --s-spacing-block-default: var(--s-spacing-block-md);
-  --s-spacing-block: var(--s-spacing-block-default);
-}
-
-:root {
-  --s-spacing-inline-xxs: 0.25ch;
-  --s-spacing-inline-xs: 0.5ch;
-  --s-spacing-inline-sm: 1ch;
-  --s-spacing-inline-md: 2ch;
-  --s-spacing-inline-lg: 4ch;
-  --s-spacing-inline-xl: 8ch;
-  --s-spacing-inline-xxl: 16ch;
-  --s-spacing-inline-default: var(--s-spacing-inline-md);
-  --s-spacing-inline: var(--s-spacing-inline-default);
-}
-
-:root {
-  --s-spacing-flow-list: 0em;
-  --s-spacing-flow-sectioning: clamp(var(--s-spacing-block-md), (100vi - var(--s-container-sm)) / 4, var(--s-spacing-block-lg));
-  --s-spacing-flow-default: var(--s-spacing-block-sm);
-  --s-spacing-flow-heading: var(--s-spacing-block-md);
-  --s-spacing-flow-deflist: var(--s-spacing-block-sm);
-  --s-spacing-flow: var(--s-spacing-flow-default);
-}
-
-:root {
-  --s-spacing-wrap-default: var(--s-spacing-flow-default) var(--s-spacing-inline-default);
-  --s-spacing-wrap-sectioning: var(--s-spacing-flow-sectioning) var(--s-spacing-inline-lg);
-  --s-spacing-wrap: var(--s-spacing-wrap-default);
-}
-
-:root {
-  --s-spacing-indent-default: var(--s-spacing-inline-default);
-  --s-spacing-indent: var(--s-spacing-indent-default);
-}
-
-:root {
-  --s-font-family-sans: Source Sans, sans-serif;
-  --s-font-family-serif: Source Serif, serif;
-  --s-font-family-mono: Source Code, monospace;
-  --s-font-family-body: var(--s-font-family-serif);
-  --s-font-family-heading: var(--s-font-family-sans);
-  --s-font-family-display: var(--s-font-family-body);
-}
-
-:root {
-  --s-font-size--2: 0.4444444444rem;
-  --s-font-size--1: 0.6666666667rem;
-  --s-font-size-0: 1rem;
-  --s-font-size-1: 1.5rem;
-  --s-font-size-2: 2.25rem;
-  --s-font-size-3: 3.375rem;
-  --s-font-size-4: 5.0625rem;
-  --s-font-size-5: 7.59375rem;
-  --s-font-size-6: 11.390625rem;
-  --s-font-size-7: 17.0859375rem;
-  --s-font-size-8: 25.62890625rem;
-  --s-font-size-9: 38.443359375rem;
-  --s-font-size-ratio: 1.5;
-  --s-font-size-smaller: 66.6666666667%;
-  --s-font-size-larger: 150%;
-  --s-font-size-root: clamp(0.96875rem, 0.9375rem + 0.1953125vw, 1.25rem);
-}
-
-:root {
-  --s-font-weight-thin: 100;
-  --s-font-weight-extralight: 200;
-  --s-font-weight-light: 300;
-  --s-font-weight-regular: 400;
-  --s-font-weight-book: 500;
-  --s-font-weight-medium: 600;
-  --s-font-weight-bold: 700;
-  --s-font-weight-black: 800;
-  --s-font-weight-ultra: 900;
-  --s-font-weight-body: var(--s-font-weight-regular);
-  --s-font-weight-emphasis: var(--s-font-weight-bold);
-  --s-font-weight-heading: var(--s-font-weight-bold);
-}
-
-:root {
-  --s-letter-spacing-xxs: -0.075em;
-  --s-letter-spacing-xs: -0.05em;
-  --s-letter-spacing-sm: -0.025em;
-  --s-letter-spacing-md: 0em;
-  --s-letter-spacing-lg: 0.025em;
-  --s-letter-spacing-xl: 0.05em;
-  --s-letter-spacing-xxl: 0.075em;
-  --s-letter-spacing-none: var(--s-letter-spacing-md);
-}
-
-:root {
-  --s-measure-xxs: 25ch;
-  --s-measure-xs: 36ch;
-  --s-measure-sm: 49ch;
-  --s-measure-md: 64ch;
-  --s-measure-lg: 81ch;
-  --s-measure-xl: 100ch;
-  --s-measure-xxl: 121ch;
-  --s-measure-full: 100%;
-  --s-measure-inf: unset;
-  --s-measure-default: var(--s-measure-md);
-  --s-measure: var(--s-measure-default);
-}
-
-:root {
-  --s-radius-xxs: 0rem;
-  --s-radius-xs: 0.2rem;
-  --s-radius-sm: 0.4rem;
-  --s-radius-md: 0.6rem;
-  --s-radius-lg: 0.8rem;
-  --s-radius-xl: 1rem;
-  --s-radius-xxl: 1.2rem;
-  --s-radius-ellipse: 100%;
-  --s-radius-obround: 999rem;
-}
-
-:root {
-  --s-shadow-xxs: 0rem 0.03125rem 0.0625rem rgb(0 0 0 / 0.203125);
-  --s-shadow-xs: 0rem 0.0625rem 0.125rem rgb(0 0 0 / 0.21875);
-  --s-shadow-sm: 0rem 0.125rem 0.25rem rgb(0 0 0 / 0.234375);
-  --s-shadow-md: 0rem 0.25rem 0.5rem rgb(0 0 0 / 0.25);
-  --s-shadow-lg: 0rem 0.5rem 1rem rgb(0 0 0 / 0.265625);
-  --s-shadow-xl: 0rem 1rem 2rem rgb(0 0 0 / 0.28125);
-  --s-shadow-xxl: 0rem 2rem 4rem rgb(0 0 0 / 0.296875);
-}
-
-:root {
-  --s-stroke-width-1: 0.0625rem;
-  --s-stroke-width-2: 0.125rem;
-  --s-stroke-width-3: 0.1875rem;
-  --s-stroke-width-4: 0.25rem;
-  --s-stroke-width-5: 0.3125rem;
-  --s-stroke-width-6: 0.375rem;
-  --s-stroke-width-7: 0.4375rem;
-  --s-stroke-width-8: 0.5rem;
-  --s-stroke-width-default: var(--s-stroke-width-2);
-  --s-stroke-width: var(--s-stroke-width-default);
-}
-
-:root {
-  --s-stroke-style-default: solid;
-  --s-stroke-style: var(--s-stroke-style-default);
-}
-
-:root {
-  --s-stroke-color-default: var(--s-color-tertiary-700);
-  --s-stroke-color: var(--s-stroke-color-default);
-}
-
-:root {
-  --s-easing-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-  --s-easing-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  --s-easing-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  --s-easing-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-  --s-easing-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
-  --s-easing-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
-  --s-easing-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
-  --s-easing-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-  --s-easing-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --s-easing-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
-  --s-easing-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
-  --s-easing-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-  --s-easing-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
-  --s-easing-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-  --s-easing-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
-  --s-easing-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --s-easing-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  --s-easing-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
-  --s-easing-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
-  --s-easing-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
-  --s-easing-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  --s-easing-in-out-expo: cubic-bezier(1, 0, 0, 1);
-  --s-easing-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  --s-easing-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --s-easing-default: ease-in-out;
-  --s-easing: var(--s-easing-default);
-}
-
-:root {
-  --s-line-root: 1.5;
-  --s-line-root-abs: 1.5rem;
-  --s-line--2: 0.75rem;
-  --s-line--1: 1.5rem;
-  --s-line-0: 1.5rem;
-  --s-line-1: 2.25rem;
-  --s-line-2: 3rem;
-  --s-line-3: 4.5rem;
-  --s-line-4: 6.75rem;
-  --s-line-5: 9.75rem;
-  --s-line-6: 14.25rem;
-  --s-line-7: 21rem;
-  --s-line-8: 31.5rem;
-  --s-line-9: 46.5rem;
-}
-
-* {
-  margin: unset;
-  padding: unset;
-  border: unset;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-:target {
-  scroll-margin-block-start: var(--s-length-3);
-}
-
-* {
-  ---clr-fg: var(---clr-pos);
-  ---clr-bg: var(---clr-neg);
-}
-
-:is(img, picture, video, audio, embed, iframe, object, svg, canvas) {
-  display: block;
-  max-inline-size: 100%;
-  block-size: auto;
-}
-:is(h1, h2, h3, h4, h5, h6, p) :is(img, picture, video, audio, embed, iframe, object, svg, canvas) {
-  display: inline;
-  max-block-size: 1em;
-}
-
-audio,
-iframe:not([width]) {
-  inline-size: 100%;
-}
-
-:is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details, div) {
-  ---flow-space: var(--s-spacing-flow-default);
-}
-
-:is(article, section, nav, aside) {
-  ---flow-space: var(--s-spacing-flow-sectioning);
-}
-
-:is(h1, h2, h3, h4, h5, h6) {
-  ---flow-space: var(--s-spacing-flow-heading, var(--s-spacing-flow-default));
-}
-
-li,
-li :is(ol, ul, menu) {
-  ---flow-space: var(--s-spacing-flow-list, var(--s-spacing-flow-default));
-}
-
-dt {
-  ---flow-space: var(--s-spacing-flow-defterm, var(--s-spacing-flow-deflist, var(--s-spacing-flow-default)));
-}
-
-dd {
-  ---flow-space: var(--s-spacing-flow-defdata, var(--s-spacing-flow-deflist, var(--s-spacing-flow-default)));
-}
-
-* + :is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details),
-:is(h1, h2, h3, h4, h5, h6, p, hr, pre, blockquote, ol, ul, menu, li, dl, dt, dd, figure, figcaption, search, table, details) + div {
-  margin-block-start: var(---flow-space, 1em);
-}
-
-:where(:is(article, section, nav, aside):not(:first-child)) {
-  margin-block-start: var(---flow-space);
-}
-:where(:is(article, section, nav, aside):not(:last-child)) {
-  margin-block-end: var(---flow-space);
-}
-
-:is(ol, ul, menu) {
-  ---indent-root: var(--s-spacing-indent-list-root, 0);
-  ---indent: var(--s-spacing-indent-list, var(--s-spacing-indent-list-root, var(--s-spacing-indent-default)));
-  padding-inline-start: var(---indent-root);
-}
-
-li :is(ol, ul, menu) {
-  ---indent: inherit;
-  padding-inline-start: var(---indent);
-}
-
-dd {
-  ---indent: var(--s-spacing-indent-deflist, var(--s-spacing-indent-default));
-  margin-inline-start: var(---indent);
-}
-
-blockquote {
-  ---indent: var(--s-spacing-indent-quotation, var(--s-spacing-indent-default));
-  margin-inline: var(---indent);
-}
-
-figure {
-  ---indent: var(--s-spacing-indent-figure, var(--s-spacing-indent-default));
-  margin-inline: var(---indent);
-}
-
-html {
-  font-size: var(--s-font-size-root, 1rem);
-  line-height: var(--s-line-root);
-}
-
-body {
-  font-family: var(--s-font-family-body);
-  font-weight: var(--s-font-weight-body);
-  font-size: var(--s-font-size-0);
-  line-height: var(--s-line-0);
-}
-
-:is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--s-font-family-heading);
-  font-weight: var(--s-font-weight-heading);
-}
-
-h1 {
-  font-size: var(--s-font-size-3);
-  line-height: var(--s-line-3);
-}
-
-h2 {
-  font-size: var(--s-font-size-2);
-  line-height: var(--s-line-2);
-}
-
-h3 {
-  font-size: var(--s-font-size-1);
-  line-height: var(--s-line-1);
-}
-
-h4 {
-  font-size: var(--s-font-size-0);
-  line-height: var(--s-line-0);
-}
-
-h5 {
-  font-size: var(--s-font-size--1);
-  line-height: var(--s-line--1);
-}
-
-h6 {
-  font-size: var(--s-font-size--2);
-  line-height: var(--s-line--2);
-}
-
-:is(h1, h2, h3, h4, h5, h6),
-:is(p, address, summary, figcaption, caption) {
-  max-inline-size: var(---measure, var(--s-measure-default));
-}
-
-:is(code, kbd, samp),
-pre {
-  font-family: var(--s-font-family-mono);
-}
-
-:is(small, sub, sup) {
-  font-size: var(--s-font-size-smaller);
-}
-
-:is(code, kbd, samp),
-:is(small, sub, sup),
-::marker {
-  line-height: 0;
-}</code></pre>
-    </div>
-  
-
-    </div>
-
-    
-  </div>
-
-      
-    </div>
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h2 id="typography-configuration" tabindex="-1">Typography Configuration</h2>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="variable--default">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#variable--default" class="item-name">$default</a>
-      
-
-      
-        <span class="value-type">(Map)</span>
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">$default: (
-  line: (
-    min: 1.2,
-    root: 1.5,
-    sub: 2,
-  ),
-  scale: (
-    base: 1rem,
-    ratio: 1.5,
-  ),
-);</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Default typography settings.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    
-  <div data-item-section="property">
-    
-      <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Map Properties</span>
-        
-      </h3>
-    
-
-    
-      
-        
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">line.min:</span>
-      
-      
-      <span class="value-type">(Number)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Relative minimal line-height.</p>
-
-      </div>
-    
-  </div>
-
-
-      
-        
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">line.root:</span>
-      
-      
-      <span class="value-type">(Number)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Relative line-height of the document<span class="widont">&nbsp;</span>root.</p>
-
-      </div>
-    
-  </div>
-
-
-      
-        
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">line.sub:</span>
-      
-      
-      <span class="value-type">(Number)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Sub-units per line allowed by baseline<span class="widont">&nbsp;</span>grid.</p>
-
-      </div>
-    
-  </div>
-
-
-      
-        
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">scale.base:</span>
-      
-      
-      <span class="value-type">(Number&lt;rem|em|%&gt;)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Base font-size of the typographical<span class="widont">&nbsp;</span>scale.</p>
-
-      </div>
-    
-  </div>
-
-
-      
-        
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">scale.ratio:</span>
-      
-      
-      <span class="value-type">(Number)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Ratio for the modular type scale
-(i. e. the base of the exponential<span class="widont">&nbsp;</span>function).</p>
-
-      </div>
-    
-  </div>
-
-
-      
-
-      
-  
-
-      
-  
-
-      
-  
-
-      
-  
-
-    
-  </div>
 
   
 

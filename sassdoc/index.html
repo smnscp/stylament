@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.25.1</span>
+          <span class="project-version">0.26.2</span>
         
       </div>
     </header>
@@ -61,6 +61,20 @@
       </h3>
 
       
+      
+        <ul>
+          
+            
+            <li class="nav-item">
+              <a href="Naming.html" data-nav="is-not-active">Naming</a>
+            </li>
+          
+            
+            <li class="nav-item">
+              <a href="Layers.html" data-nav="is-not-active">Layers</a>
+            </li>
+          
+        </ul>
       
     </div>
 
@@ -322,10 +336,44 @@
 <li><strong>neither</strong> a “CSS framework” <strong>nor</strong> a “CSS methodology” intended to relieve you of the need to learn<span class="widont">&nbsp;</span>CSS</li>
 <li><strong>but</strong> a rather sophisticated approach to take advantage of the strengths of CSS (reusability, organizability, … <em>The Cascade™</em>)</li>
 <li><strong>not</strong> a simple theme to apply to your pages and be done, <strong>but</strong> it comes with <a href="/example/">blueprints</a> for building well-structured and prettily-styled web<span class="widont">&nbsp;</span>pages,</li>
-<li><strong>simply put</strong>, a collection of HTML &amp; CSS patterns (but free of JavaScript<span class="widont">&nbsp;</span>overkill).</li>
+<li><strong>simply put</strong>, a parametrized Sass stylesheet along with some suggestions on HTML patterns to<span class="widont">&nbsp;</span>use.</li>
 </ul>
 <h2 id="why-" tabindex="-1">Why?</h2>
-<p>After decades of using big HTML &amp; CSS frameworks like <em>Foundation</em> and <em>Bootstrap</em>, seeing hundreds of CSS micro-frameworks popping up, being confronted with the popular misconception called <em>“utility first”</em>, I still hadn’t found an  HTML &amp; CSS system that really met my expectations. So, I could no longer resist to build my<span class="widont">&nbsp;</span>own.</p>
+<h3 id="tl-dr" tabindex="-1">TL;DR</h3>
+<p>It’s all because of <a href="https://www.w3.org/Style/LieBos2e/history/">the CSS saga</a>. And it’s <em>my personal version</em> of its continuation since<span class="widont">&nbsp;</span>2022.</p>
+<h3 id="the-long-and-winding-road-to-enlightenment-" tabindex="-1">The Long and Winding Road (to<span class="widont">&nbsp;</span>Enlightenment)</h3>
+<p>I encountered CSS for the first time in the late ’90s, not much later than HTML. But it was only around 2001 when I began actively using it and started understanding that it is so much more than just another syntax to write HTML spilled with presentational features. Sites like <a href="https://css.maxdesign.com.au/listamatic/">Listamatic</a> were eye-openers at that time. And of course, <a href="https://www.csszengarden.com/">the CSS Zen Garden</a> was the lighthouse to guide the<span class="widont">&nbsp;</span>way.</p>
+<p>But despite the separation of presentational and structural aspects, as with any code you write, stylesheets quickly grow confusing, unless you <em>organize them well</em>. No matter how much I knew about certain CSS specifics and the newest features, how much CSS and rendering engines evolved – the remaining and recurring problems always revolved around organization. I could write very smart CSS rules. But I needed rules how to arrange those rules. What belongs where? Where to look if something is already<span class="widont">&nbsp;</span>defined?</p>
+<h3 id="motivation" tabindex="-1">Motivation</h3>
+<p>When it comes to processing amounts of information bigger than what we can crasp at a glance the following holds for most of<span class="widont">&nbsp;</span>us:</p>
+<ul>
+<li>We want order.</li>
+<li>We want structure.</li>
+<li>We want separation of<span class="widont">&nbsp;</span>concerns.</li>
+<li>We want confidence where to put things and where to find<span class="widont">&nbsp;</span>them.</li>
+</ul>
+<p>Therefore, we design classification systems, rules and standards. And despite common goals sometimes we just need to develop <a href="https://xkcd.com/927/">the 15th standard</a>. So did<span class="widont">&nbsp;</span>I.</p>
+<h3 id="competition" tabindex="-1">Competition</h3>
+<p>Yes, I’m aware: Frameworks do<span class="widont">&nbsp;</span>exist.</p>
+<p>Sure, I’ve seen dozens of projects relying on <em>Bootstrap</em> (at least half of which with a long-term TODO: “Get rid of Bootstrap”). I used to be on the <em>Foundation</em> side for quite some years (mainly because: a little less utility class polution). However, I was never quite contented with that kind of frameworks as they required substantial adjustments to the markup in order to<span class="widont">&nbsp;</span>work.</p>
+<p>I was still searching for a framework that I could employ with any thoroughly marked-up document to just work out of the box. In recent years, the term <em>classless CSS framework</em> was coined for exactly that. And there are plenty. I really like some of them. They are a great and effortless way to give your plain HTML document a modern look. On the other hand they usually fall short when it comes to<span class="widont">&nbsp;</span>customizability.</p>
+<p>The sheer opposite are <em>“utility first”</em> frameworks. I’ll spare the words and let <a href="https://heydonworks.com/article/what-is-utility-first-css/">Heydon speak</a>. Nevertheless, what I’d like to mention in that context: Defining <em>atoms</em> of the design language (a.k.a. <em>design tokens</em>) is an essential step in setting up a design system. But they belong in the right layer. Frameworks like <a href="https://open-props.style/"><em>Open Props</em></a> do<span class="widont">&nbsp;</span>that.</p>
+<p>Apart from frameworks, there are also a lot of <em>methodologies</em> that come without any predefined styles but rather with naming conventions and suggestions on how to organize your CSS. Which is good. To name a<span class="widont">&nbsp;</span>few:</p>
+<ul>
+<li>I like <em>ITCSS</em> (at least the organization aspect), because when I stumbled upon it, it perfectly reflected the way I had learned to think about the organization of CSS (or things, actually) – <em>from general to specific</em>. (The layer names in Stylament are obviously inspired by<span class="widont">&nbsp;</span>ITCSS.)</li>
+<li>I like the general idea of <em>BEM</em> but not its redundant class<span class="widont">&nbsp;</span>names.</li>
+<li>I like <a href="https://cube.fyi/"><em>CUBE CSS</em></a>. It’s a great approach to use the right tool for each<span class="widont">&nbsp;</span>job.</li>
+<li>Did I mention, I do not like <em>utility first</em>?</li>
+<li>I like <a href="https://every-layout.dev/"><em>Every Layout</em></a>!</li>
+</ul>
+<h3 id="the-missing-piece" tabindex="-1">The Missing Piece</h3>
+<p>After looking into all those frameworks and methodologies I still hadn’t found an HTML &amp; CSS system that really met my expectations, which<span class="widont">&nbsp;</span>were:</p>
+<ul>
+<li>strong support for well-structured markup – without class<span class="widont">&nbsp;</span>garbage</li>
+<li>clear rules defining what belongs<span class="widont">&nbsp;</span>where</li>
+<li>mathematical tools to generate series of design tokens from a small set of configurable<span class="widont">&nbsp;</span>values</li>
+</ul>
+<p>Especially the last point I couldn’t find satisfied anywhere. So, I started my own<span class="widont">&nbsp;</span>system.</p>
 <h2 id="how-" tabindex="-1">How?</h2>
 <ul>
 <li><strong>Rules-driven:</strong> Good style <em>needs</em> rules. <em>Stylament</em> relies on a set of rules (yes, that’s CSS DNA, you name it) that build on one<span class="widont">&nbsp;</span>another.</li>
@@ -333,14 +381,13 @@
 <li><strong>Classless-first:</strong> Good mark-up can do without extra class-level specificity more often than you’d think. Although not a typical classless CSS framework per se, <em>Stylament</em> does a lot of heavy lifting on the <a href="https://stylament.sim.ilitu.de/sassdoc/el-intro.html">element</a> and <a href="https://stylament.sim.ilitu.de/sassdoc/id-intro.html">idiom</a><span class="widont">&nbsp;</span>layers.</li>
 <li><strong>Utility-last:</strong> With the above being said, <em>Stylament</em> acknowledges the usefulness of <a href="https://stylament.sim.ilitu.de/sassdoc/ut-intro.html">utility</a> CSS – for said legitimate but rare<span class="widont">&nbsp;</span>exceptions.</li>
 </ul>
-<p>🚧 N. B.: The <em>how</em> is still subject to change. There may be breaking changes with every<span class="widont">&nbsp;</span>release.</p>
-<h3 id="standing-on-the-shoulders-of-giants" tabindex="-1">Standing on the Shoulders of<span class="widont">&nbsp;</span>Giants</h3>
-<p><em>Stylament</em> is inspired by a lot of good work others did before<span class="widont">&nbsp;</span>me:</p>
+<h3 id="embracing-inspiration" tabindex="-1">Embracing Inspiration</h3>
+<p><em>Stylament</em> appreciates and is inspired by <a href="#competition">what’s in the wild</a>:</p>
 <ul>
-<li>organized in layers like <a href="https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528">ITCSS</a></li>
-<li>using the best of different methodologies (the right tool for the job) like <a href="https://cube.fyi/">CUBE<span class="widont">&nbsp;</span>CSS</a></li>
-<li>founded on axioms like <a href="https://every-layout.dev/">Every<span class="widont">&nbsp;</span>Layout</a></li>
-<li>driven by a comprehensive set of CSS custom properties like <a href="https://open-props.style/">Open<span class="widont">&nbsp;</span>Props</a></li>
+<li>organized in layers like <em>ITCSS</em></li>
+<li>using the best of different methodologies (the right tool for the job) like <em>CUBE<span class="widont">&nbsp;</span>CSS</em></li>
+<li>founded on axioms like <em>Every<span class="widont">&nbsp;</span>Layout</em></li>
+<li>driven by series of CSS custom properties like <em>Open<span class="widont">&nbsp;</span>Props</em></li>
 </ul>
 <h3 id="layers-of-stylament" tabindex="-1">Layers of Stylament</h3>
 <ul>
@@ -350,64 +397,33 @@
 <li><a href="https://stylament.sim.ilitu.de/sassdoc/ob-intro.html">Objects</a></li>
 <li><a href="https://stylament.sim.ilitu.de/sassdoc/ut-intro.html">Utilities</a></li>
 </ul>
+<h3 id="implementation" tabindex="-1">Implementation</h3>
+<p><em>Stylament</em> is written in <a href="https://sass-lang.com/">Sass</a>. Actually, it’s just a Sass stylesheet. With a somewhat complex<span class="widont">&nbsp;</span>configurability.</p>
 <h3 id="install" tabindex="-1">Install</h3>
-<pre><code class="lang-sh">npm install stylament
+<p>Essentially, clone the <a href="https://github.com/smnscp/stylament">repository</a> and <a href="#use">include</a> the Sass sources in your Sass<span class="widont">&nbsp;</span>stylesheet.</p>
+<p>Or, if you like package<span class="widont">&nbsp;</span>managers:</p>
+<pre><code class="lang-sh">npm install github:smnscp/stylament
 </code></pre>
 <h3 id="configure" tabindex="-1">Configure</h3>
-<p>Create a configuration file, e. g. <code>custom/config.scss</code>:</p>
+<p>In order to adjust the design token series that <em>Stylament</em> generates, define a configuration map, e. g. in <code>custom/config.scss</code>:</p>
 <pre><code class="lang-scss">$config: (
   layout: (
-    length: (
-      // …
-    ),
-    container: (
-      // …
-    ),
-    spacing: (
-      // …
-    ),
+    // …
   ),
   typography: (
-    font-family: (
-      // …
-    ),
-    font-weight: (
-      // …
-    ),
-    letter-spacing: (
-      // …
-    ),
-    line: (
-      // …
-    ),
-    measure: (
-      // …
-    ),
-    scale: (
-      // …
-    ),
+    // …
   ),
   ui: (
-    radius: (
-      // …
-    ),
-    shadow: (
-      // …
-    ),
+    // …
   ),
   coloring: (
-    palettes: (
-      // …
-    ),
-    color: (
-      // …
-    ),
+    // …
   ),
 );
 </code></pre>
 <p>See <a href="https://stylament.sim.ilitu.de/sassdoc/ax-config.html">the documentation</a> for<span class="widont">&nbsp;</span>details.</p>
 <h3 id="use" tabindex="-1">Use</h3>
-<p>In your stylesheet entry point (e. g. index.scss) load your custom configuration and all the Stylament layers, injecting your config into the <em>axioms</em><span class="widont">&nbsp;</span>layer.</p>
+<p>In your stylesheet entry point (e. g. index.scss) load your custom configuration and the Stylament (sub-)layers you want to include, injecting your config into the <em>axioms</em><span class="widont">&nbsp;</span>layer.</p>
 <pre><code class="lang-scss">@use &quot;custom/config&quot; as custom;
 
 @use &quot;stylament/css/axioms&quot; with ($config-custom: custom.$config);
