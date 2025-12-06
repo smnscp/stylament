@@ -7,12 +7,7 @@
 /// Utilities are _non-semantic_ classes that can be used to apply _presentational_
 /// styling regardless of any semantic context.
 ///
-/// Unlike with popular utility-first frameworks this is not limited to
-/// [atomic utilities](ut-atomic.html) but also includes complex classes like
-/// [layout utilities](ut-layout.html). Using semantics as 	differentiating factor
-/// helps to draw a clear line between utility and [object](ob-intro.html) classes.
-///
-/// ## Utility-Last
+/// ## First Things First: Utility-Last
 ///
 /// Stylament follows the [official recommendations][whatwg] on using the HTML
 /// `class` attribute:
@@ -24,7 +19,17 @@
 /// resort when an elements needs a certain presentational trait without recognizable
 /// semantic reason.
 ///
-/// [whatwg]: https://html.spec.whatwg.org/multipage/dom.html#classes
+/// [whatwg]: https://html.spec.whatwg.org/multipage/dom.html#classes:~:text=authors%20are%20encouraged,presentation%20of%20the%20content
+///
+/// ## Kinds of Utility Classes
+///
+/// Unlike popular utility-first frameworks this is not limited to
+/// [atomic utilities](ut-atomic.html) but also includes complex classes like
+/// [layout utilities](ut-layout.html). Using semantics as 	differentiating factor
+/// helps to draw a clear line between utility and [object](ob-intro.html) classes.
+
+
+
 
 @use "atomic";
 @use "coloring";

@@ -8,6 +8,9 @@ $config: (
       line: 2,
     ),
     container: (
+      literal: (
+        sm: 32rem,
+      ),
       logical: (
         page: "sm",
       ),
@@ -19,24 +22,26 @@ $config: (
     ),
   ),
   typography: (
-    font-family: (
-      literal: (
-        serif: (
-          "Times",
+    font: (
+      family: (
+        literal: (
+          serif: (
+            "Times",
+          ),
+          sans: (
+            "Helvetica",
+          ),
+          mono: (
+            "Courier",
+          ),
         ),
-        sans: (
-          "Helvetica",
-        ),
-        mono: (
-          "Courier",
+        logical: (
+          body: "serif",
+          heading: "sans",
         ),
       ),
-      logical: (
-        body: "serif",
-        heading: "sans",
-      ),
+      // weight: (),
     ),
-    font-weight: (),
     scale: (
       base: 1em,
       ratio: 1.5,
@@ -46,11 +51,14 @@ $config: (
       sub: 2,
     ),
   ),
-  color: (
-    literal: (
-      body: PapayaWhip,
-      body-contra: MidnightBlue,
-      neutral: LightSlateGray,
+  coloring: (
+    palettes: (),
+    color: (
+      literal: (
+        body: PapayaWhip,
+        body-contra: MidnightBlue,
+        neutral: LightSlateGray,
+      ),
     ),
   ),
 );

@@ -55,6 +55,9 @@ herman:
     #   url: https://stylament.sim.ilitu.de/
     # - name: Code
     #   url: https://github.com/smnscp/stylament
+  extraDocs:
+    - ./Naming.md
+    - ./Layers.md
   sass:
     use:
       - 'sass:meta'
