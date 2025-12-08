@@ -86,6 +86,10 @@
 /// Wrap column-wise (multi-column layout).
 .lyo-wrap-columns {
   column-width: var(---min-column-size);
+
+  & > * {
+    break-inside: avoid;
+  }
 }
 
 /// Wrap as cluster (densely packed).
