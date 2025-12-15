@@ -1,6 +1,7 @@
 @use "sass:math";
 @use "axioms/properties/io" with (
-  $prop-prefix: "🎟"
+  $prop-prefix: "🎟",
+  $atom-prefix: "⚛️",
 );
 @use "axioms/config/specific/color/logical";
 @use "axioms" with (

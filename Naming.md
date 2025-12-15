@@ -4,7 +4,7 @@ Objects
 
 
 Utilities
-- @: atomic
+- at-: atomic (configurable)
 - lyo-: layout
 - clr-: coloring
 - dev-: development

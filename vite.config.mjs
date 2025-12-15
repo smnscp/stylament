@@ -9,6 +9,7 @@ export default defineConfig({
       context: {
         isDev: process.env.NODE_ENV == "development",
         propPrefix: "🎟",
+        atomPrefix: "⚛️",
         color: {
           steps: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
           palettes: ["grey", "primary", "secondary", "tertiary"],

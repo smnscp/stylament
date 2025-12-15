@@ -12,7 +12,7 @@ $sizes: map.merge(map.get($conf, mapped, domain), map.get($conf, literal));
 
 @each $name, $value in $sizes {
   /// Specify individual measure.
-  .\@measure-#{$name} {
+  .#{$atom-prefix}measure-#{$name} {
     ---measure: #{svar(measure-#{$name})} !important;
   }
 }

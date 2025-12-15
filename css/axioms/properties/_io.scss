@@ -9,10 +9,6 @@
 /// allows you to define a custom prefix to brand all its system properties and provides
 /// shortcuts to reference properties in a prefix-agnostic way.
 
-/// @deprecated Use the public $prop-prefix instead.
-///   See https://sass-lang.com/documentation/js-api/interfaces/deprecations/#with_private
-$-prefix: "s-" !default;
-
 /// Configurable prefix for system CSS variables.
 ///
 /// Stylament defines a prefix for its **system** (hence `s-`) custom properties by default.
@@ -44,3 +40,19 @@ $🌱: --#{$prop-prefix};
 @function svar($name, $fallback: null) {
   @return if($fallback, var(#{$🌱}#{$name}, #{$fallback}), var(#{$🌱}#{$name}));
 }
+
+/// Configurable prefix for atomic utility classes.
+///
+/// Stylament used to prefix [atomic utility classes](ut-atomic.html) with `@`.
+/// This can be replaced by any [valid][spec] identifier part when `@use`-ing this file:
+///
+/// @example scss - Add custom prefix to atomic utilities
+///   @use "stylament/css/axioms/properties/io" with ($atom-prefix: "atomic-");
+///
+/// @example scss - Keep atomic utilities un-prefixed
+///   @use "stylament/css/axioms/properties/io" with ($atom-prefix: "");
+///
+/// @example scss - Use a fancy prefix
+///   @use "stylament/css/axioms/properties/io" with ($atom-prefix: "☢️");
+///
+$atom-prefix: "\\@" !default;
