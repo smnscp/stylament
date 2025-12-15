@@ -2,6 +2,8 @@
 @use "axioms/properties/io" with (
   $prop-prefix: "🎟",
   $atom-prefix: "⚛️",
+  $mod-prefix: "🙃",
+  $part-prefix: "🦵",
 );
 @use "axioms/config/specific/color/logical";
 @use "axioms" with (

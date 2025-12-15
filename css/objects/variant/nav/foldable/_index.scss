@@ -2,8 +2,9 @@
 /// @group ob-variant
 ////
 
-@use "./_mixins.scss" as *;
+@use "../../../../axioms/properties/io" as *;
 @use "../../../../idioms/navigation/menubar";
+@use "./_mixins.scss";
 
 /// Foldable navigation menu: Initial setup.
 nav.var-foldable {
@@ -12,7 +13,7 @@ nav.var-foldable {
   align-items: flex-start;
 
   // Hide toggle controls.
-  & > :is(#{$anyToggle}) {
+  & > :is(#{mixins.$anyToggle}) {
     display: none;
   }
 
@@ -21,7 +22,7 @@ nav.var-foldable {
   }
 
   // Do not act as popover on wide screen. Stay visible in regular document flow.
-  & > #{$popOff} {
+  & > #{mixins.$popOff} {
     display: flex;
     position: static;
   }
@@ -31,18 +32,18 @@ nav.var-foldable {
 /// @name Modal menu on narrow screen
 nav.var-foldable {
   @media (width < menubar.$nav-wide) {
-    @include menu-foldable;
-    @include backdrop;
+    @include mixins.menu-foldable;
+    @include mixins.backdrop;
   }
 }
 
 /// Places toggle to the inline end (rhs in Latin).
 /// This only has an effect if the menu is foldable.
 /// @name Modifier: +end
-nav.var-foldable.\+end {
+nav.var-foldable.#{$mod-prefix}end {
   flex-direction: row-reverse;
 
-  & > #{$popOn} {
+  & > #{mixins.$popOn} {
     margin-inline: auto var(---toggle-size);
   }
 }

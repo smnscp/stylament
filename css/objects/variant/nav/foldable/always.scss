@@ -2,12 +2,13 @@
 /// @group ob-variant
 ////
 
-@use "./_mixins.scss" as *;
+@use "../../../../axioms/properties/io" as *;
+@use "./_mixins.scss";
 
 /// Apply folding also to leveled menu.
 /// (The backdrop is kept transparent in this case.)
 /// This module is optional and can be included on demand.
 /// @name Modifier: +always
-nav.var-foldable:where(.\+always) {
-  @include menu-foldable;
+nav.var-foldable:where(.#{$mod-prefix}always) {
+  @include mixins.menu-foldable;
 }

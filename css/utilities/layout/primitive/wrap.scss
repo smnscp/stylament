@@ -60,7 +60,7 @@
 
 /// Grid layout with fitting under-full grids.
 /// @name Modifier: +fit
-.lyo-wrap-grid.\+fit,
+.lyo-wrap-grid.#{$mod-prefix}fit,
 %lyo-wrap-grid--fit {
   ---fill-method: auto-fit;
 }
@@ -102,21 +102,21 @@
 
 /// Cluster layout with centered alignment.
 /// @name Modifier: +center
-.lyo-wrap-cluster.\+center,
+.lyo-wrap-cluster.#{$mod-prefix}center,
 %lyo-wrap-cluster--center {
   justify-content: center;
 }
 
 /// Cluster layout with alignment to the end.
 /// @name Modifier: +end
-.lyo-wrap-cluster.\+end,
+.lyo-wrap-cluster.#{$mod-prefix}end,
 %lyo-wrap-cluster--end {
   justify-content: end;
 }
 
 /// Cluster layout with justified alignment.
 /// @name Modifier: +justified
-.lyo-wrap-cluster.\+justified,
+.lyo-wrap-cluster.#{$mod-prefix}justified,
 %lyo-wrap-cluster--justified {
   justify-content: space-between;
 }

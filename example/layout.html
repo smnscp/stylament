@@ -48,7 +48,7 @@
     </div>
   </template>
 
-  <header class="clr-alternate +alt">
+  <header class="clr-alternate {{modPrefix}}alt">
     <hgroup>
       <p>
         <svg width="128" height="128" viewBox="0 0 128 128">
@@ -67,7 +67,7 @@
     </hgroup>
   </header>
 
-  <nav class="var-sticky var-foldable +end">
+  <nav class="var-sticky var-foldable {{modPrefix}}end">
     <menu id="main-menu" role="menubar">
       <li><a href="#section-one">Section One</a></li>
       <li><a href="#section-two">Section Two</a></li>
@@ -100,7 +100,7 @@
       </menu>
     </section>
 
-    <figure class="~breakout var-feature">
+    <figure class="{{partPrefix}}breakout var-feature">
       <blockquote>
         <p>Always build on solid ground!</p>
       </blockquote>
@@ -190,8 +190,8 @@
     const menu = nav.querySelector('menu');
     nav.replaceChildren(toggleTemplate.content.cloneNode(true));
     nav.appendChild(menu);
-    nav.classList.toggle('+end', navAlignEnd);
-    nav.classList.toggle('+always', navFoldAlways);
+    nav.classList.toggle('{{modPrefix}}end', navAlignEnd);
+    nav.classList.toggle('{{modPrefix}}always', navFoldAlways);
     if (navType == 'pop') menu.setAttribute('popover', '');
   </script>
 

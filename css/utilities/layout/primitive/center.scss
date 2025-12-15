@@ -2,6 +2,8 @@
 /// @group ut-layout
 ////
 
+@use "../../../axioms/properties/io" as *;
+
 /// Center layout.
 .lyo-center {
   display: block;
@@ -12,7 +14,7 @@
 }
 
 /// Center layout with intrinsic centering.
-.lyo-center.\+intrinsic,
+.lyo-center.#{$mod-prefix}intrinsic,
 %lyo-center--intrinsic {
   > * {
     text-align: center;

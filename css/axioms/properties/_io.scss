@@ -56,3 +56,35 @@ $🌱: --#{$prop-prefix};
 ///   @use "stylament/css/axioms/properties/io" with ($atom-prefix: "☢️");
 ///
 $atom-prefix: "\\@" !default;
+
+/// Configurable prefix for modifier classes.
+///
+/// Stylament used to prefix modifier classes with `+`.
+/// This can be replaced by any [valid][spec] identifier part when `@use`-ing this file:
+///
+/// @example scss - Add custom prefix to modifier classes
+///   @use "stylament/css/axioms/properties/io" with ($mod-prefix: "modifier-");
+///
+/// @example scss - Keep modifier classes un-prefixed
+///   @use "stylament/css/axioms/properties/io" with ($mod-prefix: "");
+///
+/// @example scss - Use a fancy prefix
+///   @use "stylament/css/axioms/properties/io" with ($mod-prefix: "🎛️");
+///
+$mod-prefix: "\\+" !default;
+
+/// Configurable prefix for part classes.
+///
+/// Stylament used to prefix part classes with `~`.
+/// This can be replaced by any [valid][spec] identifier part when `@use`-ing this file:
+///
+/// @example scss - Add custom prefix to part classes
+///   @use "stylament/css/axioms/properties/io" with ($part-prefix: "part-");
+///
+/// @example scss - Keep part classes un-prefixed
+///   @use "stylament/css/axioms/properties/io" with ($part-prefix: "");
+///
+/// @example scss - Use a fancy prefix
+///   @use "stylament/css/axioms/properties/io" with ($part-prefix: "🧱");
+///
+$part-prefix: "\\~" !default;

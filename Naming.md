@@ -11,5 +11,5 @@ Utilities
 
 
 Local classes:
-- ~: subparts (like BEM elements)
-- +: modifiers
+- ~: parts (configurable)
+- +: modifiers (configurable)

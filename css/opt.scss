@@ -1,4 +1,7 @@
 @use "axioms/properties/io" with (
-  $prop-prefix: "🎟"
+  $prop-prefix: "🎟",
+  $atom-prefix: "⚛️",
+  $mod-prefix: "🙃",
+  $part-prefix: "🦵",
 );
 @use "objects/variant/nav/foldable/always.scss";
