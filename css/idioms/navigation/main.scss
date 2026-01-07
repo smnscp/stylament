@@ -6,7 +6,7 @@
 ///
 
 @use "../../axioms/properties/io" as *;
-@use "../../axioms/generic/coloring";
+@use "../../axioms/tools/coloring";
 
 /// The  first `nav` is implicitly considered the main navigation.
 body > nav:first-of-type {

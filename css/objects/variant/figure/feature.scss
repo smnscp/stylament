@@ -5,7 +5,7 @@
 @use "sass:map";
 @use "../../../axioms/properties/io" as *;
 @use "../../../axioms/properties/specific/layout/container";
-@use "../../../axioms/generic/coloring";
+@use "../../../axioms/tools/coloring";
 
 /// @requires {variable} sizes@container
 figure.var-feature {

@@ -8,7 +8,7 @@
 /// This is used in the [layout example](/example/layout.html#main-menu).
 
 @use "../../../../css/axioms/properties/io" as *;
-@use "../../../../css/axioms/generic/coloring";
+@use "../../../../css/axioms/tools/coloring";
 
 /// The  first `nav` is implicitly considered the main navigation.
 body > nav:first-of-type {

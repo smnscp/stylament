@@ -1,5 +1,5 @@
 @use "../../../axioms/properties/io" as *;
-@use "../../../axioms/generic/coloring";
+@use "../../../axioms/tools/coloring";
 
 blockquote.var-alternate {
   @include coloring.set-colors("alternate");
