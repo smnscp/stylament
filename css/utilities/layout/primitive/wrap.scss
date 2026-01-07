@@ -8,27 +8,31 @@
 ///
 /// Layout utilities to control how successive elements are wrapped in lines.
 
-/// General sizing and spacing for wrap layouts.
+/// [1] General sizing (based on [measure](ax-generic.html#css--General%20Measure)) and
+/// [spacing](ax-generic.html#wrap-spacing) for wrap layouts.
+///
+/// [2] Do not apply [flow space](ax-generic.html#flow-spacing) in flex or grid layout.
+/// Note: Once [container style queries][spec:style-container] have sufficient browser
+/// support this can be done as a generic flow rule.
+///
+/// [spec:style-container]:
+///
 /// @name All wrap layouts
 [class^="lyo-wrap-"],
 [class*=" lyo-wrap-"],
 %lyo-wrap-base {
+  // [1]
   ---min-column-size: calc(0.7 * var(---measure));
   gap: var(---wrap-space, var(---flow-space));
+
+  // [2]
+  > * {
+    margin-block: 0;
+  }
 }
 
-/// Do not apply [flow space](ax-generic.html#flow-spacing) in flex or grid layout.
-/// Note: Once [container style queries][spec:style-container] have sufficient browser
-/// support this can be done as a generic flow rule.
-///
-/// [spec:style-container]: https://www.w3.org/TR/css-contain-3/#style-container
-///
-/// @name All wrap layout children
-:is([class^="lyo-wrap-"], [class*=" lyo-wrap-"]) > * {
-  margin-block: 0;
-}
-
-/// Wrap in a grid: Get equal columns over all rows.
+/// Wrap in a grid adaptive to the suggested column width:
+/// Get equal columns over all rows.
 ///
 /// Custom properties:
 /// * `---min-column-size` {number} [70% of current measure]: The minimum size of columns.
@@ -38,6 +42,8 @@
 ///
 /// [mdn:auto-fill]: https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fill
 /// [mdn:auto-fit]: https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fit
+///
+/// @link https://every-layout.dev/layouts/grid/#grid-for-grids Every Layout: The Grid
 .lyo-wrap-grid {
   ---fill-method: auto-fill;
   display: grid;
@@ -54,14 +60,17 @@
   ---fill-method: auto-fit;
 }
 
-/// Wrap in flexible rows: Similar to the grid, but with the width of columns determined
+/// Wrap in flexible rows (“flex-grid”):
+/// Similar to the grid, but with the width of columns determined
 /// individually based on the number of columns in each row. **Example:** Given five items and a
-/// container that can take three of them in a row, the second row will made up of the two
-/// remaininng items taking up one half of the space each, instead of leaving the last third
+/// container that can take three of them in a row, the second row will be made up of the two
+/// remaining items taking up one half of the space each, instead of leaving the last third
 /// empty.
 ///
 /// Custom properties:
 /// * `---min-column-size` {number} [70% of current measure]: The minimum size of columns.
+///
+/// @link https://every-layout.dev/layouts/grid/#flexbox-for-grids Every Layout: The Grid (flex-grid)
 .lyo-wrap-flex {
   display: flex;
   flex-wrap: wrap;
@@ -81,7 +90,7 @@
   }
 }
 
-/// Wrap as cluster (densely packed).
+/// Wrap as [cluster](https://every-layout.dev/layouts/cluster/) (densely packed).
 .lyo-wrap-cluster {
   display: flex;
   flex-wrap: wrap;

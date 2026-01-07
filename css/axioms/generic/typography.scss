@@ -53,6 +53,7 @@ $-rh: if($-rh, $-rh, 4);
 
 /// Establish a generic measure.
 /// @name General Measure
+/// @link https://every-layout.dev/rudiments/axioms/#measure Every Layout: Measure
 :is(h1, h2, h3, h4, h5, h6),
 :is(p, address, summary, figcaption, caption) {
   max-inline-size: var(---measure, svar(measure-default));
