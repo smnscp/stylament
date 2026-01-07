@@ -1,0 +1,23 @@
+////
+/// @group ax-generic
+////
+
+/// ## Wrap Spacing
+///
+/// In [wrap layout](ut-layout.html#wrap) spacing has two dimensions combined:
+/// [flow space](ax-generic.html#flow-spacing) and inline space. These combined spacing properties
+/// are defined in the [global configuration](ax-config.html#:~:text=wrap:%20\().
+
+@use "../properties/io" as *;
+@use "../../elements/selectors" as el;
+
+
+/// @name Default Wrap Space Definition
+* {
+  ---wrap-space: #{svar(spacing-wrap-default)};
+}
+
+/// @name Wrap Space Definition for Sections
+:is(#{el.$sections}) {
+  ---wrap-space: #{svar(spacing-wrap-sectioning)};
+}

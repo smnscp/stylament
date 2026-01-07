@@ -3,21 +3,10 @@
 ////
 
 @use "../../../axioms/properties/io" as *;
-@use "../../../elements/selectors" as el;
 
 /// ### Wrap
 ///
 /// Layout utilities to control how successive elements are wrapped in lines.
-
-/// @name Default Wrap Space Definition
-* {
-  ---wrap-space: #{svar(spacing-wrap-default)};
-}
-
-/// @name Wrap Space Definition for Sections
-:is(#{el.$sections}) {
-  ---wrap-space: #{svar(spacing-wrap-sectioning)};
-}
 
 /// General sizing and spacing for wrap layouts.
 /// @name All wrap layouts
