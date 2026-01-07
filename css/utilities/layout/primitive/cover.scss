@@ -5,6 +5,7 @@
 @use "../../../axioms/properties/io" as *;
 
 /// Cover layout.
+/// @link https://every-layout.dev/layouts/cover/ Every Layout: The Cover
 .lyo-cover {
   display: flex;
   flex-direction: column;

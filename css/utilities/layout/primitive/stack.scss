@@ -5,6 +5,7 @@
 @use "../../../axioms/properties/io" as *;
 
 /// Stack layout.
+/// @link https://every-layout.dev/layouts/stack/ Every Layout: The Stack
 .lyo-stack {
   display: flex;
   flex-direction: column;

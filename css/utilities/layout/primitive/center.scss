@@ -5,6 +5,7 @@
 @use "../../../axioms/properties/io" as *;
 
 /// Center layout.
+/// @link https://every-layout.dev/layouts/center/ Every Layout: The Center
 .lyo-center {
   display: block;
   box-sizing: content-box;
@@ -14,6 +15,8 @@
 }
 
 /// Center layout with intrinsic centering.
+/// @name %lyo-center--intrinsic
+/// @link https://every-layout.dev/layouts/center/#intrinsic-centering Every Layout: Intrinsic centering
 .lyo-center.#{$mod-prefix}intrinsic,
 %lyo-center--intrinsic {
   > * {

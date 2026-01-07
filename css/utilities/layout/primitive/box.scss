@@ -5,6 +5,7 @@
 @use "../../../axioms/properties/io" as *;
 
 /// Box layout.
+/// @link https://every-layout.dev/layouts/box/ Every Layout: The Box
 .lyo-box {
   display: block;
   padding: var(---box-space, svar(spacing-block));
