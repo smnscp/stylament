@@ -25,7 +25,7 @@
 /// @example scss - Use a fancy prefix
 ///   @use "stylament/css/axioms/properties/io" with ($prop-prefix: "💅");
 ///
-$prop-prefix: $-prefix !default;
+$prop-prefix: "s-" !default;
 
 /// Shortcut for system CSS variable prefix.
 /// @link https://github.com/picocss/pico/commit/c5a1ffc Credits: Pico CSS
