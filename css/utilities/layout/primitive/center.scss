@@ -3,24 +3,14 @@
 ////
 
 @use "../../../axioms/properties/io" as *;
+@use "../../../axioms/tools/layout/center";
 
 /// Center layout.
 /// @link https://every-layout.dev/layouts/center/ Every Layout: The Center
 .lyo-center {
-  display: block;
-  box-sizing: content-box;
-  max-inline-size: var(---container-size);
-  padding-inline: var(---container-gutter);
-  margin-inline: auto;
-}
+  @include center.layout;
 
-/// Center layout with intrinsic centering.
-/// @name %lyo-center--intrinsic
-/// @link https://every-layout.dev/layouts/center/#intrinsic-centering Every Layout: Intrinsic centering
-.lyo-center.#{$mod-prefix}intrinsic,
-%lyo-center--intrinsic {
-  > * {
-    text-align: center;
-    margin-inline: auto;
+  &.#{$mod-prefix}intrinsic {
+    @include center.modifier-intrinsic;
   }
 }

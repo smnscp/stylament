@@ -3,19 +3,10 @@
 ////
 
 @use "../../../axioms/properties/io" as *;
+@use "../../../axioms/tools/layout/stack";
 
 /// Stack layout.
 /// @link https://every-layout.dev/layouts/stack/ Every Layout: The Stack
 .lyo-stack {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  > * {
-    margin-block: 0;
-  }
-
-  > * + * {
-    margin-block-start: var(---stack-space, svar(spacing-block));
-  }
+  @include stack.layout;
 }

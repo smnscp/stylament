@@ -1,0 +1,24 @@
+////
+/// @group ax-tools
+////
+
+@use "../../properties/io" as *;
+
+/// Center layout.
+/// @link https://every-layout.dev/layouts/center/ Every Layout: The Center
+@mixin layout {
+  display: block;
+  box-sizing: content-box;
+  max-inline-size: var(---container-size);
+  padding-inline: var(---container-gutter);
+  margin-inline: auto;
+}
+
+/// Center layout with intrinsic centering.
+/// @link https://every-layout.dev/layouts/center/#intrinsic-centering Every Layout: Intrinsic centering
+@mixin modifier-intrinsic {
+  > * {
+    text-align: center;
+    margin-inline: auto;
+  }
+}

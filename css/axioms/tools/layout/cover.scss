@@ -1,0 +1,18 @@
+////
+/// @group ax-tools
+////
+
+@use "../../properties/io" as *;
+
+/// Cover layout.
+/// @link https://every-layout.dev/layouts/cover/ Every Layout: The Cover
+@mixin layout {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+  padding: var(---cover-space, svar(spacing-block));
+
+  & > * {
+    margin-block: auto;
+  }
+}

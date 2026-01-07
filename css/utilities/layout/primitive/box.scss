@@ -3,17 +3,10 @@
 ////
 
 @use "../../../axioms/properties/io" as *;
+@use "../../../axioms/tools/layout/box";
 
 /// Box layout.
 /// @link https://every-layout.dev/layouts/box/ Every Layout: The Box
 .lyo-box {
-  display: block;
-  padding: var(---box-space, svar(spacing-block));
-  border: var(
-    ---box-border,
-    var(---box-border-width, svar(stroke-width-default))
-      var(---box-border-style, svar(stroke-style-default))
-      var(---box-border-color, svar(stroke-color-default))
-  );
-  border-radius: var(---box-radius, svar(radius-default));
+  @include box.layout;
 }

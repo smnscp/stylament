@@ -1,5 +1,5 @@
 @use "../../../axioms/properties/io" as *;
-@use "../primitive/center";
+@use "../../../axioms/tools/layout/center";
 
 :where(body.lyo-page-center) > {
   :where(header, main, footer) {
@@ -7,7 +7,7 @@
     ---container-gutter: 5vw;
 
     > * {
-      @extend .lyo-center;
+      @include center.layout;
     }
 
     > .#{$part-prefix}breakout {

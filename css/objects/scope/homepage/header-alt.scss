@@ -5,7 +5,7 @@
 /// ## Homepage Header, alternative
 
 @use "../../../axioms/properties/io" as *;
-@use "../../../utilities/layout/primitive/box";
+@use "../../../axioms/tools/layout/box";
 
 /// Special homepage header styles.
 body.scp-homepage > header.#{$mod-prefix}alt {
@@ -14,6 +14,6 @@ body.scp-homepage > header.#{$mod-prefix}alt {
   ---box-space: #{svar(spacing-block-lg)};
 
   & > * {
-    @extend .lyo-box;
+    @include box.layout;
   }
 }

@@ -1,12 +1,19 @@
 ////
-/// @group ut-layout
+/// @group ax-tools
 ////
-
-@use "../../../axioms/tools/layout/switcher";
 
 /// Switcher layout.
 /// @link https://every-layout.dev/layouts/switcher/ Every Layout: The Switcher
 /// @link https://heydonworks.com/article/the-flexbox-holy-albatross/ The Flexbox Holy Albatross
-.lyo-switcher {
-  @include switcher.layout;
+@mixin layout {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > * {
+    flex-basis: max(
+      var(---min-item-size, 0px),
+      ((var(---threshold) - 100%) * 999)
+    );
+    flex-grow: 1;
+  }
 }

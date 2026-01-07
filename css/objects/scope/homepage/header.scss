@@ -5,13 +5,13 @@
 /// ## Homepage Header
 
 @use "../../../axioms/properties/io" as *;
-@use "../../../utilities/layout/primitive/center.scss";
-@use "../../../utilities/layout/primitive/cover";
+@use "../../../axioms/tools/layout/center";
+@use "../../../axioms/tools/layout/cover";
 
 /// Special homepage header styles.
 body.scp-homepage > header {
   ---cover-space: #{svar(spacing-block-lg) var(---container-gutter)};
-  @extend .lyo-cover;
+  @include cover.layout;
 
   h1 {
     font-size: clamp(svar(font-size-3), 8vmin, svar(font-size-9));
@@ -19,7 +19,8 @@ body.scp-homepage > header {
   }
 
   & > * {
-    @extend %lyo-center--intrinsic;
+    @include center.layout;
+    @include center.modifier-intrinsic;
   }
 
   // Any image alone in an hgroup row is considered a logo.

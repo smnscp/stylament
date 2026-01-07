@@ -3,16 +3,10 @@
 ////
 
 @use "../../../axioms/properties/io" as *;
+@use "../../../axioms/tools/layout/cover";
 
 /// Cover layout.
 /// @link https://every-layout.dev/layouts/cover/ Every Layout: The Cover
 .lyo-cover {
-  display: flex;
-  flex-direction: column;
-  min-block-size: 100vh;
-  padding: var(---cover-space, svar(spacing-block));
-
-  & > * {
-    margin-block: auto;
-  }
+  @include cover.layout;
 }

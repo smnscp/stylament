@@ -6,7 +6,7 @@
 @use "../../axioms/properties/io" as *;
 @use "../../axioms/properties/specific/layout/container";
 @use "../../axioms/tools/coloring";
-@use "../../utilities/layout/primitive/switcher";
+@use "../../axioms/tools/layout/switcher";
 
 /// ## Menu Bar
 ///
@@ -21,7 +21,8 @@ $nav-wide: map.get(container.$sizes, "nav-wide");
 menu[role="menubar"] {
   // Horizontal nav as long as items have enough space.
   ---threshold: #{$nav-wide};
-  @extend .lyo-switcher;
+  @include switcher.layout;
+
   & > li {
     display: block;
     text-align: center;
