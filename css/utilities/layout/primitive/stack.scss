@@ -6,7 +6,7 @@
 @use "../../../axioms/tools/layout/stack";
 
 /// Stack layout.
-/// @link https://every-layout.dev/layouts/stack/ Every Layout: The Stack
+/// @see stack.layout
 .lyo-stack {
   @include stack.layout;
 }

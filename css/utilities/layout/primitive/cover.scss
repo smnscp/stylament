@@ -6,7 +6,7 @@
 @use "../../../axioms/tools/layout/cover";
 
 /// Cover layout.
-/// @link https://every-layout.dev/layouts/cover/ Every Layout: The Cover
+/// @see cover.layout
 .lyo-cover {
   @include cover.layout;
 }

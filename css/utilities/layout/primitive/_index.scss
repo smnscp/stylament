@@ -4,11 +4,14 @@
 
 /// ## Layout Primitives
 ///
-/// These are layout primitives greatly inspired by [Every Layout](https://every-layout.dev/).
+/// These utilities apply [the mixins](ax-tools.html#layout-primitive-mixins) that implement [Every Layout](https://every-layout.dev/) primitives.
 
 @use "stack";
 @use "box";
 @use "center";
-@use "cover";
+@use "cluster";
 @use "switcher";
+@use "cover";
+@use "grid";
+@use "columns";
 @use "wrap";

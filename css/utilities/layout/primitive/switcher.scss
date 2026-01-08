@@ -5,8 +5,7 @@
 @use "../../../axioms/tools/layout/switcher";
 
 /// Switcher layout.
-/// @link https://every-layout.dev/layouts/switcher/ Every Layout: The Switcher
-/// @link https://heydonworks.com/article/the-flexbox-holy-albatross/ The Flexbox Holy Albatross
+/// @see switcher.layout
 .lyo-switcher {
   @include switcher.layout;
 }

@@ -6,11 +6,14 @@
 @use "../../../axioms/tools/layout/center";
 
 /// Center layout.
-/// @link https://every-layout.dev/layouts/center/ Every Layout: The Center
+/// @see center.layout
 .lyo-center {
   @include center.layout;
+}
 
-  &.#{$mod-prefix}intrinsic {
-    @include center.modifier-intrinsic;
-  }
+/// Intrinsic center layout.
+/// @name .lyo-center.+intrinsic
+/// @see center.modifier-intrinsic
+.lyo-center.#{$mod-prefix}intrinsic {
+  @include center.modifier-intrinsic;
 }

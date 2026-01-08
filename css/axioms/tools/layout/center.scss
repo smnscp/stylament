@@ -2,10 +2,10 @@
 /// @group ax-tools
 ////
 
-@use "../../properties/io" as *;
-
 /// Center layout.
+/// @name center.layout
 /// @link https://every-layout.dev/layouts/center/ Every Layout: The Center
+/// @see .lyo-center
 @mixin layout {
   display: block;
   box-sizing: content-box;
@@ -15,7 +15,9 @@
 }
 
 /// Center layout with intrinsic centering.
+/// @name center.modifier-intrinsic
 /// @link https://every-layout.dev/layouts/center/#intrinsic-centering Every Layout: Intrinsic centering
+/// @see .lyo-center.+intrinsic
 @mixin modifier-intrinsic {
   > * {
     text-align: center;

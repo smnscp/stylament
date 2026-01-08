@@ -1,0 +1,30 @@
+////
+/// @group ut-layout
+////
+
+@use "../../../axioms/properties/io" as *;
+@use "../../../axioms/tools/layout/cluster";
+
+/// Wrap as cluster (densely packed).
+/// @see cluster.layout
+.lyo-cluster {
+  @include cluster.layout;
+}
+
+/// @name .lyo-cluster.+center
+/// @see cluster.modifier-center
+.lyo-cluster.#{$mod-prefix}center {
+  @include cluster.modifier-center;
+}
+
+/// @name .lyo-cluster.+end
+/// @see cluster.modifier-end
+.lyo-cluster.#{$mod-prefix}end {
+  @include cluster.modifier-end;
+}
+
+/// @name .lyo-cluster.+justified
+/// @see cluster.modifier-justified
+.lyo-cluster.#{$mod-prefix}justified {
+  @include cluster.modifier-justified;
+}

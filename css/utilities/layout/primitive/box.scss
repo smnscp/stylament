@@ -6,7 +6,7 @@
 @use "../../../axioms/tools/layout/box";
 
 /// Box layout.
-/// @link https://every-layout.dev/layouts/box/ Every Layout: The Box
+/// @see box.layout
 .lyo-box {
   @include box.layout;
 }

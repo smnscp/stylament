@@ -5,7 +5,9 @@
 @use "../../properties/io" as *;
 
 /// Stack layout.
+/// @name stack.layout
 /// @link https://every-layout.dev/layouts/stack/ Every Layout: The Stack
+/// @see .lyo-stack
 @mixin layout {
   display: flex;
   flex-direction: column;

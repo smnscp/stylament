@@ -3,8 +3,10 @@
 ////
 
 /// Switcher layout.
+/// @name switcher.layout
 /// @link https://every-layout.dev/layouts/switcher/ Every Layout: The Switcher
 /// @link https://heydonworks.com/article/the-flexbox-holy-albatross/ The Flexbox Holy Albatross
+/// @see .lyo-switcher
 @mixin layout {
   display: flex;
   flex-wrap: wrap;

@@ -1,0 +1,11 @@
+////
+/// @group ut-layout
+////
+
+@use "../../../axioms/tools/layout/columns";
+
+/// Columns layout.
+/// @see columns.layout
+.lyo-columns {
+  @include columns.layout;
+}

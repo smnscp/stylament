@@ -1,0 +1,17 @@
+////
+/// @group ax-tools
+////
+
+@use "wrap";
+
+/// Wrap column-wise (multi-column layout).
+/// @name columns.layout
+/// @see .lyo-columns
+@mixin layout {
+  @extend %wrap-base;
+  column-width: var(---min-column-size);
+
+  & > * {
+    break-inside: avoid;
+  }
+}

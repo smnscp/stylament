@@ -1,0 +1,24 @@
+////
+/// @group ut-layout
+////
+
+@use "../../../axioms/properties/io" as *;
+@use "../../../axioms/tools/layout/grid";
+
+/// Grid layout.
+/// @see grid.layout
+.lyo-grid {
+  @include grid.layout;
+}
+
+/// @name .lyo-grid.+fit
+/// @see grid.modifier-fit
+.lyo-grid.#{$mod-prefix}fit {
+  @include grid.modifier-fit;
+}
+
+/// Flex-grid layout.
+/// @see grid.layout-flex
+.lyo-flex-grid {
+  @include grid.layout-flex;
+}

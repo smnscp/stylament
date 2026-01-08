@@ -5,7 +5,9 @@
 @use "../../properties/io" as *;
 
 /// Cover layout.
+/// @name cover.layout
 /// @link https://every-layout.dev/layouts/cover/ Every Layout: The Cover
+/// @see .lyo-cover
 @mixin layout {
   display: flex;
   flex-direction: column;

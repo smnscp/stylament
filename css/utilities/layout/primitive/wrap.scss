@@ -2,43 +2,10 @@
 /// @group ut-layout
 ////
 
-@use "../../../axioms/properties/io" as *;
 @use "../../../axioms/tools/layout/wrap";
 
-/// ### Wrap
-///
-/// Layout utilities to control how successive elements are wrapped in lines.
-
-.lyo-wrap-grid {
-  @include wrap.layout-grid;
-
-  &.#{$mod-prefix}fit {
-    @include wrap.modifier-fit;
-  }
-}
-
-.lyo-wrap-flex {
-  @include wrap.layout-flex;
-}
-
-.lyo-wrap-columns {
-  @include wrap.layout-columns;
-}
-
-.lyo-wrap-cluster {
-  @include wrap.layout-cluster;
-
-  &.#{$mod-prefix}center {
-    @include wrap.modifier-center;
-  }
-  &.#{$mod-prefix}end {
-    @include wrap.modifier-end;
-  }
-  &.#{$mod-prefix}justified {
-    @include wrap.modifier-justified;
-  }
-}
-
+/// Reset wrapping: Let this item claim the space of the whole row.
+/// @see wrap.layout-reset
 .lyo-reset-wrap {
   @include wrap.layout-reset;
 }

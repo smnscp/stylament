@@ -5,7 +5,9 @@
 @use "../../properties/io" as *;
 
 /// Box layout.
+/// @name box.layout
 /// @link https://every-layout.dev/layouts/box/ Every Layout: The Box
+/// @see .lyo-box
 @mixin layout {
   display: block;
   padding: var(---box-space, svar(spacing-block));

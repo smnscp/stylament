@@ -1,0 +1,41 @@
+////
+/// @group ax-tools
+////
+
+@use "wrap";
+
+/// Wrap as cluster (densely packed).
+/// @name cluster.layout
+/// @link https://every-layout.dev/layouts/cluster/ Every Layout: The Cluster
+/// @see .lyo-cluster
+@mixin layout {
+  @extend %wrap-base;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: start;
+}
+
+/// Cluster layout with centered alignment.
+/// @name cluster.modifier-center
+/// @link https://every-layout.dev/layouts/cluster/#justification Every Layout: The Cluster / Justification
+/// @see .lyo-cluster.+center
+@mixin modifier-center {
+  justify-content: center;
+}
+
+/// Cluster layout with alignment to the end.
+/// @name cluster.modifier-end
+/// @link https://every-layout.dev/layouts/cluster/#justification Every Layout: The Cluster / Justification
+/// @see .lyo-cluster.+end
+@mixin modifier-end {
+  justify-content: end;
+}
+
+/// Cluster layout with justified alignment.
+/// @name cluster.modifier-justified
+/// @link https://every-layout.dev/layouts/cluster/#justification Every Layout: The Cluster / Justification
+/// @see .lyo-cluster.+justified
+@mixin modifier-justified {
+  justify-content: space-between;
+}
