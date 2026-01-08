@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.26.2</span>
+          <span class="project-version">0.27.2</span>
         
       </div>
     </header>
@@ -479,7 +479,7 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
 
 
 
-<section class="item" id="css--body.scp-homepage%20%3E%20header.%5C%2Balt">
+<section class="item" id="css--body.scp-homepage%20%3E%20header.%23%7B%24mod-prefix%7Dalt">
   
     
   
@@ -497,7 +497,7 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
       
 
       
-        <a href="#css--body.scp-homepage%20%3E%20header.%5C%2Balt" class="item-name">body.scp-homepage &gt;<span class="widont">&nbsp;</span>header.&#92;+alt</a>
+        <a href="#css--body.scp-homepage%20%3E%20header.%23%7B%24mod-prefix%7Dalt" class="item-name">body.scp-homepage &gt;<span class="widont">&nbsp;</span>header.#{$mod-prefix}alt</a>
       
 
       
@@ -526,13 +526,13 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">body.scp-homepage &gt; header.&#92;+alt {
+      <pre class="hljs-pre"><code class="lang-scss">body.scp-homepage &gt; header.#{$mod-prefix}alt {
   ---box-radius: #{svar(radius-xl)};
   ---box-border: #{svar(stroke-width-8) dashed svar(color-grey-300)};
   ---box-space: #{svar(spacing-block-lg)};
 
   &amp; &gt; * {
-    @extend .lyo-box;
+    @include box.layout;
   }
 }</code></pre>
     </div>
@@ -737,7 +737,7 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
       
       <pre class="hljs-pre"><code class="lang-scss">body.scp-homepage &gt; header {
   ---cover-space: #{svar(spacing-block-lg) var(---container-gutter)};
-  @extend .lyo-cover;
+  @include cover.layout;
 
   h1 {
     font-size: clamp(svar(font-size-3), 8vmin, svar(font-size-9));
@@ -745,7 +745,8 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
   }
 
   &amp; &gt; * {
-    @extend %lyo-center--intrinsic;
+    @include center.layout;
+    @include center.modifier-intrinsic;
   }
 
   // Any image alone in an hgroup row is considered a logo.

@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.26.2</span>
+          <span class="project-version">0.27.2</span>
         
       </div>
     </header>
@@ -646,7 +646,7 @@
   align-items: flex-start;
 
   // Hide toggle controls.
-  &amp; &gt; :is(#{$anyToggle}) {
+  &amp; &gt; :is(#{mixins.$anyToggle}) {
     display: none;
   }
 
@@ -655,7 +655,7 @@
   }
 
   // Do not act as popover on wide screen. Stay visible in regular document flow.
-  &amp; &gt; #{$popOff} {
+  &amp; &gt; #{mixins.$popOff} {
     display: flex;
     position: static;
   }
@@ -787,8 +787,8 @@
       
       <pre class="hljs-pre"><code class="lang-scss">nav.var-foldable {
   @media (width &lt; menubar.$nav-wide) {
-    @include menu-foldable;
-    @include backdrop;
+    @include mixins.menu-foldable;
+    @include mixins.backdrop;
   }
 }</code></pre>
     </div>
@@ -916,10 +916,10 @@
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.var-foldable.&#92;+end {
+      <pre class="hljs-pre"><code class="lang-scss">nav.var-foldable.#{$mod-prefix}end {
   flex-direction: row-reverse;
 
-  &amp; &gt; #{$popOn} {
+  &amp; &gt; #{mixins.$popOn} {
     margin-inline: auto var(---toggle-size);
   }
 }</code></pre>
@@ -1717,8 +1717,8 @@ Allows to toggle the display of the<span class="widont">&nbsp;</span>menu.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">nav.var-foldable:where(.&#92;+always) {
-  @include menu-foldable;
+      <pre class="hljs-pre"><code class="lang-scss">nav.var-foldable:where(.#{$mod-prefix}always) {
+  @include mixins.menu-foldable;
 }</code></pre>
     </div>
   

@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.26.2</span>
+          <span class="project-version">0.27.2</span>
         
       </div>
     </header>
@@ -926,7 +926,8 @@
       <pre class="hljs-pre"><code class="lang-scss">menu[role=&quot;menubar&quot;] {
   // Horizontal nav as long as items have enough space.
   ---threshold: #{$nav-wide};
-  @extend .lyo-switcher;
+  @include switcher.layout;
+
   &amp; &gt; li {
     display: block;
     text-align: center;

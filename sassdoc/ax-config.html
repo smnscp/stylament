@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.26.2</span>
+          <span class="project-version">0.27.2</span>
         
       </div>
     </header>
@@ -886,6 +886,14 @@ dd {
   margin-block-end: var(---flow-space);
 }
 
+* {
+  ---wrap-space: var(--s-spacing-wrap-default);
+}
+
+:is(article, section, nav, aside) {
+  ---wrap-space: var(--s-spacing-wrap-sectioning);
+}
+
 :is(ol, ul, menu) {
   ---indent-root: var(--s-spacing-indent-list-root, 0);
   ---indent: var(--s-spacing-indent-list, var(--s-spacing-indent-list-root, var(--s-spacing-indent-default)));
@@ -1313,6 +1321,14 @@ dd {
 }
 :where(:is(article, section, nav, aside):not(:last-child)) {
   margin-block-end: var(---flow-space);
+}
+
+* {
+  ---wrap-space: var(--s-spacing-wrap-default);
+}
+
+:is(article, section, nav, aside) {
+  ---wrap-space: var(--s-spacing-wrap-sectioning);
 }
 
 :is(ol, ul, menu) {
@@ -2143,7 +2159,7 @@ $cfg: (
       <span class="item-type">@mixin</span>
       
         <a href="
-  ax-generic.html#mixin--set-colors" class="item-name">set-colors()</a>
+  ax-tools.html#mixin--set-colors" class="item-name">set-colors()</a>
       
       
       

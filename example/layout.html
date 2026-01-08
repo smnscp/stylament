@@ -57,7 +57,7 @@
     </div>
   </template>
 
-  <header class="clr-alternate +alt">
+  <header class="clr-alternate 🙃alt">
     <hgroup>
       <p>
         <svg width="128" height="128" viewBox="0 0 128 128">
@@ -76,7 +76,7 @@
     </hgroup>
   </header>
 
-  <nav class="var-sticky var-foldable +end">
+  <nav class="var-sticky var-foldable 🙃end">
     <menu id="main-menu" role="menubar">
       <li><a href="#section-one">Section One</a></li>
       <li><a href="#section-two">Section Two</a></li>
@@ -87,7 +87,7 @@
   </nav>
 
   <main>
-    <section class="lyo-wrap-flex @measure-xs">
+    <section class="lyo-flex-grid ⚛️measure-xs">
       <h2 class="lyo-reset-wrap">Select Navigation Type</h2>
       <menu>
         <li><a href="?navType=rock&navAlign=start#main-menu">Hidden checkbox, left</a></li>
@@ -109,14 +109,14 @@
       </menu>
     </section>
 
-    <figure class="~breakout var-feature">
+    <figure class="🦵breakout var-feature">
       <blockquote>
         <p>Always build on solid ground!</p>
       </blockquote>
       <figcaption><cite>Old wisdom</cite></figcaption>
     </figure>
 
-    <article class="dev-lorem-ipsum lyo-wrap-flex @measure-md">
+    <article class="dev-lorem-ipsum lyo-flex-grid ⚛️measure-md">
       <section id="section-one">
         <h2>Section One</h2>
         <p></p>
@@ -134,12 +134,12 @@
       </section>
       <section id="section-four">
         <h2>Section Four</h2>
-        <div class="lyo-reset-wrap lyo-wrap-flex @measure-lg">
+        <div class="lyo-reset-wrap lyo-flex-grid ⚛️measure-lg">
           <p></p>
           <p></p>
         </div>
       </section>
-      <section id="section-five" class="lyo-reset-wrap lyo-wrap-flex @measure-sm">
+      <section id="section-five" class="lyo-reset-wrap lyo-flex-grid ⚛️measure-sm">
         <h2 class="lyo-reset-wrap">Section Five</h2>
         <section id="subsection-five-one">
           <h3>Subsection</h3>
@@ -174,7 +174,7 @@
         </section>
         <section id="subsection-five-four">
           <h3>Subsection Four</h3>
-          <ul class="var-neutral-list lyo-wrap-cluster @measure-inf">
+          <ul class="var-neutral-list lyo-cluster ⚛️measure-inf">
             <li>Listitem, tempora</li>
             <li>Listitem dolorem</li>
             <li>Listitem. Voluptas</li>
@@ -183,13 +183,27 @@
             <li>Listitem sequi sunt</li>
           </ul>
         </section>
+        <section id="subsection-five-five">
+          <h3>Subsection Five</h3>
+          <div class="lyo-sidebar ⚛️measure-inf 🙃end 🙃reverse" style="---side-width: 10em">
+            <p></p>
+            <ol>
+              <li>Listitem</li>
+              <li>Listitem</li>
+              <li>Listitem</li>
+              <li>Listitem</li>
+              <li>Listitem</li>
+              <li>Listitem</li>
+            </ol>
+          </div>
+        </section>
       </section>
     </article>
   </main>
 
     <footer class="clr-alternate">
       <section>
-        <p class="footer-copyright">© 2025 Simon Schrape</p>
+        <p class="footer-copyright">© 2026 Simon Schrape</p>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/example/">Examples</a></li>
@@ -209,8 +223,8 @@
     const menu = nav.querySelector('menu');
     nav.replaceChildren(toggleTemplate.content.cloneNode(true));
     nav.appendChild(menu);
-    nav.classList.toggle('+end', navAlignEnd);
-    nav.classList.toggle('+always', navFoldAlways);
+    nav.classList.toggle('🙃end', navAlignEnd);
+    nav.classList.toggle('🙃always', navFoldAlways);
     if (navType == 'pop') menu.setAttribute('popover', '');
   </script>
 

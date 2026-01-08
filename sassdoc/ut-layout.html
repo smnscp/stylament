@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.26.2</span>
+          <span class="project-version">0.27.2</span>
         
       </div>
     </header>
@@ -490,7 +490,7 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
   
     <div data-item-section="prose" class="text-block">
       <h2 id="layout-primitives" tabindex="-1">Layout Primitives</h2>
-<p>These are layout primitives greatly inspired by <a href="https://every-layout.dev/">Every<span class="widont">&nbsp;</span>Layout</a>.</p>
+<p>These utilities apply <a href="ax-tools.html#layout-primitive-mixins">the mixins</a> that implement <a href="https://every-layout.dev/">Every Layout</a><span class="widont">&nbsp;</span>primitives.</p>
 
       
   
@@ -603,15 +603,7 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
       
       
       <pre class="hljs-pre"><code class="lang-scss">.lyo-box {
-  display: block;
-  padding: var(---box-space, svar(spacing-block));
-  border: var(
-    ---box-border,
-    var(---box-border-width, svar(stroke-width-default))
-      var(---box-border-style, svar(stroke-style-default))
-      var(---box-border-color, svar(stroke-color-default))
-  );
-  border-radius: var(---box-radius, svar(radius-default));
+  @include box.layout;
 }</code></pre>
     </div>
   
@@ -655,6 +647,49 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
   
   
 
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--box.layout" class="item-name">box.layout()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
 
   
   
@@ -739,11 +774,7 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
       
       
       <pre class="hljs-pre"><code class="lang-scss">.lyo-center {
-  display: block;
-  box-sizing: content-box;
-  max-inline-size: var(---container-size);
-  padding-inline: var(---container-gutter);
-  margin-inline: auto;
+  @include center.layout;
 }</code></pre>
     </div>
   
@@ -789,6 +820,49 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
 
 
   
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--center.layout" class="item-name">center.layout()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
   
   
   
@@ -823,7 +897,7 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
 
 
 
-<section class="item" id="css--.lyo-center.%5C%2Bintrinsic%2C%0A%25lyo-center--intrinsic">
+<section class="item" id="css--.lyo-center.%2Bintrinsic">
   
     
   
@@ -841,8 +915,7 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
       
 
       
-        <a href="#css--.lyo-center.%5C%2Bintrinsic%2C%0A%25lyo-center--intrinsic" class="item-name">.lyo-center.&#92;+intrinsic,
-%lyo-center--intrinsic</a>
+        <a href="#css--.lyo-center.%2Bintrinsic" class="item-name">.lyo-center.+intrinsic</a>
       
 
       
@@ -871,12 +944,8 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">.lyo-center.&#92;+intrinsic,
-%lyo-center--intrinsic {
-  &gt; * {
-    text-align: center;
-    margin-inline: auto;
-  }
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-center.#{$mod-prefix}intrinsic {
+  @include center.modifier-intrinsic;
 }</code></pre>
     </div>
   
@@ -889,7 +958,7 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
 
   
     <div class="text-block">
-      <p>Center layout with intrinsic<span class="widont">&nbsp;</span>centering.</p>
+      <p>Intrinsic center layout.</p>
 
       
   
@@ -920,6 +989,862 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
   
   
 
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--center.modifier-intrinsic" class="item-name">center.modifier-intrinsic()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-cluster">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-cluster" class="item-name">.lyo-cluster</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-cluster {
+  @include cluster.layout;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Wrap as cluster (densely<span class="widont">&nbsp;</span>packed).</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--cluster.layout" class="item-name">cluster.layout()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-cluster.%2Bcenter">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-cluster.%2Bcenter" class="item-name">.lyo-cluster.+center</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-cluster.#{$mod-prefix}center {
+  @include cluster.modifier-center;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--cluster.modifier-center" class="item-name">cluster.modifier-center()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-cluster.%2Bend">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-cluster.%2Bend" class="item-name">.lyo-cluster.+end</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-cluster.#{$mod-prefix}end {
+  @include cluster.modifier-end;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--cluster.modifier-end" class="item-name">cluster.modifier-end()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-cluster.%2Bjustified">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-cluster.%2Bjustified" class="item-name">.lyo-cluster.+justified</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-cluster.#{$mod-prefix}justified {
+  @include cluster.modifier-justified;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--cluster.modifier-justified" class="item-name">cluster.modifier-justified()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-columns">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-columns" class="item-name">.lyo-columns</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-columns {
+  @include columns.layout;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Columns layout.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--columns.layout" class="item-name">columns.layout()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
 
   
   
@@ -1004,14 +1929,7 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
       
       
       <pre class="hljs-pre"><code class="lang-scss">.lyo-cover {
-  display: flex;
-  flex-direction: column;
-  min-block-size: 100vh;
-  padding: var(---cover-space, svar(spacing-block));
-
-  &amp; &gt; * {
-    margin-block: auto;
-  }
+  @include cover.layout;
 }</code></pre>
     </div>
   
@@ -1055,6 +1973,1232 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
   
   
 
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--cover.layout" class="item-name">cover.layout()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-grid">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-grid" class="item-name">.lyo-grid</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-grid {
+  @include grid.layout;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Grid layout.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--grid.layout" class="item-name">grid.layout()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-grid.%2Bfit">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-grid.%2Bfit" class="item-name">.lyo-grid.+fit</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-grid.#{$mod-prefix}fit {
+  @include grid.modifier-fit;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--grid.modifier-fit" class="item-name">grid.modifier-fit()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-flex-grid">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-flex-grid" class="item-name">.lyo-flex-grid</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-flex-grid {
+  @include grid.layout-flex;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Flex-grid layout.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--grid.layout-flex" class="item-name">grid.layout-flex()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-sidebar">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-sidebar" class="item-name">.lyo-sidebar</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-sidebar {
+  @include sidebar.layout;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Sidebar layout.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--sidebar.layout" class="item-name">sidebar.layout()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-sidebar.%2Bend">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-sidebar.%2Bend" class="item-name">.lyo-sidebar.+end</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-sidebar.#{$mod-prefix}end {
+  @include sidebar.modifier-end;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Sidebar layout with the last child as<span class="widont">&nbsp;</span>sidebar.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--sidebar.modifier-end" class="item-name">sidebar.modifier-end()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-sidebar.%2Breverse">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-sidebar.%2Breverse" class="item-name">.lyo-sidebar.+reverse</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-sidebar.#{$mod-prefix}reverse {
+  @include sidebar.modifier-reverse;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Sidebar layout with the order of children<span class="widont">&nbsp;</span>reversed.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--sidebar.modifier-reverse" class="item-name">sidebar.modifier-reverse()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+  
+  
+
+</section>
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+<section class="item" id="css--.lyo-stack">
+  
+    
+  
+  
+
+  
+  
+  
+  
+
+  <div data-item-section="header">
+    <h2 class="item-title">
+      
+        <span class="item-type"></span>
+      
+
+      
+        <a href="#css--.lyo-stack" class="item-name">.lyo-stack</a>
+      
+
+      
+
+      
+    </h2>
+
+    
+  
+
+
+    
+    
+    
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">.lyo-stack {
+  @include stack.layout;
+}</code></pre>
+    </div>
+  
+
+    
+  
+  
+  
+  
+
+  
+    <div class="text-block">
+      <p>Stack layout.</p>
+
+      
+  
+
+      
+  
+
+      
+  
+
+    </div>
+  
+
+  </div>
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--stack.layout" class="item-name">stack.layout()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
 
   
   
@@ -1139,16 +3283,7 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
       
       
       <pre class="hljs-pre"><code class="lang-scss">.lyo-switcher {
-  display: flex;
-  flex-wrap: wrap;
-
-  &amp; &gt; * {
-    flex-basis: max(
-      var(---min-item-size, 0px),
-      ((var(---threshold) - 100%) * 999)
-    );
-    flex-grow: 1;
-  }
+  @include switcher.layout;
 }</code></pre>
     </div>
   
@@ -1206,19 +3341,26 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
 
     
       
+
+      
         
+  
+  
+  
+  
   
 
   
   <div class="param-list">
     <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--switcher.layout" class="item-name">switcher.layout()</a>
       
       
-        <a href="https://heydonworks.com/article/the-flexbox-holy-albatross/" class="item-name">The Flexbox Holy Albatross</a>
       
       
-      
-      <span class="item-note">[external]</span>
     </h4>
 
     
@@ -1226,1631 +3368,8 @@ Stylament considers these classes<span class="widont">&nbsp;</span>utilities.</p
 
 
       
-
-      
     
   </div>
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" >
-  
-    
-  
-  
-  
-  
-
-  
-    <div data-item-section="prose" class="text-block">
-      <h3 id="wrap" tabindex="-1">Wrap</h3>
-<p>Layout utilities to control how successive elements are wrapped in<span class="widont">&nbsp;</span>lines.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--Default%20Wrap%20Space%20Definition">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--Default%20Wrap%20Space%20Definition" class="item-name">Default Wrap Space<span class="widont">&nbsp;</span>Definition</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">* {
-  ---wrap-space: #{svar(spacing-wrap-default)};
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--Wrap%20Space%20Definition%20for%20Sections">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--Wrap%20Space%20Definition%20for%20Sections" class="item-name">Wrap Space Definition for<span class="widont">&nbsp;</span>Sections</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:is(#{el.$sections}) {
-  ---wrap-space: #{svar(spacing-wrap-sectioning)};
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--All%20wrap%20layouts">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--All%20wrap%20layouts" class="item-name">All wrap<span class="widont">&nbsp;</span>layouts</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">[class^=&quot;lyo-wrap-&quot;],
-[class*=&quot; lyo-wrap-&quot;],
-%lyo-wrap-base {
-  ---min-column-size: calc(0.7 * var(---measure));
-  gap: var(---wrap-space, var(---flow-space));
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>General sizing and spacing for wrap<span class="widont">&nbsp;</span>layouts.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--All%20wrap%20layout%20children">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--All%20wrap%20layout%20children" class="item-name">All wrap layout<span class="widont">&nbsp;</span>children</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">:is([class^=&quot;lyo-wrap-&quot;], [class*=&quot; lyo-wrap-&quot;]) &gt; * {
-  margin-block: 0;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Do not apply <a href="ax-generic.html#flow-spacing">flow space</a> in flex or grid layout.
-Note: Once <a href="https://www.w3.org/TR/css-contain-3/#style-container">container style queries</a> have sufficient browser
-support this can be done as a generic flow<span class="widont">&nbsp;</span>rule.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--.lyo-wrap-grid">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--.lyo-wrap-grid" class="item-name">.lyo-wrap-grid</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-grid {
-  ---fill-method: auto-fill;
-  display: grid;
-  grid-template-columns: repeat(
-    var(---fill-method),
-    minmax(min(100%, var(---min-column-size)), 1fr)
-  );
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Wrap in a grid: Get equal columns over all<span class="widont">&nbsp;</span>rows.</p>
-<p>Custom properties:</p>
-<ul>
-<li><code>---min-column-size</code> {number} [70% of current measure]: The minimum size of<span class="widont">&nbsp;</span>columns.</li>
-<li><code>---fill-method</code> {auto-fill|auto-fit}: Use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fill"><code>auto-fill</code></a> to get empty
-filler columns if there are too few grid items for one row. Use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fit"><code>auto-fit</code></a>
-to prevent that behaviour and give all space to the filled<span class="widont">&nbsp;</span>columns.</li>
-</ul>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--Modifier%3A%20%2Bfit">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--Modifier%3A%20%2Bfit" class="item-name">Modifier: +fit</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-grid.&#92;+fit,
-%lyo-wrap-grid--fit {
-  ---fill-method: auto-fit;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Grid layout with fitting under-full<span class="widont">&nbsp;</span>grids.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--.lyo-wrap-flex">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--.lyo-wrap-flex" class="item-name">.lyo-wrap-flex</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-flex {
-  display: flex;
-  flex-wrap: wrap;
-
-  &amp; &gt; * {
-    flex-basis: var(---min-column-size);
-    flex-grow: 1;
-  }
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Wrap in flexible rows: Similar to the grid, but with the width of columns determined
-individually based on the number of columns in each row. <strong>Example:</strong> Given five items and a
-container that can take three of them in a row, the second row will made up of the two
-remaininng items taking up one half of the space each, instead of leaving the last third<span class="widont">&nbsp;</span>empty.</p>
-<p>Custom properties:</p>
-<ul>
-<li><code>---min-column-size</code> {number} [70% of current measure]: The minimum size of<span class="widont">&nbsp;</span>columns.</li>
-</ul>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--.lyo-wrap-columns">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--.lyo-wrap-columns" class="item-name">.lyo-wrap-columns</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-columns {
-  column-width: var(---min-column-size);
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Wrap column-wise (multi-column<span class="widont">&nbsp;</span>layout).</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--.lyo-wrap-cluster">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--.lyo-wrap-cluster" class="item-name">.lyo-wrap-cluster</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-cluster {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-  align-items: start;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Wrap as cluster (densely<span class="widont">&nbsp;</span>packed).</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--Modifier%3A%20%2Bcenter">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--Modifier%3A%20%2Bcenter" class="item-name">Modifier: +center</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-cluster.&#92;+center,
-%lyo-wrap-cluster--center {
-  justify-content: center;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Cluster layout with centered<span class="widont">&nbsp;</span>alignment.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--Modifier%3A%20%2Bend">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--Modifier%3A%20%2Bend" class="item-name">Modifier: +end</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-cluster.&#92;+end,
-%lyo-wrap-cluster--end {
-  justify-content: end;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Cluster layout with alignment to the<span class="widont">&nbsp;</span>end.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
-
-  
-  
-  
-  
-    
-    
-  
-
-  
-
-  
-  
-
-
-  
-  
-
-  
-  
-
-</section>
-
-  
-    
-    
-
-
-
-
-
-
-
-
-
-
-<section class="item" id="css--Modifier%3A%20%2Bjustified">
-  
-    
-  
-  
-
-  
-  
-  
-  
-
-  <div data-item-section="header">
-    <h2 class="item-title">
-      
-        <span class="item-type"></span>
-      
-
-      
-        <a href="#css--Modifier%3A%20%2Bjustified" class="item-name">Modifier: +justified</a>
-      
-
-      
-
-      
-    </h2>
-
-    
-  
-
-
-    
-    
-    
-  
-    <div class="code-block">
-      
-        <div class="code-header">
-          <span class="code-language">
-            scss
-          </span>
-
-          
-        </div>
-      
-
-      
-      
-      <pre class="hljs-pre"><code class="lang-scss">.lyo-wrap-cluster.&#92;+justified,
-%lyo-wrap-cluster--justified {
-  justify-content: space-between;
-}</code></pre>
-    </div>
-  
-
-    
-  
-  
-  
-  
-
-  
-    <div class="text-block">
-      <p>Cluster layout with justified<span class="widont">&nbsp;</span>alignment.</p>
-
-      
-  
-
-      
-  
-
-      
-  
-
-    </div>
-  
-
-  </div>
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-
-  
-  
-
 
   
   
@@ -2935,9 +3454,7 @@ remaininng items taking up one half of the space each, instead of leaving the la
       
       
       <pre class="hljs-pre"><code class="lang-scss">.lyo-reset-wrap {
-  grid-column: 1 / -1 !important;
-  max-inline-size: unset !important;
-  flex: 100% !important;
+  @include wrap.layout-reset;
 }</code></pre>
     </div>
   
@@ -2981,6 +3498,49 @@ remaininng items taking up one half of the space each, instead of leaving the la
   
   
 
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+
+      
+        
+  
+  
+  
+  
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      <span class="item-type">@mixin</span>
+      
+        <a href="
+  ax-tools.html#mixin--wrap.layout-reset" class="item-name">wrap.layout-reset()</a>
+      
+      
+      
+      
+    </h4>
+
+    
+  </div>
+
+
+      
+    
+  </div>
 
   
   
