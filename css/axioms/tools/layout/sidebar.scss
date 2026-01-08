@@ -1,0 +1,66 @@
+////
+/// @group ax-tools
+////
+
+@use "wrap";
+
+/// Sidebar layout.
+/// @name sidebar.layout
+/// @link https://every-layout.dev/layouts/sidebar/ Every Layout: The Sidebar
+/// @see .lyo-sidebar
+@mixin layout {
+  @extend %wrap-base;
+  ---side-width: auto;
+  ---content-min: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  > :first-child {
+    @include -side;
+  }
+
+  > :last-child {
+    @include -content;
+  }
+}
+
+/// Sidebar layout with the last child as sidebar.
+/// @name sidebar.modifier-end
+/// @see .lyo-sidebar.+end
+@mixin modifier-end {
+  > :last-child {
+    @include -side;
+  }
+
+  > :first-child {
+    @include -content;
+  }
+}
+
+/// Sidebar layout with the order of children reversed.
+/// @name sidebar.modifier-reverse
+/// @see .lyo-sidebar.+reverse
+@mixin modifier-reverse {
+  > :first-child {
+    order: 2;
+  }
+
+  > :last-child {
+    order: 1;
+  }
+}
+
+// The sidebar.
+@mixin -side {
+  flex-basis: var(---side-width);
+  flex-grow: 1;
+  min-inline-size: unset;
+}
+
+// The other content.
+@mixin -content {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(---content-min);
+}

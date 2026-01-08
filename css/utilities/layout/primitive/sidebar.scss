@@ -1,0 +1,26 @@
+////
+/// @group ut-layout
+////
+
+@use "../../../axioms/properties/io" as *;
+@use "../../../axioms/tools/layout/sidebar";
+
+/// Sidebar layout.
+/// @see sidebar.layout
+.lyo-sidebar {
+  @include sidebar.layout;
+}
+
+/// Sidebar layout with the last child as sidebar.
+/// @name .lyo-sidebar.+end
+/// @see sidebar.modifier-end
+.lyo-sidebar.#{$mod-prefix}end {
+  @include sidebar.modifier-end;
+}
+
+/// Sidebar layout with the order of children reversed.
+/// @name .lyo-sidebar.+reverse
+/// @see sidebar.modifier-reverse
+.lyo-sidebar.#{$mod-prefix}reverse {
+  @include sidebar.modifier-reverse;
+}
