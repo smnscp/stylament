@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.27.2</span>
+          <span class="project-version">0.28.0</span>
         
       </div>
     </header>
@@ -336,6 +336,10 @@
     <div data-item-section="prose" class="text-block">
       <h1 id="edits" tabindex="-1">Edits</h1>
 <p>The <code>ins</code> and <code>del</code> elements represent edits to the<span class="widont">&nbsp;</span>document.</p>
+<ul>
+<li><a href="#css--del">del</a></li>
+<li><a href="#css--ins">ins</a></li>
+</ul>
 
       
   
@@ -406,7 +410,7 @@
     <h4 class="param-title">
       
       
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#demarcating_edits" class="item-name">MDN</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements#demarcating_edits" class="item-name">MDN</a>
       
       
       
@@ -506,7 +510,10 @@
       
       
       <pre class="hljs-pre"><code class="lang-scss">del {
-  background: svar(color-red-300);
+  @if map.get(cfg.$merged, coloring, color, logical, del) {
+    @include coloring.set-colors(&quot;del&quot;);
+    @include coloring.use-colors;
+  }
 }</code></pre>
     </div>
   
@@ -550,6 +557,64 @@
   
   
 
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element" class="item-name">Spec</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/del" class="item-name">MDN</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
 
   
   
@@ -634,7 +699,10 @@
       
       
       <pre class="hljs-pre"><code class="lang-scss">ins {
-  background: svar(color-green-300);
+  @if map.get(cfg.$merged, coloring, color, logical, ins) {
+    @include coloring.set-colors(&quot;ins&quot;);
+    @include coloring.use-colors;
+  }
 }</code></pre>
     </div>
   
@@ -678,6 +746,64 @@
   
   
 
+
+  
+
+    
+  <div data-item-section="related">
+    
+      <h3 class="item-subtitle">
+        <span class="item-subtitle-main">Related</span>
+        
+      </h3>
+    
+
+    
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://html.spec.whatwg.org/multipage/edits.html#the-ins-element" class="item-name">Spec</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+        
+  
+
+  
+  <div class="param-list">
+    <h4 class="param-title">
+      
+      
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ins" class="item-name">MDN</a>
+      
+      
+      
+      <span class="item-note">[external]</span>
+    </h4>
+
+    
+  </div>
+
+
+      
+
+      
+    
+  </div>
 
   
   
