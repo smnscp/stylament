@@ -1,0 +1,24 @@
+////
+/// @group el-document
+////
+
+/// # Document-level Elements
+///
+/// These are elements unique to each document.
+///
+/// Although official HTML element references categorize `body` as sectioning element, either [one amongst others][spec-body]
+/// or [one with its own category][mdn-body], and `main` as either [sectioning][mdn-main] or [grouping][spec-main] content,
+/// here they are kept together in one category with `html`.
+///
+/// - [html](#css--html)
+/// - [body](#css--body)
+/// - [main](#css--main)
+///
+/// [mdn-body]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements#sectioning_root
+/// [spec-body]: https://html.spec.whatwg.org/multipage/sections.html#the-body-element
+/// [mdn-main]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements#content_sectioning:~:text=%3Cmain%3E
+/// [spec-main]: https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element
+
+@use "html";
+@use "body";
+@use "main";

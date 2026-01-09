@@ -1,0 +1,20 @@
+////
+/// @group el-interactive
+////
+
+/// # Interactive Elements
+///
+/// These elements help to create interactive user interface objects.
+///
+/// - [details](#css--details)
+/// - [summary](#css--summary)
+/// - [dialog](#css--dialog)
+///
+/// @link https://html.spec.whatwg.org/multipage/interactive-elements.html Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements#interactive_elements MDN
+
+@use "details";
+@use "summary";
+@use "dialog";
+
+// TODO: Move commands here (https://html.spec.whatwg.org/multipage/interactive-elements.html#commands)

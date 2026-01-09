@@ -1,0 +1,15 @@
+////
+/// @group el-text
+////
+
+@use "../../../axioms/properties/io" as *;
+
+/// Inline code.
+///
+/// @link https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/code MDN
+code {
+  color: svar(color-mark);
+  background-color: svar(color-mark-contra);
+  padding-inline: svar(spacing-inline-xs);
+}

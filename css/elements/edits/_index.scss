@@ -1,0 +1,16 @@
+////
+/// @group el-edits
+////
+
+/// # Edits
+///
+/// The `ins` and `del` elements represent edits to the document.
+///
+/// - [del](#css--del)
+/// - [ins](#css--ins)
+///
+/// @link https://html.spec.whatwg.org/multipage/edits.html Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements#demarcating_edits MDN
+
+@use "del";
+@use "ins";

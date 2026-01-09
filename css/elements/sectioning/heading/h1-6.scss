@@ -1,0 +1,30 @@
+////
+/// @group el-sectioning
+////
+
+@use "sass:map";
+@use "../../../axioms/config" as cfg;
+@use "../../../axioms/tools/coloring";
+
+$colors: map.get(cfg.$merged, coloring, color, logical);
+
+/// Section headings.
+///
+/// @name h1-6
+/// @link https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements MDN
+:is(h1, h2, h3, h4, h5, h6) {
+  @if $colors and map.get($colors, heading) {
+    @include coloring.set-colors("heading");
+    color: var(---clr-fg);
+  }
+}
+
+@for $level from 1 through 6 {
+  /// @name h#{$level}
+  h#{$level} {
+    @if $colors and map.get($colors, heading-#{$level}) {
+      @include coloring.set-colors("heading-#{$level}", "heading");
+    }
+  }
+}

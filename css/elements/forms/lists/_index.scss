@@ -1,0 +1,17 @@
+////
+/// @group el-forms
+////
+
+/// ## Value Lists
+///
+/// Elements that provide allowed or suggested values for [inputs](#inputs).
+/// (The [`datalist`][mdn-datalist] element also belongs to this category but is not displayed,
+/// hence does not need styling.)
+///
+/// - [option](#css--option)
+/// - [optgroup](#css--optgroup)
+///
+/// [mdn-datalist]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/datalist
+
+@use "option";
+@use "optgroup";

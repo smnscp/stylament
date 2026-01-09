@@ -1,0 +1,20 @@
+////
+/// @group el-grouping
+////
+
+@use "sass:map";
+@use "../../../axioms/config" as cfg;
+@use "../../../axioms/tools/coloring";
+
+/// List item.
+///
+/// @link https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/li MDN
+li {
+  &::marker {
+    @if map.get(cfg.$merged, coloring, color, logical, list-marker) {
+      @include coloring.set-colors("list-marker");
+      @include coloring.use-colors;
+    }
+  }
+}

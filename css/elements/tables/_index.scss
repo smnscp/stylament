@@ -1,0 +1,34 @@
+////
+/// @group el-tables
+////
+
+/// # Tabular Content
+///
+/// The elements here are used to create and handle tabular data (data with more than one dimension).
+///
+/// - [table](#css--table)
+/// - [caption](#css--caption)
+/// - [thead](#css--thead)
+/// - [tbody](#css--tbody)
+/// - [tfoot](#css--tfoot)
+/// - [tr](#css--tr)
+/// - [td/th](#css--td%2Fth)
+/// - [td](#css--td)
+/// - [th](#css--th)
+/// - [col](#css--col)
+/// - [colgroup](#css--colgroup)
+///
+/// @link https://html.spec.whatwg.org/multipage/tables.html Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements#table_content MDN
+
+@use "table";
+@use "caption";
+@use "thead";
+@use "tbody";
+@use "tfoot";
+@use "tr";
+@use "td-th";
+@use "td";
+@use "th";
+@use "col";
+@use "colgroup";

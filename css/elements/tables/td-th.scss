@@ -1,0 +1,12 @@
+////
+/// @group el-tables
+////
+
+/// Table cell, normal and header.
+///
+/// @name td/th
+:is(td, th) {
+  border: var(---border-width) var(---table-border-color)
+    var(---table-border-style);
+  padding: calc(0.5 * (1rlh - var(---border-width)));
+}

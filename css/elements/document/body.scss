@@ -1,0 +1,14 @@
+////
+/// @group el-document
+////
+
+@use "../../axioms/tools/coloring";
+
+/// Content root.
+///
+/// @link https://html.spec.whatwg.org/multipage/sections.html#the-body-element Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements#sectioning_root MDN
+body {
+  @include coloring.set-colors("body");
+  @include coloring.use-colors;
+}

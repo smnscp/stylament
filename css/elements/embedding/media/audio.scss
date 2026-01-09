@@ -1,0 +1,12 @@
+////
+/// @group el-embedding
+////
+
+/// Embed audio.
+///
+/// @link https://html.spec.whatwg.org/multipage/media.html#the-audio-element Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/audio MDN
+audio {
+  // Make sure audio controls have a size.
+  min-block-size: 1em;
+}

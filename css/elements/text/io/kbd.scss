@@ -1,0 +1,17 @@
+////
+/// @group el-text
+////
+
+@use "../../../axioms/properties/io" as *;
+
+/// Keyboard input.
+///
+/// @link https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/kbd MDN
+kbd {
+  color: svar(color-mark);
+  background: svar(color-mark-contra);
+  border: svar(stroke-width-1) solid svar(stroke-color-default);
+  border-radius: svar(radius-xs);
+  padding-inline: svar(spacing-inline-xs);
+}

@@ -1,0 +1,18 @@
+////
+/// @group el-edits
+////
+
+@use "sass:map";
+@use "../../axioms/config" as cfg;
+@use "../../axioms/tools/coloring";
+
+/// Insertion.
+///
+/// @link https://html.spec.whatwg.org/multipage/edits.html#the-ins-element Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ins MDN
+ins {
+  @if map.get(cfg.$merged, coloring, color, logical, ins) {
+    @include coloring.set-colors("ins");
+    @include coloring.use-colors;
+  }
+}

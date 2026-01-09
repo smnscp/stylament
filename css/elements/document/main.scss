@@ -1,0 +1,18 @@
+////
+/// @group el-document
+////
+
+@use "../../axioms/properties/io" as *;
+
+/// The document’s main content.
+///
+/// Unlike `html` and `body` there can be multiple `main` elements in one document.
+/// Nevertheless, [there can be only one (visible).][highlander]
+///
+/// [highlander]: https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element:attr-hidden
+///
+/// @link https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/main MDN
+main {
+  padding-block: svar(spacing-block-lg);
+}

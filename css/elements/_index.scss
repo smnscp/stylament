@@ -5,6 +5,24 @@
 /// # Elements
 ///
 /// The layer of elements applies styling to nothing else but bare HTML elements.
+///
+/// The stylesheets in this layer are organized mostly according to the [official HTML elements reference][whatwg-ref]
+/// as well as the [MDN HTML elements reference][mdn-ref]:
+///
+/// - [Document-level Elements](el-document.html)
+/// - [Sectioning](el-sectioning.html)
+/// - [Grouping Content](el-grouping.html)
+/// - [Text-level Semantics](el-text.html)
+/// - [Edits](el-edits.html)
+/// - [Links](el-links.html)
+/// - [Embedding](el-embedding.html)
+/// - [Tabular Content](el-tables.html)
+/// - [Form-associated Content](el-forms.html)
+/// - [Interactive Elements](el-interactive.html)
+/// - [Scripting](el-scripting.html)
+///
+/// [whatwg-ref]: https://html.spec.whatwg.org/multipage/#toc-semantics
+/// [mdn-ref]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
 
 @use "document";
 @use "sectioning";

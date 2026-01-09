@@ -1,0 +1,16 @@
+////
+/// @group el-tables
+////
+
+/// The table itself.
+///
+/// @link https://html.spec.whatwg.org/multipage/tables.html#the-table-element Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table MDN
+table {
+  ---border-width: var(---table-border-width, 0rem);
+  border-collapse: collapse;
+  padding: 0;
+  border-spacing: 0;
+  // Compensate border to stay in baseline grid.
+  margin-block-end: calc(-1 * var(---border-width));
+}

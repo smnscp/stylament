@@ -1,0 +1,21 @@
+////
+/// @group el-grouping
+////
+
+@use "../../../axioms/properties/io" as *;
+
+/// Thematic break (horizontal rule).
+///
+/// Make `hr` line-height neutral, i. e. 0px high, by using `outline` rather than `border`.
+///
+/// @link https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hr MDN
+hr {
+  border: none;
+  block-size: 0;
+  inline-size: 100%;
+  outline-style: svar(stroke-style-hr, svar(stroke-style-default, solid));
+  outline-width: calc(0.5 * svar(stroke-width-hr, svar(stroke-width-default, 0.125rem)));
+  margin-inline: auto;
+  color: svar(color-hr);
+}

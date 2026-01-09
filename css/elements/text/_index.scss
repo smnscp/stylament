@@ -2,7 +2,26 @@
 /// @group el-text
 ////
 
-/// ## Inline Text Semantics
+/// # Text-level Semantics
+///
+/// These are elements for inline-level text semantics.
+///
+/// - [Generic](#generic)
+/// - [Line breaks](#line-breaks)
+/// - [Emphasis](#emphasis)
+/// - [Terminology](#terminology)
+/// - [Quotations](#quotations)
+/// - [Citation](#citation)
+/// - [Altered baseline](#altered-baseline)
+/// - [I/O](#input-output)
+/// - [Code](#code)
+/// - [Data](#data)
+/// - [Enhanced semantics](#enhanced-semantics)
+/// - [Directionality](#directionality)
+/// - [Ruby](#ruby)
+///
+/// @link https://html.spec.whatwg.org/multipage/text-level-semantics.html Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements#inline_text_semantics MDN
 
 @use "generic";
 @use "line-breaks";

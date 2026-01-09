@@ -1,0 +1,28 @@
+////
+/// @group el-grouping
+////
+
+/// Menu list.
+///
+/// @link https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/menu MDN
+menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  & > li {
+    block-size: var(---item-block-size, 2em);
+    line-height: var(---item-line-height, 1em);
+    padding: 0;
+    margin: 0;
+
+    & > a {
+      // Let the link area cover the whole height.
+      display: inline-grid;
+      align-content: center;
+      block-size: 100%;
+      padding-inline: var(---item-padding, 1em);
+    }
+  }
+}

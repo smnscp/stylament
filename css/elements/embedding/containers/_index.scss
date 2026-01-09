@@ -1,0 +1,17 @@
+////
+/// @group el-embedding
+////
+
+/// ## Embedding Containers
+///
+/// - [embed](#css--embed)
+/// - [iframe](#css--iframe)
+/// - [object](#css--object)
+///
+/// @see Default Embedding Boxes
+/// @link https://html.spec.whatwg.org/multipage/iframe-embed-object.html Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements#embedded_content MDN
+
+@use "embed";
+@use "iframe";
+@use "object";

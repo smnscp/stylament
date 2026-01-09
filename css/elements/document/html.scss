@@ -1,0 +1,14 @@
+////
+/// @group el-document
+////
+
+/// Document root.
+/// Also selectable as `:root` (which has a higher specificity).
+///
+/// @link https://html.spec.whatwg.org/multipage/semantics.html#the-root-element Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements#main_root MDN
+html {
+  @media screen and not (prefers-reduced-motion) {
+    scroll-behavior: smooth;
+  }
+}

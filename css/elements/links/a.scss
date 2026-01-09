@@ -1,0 +1,24 @@
+////
+/// @group el-links
+////
+
+@use "../../axioms/tools/coloring";
+
+/// Anchor.
+///
+/// @link https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element Spec
+/// @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a MDN
+a {
+  :where(&:any-link) {
+    @include coloring.set-colors("links");
+    color: var(---clr-fg);
+    text-decoration: underline;
+  }
+  :where(&:any-link:hover) {
+    text-decoration: none;
+  }
+
+  &[id] {
+    // anchors
+  }
+}
