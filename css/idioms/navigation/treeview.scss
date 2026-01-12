@@ -6,7 +6,7 @@
 
 /// @name Treeview
 [role="tree"] {
-  ---indent: #{svar(spacing-inline-md)};
+  ---indent: #{svar(spacing-indent)};
 
   ul {
     list-style: none;

@@ -13,5 +13,5 @@ kbd {
   background: svar(color-mark-contra);
   border: svar(stroke-width-1) solid svar(stroke-color-default);
   border-radius: svar(radius-xs);
-  padding-inline: svar(spacing-inline-xs);
+  padding-inline: svar(spacing-inline-xs, svar(spacing-xs));
 }

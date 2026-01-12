@@ -11,7 +11,7 @@
 body.scp-homepage > header.#{$mod-prefix}alt {
   ---box-radius: #{svar(radius-xl)};
   ---box-border: #{svar(stroke-width-8) dashed svar(color-grey-300)};
-  ---box-space: #{svar(spacing-block-lg)};
+  ---box-space: #{svar(spacing-lg)};
 
   & > * {
     @include box.layout;

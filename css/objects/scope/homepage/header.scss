@@ -10,7 +10,7 @@
 
 /// Special homepage header styles.
 body.scp-homepage > header {
-  ---cover-space: #{svar(spacing-block-lg) var(---container-gutter)};
+  ---cover-space: #{svar(spacing-block-lg, svar(spacing-lg)) var(---container-gutter)};
   @include cover.layout;
 
   h1 {

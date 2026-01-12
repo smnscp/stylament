@@ -18,6 +18,6 @@
   }
 
   > * + * {
-    margin-block-start: var(---stack-space, svar(spacing-block));
+    margin-block-start: var(---stack-space, svar(spacing-block, svar(spacing)));
   }
 }

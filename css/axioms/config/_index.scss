@@ -171,17 +171,27 @@ $default: (
       ),
     ),
     spacing: (
-      block: (
-        mapped: (
-          domain: mapping.$domain-sizes,
-          function: meta.get-function("exponential", $module: "function"),
-          params: (
-            base: 2,
-            coefficient: 1rlh,
-          ),
+      mapped: (
+        domain: mapping.$domain-sizes,
+        function: meta.get-function("exponential", $module: "function"),
+        params: (
+          base: 2,
+          coefficient: 1rlh,
         ),
+      ),
+      logical: (
+        default: md,
+      ),
+      block: (
         logical: (
-          default: md,
+          xxs: "/spacing-xxs",
+          xs: "/spacing-xs",
+          sm: "/spacing-sm",
+          md: "/spacing-md",
+          lg: "/spacing-lg",
+          xl: "/spacing-xl",
+          xxl: "/spacing-xxl",
+          default: "/spacing-md",
         ),
       ),
       inline: (
@@ -222,6 +232,7 @@ $default: (
       indent: (
         logical: (
           default: "/spacing-inline-default",
+          lg: "/spacing-inline-lg",
         ),
       ),
     ),

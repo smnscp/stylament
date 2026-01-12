@@ -4,7 +4,7 @@
 blockquote.var-alternate {
   @include coloring.set-colors("alternate");
   @include coloring.use-colors;
-  ---indent: #{svar(spacing-inline-lg)};
+  ---indent: #{svar(spacing-indent-lg)};
   ---stroke-width: #{svar(stroke-width-8)};
   ---marker: "❝";
   ---marker-size: 1.5;

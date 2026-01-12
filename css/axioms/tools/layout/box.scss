@@ -10,7 +10,7 @@
 /// @see .lyo-box
 @mixin layout {
   display: block;
-  padding: var(---box-space, svar(spacing-block));
+  padding: var(---box-space, svar(spacing));
   border: var(
     ---box-border,
     var(---box-border-width, svar(stroke-width-default))
