@@ -1,0 +1,70 @@
+////
+/// @group ax-tools
+////
+
+@use "wrap";
+
+/// Reel layout.
+/// @name reel.layout
+/// @link https://every-layout.dev/layouts/reel/ Every Layout: The Reel
+/// @see .lyo-reel
+@mixin layout {
+  ---item-width: auto;
+  ---height: auto;
+  ---scrollbar-thumb-color: auto;
+  ---scrollbar-track-color: auto;
+  @extend %wrap-base;
+  display: flex;
+  block-size: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: var(---scrollbar-thumb-color) var(---scrollbar-track-color);
+
+  > * {
+    flex: 0 0 var(---item-width);
+  }
+
+  > img {
+    block-size: 100%;
+    flex-basis: auto;
+    width: auto;
+  }
+
+  // Safari scrollbar styles
+  &::-webkit-scrollbar {
+    block-size: 1rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(---scrollbar-track-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(---scrollbar-track-color);
+    background-image: linear-gradient(
+      var(---scrollbar-track-color) 0,
+      var(---scrollbar-track-color) 0.25rem,
+      var(---scrollbar-thumb-color) 0.25rem,
+      var(---scrollbar-thumb-color) 0.75rem,
+      var(---scrollbar-track-color) 0.75rem
+    );
+  }
+}
+
+/// Reel layout without scrollbar.
+/// @name reel.modifier-no-bar
+/// @see .lyo-reel.+no-bar
+@mixin modifier-no-bar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/// Reel layout with padding between content and scrollbar.
+/// @name reel.modifier-overflowing
+/// @see .lyo-reel.+overflowing
+@mixin modifier-overflowing {
+  padding-block-end: var(---flow-space);
+}

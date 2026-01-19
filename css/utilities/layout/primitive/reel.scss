@@ -1,0 +1,26 @@
+////
+/// @group ut-layout
+////
+
+@use "../../../axioms/properties/io" as *;
+@use "../../../axioms/tools/layout/reel";
+
+/// Reel layout.
+/// @see reel.layout
+.lyo-reel {
+  @include reel.layout;
+}
+
+/// Reel layout without scrollbar.
+/// @name .lyo-reel.+no-bar
+/// @see reel.modifier-no-bar
+.lyo-reel.#{$mod-prefix}no-bar {
+  @include reel.modifier-no-bar;
+}
+
+/// Reel layout with padding between content and scrollbar.
+/// @name .lyo-reel.+overflowing
+/// @see reel.modifier-overflowing
+.lyo-reel.#{$mod-prefix}overflowing {
+  @include reel.modifier-overflowing;
+}
