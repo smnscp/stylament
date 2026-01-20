@@ -1,0 +1,23 @@
+////
+/// @group ax-tools
+////
+
+@use "wrap";
+
+/// Frame layout.
+/// @name frame.layout
+/// @link https://every-layout.dev/layouts/frame/ Every Layout: The Frame
+/// @see .lyo-frame
+@mixin layout {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > :is(img, video, svg) {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,11 @@
+////
+/// @group ut-layout
+////
+
+@use "../../../axioms/tools/layout/frame";
+
+/// Frame layout.
+/// @see frame.layout
+.lyo-frame {
+  @include frame.layout;
+}
