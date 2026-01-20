@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.28.0</span>
+          <span class="project-version">0.28.3</span>
         
       </div>
     </header>
@@ -529,7 +529,7 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
       <pre class="hljs-pre"><code class="lang-scss">body.scp-homepage &gt; header.#{$mod-prefix}alt {
   ---box-radius: #{svar(radius-xl)};
   ---box-border: #{svar(stroke-width-8) dashed svar(color-grey-300)};
-  ---box-space: #{svar(spacing-block-lg)};
+  ---box-space: #{svar(spacing-lg)};
 
   &amp; &gt; * {
     @include box.layout;
@@ -736,7 +736,7 @@ might have scope-specific styles<span class="widont">&nbsp;</span>applied.</p>
       
       
       <pre class="hljs-pre"><code class="lang-scss">body.scp-homepage &gt; header {
-  ---cover-space: #{svar(spacing-block-lg) var(---container-gutter)};
+  ---cover-space: #{svar(spacing-block-lg, svar(spacing-lg)) var(---container-gutter)};
   @include cover.layout;
 
   h1 {

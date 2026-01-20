@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Stylament</a>
         
-          <span class="project-version">0.28.0</span>
+          <span class="project-version">0.28.3</span>
         
       </div>
     </header>
@@ -618,18 +618,27 @@ For the structure of this custom configuration see <a href="#variable--default">
 }
 
 :root {
+  --s-spacing-xxs: 0.125rlh;
+  --s-spacing-xs: 0.25rlh;
+  --s-spacing-sm: 0.5rlh;
+  --s-spacing-md: 1rlh;
+  --s-spacing-lg: 2rlh;
+  --s-spacing-xl: 4rlh;
+  --s-spacing-xxl: 8rlh;
+  --s-spacing-default: var(--s-spacing-md);
   --s-spacing-sectioning: var(--s-spacing-block);
+  --s-spacing: var(--s-spacing-default);
 }
 
 :root {
-  --s-spacing-block-xxs: 0.125rlh;
-  --s-spacing-block-xs: 0.25rlh;
-  --s-spacing-block-sm: 0.5rlh;
-  --s-spacing-block-md: 1rlh;
-  --s-spacing-block-lg: 2rlh;
-  --s-spacing-block-xl: 4rlh;
-  --s-spacing-block-xxl: 8rlh;
-  --s-spacing-block-default: var(--s-spacing-block-md);
+  --s-spacing-block-xxs: var(--s-spacing-xxs);
+  --s-spacing-block-xs: var(--s-spacing-xs);
+  --s-spacing-block-sm: var(--s-spacing-sm);
+  --s-spacing-block-md: var(--s-spacing-md);
+  --s-spacing-block-lg: var(--s-spacing-lg);
+  --s-spacing-block-xl: var(--s-spacing-xl);
+  --s-spacing-block-xxl: var(--s-spacing-xxl);
+  --s-spacing-block-default: var(--s-spacing-md);
   --s-spacing-block: var(--s-spacing-block-default);
 }
 
@@ -662,6 +671,7 @@ For the structure of this custom configuration see <a href="#variable--default">
 
 :root {
   --s-spacing-indent-default: var(--s-spacing-inline-default);
+  --s-spacing-indent-lg: var(--s-spacing-inline-lg);
   --s-spacing-indent: var(--s-spacing-indent-default);
 }
 
@@ -1588,17 +1598,27 @@ pre {
       ),
     ),
     spacing: (
-      block: (
-        mapped: (
-          domain: mapping.$domain-sizes,
-          function: meta.get-function(&quot;exponential&quot;, $module: &quot;function&quot;),
-          params: (
-            base: 2,
-            coefficient: 1rlh,
-          ),
+      mapped: (
+        domain: mapping.$domain-sizes,
+        function: meta.get-function(&quot;exponential&quot;, $module: &quot;function&quot;),
+        params: (
+          base: 2,
+          coefficient: 1rlh,
         ),
+      ),
+      logical: (
+        default: md,
+      ),
+      block: (
         logical: (
-          default: md,
+          xxs: &quot;/spacing-xxs&quot;,
+          xs: &quot;/spacing-xs&quot;,
+          sm: &quot;/spacing-sm&quot;,
+          md: &quot;/spacing-md&quot;,
+          lg: &quot;/spacing-lg&quot;,
+          xl: &quot;/spacing-xl&quot;,
+          xxl: &quot;/spacing-xxl&quot;,
+          default: &quot;/spacing-md&quot;,
         ),
       ),
       inline: (
@@ -1639,6 +1659,7 @@ pre {
       indent: (
         logical: (
           default: &quot;/spacing-inline-default&quot;,
+          lg: &quot;/spacing-inline-lg&quot;,
         ),
       ),
     ),
