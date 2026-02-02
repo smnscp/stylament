@@ -1,0 +1,12 @@
+////
+/// @group ut-layout
+////
+
+@use "../../../axioms/properties/io" as *;
+@use "../../../axioms/tools/layout/icon";
+
+/// Icon layout.
+/// @see icon.layout
+.lyo-icon {
+  @include icon.layout;
+}

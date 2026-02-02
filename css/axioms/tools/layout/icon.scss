@@ -1,0 +1,37 @@
+////
+/// @group ax-tools
+////
+
+@use "../../properties/io" as *;
+
+/// Icon layout.
+///
+/// Custom properties:
+/// * `---icon-size` {Number}: The icon’s size.
+/// * `---icon-space` {Number}[ {Number}]: The horizontal space around the icon.
+/// @name icon.layout
+/// @link https://every-layout.dev/layouts/icon/ Every Layout: The Icon
+/// @see .lyo-icon
+@mixin layout {
+  // The icon’s size.
+  ---size: var(---icon-size, 1cap);
+
+  // Make sure to be in line.
+  display: inline;
+
+  // Icons are square by default.
+  aspect-ratio: 1/1;
+
+  // Implement the size.
+  block-size: var(---size);
+  max-block-size: none;
+  margin-block-start: calc(0.5em - 0.5 * var(---size));
+
+  // The icon bottom aligns with the descender line
+  // (offset from baseline by negative descender height).
+  vertical-align: calc(0.5cap - 0.5 * var(---size));
+
+  // Horizontal space.
+  // Use two values to distinguish space before and after.
+  margin-inline: var(---icon-space, 0);
+}
