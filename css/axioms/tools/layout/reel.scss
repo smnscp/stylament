@@ -13,7 +13,7 @@
   ---height: auto;
   ---scrollbar-thumb-color: auto;
   ---scrollbar-track-color: auto;
-  @extend %wrap-base;
+  @include wrap.wrap-base;
   display: flex;
   block-size: auto;
   overflow-x: auto;

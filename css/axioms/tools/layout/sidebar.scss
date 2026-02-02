@@ -9,7 +9,7 @@
 /// @link https://every-layout.dev/layouts/sidebar/ Every Layout: The Sidebar
 /// @see .lyo-sidebar
 @mixin layout {
-  @extend %wrap-base;
+  @include wrap.wrap-base;
   ---side-width: auto;
   ---content-min: 50%;
   display: flex;

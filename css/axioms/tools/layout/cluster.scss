@@ -9,7 +9,7 @@
 /// @link https://every-layout.dev/layouts/cluster/ Every Layout: The Cluster
 /// @see .lyo-cluster
 @mixin layout {
-  @extend %wrap-base;
+  @include wrap.wrap-base;
   display: flex;
   flex-wrap: wrap;
   justify-content: start;

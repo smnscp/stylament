@@ -12,7 +12,7 @@
 /// support this can be done as a generic flow rule.
 ///
 /// [spec:style-container]: https://www.w3.org/TR/css-contain-3/#style-container
-%wrap-base {
+@mixin wrap-base {
   // [1]
   ---min-column-size: calc(0.7 * var(---measure));
   gap: var(---wrap-space, var(---flow-space));

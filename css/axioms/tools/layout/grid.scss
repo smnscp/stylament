@@ -20,7 +20,7 @@
 /// @link https://every-layout.dev/layouts/grid/#grid-for-grids Every Layout: The Grid
 /// @see .lyo-grid
 @mixin layout {
-  @extend %wrap-base;
+  @include wrap.wrap-base;
   ---fill-method: auto-fill;
   display: grid;
   grid-template-columns: repeat(
@@ -51,7 +51,7 @@
 /// @link https://every-layout.dev/layouts/grid/#flexbox-for-grids Every Layout: The Grid (flex-grid)
 /// @see .lyo-flex-grid
 @mixin layout-flex {
-  @extend %wrap-base;
+  @include wrap.wrap-base;
   display: flex;
   flex-wrap: wrap;
 
