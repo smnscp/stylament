@@ -14,17 +14,18 @@
 
 /// Generate a color palette for a given hue.
 /// @param {String} $name The color name.
-/// @param {Number} $hue The color hue (of HSL).
+/// @param {Number} $hue The color hue (of HSL, LCH, or OKLCH).
 /// @param {List} $s-curve The polynomial coefficients defining the curve described by
-///                 cartesian coordinates of palette step and saturation (of HSL).
+///                 cartesian coordinates of palette step and saturation (of HSL) or chroma (of (OK)LCH).
 /// @param {List} $l-curve The polynomial coefficients defining the curve described by
-///                 cartesian coordinates of palette step and lightness (of HSL).
+///                 cartesian coordinates of palette step and lightness (of HSL, LCH, or OKLCH).
 /// @param {List} $sl-curve The control points defining a cubic Bézier in a cartesian
-///                 coordinate system of saturation and lightness (of HSL).
+///                 coordinate system of saturation and lightness/chroma (of HSL, LCH, or OKLCH).
 ///                 If this is definded the other two curves are ignored.
 /// @param {Map} $range Start, end, and step-size of the palette.
 /// @param {String} $group Property group name.
 /// @param {Map} $suffix Property name suffix (factor: <Number>, inverse: <Boolean>).
+/// @param {String} $color-space The color space to be used: HSL, LCH, or OKLCH.
 /// @output A list of `--<prefix><group>-*` custom properties containing the color values of the palette:
 ///   ```css
 ///   --s-color-red-100: hsl(0deg, 100%, 95%);
@@ -41,7 +42,8 @@
   $sl-curve: null,
   $range: null,
   $group: "color",
-  $suffix: null
+  $suffix: null,
+  $color-space: "hsl"
 ) {
   $range: if($range, $range, ());
   $step: if(map.has-key($range, step), map.get($range, step), 0.2);
@@ -65,11 +67,15 @@
       $saturation: 100% * function.polynomial($current, $s-curve...);
       $lightness: 100% * function.polynomial($current, $l-curve...);
     }
-    #{$🌱}#{$group}-#{$name}-#{math.round($suffac * if($sufinv, 1 - $current, $current))}: #{hsl(
-        $hue,
-        $saturation,
-        $lightness
-      )};
+    $value: none;
+    @if $color-space == 'oklch' {
+      $value: oklch($lightness $saturation $hue);
+    } @else if $color-space == 'lch' {
+      $value: lch($lightness $saturation $hue);
+    } @else {
+      $value: hsl($hue $saturation $lightness);
+    }
+    #{$🌱}#{$group}-#{$name}-#{math.round($suffac * if($sufinv, 1 - $current, $current))}: #{$value};
     $current: $current + $step;
   }
 }

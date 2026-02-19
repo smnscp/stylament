@@ -4,6 +4,7 @@
 
 $prim: 215deg;
 $dist: 140deg;
+$cs: "hsl";
 $sl-curve: 0.1 0.9 0.8 0.9 0.8 0.1 0.1 0.1;
 $range: (
   step: 0.1,
@@ -24,23 +25,27 @@ $palettes: (
     sl-curve: 0.1 0.9 0.2 0.9 0.2 0.1 0.1 0.1,
     range: $range,
     suffix: $suffix,
+    color-space: $cs,
   ),
   "primary": (
     hue: $prim,
     sl-curve: $sl-curve,
     range: $range,
     suffix: $suffix,
+    color-space: $cs,
   ),
   "secondary": (
     hue: $prim + $dist,
     sl-curve: $sl-curve,
     range: $range,
     suffix: $suffix,
+    color-space: $cs,
   ),
   "tertiary": (
     hue: $prim - $dist,
     sl-curve: $sl-curve,
     range: $range,
     suffix: $suffix,
+    color-space: $cs,
   ),
 );
