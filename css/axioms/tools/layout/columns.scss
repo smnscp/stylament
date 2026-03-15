@@ -8,8 +8,9 @@
 /// @name columns.layout
 /// @see .lyo-columns
 @mixin layout {
-  @include wrap.wrap-base;
   column-width: var(---min-column-size);
+
+  @include wrap.wrap-base;
 
   & > * {
     break-inside: avoid;

@@ -20,20 +20,24 @@
 /// @link https://every-layout.dev/layouts/grid/#grid-for-grids Every Layout: The Grid
 /// @see .lyo-grid
 @mixin layout {
-  @include wrap.wrap-base;
   ---fill-method: auto-fill;
   display: grid;
   grid-template-columns: repeat(
     var(---fill-method),
     minmax(min(100%, var(---min-column-size)), 1fr)
   );
+
+  @include wrap.wrap-base;
 }
 
 /// Grid layout with fitting under-full grids.
 /// @name grid.modifier-fit
 /// @see .lyo-grid.+fit
 @mixin modifier-fit {
-  ---fill-method: auto-fit;
+  // Wrap to prevent mixed-decls.
+  & {
+    ---fill-method: auto-fit;
+  }
 }
 
 /// Wrap in flexible rows (“flex-grid”):
@@ -51,9 +55,10 @@
 /// @link https://every-layout.dev/layouts/grid/#flexbox-for-grids Every Layout: The Grid (flex-grid)
 /// @see .lyo-flex-grid
 @mixin layout-flex {
-  @include wrap.wrap-base;
   display: flex;
   flex-wrap: wrap;
+
+  @include wrap.wrap-base;
 
   & > * {
     flex-basis: var(---min-column-size);
