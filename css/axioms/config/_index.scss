@@ -274,8 +274,8 @@ $default: (
         ),
         literal: (
           ratio: $-scale-ratio,
-          smaller: if($-scale-ratio, math.div(100%, $-scale-ratio), null),
-          larger: if($-scale-ratio, 100% * $-scale-ratio, null),
+          smaller: if(sass($-scale-ratio): math.div(100%, $-scale-ratio); else: null),
+          larger: if(sass($-scale-ratio): 100% * $-scale-ratio; else: null),
           // Fluid root font size:
           // 1rem + (100vw - 32rem) * (1.125rem - 1rem) / (96rem - 32rem)
           // = 0.9375rem + 0.1953125vw
@@ -306,7 +306,7 @@ $default: (
       ),
     ),
     line: (
-      rlh: if($-line-root and $-scale-base, rhythm.rlh($-scale-base, $-line-root), null),
+      rlh: if(sass($-line-root and $-scale-base): rhythm.rlh($-scale-base, $-line-root); else: null),
     ),
     measure: (
       mapped: (
@@ -397,4 +397,4 @@ $default: (
 /// @requires $use-default
 /// @requires $default
 /// @requires $custom
-$merged: if($use-default, map.deep-merge($default, $custom), $custom);
+$merged: if(sass($use-default): map.deep-merge($default, $custom); else: $custom);

@@ -16,8 +16,7 @@
 /// @return {*} The return value of the function call.
 @function call-conditional($func, $arg, $params: null) {
   @return if(
-    $params,
-    meta.call($func, $arg, $params...),
-    meta.call($func, $arg)
+    sass($params): meta.call($func, $arg, $params...);
+    else: meta.call($func, $arg)
   );
 }

@@ -43,16 +43,15 @@
 
   // Use “ℤ” → ℤ as default domain.
   $base: if(
-    $base,
-    $base,
-    (
+    sass($base): $base;
+    else: (
       "": 0,
     )
   );
   $length: list.length($base);
-  $step: if(map.has-key($range, step), map.get($range, step), 1);
-  $start: if(map.has-key($range, start), map.get($range, start), 1);
-  $end: if(map.has-key($range, end), map.get($range, end), $length);
+  $step: if(sass(map.has-key($range, step)): map.get($range, step); else: 1);
+  $start: if(sass(map.has-key($range, start)): map.get($range, start); else: 1);
+  $end: if(sass(map.has-key($range, end)): map.get($range, end); else: $length);
   $current: $start;
   // If the base domain doesn’t cover the range re-iterate over it.
   $repeat: $start < 1 or $end > $length;
@@ -91,8 +90,8 @@
   $params: null
 ) {
   $result: ();
-  $func: if($func, $func, meta.get-function("identity", $module: "function"));
-  $domain: if($range, -apply-domain-range($domain, $range), $domain);
+  $func: if(sass($func): $func; else: meta.get-function("identity", $module: "function"));
+  $domain: if(sass($range): -apply-domain-range($domain, $range); else: $domain);
   @if $domain {
     @each $name, $arg in $domain {
       $result: map.set(

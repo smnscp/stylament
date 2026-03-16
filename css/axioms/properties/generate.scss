@@ -37,7 +37,7 @@ $root-trim: 2 !default;
     @each $subgroup, $subconfig in $config {
       @include -traverse-config(
         $subconfig,
-        if($trim > 0, $subgroup, "#{$group}-#{$subgroup}"),
+        if(sass($trim > 0): $subgroup; else: "#{$group}-#{$subgroup}"),
         $trim - 1
       );
     }

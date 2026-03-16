@@ -59,9 +59,8 @@
       $value: ();
       @each $part in $alias {
         $part: if(
-          string.slice(#{$part}, 1, 1) == "/",
-          string.slice($part, 2),
-          #{$group}-#{$part}
+          sass(string.slice(#{$part}, 1, 1) == "/"): string.slice($part, 2);
+          else: #{$group}-#{$part}
         );
         $value: list.append($value, svar(#{$part}));
       }

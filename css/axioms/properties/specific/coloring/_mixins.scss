@@ -45,15 +45,15 @@
   $suffix: null,
   $color-space: "hsl"
 ) {
-  $range: if($range, $range, ());
-  $step: if(map.has-key($range, step), map.get($range, step), 0.2);
-  $start: if(map.has-key($range, start), map.get($range, start), 0.1);
-  $end: if(map.has-key($range, end), map.get($range, end), 0.9);
-  $s-curve: if($s-curve, $s-curve, (1, -1, 1));
-  $l-curve: if($l-curve, $l-curve, (1, -1));
-  $suffix: if($suffix, $suffix, ());
-  $suffac: if(map.has-key($suffix, factor), map.get($suffix, factor), 1000);
-  $sufinv: if(map.has-key($suffix, inverse), map.get($suffix, inverse), false);
+  $range: if(sass($range): $range; else: ());
+  $step: if(sass(map.has-key($range, step)): map.get($range, step); else: 0.2);
+  $start: if(sass(map.has-key($range, start)): map.get($range, start); else: 0.1);
+  $end: if(sass(map.has-key($range, end)): map.get($range, end); else: 0.9);
+  $s-curve: if(sass($s-curve): $s-curve; else: (1, -1, 1));
+  $l-curve: if(sass($l-curve): $l-curve; else: (1, -1));
+  $suffix: if(sass($suffix): $suffix; else: ());
+  $suffac: if(sass(map.has-key($suffix, factor)): map.get($suffix, factor); else: 1000);
+  $sufinv: if(sass(map.has-key($suffix, inverse)): map.get($suffix, inverse); else: false);
 
   $current: $start;
   @while $current <= $end {
@@ -75,7 +75,7 @@
     } @else {
       $value: hsl($hue $saturation $lightness);
     }
-    #{$🌱}#{$group}-#{$name}-#{math.round($suffac * if($sufinv, 1 - $current, $current))}: #{$value};
+    #{$🌱}#{$group}-#{$name}-#{math.round($suffac * if(sass($sufinv): 1 - $current; else: $current))}: #{$value};
     $current: $current + $step;
   }
 }

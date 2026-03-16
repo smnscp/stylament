@@ -38,7 +38,7 @@ body {
 
 // Get configured heading level at rem size. Default to h4.
 $-rh: map.get(cfg.$merged, typography, font, size, rem-heading);
-$-rh: if($-rh, $-rh, 4);
+$-rh: if(sass($-rh): $-rh; else: 4);
 
 @for $level from 1 through 6 {
   /// Apply respective font-size and line-height to each heading level.

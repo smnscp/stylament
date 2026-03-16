@@ -38,7 +38,7 @@ $🌱: --#{$prop-prefix};
 ///   Same as [in `var()`](https://developer.mozilla.org/en-US/docs/Web/CSS/var#declaration-value).
 /// @return {string} A standard [CSS `var()` reference](https://developer.mozilla.org/en-US/docs/Web/CSS/var).
 @function svar($name, $fallback: null) {
-  @return if($fallback, var(#{$🌱}#{$name}, #{$fallback}), var(#{$🌱}#{$name}));
+  @return if(sass($fallback): var(#{$🌱}#{$name}, #{$fallback}); else: var(#{$🌱}#{$name}));
 }
 
 /// Configurable prefix for atomic utility classes.
