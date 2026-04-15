@@ -4,8 +4,16 @@
 
 /// Common traits for all wrap-related layouts.
 ///
-/// [1] General sizing (based on [measure](ax-generic.html#css--General%20Measure)) and
+/// General sizing (based on [measure](ax-generic.html#css--General%20Measure)) and
 /// [spacing](ax-generic.html#wrap-spacing) for wrap layouts.
+@mixin wrap-base-props {
+  ---min-column-size: calc(0.7 * var(---measure));
+  gap: var(---wrap-space, var(---flow-space));
+}
+
+/// Mome common traits for almost all wrap-related layouts.
+///
+/// [1] Above measure and gap props.
 ///
 /// [2] Do not apply [flow space](ax-generic.html#flow-spacing) in flex or grid layout.
 /// Note: Once [container style queries][spec:style-container] have sufficient browser
@@ -14,8 +22,7 @@
 /// [spec:style-container]: https://www.w3.org/TR/css-contain-3/#style-container
 @mixin wrap-base {
   // [1]
-  ---min-column-size: calc(0.7 * var(---measure));
-  gap: var(---wrap-space, var(---flow-space));
+  @include wrap-base-props;
 
   // [2]
   > * {

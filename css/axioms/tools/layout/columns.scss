@@ -10,7 +10,7 @@
 @mixin layout {
   column-width: var(---min-column-size);
 
-  @include wrap.wrap-base;
+  @include wrap.wrap-base-props;
 
   & > * {
     break-inside: avoid;
