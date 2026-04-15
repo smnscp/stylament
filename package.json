@@ -27,8 +27,6 @@
     "@fontsource-variable/source-code-pro": "latest",
     "@fontsource-variable/source-sans-3": "latest",
     "@fontsource-variable/source-serif-4": "latest",
-    "sass": "latest",
-    "vite": "^6.0.0",
-    "vite-plugin-handlebars": "latest"
+    "sass": "latest"
   }
 }
